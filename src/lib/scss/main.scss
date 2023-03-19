@@ -1,0 +1,43 @@
+@use 'breakpoints';
+@use 'functions';
+@use 'mixins';
+@use 'reset';
+@use 'themes';
+@use 'variables';
+
+@font-face {
+  font-family: 'benz';
+  src: url('/fonts/benz.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'gt';
+  src: url('/fonts/gt.woff2') format('woff2');
+  font-display: swap;
+}
+
+body {
+  background-color: var(--color-bg-body);
+  color: var(--color-text);
+  fill: var(--color-text);
+  font-family: var(--font-body);
+}
+
+:is(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--font-title);
+}
+
+#svelte {
+  height: 100%;
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}

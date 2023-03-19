@@ -1,0 +1,33 @@
+@use 'functions' as *;
+@use 'breakpoints' as *;
+
+@mixin padded-container($max: 1080px) {
+  width: 100%;
+  padding-inline: 1rem;
+  margin-inline: auto;
+
+  @include breakpoint(sm) {
+    padding-inline: 2rem;
+  }
+
+  @include breakpoint(md) {
+    padding-inline: 3rem;
+  }
+
+  @include breakpoint(lg) {
+    max-width: $max;
+  }
+}
+
+@mixin define-color($title, $color) {
+  --color-#{$title}: #{$color};
+
+  --color-#{$title}-hue: #{hue($color)};
+  --color-#{$title}-lightness: #{lightness($color)};
+  --color-#{$title}-saturation: #{saturation($color)};
+  --color-#{$title}-alpha: #{alpha($color)};
+
+  --color-#{$title}-rgb: #{red($color)}, #{green($color)}, #{blue($color)};
+
+  --color-#{$title}-contrast: #{if(brightness($color) > 186, var(--color-text), var(--color-text-inverse))};
+}

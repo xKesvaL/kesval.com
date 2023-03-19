@@ -1,0 +1,44 @@
+@use 'mixins' as *;
+
+// These are the available themes for the website
+// Light Theme: Default, if no preference is set (@media)
+
+@mixin light-theme {
+  @include define-color('primary', #8000ff);
+
+  @include define-color('secondary', #fba901);
+
+  @include define-color('tertiary', #00ff25);
+
+  @include define-color('text', #140014);
+  @include define-color('text-inverse', #f0f0f0);
+
+  @include define-color('bg-body', #efefe0);
+  @include define-color('bg-card', #ffffff);
+}
+
+// Dark Theme
+
+@mixin dark-theme {
+  @include define-color('text', #f0f0f0);
+  @include define-color('text-inverse', #140014);
+
+  @include define-color('bg-body', #10101a);
+  @include define-color('bg-card', #000000);
+}
+
+// Theme Handling
+
+:root {
+  @include light-theme;
+
+  &[data-theme='dark'] {
+    @include dark-theme;
+  }
+
+  &[data-theme='auto'] {
+    @media (prefers-color-scheme: dark) {
+      @include dark-theme;
+    }
+  }
+}

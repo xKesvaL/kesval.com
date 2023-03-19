@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
-		<meta name="viewport" content="width=device-width" />
-		%sveltekit.head%
-	</head>
-	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">%sveltekit.body%</div>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%sveltekit.assets%/images/favicon.png" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="preload" href="/fonts/benz.woff2" as="font" crossorigin="anonymous" type="font/woff2" />
+    <link rel="preload" href="/fonts/gt.woff2" as="font" crossorigin="anonymous" type="font/woff2" />
+
+    <script>
+      const theme = localStorage.getItem('theme') || 'auto';
+      document.firstElementChild?.setAttribute('data-theme', theme);
+    </script>
+    %sveltekit.head%
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <div id="svelte">%sveltekit.body%</div>
+  </body>
 </html>

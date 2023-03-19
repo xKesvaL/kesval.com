@@ -1,0 +1,146 @@
+// Mixed a few resets together from different sources
+// This is not only a reset but also a base for the rest of the styles
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font: inherit;
+  line-height: calc(0.25rem + 1em + 0.25rem);
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  block-size: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  min-block-size: 100%;
+  overflow-x: hidden;
+}
+
+// Media defaults
+
+:where(img, svg, video, canvas, audio, iframe, embed, object) {
+  display: block;
+  max-width: 100%;
+}
+
+:where(img, svg, video) {
+  block-size: auto;
+  max-inline-size: 100%;
+}
+
+// Avoid text overflows
+
+:where(p, h1, h2, h3, h4, h5, h6) {
+  overflow-wrap: break-word;
+}
+
+// List styles reset & Inside list style
+
+:where(ul, ol) {
+  list-style-position: inside;
+}
+
+:where(ul, ol)[role='list'] {
+  list-style: none;
+}
+
+// More readable style for non classed anchors
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+// Interactivity
+
+:where(a[href], area, button, input, label[for], select, summary, textarea, [tabindex]:not([tabindex*='-'])) {
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+:where(input[type='file']) {
+  cursor: auto;
+}
+:where(input[type='file'])::-webkit-file-upload-button,
+:where(input[type='file'])::file-selector-button {
+  cursor: pointer;
+}
+
+/* Animate focus outline */
+@media (prefers-reduced-motion: no-preference) {
+  :focus-visible {
+    transition: outline-offset 145ms cubic-bezier(0.25, 0, 0.4, 1);
+  }
+  :where(:not(:active)):focus-visible {
+    transition-duration: 0.25s;
+  }
+}
+:where(:not(:active)):focus-visible {
+  outline-offset: 5px;
+}
+
+/* Make sure users can't select button text */
+:where(button, button[type], input[type='button'], input[type='submit'], input[type='reset']),
+:where(input[type='file'])::-webkit-file-upload-button,
+:where(input[type='file'])::file-selector-button {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  user-select: none;
+  text-align: center;
+}
+
+/* Disabled cursor for disabled buttons */
+:where(button, button[type], input[type='button'], input[type='submit'], input[type='reset'])[disabled] {
+  cursor: not-allowed;
+}
+
+button {
+  background-color: transparent;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:where(pre, code, kbd, samp) {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+progress {
+  vertical-align: baseline;
+}
