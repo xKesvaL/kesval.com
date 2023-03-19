@@ -28,7 +28,7 @@
     min-height: 40vh; // for dev purposes
     align-items: center;
     justify-items: center;
-    padding-block: 3rem;
+    padding-block: 2rem;
     gap: 4rem 1rem;
 
     .text {
