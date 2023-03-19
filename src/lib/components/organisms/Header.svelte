@@ -3,6 +3,7 @@
   import Hamburger from '$lib/icons/Hamburger.svelte';
   import Image from '../atoms/Image.svelte';
   import ThemeSwitcher from '../molecules/ThemeSwitcher.svelte';
+  import { page } from '$app/stores';
 
   let expanded: boolean = false;
   let y: number;
@@ -27,17 +28,17 @@
   </a>
   <nav id="navigation" aria-expanded={expanded}>
     <ul role="navigation">
-      <li>
-        <a href="/" data-sveltekit-preload-data data-sveltekit-preload-code>
+      <li class={$page.route.id == '/' ? 'active' : ''}>
+        <a class="home" href="/" data-sveltekit-preload-data data-sveltekit-preload-code>
           Home <span>/</span>
         </a>
       </li>
-      <li>
+      <li class={$page.route.id == '/about' ? 'active' : ''}>
         <a href="/about" data-sveltekit-preload-data data-sveltekit-preload-code>About</a>
 
         <!-- Presentation, experience, skills -->
       </li>
-      <li>
+      <li class={$page.route.id == '/projects' ? 'active' : ''}>
         <a href="/projects" data-sveltekit-preload-data data-sveltekit-preload-code>Projects</a>
         <!-- Page with all projects: detailed and access to examples -->
       </li>
@@ -132,7 +133,7 @@
       @include breakpoint(md) {
         position: relative;
         width: auto;
-        height: auto;
+        height: 100%;
         background: transparent;
         transform: none;
         backdrop-filter: none;
@@ -148,8 +149,7 @@
         padding-block: var(--padding-block);
         height: 100%;
         list-style: none;
-        gap: clamp(1rem, 2vw, 2rem);
-        color: var(--color-text);
+        gap: clamp(0.5rem, 1vw, 1rem);
 
         @include breakpoint(md) {
           flex-direction: row;
@@ -157,10 +157,33 @@
         }
 
         li {
-          color: var(--color-text);
+          padding: 0.5rem 1rem;
+          border-radius: 100vh;
+
+          &.active {
+            background: rgba(var(--color-primary-rgb), 0.3);
+          }
 
           a {
             color: var(--color-text);
+          }
+        }
+
+        .home {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.5rem;
+
+          span {
+            border: 2px solid rgba(var(--color-text-rgb), 0.5);
+            border-radius: 0.5rem;
+            aspect-ratio: 1/1;
+            width: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.25rem;
           }
         }
       }
