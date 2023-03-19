@@ -33,7 +33,7 @@
     gap: 4rem 1rem;
 
     .text {
-      grid-column: 1/3;
+      grid-column: 1/-1;
 
       h1 {
         font-size: 2.25rem;

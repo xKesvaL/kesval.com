@@ -9,6 +9,10 @@
   let y: number;
   let scrolled: boolean = false;
 
+  let prevScroll = 0;
+
+  let scrollDirection: 'up' | 'down' = 'up';
+
   function toggleExpanded() {
     expanded = !expanded;
   }
@@ -18,11 +22,20 @@
   } else {
     scrolled = false;
   }
+
+  $: {
+    if (y >= 128 && y > prevScroll) {
+      scrollDirection = 'down';
+    } else if (y < prevScroll) {
+      scrollDirection = 'up';
+    }
+    prevScroll = y;
+  }
 </script>
 
 <svelte:window bind:scrollY={y} />
 
-<header class={scrolled ? 'scrolled' : ''}>
+<header class="{scrolled ? 'scrolled' : ''} {scrollDirection == 'down' ? 'scrolled-down' : ''}">
   <a href="/" aria-label="Site Logo" class="logo">
     <Image path={'logos/kesval'} alt="KesvaL's logo" />
   </a>
@@ -86,6 +99,7 @@
     padding-block: 1rem;
     backdrop-filter: blur(0.4rem);
     min-height: 10vh;
+    transition: transform 0.3s ease-in-out;
 
     @include padded-container();
 
@@ -100,6 +114,15 @@
       margin-bottom: 2rem;
     }
 
+    &.scrolled {
+      background: rgba(var(--color-bg-body-rgb), 0.8);
+      transform: translateY(0);
+    }
+
+    &.scrolled.scrolled-down {
+      transform: translateY(-120%);
+    }
+
     .logo {
       margin-right: auto;
       width: 3rem;
@@ -109,10 +132,6 @@
       @include breakpoint(md) {
         margin-right: 0;
       }
-    }
-
-    &.scrolled {
-      background: rgba(var(--color-bg-body-rgb), 0.8);
     }
 
     nav {
