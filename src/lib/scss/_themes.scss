@@ -16,7 +16,12 @@
   @include define-color('bg-body', #efefe0);
   @include define-color('bg-card', #ffffff);
 
-  --emphasis-lightness: 95%;
+  --primary-darker-lightness: 10%;
+  --primary-dark-lightness: 30%;
+  --primary-light-lightness: 70%;
+  --primary-lighter-lightness: 90%;
+  --neutral-emphasis-lightness: 95%;
+  --neutral-emphasis-less-lightness: 80%;
 }
 
 // Dark Theme
@@ -28,7 +33,12 @@
   @include define-color('bg-body', #10101a);
   @include define-color('bg-card', #000000);
 
-  --emphasis-lightness: 5%;
+  --primary-darker-lightness: 90%;
+  --primary-dark-lightness: 70%;
+  --primary-light-lightness: 30%;
+  --primary-lighter-lightness: 10%;
+  --neutral-emphasis-lightness: 5%;
+  --neutral-emphasis-less-lightness: 20%;
 }
 
 // Theme Handling

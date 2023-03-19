@@ -119,7 +119,7 @@
       left: 0;
       transform: translateX(-100%);
       transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-      background: hsl(var(--color-bg-body-hue), var(--color-bg-body-saturation), var(--emphasis-lightness));
+      background: hsl(var(--color-bg-body-hue), var(--color-bg-body-saturation), var(--neutral-emphasis-lightness));
 
       &[aria-expanded='true'] {
         transform: translateX(0);

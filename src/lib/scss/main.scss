@@ -1,4 +1,4 @@
-@use 'breakpoints';
+@use 'breakpoints' as *;
 @use 'functions';
 @use 'mixins';
 @use 'reset';
@@ -40,4 +40,25 @@ body {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-primary-contrast);
+}
+
+::-webkit-scrollbar {
+  width: 1vw;
+
+  @include breakpoint(lg) {
+    width: 0.5vw;
+  }
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--color-bg-body-hue), var(--color-bg-body-saturation), var(--neutral-emphasis-less-lightness));
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
 }
