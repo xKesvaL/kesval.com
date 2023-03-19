@@ -43,7 +43,7 @@
 </button>
 
 <style lang="scss">
-  .theme-switcher {
+  button {
     color: var(--color-text);
     display: flex;
     align-items: center;
