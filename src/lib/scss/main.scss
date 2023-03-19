@@ -62,3 +62,12 @@ body {
 ::-webkit-scrollbar-thumb {
   background: var(--color-primary);
 }
+
+svg {
+  color: var(--color-text);
+  transition: 0.25s color ease-in-out;
+
+  &:hover {
+    color: var(--color-primary);
+  }
+}
