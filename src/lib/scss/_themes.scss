@@ -22,6 +22,8 @@
   --primary-lighter-lightness: 90%;
   --neutral-emphasis-lightness: 95%;
   --neutral-emphasis-less-lightness: 80%;
+  --neutral-emphasis-inverse-lightness: 5%;
+  --neutral-emphasis-inverse-less-lightness: 20%;
 }
 
 // Dark Theme
@@ -39,6 +41,8 @@
   --primary-lighter-lightness: 10%;
   --neutral-emphasis-lightness: 5%;
   --neutral-emphasis-less-lightness: 20%;
+  --neutral-emphasis-inverse-lightness: 95%;
+  --neutral-emphasis-inverse-less-lightness: 80%;
 }
 
 // Theme Handling
