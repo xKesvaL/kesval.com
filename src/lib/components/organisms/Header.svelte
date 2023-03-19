@@ -84,7 +84,8 @@
     font-size: 2rem;
     margin-bottom: 0;
     padding-block: 1rem;
-    backdrop-filter: blur(0.3rem);
+    backdrop-filter: blur(0.4rem);
+    min-height: 10vh;
 
     @include padded-container();
 

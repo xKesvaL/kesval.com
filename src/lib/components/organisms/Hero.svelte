@@ -23,12 +23,13 @@
   @use '$lib/scss/breakpoints' as *;
 
   section {
+    min-height: 90vh;
     display: grid;
     grid-template-columns: 0.5fr 3fr;
     min-height: 40vh; // for dev purposes
     align-items: center;
     justify-items: center;
-    padding-block: 2rem;
+    padding-block: 0rem;
     gap: 4rem 1rem;
 
     .text {
@@ -65,8 +66,8 @@
 
     @include breakpoint(md) {
       grid-template-columns: max-content 2fr 1fr;
-      gap: 4rem;
-      padding-block: 6rem;
+      gap: 2.5rem;
+      padding-block: 8rem 10rem;
 
       .text {
         grid-column: 2/3;

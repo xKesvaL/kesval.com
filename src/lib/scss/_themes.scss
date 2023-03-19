@@ -50,6 +50,8 @@
 :root {
   @include light-theme;
 
+  @include define-color('static-text', #f0f0f0);
+
   &[data-theme='dark'] {
     @include dark-theme;
   }
