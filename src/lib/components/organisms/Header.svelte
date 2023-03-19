@@ -29,17 +29,19 @@
   <nav id="navigation" aria-expanded={expanded}>
     <ul role="navigation">
       <li class={$page.route.id == '/' ? 'active' : ''}>
-        <a class="home" href="/" data-sveltekit-preload-data data-sveltekit-preload-code>
+        <a class="home" href="/" data-sveltekit-preload-data data-sveltekit-preload-code on:click={toggleExpanded}>
           Home <span>/</span>
         </a>
       </li>
       <li class={$page.route.id == '/about' ? 'active' : ''}>
-        <a href="/about" data-sveltekit-preload-data data-sveltekit-preload-code>About</a>
+        <a href="/about" data-sveltekit-preload-data data-sveltekit-preload-code on:click={toggleExpanded}>About</a>
 
         <!-- Presentation, experience, skills -->
       </li>
       <li class={$page.route.id == '/projects' ? 'active' : ''}>
-        <a href="/projects" data-sveltekit-preload-data data-sveltekit-preload-code>Projects</a>
+        <a href="/projects" data-sveltekit-preload-data data-sveltekit-preload-code on:click={toggleExpanded}>
+          Projects
+        </a>
         <!-- Page with all projects: detailed and access to examples -->
       </li>
       <li>
