@@ -4,7 +4,7 @@
 </script>
 
 <section>
-  <div class="socials"><Socials /></div>
+  <div class="socials"><Socials vertical={true} /></div>
   <div class="image">
     <Image path="logos/kesval" alt="A Photo of KesvaL" />
   </div>
@@ -13,7 +13,8 @@
       Hi. I'm Jordan.
       <br />
     </h1>
-    <h2>Fullstack developer</h2>
+    <p class="subtitle">Fullstack developer</p>
+    <p>Bla bla bla high level fullstack dev 10 years experience idk just content yk.</p>
   </div>
 </section>
 
@@ -28,14 +29,27 @@
     align-items: center;
     justify-items: center;
     padding-block: 6rem;
+    gap: 4rem 1rem;
 
     .text {
       grid-column: 1/3;
 
       h1 {
-        font-size: 4rem;
+        font-size: 2.5rem;
         font-weight: 700;
         line-height: 1.2;
+      }
+
+      .subtitle {
+        font-size: 2rem;
+        color: hsl(var(--color-text-hue), 0%, var(--neutral-emphasis-inverse-less-lightness));
+        margin-bottom: 1rem;
+      }
+
+      p {
+        font-size: 1.25rem;
+        line-height: 1.5;
+        max-width: 40ch;
       }
     }
 
@@ -43,19 +57,27 @@
       border-radius: var(--radius-blob-4);
       overflow: hidden;
       background: var(--color-primary);
+      z-index: -1;
+      margin: 2rem;
     }
 
     @include padded-container(1400px);
 
     @include breakpoint(md) {
       grid-template-columns: max-content 2fr 1fr;
+      gap: 4rem;
 
       .text {
         grid-column: 2/3;
         grid-row: 1/2;
+
+        h1 {
+          font-size: 4rem;
+        }
       }
 
       .image {
+        margin: 0.5rem;
         grid-column: 3/4;
       }
     }
