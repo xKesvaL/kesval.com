@@ -28,7 +28,7 @@
     min-height: 40vh; // for dev purposes
     align-items: center;
     justify-items: center;
-    padding-block: 6rem;
+    padding-block: 3rem;
     gap: 4rem 1rem;
 
     .text {
@@ -66,6 +66,7 @@
     @include breakpoint(md) {
       grid-template-columns: max-content 2fr 1fr;
       gap: 4rem;
+      padding-block: 6rem;
 
       .text {
         grid-column: 2/3;
