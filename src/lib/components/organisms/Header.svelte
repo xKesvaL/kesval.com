@@ -113,13 +113,12 @@
     nav {
       position: absolute;
       height: 100vh;
-      height: 100dvh;
       width: 100%;
       top: 0;
       left: 0;
       transform: translateX(-100%);
       transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-      background: hsl(var(--color-bg-body-hue), var(--color-bg-body-saturation), 5%);
+      background: hsl(var(--color-bg-body-hue), var(--color-bg-body-saturation), var(--emphasis-lightness));
 
       &[aria-expanded='true'] {
         transform: translateX(0);
@@ -149,10 +148,19 @@
         height: 100%;
         list-style: none;
         gap: clamp(1rem, 2vw, 2rem);
+        color: var(--color-text);
 
         @include breakpoint(md) {
           flex-direction: row;
           padding-block: 0;
+        }
+
+        li {
+          color: var(--color-text);
+
+          a {
+            color: var(--color-text);
+          }
         }
       }
 
