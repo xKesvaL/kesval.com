@@ -4,18 +4,19 @@
   import LinkedIn from '$lib/icons/socials/LinkedIn.svelte';
 
   export let vertical: boolean = false;
+  export let color: string = 'var(--color-text)';
 </script>
 
 <div class={vertical ? 'vertical' : ''}>
-  <a href="https://github.com/xKesvaL">
+  <a href="https://github.com/xKesvaL" style="color: {color}">
     <Github />
     <span class="visually-hidden">Github</span>
   </a>
-  <a href="https://www.linkedin.com/in/jordan-abeddou/">
+  <a href="https://www.linkedin.com/in/jordan-abeddou/" style="color: {color}">
     <LinkedIn />
     <span class="visually-hidden">LinkedIn</span>
   </a>
-  <a href="https://instagram.com/xKesvaL">
+  <a href="https://instagram.com/xKesvaL" style="color: {color}">
     <Instagram />
     <span class="visually-hidden">Instagram</span>
   </a>
