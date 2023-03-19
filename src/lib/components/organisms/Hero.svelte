@@ -36,13 +36,13 @@
       grid-column: 1/3;
 
       h1 {
-        font-size: 2.5rem;
+        font-size: 2.25rem;
         font-weight: 700;
         line-height: 1.2;
       }
 
       .subtitle {
-        font-size: 2rem;
+        font-size: 1.75rem;
         color: hsl(var(--color-text-hue), 0%, var(--neutral-emphasis-inverse-less-lightness));
         margin-bottom: 1rem;
       }
