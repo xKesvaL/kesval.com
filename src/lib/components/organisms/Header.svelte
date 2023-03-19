@@ -169,7 +169,7 @@
         position: absolute;
         top: 0;
         right: 0;
-        padding: 1rem;
+        padding: 1.5rem;
 
         @include breakpoint(md) {
           display: none;
