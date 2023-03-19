@@ -83,6 +83,7 @@
       transform: scaleX(0);
       max-width: 0;
       color: var(--color-text);
+      z-index: -1;
     }
 
     #moon,

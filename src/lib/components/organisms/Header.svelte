@@ -100,6 +100,7 @@
       margin-right: auto;
       width: 3rem;
       aspect-ratio: 1/1;
+      z-index: 9;
 
       @include breakpoint(md) {
         margin-right: 0;
