@@ -23,7 +23,7 @@
     min-height: 20vh;
     background: hsl(var(--color-primary-hue), var(--color-primary-saturation), 30%);
     color: var(--color-static-text);
-    padding: 0 2rem;
+    padding: 0 1rem;
     display: grid;
     align-items: center;
     justify-items: center;
