@@ -40,7 +40,7 @@
 
     @include breakpoint(md) {
       grid-template-columns: 1fr 1fr;
-      padding: 0 6rem;
+      padding: 2rem 6rem;
 
       h2 {
         br {
@@ -50,7 +50,7 @@
     }
 
     @include breakpoint(lg) {
-      padding: 0 10rem;
+      padding: 2rem 10rem;
     }
   }
 </style>
