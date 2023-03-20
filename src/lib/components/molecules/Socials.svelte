@@ -34,7 +34,7 @@
     a {
       aspect-ratio: 1/1;
       width: 2.5rem;
-      transition: 0.25s color ease-in-out;
+      transition: 0.25s all ease-in-out;
 
       &:hover {
         color: var(--color-secondary) !important;
