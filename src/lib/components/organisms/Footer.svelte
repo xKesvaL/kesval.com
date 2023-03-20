@@ -11,7 +11,7 @@
       Abeddou
     </h2>
   </div>
-  <div><Socials color="var(--color-static-text)" />></div>
+  <div><Socials color="var(--color-static-text)" /></div>
   <div class="copyright">KesvaL © 2023. All rights reserved</div>
 </footer>
 
@@ -37,6 +37,12 @@
     @include breakpoint(md) {
       grid-template-columns: 1fr 1fr;
       padding: 0 6rem;
+
+      h2 {
+        br {
+          display: none;
+        }
+      }
     }
 
     @include breakpoint(lg) {
