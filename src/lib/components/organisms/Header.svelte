@@ -24,9 +24,9 @@
   }
 
   $: {
-    if (y >= 128 && y > prevScroll) {
+    if (y >= 128 && y > prevScroll && !expanded) {
       scrollDirection = 'down';
-    } else if (y < prevScroll) {
+    } else if (y < prevScroll && !expanded) {
       scrollDirection = 'up';
     }
     prevScroll = y;
