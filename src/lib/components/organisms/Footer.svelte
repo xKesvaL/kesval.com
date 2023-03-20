@@ -11,6 +11,7 @@
 
 <style lang="scss">
   @use '$lib/scss/mixins' as *;
+  @use '$lib/scss/breakpoints' as *;
 
   footer {
     min-height: 20vh;
