@@ -30,6 +30,7 @@
     align-items: center;
     justify-items: center;
     padding-block: 0rem;
+    padding-bottom: 6rem;
     gap: 4rem 1rem;
 
     .text {
