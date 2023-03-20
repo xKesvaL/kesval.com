@@ -5,7 +5,7 @@
 
 <footer>
   <div><h2>Jordan<br>Abeddou</h2></div>
-  <div><Socials color="var(--color-static-text)" /><ThemeSwitcher /></div>
+  <div><Socials color="var(--color-static-text)" />></div>
   <div class="copyright">KesvaL © 2023. All rights reserved</div>
 </footer>
 
