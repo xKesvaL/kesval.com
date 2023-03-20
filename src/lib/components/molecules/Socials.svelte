@@ -36,7 +36,7 @@
       width: 2.5rem;
 
       &:hover {
-        color: var(--color-secondary);
+        color: var(--color-secondary) !important;
       }
     }
   }
