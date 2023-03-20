@@ -28,6 +28,7 @@
     align-items: center;
     justify-items: center;
     grid-template-columns: 1fr;
+    gap: 2rem 0;
 
     .copyright {
       grid-column: 1/-1;
