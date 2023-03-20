@@ -34,6 +34,10 @@
     a {
       aspect-ratio: 1/1;
       width: 2.5rem;
+
+      &:hover {
+        color: var(--color-secondary);
+      }
     }
   }
 </style>

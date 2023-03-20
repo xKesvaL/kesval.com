@@ -66,4 +66,8 @@ body {
 svg {
   color: inherit;
   transition: 0.25s color ease-in-out;
+
+  &:hover {
+    color: inherit;
+  }
 }
