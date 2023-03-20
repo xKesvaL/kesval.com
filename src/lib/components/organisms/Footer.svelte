@@ -4,7 +4,13 @@
 </script>
 
 <footer>
-  <div><h2>Jordan<br>Abeddou</h2></div>
+  <div>
+    <h2>
+      Jordan
+      <br />
+      Abeddou
+    </h2>
+  </div>
   <div><Socials color="var(--color-static-text)" />></div>
   <div class="copyright">KesvaL © 2023. All rights reserved</div>
 </footer>
@@ -17,7 +23,7 @@
     min-height: 20vh;
     background: hsl(var(--color-primary-hue), var(--color-primary-saturation), 30%);
     color: var(--color-static-text);
-    padding: 0 10rem;
+    padding: 0 2rem;
     display: grid;
     align-items: center;
     justify-items: center;
@@ -30,6 +36,11 @@
 
     @include breakpoint(md) {
       grid-template-columns: 1fr 1fr;
+      padding: 0 6rem;
+    }
+
+    @include breakpoint(lg) {
+      padding: 0 10rem;
     }
   }
 </style>
