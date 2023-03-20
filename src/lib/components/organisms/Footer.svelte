@@ -34,13 +34,17 @@
       text-align: center;
     }
 
+    h2 br {
+      display: none;
+    }
+
     @include breakpoint(md) {
       grid-template-columns: 1fr 1fr;
       padding: 0 6rem;
 
       h2 {
         br {
-          display: none;
+          display: block;
         }
       }
     }
