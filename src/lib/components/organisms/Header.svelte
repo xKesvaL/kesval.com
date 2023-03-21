@@ -97,9 +97,10 @@
     font-size: 2rem;
     margin-bottom: 0;
     padding-block: 1rem;
-    backdrop-filter: blur(0.4rem);
+    backdrop-filter: blur(0.5rem) saturate(3);
     min-height: 10vh;
     transition: transform 0.3s ease-in-out;
+    background: rgba(var(--color-bg-body-rgb), 0.8);
 
     @include padded-container();
 
@@ -115,7 +116,6 @@
     }
 
     &.scrolled {
-      background: rgba(var(--color-bg-body-rgb), 0.8);
       transform: translateY(0);
     }
 
