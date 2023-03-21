@@ -14,7 +14,9 @@
       <br />
     </h1>
     <p class="subtitle">Fullstack developer</p>
-    <p>Bla bla bla high level fullstack dev 10 years experience idk just content yk.</p>
+    <p>
+      I'm a fullstack developer with a passion for building beautiful, performant and accessible web apps or websites.
+    </p>
   </div>
 </section>
 
@@ -24,9 +26,9 @@
 
   section {
     min-height: 90vh;
+    min-height: 90dvh;
     display: grid;
     grid-template-columns: 0.5fr 3fr;
-    min-height: 40vh; // for dev purposes
     align-items: center;
     justify-items: center;
     padding-block: 0rem;
