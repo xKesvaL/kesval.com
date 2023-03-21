@@ -51,6 +51,7 @@
   @include light-theme;
 
   @include define-color('static-text', #f0f0f0);
+  @include define-color('static-text-inverse', #140014);
 
   &[data-theme='dark'] {
     @include dark-theme;

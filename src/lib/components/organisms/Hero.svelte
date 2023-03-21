@@ -1,6 +1,7 @@
 <script lang="ts">
   import Image from '../atoms/Image.svelte';
   import Socials from '../molecules/Socials.svelte';
+  import Button from '../atoms/Button.svelte';
 </script>
 
 <section>
@@ -17,6 +18,7 @@
     <p>
       I'm a fullstack developer with a passion for building beautiful, performant and accessible web apps or websites.
     </p>
+    <Button>Contact me</Button>
   </div>
 </section>
 
@@ -50,10 +52,11 @@
         margin-bottom: 1rem;
       }
 
-      p {
+      p:not(.subtitle) {
         font-size: 1.25rem;
         line-height: 1.5;
         max-width: 40ch;
+        margin-bottom: 1rem;
       }
     }
 
