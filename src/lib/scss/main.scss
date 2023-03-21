@@ -71,3 +71,8 @@ svg {
     color: inherit;
   }
 }
+
+.special-link {
+  text-decoration: underline;
+  color: var(--color-tertiary);
+}

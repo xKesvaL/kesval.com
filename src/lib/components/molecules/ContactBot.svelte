@@ -38,16 +38,38 @@
       "Send me a message and let's chat about it!",
       "Oh, and, I'm looking for little personnal side jobs, not full-time jobs.",
     ],
+    other: ['Okay, no problem', 'Can I help you with anything else?'],
+    confirmHire: [
+      'Great, you can contact me here:',
+      'e-mail: <a href="mailto:jabeddou@gmail.com" class="special-link">jabeddou@gmail.com</a>',
+      'Can I help you with anything else?',
+    ],
   };
 
-  let chatBotQuestions = {
-    first: ['Just looking!', 'I want to hire you!'],
-    looking: ['Just looking!', 'I want to hire you!'],
-    hire: ["Yes I'm interested!", 'No, thanks.'],
+  let chatBotQuestions: {
+    [key: string]: { text: string; to: ChatBotAnswers }[];
+  } = {
+    first: [
+      { text: 'Just looking!', to: 'looking' },
+      { text: 'I want to hire you!', to: 'hire' },
+    ],
+    looking: [
+      { text: 'Just looking!', to: 'looking' },
+      { text: 'I want to hire you!', to: 'hire' },
+    ],
+    hire: [
+      { text: "Yes I'm interested!", to: 'confirmHire' },
+      { text: 'No, thanks.', to: 'other' },
+    ],
+    other: [
+      { text: 'Just looking!', to: 'looking' },
+      { text: 'I want to hire you!', to: 'hire' },
+    ],
+    confirmHire: [
+      { text: 'Just looking!', to: 'looking' },
+      { text: 'I want to hire you!', to: 'hire' },
+    ],
   };
-
-  let chatBotCurrentQuestion: ChatBotAnswers;
-  let chatBotCurrentAnswer: ChatBotAnswers;
 
   function chooseQuestion(e: MouseEvent | KeyboardEvent) {
     if (e.currentTarget instanceof HTMLElement) {
@@ -58,8 +80,6 @@
           el.classList.add('not-chosen');
         }
       });
-      chatBotCurrentAnswer = e.currentTarget.id as ChatBotAnswers;
-      chatBotCurrentQuestion = e.currentTarget.id as ChatBotAnswers;
     }
   }
 </script>
@@ -98,14 +118,14 @@
             chooseQuestion(e);
           }
         }}
-        id={Object.keys(chatBotQuestions)[i + 1]}>
-        <p>{question}</p>
+        id={question.to}>
+        <p>{question.text}</p>
       </div>
     {/each}
     {#each $history as action}
       {#each chatBotAnswers[action] as answer, i}
         <div class="answer" transition:fly={{ y: 50, duration: 500, delay: 1000 * i }}>
-          <p>{answer}</p>
+          <p>{@html answer}</p>
         </div>
       {/each}
       {#each chatBotQuestions[action] as question, i}
@@ -120,8 +140,8 @@
             }
           }}
           transition:fade={{ duration: 500, delay: chatBotAnswers[action].length * 1000 }}
-          id={Object.keys(chatBotQuestions)[i + 1]}>
-          <p>{question}</p>
+          id={question.to}>
+          <p>{question.text}</p>
         </div>
       {/each}
     {/each}
@@ -169,6 +189,7 @@
       overflow-y: scroll;
       max-height: 90%;
       display: grid;
+      scroll-behavior: smooth;
 
       .answer {
         margin-bottom: 0.5rem;

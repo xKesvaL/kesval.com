@@ -4,4 +4,4 @@ export interface SRCSet {
   png: string;
 }
 
-export type ChatBotAnswers = 'first' | 'looking' | 'hire';
+export type ChatBotAnswers = 'first' | 'looking' | 'hire' | 'other' | 'confirmHire';
