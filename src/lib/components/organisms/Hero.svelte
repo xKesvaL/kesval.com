@@ -35,7 +35,7 @@
     justify-items: center;
     padding-block: 0rem;
     padding-bottom: 6rem;
-    gap: 4rem 1rem;
+    gap: 1rem;
 
     .text {
       grid-column: 1/-1;
@@ -56,7 +56,7 @@
         font-size: 1.25rem;
         line-height: 1.5;
         max-width: 40ch;
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
       }
     }
 
