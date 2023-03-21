@@ -3,3 +3,5 @@ export interface SRCSet {
   webp: string;
   png: string;
 }
+
+export type ChatBotAnswers = 'first' | 'looking' | 'hire';

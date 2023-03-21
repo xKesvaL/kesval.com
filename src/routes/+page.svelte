@@ -1,5 +1,5 @@
 <script lang="ts">
-  import ContactBot from '$lib/components/organisms/ContactBot.svelte';
+  import ContactBot from '$lib/components/molecules/ContactBot.svelte';
   import Hero from '$lib/components/organisms/Hero.svelte';
 </script>
 
