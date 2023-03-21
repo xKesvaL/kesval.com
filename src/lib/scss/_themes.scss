@@ -16,6 +16,8 @@
   @include define-color('bg-body', #f1f1ea);
   @include define-color('bg-card', #ffffff);
 
+  @include define-color('gray-violet', #c3b2ca);
+
   --primary-darker-lightness: 10%;
   --primary-dark-lightness: 30%;
   --primary-light-lightness: 70%;
@@ -34,6 +36,8 @@
 
   @include define-color('bg-body', #10101a);
   @include define-color('bg-card', #000000);
+
+  @include define-color('gray-violet', #39343b);
 
   --primary-darker-lightness: 90%;
   --primary-dark-lightness: 70%;

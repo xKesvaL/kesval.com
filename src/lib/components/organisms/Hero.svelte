@@ -2,6 +2,11 @@
   import Image from '../atoms/Image.svelte';
   import Socials from '../molecules/Socials.svelte';
   import Button from '../atoms/Button.svelte';
+  import { botState } from '$lib/stores/bot';
+
+  function toggleBot() {
+    $botState = !$botState;
+  }
 </script>
 
 <section>
@@ -18,7 +23,7 @@
     <p>
       I'm a fullstack developer with a passion for building beautiful, performant and accessible web apps or websites.
     </p>
-    <Button>Contact me</Button>
+    <Button on:click={toggleBot}>Contact me</Button>
   </div>
 </section>
 

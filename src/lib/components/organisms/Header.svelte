@@ -4,6 +4,7 @@
   import Image from '../atoms/Image.svelte';
   import ThemeSwitcher from '../molecules/ThemeSwitcher.svelte';
   import { page } from '$app/stores';
+  import { botState } from '$lib/stores/bot';
 
   let expanded: boolean = false;
   let y: number;
@@ -15,6 +16,10 @@
 
   function toggleExpanded() {
     expanded = !expanded;
+  }
+
+  function toggleBot() {
+    $botState = !$botState;
   }
 
   $: if (y > 0) {
@@ -58,7 +63,7 @@
         <!-- Page with all projects: detailed and access to examples -->
       </li>
       <li>
-        <button>Contact</button>
+        <button on:click={toggleBot}>Contact</button>
         <!-- ChatBot -->
       </li>
     </ul>
