@@ -1,11 +1,8 @@
 <script lang="ts">
-  import ContactBot from '$lib/components/molecules/ContactBot.svelte';
   import Hero from '$lib/components/organisms/Hero.svelte';
 </script>
 
 <Hero />
-
-<ContactBot />
 
 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae et doloremque perspiciatis architecto provident
 corrupti, aut saepe, ducimus aliquam animi blanditiis natus quidem commodi tempore inventore velit ab, facere quasi.

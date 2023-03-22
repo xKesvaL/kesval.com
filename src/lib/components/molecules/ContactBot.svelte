@@ -2,20 +2,12 @@
   import Close from '$lib/icons/Close.svelte';
   import { botState, history } from '$lib/stores/bot';
   import Image from '../atoms/Image.svelte';
-  import { beforeUpdate, afterUpdate } from 'svelte';
+  import { beforeUpdate, afterUpdate, onDestroy } from 'svelte';
   import { fly, fade } from 'svelte/transition';
   import type { ChatBotAnswers } from '$lib';
 
   let content: HTMLElement;
   let autoscroll: boolean;
-
-  beforeUpdate(() => {
-    autoscroll = content && content.offsetHeight + content.scrollTop > content.scrollHeight - 20;
-  });
-
-  afterUpdate(() => {
-    if (autoscroll) content.scrollTo(0, content.scrollHeight);
-  });
 
   const toggleExpanded = () => {
     $botState = !$botState;
@@ -44,31 +36,64 @@
       'e-mail: <a href="mailto:jabeddou@gmail.com" class="special-link">jabeddou@gmail.com</a>',
       'Can I help you with anything else?',
     ],
+    teachMe: ["Hum, sure, I'm not a teacher but I can give you ressources or help you.", 'What do you want to learn?'],
+    teachHTMLCSS: [
+      'Well, I strongly suggest <a href="https://www.freecodecamp.org/learn/2022/responsive-web-design/" class="special-link" rel="external">this course</a> from freeCodeCamp.',
+      "It's free, interactive and you will learn everything from basics to advanced stuff.",
+      "If you want to learn more about freeCodeCamp, you can check out <a href= '/about/certifications' class='special-link'>this page</a>.",
+      'You can still contact me on my <a href="/about#socials" class="special-link">socials</a> if you have any questions.',
+    ],
+    teachJS: [
+      'Well, I strongly suggest <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/" class="special-link" rel="external">this course</a> from freeCodeCamp.',
+      "It's free, interactive and you will learn everything from basics to advanced stuff.",
+      "If you want to learn more about freeCodeCamp, you can check out <a href= '/about/certifications' class='special-link'>this page</a>.",
+      'You can still contact me on my <a href="/about#socials" class="special-link">socials</a> if you have any questions.',
+    ],
+    teachSvelte: [
+      'Svelte is a great framework, and I would say it is close to React.',
+      'You can check out this <a href="https://www.youtube.com/@WebDevSimplified" class="special-link" rel="external">channel</a> to learn more about React, and then implement it in Svelte.',
+      "Or, simply try to make a Svelte project and you'll learn a lot by doing it. A simple thing like a ToDo app is a good start.",
+      "You can still contact me on my <a href='/about#socials' class='special-link'>socials</a> if you have any questions.",
+    ],
   };
+
+  let defaultQuestions: {
+    text: string;
+    to: ChatBotAnswers;
+  }[] = [
+    { text: 'Just looking!', to: 'looking' },
+    { text: 'I want to hire you!', to: 'hire' },
+    { text: 'Can you teach me?', to: 'teachMe' },
+  ];
 
   let chatBotQuestions: {
     [key: string]: { text: string; to: ChatBotAnswers }[];
   } = {
-    first: [
-      { text: 'Just looking!', to: 'looking' },
-      { text: 'I want to hire you!', to: 'hire' },
-    ],
-    looking: [
-      { text: 'Just looking!', to: 'looking' },
-      { text: 'I want to hire you!', to: 'hire' },
-    ],
+    first: defaultQuestions,
+    looking: defaultQuestions,
     hire: [
       { text: "Yes I'm interested!", to: 'confirmHire' },
       { text: 'No, thanks.', to: 'other' },
     ],
-    other: [
-      { text: 'Just looking!', to: 'looking' },
-      { text: 'I want to hire you!', to: 'hire' },
+    other: defaultQuestions,
+    confirmHire: defaultQuestions,
+    teachMe: [
+      {
+        text: 'HTML/CSS',
+        to: 'teachHTMLCSS',
+      },
+      {
+        text: 'JavaScript',
+        to: 'teachJS',
+      },
+      {
+        text: 'Svelte',
+        to: 'teachSvelte',
+      },
     ],
-    confirmHire: [
-      { text: 'Just looking!', to: 'looking' },
-      { text: 'I want to hire you!', to: 'hire' },
-    ],
+    teachHTMLCSS: defaultQuestions,
+    teachJS: defaultQuestions,
+    teachSvelte: defaultQuestions,
   };
 
   function chooseQuestion(e: MouseEvent | KeyboardEvent) {
@@ -82,6 +107,25 @@
       });
     }
   }
+
+  beforeUpdate(() => {
+    autoscroll = content && content.offsetHeight + content.scrollTop > content.scrollHeight - 20;
+  });
+
+  afterUpdate(() => {
+    if (autoscroll && $history && $history.length > 0) {
+      let length = chatBotAnswers[$history[$history.length - 1]].length || 0;
+      for (let i = 0; i < length; i++) {
+        setTimeout(() => {
+          content.scrollTo(0, content.scrollHeight - content.offsetHeight - 100 * (length - 1 - i));
+        }, 1000 * i);
+      }
+    }
+  });
+
+  onDestroy(() => {
+    $history = [];
+  });
 </script>
 
 <div class="chat-bot {$botState ? 'open' : ''}" aria-hidden={$botState ? 'false' : 'true'}>
@@ -91,7 +135,7 @@
         <Image path={'logos/kesval'} alt="KesvaL's logo" />
       </div>
       <div class="name">
-        <p>Chat Bot</p>
+        <p>Jordan Bot</p>
         <p>Ask me anything!</p>
       </div>
     </div>
@@ -124,7 +168,7 @@
     {/each}
     {#each $history as action}
       {#each chatBotAnswers[action] as answer, i}
-        <div class="answer" transition:fly={{ y: 50, duration: 500, delay: 1000 * i }}>
+        <div class="answer" in:fly={{ y: 50, duration: 500, delay: 1000 * i }}>
           <p>{@html answer}</p>
         </div>
       {/each}
@@ -139,7 +183,7 @@
               chooseQuestion(e);
             }
           }}
-          transition:fade={{ duration: 500, delay: chatBotAnswers[action].length * 1000 }}
+          in:fade={{ duration: 500, delay: chatBotAnswers[action].length * 1000 }}
           id={question.to}>
           <p>{question.text}</p>
         </div>
