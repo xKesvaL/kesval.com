@@ -263,6 +263,17 @@
           aspect-ratio: 1/1;
           height: 50%;
         }
+
+        .name {
+          p:first-child {
+            font-size: 1rem;
+            font-weight: 700;
+          }
+
+          p:last-child {
+            font-size: 0.9rem;
+          }
+        }
       }
     }
   }
