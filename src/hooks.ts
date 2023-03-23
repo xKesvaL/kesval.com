@@ -8,6 +8,10 @@ export const handle = (async ({ event, resolve }) => {
 
   const response = await resolve(event);
 
+  if (dev) {
+    return response;
+  }
+
   if (!cookies['userid']) {
     // if this is the first time the user has visited this app,
     // set a cookie so that we recognise them when they return
@@ -16,7 +20,7 @@ export const handle = (async ({ event, resolve }) => {
       cookie.serialize('userid', event.locals.userid, {
         path: '/',
         httpOnly: true,
-        secure: dev ? false : true,
+        secure: true,
       }),
     );
   }
