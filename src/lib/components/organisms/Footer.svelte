@@ -8,7 +8,7 @@
     <h2>
       Jordan
       <br />
-      Abeddou
+      "KesvaL"
     </h2>
   </div>
   <div><Socials color="var(--color-static-text)" /></div>

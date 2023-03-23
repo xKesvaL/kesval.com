@@ -8,13 +8,15 @@
   import { webVitals } from '$lib/utils/vitals';
   import { inject } from '@vercel/analytics';
 
-  inject({
-    mode: dev ? 'development' : 'production',
-  });
+  if (!dev) {
+    inject({
+      mode: 'production',
+    });
+  }
 
   let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
 
-  $: if (browser && analyticsId) {
+  $: if (browser && analyticsId && !dev) {
     webVitals({
       path: $page.url.pathname,
       params: $page.params,

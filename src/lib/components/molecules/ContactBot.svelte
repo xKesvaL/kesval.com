@@ -309,6 +309,8 @@
         }
 
         .name {
+          color: var(--color-static-text);
+
           p:first-child {
             font-size: 1rem;
             font-weight: 700;

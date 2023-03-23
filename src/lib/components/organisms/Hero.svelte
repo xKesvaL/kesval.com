@@ -9,7 +9,7 @@
   }
 </script>
 
-<section>
+<section id="hero">
   <div class="socials"><Socials vertical={true} /></div>
   <div class="image">
     <Image path="logos/kesval" alt="A Photo of KesvaL" />

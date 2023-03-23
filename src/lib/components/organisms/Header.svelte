@@ -186,6 +186,13 @@
         li {
           padding: 0.5rem 1rem;
           border-radius: 100vh;
+          transition: background 0.25s ease;
+
+          &:hover,
+          &:focus,
+          &:focus-within {
+            background: rgba(var(--color-tertiary-rgb), 0.3);
+          }
 
           &.active {
             background: rgba(var(--color-primary-rgb), 0.3);

@@ -44,7 +44,7 @@ body {
 
 ::selection {
   background-color: var(--color-primary);
-  color: var(--color-primary-contrast);
+  color: var(--color-static-text);
 }
 
 ::-webkit-scrollbar {
@@ -65,14 +65,9 @@ body {
 
 svg {
   color: inherit;
-  transition: 0.25s all ease-in-out;
-
-  &:hover {
-    color: inherit;
-  }
 }
 
 .special-link {
   text-decoration: underline;
-  color: var(--color-tertiary);
+  color: hsl(var(--color-tertiary-hue), var(--color-tertiary-saturation), var(--primary-dark-lightness));
 }
