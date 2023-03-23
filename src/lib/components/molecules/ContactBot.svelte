@@ -40,13 +40,13 @@
     teachHTMLCSS: [
       'Well, I strongly suggest <a href="https://www.freecodecamp.org/learn/2022/responsive-web-design/" class="special-link" rel="external">this course</a> from freeCodeCamp.',
       "It's free, interactive and you will learn everything from basics to advanced stuff.",
-      "If you want to learn more about freeCodeCamp, you can check out <a href= '/about/certifications' class='special-link'>this page</a>.",
+      "If you want to learn more about freeCodeCamp, you can check out <a href= '/about#certifications' class='special-link'>this page</a>.",
       'You can still contact me on my <a href="/about#socials" class="special-link">socials</a> if you have any questions.',
     ],
     teachJS: [
       'Well, I strongly suggest <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/" class="special-link" rel="external">this course</a> from freeCodeCamp.',
       "It's free, interactive and you will learn everything from basics to advanced stuff.",
-      "If you want to learn more about freeCodeCamp, you can check out <a href= '/about/certifications' class='special-link'>this page</a>.",
+      "If you want to learn more about freeCodeCamp, you can check out <a href= '/about#certifications' class='special-link'>this page</a>.",
       'You can still contact me on my <a href="/about#socials" class="special-link">socials</a> if you have any questions.',
     ],
     teachSvelte: [
