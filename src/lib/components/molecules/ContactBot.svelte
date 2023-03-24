@@ -139,7 +139,7 @@
         <p>Ask me anything!</p>
       </div>
     </div>
-    <button class="close" on:click={toggleExpanded}>
+    <button class="close" tabindex="{$botState ? '0' : '-1'}" on:click={toggleExpanded}>
       <Close />
     </button>
   </header>
