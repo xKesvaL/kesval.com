@@ -44,6 +44,13 @@
   <a href="/" aria-label="Site Logo" class="logo">
     <Image path={'logos/kesval'} alt="KesvaL's logo" />
   </a>
+  <div>
+    <ThemeSwitcher />
+  </div>
+  <button class="open" aria-controls="navigation" on:click={toggleExpanded}>
+    <Hamburger />
+    <span class="visually-hidden">Show Menu</span>
+  </button>
   <nav id="navigation" aria-expanded={expanded}>
     <ul role="navigation">
       <li class={$page.route.id == '/' ? 'active' : ''}>
@@ -72,13 +79,6 @@
       <span class="visually-hidden">Close Menu</span>
     </button>
   </nav>
-  <div>
-    <ThemeSwitcher />
-  </div>
-  <button class="open" aria-controls="navigation" on:click={toggleExpanded}>
-    <Hamburger />
-    <span class="visually-hidden">Show Menu</span>
-  </button>
 </header>
 
 <style lang="scss">
