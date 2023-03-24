@@ -44,7 +44,7 @@
   <a href="/" aria-label="Site Logo" class="logo">
     <Image path={'logos/kesval'} alt="KesvaL's logo" />
   </a>
-  <div>
+  <div class="th-sw">
     <ThemeSwitcher />
   </div>
   <button class="open" aria-controls="navigation" on:click={toggleExpanded}>
@@ -136,6 +136,12 @@
 
       @include breakpoint(md) {
         margin-right: 0;
+      }
+    }
+    
+    .th-sw {
+      @include breakpoint(md) {
+        order: 3;
       }
     }
 
