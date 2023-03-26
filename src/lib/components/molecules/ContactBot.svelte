@@ -5,6 +5,7 @@
   import { beforeUpdate, afterUpdate, onDestroy } from 'svelte';
   import { fly, fade } from 'svelte/transition';
   import type { ChatBotAnswers } from '$lib';
+  import { email } from '$lib/utils/data';
 
   let content: HTMLElement;
   let autoscroll: boolean;
@@ -33,7 +34,7 @@
     other: ['Okay, no problem', 'Can I help you with anything else?'],
     confirmHire: [
       'Great, you can contact me here:',
-      'e-mail: <a href="mailto:jabeddou@gmail.com" class="special-link">jabeddou@gmail.com</a>',
+      `e-mail: <a href="mailto:${email}" class="special-link">${email}</a>`,
       'Can I help you with anything else?',
     ],
     teachMe: ["Hum, sure, I'm not a teacher but I can give you ressources or help you.", 'What do you want to learn?'],
@@ -139,7 +140,7 @@
         <p>Ask me anything!</p>
       </div>
     </div>
-    <button class="close" tabindex="{$botState ? '0' : '-1'}" on:click={toggleExpanded}>
+    <button class="close" tabindex={$botState ? 0 : -1} on:click={toggleExpanded}>
       <Close />
     </button>
   </header>
