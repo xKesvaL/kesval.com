@@ -41,11 +41,16 @@
     border-radius: 1rem;
     width: fit-content;
     font-weight: 700;
+    transition: 0.25s ease-in-out;
 
     &.color {
       &-primary {
         background: var(--color-primary);
         color: var(--color-static-text);
+
+        &:hover {
+          background: hsl(var(--color-primary-hue), var(--color-primary-saturation), var(--primary-light-lightness));
+        }
       }
       &-secondary {
         background: var(--color-secondary);
@@ -59,7 +64,6 @@
 
     &.style {
       &-solid {
-        transition: 0.25s box-shadow ease-in-out;
         &:hover {
           box-shadow: 0px 0px 20px 0px black;
         }
@@ -68,7 +72,6 @@
         color: var(--color-text);
         background: transparent;
         border: 0.125rem solid var(--color-primary);
-        transition: 0.25s background ease-in-out;
 
         &:hover {
           background: rgba(var(--color-primary-rgb), 0.1);

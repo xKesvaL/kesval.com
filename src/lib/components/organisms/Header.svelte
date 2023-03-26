@@ -99,7 +99,7 @@
     top: 0;
     left: 0;
     right: 0;
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-bottom: 0;
     padding-block: 1rem;
     backdrop-filter: blur(0.5rem) saturate(3);
@@ -111,7 +111,7 @@
 
     @include breakpoint(md) {
       justify-content: space-between;
-      font-size: 1.5rem;
+      font-size: 1.25rem;
     }
 
     @include breakpoint(lg) {
@@ -138,7 +138,7 @@
         margin-right: 0;
       }
     }
-    
+
     .th-sw {
       @include breakpoint(md) {
         order: 3;
@@ -190,9 +190,13 @@
         }
 
         li {
-          padding: 0.5rem 1rem;
+          padding: 1rem 2rem;
           border-radius: 100vh;
           transition: background 0.25s ease;
+
+          @include breakpoint(md) {
+            padding: 0.5rem 1rem;
+          }
 
           &:hover,
           &:focus,
