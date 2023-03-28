@@ -38,7 +38,7 @@
     .projects-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 2rem;
+      gap: 3rem;
 
       @include breakpoint(md) {
         grid-template-columns: 1fr 1fr;
