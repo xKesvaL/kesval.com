@@ -201,7 +201,7 @@
     inset: 0;
     border: 0.125rem solid var(--color-primary);
     z-index: 20;
-    background: hsla(var(--color-primary-hue), 30%, var(--primary-lighter-lightness), 0.8);
+    background: hsla(var(--color-primary-hue), 30%, var(--primary-lighter-lightness), 0.9);
     backdrop-filter: blur(1rem) saturate(2);
     box-shadow: 0px 0px 20px 0px black;
     transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out;
@@ -281,7 +281,7 @@
         }
 
         &:active {
-          background: rgba(var(--color-gray-violet-rgb), 0.8);
+          background: rgba(var(--color-gray-violet-rgb), 0.9);
         }
       }
     }

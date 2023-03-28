@@ -58,10 +58,14 @@
       }
 
       p:not(.subtitle) {
-        font-size: 1.25rem;
+        font-size: 1rem;
         line-height: 1.5;
         max-width: 40ch;
         margin-bottom: 1.5rem;
+
+        @include breakpoint(md) {
+          font-size: 1.25rem;
+        }
       }
     }
 

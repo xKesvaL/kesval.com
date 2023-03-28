@@ -3,7 +3,7 @@
   import Image from '../atoms/Image.svelte';
 </script>
 
-<section id="about">
+<section id="about" class="container">
   <h2>Who Am I ?</h2>
   <div class="grid">
     <div class="image">
@@ -34,7 +34,7 @@
       </ul>
     </div>
     <div class="button">
-      <Button>See more</Button>
+      <Button href="/about">More About Me</Button>
     </div>
   </div>
 </section>
@@ -48,17 +48,16 @@
     display: grid;
     grid-template-rows: auto 1fr;
 
-    @include padded-container(1200px);
-
     h2 {
       font-size: 2rem;
       font-weight: 700;
       line-height: 1.2;
       text-align: center;
-      padding-bottom: 3rem;
+      margin-block: 0 5rem;
 
       @include breakpoint(md) {
         font-size: 3rem;
+        margin-block: 2.5rem 7.5rem;
       }
     }
 
@@ -79,7 +78,7 @@
         grid-column: 1/-1;
 
         @include breakpoint(sm) {
-          margin-top: 2rem;
+          margin-top: 3rem;
         }
       }
     }
@@ -90,6 +89,10 @@
 
       @include breakpoint(md) {
         gap: 1rem;
+      }
+
+      @include breakpoint(lg) {
+        gap: 2rem;
       }
 
       p {
@@ -111,6 +114,14 @@
 
         li {
           text-align: center;
+
+          @include breakpoint(md) {
+            font-size: 1.25rem;
+          }
+
+          @include breakpoint(lg) {
+            font-size: 1.5rem;
+          }
           span {
             display: block;
             font-size: 1.25rem;
@@ -118,10 +129,23 @@
             font-family: var(--font-title);
 
             @include breakpoint(md) {
-              font-size: 1.5rem;
+              font-size: 1.75rem;
+            }
+
+            @include breakpoint(lg) {
+              font-size: 2.5rem;
             }
           }
         }
+      }
+    }
+
+    .image {
+      width: 100%;
+      z-index: -1;
+
+      @include breakpoint(lg) {
+        width: 85%;
       }
     }
   }

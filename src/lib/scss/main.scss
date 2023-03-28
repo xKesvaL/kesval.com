@@ -1,6 +1,6 @@
 @use 'breakpoints' as *;
 @use 'functions';
-@use 'mixins';
+@use 'mixins' as *;
 @use 'reset';
 @use 'themes';
 @use 'variables';
@@ -70,4 +70,8 @@ svg {
 .special-link {
   text-decoration: underline;
   color: hsl(var(--color-tertiary-hue), var(--color-tertiary-saturation), var(--primary-dark-lightness));
+}
+
+.container {
+  @include padded-container(1400px);
 }

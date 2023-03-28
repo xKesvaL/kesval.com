@@ -52,7 +52,7 @@
     <span class="visually-hidden">Show Menu</span>
   </button>
   <nav id="navigation" aria-expanded={expanded}>
-    <ul role="navigation">
+    <ul>
       <li class={$page.route.id == '/' ? 'active' : ''}>
         <a class="home" href="/" data-sveltekit-preload-data data-sveltekit-preload-code on:click={toggleExpanded}>
           Home <span>/</span>
@@ -105,7 +105,7 @@
     backdrop-filter: blur(0.5rem) saturate(3);
     min-height: 10vh;
     transition: transform 0.3s ease-in-out;
-    background: rgba(var(--color-bg-body-rgb), 0.8);
+    background: rgba(var(--color-bg-body-rgb), 0.9);
 
     @include padded-container();
 
@@ -132,7 +132,7 @@
       margin-right: auto;
       width: 3rem;
       aspect-ratio: 1/1;
-      z-index: 9;
+      z-index: 200;
 
       @include breakpoint(md) {
         margin-right: 0;
@@ -154,6 +154,7 @@
       transform: translateX(-100%);
       transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
       background: hsl(var(--color-bg-body-hue), var(--color-bg-body-saturation), var(--neutral-emphasis-lightness));
+      z-index: 100;
 
       &[aria-expanded='true'] {
         transform: translateX(0);

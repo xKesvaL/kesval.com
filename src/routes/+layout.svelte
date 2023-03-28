@@ -25,6 +25,10 @@
   }
 </script>
 
+<svelte:head>
+  <meta name="description" content="KesvaL's personal website" />
+</svelte:head>
+
 <Header />
 
 <main>
