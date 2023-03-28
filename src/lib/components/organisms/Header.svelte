@@ -106,6 +106,7 @@
     min-height: 10vh;
     transition: transform 0.3s ease-in-out;
     background: rgba(var(--color-bg-body-rgb), 0.9);
+    z-index: 100;
 
     @include padded-container();
 
