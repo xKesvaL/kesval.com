@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Project } from '$lib/index';
+  import type { Project } from '$lib/index';
   import ProjectCard from '$lib/components/molecules/ProjectCard.svelte';
 
   let projects: Project[] = [
