@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Project } from '$lib';
-  import ProjectCard from '../molecules/ProjectCard.svelte';
+  import ProjectCard from '$lib/components/molecules/ProjectCard.svelte';
 
   let projects: Project[] = [
     { name: 'Project 1', description: 'WIP', coverPath: 'about', href: 'projets' },
