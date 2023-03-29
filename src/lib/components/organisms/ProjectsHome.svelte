@@ -1,15 +1,22 @@
 <script lang="ts">
+  import { Project } from '$lib';
   import ProjectCard from '../molecules/ProjectCard.svelte';
+
+  let projects: Project[] = [
+    { name: 'Project 1', description: 'WIP', coverPath: 'about', href: 'projets' },
+    { name: 'Project 2', description: 'WIP', coverPath: 'about', href: 'projets' },
+    { name: 'Project 3', description: 'WIP', coverPath: 'about', href: 'projets' },
+    { name: 'Project 4', description: 'WIP', coverPath: 'about', href: 'projets' },
+  ];
 </script>
 
 <section id="projects" class="container">
   <h2>My Projects</h2>
 
   <div class="projects-grid">
-    <ProjectCard project="Project 1" />
-    <ProjectCard project="Project 2" />
-    <ProjectCard project="Project 3" />
-    <ProjectCard project="Project 4" />
+    {#each projects as project}
+      <ProjectCard {project} />
+    {/each}
   </div>
 </section>
 

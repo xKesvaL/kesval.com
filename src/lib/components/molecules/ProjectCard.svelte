@@ -1,17 +1,17 @@
 <script lang="ts">
-  export let project: string;
-  export let href: string | null = null;
-  export let tag: string = 'div';
+  import { Project } from '$lib';
+  import Image from '../atoms/Image.svelte';
 
-  $: if (href) {
-    tag = 'a';
-  }
+  export let project: Project;
 </script>
 
-<svelte:element this={tag} class="project">
-  <h3>{project}</h3>
-  <p>WIP</p>
-</svelte:element>
+<a class="project" href={project.href}>
+  <div class="cover">
+    <Image path={project.coverPath} alt={project.name} />
+  </div>
+  <h3>{project.name}</h3>
+  <p>{project.description}</p>
+</a>
 
 <style lang="scss">
   div.project {
@@ -23,9 +23,16 @@
     aspect-ratio: 7/3;
     transition: transform 0.25s ease-in-out;
     z-index: 1;
+    overflow: hidden;
 
     &:hover {
       transform: scale(1.05);
+    }
+
+    .cover {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
     }
   }
 </style>

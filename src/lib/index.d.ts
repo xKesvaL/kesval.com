@@ -1,9 +1,3 @@
-export interface SRCSet {
-  avif: string;
-  webp: string;
-  png: string;
-}
-
 export type ChatBotAnswers =
   | 'first'
   | 'looking'
@@ -14,3 +8,10 @@ export type ChatBotAnswers =
   | 'teachHTMLCSS'
   | 'teachJS'
   | 'teachSvelte';
+
+export interface Project {
+  name: string;
+  coverPath: string;
+  description: string;
+  href: string;
+}
