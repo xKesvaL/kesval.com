@@ -2,6 +2,13 @@
   "name": "kesval.com",
   "version": "0.0.1",
   "private": true,
+  "author": {
+    "url": "https://kesval.com",
+    "email": "contact@kesval.com",
+    "name": "Jordan 'KesvaL'"
+  },
+  "homepage": "https://kesval.com",
+  "license": "MIT",
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
