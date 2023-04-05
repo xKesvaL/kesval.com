@@ -129,7 +129,7 @@
   });
 </script>
 
-<div class="chat-bot {$botState ? 'open' : ''}" aria-hidden={$botState ? 'false' : 'true'}>
+<div class="chat-bot {$botState ? 'open' : ''}" aria-hidden={$botState ? 'false' : 'true'} id="chat-bot">
   <header>
     <div class="wrapper">
       <div class="img">
@@ -140,7 +140,7 @@
         <p>Ask me anything!</p>
       </div>
     </div>
-    <button class="close" tabindex={$botState ? 0 : -1} on:click={toggleExpanded}>
+    <button class="close" tabindex={$botState ? 0 : -1} on:click={toggleExpanded} aria-controls="chat-bot">
       <Close />
     </button>
   </header>
