@@ -14,3 +14,11 @@ export type ChatBotAnswers =
   | 'teachHTMLCSS'
   | 'teachJS'
   | 'teachSvelte';
+
+export interface Project {
+  name: string;
+  id: string;
+  coverPath: string;
+  language: 'svelte' | 'react' | 'js' | 'ts';
+  href: string;
+}

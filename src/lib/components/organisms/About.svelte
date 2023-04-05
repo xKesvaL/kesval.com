@@ -20,15 +20,15 @@
       </p>
       <ul>
         <li>
-          <span>10+</span>
+          <span>10</span>
           years experience
         </li>
         <li>
-          <span>05+</span>
+          <span>05</span>
           projects completed
         </li>
         <li>
-          <span>02+</span>
+          <span>02</span>
           companies worked
         </li>
       </ul>
