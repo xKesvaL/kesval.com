@@ -117,7 +117,7 @@
         }
 
         &[aria-expanded='true'] {
-          flex-basis: clamp(15rem, 40vh, 20rem);
+          flex-basis: clamp(20rem, 40vh, 40rem);
           flex-grow: 1;
           padding-right: calc(var(--panel-padding) + var(--button-size) + var(--panel-gap));
 
@@ -146,6 +146,7 @@
           transform: translateY(2rem);
           opacity: 0;
           margin-left: calc(var(--button-size) + var(--panel-gap));
+          margin-top: 1rem;
         }
       }
 
