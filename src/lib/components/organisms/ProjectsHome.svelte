@@ -7,7 +7,7 @@
 
   export let projects: Project[] = [];
 
-  projects = projects.splice(0, 5);
+  projects = projects.splice(0, 5).reverse();
 
   function projectClickHandle(e: MouseEvent) {
     let target = (e.target as HTMLElement)?.closest('.project-panel');
@@ -16,7 +16,7 @@
   }
 </script>
 
-<section class="container">
+<section class="container" id="projects">
   <h2>Projects</h2>
   <!-- svelte-ignore a11y-click-events-have-key-events -->
   <div class="projects" on:click={projectClickHandle}>
@@ -24,11 +24,11 @@
       <div
         class="project-panel"
         aria-expanded={i + 1 == parseInt(expandedIndex) ? 'true' : 'false'}
-        id="project-{project.id}">
-        <h3 class="project-heading" id="project-{project.id}-heading">
+        id="project-{i + 1}">
+        <h3 class="project-heading" id="project-{i + 1}-heading">
           <button
             class="project-trigger"
-            aria-controls="project-{project.id}-content"
+            aria-controls="project-{i + 1}-content"
             aria-expanded={i + 1 == parseInt(expandedIndex) ? 'true' : 'false'}>
             <span class="project-title">{project.name}</span>
             <svg class="project-icon">
@@ -38,12 +38,12 @@
         </h3>
         <div
           class="project-content"
-          id="project-{project.id}-content"
-          aria-labelledby="project-{project.id}-heading"
+          id="project-{i + 1}-content"
+          aria-labelledby="project-{i + 1}-heading"
           aria-hidden={i + 1 == parseInt(expandedIndex) ? 'false' : 'true'}
           role="region">
           <div class="project-more">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae molestias eveniet deleniti sapiente.
+            {project.description}
           </div>
           <div class="project-image">
             <Image path={project.coverPath} alt={project.name} />
@@ -129,7 +129,7 @@
 
           & .project-image {
             transform: scale(1.05);
-            filter: brightness(0.5);
+            filter: brightness(0.5) blur(0.3rem);
           }
 
           & .project-btn {
@@ -147,11 +147,16 @@
           opacity: 0;
           margin-left: calc(var(--button-size) + var(--panel-gap));
           margin-top: 1rem;
+          color: var(--color-static-text);
+
+          @include breakpoint(md) {
+            font-size: 1.25rem;
+          }
         }
       }
 
       &-title {
-        font-size: 1.5rem;
+        font-size: 1rem;
         font-weight: 700;
         padding-top: 0.5rem;
         color: var(--color-static-text);
@@ -160,6 +165,14 @@
 
         display: grid;
         align-items: center;
+
+        @include breakpoint(xs) {
+          font-size: 1.5rem;
+        }
+
+        @include breakpoint(md) {
+          font-size: 2rem;
+        }
 
         &::after {
           content: '';
@@ -221,6 +234,11 @@
         pointer-events: none;
 
         z-index: 10;
+
+        @include breakpoint(md) {
+          bottom: 2rem;
+          right: 2rem;
+        }
       }
     }
   }

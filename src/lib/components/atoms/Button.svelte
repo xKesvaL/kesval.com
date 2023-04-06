@@ -43,6 +43,10 @@
     font-weight: 700;
     transition: 0.25s ease-in-out;
 
+    &:hover {
+      scale: 1.05;
+    }
+
     &.color {
       &-primary {
         background: var(--color-primary);
@@ -71,10 +75,31 @@
       &-outline {
         color: var(--color-text);
         background: transparent;
-        border: 0.125rem solid var(--color-primary);
+
+        &.color-primary {
+          border: 0.125rem solid var(--color-primary);
+        }
+
+        &.color-secondary {
+          border: 0.125rem solid var(--color-secondary);
+        }
+
+        &.color-tertiary {
+          border: 0.125rem solid var(--color-tertiary);
+        }
 
         &:hover {
-          background: rgba(var(--color-primary-rgb), 0.1);
+          &.color-primary {
+            background: rgba(var(--color-primary-rgb), 0.1);
+          }
+
+          &.color-secondary {
+            background: rgba(var(--color-secondary-rgb), 0.1);
+          }
+
+          &.color-tertiary {
+            background: rgba(var(--color-tertiary-rgb), 0.1);
+          }
         }
       }
     }

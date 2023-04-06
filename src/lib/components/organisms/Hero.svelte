@@ -23,7 +23,10 @@
     <p>
       I'm a fullstack developer with a passion for building beautiful, performant and accessible web apps or websites.
     </p>
-    <Button on:click={toggleBot}>Contact me</Button>
+    <div class="flex">
+      <Button on:click={toggleBot}>Contact me</Button>
+      <Button href="/about#resume" color="secondary">Resume</Button>
+    </div>
   </div>
 </section>
 
@@ -44,6 +47,12 @@
 
     .text {
       grid-column: 1/-1;
+
+      .flex {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
 
       h1 {
         font-size: 2.25rem;

@@ -21,4 +21,5 @@ export interface Project {
   coverPath: string;
   language: 'svelte' | 'react' | 'js' | 'ts';
   href: string;
+  description: string;
 }
