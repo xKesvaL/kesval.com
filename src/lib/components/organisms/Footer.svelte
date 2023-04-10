@@ -12,6 +12,11 @@
     </h2>
   </div>
   <div><Socials color="var(--color-static-text)" /></div>
+  <div class="util-links">
+    <a href="/sitemap.xml">Sitemap</a>
+    <a href="/legal-notice">Legal Notice</a>
+    <a href="/privacy-policy">Privacy Policy</a>
+  </div>
   <div class="copyright">KesvaL © 2023. All rights reserved</div>
 </footer>
 
@@ -33,6 +38,30 @@
     .copyright {
       grid-column: 1/-1;
       text-align: center;
+    }
+
+    .util-links {
+      grid-column: 1/-1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+
+      @include breakpoint(md) {
+        gap: 4rem;
+      }
+
+      a {
+        padding-bottom: 0.125rem;
+        border-bottom: 1px dashed var(--color-static-text);
+        transition: color 0.2s ease, border-bottom 0.2s ease;
+
+        &:hover {
+          border-bottom: 1px solid var(--color-secondary);
+          color: var(--color-secondary);
+        }
+      }
     }
 
     h2 br {

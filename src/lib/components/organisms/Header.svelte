@@ -226,11 +226,12 @@
             border: 2px solid rgba(var(--color-text-rgb), 0.5);
             border-radius: 0.5rem;
             aspect-ratio: 1/1;
-            width: 2rem;
+            width: 1.75rem;
+            height: 1.75rem;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 1.25rem;
+            font-size: 1rem;
           }
         }
       }

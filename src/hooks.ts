@@ -13,6 +13,8 @@ export const handle = (async ({ event, resolve }) => {
   }
 
   if (!cookies['userid']) {
+    const expires = new Date();
+    expires.setFullYear(expires.getFullYear() + 1);
     // if this is the first time the user has visited this app,
     // set a cookie so that we recognise them when they return
     response.headers.set(
@@ -21,6 +23,7 @@ export const handle = (async ({ event, resolve }) => {
         path: '/',
         httpOnly: true,
         secure: true,
+        expires,
       }),
     );
   }

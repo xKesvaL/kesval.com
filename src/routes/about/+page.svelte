@@ -10,7 +10,7 @@
 </svelte:head>
 
 <section id="welcome" class="container">
-  <h2>Hi. I'm Jordan.</h2>
+  <h1>Hi. I'm Jordan.</h1>
   <div class="presentation">
     <div class="img">
       <Image
@@ -43,6 +43,7 @@
     padding-top: 0.001rem;
     padding-bottom: 7.5rem;
 
+    h1,
     h2 {
       font-size: 2rem;
       font-weight: 700;

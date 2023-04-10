@@ -7,7 +7,7 @@
   import Pin from '$lib/icons/Pin.svelte';
   import Star from '$lib/icons/Star.svelte';
   import Suitcase from '$lib/icons/Suitcase.svelte';
-  import { age, yearsOfCoding } from '$lib/utils/data';
+  import { age, email, yearsOfCoding } from '$lib/utils/data';
 </script>
 
 <ul class="resume-contact">
@@ -25,7 +25,7 @@
   </li>
   <li class="email">
     <span class="icon"><Email /></span>
-    <a href="mailto:contact@kesval.com">contact@kesval.com</a>
+    <a href="mailto:{email}">{email}</a>
   </li>
   <li class="linkedin">
     <span class="icon"><LinkedIn /></span>
