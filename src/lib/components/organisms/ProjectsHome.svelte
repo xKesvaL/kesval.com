@@ -50,7 +50,7 @@
           </div>
         </div>
         <div class="project-btn">
-          <Button size="large" href={project.href}>See More</Button>
+          <Button href={project.href}>See More</Button>
         </div>
       </div>
     {/each}
@@ -115,6 +115,8 @@
             filter: brightness(0.75);
           }
         }
+
+        will-change: flex-basis, flex-grow;
 
         &[aria-expanded='true'] {
           flex-basis: clamp(20rem, 40vh, 40rem);

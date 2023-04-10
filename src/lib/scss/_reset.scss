@@ -37,7 +37,7 @@ body {
 
 // Media defaults
 
-:where(img, svg, video, canvas, audio, iframe, embed, object) {
+:where(img, svg, video, canvas, audio, iframe, embed, object, picture) {
   display: block;
   max-width: 100%;
 }

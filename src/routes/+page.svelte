@@ -1,5 +1,5 @@
 <script lang="ts">
-  import About from '$lib/components/organisms/About.svelte';
+  import About from '$lib/components/organisms/AboutHome.svelte';
   import Hero from '$lib/components/organisms/Hero.svelte';
   import ProjectsHome from '$lib/components/organisms/ProjectsHome.svelte';
   import { projects } from '$lib/utils/data';

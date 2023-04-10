@@ -69,7 +69,7 @@
     &.style {
       &-solid {
         &:hover {
-          box-shadow: 0px 0px 20px 0px black;
+          box-shadow: 0.5rem 1rem 2rem rgba(39, 44, 49, 0.6), 1px 3px 8px rgba(39, 44, 49, 0.3);
         }
       }
       &-outline {

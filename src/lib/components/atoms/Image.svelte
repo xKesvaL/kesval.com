@@ -52,5 +52,12 @@
       height: 100%;
       object-fit: cover;
     }
+
+    figcaption {
+      text-align: center;
+      color: hsl(var(--color-text-hue), 0%, var(--primary-dark-lightness));
+      font-style: italic;
+      margin-top: 0.5rem;
+    }
   }
 </style>

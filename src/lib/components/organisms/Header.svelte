@@ -51,6 +51,7 @@
     <Hamburger />
     <span class="visually-hidden">Show Menu</span>
   </button>
+  <!-- svelte-ignore a11y-role-supports-aria-props -->
   <nav id="navigation" aria-expanded={expanded}>
     <ul>
       <li class={$page.route.id == '/' ? 'active' : ''}>

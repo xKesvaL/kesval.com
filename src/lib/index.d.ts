@@ -1,3 +1,5 @@
+import type { DateTime } from 'luxon';
+
 export interface SRCSet {
   avif: string;
   webp: string;
@@ -22,4 +24,12 @@ export interface Project {
   language: 'svelte' | 'react' | 'js' | 'ts';
   href: string;
   description: string;
+}
+
+export interface Company {
+  name: string;
+  startDate: DateTime;
+  endDate?: DateTime;
+  position: string;
+  current: boolean;
 }
