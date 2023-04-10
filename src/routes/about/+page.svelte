@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-  <title>Home | KesvaL</title>
+  <title>About - KesvaL</title>
   <meta name="description" content="Come and discover who I truly am!" />
 </svelte:head>
 
@@ -13,7 +13,11 @@
   <h2>Hi. I'm Jordan.</h2>
   <div class="presentation">
     <div class="img">
-      <Image path="about" alt="Me" figcaption="There is supposed to be an image of me here." rounding="md" />
+      <Image
+        path="about"
+        alt="A Photo of KesvaL"
+        figcaption="There is supposed to be an image of me here."
+        rounding="md" />
     </div>
     <p>
       I'm a french {age} year old programmer and I've been doing that since I was 8 years old, it's my passion. I started

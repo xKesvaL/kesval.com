@@ -1,2 +1,4 @@
 User-agent: *
-Disallow:
+Disallow: /fonts/
+Disallow: /optimized-images/
+Disallow: /images/

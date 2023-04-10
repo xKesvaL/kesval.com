@@ -3,7 +3,7 @@
 </script>
 
 <div class="resume-photo">
-  <Image path="logos/kesval" alt="A photo of me" rounding="full" />
+  <Image path="logos/kesval" alt="A photo of KesvaL" rounding="full" />
 </div>
 
 <style lang="scss">

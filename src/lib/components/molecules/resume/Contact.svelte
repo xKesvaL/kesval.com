@@ -29,15 +29,17 @@
   </li>
   <li class="linkedin">
     <span class="icon"><LinkedIn /></span>
-    <a href="https://www.linkedin.com/in/jabeddou/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
+    <a href="https://www.linkedin.com/in/jabeddou/" target="_blank" rel="noopener nofollow noreferrer">
+      LinkedIn Profile
+    </a>
   </li>
   <li class="website">
     <span class="icon"><Website /></span>
-    <a href="https://kesval.com" target="_blank" rel="noopener noreferrer">kesval.com</a>
+    <a href="https://kesval.com" target="_blank" rel="noopener nofollow noreferrer">kesval.com</a>
   </li>
   <li class="github">
     <span class="icon"><Github /></span>
-    <a href="https://github.com/xKesvaL" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
+    <a href="https://github.com/xKesvaL" target="_blank" rel="noopener nofollow noreferrer">GitHub Profile</a>
   </li>
   <li class="languages">
     <span class="icon"><Language /></span>

@@ -26,7 +26,10 @@
 </script>
 
 <svelte:head>
-  <meta name="description" content="KesvaL's personal website" />
+  <meta name="robots" content="index,follow" />
+
+  <meta name="og:type" content="website" />
+
 </svelte:head>
 
 <Header />
