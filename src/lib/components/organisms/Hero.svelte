@@ -12,6 +12,7 @@
 <section id="hero">
   <div class="socials"><Socials vertical={true} /></div>
   <div class="image">
+    <!-- TODO Put real photo -->
     <Image path="logos/kesval" alt="A Photo of KesvaL" />
   </div>
   <div class="text">
@@ -25,7 +26,7 @@
     </p>
     <div class="flex">
       <Button on:click={toggleBot}>Contact me</Button>
-      <Button href="/about#resume" color="secondary">Resume</Button>
+      <Button href="/about?scroll=resume" color="secondary">Resume</Button>
     </div>
   </div>
 </section>

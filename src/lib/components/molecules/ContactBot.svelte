@@ -41,20 +41,20 @@
     teachHTMLCSS: [
       'Well, I strongly suggest <a href="https://www.freecodecamp.org/learn/2022/responsive-web-design/" class="special-link" rel="external">this course</a> from freeCodeCamp.',
       "It's free, interactive and you will learn everything from basics to advanced stuff.",
-      "If you want to learn more about freeCodeCamp, you can check out <a href= '/about#certifications' class='special-link'>this page</a>.",
-      'You can still contact me on my <a href="/about#socials" class="special-link">socials</a> if you have any questions.',
+      "If you want to learn more about freeCodeCamp, you can check out <a href= '/about?scroll=certifications' class='special-link'>this page</a>.",
+      'You can still contact me on my <a href="/about?scroll=socials" class="special-link">socials</a> if you have any questions.',
     ],
     teachJS: [
       'Well, I strongly suggest <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/" class="special-link" rel="external">this course</a> from freeCodeCamp.',
       "It's free, interactive and you will learn everything from basics to advanced stuff.",
-      "If you want to learn more about freeCodeCamp, you can check out <a href= '/about#certifications' class='special-link'>this page</a>.",
-      'You can still contact me on my <a href="/about#socials" class="special-link">socials</a> if you have any questions.',
+      "If you want to learn more about freeCodeCamp, you can check out <a href= '/about?scroll=certifications' class='special-link'>this page</a>.",
+      'You can still contact me on my <a href="/about?scroll=socials" class="special-link">socials</a> if you have any questions.',
     ],
     teachSvelte: [
       'Svelte is a great framework, and I would say it is close to React.',
       'You can check out this <a href="https://www.youtube.com/@WebDevSimplified" class="special-link" rel="external">channel</a> to learn more about React, and then implement it in Svelte.',
       "Or, simply try to make a Svelte project and you'll learn a lot by doing it. A simple thing like a ToDo app is a good start.",
-      "You can still contact me on my <a href='/about#socials' class='special-link'>socials</a> if you have any questions.",
+      "You can still contact me on my <a href='/about?scroll=socials' class='special-link'>socials</a> if you have any questions.",
     ],
   };
 

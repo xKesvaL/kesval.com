@@ -2,6 +2,18 @@
   import Image from '$lib/components/atoms/Image.svelte';
   import Resume from '$lib/components/organisms/Resume.svelte';
   import { age } from '$lib/utils/data';
+  import { onMount } from 'svelte';
+
+  onMount(() => {
+    let queries = new URLSearchParams(window.location.search);
+    if (queries && queries.has('scroll')) {
+      let element = document.getElementById(queries.get('scroll') as string);
+      if (element)
+        setTimeout(() => {
+          element?.scrollIntoView();
+        }, 500);
+    }
+  });
 </script>
 
 <svelte:head>
@@ -13,6 +25,7 @@
   <h1>Hi. I'm Jordan.</h1>
   <div class="presentation">
     <div class="img">
+      <!-- TODO Put real photo -->
       <Image
         path="about"
         alt="A Photo of KesvaL"

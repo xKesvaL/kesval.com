@@ -7,6 +7,7 @@
   <h2>Who Am I ?</h2>
   <div class="grid">
     <div class="image">
+      <!-- TODO Put real photo & remove figcaption -->
       <Image path="about" alt="Another photo of Jordan 'KesvaL'" rounding="md" figcaption="Image of me maybe?" />
     </div>
     <div class="text">
