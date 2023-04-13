@@ -1,6 +1,7 @@
 <script lang="ts">
   import Image from '$lib/components/atoms/Image.svelte';
   import SkillDropdown from '$lib/components/molecules/SkillDropdown.svelte';
+  import Socials from '$lib/components/molecules/Socials.svelte';
   import Resume from '$lib/components/organisms/Resume.svelte';
   import { age, skillTypes, skills } from '$lib/utils/data';
   import { onMount } from 'svelte';
@@ -53,8 +54,14 @@
   <h2>My Resume</h2>
   <Resume />
 </section>
-<section id="socials" class="container" />
-<section id="certifications" class="container" />
+<!-- TODO Certifications -->
+<!-- <section id="certifications" class="container" /> -->
+<section id="socials" class="container">
+  <h2>Socials</h2>
+  <div class="socials-list">
+    <Socials full={true} />
+  </div>
+</section>
 
 <!--  Important stuff (id is important) -->
 <style lang="scss">
