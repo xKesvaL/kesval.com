@@ -49,8 +49,38 @@ export const projects: Project[] = [
 export const experiences: Company[] = [
   {
     name: 'OLWE Development',
-    startDate: DateTime.fromISO('2023-07-01'),
+    slugName: 'olwe-development',
+    timeframe: '2023 → Now',
     position: 'Frontend Developer',
     current: true,
+    location: 'Mulhouse, France',
+    description:
+      'Frontend Developer, working on a lot of different projects, from small websites to big web applications.',
+    tags: [
+      {
+        color: 'primary',
+        name: 'React',
+      },
+    ],
+  },
+  {
+    name: 'Unemployed (Student)',
+    slugName: 'unemployed-student',
+    timeframe: '2019 → 2023',
+    position: 'Web Developer',
+    current: false,
+    location: 'Mulhouse, France',
+    description: 'Student in MMI (Multimedia and Internet) at the IUT of Mulhouse.',
+    tags: [],
+  },
+  {
+    name: 'Le Bureau Ciotaden',
+    slugName: 'bureau-ciotaden',
+    timeframe: '2018 → 2018',
+    position: 'Receptionist / Assistant',
+    current: false,
+    location: 'La Ciotat, France',
+    description: 'Assistant and receptionist for a computer science repair shop.',
+    tags: [],
   },
 ];

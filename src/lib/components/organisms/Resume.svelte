@@ -31,6 +31,10 @@
     <Title>Skills</Title>
     <Skills />
   </div>
+  <div class="section education">
+    <Title>Education</Title>
+    <p>blabla</p>
+  </div>
 </article>
 
 <style lang="scss">
@@ -102,19 +106,19 @@
         );
 
         &.one {
-          border-radius: var(--radius-blob-4);
+          border-radius: var(--radius-blob-1);
           height: 110%;
           width: 110%;
           top: -64%;
           right: -45%;
         }
         &.two {
-          border-radius: var(--radius-blob-5);
+          border-radius: var(--radius-blob-4);
           height: 45%;
           width: 45%;
-          right: 20%;
-          bottom: -8%;
-          rotate: 45deg;
+          left: 0%;
+          bottom: -15%;
+          rotate: -45deg;
         }
       }
     }
@@ -153,6 +157,10 @@
 
       &.skills {
         grid-area: skills;
+      }
+
+      &.education {
+        grid-area: education;
       }
     }
   }

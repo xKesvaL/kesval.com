@@ -28,8 +28,16 @@ export interface Project {
 
 export interface Company {
   name: string;
-  startDate: DateTime;
-  endDate?: DateTime;
+  slugName: string;
+  timeframe: string;
   position: string;
   current: boolean;
+  location: string;
+  description: string;
+  tags: CompanyTag[];
+}
+
+export interface CompanyTag {
+  color: 'primary' | 'secondary' | 'tertiary';
+  name: string;
 }
