@@ -49,11 +49,11 @@
     <ul class="content {skillType}" transition:fly={{ y: -50, duration: 300 }}>
       {#each skills as skill}
         <li>
-          <label for="sk-react">
+          <label for="sk-react-{skill.name}">
             <span>{skill.name}</span>
             <span>{skill.percentage}%</span>
           </label>
-          <div id="sk-react" class="progress-wrap">
+          <div id="sk-react-{skill.name}" class="progress-wrap">
             <div class="progress" style="width: {skill.percentage}%;" />
           </div>
         </li>
