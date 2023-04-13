@@ -129,10 +129,6 @@
           font-size: 0.875rem;
         }
       }
-
-      p {
-        margin-top: 0.5rem;
-      }
     }
   }
 </style>

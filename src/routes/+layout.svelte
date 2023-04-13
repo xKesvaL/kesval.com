@@ -7,6 +7,7 @@
   import '$lib/scss/main.scss';
   import { webVitals } from '$lib/utils/vitals';
   import { inject } from '@vercel/analytics';
+  import BackToTop from '$lib/components/molecules/BackToTop.svelte';
 
   if (!dev) {
     inject({
@@ -29,7 +30,6 @@
   <meta name="robots" content="index,follow" />
 
   <meta name="og:type" content="website" />
-
 </svelte:head>
 
 <Header />
@@ -39,5 +39,6 @@
 </main>
 
 <ContactBot />
+<BackToTop />
 
 <Footer />

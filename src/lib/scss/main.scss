@@ -22,6 +22,7 @@ body {
   color: var(--color-text);
   fill: var(--color-text);
   font-family: var(--font-body);
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
 :is(h1, h2, h3, h4, h5, h6) {
