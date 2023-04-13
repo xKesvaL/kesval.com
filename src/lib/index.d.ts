@@ -41,3 +41,11 @@ export interface CompanyTag {
   color: 'primary' | 'secondary' | 'tertiary';
   name: string;
 }
+
+export interface Skill {
+  name: string;
+  percentage: number;
+  type: SkillType;
+}
+
+export type SkillType = 'frontend' | 'backend' | 'other';

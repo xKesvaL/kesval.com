@@ -1,7 +1,8 @@
 <script lang="ts">
   import Image from '$lib/components/atoms/Image.svelte';
+  import SkillDropdown from '$lib/components/molecules/SkillDropdown.svelte';
   import Resume from '$lib/components/organisms/Resume.svelte';
-  import { age } from '$lib/utils/data';
+  import { age, skillTypes, skills } from '$lib/utils/data';
   import { onMount } from 'svelte';
 
   onMount(() => {
@@ -40,6 +41,14 @@
   </div>
 </section>
 
+<section id="skills" class="container">
+  <h2>Skills. Take a look.</h2>
+  <div class="skills">
+    {#each skillTypes as skillType}
+      <SkillDropdown skills={skills.filter((sk) => sk.type == skillType)} {skillType} />
+    {/each}
+  </div>
+</section>
 <section id="resume" class="container">
   <h2>My Resume</h2>
   <Resume />
@@ -109,6 +118,26 @@
         @include breakpoint(lg) {
           font-size: 1.4rem;
         }
+      }
+    }
+
+    .skills {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin: 0 auto;
+      align-items: center;
+      width: 100%;
+
+      @include breakpoint(md) {
+        flex-direction: row;
+        gap: 2rem;
+        justify-content: space-evenly;
+        align-items: flex-start;
+      }
+
+      @include breakpoint(lg) {
+        gap: 4rem;
       }
     }
   }

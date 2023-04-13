@@ -1,4 +1,4 @@
-import type { Company, Project } from '$lib';
+import type { Company, Project, Skill, SkillType } from '$lib';
 import { DateTime } from 'luxon';
 
 export const email = 'contact@kesval.com';
@@ -82,5 +82,65 @@ export const experiences: Company[] = [
     location: 'La Ciotat, France',
     description: 'Assistant and receptionist for a computer science repair shop.',
     tags: [],
+  },
+];
+
+export const skillTypes: SkillType[] = ['frontend', 'backend', 'other'];
+
+export const skills: Skill[] = [
+  {
+    name: 'React',
+    percentage: 80,
+    type: 'frontend',
+  },
+  {
+    name: 'Svelte',
+    percentage: 95,
+    type: 'frontend',
+  },
+  {
+    name: 'NextJS',
+    percentage: 65,
+    type: 'frontend',
+  },
+  {
+    name: 'TypeScript',
+    percentage: 90,
+    type: 'frontend',
+  },
+  {
+    name: 'PWAs',
+    percentage: 80,
+    type: 'frontend',
+  },
+  {
+    name: 'NodeJS',
+    percentage: 90,
+    type: 'backend',
+  },
+  {
+    name: 'MongoDB',
+    percentage: 70,
+    type: 'backend',
+  },
+  {
+    name: 'MariaDB',
+    percentage: 80,
+    type: 'backend',
+  },
+  {
+    name: 'Photoshop',
+    percentage: 60,
+    type: 'other',
+  },
+  {
+    name: 'Premiere Pro',
+    percentage: 65,
+    type: 'other',
+  },
+  {
+    name: 'Excel',
+    percentage: 65,
+    type: 'other',
   },
 ];
