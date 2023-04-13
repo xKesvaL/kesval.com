@@ -21,6 +21,7 @@
   </div>
   <div class="section about">
     <Title>About</Title>
+    <!-- TODO Write about -->
     <p>blabla</p>
   </div>
   <div class="section experience">
@@ -33,6 +34,7 @@
   </div>
   <div class="section education">
     <Title>Education</Title>
+    <!-- TODO Write education -->
     <p>blabla</p>
   </div>
 </article>
