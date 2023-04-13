@@ -35,19 +35,26 @@
 </button>
 
 <style lang="scss">
+  @use '$lib/scss/breakpoints.scss' as *;
+
   button {
     position: fixed;
     bottom: 1rem;
     right: 1rem;
     aspect-ratio: 1/1;
-    width: 4rem;
+    width: 3rem;
     background: var(--color-primary);
     border: none;
     border-radius: 50%;
-    padding: 0.75rem;
+    padding: 0.5rem;
     color: var(--color-white);
     cursor: pointer;
     transition: all 0.2s ease-in-out;
+
+    @include breakpoint(md) {
+      width: 4rem;
+      padding: 0.75rem;
+    }
 
     &:hover {
       transform: scale(1.1);
