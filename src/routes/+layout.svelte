@@ -8,6 +8,9 @@
   import { webVitals } from '$lib/utils/vitals';
   import { inject } from '@vercel/analytics';
   import BackToTop from '$lib/components/molecules/BackToTop.svelte';
+  import { fade, fly } from 'svelte/transition';
+
+  export let data;
 
   if (!dev) {
     inject({
@@ -24,6 +27,8 @@
       analyticsId,
     });
   }
+
+  let animDuration = 300;
 </script>
 
 <svelte:head>
@@ -34,9 +39,11 @@
 
 <Header />
 
-<main>
-  <slot />
-</main>
+{#key data.url}
+  <main in:fade={{ duration: animDuration, delay: animDuration }} out:fly={{ duration: animDuration }}>
+    <slot />
+  </main>
+{/key}
 
 <ContactBot />
 <BackToTop />

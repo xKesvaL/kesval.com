@@ -56,7 +56,8 @@
       padding: 0.75rem;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       transform: scale(1.1);
     }
 

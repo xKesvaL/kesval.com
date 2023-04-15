@@ -43,7 +43,8 @@
     font-weight: 700;
     transition: 0.25s ease-in-out;
 
-    &:hover {
+    &:hover,
+    &:focus {
       scale: 1.05;
     }
 
@@ -52,7 +53,8 @@
         background: var(--color-primary);
         color: var(--color-static-text);
 
-        &:hover {
+        &:hover,
+        &:focus {
           background: hsl(var(--color-primary-hue), var(--color-primary-saturation), var(--primary-light-lightness));
         }
       }
@@ -68,7 +70,8 @@
 
     &.style {
       &-solid {
-        &:hover {
+        &:hover,
+        &:focus {
           box-shadow: 0.5rem 1rem 2rem rgba(39, 44, 49, 0.6), 1px 3px 8px rgba(39, 44, 49, 0.3);
         }
       }
@@ -88,7 +91,8 @@
           border: 0.125rem solid var(--color-tertiary);
         }
 
-        &:hover {
+        &:hover,
+        &:focus {
           &.color-primary {
             background: rgba(var(--color-primary-rgb), 0.1);
           }

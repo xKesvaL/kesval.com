@@ -49,7 +49,8 @@
     align-items: center;
     gap: 5px;
 
-    &:hover {
+    &:hover,
+    &:focus {
       .label {
         color: var(--color-primary);
       }

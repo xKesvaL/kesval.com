@@ -267,7 +267,8 @@
           color: var(--color-static-text);
           cursor: default;
 
-          &:hover {
+          &:hover,
+          &:focus {
             background: rgba(var(--color-primary-rgb), 1);
           }
 
@@ -276,7 +277,8 @@
           }
         }
 
-        &:hover {
+        &:hover,
+        &:focus {
           background: rgba(var(--color-gray-violet-rgb), 0.5);
         }
 

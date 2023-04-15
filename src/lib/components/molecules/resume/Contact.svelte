@@ -78,7 +78,8 @@
         border-bottom: 2px dotted var(--color-primary);
         transition: border-bottom 0.25s ease, color 0.25s ease;
 
-        &:hover {
+        &:hover,
+        &:focus {
           border-bottom: 2px solid var(--color-primary);
           color: hsl(var(--color-primary-hue), var(--color-primary-saturation), var(--primary-dark-lightness));
         }

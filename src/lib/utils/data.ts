@@ -44,6 +44,47 @@ export const projects: Project[] = [
     href: '/projects',
     description: 'My first project using React. I love chess and I wanted to recreate the game in a slick looking way.',
   },
+  // FOR TESTING PURPOSES
+  {
+    name: 'Chess Game',
+    id: '3',
+    coverPath: 'about',
+    language: 'react',
+    href: '/projects',
+    description: 'My first project using React. I love chess and I wanted to recreate the game in a slick looking way.',
+  },
+  {
+    name: 'Chess Game',
+    id: '4',
+    coverPath: 'about',
+    language: 'react',
+    href: '/projects',
+    description: 'My first project using React. I love chess and I wanted to recreate the game in a slick looking way.',
+  },
+  {
+    name: 'Chess Game',
+    id: '5',
+    coverPath: 'about',
+    language: 'react',
+    href: '/projects',
+    description: 'My first project using React. I love chess and I wanted to recreate the game in a slick looking way.',
+  },
+  {
+    name: 'Chess Game',
+    id: '6',
+    coverPath: 'about',
+    language: 'react',
+    href: '/projects',
+    description: 'My first project using React. I love chess and I wanted to recreate the game in a slick looking way.',
+  },
+  {
+    name: 'Chess Game',
+    id: '7',
+    coverPath: 'about',
+    language: 'react',
+    href: '/projects',
+    description: 'My first project using React. I love chess and I wanted to recreate the game in a slick looking way.',
+  },
 ];
 
 export const experiences: Company[] = [

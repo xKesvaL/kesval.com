@@ -109,7 +109,7 @@
 
         transition: flex-basis 0.3s ease, flex-grow 0.3s ease;
 
-        &:hover {
+        &:hover, &:focus {
           .project-image {
             transform: scale(1.05);
             filter: brightness(0.75);

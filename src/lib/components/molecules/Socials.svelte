@@ -65,7 +65,8 @@
       width: 2.5rem;
       transition: 0.25s all ease-in-out;
 
-      &:hover {
+      &:hover,
+      &:focus {
         color: var(--color-secondary) !important;
       }
     }

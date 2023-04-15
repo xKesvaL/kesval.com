@@ -57,7 +57,8 @@
         border-bottom: 1px dashed var(--color-static-text);
         transition: color 0.2s ease, border-bottom 0.2s ease;
 
-        &:hover {
+        &:hover,
+        &:focus {
           border-bottom: 1px solid var(--color-secondary);
           color: var(--color-secondary);
         }
