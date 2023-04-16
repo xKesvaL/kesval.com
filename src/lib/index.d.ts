@@ -24,7 +24,29 @@ export interface Project {
   language: 'svelte' | 'react' | 'js' | 'ts';
   href: string;
   description: string;
+  category: TagPrimary;
+  tags: TagSecondary[];
 }
+
+export type TagPrimary = 'tech' | 'misc';
+
+export type TagSecondary =
+  | 'svelte'
+  | 'react'
+  | 'js'
+  | 'ts'
+  | 'front-end'
+  | 'back-end'
+  | 'mobile'
+  | 'desktop'
+  | 'open-source'
+  | 'css'
+  | 'guide'
+  | 'html'
+  | 'personal'
+  | 'review'
+  | 'games'
+  | 'scss';
 
 export interface Company {
   name: string;

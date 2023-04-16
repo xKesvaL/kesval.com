@@ -7,7 +7,7 @@
 
   export let projects: Project[] = [];
 
-  projects = projects.splice(0, 5).reverse();
+  projects = projects.splice(0, 5);
 
   function projectClickHandle(e: MouseEvent) {
     let target = (e.target as HTMLElement)?.closest('.project-panel');
@@ -109,7 +109,8 @@
 
         transition: flex-basis 0.3s ease, flex-grow 0.3s ease;
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
           .project-image {
             transform: scale(1.05);
             filter: brightness(0.75);

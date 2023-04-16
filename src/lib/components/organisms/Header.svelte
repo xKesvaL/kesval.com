@@ -59,12 +59,12 @@
           Home <span>/</span>
         </a>
       </li>
-      <li class={$page.route.id == '/about' ? 'active' : ''}>
+      <li class={$page.route.id?.startsWith('/about') ? 'active' : ''}>
         <a href="/about" data-sveltekit-preload-data data-sveltekit-preload-code on:click={toggleExpanded}>About</a>
 
         <!-- Presentation, experience, skills -->
       </li>
-      <li class={$page.route.id == '/projects' ? 'active' : ''}>
+      <li class={$page.route.id?.startsWith('/projects') ? 'active' : ''}>
         <a href="/projects" data-sveltekit-preload-data data-sveltekit-preload-code on:click={toggleExpanded}>
           Projects
         </a>

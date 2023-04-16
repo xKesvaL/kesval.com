@@ -27,39 +27,48 @@ export const yearsOfCoding = getYearsOfCoding();
 
 export const yearsOfExperience = getYearsOfExperience();
 
-export const projects: Project[] = [
+const projectsOrdered: Project[] = [
   {
     name: 'Personal Portfolio',
     id: '1',
     coverPath: 'projects/personal-portfolio',
     language: 'svelte',
-    href: '/projects',
+    href: '/projects/personal-portfolio',
     description: 'This was my first true project using Svelte. I wanted to create something for me and show my skills.',
+    category: 'tech',
+    tags: ['svelte', 'front-end', 'ts', 'scss', 'personal', 'open-source'],
   },
   {
     name: 'Chess Game',
     id: '2',
     coverPath: 'about',
     language: 'react',
-    href: '/projects',
+    href: '/projects/chess-game',
     description: 'My first project using React. I love chess and I wanted to recreate the game in a slick looking way.',
+    category: 'tech',
+    tags: ['react', 'front-end', 'ts', 'scss', 'open-source'],
   },
   // FOR TESTING PURPOSES
+  /*
   {
-    name: 'Chess Game',
+    name: 'Different',
     id: '3',
     coverPath: 'about',
     language: 'react',
     href: '/projects',
     description: 'My first project using React. I love chess and I wanted to recreate the game in a slick looking way.',
+    category: 'tech',
+    tags: ['react', 'front-end', 'css', 'personal', 'back-end', 'html', 'js', 'ts', 'open-source'],
   },
   {
-    name: 'Chess Game',
+    name: 'Chess Ga',
     id: '4',
     coverPath: 'about',
     language: 'react',
     href: '/projects',
     description: 'My first project using React. I love chess and I wanted to recreate the game in a slick looking way.',
+    category: 'tech',
+    tags: ['react', 'front-end', 'css', 'personal', 'back-end', 'html', 'js', 'ts', 'open-source'],
   },
   {
     name: 'Chess Game',
@@ -68,6 +77,8 @@ export const projects: Project[] = [
     language: 'react',
     href: '/projects',
     description: 'My first project using React. I love chess and I wanted to recreate the game in a slick looking way.',
+    category: 'tech',
+    tags: ['react', 'front-end', 'css', 'personal', 'back-end', 'html', 'js', 'ts', 'open-source'],
   },
   {
     name: 'Chess Game',
@@ -76,6 +87,8 @@ export const projects: Project[] = [
     language: 'react',
     href: '/projects',
     description: 'My first project using React. I love chess and I wanted to recreate the game in a slick looking way.',
+    category: 'tech',
+    tags: ['react', 'front-end', 'css', 'personal', 'back-end', 'html', 'js', 'ts', 'open-source'],
   },
   {
     name: 'Chess Game',
@@ -84,8 +97,73 @@ export const projects: Project[] = [
     language: 'react',
     href: '/projects',
     description: 'My first project using React. I love chess and I wanted to recreate the game in a slick looking way.',
+    category: 'tech',
+    tags: ['react', 'front-end', 'css', 'personal', 'back-end', 'html', 'js', 'ts', 'open-source'],
   },
+  {
+    name: 'Chess Game',
+    id: '8',
+    coverPath: 'about',
+    language: 'react',
+    href: '/projects',
+    description: 'My first project using React. I love chess and I wanted to recreate the game in a slick looking way.',
+    category: 'tech',
+    tags: ['react', 'front-end', 'css', 'personal', 'back-end', 'html', 'js', 'ts', 'open-source'],
+  },
+  {
+    name: 'Chess Game',
+    id: '9',
+    coverPath: 'about',
+    language: 'react',
+    href: '/projects',
+    description: 'My first project using React. I love chess and I wanted to recreate the game in a slick looking way.',
+    category: 'tech',
+    tags: ['react', 'front-end', 'css', 'personal', 'back-end', 'html', 'js', 'ts', 'open-source'],
+  },
+  {
+    name: 'Chess Game',
+    id: '10',
+    coverPath: 'about',
+    language: 'react',
+    href: '/projects',
+    description: 'My first project using React. I love chess and I wanted to recreate the game in a slick looking way.',
+    category: 'tech',
+    tags: ['react', 'front-end', 'css', 'personal', 'back-end', 'html', 'js', 'ts', 'open-source'],
+  },
+  {
+    name: 'Chess Game',
+    id: '11',
+    coverPath: 'about',
+    language: 'react',
+    href: '/projects',
+    description: 'My first project using React. I love chess and I wanted to recreate the game in a slick looking way.',
+    category: 'tech',
+    tags: ['react', 'front-end', 'css', 'personal', 'back-end', 'html', 'js', 'ts', 'open-source'],
+  },
+  {
+    name: 'Chess Game',
+    id: '12',
+    coverPath: 'about',
+    language: 'react',
+    href: '/projects',
+    description: 'My first project using React. I love chess and I wanted to recreate the game in a slick looking way.',
+    category: 'tech',
+    tags: ['react', 'front-end', 'css', 'personal', 'back-end', 'html', 'js', 'ts', 'open-source'],
+  },
+  {
+    name: 'Chess Game',
+    id: '13',
+    coverPath: 'about',
+    language: 'react',
+    href: '/projects',
+    description: 'My first project using React. I love chess and I wanted to recreate the game in a slick looking way.',
+    category: 'tech',
+    tags: ['react', 'front-end', 'css', 'personal', 'back-end', 'html', 'js', 'ts', 'open-source'],
+  },
+*/
 ];
+
+export const projects = projectsOrdered.reverse();
 
 export const experiences: Company[] = [
   {
