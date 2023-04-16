@@ -4,11 +4,15 @@
 
   export let data;
 
-  let project = data.project!;
+  let project = data.project;
 </script>
 
-<ProjectBreadcrumb {project} />
+{#if project}
+  <ProjectBreadcrumb {project} />
+{/if}
 
 <slot />
 
-<RelatedProjects {project} />
+{#if project}
+  <RelatedProjects {project} />
+{/if}

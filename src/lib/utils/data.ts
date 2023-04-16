@@ -165,6 +165,8 @@ const projectsOrdered: Project[] = [
 
 export const projects = projectsOrdered.reverse();
 
+export const getProjectByHref = (href: string) => projects.find((project) => project.href === href);
+
 export const experiences: Company[] = [
   {
     name: 'OLWE Development',
