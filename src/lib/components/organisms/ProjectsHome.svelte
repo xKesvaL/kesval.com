@@ -55,6 +55,9 @@
       </div>
     {/each}
   </div>
+  <div class="see-all">
+    <Button href="/projects">See All Projects</Button>
+  </div>
 </section>
 
 <AllSVGs />
@@ -77,6 +80,12 @@
         font-size: 3rem;
         margin-block: 2.5rem 7.5rem;
       }
+    }
+
+    .see-all {
+      display: flex;
+      justify-content: center;
+      margin-block: 2.5rem 0;
     }
 
     .projects {
