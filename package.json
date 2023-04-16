@@ -11,7 +11,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "vite dev",
-    "build": "svelte-sitemap --out-dir static --domain https://kesval.com && vite build",
+    "build": "vite build && svelte-sitemap --out-dir static --domain https://kesval.com",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
