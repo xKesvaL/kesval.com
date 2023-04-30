@@ -5,15 +5,14 @@
   import { botState } from '$lib/stores/bot';
 
   function toggleBot() {
-    $botState = !$botState;
+    botState.update((state) => !state);
   }
 </script>
 
 <section id="hero">
   <div class="socials"><Socials vertical={true} /></div>
   <div class="image">
-    <!-- TODO Put real photo -->
-    <Image path="logos/kesval" alt="A Photo of KesvaL" />
+    <Image path="me/hero" alt="A Photo of KesvaL" />
   </div>
   <div class="text">
     <h1>
@@ -37,12 +36,11 @@
 
   section {
     min-height: 90vh;
-    min-height: 90dvh;
     display: grid;
     grid-template-columns: 0.5fr 3fr;
     align-items: center;
     justify-items: center;
-    padding-block: 0rem;
+    padding-block: 0;
     padding-bottom: 6rem;
     gap: 1rem;
 
@@ -83,6 +81,7 @@
       border-radius: var(--radius-blob-4);
       overflow: hidden;
       background: var(--color-primary);
+      outline: 0.25rem var(--color-primary) solid;
       z-index: -1;
       margin: 2rem;
     }
