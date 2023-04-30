@@ -6,7 +6,7 @@
   export let projects: Project[];
 
   const relatedProjects = projects
-    .filter((p) => p.idProject !== project.idProject)
+    .filter((p) => p.projectId !== project.projectId)
     .filter((p) => p.category == project.category)
     .sort((a, b) => {
       const aTags = a.tags.filter((t) => project.tags.includes(t));
@@ -43,7 +43,7 @@
 
       @include breakpoint(md) {
         font-size: 3rem;
-        margin-block: 0rem 2rem;
+        margin-block: 0 2rem;
       }
     }
 

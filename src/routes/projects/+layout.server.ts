@@ -1,4 +1,4 @@
-import { projects } from '$lib/utils/data';
+import { projects } from '$lib/utils/projects';
 
 export async function load() {
   return {

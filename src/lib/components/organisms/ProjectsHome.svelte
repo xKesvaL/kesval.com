@@ -7,7 +7,7 @@
 
   export let projects: Project[] = [];
 
-  projects = projects.splice(0, 5);
+  const arrayProjects = Object.values(projects).splice(0, 5);
 
   function projectClickHandle(e: MouseEvent) {
     let target = (e.target as HTMLElement)?.closest('.project-panel');
@@ -20,7 +20,7 @@
   <h2>Projects</h2>
   <!-- svelte-ignore a11y-click-events-have-key-events -->
   <div class="projects" on:click={projectClickHandle}>
-    {#each projects as project, i (project.idProject)}
+    {#each arrayProjects as project, i (project.projectId)}
       <div
         class="project-panel"
         aria-expanded={i + 1 === parseInt(expandedIndex) ? 'true' : 'false'}
@@ -193,7 +193,6 @@
           left: calc((var(--panel-gap) + var(--button-size)) * -1);
           height: var(--button-size);
           width: calc(100% + (var(--button-size) * 2));
-          background: pink;
           z-index: -1;
           border-radius: 100vw;
           background: hsl(0, 0%, 0%, 0.5);

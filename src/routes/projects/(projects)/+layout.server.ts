@@ -1,9 +1,8 @@
-import { getProjectByHref } from '$lib/utils/data';
 import type { LayoutServerLoad } from './$types';
-import { projects } from '$lib/utils/data';
+import { projects } from '$lib/utils/projects';
 
 const load: LayoutServerLoad = async ({ url }) => {
-  const project = getProjectByHref(url.pathname);
+  const project = projects.find((p) => p.href === url.pathname);
 
   return {
     url: url.pathname,

@@ -15,10 +15,14 @@ export type ChatBotAnswers =
   | 'teachJS'
   | 'teachSvelte';
 
+export type Projects = {
+  [id: string]: Project;
+};
+
 export interface Project {
   name: string;
-  idProject: string;
   coverPath: string;
+  projectId: string;
   language: 'svelte' | 'react' | 'js' | 'ts';
   href: string;
   description: string;

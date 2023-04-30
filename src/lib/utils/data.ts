@@ -1,4 +1,4 @@
-import type { Company, Project, Skill, SkillType } from '$lib';
+import type { Company, Skill, SkillType } from '$lib';
 import { DateTime } from 'luxon';
 
 export const email = 'contact@kesval.com';
@@ -26,33 +26,6 @@ export const age = getAge();
 export const yearsOfCoding = getYearsOfCoding();
 
 export const yearsOfExperience = getYearsOfExperience();
-
-export const projectsOrdered: Project[] = [
-  {
-    name: 'Personal Portfolio',
-    idProject: '1',
-    coverPath: 'projects/personal-portfolio',
-    language: 'svelte',
-    href: '/projects/personal-portfolio',
-    description: 'This was my first true project using Svelte. I wanted to create something for me and show my skills.',
-    category: 'tech',
-    tags: ['svelte', 'front-end', 'ts', 'scss', 'personal', 'open-source'],
-  },
-  {
-    name: 'Chess Game',
-    idProject: '2',
-    coverPath: 'about',
-    language: 'react',
-    href: '/projects/chess-game',
-    description: 'My first project using React. I love chess and I wanted to recreate the game in a slick looking way.',
-    category: 'tech',
-    tags: ['react', 'front-end', 'ts', 'scss', 'open-source'],
-  },
-];
-
-export const projects = projectsOrdered.reverse();
-
-export const getProjectByHref = (href: string) => projects.find((project) => project.href === href);
 
 export const experiences: Company[] = [
   {
