@@ -8,7 +8,12 @@
   import { webVitals } from '$lib/utils/vitals';
   import { inject } from '@vercel/analytics';
   import BackToTop from '$lib/components/molecules/BackToTop.svelte';
-  import { fade, fly } from 'svelte/transition';
+  import { fly } from 'svelte/transition';
+  import { navigating} from "$app/stores";
+  import NProgress from 'nprogress';
+  import '$lib/scss/nprogress.scss';
+  NProgress.configure({ minimum: 0.2, easing:'ease', speed: 600})
+  $: $navigating ? NProgress.start() : NProgress.done();
 
   export let data;
 
@@ -40,7 +45,7 @@
 <Header />
 
 {#key data.url}
-  <main in:fade={{ duration: animDuration, delay: animDuration }} out:fly={{ duration: animDuration }}>
+  <main in:fly={{ y: 100, duration: 300, delay: 300 }} out:fly={{ y: -100, duration: 300 }}>
     <slot />
   </main>
 {/key}
