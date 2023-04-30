@@ -35,11 +35,11 @@
       toggleDropdown();
     }}>
     <div class="title">
-      {#if skillType == 'frontend'}
+      {#if skillType === 'frontend'}
         <div class="icon"><Code /></div>
-      {:else if skillType == 'backend'}
+      {:else if skillType === 'backend'}
         <div class="icon"><Server /></div>
-      {:else if skillType == 'other'}
+      {:else if skillType === 'other'}
         <div class="icon"><More /></div>
       {/if}
       <h3>{skillNames[skillType]}</h3>
@@ -66,6 +66,7 @@
   .main {
     isolation: isolate;
     width: 100%;
+
     .dropdown {
       color: var(--color-text);
       background: var(--color-bg-card);
@@ -104,7 +105,7 @@
           position: absolute;
           right: 0;
           transform-origin: 55% 55%;
-          transition: 0.3s ease-in-out;
+          transition: 0.3s ease;
           height: min-content;
           font-size: 2rem;
           margin-bottom: 0.5rem;

@@ -1,3 +1,4 @@
+<!--suppress CheckEmptyScriptTag -->
 <script lang="ts">
   import Contact from '../molecules/resume/Contact.svelte';
   import Experience from '../molecules/resume/Experience.svelte';
@@ -5,6 +6,15 @@
   import Photo from '../molecules/resume/Photo.svelte';
   import Skills from '../molecules/resume/Skills.svelte';
   import Title from '../molecules/resume/Title.svelte';
+  import type { Company, Skill } from '$lib';
+
+  export let age: number;
+  export let email: string;
+  export let yearsOfCoding: number;
+
+  export let skills: Skill[];
+
+  export let experiences: Company[];
 </script>
 
 <article class="resume">
@@ -14,7 +24,7 @@
   </div>
   <div class="section header-left">
     <Name />
-    <Contact />
+    <Contact {age} {email} {yearsOfCoding} />
   </div>
   <div class="section header-right">
     <Photo />
@@ -26,11 +36,11 @@
   </div>
   <div class="section experience">
     <Title>Experience</Title>
-    <Experience />
+    <Experience {experiences} />
   </div>
   <div class="section skills">
     <Title>Skills</Title>
-    <Skills />
+    <Skills {skills} />
   </div>
   <div class="section education">
     <Title>Education</Title>

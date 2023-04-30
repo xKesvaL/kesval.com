@@ -1,18 +1,17 @@
 <script lang="ts">
-  import ProjectBreadcrumb from '$lib/components/molecules/projects/ProjectBreadcrumb.svelte';
+  import Breadcrumbs from '$lib/components/molecules/Breadcrumb.svelte';
   import RelatedProjects from '$lib/components/organisms/RelatedProjects.svelte';
+  import type { LayoutData } from './$types';
 
-  export let data;
+  export let data: LayoutData;
 
-  let project = data.project;
+  const { project, projects } = data;
 </script>
 
 {#if project}
-  <ProjectBreadcrumb {project} />
+  <Breadcrumbs type="project" href={project.href} name={project.name} />
 {/if}
 
 <slot />
 
-{#if project}
-  <RelatedProjects {project} />
-{/if}
+<RelatedProjects {project} {projects} />

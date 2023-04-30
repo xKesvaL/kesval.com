@@ -3,8 +3,12 @@
   import SkillDropdown from '$lib/components/molecules/SkillDropdown.svelte';
   import Socials from '$lib/components/molecules/Socials.svelte';
   import Resume from '$lib/components/organisms/Resume.svelte';
-  import { age, skillTypes, skills } from '$lib/utils/data';
   import { onMount } from 'svelte';
+  import type { LayoutData } from './$types';
+
+  export let data: LayoutData;
+
+  const { age, email, yearsOfCoding, skillTypes, skills, experiences } = data;
 
   onMount(() => {
     let queries = new URLSearchParams(window.location.search);
@@ -46,13 +50,13 @@
   <h2>Skills. Take a look.</h2>
   <div class="skills">
     {#each skillTypes as skillType}
-      <SkillDropdown skills={skills.filter((sk) => sk.type == skillType)} {skillType} />
+      <SkillDropdown skills={skills.filter((sk) => sk.type === skillType)} {skillType} />
     {/each}
   </div>
 </section>
 <section id="resume" class="container">
   <h2>My Resume</h2>
-  <Resume />
+  <Resume {age} {email} {yearsOfCoding} {skills} {experiences} />
 </section>
 <!-- TODO Certifications -->
 <!-- <section id="certifications" class="container" /> -->
@@ -135,6 +139,7 @@
       margin: 0 auto;
       align-items: center;
       width: 100%;
+      min-height: 40vh;
 
       @include breakpoint(md) {
         flex-direction: row;

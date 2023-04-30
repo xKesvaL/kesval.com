@@ -1,5 +1,8 @@
 <script lang="ts">
-  import { email } from '$lib/utils/data';
+  import type { PageData } from './$types';
+
+  export let data: PageData;
+  const { email } = data;
 </script>
 
 <section class="container">

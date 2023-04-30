@@ -1,5 +1,9 @@
 <script lang="ts">
   import ProjectsList from '$lib/components/organisms/ProjectsList.svelte';
+  import type { LayoutData } from './$types';
+
+  export let data: LayoutData;
+  const { projects } = data;
 </script>
 
 <svelte:head>
@@ -9,7 +13,7 @@
 
 <section id="list" class="container">
   <h1>Projects</h1>
-  <ProjectsList />
+  <ProjectsList {projects} />
 </section>
 
 <style lang="scss">
@@ -32,7 +36,7 @@
 
       @include breakpoint(md) {
         font-size: 3rem;
-        margin-block: 0rem 5rem;
+        margin-block: 0 5rem;
       }
     }
   }

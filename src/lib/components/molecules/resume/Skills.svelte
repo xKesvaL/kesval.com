@@ -1,28 +1,36 @@
+<script lang="ts">
+  import type { Skill } from '$lib';
+
+  export let skills: Skill[];
+
+  let frontEnd = skills.filter((s) => s.type === 'frontend');
+  let backEnd = skills.filter((s) => s.type === 'backend');
+  let others = skills.filter((s) => s.type === 'other');
+</script>
+
 <ul class="resume-skills">
   <li>
     Front-End
     <div class="tags">
-      <span class="tag">React</span>
-      <span class="tag">Svelte</span>
-      <span class="tag">NextJS</span>
-      <span class="tag">TypeScript</span>
-      <span class="tag">PWAs</span>
+      {#each frontEnd as tag}
+        <span class="tag">{tag.name}</span>
+      {/each}
     </div>
   </li>
   <li>
     Back-End
     <div class="tags secondary">
-      <span class="tag">NodeJS</span>
-      <span class="tag">MongoDB</span>
-      <span class="tag">MariaDB</span>
+      {#each backEnd as tag}
+        <span class="tag">{tag.name}</span>
+      {/each}
     </div>
   </li>
   <li>
     Other
     <div class="tags tertiary">
-      <span class="tag">Photoshop</span>
-      <span class="tag">Premiere Pro</span>
-      <span class="tag">Excel</span>
+      {#each others as tag}
+        <span class="tag">{tag.name}</span>
+      {/each}
     </div>
   </li>
 </ul>

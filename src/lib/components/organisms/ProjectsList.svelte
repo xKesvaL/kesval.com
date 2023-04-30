@@ -1,12 +1,12 @@
 <script lang="ts">
   import type { Project } from '$lib';
-  import { projects } from '$lib/utils/data';
   import Button from '../atoms/Button.svelte';
   import ProjectCard from '../molecules/ProjectCard.svelte';
   import { Search as SearchJS } from 'js-search';
   import Search from '$lib/icons/Search.svelte';
 
   let projectsToShow = 6;
+  export let projects: Project[];
 
   $: moreProjects = projectsToShow < projects.length;
 

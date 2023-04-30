@@ -1,73 +1,124 @@
+<!--suppress CheckEmptyScriptTag -->
 <script lang="ts">
+  import { browser } from '$app/environment';
+  import { afterUpdate } from 'svelte';
+  import { fly } from 'svelte/transition';
   import ArrowTop from '$lib/icons/ArrowTop.svelte';
+  import { botState } from '$lib/stores/bot.js';
 
-  export let toBottom = false;
-  let scrollY = 0;
+  let scrollY: number;
   let prevScrollY = 0;
+  let scrollPercent: number;
+  let scrollingUp = false;
+  let innerHeight: number;
+  let scrollHeight: number;
+  let scrollThresholdStep: number;
+  const topPercent = 0.025;
+  const botPercent = 0.975;
+  let pageEndTopBound: number;
 
-  $: {
-    if (scrollY > prevScrollY) {
-      toBottom = true;
-    } else if (scrollY < prevScrollY) {
-      toBottom = false;
+  $: scrollThresholdStep = innerHeight * 0.1;
+  $: if (browser) {
+    scrollPercent = scrollY / pageEndTopBound;
+    pageEndTopBound = scrollHeight - innerHeight;
+    if (Math.abs(prevScrollY - scrollY) > scrollThresholdStep) {
+      scrollingUp = prevScrollY - scrollY > 0;
+      prevScrollY = scrollY;
     }
-    prevScrollY = scrollY;
   }
 
-  function scroll() {
-    window.scrollTo({
-      top: toBottom ? document.body.scrollHeight : 0,
-      behavior: 'smooth',
-    });
-  }
+  afterUpdate(() => {
+    scrollHeight = document.documentElement.scrollHeight;
+  });
 </script>
 
-<svelte:window bind:scrollY />
+<svelte:window bind:scrollY bind:innerHeight />
 
-<button
-  aria-controls="body"
-  class:toBottom
-  on:click={() => {
-    scroll();
-  }}>
-  <ArrowTop />
-  <div class="visually-hidden">Back to top</div>
-</button>
+{#if scrollPercent > topPercent && scrollPercent < botPercent}
+  <button
+    class="scroll-button {$botState ? 'bot' : ''}"
+    on:click={() => {
+      scrollY = scrollingUp ? 0 : scrollHeight;
+    }}
+    aria-label="scroll to {scrollingUp ? 'top' : 'bottom'}"
+    in:fly={{ y: 50, duration: 300, delay: 300 }}
+    out:fly={{ y: 50, duration: 300 }}>
+    <div class="inner">
+      <div class="arrow {scrollingUp ? '' : 'down'}">
+        <ArrowTop />
+      </div>
+
+      <svg height="100" width="100" style="transform: rotate(-90deg);stroke-dasharray: 251;">
+        <circle
+          cx="50"
+          cy="50"
+          r="40"
+          stroke-width="6"
+          stroke="var(--color-primary)"
+          style="stroke-dashoffset: {251 - 251 * scrollPercent};" />
+      </svg>
+    </div>
+  </button>
+{/if}
 
 <style lang="scss">
   @use '$lib/scss/breakpoints.scss' as *;
 
-  button {
+  .scroll-button {
     position: fixed;
-    bottom: 1rem;
-    right: 1rem;
-    aspect-ratio: 1/1;
-    width: 3rem;
-    background: var(--color-primary);
-    border: none;
-    border-radius: 50%;
-    padding: 0.5rem;
-    color: var(--color-static-text);
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
+    display: grid;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    z-index: 50;
+    transition: 0.3s 0.3s ease-in-out;
+    border-radius: 100vw;
+    background: transparent;
 
-    @include breakpoint(md) {
-      width: 4rem;
-      padding: 0.75rem;
+    &.bot {
+      @include breakpoint(sm) {
+        bottom: 39.5rem;
+      }
     }
 
-    &:hover,
-    &:focus {
-      transform: scale(1.1);
+    .inner {
+      backdrop-filter: blur(0.5rem);
+      border-radius: 100vw;
+      grid-column-start: 1;
+      grid-row-start: 1;
+      transition: 0.3s ease-in-out;
+      scale: 0.7;
+      position: relative;
+      background: var(--color-bg-card);
+
+      .arrow {
+        position: absolute;
+        top: 1.85rem;
+        left: 1.85rem;
+        z-index: 50;
+        height: 2.5rem;
+        width: 2.5rem;
+        color: var(--color-text);
+        transition: 0.3s ease-in-out;
+
+        &.down {
+          transform: rotateX(180deg);
+        }
+      }
+
+      svg {
+        fill: var(--color-primary);
+        fill-opacity: 0.1;
+        transition: 0.3s ease-in-out;
+      }
     }
 
-    :global(svg) {
-      transition: rotate 0.3s ease-in-out;
-    }
+    &:hover {
+      .inner {
+        scale: 0.8;
 
-    &.toBottom {
-      :global(svg) {
-        rotate: -180deg;
+        svg {
+          fill-opacity: 0.2;
+        }
       }
     }
   }

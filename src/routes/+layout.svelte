@@ -9,13 +9,16 @@
   import { inject } from '@vercel/analytics';
   import BackToTop from '$lib/components/molecules/BackToTop.svelte';
   import { fly } from 'svelte/transition';
-  import { navigating} from "$app/stores";
+  import { navigating } from '$app/stores';
   import NProgress from 'nprogress';
   import '$lib/scss/nprogress.scss';
-  NProgress.configure({ minimum: 0.2, easing:'ease', speed: 600})
+  import type { LayoutData } from './$types';
+  NProgress.configure({ minimum: 0.2, easing: 'ease', speed: 600 });
   $: $navigating ? NProgress.start() : NProgress.done();
 
-  export let data;
+  export let data: LayoutData;
+
+  const { url, email } = data;
 
   if (!dev) {
     inject({
@@ -50,7 +53,7 @@
   </main>
 {/key}
 
-<ContactBot />
+<ContactBot {email} />
 <BackToTop />
 
 <Footer />

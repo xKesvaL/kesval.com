@@ -1,7 +1,9 @@
 <script lang="ts">
   import Circle from '$lib/icons/Circle.svelte';
   import Pin from '$lib/icons/Pin.svelte';
-  import { experiences } from '$lib/utils/data';
+  import type { Company } from '$lib';
+
+  export let experiences: Company[];
 </script>
 
 <div class="resume-experience">

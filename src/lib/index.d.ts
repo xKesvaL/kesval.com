@@ -1,5 +1,3 @@
-import type { DateTime } from 'luxon';
-
 export interface SRCSet {
   avif: string;
   webp: string;
@@ -71,3 +69,15 @@ export interface Skill {
 }
 
 export type SkillType = 'frontend' | 'backend' | 'other';
+
+export interface Post {
+  title: string;
+  tags: TagSecondary[];
+  hidden: boolean;
+  date: string;
+  html?: string;
+  readingTime: string;
+  relatedPosts: Post[];
+  slug: string;
+  categories: TagPrimary[];
+}

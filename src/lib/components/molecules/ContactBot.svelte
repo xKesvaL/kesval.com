@@ -1,17 +1,19 @@
 <script lang="ts">
+  /* eslint-disable no-constant-condition */
   import Close from '$lib/icons/Close.svelte';
   import { botState, history } from '$lib/stores/bot';
   import Image from '../atoms/Image.svelte';
   import { beforeUpdate, afterUpdate, onDestroy } from 'svelte';
   import { fly, fade } from 'svelte/transition';
   import type { ChatBotAnswers } from '$lib';
-  import { email } from '$lib/utils/data';
+
+  export let email: string;
 
   let content: HTMLElement;
   let autoscroll: boolean;
 
   const toggleExpanded = () => {
-    $botState = !$botState;
+    botState.update((state) => !state);
   };
 
   let chatBotAnswers = {
@@ -29,7 +31,7 @@
     hire: [
       'Wonderful!',
       "Send me a message and let's chat about it!",
-      "Oh, and, I'm looking for little personnal side jobs, not full-time jobs.",
+      "Oh, and, I'm looking for little personal side jobs, not full-time jobs.",
     ],
     other: ['Okay, no problem', 'Can I help you with anything else?'],
     confirmHire: [
@@ -37,7 +39,7 @@
       `e-mail: <a href="mailto:${email}" class="special-link">${email}</a>`,
       'Can I help you with anything else?',
     ],
-    teachMe: ["Hum, sure, I'm not a teacher but I can give you ressources or help you.", 'What do you want to learn?'],
+    teachMe: ["Hum, sure, I'm not a teacher but I can give you resources or help you.", 'What do you want to learn?'],
     teachHTMLCSS: [
       'Well, I strongly suggest <a href="https://www.freecodecamp.org/learn/2022/responsive-web-design/" class="special-link" rel="external">this course</a> from freeCodeCamp.',
       "It's free, interactive and you will learn everything from basics to advanced stuff.",
@@ -100,7 +102,7 @@
   function chooseQuestion(e: MouseEvent | KeyboardEvent) {
     if (e.currentTarget instanceof HTMLElement) {
       e.currentTarget.classList.add('chosen');
-      $history = [...$history, e.currentTarget.id as ChatBotAnswers];
+      $history = [...$history, e.currentTarget.dataset.name as ChatBotAnswers];
       document.querySelectorAll('.question').forEach((el) => {
         if (!el.classList.contains('chosen')) {
           el.classList.add('not-chosen');
@@ -154,7 +156,7 @@
 
     {#each chatBotQuestions['first'] as question, i}
       <div
-        class="question {'' ? 'chosen not-chosen <- only so svelte sees it as "used"' : ''}"
+        class="question {'' ? 'chosen not-chosen <- only so svelte sees it as used' : ''}"
         on:click|once={(e) => {
           chooseQuestion(e);
         }}
@@ -163,7 +165,7 @@
             chooseQuestion(e);
           }
         }}
-        id={question.to}>
+        data-name={question.to}>
         <p>{question.text}</p>
       </div>
     {/each}
@@ -185,7 +187,7 @@
             }
           }}
           in:fade={{ duration: 500, delay: chatBotAnswers[action].length * 1000 }}
-          id={question.to}>
+          data-name={question.to}>
           <p>{question.text}</p>
         </div>
       {/each}
@@ -203,7 +205,7 @@
     z-index: 20;
     background: hsla(var(--color-primary-hue), 30%, var(--primary-lighter-lightness), 0.9);
     backdrop-filter: blur(1rem) saturate(2);
-    box-shadow: 0px 0px 20px 0px black;
+    box-shadow: 0 0 20px 0 black;
     transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out;
     opacity: 0;
     pointer-events: none;
@@ -232,6 +234,7 @@
     .content {
       padding: 1rem;
       overflow-y: scroll;
+      overscroll-behavior: contain;
       max-height: 90%;
       display: grid;
       scroll-behavior: smooth;

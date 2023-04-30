@@ -3,7 +3,7 @@
   import AllSVGs from '$lib/icons/languages/allSVGs.svelte';
   import Button from '../atoms/Button.svelte';
   import Image from '../atoms/Image.svelte';
-  let expandedIndex: string = '1';
+  let expandedIndex = '1';
 
   export let projects: Project[] = [];
 

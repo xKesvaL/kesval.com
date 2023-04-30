@@ -1,9 +1,9 @@
 <script lang="ts">
   import type { Project } from '$lib';
-  import { projects } from '$lib/utils/data';
   import ProjectCard from '../molecules/ProjectCard.svelte';
 
   export let project: Project;
+  export let projects: Project[];
 
   const relatedProjects = projects
     .filter((p) => p.id !== project.id)

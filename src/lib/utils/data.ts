@@ -27,7 +27,7 @@ export const yearsOfCoding = getYearsOfCoding();
 
 export const yearsOfExperience = getYearsOfExperience();
 
-const projectsOrdered: Project[] = [
+export const projectsOrdered: Project[] = [
   {
     name: 'Personal Portfolio',
     id: '1',
@@ -240,7 +240,7 @@ export const skills: Skill[] = [
     type: 'backend',
   },
   {
-    name: 'MongoDB',
+    name: 'Firebase',
     percentage: 70,
     type: 'backend',
   },

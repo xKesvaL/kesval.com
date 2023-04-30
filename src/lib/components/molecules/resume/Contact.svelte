@@ -7,7 +7,10 @@
   import Pin from '$lib/icons/Pin.svelte';
   import Star from '$lib/icons/Star.svelte';
   import Suitcase from '$lib/icons/Suitcase.svelte';
-  import { age, email, yearsOfCoding } from '$lib/utils/data';
+
+  export let age;
+  export let email;
+  export let yearsOfCoding;
 </script>
 
 <ul class="resume-contact">

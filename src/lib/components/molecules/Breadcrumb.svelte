@@ -1,15 +1,18 @@
 <script lang="ts">
-  import type { Project } from '$lib';
+  export let type: 'project' | 'blog';
 
-  export let project: Project;
+  export let name: string;
+  export let href: string;
 </script>
 
 <div>
-  <a href="/">KesvaL</a>
+  <a href="/static">KesvaL</a>
   <span>»</span>
-  <a href="/projects">Projects</a>
+  <a href="/{type === 'project' ? 'projects' : 'blog'}">
+    {type === 'project' ? 'Projects' : 'Blog'}
+  </a>
   <span>»</span>
-  <a href={project.href}>{project.name}</a>
+  <a href="/{type === 'project' ? 'projects' : 'blog'}/{href}">{name}</a>
 </div>
 
 <style lang="scss">
@@ -19,6 +22,7 @@
     justify-content: center;
     gap: 0.5rem;
     font-size: 1.2rem;
+    padding: 0.5rem 0;
 
     span {
       margin-bottom: 0.25rem;

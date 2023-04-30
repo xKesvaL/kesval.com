@@ -6,9 +6,9 @@
   import { page } from '$app/stores';
   import { botState } from '$lib/stores/bot';
 
-  let expanded: boolean = false;
+  let expanded = false;
   let y: number;
-  let scrolled: boolean = false;
+  let scrolled = false;
 
   let prevScroll = 0;
 
@@ -19,14 +19,10 @@
   }
 
   function toggleBot() {
-    $botState = !$botState;
+    botState.update((state) => !state);
   }
 
-  $: if (y > 0) {
-    scrolled = true;
-  } else {
-    scrolled = false;
-  }
+  $: scrolled = y > 0;
 
   $: {
     if (y >= 128 && y > prevScroll && !expanded) {
@@ -40,7 +36,7 @@
 
 <svelte:window bind:scrollY={y} />
 
-<header class="{scrolled ? 'scrolled' : ''} {scrollDirection == 'down' ? 'scrolled-down' : ''}">
+<header class="{scrolled ? 'scrolled' : ''} {scrollDirection === 'down' ? 'scrolled-down' : ''}">
   <a href="/" aria-label="Site Logo" class="logo">
     <Image path={'logos/kesval'} alt="KesvaL's logo" />
   </a>
@@ -52,23 +48,24 @@
     <span class="visually-hidden">Show Menu</span>
   </button>
   <!-- svelte-ignore a11y-role-supports-aria-props -->
+  <!--suppress HtmlWrongAttributeValue -->
   <nav id="navigation" aria-expanded={expanded}>
     <ul>
-      <li class={$page.route.id == '/' ? 'active' : ''}>
+      <li class={$page.route.id === '/' ? 'active' : ''}>
         <a class="home" href="/" data-sveltekit-preload-data data-sveltekit-preload-code on:click={toggleExpanded}>
           Home <span>/</span>
         </a>
       </li>
       <li class={$page.route.id?.startsWith('/about') ? 'active' : ''}>
         <a href="/about" data-sveltekit-preload-data data-sveltekit-preload-code on:click={toggleExpanded}>About</a>
-
-        <!-- Presentation, experience, skills -->
       </li>
       <li class={$page.route.id?.startsWith('/projects') ? 'active' : ''}>
         <a href="/projects" data-sveltekit-preload-data data-sveltekit-preload-code on:click={toggleExpanded}>
           Projects
         </a>
-        <!-- Page with all projects: detailed and access to examples -->
+      </li>
+      <li class={$page.route.id?.startsWith('/blog') ? 'active' : ''}>
+        <a href="/blog" data-sveltekit-preload-data data-sveltekit-preload-code on:click={toggleExpanded}>Blog</a>
       </li>
       <li>
         <button on:click={toggleBot}>Contact</button>
@@ -107,7 +104,7 @@
     min-height: 10vh;
     transition: transform 0.3s ease-in-out;
     background: rgba(var(--color-bg-body-rgb), 0.9);
-    z-index: 100;
+    z-index: 10;
 
     @include padded-container();
 
