@@ -102,6 +102,7 @@
       inset: 0;
       z-index: -1;
       transition: all 0.3s ease;
+      scale: 1;
 
       filter: blur(0.3rem) brightness(0.4);
     }
@@ -111,6 +112,7 @@
       scale: 1.05;
 
       .cover {
+        scale: 1.25;
         filter: blur(0.1rem) brightness(0.6);
       }
     }
