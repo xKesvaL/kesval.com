@@ -36,7 +36,7 @@
   <h1>{error} - Page not found</h1>
   <p>{error === 404 ? message : $page.error}</p>
   <Button href="/">Return back home</Button>
-  <img src="/optimized-images/404.svg" alt="Page not found illustration" />
+  <img src="/optimized-images/{error === 404 ? '404' : 'error'}.svg" alt="Page not found illustration" />
 </section>
 
 <style lang="scss">
