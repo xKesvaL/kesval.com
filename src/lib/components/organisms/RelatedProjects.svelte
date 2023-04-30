@@ -6,7 +6,7 @@
   export let projects: Project[];
 
   const relatedProjects = projects
-    .filter((p) => p.id !== project.id)
+    .filter((p) => p.idProject !== project.idProject)
     .filter((p) => p.category == project.category)
     .sort((a, b) => {
       const aTags = a.tags.filter((t) => project.tags.includes(t));

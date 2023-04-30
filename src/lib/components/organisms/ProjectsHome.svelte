@@ -20,16 +20,16 @@
   <h2>Projects</h2>
   <!-- svelte-ignore a11y-click-events-have-key-events -->
   <div class="projects" on:click={projectClickHandle}>
-    {#each projects as project, i (project.id)}
+    {#each projects as project, i (project.idProject)}
       <div
         class="project-panel"
-        aria-expanded={i + 1 == parseInt(expandedIndex) ? 'true' : 'false'}
+        aria-expanded={i + 1 === parseInt(expandedIndex) ? 'true' : 'false'}
         id="project-{i + 1}">
         <h3 class="project-heading" id="project-{i + 1}-heading">
           <button
             class="project-trigger"
             aria-controls="project-{i + 1}-content"
-            aria-expanded={i + 1 == parseInt(expandedIndex) ? 'true' : 'false'}>
+            aria-expanded={i + 1 === parseInt(expandedIndex) ? 'true' : 'false'}>
             <span class="project-title">{project.name}</span>
             <svg class="project-icon">
               <use href="#{project.language}-logo" xlink:href="#{project.language}-logo" />
@@ -40,7 +40,7 @@
           class="project-content"
           id="project-{i + 1}-content"
           aria-labelledby="project-{i + 1}-heading"
-          aria-hidden={i + 1 == parseInt(expandedIndex) ? 'false' : 'true'}
+          aria-hidden={i + 1 === parseInt(expandedIndex) ? 'false' : 'true'}
           role="region">
           <div class="project-more">
             {project.description}

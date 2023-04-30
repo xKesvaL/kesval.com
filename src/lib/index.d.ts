@@ -17,7 +17,7 @@ export type ChatBotAnswers =
 
 export interface Project {
   name: string;
-  id: string;
+  idProject: string;
   coverPath: string;
   language: 'svelte' | 'react' | 'js' | 'ts';
   href: string;
