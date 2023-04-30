@@ -47,7 +47,7 @@
     border: none;
     border-radius: 50%;
     padding: 0.5rem;
-    color: var(--color-white);
+    color: var(--color-static-text);
     cursor: pointer;
     transition: all 0.2s ease-in-out;
 
