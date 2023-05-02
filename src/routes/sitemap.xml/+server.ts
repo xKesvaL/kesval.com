@@ -7,6 +7,7 @@ export async function GET() {
       .replace('.md', '')
       .replace('+page', '')
       .replace('+layout', '')
+      .replace('+error', '')
       .replace('+server', '')
       .replace('+404', '')
       .replace(/\(([^)]+)\)\//g, '');
