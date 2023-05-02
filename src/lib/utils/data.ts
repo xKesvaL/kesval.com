@@ -1,4 +1,4 @@
-import type { Company, Skill, SkillType } from '$lib';
+import type { Company, Skill, SkillType, TagPrimary, TagSecondary } from '$lib';
 import { DateTime } from 'luxon';
 
 export const email = 'contact@kesval.com';
@@ -8,6 +8,27 @@ export const getAge = () => {
   const now = DateTime.local();
   return Math.floor(now.diff(birthDate, 'years').years);
 };
+
+export const categories: TagPrimary[] = ['tech', 'misc'];
+
+export const tags: TagSecondary[] = [
+  'svelte',
+  'react',
+  'js',
+  'ts',
+  'front-end',
+  'back-end',
+  'mobile',
+  'desktop',
+  'open-source',
+  'css',
+  'guide',
+  'html',
+  'personal',
+  'review',
+  'games',
+  'scss',
+];
 
 export const getYearsOfCoding = () => {
   const firstCoding = DateTime.fromISO('2012-06-15');

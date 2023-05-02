@@ -139,7 +139,6 @@
       margin: 0 auto;
       align-items: center;
       width: 100%;
-      min-height: 40vh;
 
       @include breakpoint(md) {
         flex-direction: row;

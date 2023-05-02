@@ -19,6 +19,16 @@ const projectsOrdered = {
     tags: ['react', 'front-end', 'ts', 'scss', 'open-source'],
     projectId: '2',
   },
+  '3': {
+    name: 'Idk yet',
+    coverPath: 'about',
+    language: 'react',
+    href: '/projects/',
+    description: "I don't know yet, probably something cool or useful. Might try flutter or something else.",
+    category: 'tech',
+    tags: [],
+    projectId: '3',
+  },
 };
 
 const projects = Object.values(projectsOrdered).reverse();

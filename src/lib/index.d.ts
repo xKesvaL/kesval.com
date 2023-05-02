@@ -31,7 +31,7 @@ export interface Project {
 }
 
 export type TagPrimary = 'tech' | 'misc';
-
+// hey if you change this, change it in src\lib\utils\data.ts too
 export type TagSecondary =
   | 'svelte'
   | 'react'

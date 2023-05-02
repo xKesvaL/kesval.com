@@ -75,4 +75,12 @@ svg {
 
 .container {
   @include padded-container(1400px);
+
+  &-medium {
+    @include padded-container(1200px);
+  }
+
+  &-small {
+    @include padded-container(1080px);
+  }
 }

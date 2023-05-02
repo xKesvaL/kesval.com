@@ -3,7 +3,7 @@
   import type { LayoutData } from './$types';
 
   export let data: LayoutData;
-  const { projects } = data;
+  const { projects, categories, tags } = data;
 </script>
 
 <svelte:head>
@@ -13,7 +13,7 @@
 
 <section id="list" class="container">
   <h1>Projects</h1>
-  <ProjectsList {projects} />
+  <ProjectsList {projects} {categories} {tags} />
 </section>
 
 <style lang="scss">

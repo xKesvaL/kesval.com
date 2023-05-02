@@ -79,10 +79,10 @@
         background: var(--color-bg-card);
         border-radius: 0.5rem;
         font-size: 0.8rem;
+        transition: scale 0.3s ease-in-out, background 0.3s ease-in-out, color 0.3s ease-in-out;
 
         @include breakpoint(xs) {
           font-size: 1rem;
-          padding: 0.5rem 1rem;
         }
 
         &:first-child {

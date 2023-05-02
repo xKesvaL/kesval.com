@@ -1,3 +1,4 @@
+<!--suppress HtmlUnknownTag, CheckEmptyScriptTag -->
 <script lang="ts">
   import type { Skill } from '$lib';
   import Code from '$lib/icons/Code.svelte';
@@ -45,8 +46,8 @@
       <h3>{skillNames[skillType]}</h3>
     </div>
   </button>
-  {#if opened}
-    <ul class="content {skillType}" transition:fly={{ y: -50, duration: 300 }}>
+    <ul class="content {opened ? 'opened' : ''} {skillType}">
+      <div>
       {#each skills as skill}
         <li>
           <label for="sk-react-{skill.name}">
@@ -58,8 +59,8 @@
           </div>
         </li>
       {/each}
+      </div>
     </ul>
-  {/if}
 </div>
 
 <style lang="scss">
@@ -70,15 +71,14 @@
     .dropdown {
       color: var(--color-text);
       background: var(--color-bg-card);
-      padding: 1rem;
-      border-radius: 1rem;
+      padding: 1.5rem 1rem .5rem 1rem;
+      border-radius: 1rem 1rem 0 0;
       width: 100%;
       z-index: 10;
       transition: border-radius 0.3s ease-in-out;
 
       &.opened {
-        border-radius: 1rem 1rem 0 0;
-
+        margin-bottom: 0;
         .title::after {
           rotate: 45deg;
         }
@@ -121,6 +121,17 @@
       z-index: -1;
       border-radius: 0 0 1rem 1rem;
       padding: 0 1rem 1rem;
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.3s ease-in-out;
+
+      &.opened {
+        grid-template-rows: 1fr;
+      }
+
+      & > div {
+        overflow: hidden;
+      }
 
       &.frontend {
         .progress-wrap {

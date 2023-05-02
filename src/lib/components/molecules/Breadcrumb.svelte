@@ -16,13 +16,19 @@
 </div>
 
 <style lang="scss">
+  @use '$lib/scss/breakpoints' as *;
+
   div {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
     padding: 0.5rem 0;
+
+    @include breakpoint(md) {
+      font-size: 1.25rem;
+    }
 
     span {
       margin-bottom: 0.25rem;

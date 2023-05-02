@@ -69,7 +69,7 @@
     display: grid;
     bottom: 0.5rem;
     right: 0.5rem;
-    z-index: 50;
+    z-index: 5;
     transition: 0.3s 0.3s ease-in-out;
     border-radius: 100vw;
     background: transparent;
