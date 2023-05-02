@@ -1,6 +1,5 @@
 <script lang="ts">
   import Socials from '../molecules/Socials.svelte';
-  import ThemeSwitcher from '../molecules/ThemeSwitcher.svelte';
 </script>
 
 <footer>
@@ -13,7 +12,6 @@
   </div>
   <div><Socials color="var(--color-static-text)" /></div>
   <div class="util-links">
-    <a href="/sitemap.xml">Sitemap</a>
     <a href="/legal-notice">Legal Notice</a>
     <a href="/privacy-policy">Privacy Policy</a>
   </div>
