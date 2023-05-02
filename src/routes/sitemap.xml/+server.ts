@@ -11,7 +11,7 @@ export async function GET() {
       .replace('+server', '')
       .replace('+404', '')
       .replace(/\(([^)]+)\)\//g, '');
-    return url === '/index' ? '/' : url;
+    return `https://kesval.com${url}`;
   });
 
   const uniqueUrls = [...new Set(urls)];
