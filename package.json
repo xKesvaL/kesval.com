@@ -17,7 +17,7 @@
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "lint": "prettier --plugin-search-dir . --check . && eslint .",
     "format": "prettier --plugin-search-dir . --write .",
-    "postbuild": "svelte-sitemap --o .vercel/output/static --domain https://kesval.com"
+    "postbuild": "npx svelte-sitemap --o .vercel/output/static --domain https://kesval.com"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^2.0.1",
@@ -49,6 +49,7 @@
   },
   "type": "module",
   "dependencies": {
+    "@sveltejs/adapter-vercel": "^2.4.3",
     "@types/js-search": "^1.4.0",
     "js-search": "^2.0.0",
     "luxon": "^3.3.0",
