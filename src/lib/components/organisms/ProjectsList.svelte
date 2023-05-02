@@ -47,7 +47,7 @@
     <input type="text" bind:value={searchValue} class="search" placeholder="Search..." />
   </div>
   <div class="projects">
-    {#if projectShowed && projectShowed.length > 0}
+    {#if projectsShowed && projectsShowed.length > 0}
       {#each projectsShowed as project}
         <ProjectCard {project} />
       {/each}
