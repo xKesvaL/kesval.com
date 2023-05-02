@@ -27,6 +27,8 @@
 
   $: if (projectsSearched?.length > 0) {
     projectsShowed = projectsSearched.slice(0).splice(0, projectsToShow) as Project[];
+  } else if (projectsSearched?.length == 0 && searchValue != '') {
+    projectsShowed = [];
   } else {
     projectsShowed = projects.slice(0).splice(0, projectsToShow);
   }
@@ -45,9 +47,13 @@
     <input type="text" bind:value={searchValue} class="search" placeholder="Search..." />
   </div>
   <div class="projects">
-    {#each projectsShowed as project}
-      <ProjectCard {project} />
-    {/each}
+    {#if projectShowed && projectShowed.length > 0}
+      {#each projectsShowed as project}
+        <ProjectCard {project} />
+      {/each}
+    {:else}
+      Nothing to show here, sorry.
+    {/if}
   </div>
   <div class="see-more" class:moreProjects>
     <Button size="large" on:click={seeMore}>See More</Button>
