@@ -11,7 +11,7 @@
   <meta name="description" content="The full list of all of KesvaL's projects, right here" />
 </svelte:head>
 
-<section id="list" class="container">
+<section id="list">
   <h1>Projects</h1>
   <ProjectsList {projects} {categories} {tags} />
 </section>
@@ -22,9 +22,15 @@
 
   section {
     padding-block: 2rem 5rem;
+    padding-inline: 1rem;
 
     @include breakpoint(md) {
       padding-block: 5rem;
+      padding-inline: 4rem;
+    }
+
+    @include breakpoint(lg) {
+      padding-inline: 10rem;
     }
 
     h1 {

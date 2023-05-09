@@ -28,6 +28,8 @@ export const tags: TagSecondary[] = [
   'review',
   'games',
   'scss',
+  'nextjs',
+  'sveltekit',
 ];
 
 export const getYearsOfCoding = () => {

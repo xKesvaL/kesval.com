@@ -8,6 +8,8 @@
   let tags: string[] = project.tags.slice(0).splice(0, 2);
 </script>
 
+<!-- TODO: Redo entire card -> Make it look better, cleaner. Looks too clogged up rn. -->
+
 <a class="project-card" href={project.href} transition:fade={{ duration: 300 }}>
   <h2>{project.name}</h2>
   <div class="cover">

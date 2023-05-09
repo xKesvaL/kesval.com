@@ -31,7 +31,9 @@ export interface Project {
 }
 
 export type TagPrimary = 'tech' | 'misc';
-// hey if you change this, change it in src\lib\utils\data.ts too
+// !!!
+// !!! hey if you change this, change it in src\lib\utils\data.ts too
+// !!!
 export type TagSecondary =
   | 'svelte'
   | 'react'
@@ -48,7 +50,9 @@ export type TagSecondary =
   | 'personal'
   | 'review'
   | 'games'
-  | 'scss';
+  | 'scss'
+  | 'nextjs'
+  | 'sveltekit';
 
 export interface Company {
   name: string;

@@ -30,7 +30,7 @@
   let projectsShowed = projects.slice(0).splice(0, projectsToShow);
   let filtersOpen = false;
   let categoriesOpen = true;
-  let tagsOpen = false;
+  let tagsOpen = true;
 
   $: projectsSearched = search.search(`${searchValue} ${searchTags.join(' ')}`);
 
@@ -76,100 +76,97 @@
 </button>
 
 <div class="projects-wrapper">
-  <div />
-  <div>
-    {#if filtersOpen}
-      <div
-        class="tagging {filtersOpen ? 'open' : ''}"
-        transition:fly={{
-          y: 20,
-        }}>
-        <h2>
-          Filters
+  <div class="search-wrapper">
+    <div class="search-icon">
+      <Search />
+    </div>
+    <input type="text" bind:value={searchValue} class="search" placeholder="Search..." />
+  </div>
+
+  {#if filtersOpen}
+    <div
+      class="tagging {filtersOpen ? 'open' : ''}"
+      transition:fly={{
+        y: 20,
+      }}>
+      <h2>
+        Filters
+        <button
+          on:click={() => {
+            toggleFilters();
+          }}>
+          +
+        </button>
+      </h2>
+
+      <div class="tagging-inner">
+        <div class:open={categoriesOpen === true}>
           <button
             on:click={() => {
-              toggleFilters();
+              categoriesOpen = !categoriesOpen;
             }}>
-            +
-          </button>
-        </h2>
-
-        <div class="tagging-inner">
-          <div class:open={categoriesOpen === true}>
-            <button
-              on:click={() => {
-                categoriesOpen = !categoriesOpen;
-              }}>
-              <h3>
-                Categories
-                <div class="icon">
-                  <ChevronDown />
-                </div>
-              </h3>
-            </button>
-            <div class="list">
-              <div>
-                {#each categories as category}
-                  <button
-                    class={searchTags.includes(category) ? 'active' : ''}
-                    on:click={() => {
-                      toggleTag(category);
-                    }}>
-                    {category}
-                  </button>
-                {/each}
+            <h3>
+              Categories
+              <div class="icon">
+                <ChevronDown />
               </div>
+            </h3>
+          </button>
+          <div class="list">
+            <div>
+              {#each categories as category}
+                <button
+                  class={searchTags.includes(category) ? 'active' : ''}
+                  on:click={() => {
+                    toggleTag(category);
+                  }}>
+                  {category}
+                </button>
+              {/each}
             </div>
           </div>
-          <div class:open={tagsOpen === true}>
-            <button
-              on:click={() => {
-                tagsOpen = !tagsOpen;
-              }}>
-              <h3>
-                Tags
-                <div class="icon">
-                  <ChevronDown />
-                </div>
-              </h3>
-            </button>
-            <div class="list">
-              <div>
-                {#each tags as tag}
-                  <button
-                    class={searchTags.includes(tag) ? 'active' : ''}
-                    on:click={() => {
-                      toggleTag(tag);
-                    }}>
-                    {tag}
-                  </button>
-                {/each}
+        </div>
+        <div class:open={tagsOpen === true}>
+          <button
+            on:click={() => {
+              tagsOpen = !tagsOpen;
+            }}>
+            <h3>
+              Tags
+              <div class="icon">
+                <ChevronDown />
               </div>
+            </h3>
+          </button>
+          <div class="list">
+            <div>
+              {#each tags as tag}
+                <button
+                  class={searchTags.includes(tag) ? 'active' : ''}
+                  on:click={() => {
+                    toggleTag(tag);
+                  }}>
+                  {tag}
+                </button>
+              {/each}
             </div>
           </div>
         </div>
       </div>
+    </div>
+  {/if}
+
+  <div class="projects">
+    {#if projectsShowed && projectsShowed.length > 0}
+      {#each projectsShowed as project}
+        <ProjectCard {project} />
+      {/each}
+    {:else}
+      <div class="nothing">Nothing to show here, sorry.</div>
     {/if}
-
-    <div class="search-wrapper">
-      <div class="search-icon">
-        <Search />
-      </div>
-      <input type="text" bind:value={searchValue} class="search" placeholder="Search..." />
-    </div>
-
-    <div class="projects">
-      {#if projectsShowed && projectsShowed.length > 0}
-        {#each projectsShowed as project}
-          <ProjectCard {project} />
-        {/each}
-      {:else}
-        <div class="nothing">Nothing to show here, sorry.</div>
-      {/if}
-    </div>
-    <div class="see-more" class:moreProjects>
-      <Button size="large" on:click={seeMore}>See More</Button>
-    </div>
+  </div>
+  <div class="see-more" class:moreProjects>
+    <Button size="large" on:click={seeMore}>See More</Button>
   </div>
 </div>
 
@@ -200,17 +197,16 @@
   .projects-wrapper {
     display: grid;
     position: relative;
+    gap: 2rem;
+    align-items: start;
+    justify-items: center;
 
     @include breakpoint(md) {
       grid-template-columns: 1fr 2fr;
     }
 
-    @include breakpoint(lg) {
-      grid-template-columns: 1fr 3fr;
-    }
-
     @include breakpoint(xl) {
-      grid-template-columns: 1fr 4fr;
+      grid-template-columns: 1fr 3fr;
     }
 
     .tagging {
@@ -226,16 +222,9 @@
       overflow: hidden;
 
       @include breakpoint(md) {
-        inset: unset;
-        left: 1rem;
-        top: 7rem;
-        bottom: 7rem;
-        max-width: 19rem;
+        inset: 0;
         border-radius: 1rem;
-      }
-
-      @include breakpoint(xl) {
-        max-width: 21vw;
+        position: relative;
       }
 
       & > h2 {
@@ -352,6 +341,19 @@
       box-shadow: 0 0.5rem 1rem rgba(39, 44, 49, 0.6), 1px 3px 8px rgba(39, 44, 49, 0.3);
       overflow: hidden;
       isolation: isolate;
+      grid-column: 1/-1;
+
+      @include breakpoint(sm) {
+        width: 60%;
+      }
+
+      @include breakpoint(md) {
+        width: 50%;
+      }
+
+      @include breakpoint(lg) {
+        width: 40%;
+      }
 
       &:focus-within {
         outline: 2px solid var(--color-primary);
@@ -394,7 +396,6 @@
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      padding: 1rem 0;
       gap: 1rem;
 
       @include breakpoint(md) {

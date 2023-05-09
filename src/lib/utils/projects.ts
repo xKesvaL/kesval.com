@@ -1,12 +1,16 @@
-const projectsOrdered = {
+import type { Project } from '$lib';
+
+const projectsOrdered: {
+  [key: string]: Project;
+} = {
   '1': {
     name: 'Personal Portfolio',
-    coverPath: 'projects/personal-portfolio',
+    coverPath: '/projects/personal-portfolio',
     language: 'svelte',
     href: '/projects/personal-portfolio',
-    description: 'This was my first true project using Svelte. I wanted to create something for me and show my skills.',
+    description: 'Wanted to show my skills! Learned Svelte(Kit) while doing it, cool.',
     category: 'tech',
-    tags: ['svelte', 'front-end', 'ts', 'scss', 'personal', 'open-source'],
+    tags: ['svelte', 'front-end', 'ts', 'scss', 'personal', 'open-source', 'sveltekit'],
     projectId: '1',
   },
   '2': {
@@ -14,17 +18,17 @@ const projectsOrdered = {
     coverPath: 'about',
     language: 'react',
     href: '/projects/chess-game',
-    description: 'My first project using React. I love chess and I wanted to recreate the game in a slick looking way.',
+    description: 'NextJS, React, Firebase, Chess. Four things that looked cool, used them.',
     category: 'tech',
-    tags: ['react', 'front-end', 'ts', 'scss', 'open-source'],
+    tags: ['react', 'front-end', 'ts', 'scss', 'open-source', 'nextjs'],
     projectId: '2',
   },
   '3': {
-    name: 'Idk yet',
+    name: 'WYNK',
     coverPath: 'about',
     language: 'react',
-    href: '/projects/',
-    description: "I don't know yet, probably something cool or useful. Might try flutter or something else.",
+    href: '/projects/wynk',
+    description: 'I wanted a place to store « Knowledge », so I made one.',
     category: 'tech',
     tags: [],
     projectId: '3',
