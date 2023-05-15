@@ -49,7 +49,7 @@
   "dependencies": {
     "@sveltejs/adapter-vercel": "^2.4.3",
     "@types/js-search": "^1.4.0",
-    "js-search": "^2.0.0",
+    "js-search": "^2.0.1",
     "luxon": "^3.3.0",
     "mdsvex": "^0.10.6",
     "nprogress": "^0.2.0",
