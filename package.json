@@ -47,7 +47,7 @@
   },
   "type": "module",
   "dependencies": {
-    "@sveltejs/adapter-vercel": "^2.4.3",
+    "@sveltejs/adapter-vercel": "^3.0.0",
     "@types/js-search": "^1.4.0",
     "js-search": "^2.0.1",
     "luxon": "^3.3.0",
