@@ -5,6 +5,7 @@
   import Resume from '$lib/components/organisms/Resume.svelte';
   import { onMount } from 'svelte';
   import type { LayoutData } from './$types';
+  import Button from '$lib/components/atoms/Button.svelte';
 
   export let data: LayoutData;
 
@@ -33,16 +34,22 @@
     <div class="img">
       <!-- TODO Put real photo -->
       <Image
-        path="about"
+        src="/images/about.png"
         alt="A Photo of KesvaL"
         figcaption="There is supposed to be an image of me here."
         rounding="md" />
     </div>
-    <p>
-      I'm a french {age} year old programmer and I've been doing that since I was 8 years old, it's my passion. I started
-      with Java, creating minecraft plugins and later on moved on to NodeJS. I'm a student at the Technological University
-      of Mulhouse, France, studying Multimedia and Web Development, 1st year.
-    </p>
+    <div>
+      <p>
+        I'm a french {age} year old programmer and I've been doing that since I was 8 years old, it's my passion. I started
+        with Java, creating minecraft plugins and later on moved on to NodeJS. I'm a student at the Technological University
+        of Mulhouse, France, studying Multimedia and Web Development, 1st year.
+      </p>
+      <p>
+        I just love programming really, especially building new things that correlate to what I love in real life. For
+        example, I'm planning on building a powerlifting app.
+      </p>
+    </div>
   </div>
 </section>
 
@@ -55,7 +62,10 @@
   </div>
 </section>
 <section id="resume" class="container">
-  <h2>My Resume</h2>
+  <div class="resume">
+    <h2>My Resume</h2>
+    <Button href="/resume.pdf" download="resume-kesval">Download</Button>
+  </div>
   <Resume {age} {email} {yearsOfCoding} {skills} {experiences} />
 </section>
 <!-- TODO Certifications -->
@@ -76,6 +86,12 @@
     padding-top: 0.001rem;
     padding-bottom: 7.5rem;
 
+    .resume {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+
     h1,
     h2 {
       font-size: 2rem;
@@ -83,6 +99,7 @@
       line-height: 1.2;
       text-align: center;
       margin-block: 2rem 3rem;
+      padding-top: 1.25rem;
 
       @include breakpoint(md) {
         font-size: 3rem;
@@ -91,15 +108,15 @@
     }
 
     .presentation {
-      display: flex;
-      justify-content: space-around;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: 1fr;
       align-items: center;
       margin: 0 auto;
       height: fit-content;
       gap: 1rem;
 
       @include breakpoint(sm) {
+        grid-template-columns: 1fr 1fr;
         flex-direction: row;
         gap: 4rem;
       }
@@ -114,8 +131,8 @@
       }
 
       p {
-        max-width: 35ch;
         font-size: 1.1rem;
+        margin-block: 1rem;
 
         @include breakpoint(sm) {
           max-width: 25ch;

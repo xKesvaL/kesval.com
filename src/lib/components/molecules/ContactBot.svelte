@@ -135,7 +135,7 @@
   <header>
     <div class="wrapper">
       <div class="img">
-        <Image path={'logos/kesval'} alt="KesvaL's logo" />
+        <Image src={'/images/logos/kesval.png'} alt="KesvaL's logo" />
       </div>
       <div class="name">
         <p>Jordan Bot</p>

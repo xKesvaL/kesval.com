@@ -13,7 +13,7 @@
 <a class="project-card" href={project.href} transition:fade={{ duration: 300 }}>
   <h2>{project.name}</h2>
   <div class="cover">
-    <Image path={project.coverPath} alt={project.name} />
+    <Image src={project.coverPath} alt={project.name} />
   </div>
   <p>
     {project.description}
@@ -34,7 +34,7 @@
     min-width: 100%;
     background: var(--color-bg-card);
     border-radius: 1rem;
-    box-shadow: 0.5rem 1rem 2rem rgba(39, 44, 49, 0.6), 1px 3px 8px rgba(39, 44, 49, 0.3);
+    box-shadow: var(--box-shadow-default);
     padding: 1.5rem;
     position: relative;
     isolation: isolate;
@@ -114,7 +114,7 @@
       scale: 1.05;
 
       .cover {
-        scale: 1.25;
+        scale: 1.15;
         filter: blur(0.1rem) brightness(0.6);
       }
     }

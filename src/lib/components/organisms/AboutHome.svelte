@@ -4,16 +4,20 @@
 </script>
 
 <section id="about" class="container">
-  <h2>Who Am I ?</h2>
+  <h2>Me, Myself & I</h2>
   <div class="grid">
     <div class="image">
       <!-- TODO Put real photo & remove figcaption -->
-      <Image path="about" alt="Another photo of Jordan 'KesvaL'" rounding="md" figcaption="Image of me maybe?" />
+      <Image
+        src="/images/about.png"
+        alt="Another photo of Jordan 'KesvaL'"
+        rounding="md"
+        figcaption="Image of me maybe?" />
     </div>
     <div class="text">
       <p>
         Interested in development since I was a child, I started with the creation of minecraft plugins then I moved on
-        to discord bots.
+        to discord bots. As of today, I'm a web developer as you can see!
       </p>
       <p>
         I'm currently in my first year of a bachelor's degree in Multimedia and Internet Jobs at the University of
@@ -93,12 +97,12 @@
       }
 
       @include breakpoint(lg) {
-        gap: 2rem;
+        gap: 1.5rem;
       }
 
       p {
         font-size: 1rem;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
         max-width: 45ch;
         text-align: justify;
 
@@ -115,6 +119,9 @@
 
         li {
           text-align: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
 
           @include breakpoint(md) {
             font-size: 1.25rem;
@@ -124,17 +131,30 @@
             font-size: 1.5rem;
           }
           span {
-            display: block;
             font-size: 1.25rem;
             font-weight: 700;
             font-family: var(--font-title);
+            background: rgba(var(--color-bg-card-rgb), 0.3);
+            border-radius: 9999vw;
+            aspect-ratio: 1/1;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            width: 4rem;
+            padding: 0.75rem 1rem 0.5rem;
+            margin-bottom: 0.25rem;
 
             @include breakpoint(md) {
               font-size: 1.75rem;
+              width: 6rem;
+              padding: 1rem 1.5rem 0.75rem;
             }
 
             @include breakpoint(lg) {
               font-size: 2.5rem;
+              width: 8rem;
+              padding: 1.25rem 2rem 1rem;
             }
           }
         }

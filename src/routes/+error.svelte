@@ -1,13 +1,14 @@
 <script lang="ts">
   import { page } from '$app/stores';
   import Button from '$lib/components/atoms/Button.svelte';
+  import Image from '$lib/components/atoms/Image.svelte';
   const error = $page.status === 404 ? 404 : $page.status ?? 404;
   const message = `The page you are looking for does not exist.`;
 
   const title = `${error} - Page not found - KesvaL`;
   const description = message;
   const url = 'https://kesval.com/';
-  const image = 'https://kesval.com/optimized-images/404.svg';
+  const image = 'https://kesval.com/images/404.svg';
 </script>
 
 <svelte:head>
@@ -34,9 +35,11 @@
 
 <section class="container">
   <h1>{error} - Page not found</h1>
-  <p>{error === 404 ? message : $page.error}</p>
+  <p>{error === 404 ? message : $page.error.message}</p>
   <Button href="/">Return back home</Button>
-  <img src="/optimized-images/{error === 404 ? '404' : 'error'}.svg" alt="Page not found illustration" />
+  <div class="image">
+    <Image src="/images/error.svg" alt="Page not found illustration" />
+  </div>
 </section>
 
 <style lang="scss">
@@ -76,9 +79,9 @@
       }
     }
 
-    img {
+    .image {
       margin-block: 4rem 0;
-      max-height: 20rem;
+      height: 20rem;
     }
   }
 </style>

@@ -46,7 +46,7 @@
             {project.description}
           </div>
           <div class="project-image">
-            <Image path={project.coverPath} alt={project.name} />
+            <Image src={project.coverPath} alt={project.name} />
           </div>
         </div>
         <div class="project-btn">
@@ -117,6 +117,7 @@
         cursor: pointer;
 
         transition: flex-basis 0.3s ease, flex-grow 0.3s ease;
+        will-change: flex-basis, flex-grow;
 
         &:hover,
         &:focus {
@@ -125,8 +126,6 @@
             filter: brightness(0.75);
           }
         }
-
-        will-change: flex-basis, flex-grow;
 
         &[aria-expanded='true'] {
           flex-basis: clamp(20rem, 40vh, 40rem);

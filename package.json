@@ -16,7 +16,11 @@
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "lint": "prettier --plugin-search-dir . --check . && eslint .",
-    "format": "prettier --plugin-search-dir . --write ."
+    "format": "prettier --plugin-search-dir . --write .",
+    "postbuild": "npm run optimize-images",
+    "optimize-images": "image-transmutation --run --sourceFolder './build/images' --targetFolder './build/images' --inputFormats 'jpg' --inputFormats 'jpeg' --inputFormats 'png' --outputFormats 'png' --outputFormats 'webp' --outputFormats 'avif'",
+    "vercel-optimize-images": "image-transmutation --run --sourceFolder '.vercel/output/static/images' --targetFolder '.vercel/output/static/images' --inputFormats 'jpg' --inputFormats 'jpeg' --inputFormats 'png' --outputFormats 'png' --outputFormats 'webp' --outputFormats 'avif'",
+    "vercel-build": "npm run build && npm run vercel-optimize-images"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^2.0.1",
@@ -49,6 +53,7 @@
   "dependencies": {
     "@sveltejs/adapter-vercel": "^2.4.3",
     "@types/js-search": "^1.4.0",
+    "image-transmutation": "^0.1.2",
     "js-search": "^2.0.0",
     "luxon": "^3.3.0",
     "mdsvex": "^0.10.6",

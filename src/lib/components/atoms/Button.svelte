@@ -21,6 +21,7 @@
 <svelte:element
   this={tag}
   {...linkProps}
+  {...$$restProps}
   data-sveltekit-preload-data
   class={[`button`, `style-${style}`, `size-${size}`, `color-${color}`].join(' ')}
   on:click>

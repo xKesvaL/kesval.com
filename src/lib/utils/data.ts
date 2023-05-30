@@ -30,6 +30,7 @@ export const tags: TagSecondary[] = [
   'scss',
   'nextjs',
   'sveltekit',
+  'serverless',
 ];
 
 export const getYearsOfCoding = () => {
@@ -52,6 +53,34 @@ export const yearsOfExperience = getYearsOfExperience();
 
 export const experiences: Company[] = [
   {
+    name: 'Freelance Dev',
+    slugName: 'freelance',
+    timeframe: '2023 → Now',
+    position: 'CEO',
+    current: true,
+    location: 'Ungersheim, France',
+    description:
+      "Working for myself as a fullstack web developer. I'm open to work! I also create my own little-businesses",
+    tags: [
+      {
+        color: 'primary',
+        name: 'svelte',
+      },
+      {
+        color: 'primary',
+        name: 'sveltekit',
+      },
+      {
+        color: 'primary',
+        name: 'react',
+      },
+      {
+        color: 'primary',
+        name: 'nextjs',
+      },
+    ],
+  },
+  {
     name: 'OLWE Development',
     slugName: 'olwe-development',
     timeframe: '2023 → Now',
@@ -63,7 +92,7 @@ export const experiences: Company[] = [
     tags: [
       {
         color: 'primary',
-        name: 'React',
+        name: 'react',
       },
     ],
   },

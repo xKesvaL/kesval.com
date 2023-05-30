@@ -5,7 +5,7 @@
   import { Search as SearchJS } from 'js-search';
   import Search from '$lib/icons/Search.svelte';
   import { onMount } from 'svelte';
-  import { fly } from 'svelte/transition';
+  import { fly, fade } from 'svelte/transition';
   import ChevronDown from '$lib/icons/ChevronDown.svelte';
 
   let projectsToShow = 6;
@@ -156,13 +156,14 @@
     </div>
   {/if}
 
+  {#if projectsShowed && projectsShowed.length <= 0}
+    <div class="nothing" transition:fade={{ duration: 300 }}>Nothing to show here, sorry.</div>
+  {/if}
   <div class="projects">
     {#if projectsShowed && projectsShowed.length > 0}
       {#each projectsShowed as project}
         <ProjectCard {project} />
       {/each}
-    {:else}
-      <div class="nothing">Nothing to show here, sorry.</div>
     {/if}
   </div>
   <div class="see-more" class:moreProjects>
@@ -212,8 +213,9 @@
     .tagging {
       position: fixed;
       inset: 0;
-      background: rgba(var(--color-bg-card-rgb), 0.3);
+      background: rgba(var(--color-bg-card-rgb), 0.5);
       backdrop-filter: blur(2rem) saturate(2);
+      box-shadow: var(--box-shadow-default);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -391,6 +393,12 @@
       }
     }
 
+    .nothing {
+      font-size: 1.5rem;
+      text-align: center;
+      transition: 300ms;
+    }
+
     .projects {
       display: flex;
       flex-wrap: wrap;
@@ -400,11 +408,6 @@
 
       @include breakpoint(md) {
         gap: 1.5rem;
-      }
-
-      .nothing {
-        font-size: 1.5rem;
-        text-align: center;
       }
     }
   }

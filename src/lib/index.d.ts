@@ -52,7 +52,8 @@ export type TagSecondary =
   | 'games'
   | 'scss'
   | 'nextjs'
-  | 'sveltekit';
+  | 'sveltekit'
+  | 'serverless';
 
 export interface Company {
   name: string;
@@ -67,7 +68,7 @@ export interface Company {
 
 export interface CompanyTag {
   color: 'primary' | 'secondary' | 'tertiary';
-  name: string;
+  name: TagSecondary;
 }
 
 export interface Skill {

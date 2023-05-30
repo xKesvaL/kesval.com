@@ -1,63 +1,85 @@
 <script lang="ts">
-  export let path: string;
-  export let alt: string;
-  export let figcaption: string | undefined = undefined;
+  // Source: https://github.com/matfantinel/sveltekit-static-blog-template
 
-  export let formats: string[] = ['webp', 'avif', 'png'];
-  export let widths: string[] = ['400', '800', '1200'];
+  import { dev } from '$app/environment';
+
+  export let src: string;
+  export let alt: string;
+
+  export let formats: string[] = ['avif', 'webp', 'png'];
+  export let widths: string[] | undefined = undefined;
+
+  export let figcaption: string;
+
   export let rounding: 'none' | 'sm' | 'md' | 'lg' | 'full' = 'none';
 
-  $: imageSrc = `/optimized-images/${path}`;
+  $: fileName = src.split('.')[0];
+
+  function buildSrcset() {
+    if (dev) return;
+    if (src.split('.')[1] === 'svg') return;
+
+    let srcset = '';
+
+    if (widths) {
+      for (let i = 0; i < widths.length; i++) {
+        srcset += `${fileName}-${widths[i]}.${formats[0]} ${widths[i]}w`;
+
+        if (i < widths.length - 1) {
+          srcset += ', ';
+        }
+      }
+    } else {
+      for (let i = 0; i < formats.length; i++) {
+        srcset += `${fileName}.${formats[i]}`;
+
+        if (i < formats.length - 1) {
+          srcset += ', ';
+        }
+      }
+    }
+
+    return srcset;
+  }
 </script>
 
-<picture class={rounding == 'none' ? '' : `rounding-${rounding}`}>
-  {#each formats as format}
-    {#each widths as width}
-      <source srcset="{imageSrc}-{width}w.{format}" type="image/{format}" media="(min-width: {width}px)" />
-    {/each}
-  {/each}
-
-  <img src="{imageSrc}-1200w.png" {alt} />
-
-  {#if figcaption}
-    <!-- svelte-ignore a11y-structure -->
-    <figcaption>{@html figcaption}</figcaption>
-  {/if}
-</picture>
+<img
+  class={rounding === 'none' ? '' : `rounding-${rounding}`}
+  srcset={buildSrcset()}
+  {src}
+  {alt}
+  loading="lazy"
+  decoding="async" />
+{#if figcaption}
+  <p>{figcaption}</p>
+{/if}
 
 <style lang="scss">
-  picture {
-    position: relative;
+  img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
 
-    &.rounding-sm img {
+    &.rounding-sm {
       border-radius: 1rem;
     }
 
-    &.rounding-md img {
+    &.rounding-md {
       border-radius: 2rem;
     }
 
-    &.rounding-lg img {
+    &.rounding-lg {
       border-radius: 4rem;
     }
 
-    &.rounding-full img {
+    &.rounding-full {
       border-radius: 9999px;
     }
+  }
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    figcaption {
-      text-align: center;
-      color: hsl(var(--color-text-hue), 0%, var(--primary-dark-lightness));
-      font-style: italic;
-      margin-top: 0.5rem;
-    }
+  p {
+    font-style: italic;
+    text-align: center;
+    margin-top: 0.25rem;
   }
 </style>
