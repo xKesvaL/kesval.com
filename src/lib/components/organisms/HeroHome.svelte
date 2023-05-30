@@ -12,7 +12,7 @@
 <section id="hero">
   <div class="socials"><Socials vertical={true} /></div>
   <div class="image">
-    <Image src="/images/me/hero.jpg" alt="A Photo of KesvaL" />
+    <Image src="/images/me/hero.jpg" alt="A Photo of KesvaL" loading="eager" />
   </div>
   <div class="text">
     <h1>

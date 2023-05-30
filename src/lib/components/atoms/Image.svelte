@@ -13,6 +13,8 @@
 
   export let rounding: 'none' | 'sm' | 'md' | 'lg' | 'full' = 'none';
 
+  export let loading: 'lazy' | 'eager' = 'lazy';
+
   $: fileName = src.split('.')[0];
 
   function buildSrcset() {
@@ -48,7 +50,7 @@
   srcset={buildSrcset()}
   {src}
   {alt}
-  loading="lazy"
+  {loading}
   decoding="async" />
 {#if figcaption}
   <p>{figcaption}</p>
