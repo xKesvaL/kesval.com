@@ -68,8 +68,10 @@
   </div>
   <Resume {age} {email} {yearsOfCoding} {skills} {experiences} />
 </section>
+
 <!-- TODO Certifications -->
 <!-- <section id="certifications" class="container" /> -->
+
 <section id="socials" class="container">
   <h2>Socials</h2>
   <div class="socials-list">
@@ -77,7 +79,6 @@
   </div>
 </section>
 
-<!--  Important stuff (id is important) -->
 <style lang="scss">
   @use '$lib/scss/breakpoints.scss' as *;
   @use '$lib/scss/mixins' as *;

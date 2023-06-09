@@ -47,6 +47,8 @@ const config = {
     alias: {
       $src: './src',
       '$src/*': './src/*',
+      $routes: './src/routes',
+      '$routes/*': './src/routes/*',
     },
   },
   extensions,

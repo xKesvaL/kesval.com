@@ -31,6 +31,8 @@ export const tags: TagSecondary[] = [
   'nextjs',
   'sveltekit',
   'serverless',
+  'tailwind',
+  'daisyui',
 ];
 
 export const getYearsOfCoding = () => {
@@ -60,7 +62,7 @@ export const experiences: Company[] = [
     current: true,
     location: 'Ungersheim, France',
     description:
-      "Working for myself as a fullstack web developer. I'm open to work! I also create my own little-businesses",
+      "Working for myself as a fullstack web developer. I'm open to work! I also create my own little things and open source them.",
     tags: [
       {
         color: 'primary',
@@ -97,13 +99,24 @@ export const experiences: Company[] = [
     ],
   },
   {
-    name: 'Unemployed (Student)',
-    slugName: 'unemployed-student',
-    timeframe: '2019 → 2023',
-    position: 'Web Developer',
-    current: false,
+    name: 'University',
+    slugName: 'student-university',
+    timeframe: '2022 → 2025',
+    position: 'Student',
+    current: true,
     location: 'Mulhouse, France',
-    description: 'Student in MMI (Multimedia and Internet) at the IUT of Mulhouse.',
+    description:
+      'Student in Multimedia and Internet at the University of Mulhouse. This is a 3-year degree, and is linked to my job at OLWE Development, I am doing an apprenticeship.',
+    tags: [],
+  },
+  {
+    name: 'High School',
+    slugName: 'student-high-school',
+    timeframe: '2019 → 2022',
+    position: 'Student',
+    current: false,
+    location: 'Guebwiller, France',
+    description: 'Student in computer science and mathematics.',
     tags: [],
   },
   {

@@ -25,6 +25,7 @@ export interface Project {
   projectId: string;
   language: 'svelte' | 'react' | 'js' | 'ts';
   href: string;
+  shortDescription: string;
   description: string;
   category: TagPrimary;
   tags: TagSecondary[];
@@ -53,7 +54,9 @@ export type TagSecondary =
   | 'scss'
   | 'nextjs'
   | 'sveltekit'
-  | 'serverless';
+  | 'serverless'
+  | 'tailwind'
+  | 'daisyui';
 
 export interface Company {
   name: string;

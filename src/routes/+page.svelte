@@ -39,4 +39,4 @@
 <Hero />
 <About />
 <ProjectsHome {projects} />
-<BlogHome />
+<BlogHome {posts} />

@@ -49,7 +49,7 @@
   @use '$lib/scss/mixins' as *;
 
   section {
-    padding-block: 5rem;
+    padding-bottom: 5rem;
     display: grid;
     grid-template-rows: auto 1fr;
 

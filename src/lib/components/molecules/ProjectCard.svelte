@@ -15,9 +15,7 @@
   <div class="cover">
     <Image src={project.coverPath} alt={project.name} />
   </div>
-  <p>
-    {project.description}
-  </p>
+  <p>{project.shortDescription}</p>
   <ul class="tags">
     <li>{project.category}</li>
     {#each tags as tag}

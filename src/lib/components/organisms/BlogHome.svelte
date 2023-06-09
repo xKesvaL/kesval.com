@@ -1,4 +1,7 @@
-<script>
+<script lang="ts">
+  import type { Post } from '$lib';
+
+  export let posts: Post[];
 </script>
 
 <section>blabla</section>

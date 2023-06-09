@@ -46,7 +46,11 @@
 
     &:hover,
     &:focus {
-      scale: 1.05;
+      scale: 1.02;
+    }
+
+    &:active {
+      scale: 0.98;
     }
 
     &.color {
@@ -73,7 +77,7 @@
       &-solid {
         &:hover,
         &:focus {
-          box-shadow: 0.5rem 1rem 2rem rgba(39, 44, 49, 0.6), 1px 3px 8px rgba(39, 44, 49, 0.3);
+          box-shadow: 0 0.5rem 1rem rgba(39, 44, 49, 0.6), 0 3px 8px rgba(39, 44, 49, 0.3);
         }
       }
       &-outline {

@@ -7,7 +7,7 @@ import readingTime from 'reading-time';
 import stripTags from 'striptags';
 
 const importPosts = (): Post[] => {
-  const imports = import.meta.glob('$routes/blog/*/*.md', {
+  const imports = import.meta.glob('$routes/blog/**/*.md', {
     eager: true,
   });
 
