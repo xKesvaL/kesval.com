@@ -85,11 +85,12 @@ export type SkillType = 'frontend' | 'backend' | 'other';
 export interface Post {
   title: string;
   tags: TagSecondary[];
-  hidden: boolean;
+  hidden?: boolean;
   date: string;
   html?: string;
   readingTime: string;
   relatedPosts: Post[];
   slug: string;
   categories: TagPrimary[];
+  excerpt: string;
 }
