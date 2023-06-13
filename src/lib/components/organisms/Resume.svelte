@@ -31,8 +31,11 @@
   </div>
   <div class="section about">
     <Title>About</Title>
-    <!-- TODO Write about -->
-    <p>blabla</p>
+    <p>
+      I'm a passioned fullstack developer. I started when I was 8, writing my first lines of code in Java, creating
+      minecraft mods. I then moved to web development, and I'm now working with the latest technologies, such as Svelte,
+      Deno, and TypeScript. Later, I want to create some apps for myself, that will maybe be used by others.
+    </p>
   </div>
   <div class="section experience">
     <Title>Experience</Title>
@@ -44,8 +47,11 @@
   </div>
   <div class="section education">
     <Title>Education</Title>
-    <!-- TODO Write education -->
-    <p>blabla</p>
+    <p>
+      I have a High School Diploma in Computer Science and Mathematics, and I'm currently studying at the University of
+      Mulhouse, in Multimedia and Internet, where I'm learning about web development, 3D, video, and audio. I'm in my
+      first year.
+    </p>
   </div>
 </article>
 
@@ -183,7 +189,7 @@
     .resume {
       box-shadow: none;
       margin: 0;
-      max-height: 279.4mm;
+      max-height: 320mm; // 279.4mm
       overflow: hidden;
       border-radius: 0;
 
@@ -209,6 +215,12 @@
       padding: 0;
     }
     :global(h2:not(#resume-name)) {
+      display: none !important;
+    }
+    :global(a#download-resume) {
+      display: none !important;
+    }
+    :global(button#back-to-top) {
       display: none !important;
     }
   }

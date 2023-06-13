@@ -64,7 +64,7 @@
 <section id="resume" class="container">
   <div class="resume">
     <h2>My Resume</h2>
-    <Button href="/resume.pdf" download="resume-kesval">Download</Button>
+    <Button href="/resume.pdf" download="resume-kesval" id="download-resume">Download</Button>
   </div>
   <Resume {age} {email} {yearsOfCoding} {skills} {experiences} />
 </section>

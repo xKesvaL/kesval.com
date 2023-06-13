@@ -40,6 +40,7 @@
     on:click={() => {
       scrollY = scrollingUp ? 0 : scrollHeight;
     }}
+    id="back-to-top"
     aria-label="scroll to {scrollingUp ? 'top' : 'bottom'}"
     in:fly={{ y: 50, duration: 300, delay: 300 }}
     out:fly={{ y: 50, duration: 300 }}>
