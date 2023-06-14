@@ -130,7 +130,11 @@
         &[aria-expanded='true'] {
           flex-basis: clamp(20rem, 40vh, 40rem);
           flex-grow: 1;
-          padding-right: calc(var(--panel-padding) + var(--button-size) + var(--panel-gap));
+          padding-right: 1rem;
+
+          @include breakpoint(sm) {
+            padding-right: calc(var(--panel-padding) + var(--button-size) + var(--panel-gap));
+          }
 
           & .project-content .project-more {
             transform: translateY(0);
@@ -156,12 +160,14 @@
         .project-more {
           transform: translateY(2rem);
           opacity: 0;
-          margin-left: calc(var(--button-size) + var(--panel-gap));
           margin-top: 1rem;
           color: var(--color-static-text);
+          margin-left: 1rem;
+          font-size: 1.1rem;
 
-          @include breakpoint(md) {
+          @include breakpoint(sm) {
             font-size: 1.25rem;
+            margin-left: calc(var(--button-size) + var(--panel-gap));
           }
         }
       }
