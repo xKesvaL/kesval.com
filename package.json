@@ -57,7 +57,7 @@
     "image-transmutation": "^0.1.2",
     "js-search": "^2.0.1",
     "luxon": "^3.3.0",
-    "mdsvex": "^0.10.6",
+    "mdsvex": "^0.11.0",
     "nprogress": "^0.2.0",
     "prismjs": "^1.29.0",
     "reading-time": "^1.5.0",
