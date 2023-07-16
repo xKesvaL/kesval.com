@@ -12,12 +12,14 @@
       <BlogCard {post} vertical={(i + 2) % 3 === 0} />
     {/each}
   </div>
+  <a href="/blog" class="btn btn-primary">All My Posts</a>
 </section>
 
 <style lang="scss">
   @use '$design' as *;
 
   section {
+    display: grid;
     h2 {
       text-align: center;
     }
@@ -30,6 +32,11 @@
       @include mq(lg) {
         grid-template-columns: 2fr 1fr;
       }
+    }
+
+    a {
+      margin-inline: auto;
+      margin-top: 2.5rem;
     }
   }
 </style>

@@ -2,7 +2,7 @@
   // Source: https://github.com/matfantinel/sveltekit-static-blog-template
 
   import { dev } from '$app/environment';
-  import ImageIcon from '$lib/icons/ImageIcon.svelte';
+  import ImageIcon from '$lib/icons/IconImage.svelte';
 
   export let src: string;
   export let alt: string;

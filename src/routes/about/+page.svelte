@@ -78,12 +78,6 @@
   @use '$design' as *;
 
   section {
-    --padding: 1rem;
-
-    @include mq(sm) {
-      --padding: 2rem;
-    }
-
     &.min {
       min-height: 90vh;
     }

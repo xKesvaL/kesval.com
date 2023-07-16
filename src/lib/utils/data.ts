@@ -1,9 +1,24 @@
 import type { Company, Skill, SkillType, TagPrimary, TagSecondary } from '$lib';
 import { DateTime } from 'luxon';
 
-export const updated = new Date('07-16-2023');
+export const updated = new Date('07-17-2023');
 
 export const email = 'jabeddou@gmail.com';
+
+export const months = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+];
 
 export const getAge = () => {
   const birthDate = DateTime.fromISO('2004-10-14');
@@ -148,7 +163,7 @@ export const skills: Skill[] = [
   },
   {
     name: 'NextJS',
-    percentage: 65,
+    percentage: 75,
     type: 'frontend',
   },
   {
@@ -173,7 +188,7 @@ export const skills: Skill[] = [
   },
   {
     name: 'MariaDB',
-    percentage: 80,
+    percentage: 60,
     type: 'backend',
   },
   {

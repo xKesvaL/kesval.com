@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Circle from '$lib/icons/Circle.svelte';
-  import Pin from '$lib/icons/Pin.svelte';
+  import Circle from '$lib/icons/IconCircle.svelte';
+  import Pin from '$lib/icons/IconPin.svelte';
   import type { Company } from '$lib';
 
   export let experiences: Company[];

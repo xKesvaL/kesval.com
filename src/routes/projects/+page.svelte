@@ -13,7 +13,7 @@
 
 <section id="list" class="container container-wide section">
   <h1 class="title">Projects</h1>
-  <ProjectsList {projects} {categories} {tags} />
+  <ProjectsList {projects} />
 </section>
 
 <style lang="scss">

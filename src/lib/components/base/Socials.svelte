@@ -1,9 +1,9 @@
 <script lang="ts">
-  import Github from '$lib/icons/socials/Github.svelte';
-  import Instagram from '$lib/icons/socials/Instagram.svelte';
-  import LinkedIn from '$lib/icons/socials/LinkedIn.svelte';
-  import Twitter from '$lib/icons/socials/Twitter.svelte';
-  import Youtube from '$lib/icons/socials/Youtube.svelte';
+  import Github from '$lib/icons/socials/IconGithub.svelte';
+  import Instagram from '$lib/icons/socials/IconInstagram.svelte';
+  import LinkedIn from '$lib/icons/socials/IconLinkedIn.svelte';
+  import Twitter from '$lib/icons/socials/IconTwitter.svelte';
+  import Youtube from '$lib/icons/socials/IconYoutube.svelte';
 
   export let vertical = false;
   export let color = 'var(--color-text)';

@@ -1,9 +1,9 @@
 <!--suppress HtmlUnknownTag, CheckEmptyScriptTag -->
 <script lang="ts">
   import type { Skill } from '$lib';
-  import Code from '$lib/icons/Code.svelte';
-  import More from '$lib/icons/More.svelte';
-  import Server from '$lib/icons/Server.svelte';
+  import Code from '$lib/icons/IconCode.svelte';
+  import More from '$lib/icons/IconMore.svelte';
+  import Server from '$lib/icons/IconServer.svelte';
   import { onMount } from 'svelte';
   import { fly } from 'svelte/transition';
   export let skills: Skill[];
@@ -70,7 +70,8 @@
 
     .dropdown {
       color: var(--color-neutral-800);
-      background: var(--color-base-200);
+      background: linear-gradient(90deg, rgba(var(--color-primary-500-rgb), 0.05), rgba(var(--color-base-200-rgb), 1)),
+        linear-gradient(135deg, rgba(var(--color-base-200-rgb), 1), rgba(var(--color-base-200-rgb), 1));
       padding: 1.5rem 1rem 0.5rem 1rem;
       border-radius: 1rem 1rem 0 0;
       width: 100%;
@@ -118,7 +119,8 @@
       position: relative;
       list-style: none;
       text-align: left;
-      background: var(--color-base-200);
+      background: linear-gradient(90deg, rgba(var(--color-primary-500-rgb), 0.05), rgba(var(--color-base-200-rgb), 1)),
+        linear-gradient(135deg, rgba(var(--color-base-200-rgb), 1), rgba(var(--color-base-200-rgb), 1));
       z-index: -1;
       border-radius: 0 0 1rem 1rem;
       padding: 0 1rem 1rem;

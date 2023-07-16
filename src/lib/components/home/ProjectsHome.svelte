@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Project } from '$lib';
-  import AllSVGs from '$lib/icons/languages/allSVGs.svelte';
+  import AllSVGs from '$lib/icons/languages/AllSVGs.svelte';
   import Image from '../base/Image.svelte';
   let expandedIndex = '1';
 

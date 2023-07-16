@@ -43,7 +43,7 @@
     "prettier": "^2.8.8",
     "prettier-plugin-svelte": "^2.10.1",
     "sass": "^1.62.1",
-    "svelte": "^3.59.1",
+    "svelte": "^4.0.5",
     "svelte-check": "^3.4.5",
     "tslib": "^2.6.0",
     "typescript": "^5.1.6",
@@ -52,7 +52,7 @@
   },
   "type": "module",
   "dependencies": {
-    "@kesval/design": "^1.6.0",
+    "@kesval/design": "^1.6.1",
     "@sveltejs/adapter-vercel": "^3.0.0",
     "@types/js-search": "^1.4.0",
     "image-transmutation": "^0.1.2",

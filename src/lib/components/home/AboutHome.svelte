@@ -43,13 +43,8 @@
   @use '$design' as *;
 
   section {
-    --padding: 1rem;
     display: grid;
     grid-template-rows: auto 1fr;
-
-    @include mq(xs) {
-      --padding: 2rem;
-    }
 
     @include mq(sm) {
       --padding: 5rem;

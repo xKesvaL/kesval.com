@@ -2,10 +2,10 @@
   import type { Project, TagPrimary, TagSecondary } from '$lib';
   import ProjectCard from './ProjectCard.svelte';
   import { Search as SearchJS } from 'js-search';
-  import Search from '$lib/icons/Search.svelte';
+  import Search from '$lib/icons/IconSearch.svelte';
   import { onMount } from 'svelte';
   import { fly, fade } from 'svelte/transition';
-  import ChevronDown from '$lib/icons/ChevronDown.svelte';
+  import ChevronDown from '$lib/icons/IconChevronDown.svelte';
 
   let projectsToShow = 6;
   export let projects: Project[];

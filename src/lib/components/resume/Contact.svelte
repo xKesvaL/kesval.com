@@ -1,12 +1,12 @@
 <script lang="ts">
-  import Github from '$lib/icons/socials/Github.svelte';
-  import LinkedIn from '$lib/icons/socials/LinkedIn.svelte';
-  import Email from '$lib/icons/socials/Email.svelte';
-  import Website from '$lib/icons/socials/Website.svelte';
-  import Language from '$lib/icons/Language.svelte';
-  import Pin from '$lib/icons/Pin.svelte';
-  import Star from '$lib/icons/Star.svelte';
-  import Suitcase from '$lib/icons/Suitcase.svelte';
+  import Github from '$lib/icons/socials/IconGithub.svelte';
+  import LinkedIn from '$lib/icons/socials/IconLinkedIn.svelte';
+  import Email from '$lib/icons/socials/IconEmail.svelte';
+  import Website from '$lib/icons/socials/IconWebsite.svelte';
+  import Language from '$lib/icons/IconLanguage.svelte';
+  import Pin from '$lib/icons/IconPin.svelte';
+  import Star from '$lib/icons/IconStar.svelte';
+  import Suitcase from '$lib/icons/IconSuitcase.svelte';
 
   export let age;
   export let email;

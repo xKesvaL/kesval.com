@@ -1,6 +1,6 @@
 <script lang="ts">
   /* eslint-disable no-constant-condition */
-  import Close from '$lib/icons/Close.svelte';
+  import Close from '$lib/icons/IconClose.svelte';
   import { botState, history } from '$lib/stores/bot';
   import Image from '../base/Image.svelte';
   import { beforeUpdate, afterUpdate, onDestroy } from 'svelte';

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Close from '$lib/icons/Close.svelte';
-  import Hamburger from '$lib/icons/Hamburger.svelte';
+  import Close from '$lib/icons/IconClose.svelte';
+  import Hamburger from '$lib/icons/IconHamburger.svelte';
   import Image from '../base/Image.svelte';
   import ThemeSwitcher from './ThemeSwitcher.svelte';
   import { page } from '$app/stores';

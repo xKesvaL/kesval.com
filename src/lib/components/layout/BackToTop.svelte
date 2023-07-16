@@ -3,7 +3,7 @@
   import { browser } from '$app/environment';
   import { afterUpdate } from 'svelte';
   import { fly } from 'svelte/transition';
-  import ArrowTop from '$lib/icons/ArrowTop.svelte';
+  import ArrowTop from '$lib/icons/IconArrowTop.svelte';
   import { botState } from '$lib/stores/bot.js';
 
   let scrollY: number;
@@ -106,8 +106,8 @@
       }
 
       svg {
-        fill: var(--color-primary);
-        fill-opacity: 0.1;
+        fill: var(--color-base-200);
+        fill-opacity: 1;
         transition: 0.3s ease-in-out;
       }
     }

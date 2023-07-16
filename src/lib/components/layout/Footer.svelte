@@ -1,7 +1,7 @@
 <script lang="ts">
   import Socials from '../base/Socials.svelte';
   import { updated } from '$lib/utils/data';
-  import ClockIcon from '$lib/icons/ClockIcon.svelte';
+  import ClockIcon from '$lib/icons/IconClockIcon.svelte';
 </script>
 
 <footer class="container container-full">

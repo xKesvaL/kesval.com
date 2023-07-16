@@ -33,7 +33,6 @@
   @use '$design' as *;
 
   section {
-    --padding: 1rem;
     padding-top: 1rem;
     min-height: 90vh;
     display: grid;
@@ -48,7 +47,6 @@
     );
 
     @include mq(md) {
-      --padding: 2rem;
       column-gap: $size-4;
       grid-template-columns: max-content 2fr 1fr;
       padding-top: inherit;

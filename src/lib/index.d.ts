@@ -1,9 +1,3 @@
-export interface SRCSet {
-  avif: string;
-  webp: string;
-  png: string;
-}
-
 export type ChatBotAnswers =
   | 'first'
   | 'looking'
@@ -30,6 +24,10 @@ export interface Project {
   category: TagPrimary;
   tags: TagSecondary[];
   color: string;
+  site?: string;
+  github?: string;
+  startDate: string;
+  endDate?: string;
 }
 
 export type TagPrimary = 'tech' | 'misc';
@@ -85,6 +83,7 @@ export type SkillType = 'frontend' | 'backend' | 'other';
 
 export interface Post {
   title: string;
+  categories: TagPrimary[];
   tags: TagSecondary[];
   hidden?: boolean;
   date: string;
@@ -92,6 +91,5 @@ export interface Post {
   readingTime: string;
   relatedPosts: Post[];
   slug: string;
-  categories: TagPrimary[];
   excerpt: string;
 }
