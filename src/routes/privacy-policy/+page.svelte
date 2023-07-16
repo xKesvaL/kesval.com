@@ -1,7 +1,7 @@
-<section class="container">
+<section class="container section">
   <h1>Privacy Policy</h1>
 
-  <h2>Third Party Privacy Policies</h2>
+  <h2>Third Party</h2>
   <p>
     The only third party this website uses is Vercel Analytics, which is used to track the number of visitors and the
     web vitals. Learn more about what data is collected <a href="https://vercel.com/docs/concepts/analytics/privacy">
@@ -23,41 +23,22 @@
 </section>
 
 <style lang="scss">
-  @use '$lib/scss/breakpoints.scss' as *;
-  @use '$lib/scss/mixins' as *;
+  @use '$design' as *;
 
   section {
-    padding-block: 5rem;
-
     h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      line-height: 1.2;
       text-align: center;
-      margin-block: 2rem 3rem;
-
-      @include breakpoint(md) {
-        font-size: 3.25rem;
-        margin-block: 2rem 5rem;
-      }
     }
 
     h2 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      line-height: 1.2;
       text-align: left;
-      margin-block: 2rem 0.5rem;
-
-      @include breakpoint(md) {
-        font-size: 2.25rem;
-        margin-block: 3rem 0.5rem;
-      }
+      margin-bottom: 0.25rem;
+      margin-top: 5rem;
     }
 
     a {
       text-decoration: underline;
-      color: hsl(var(--color-tertiary-hue), var(--color-tertiary-saturation), var(--primary-dark-lightness));
+      color: $color-accent-500;
     }
   }
 </style>

@@ -1,7 +1,6 @@
 <script lang="ts">
   import { page } from '$app/stores';
-  import Button from '$lib/components/atoms/Button.svelte';
-  import Image from '$lib/components/atoms/Image.svelte';
+  import Image from '$lib/components/base/Image.svelte';
   const error = $page.status === 404 ? 404 : $page.status ?? 404;
   const message = `The page you are looking for does not exist.`;
 
@@ -36,14 +35,14 @@
 <section class="container">
   <h1>{error} - Page not found</h1>
   <p>{error === 404 ? message : $page.error.message}</p>
-  <Button href="/">Return back home</Button>
+  <a href="/" class="btn btn-primary">Return back home</a>
   <div class="image">
     <Image src="/images/error.svg" alt="Page not found illustration" />
   </div>
 </section>
 
 <style lang="scss">
-  @use '$lib/scss/breakpoints.scss' as *;
+  @use '$design' as *;
 
   section {
     padding-block: 2.5rem;
@@ -51,7 +50,7 @@
     flex-direction: column;
     align-items: center;
 
-    @include breakpoint(md) {
+    @include mq(md) {
       padding-block: 5rem;
     }
 
@@ -62,7 +61,7 @@
       text-align: center;
       margin-block: 2rem 1rem;
 
-      @include breakpoint(md) {
+      @include mq(md) {
         font-size: 3.25rem;
       }
     }
@@ -74,7 +73,7 @@
       text-align: center;
       margin-block: 0 1.5rem;
 
-      @include breakpoint(md) {
+      @include mq(md) {
         font-size: 1.5rem;
       }
     }

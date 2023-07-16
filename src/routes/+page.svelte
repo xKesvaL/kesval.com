@@ -1,8 +1,8 @@
 <script lang="ts">
-  import About from '$lib/components/organisms/AboutHome.svelte';
-  import Hero from '$lib/components/organisms/HeroHome.svelte';
-  import ProjectsHome from '$lib/components/organisms/ProjectsHome.svelte';
-  import BlogHome from '$lib/components/organisms/BlogHome.svelte';
+  import About from '$lib/components/home/AboutHome.svelte';
+  import Hero from '$lib/components/home/HeroHome.svelte';
+  import ProjectsHome from '$lib/components/home/ProjectsHome.svelte';
+  import BlogHome from '$lib/components/home/BlogHome.svelte';
   import type { PageData } from './$types';
 
   export let data: PageData;

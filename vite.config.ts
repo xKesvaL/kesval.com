@@ -7,6 +7,7 @@ export default defineConfig({
   resolve: {
     alias: {
       $routes: resolve('./src/routes'),
+      $design: resolve('./node_modules/@kesval/design/scss/abstracts'),
     },
   },
   define: {

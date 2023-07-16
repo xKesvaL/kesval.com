@@ -49,6 +49,8 @@ const config = {
       '$src/*': './src/*',
       $routes: './src/routes',
       '$routes/*': './src/routes/*',
+      $design: './node_modules/@kesval/design/scss/abstracts',
+      '$design/*': './node_modules/@kesval/design/scss/abstracts/*',
     },
   },
   extensions,

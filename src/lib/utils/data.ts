@@ -1,7 +1,9 @@
 import type { Company, Skill, SkillType, TagPrimary, TagSecondary } from '$lib';
 import { DateTime } from 'luxon';
 
-export const email = 'contact@kesval.com';
+export const updated = new Date('07-16-2023');
+
+export const email = 'jabeddou@gmail.com';
 
 export const getAge = () => {
   const birthDate = DateTime.fromISO('2004-10-14');
@@ -83,7 +85,7 @@ export const experiences: Company[] = [
     ],
   },
   {
-    name: 'OLWE Development',
+    name: 'OLWE Dev',
     slugName: 'olwe-development',
     timeframe: '2023 → Now',
     position: 'Frontend Developer',

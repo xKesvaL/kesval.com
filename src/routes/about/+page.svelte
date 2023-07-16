@@ -1,11 +1,10 @@
 <script lang="ts">
-  import Image from '$lib/components/atoms/Image.svelte';
-  import SkillDropdown from '$lib/components/molecules/SkillDropdown.svelte';
-  import Socials from '$lib/components/molecules/Socials.svelte';
-  import Resume from '$lib/components/organisms/Resume.svelte';
+  import Image from '$lib/components/base/Image.svelte';
+  import SkillDropdown from '$lib/components/base/SkillDropdown.svelte';
+  import Socials from '$lib/components/base/Socials.svelte';
+  import Resume from '$lib/components/resume/Resume.svelte';
   import { onMount } from 'svelte';
   import type { LayoutData } from './$types';
-  import Button from '$lib/components/atoms/Button.svelte';
 
   export let data: LayoutData;
 
@@ -28,22 +27,18 @@
   <meta name="description" content="Come and discover who I truly am!" />
 </svelte:head>
 
-<section id="welcome" class="container">
-  <h1>Hi. I'm Jordan.</h1>
+<section id="welcome" class="container container-wide section min">
+  <h1 class="title">Hi. I'm Jordan.</h1>
   <div class="presentation">
     <div class="img">
       <!-- TODO Put real photo -->
-      <Image
-        src="/images/about.png"
-        alt="A Photo of KesvaL"
-        figcaption="There is supposed to be an image of me here."
-        rounding="md" />
+      <Image alt="A Photo of KesvaL" figcaption="Sorry, no image of me here neither" rounding="md" />
     </div>
     <div>
       <p>
         I'm a french {age} year old programmer and I've been doing that since I was 8 years old, it's my passion. I started
         with Java, creating minecraft plugins and later on moved on to NodeJS. I'm a student at the Technological University
-        of Mulhouse, France, studying Multimedia and Web Development, 1st year.
+        of Mulhouse, France, studying Multimedia and Web Development, 2nd year.
       </p>
       <p>
         I just love programming really, especially building new things that correlate to what I love in real life. For
@@ -53,7 +48,7 @@
   </div>
 </section>
 
-<section id="skills" class="container">
+<section id="skills" class="container section container-wide">
   <h2>Skills. Take a look.</h2>
   <div class="skills">
     {#each skillTypes as skillType}
@@ -61,10 +56,10 @@
     {/each}
   </div>
 </section>
-<section id="resume" class="container">
+<section id="resume" class="container section container-wide min">
   <div class="resume">
-    <h2>My Resume</h2>
-    <Button href="/resume.pdf" download="resume-kesval" id="download-resume">Download</Button>
+    <h2 class="myresume">My Resume</h2>
+    <a href="/resume.pdf" download="resume-kesval" id="download-resume" class="btn btn-primary">Download</a>
   </div>
   <Resume {age} {email} {yearsOfCoding} {skills} {experiences} />
 </section>
@@ -72,40 +67,51 @@
 <!-- TODO Certifications -->
 <!-- <section id="certifications" class="container" /> -->
 
-<section id="socials" class="container">
-  <h2>Socials</h2>
+<section id="socials" class="container section">
+  <h2 class="mysocials">Socials</h2>
   <div class="socials-list">
     <Socials full={true} />
   </div>
 </section>
 
 <style lang="scss">
-  @use '$lib/scss/breakpoints.scss' as *;
-  @use '$lib/scss/mixins' as *;
+  @use '$design' as *;
 
   section {
-    padding-top: 0.001rem;
-    padding-bottom: 7.5rem;
+    --padding: 1rem;
+
+    @include mq(sm) {
+      --padding: 2rem;
+    }
+
+    &.min {
+      min-height: 90vh;
+    }
 
     .resume {
       display: flex;
       align-items: center;
       justify-content: space-evenly;
+      flex-direction: column;
+      margin-bottom: 2rem;
+
+      @include mq(sm) {
+        flex-direction: row;
+        margin-bottom: 0;
+      }
+
+      .myresume {
+        margin-block: $size-4;
+
+        @include mq(sm) {
+          margin-block: $size-10;
+        }
+      }
     }
 
     h1,
     h2 {
-      font-size: 2rem;
-      font-weight: 700;
-      line-height: 1.2;
       text-align: center;
-      margin-block: 2rem 3rem;
-      padding-top: 1.25rem;
-
-      @include breakpoint(md) {
-        font-size: 3rem;
-        margin-block: 5rem;
-      }
     }
 
     .presentation {
@@ -116,7 +122,7 @@
       height: fit-content;
       gap: 1rem;
 
-      @include breakpoint(sm) {
+      @include mq(sm) {
         grid-template-columns: 1fr 1fr;
         flex-direction: row;
         gap: 4rem;
@@ -125,27 +131,26 @@
       .img {
         width: auto;
 
-        @include breakpoint(sm) {
+        @include mq(sm) {
           height: 20rem;
           width: 100%;
         }
       }
 
       p {
-        font-size: 1.1rem;
+        font-size: var(--fs-600);
         margin-block: 1rem;
 
-        @include breakpoint(sm) {
+        @include mq(sm) {
           max-width: 25ch;
-          font-size: 1.2rem;
         }
 
-        @include breakpoint(md) {
+        @include mq(md) {
           max-width: 45ch;
         }
 
-        @include breakpoint(lg) {
-          font-size: 1.4rem;
+        @include mq(lg) {
+          max-width: 60ch;
         }
       }
     }
@@ -158,16 +163,20 @@
       align-items: center;
       width: 100%;
 
-      @include breakpoint(md) {
+      @include mq(md) {
         flex-direction: row;
         gap: 2rem;
         justify-content: space-evenly;
         align-items: flex-start;
       }
 
-      @include breakpoint(lg) {
+      @include mq(lg) {
         gap: 4rem;
       }
+    }
+
+    .mysocials {
+      margin-bottom: $size-8;
     }
   }
 </style>

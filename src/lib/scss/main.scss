@@ -1,37 +1,4 @@
-@use 'breakpoints' as *;
-@use 'functions';
-@use 'mixins' as *;
-@use 'reset';
-@use 'themes';
-@use 'variables';
-
-@font-face {
-  font-family: 'benz';
-  src: url('/fonts/benz.woff2') format('woff2');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'gt';
-  src: url('/fonts/gt.woff2') format('woff2');
-  font-display: swap;
-}
-
-body {
-  background-color: var(--color-bg-body);
-  color: var(--color-text);
-  fill: var(--color-text);
-  font-family: var(--font-body);
-  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
-}
-
-:is(h1, h2, h3, h4, h5, h6) {
-  font-family: var(--font-title);
-}
-
-#svelte {
-  height: 100%;
-}
+@use '$design' as *;
 
 .visually-hidden {
   clip: rect(0 0 0 0);
@@ -43,25 +10,58 @@ body {
   width: 1px;
 }
 
+button {
+  background: transparent;
+  color: inherit;
+}
+h1 {
+  letter-spacing: 3px !important;
+}
+
+h1:is(.title),
+section > h2 {
+  font-size: var(--fs-800);
+  font-weight: $font-weight-bold;
+  letter-spacing: 2px !important;
+
+  margin-block: 0 $size-12;
+
+  @include mq(md) {
+    margin-block: $size-9 $size-14;
+  }
+}
+
+h3 {
+  letter-spacing: 0.75px !important;
+}
+
+:is(h1, h2, h3, h4, h5, h6) {
+  font-family: $font-title;
+}
+
+#svelte {
+  height: 100%;
+}
+
 ::selection {
-  background-color: var(--color-primary);
-  color: var(--color-static-text);
+  background-color: var(--color-primary-500);
+  color: white;
 }
 
 ::-webkit-scrollbar {
   width: 1vw;
 
-  @include breakpoint(lg) {
+  @include mq(lg) {
     width: 0.5vw;
   }
 }
 
 ::-webkit-scrollbar-track {
-  background: hsl(var(--color-bg-body-hue), var(--color-bg-body-saturation), var(--neutral-emphasis-less-lightness));
+  background: var(--color-base-200);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-primary);
+  background: var(--color-primary-500);
 }
 
 svg {
@@ -70,17 +70,5 @@ svg {
 
 .special-link {
   text-decoration: underline;
-  color: hsl(var(--color-tertiary-hue), var(--color-tertiary-saturation), var(--primary-dark-lightness));
-}
-
-.container {
-  @include padded-container(1400px);
-
-  &-medium {
-    @include padded-container(1200px);
-  }
-
-  &-small {
-    @include padded-container(1080px);
-  }
+  color: var(--color-accent-400) !important;
 }

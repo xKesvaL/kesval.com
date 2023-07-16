@@ -14,9 +14,10 @@ const projectsOrdered: {
     category: 'tech',
     tags: ['svelte', 'front-end', 'ts', 'scss', 'personal', 'open-source', 'sveltekit'],
     projectId: '1',
+    color: '#f9fafb',
   },
   '2': {
-    name: 'Chess @ kesval.com',
+    name: 'Chessval',
     coverPath: '/images/about.png',
     language: 'react',
     href: '/projects/chess-kesval-com',
@@ -26,6 +27,7 @@ const projectsOrdered: {
     category: 'tech',
     tags: ['react', 'front-end', 'ts', 'tailwind', 'daisyui', 'open-source', 'serverless', 'nextjs'],
     projectId: '2',
+    color: '#f9fafb',
   },
   '3': {
     name: 'SupaPower',
@@ -34,13 +36,14 @@ const projectsOrdered: {
     href: '/projects/supapower',
     shortDescription: 'Track your workouts and find a program suited to your needs.',
     description:
-      'I love going to the gym, but tracking your workouts and finding a good program can be hard or expensive. So I made SupaPower, a free (for now) and open-source app made to to help you track your workouts and create a program suited to your needs.',
+      'I love going to the gym, but finding a good program can be hard or expensive. So I made SupaPower, an open-source app made to to help you track your workouts and create a program suited to your needs.',
     category: 'tech',
     tags: [],
     projectId: '3',
+    color: '#f9fafb',
   },
   '4': {
-    name: 'Presentation @ kesval.com',
+    name: 'Presentations',
     coverPath: '/images/about.png',
     language: 'svelte',
     href: '/projects/presentation-kesval-com',
@@ -50,6 +53,7 @@ const projectsOrdered: {
     category: 'tech',
     tags: [],
     projectId: '4',
+    color: '#f9fafb',
   },
 };
 

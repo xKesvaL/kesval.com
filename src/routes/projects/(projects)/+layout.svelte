@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Breadcrumbs from '$lib/components/molecules/Breadcrumb.svelte';
-  import RelatedProjects from '$lib/components/organisms/RelatedProjects.svelte';
+  import Breadcrumbs from '$lib/components/base/Breadcrumb.svelte';
+  import RelatedProjects from '$lib/components/projects/RelatedProjects.svelte';
   import type { LayoutData } from './$types';
 
   export let data: LayoutData;

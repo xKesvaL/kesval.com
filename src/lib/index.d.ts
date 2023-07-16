@@ -29,6 +29,7 @@ export interface Project {
   description: string;
   category: TagPrimary;
   tags: TagSecondary[];
+  color: string;
 }
 
 export type TagPrimary = 'tech' | 'misc';

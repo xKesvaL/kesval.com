@@ -1,13 +1,14 @@
 <script lang="ts">
-  import ContactBot from '$lib/components/molecules/ContactBot.svelte';
-  import Footer from '$lib/components/organisms/Footer.svelte';
-  import Header from '$lib/components/organisms/Header.svelte';
+  import ContactBot from '$lib/components/layout/ContactBot.svelte';
+  import Footer from '$lib/components/layout/Footer.svelte';
+  import Header from '$lib/components/layout/Header.svelte';
   import { page } from '$app/stores';
   import { browser, dev } from '$app/environment';
   import '$lib/scss/main.scss';
+  import '@kesval/design';
   import { webVitals } from '$lib/utils/vitals';
   import { inject } from '@vercel/analytics';
-  import BackToTop from '$lib/components/molecules/BackToTop.svelte';
+  import BackToTop from '$lib/components/layout/BackToTop.svelte';
   import { fly } from 'svelte/transition';
   import { navigating } from '$app/stores';
   import NProgress from 'nprogress';

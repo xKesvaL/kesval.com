@@ -3,7 +3,7 @@
   pointer-events: none;
 
   .bar {
-    background: var(--color-primary);
+    background: var(--color-primary-500);
 
     position: fixed;
 
@@ -44,8 +44,8 @@
     box-sizing: border-box;
 
     border: solid 2px transparent;
-    border-top-color: var(--color-primary);
-    border-left-color: var(--color-primary);
+    border-top-color: var(--color-primary-500);
+    border-left-color: var(--color-primary-500);
     border-radius: 50%;
 
     -webkit-animation: nprogress-spinner 400ms linear infinite;
