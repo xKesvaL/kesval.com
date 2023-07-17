@@ -15,7 +15,7 @@
 </script>
 
 <Card>
-  <svg class="icon">
+  <svg class="card-icon">
     <use href="#{project.language}-logo" xlink:href="#{project.language}-logo" />
   </svg>
   <h3>
@@ -42,7 +42,7 @@
 <style lang="scss">
   @use '$design' as *;
 
-  .icon {
+  .card-icon {
     height: 50px;
     width: 50px;
     margin-bottom: 1rem;
