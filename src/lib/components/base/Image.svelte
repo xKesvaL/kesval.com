@@ -12,6 +12,8 @@
 
   export let figcaption: string;
 
+  export let border = true;
+
   export let rounding: 'none' | 'sm' | 'md' | 'lg' | 'full' = 'none';
 
   export let loading: 'lazy' | 'eager' = 'lazy';
@@ -52,13 +54,14 @@
 {#if src}
   <img
     class={rounding === 'none' ? '' : `rounding-${rounding}`}
+    class:border
     srcset={buildSrcset()}
     {src}
     {alt}
     {loading}
     decoding="async" />
 {:else}
-  <div class={rounding === 'none' ? '' : `rounding-${rounding}`}>
+  <div class={rounding === 'none' ? '' : `rounding-${rounding}`} class:border>
     <span>
       <ImageIcon />
     </span>
@@ -76,6 +79,11 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    overflow: hidden;
+
+    &.border {
+      border: 1px solid rgba(var(--color-primary-900-rgb), 0.3);
+    }
 
     &.rounding-sm {
       border-radius: $border-radius-3;

@@ -38,7 +38,7 @@
 
 <header class="container {scrolled ? 'scrolled' : ''} {scrollDirection === 'down' ? 'scrolled-down' : ''}">
   <a href="/" aria-label="Site Logo" class="logo">
-    <Image src={'/images/logos/kesval.png'} alt="KesvaL's logo" />
+    <Image src={'/images/logos/kesval.png'} alt="KesvaL's logo" rounding="full" border={false} />
   </a>
   <div class="th-sw">
     <ThemeSwitcher />

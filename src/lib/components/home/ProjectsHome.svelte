@@ -45,7 +45,7 @@
             {project.description}
           </div>
           <div class="project-image">
-            <Image src={project.coverPath} alt={project.name} />
+            <Image src={project.coverPath} alt={project.name} border={false} />
           </div>
         </div>
         <div class="project-btn">

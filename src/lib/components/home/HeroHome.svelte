@@ -11,7 +11,7 @@
 <section id="hero" class="section container container-wide">
   <div class="socials"><Socials vertical={true} /></div>
   <div class="image">
-    <Image src="/images/me/hero.jpg" alt="A Photo of KesvaL" loading="eager" />
+    <Image src="/images/me/hero.jpg" alt="A Photo of KesvaL" loading="eager" border={false} />
   </div>
   <div class="text">
     <h1>
