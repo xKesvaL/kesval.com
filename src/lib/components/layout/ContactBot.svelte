@@ -135,7 +135,7 @@
   <header>
     <div class="wrapper">
       <div class="img">
-        <Image src={'/images/logos/kesval.png'} alt="KesvaL's logo" />
+        <Image src={'/images/logos/kesval.png'} alt="KesvaL's logo" border={false} />
       </div>
       <div class="name">
         <p>Jordan Bot</p>
@@ -171,7 +171,7 @@
     {/each}
     {#each $history as action}
       {#each chatBotAnswers[action] as answer, i}
-        <div class="answer" in:fly={{ y: 50, duration: 500, delay: 1000 * i }}>
+        <div class="answer" in:fly|global={{ y: 50, duration: 500, delay: 1000 * i }}>
           <p>{@html answer}</p>
         </div>
       {/each}
@@ -186,7 +186,7 @@
               chooseQuestion(e);
             }
           }}
-          in:fade={{ duration: 500, delay: chatBotAnswers[action].length * 1000 }}
+          in:fade|global={{ duration: 500, delay: chatBotAnswers[action].length * 1000 }}
           data-name={question.to}>
           <p>{question.text}</p>
         </div>
@@ -203,7 +203,10 @@
     inset: 0;
     border: 2px solid var(--color-primary-400);
     z-index: 20;
-    background: rgba(var(--color-primary-100-rgb), 0.85);
+    background: linear-gradient(135deg, rgba(var(--color-primary-500-rgb), 0.15), rgba(var(--color-primary-100-rgb), 0)),
+      linear-gradient(225deg, rgba(var(--color-secondary-500-rgb), 0.1), rgba(var(--color-primary-100-rgb), 0)),
+      linear-gradient(0deg, rgba(var(--color-accent-500-rgb), 0.05), rgba(var(--color-primary-100-rgb), 0)),
+      radial-gradient(rgba(var(--color-primary-100-rgb), 0.9), rgba(var(--color-primary-100-rgb), 0.9));
     backdrop-filter: blur(0.5rem) saturate(2);
     box-shadow: $box-shadow-5;
     transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out;
@@ -241,10 +244,16 @@
 
       .answer {
         margin-bottom: 0.5rem;
-        background: rgba(var(--color-base-200-rgb), 0.9);
+        background: linear-gradient(
+            135deg,
+            rgba(var(--color-accent-500-rgb), 0.05),
+            rgba(var(--color-primary-100-rgb), 0)
+          ),
+          linear-gradient(315deg, rgba(var(--color-accent-500-rgb), 0.05), rgba(var(--color-primary-100-rgb), 0)),
+          radial-gradient(rgba(var(--color-primary-100-rgb), 0.9), rgba(var(--color-primary-100-rgb), 0.9));
         padding: 1rem;
         border-radius: $border-radius-3;
-        color: hsl(var(--color-primary-500-hue), 100%, var(--color-primary-900-lightness));
+        color: var(--color-primary-900);
         max-width: 90%;
       }
 
