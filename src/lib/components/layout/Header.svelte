@@ -44,7 +44,9 @@
     <ThemeSwitcher />
   </div>
   <button class="open" aria-controls="navigation" on:click={toggleExpanded}>
-    <Hamburger />
+    <span class="hamburger">
+      <Hamburger />
+    </span>
     <span class="visually-hidden">Show Menu</span>
   </button>
   <!-- svelte-ignore a11y-role-supports-aria-props -->
@@ -88,7 +90,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: clamp($size-4, 2vw, $size-8);
+    gap: clamp($size-2, 2vw, $size-8);
 
     position: sticky;
     top: 0;
@@ -239,6 +241,12 @@
     }
 
     button.open {
+      span.hamburger {
+        max-width: 32px;
+        max-height: 32px;
+        display: block;
+      }
+
       @include mq(lg) {
         display: none;
       }

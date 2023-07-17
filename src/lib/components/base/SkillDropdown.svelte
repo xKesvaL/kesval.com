@@ -45,8 +45,8 @@
       <h3>{skillNames[skillType]}</h3>
     </div>
   </button>
-  <ul class="content {opened ? 'opened' : ''} {skillType}">
-    <div>
+  <div class="content {opened ? 'opened' : ''} {skillType}">
+    <ul>
       {#each skills as skill}
         <li>
           <label for="sk-react-{skill.name}">
@@ -58,8 +58,8 @@
           </div>
         </li>
       {/each}
-    </div>
-  </ul>
+    </ul>
+  </div>
 </div>
 
 <style lang="scss">
@@ -105,7 +105,7 @@
           content: '+';
           position: absolute;
           right: 0;
-          transform-origin: 55% 55%;
+          transform-origin: 55% 60%;
           transition: 0.3s ease;
           height: min-content;
           font-size: 2rem;
@@ -126,12 +126,13 @@
       display: grid;
       grid-template-rows: 0fr;
       transition: grid-template-rows 0.3s ease-in-out;
+      overflow: hidden;
 
       &.opened {
         grid-template-rows: 1fr;
       }
 
-      & > div {
+      & > ul {
         overflow: hidden;
       }
 

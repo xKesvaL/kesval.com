@@ -5,6 +5,12 @@
   const { email } = data;
 </script>
 
+<svelte:head>
+  <title>Legal Notice - KesvaL</title>
+  <meta name="description" content="The legal notice of this website." />
+  <meta name="robots" content="noindex, nofollow" />
+</svelte:head>
+
 <section class="container section">
   <h1>Legal Notice</h1>
 

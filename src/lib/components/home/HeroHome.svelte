@@ -93,7 +93,8 @@
       background: var(--color-primary-500);
       outline: 2px var(--color-primary-500) solid;
       z-index: -1;
-      margin: $size-8;
+      margin: $size-1;
+      margin-left: $size-8;
       max-height: $size-16;
       max-width: $size-16;
       aspect-ratio: 1/1;

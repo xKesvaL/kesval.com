@@ -104,8 +104,8 @@
   }
 
   div {
-    background: radial-gradient(rgba(var(--color-base-200-rgb), 0.5), rgba(var(--color-base-200-rgb), 0.5)),
-      radial-gradient(rgba(var(--color-primary-500-rgb), 0.2), rgba(var(--color-base-200-rgb), 0.5));
+    background: radial-gradient(rgba(var(--color-primary-500-rgb), 0.15), rgba(var(--color-base-200-rgb), 0.5)),
+      radial-gradient(rgba(var(--color-base-200-rgb), 0.5), rgba(var(--color-base-200-rgb), 0.5));
     display: grid;
     place-items: center;
     padding: 1rem;

@@ -13,11 +13,11 @@
       const bTags = b.tags.filter((t) => project.tags.includes(t));
       return aTags.length > bTags.length ? -1 : aTags.length < bTags.length ? 1 : 0;
     })
-    .slice(0, 3);
+    .slice(0, 2);
 </script>
 
 {#if relatedProjects && relatedProjects.length > 0}
-  <section class="container">
+  <section class="container container-wide">
     <h2>Related Projects</h2>
     <div class="related-projects">
       {#each relatedProjects as relatedProject}
@@ -47,12 +47,15 @@
     }
 
     .related-projects {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
       justify-content: center;
-      align-items: center;
       padding: 1rem 0;
       gap: 1rem;
+      grid-template-columns: 1fr;
+
+      @include mq(md) {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
   }
 </style>

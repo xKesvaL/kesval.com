@@ -1,3 +1,9 @@
+<svelte:head>
+  <title>Privacy Policy - KesvaL</title>
+  <meta name="description" content="The privacy policy of this website." />
+  <meta name="robots" content="noindex, nofollow" />
+</svelte:head>
+
 <section class="container section">
   <h1>Privacy Policy</h1>
 

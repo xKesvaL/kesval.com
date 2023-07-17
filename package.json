@@ -52,7 +52,7 @@
   },
   "type": "module",
   "dependencies": {
-    "@kesval/design": "^1.6.1",
+    "@kesval/design": "^1.7.0",
     "@sveltejs/adapter-vercel": "^3.0.0",
     "@types/js-search": "^1.4.0",
     "image-transmutation": "^0.1.2",
@@ -66,6 +66,7 @@
     "rehype-autolink-headings": "^6.1.1",
     "rehype-external-links": "^2.1.0",
     "rehype-slug": "^5.1.0",
-    "striptags": "^3.2.0"
+    "striptags": "^3.2.0",
+    "xss": "^1.0.14"
   }
 }

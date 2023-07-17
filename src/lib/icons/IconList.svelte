@@ -8,5 +8,5 @@
   stroke-width="1.5"
   stroke-linecap="round"
   stroke-linejoin="round">
-  <path d="M13 19h8M8 12h13M3 5h18" />
+  <path d="M8 6h12M4 6.01l.01-.011M4 12.01l.01-.011M4 18.01l.01-.011M8 12h12M8 18h12" />
 </svg>

@@ -7,7 +7,7 @@ const projectsOrdered: {
     name: 'Portfolio',
     coverPath: '/images/projects/portfolio.png',
     language: 'svelte',
-    href: '/projects/personal-portfolio',
+    href: '/projects/portfolio',
     shortDescription:
       'My own website to share my work and my thoughts made with Typescript, SvelteKit, Sass and MDSveX.',
     description:
@@ -24,7 +24,7 @@ const projectsOrdered: {
     name: 'Chessval',
     coverPath: '/images/about.png',
     language: 'react',
-    href: '/projects/chess-kesval-com',
+    href: '/projects/chessval',
     shortDescription: 'Play chess with your friends for free.',
     description:
       "In my free time, I like to play chess. So I made this website to play chess with my friends. It's really simple to use, but I won't be adding any new features to it. It's just a fun project to learn react and nextjs.",
@@ -53,7 +53,7 @@ const projectsOrdered: {
     name: 'Presentations',
     coverPath: '/images/about.png',
     language: 'svelte',
-    href: '/projects/presentation-kesval-com',
+    href: '/projects/presentations',
     shortDescription: 'PowerPoint is boring. Create interactive presentations using code, you just need Svelte.',
     description:
       "I think presentations can be really cool, but really hard to make. So I made this website to help me make them, using my methods. You can create interactive presentations with it, and it's all code-logic based.",

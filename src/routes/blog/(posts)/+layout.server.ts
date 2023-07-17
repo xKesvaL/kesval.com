@@ -1,10 +1,11 @@
-import { filteredPosts } from '$lib/utils/posts';
 import type { LayoutServerLoad } from './$types';
+import type { Post } from '$lib';
 
-const load: LayoutServerLoad = async ({ url }) => {
+const load: LayoutServerLoad = async ({ url, parent }) => {
+  const { posts } = await parent();
   const { pathname } = url;
-  const slug = pathname.replace('/', '');
-  const post = filteredPosts.find((p) => p.slug === slug);
+  const slug = pathname.replace('/blog/', '');
+  const post = posts.find((p) => p.slug === slug) as Post;
 
   return {
     post,

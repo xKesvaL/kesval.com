@@ -4,8 +4,8 @@
   import Header from '$lib/components/layout/Header.svelte';
   import { page } from '$app/stores';
   import { browser, dev } from '$app/environment';
-  import '$lib/scss/main.scss';
   import '@kesval/design';
+  import '$lib/scss/main.scss';
   import { webVitals } from '$lib/utils/vitals';
   import { inject } from '@vercel/analytics';
   import BackToTop from '$lib/components/layout/BackToTop.svelte';
@@ -36,12 +36,10 @@
       analyticsId,
     });
   }
-
-  let animDuration = 300;
 </script>
 
 <svelte:head>
-  <meta name="robots" content="index,follow" />
+  <meta name="robots" content="index, follow" />
 
   <meta name="og:type" content="website" />
 </svelte:head>
