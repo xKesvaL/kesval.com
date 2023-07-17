@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Project, TagPrimary, TagSecondary } from '$lib';
+  import type { Project } from '$lib';
   import { Search as SearchJS } from 'js-search';
   import ProjectCard from '$lib/components/projects/ProjectCard.svelte';
   import AllSVGs from '$lib/icons/languages/AllSVGs.svelte';

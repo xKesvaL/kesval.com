@@ -2,7 +2,7 @@
   export let label = '';
 </script>
 
-<p class="chip" on:click on:keydown on:keypress on:keyup>
+<p class="chip">
   {label}
 </p>
 

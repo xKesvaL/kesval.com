@@ -5,7 +5,6 @@
   import More from '$lib/icons/IconMore.svelte';
   import Server from '$lib/icons/IconServer.svelte';
   import { onMount } from 'svelte';
-  import { fly } from 'svelte/transition';
   export let skills: Skill[];
   export let skillType: keyof typeof skillNames;
 

@@ -48,7 +48,7 @@
   };
 </script>
 
-<div bind:this={el} on:mousemove={onHover} class="card">
+<div bind:this={el} on:mousemove={onHover} class="card" role="region">
   <div class="card-bg-img">
     <svg class="card-icon">
       <use href="#{project.language}-logo" xlink:href="#{project.language}-logo" />

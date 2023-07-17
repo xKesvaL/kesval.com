@@ -18,7 +18,7 @@
 <section class="container container-wide section" id="projects">
   <h2>Projects</h2>
   <!-- svelte-ignore a11y-click-events-have-key-events -->
-  <div class="projects" on:click={projectClickHandle}>
+  <div class="projects" on:click={projectClickHandle} role="region">
     {#each arrayProjects as project, i (project.projectId)}
       <div
         class="project-panel"
