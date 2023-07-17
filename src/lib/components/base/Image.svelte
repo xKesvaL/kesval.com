@@ -80,6 +80,7 @@
     height: 100%;
     object-fit: cover;
     overflow: hidden;
+    box-shadow: $box-shadow-4;
 
     &.border {
       border: 1px solid rgba(var(--color-primary-900-rgb), 0.3);

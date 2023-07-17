@@ -62,7 +62,7 @@
     display: flex;
     align-items: center;
     width: 100%;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
 
     @include mq(md) {
       width: 50%;
@@ -71,15 +71,15 @@
 
     &-icon {
       position: absolute;
-      left: 0.5rem;
-      height: 24px;
-      width: 24px;
+      left: 1rem;
+      height: 32px;
+      width: 32px;
     }
 
     &-input {
-      border-radius: $border-radius-2;
+      border-radius: $border-radius-full;
       width: 100%;
-      padding: 0.5rem 0.5rem 0.5rem 2.5rem;
+      padding: 1rem 1rem 1rem 3.5rem;
       font-size: var(--fs-600);
     }
   }

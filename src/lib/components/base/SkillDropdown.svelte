@@ -178,6 +178,7 @@
         label {
           display: flex;
           justify-content: space-between;
+          cursor: default;
         }
 
         .progress-wrap {

@@ -30,13 +30,25 @@
 
   a {
     display: flex;
-    background: linear-gradient(90deg, rgba(var(--color-base-200-rgb), 0.5), rgba(var(--color-base-200-rgb), 0.5)),
-      linear-gradient(135deg, rgba(var(--color-primary-500-rgb), 0.15) 50%, rgba(var(--color-base-200-rgb), 1) 100%);
+    background: linear-gradient(
+        135deg,
+        rgba(var(--color-primary-500-rgb), 0.1) 50%,
+        rgba(var(--color-base-200-rgb), 0.75) 100%
+      ),
+      linear-gradient(90deg, rgba(var(--color-base-200-rgb), 0.25), rgba(var(--color-base-200-rgb), 0.25));
     color: $color-neutral-900;
     border-radius: $border-radius-4;
     overflow: hidden;
     flex-direction: column;
     grid-row: span 2;
+    border: 1px solid rgba(var(--color-primary-900-rgb), 0.2);
+    box-shadow: $box-shadow-2;
+    transition: 0.2s;
+
+    &:hover {
+      border-color: rgba(var(--color-primary-900-rgb), 0.6);
+      scale: 1.01;
+    }
 
     @include mq(xs) {
       flex-direction: row;

@@ -94,6 +94,7 @@
     overflow: hidden;
     transition: 0.2s;
     position: relative;
+    box-shadow: $box-shadow-2;
 
     &-icon {
       height: 50px;

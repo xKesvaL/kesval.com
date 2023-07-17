@@ -47,6 +47,7 @@ const projectsOrdered: {
     projectId: '3',
     color: '',
     startDate: '2023-06-1',
+    github: 'https://github.com/xKesvaL/lifting.kesval.com',
   },
   '4': {
     name: 'Presentations',
