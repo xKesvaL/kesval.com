@@ -76,6 +76,7 @@ svg {
 
 .prose {
   max-width: 70ch;
+  overflow-x: auto;
 
   em {
     font-style: italic;
@@ -122,15 +123,19 @@ svg {
     background: linear-gradient(225deg, rgba(var(--color-primary-500-rgb), 0.1), rgba(32, 32, 44, 0)),
       linear-gradient(45deg, rgba(var(--color-primary-500-rgb), 0.05), rgba(32, 32, 44, 0)),
       radial-gradient(rgba(32, 32, 44, 1), rgba(32, 32, 44, 1));
-    overflow-x: auto;
     scrollbar-width: thin;
-    overflow-y: hidden;
+    overflow: auto;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     font-family: $font-mono;
 
     &::-webkit-scrollbar {
       height: 6px;
+    }
+
+    code {
+      display: block;
+      width: 100%;
     }
   }
 }

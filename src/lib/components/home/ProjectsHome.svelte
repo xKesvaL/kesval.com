@@ -4,7 +4,7 @@
   import Card from '$lib/components/base/Card.svelte';
 
   export let projects: Project[];
-  const arrayProjects = Object.values(projects).splice(0, 5);
+  const arrayProjects = Object.values(projects).splice(0, 6);
 
   let expandedIndex = '1';
 
@@ -81,7 +81,7 @@
         --panel-gap: 1rem;
         --panel-padding: 0.75rem;
         flex-direction: row;
-        height: 30rem;
+        height: 20rem;
       }
 
       .project {
@@ -102,7 +102,7 @@
         will-change: flex-basis, flex-grow;
 
         &[aria-expanded='true'] {
-          flex-basis: clamp(20rem, 40vh, 40rem);
+          flex-basis: clamp(20rem, 30vh, 27.5rem);
           flex-grow: 1;
 
           @include mq(md) {

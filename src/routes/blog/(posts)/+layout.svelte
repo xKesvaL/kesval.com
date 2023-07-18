@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { LayoutData } from './$types';
+  import TableOfContents from '$lib/components/blog/TableOfContents.svelte';
 
   export let data: LayoutData;
 
@@ -12,9 +13,10 @@
 </svelte:head>
 
 <section class="container container-wide">
-  <article class="container prose">
+  <article class="prose">
     <slot />
   </article>
+  <TableOfContents />
 </section>
 
 <style lang="scss">
@@ -24,8 +26,18 @@
     scroll-padding: 10vh;
   }
 
+  section {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+
   article {
-    --padding: 0;
     padding-block: $size-fluid-4;
+    margin-left: 0;
+
+    @include mq(lg) {
+      margin-left: auto;
+    }
   }
 </style>
