@@ -13,8 +13,6 @@ categories:
     import CodeBlock from "$lib/components/base/CodeBlock.svelte";
 </script>
 
-# hello
-
 this is some **sample** text
 
 `test code`

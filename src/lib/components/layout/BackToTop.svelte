@@ -68,8 +68,8 @@
   .scroll-button {
     position: fixed;
     display: grid;
-    bottom: $size-2;
-    right: $size-2;
+    bottom: 0;
+    right: 0;
     z-index: 5;
     border-radius: 100vw;
     background: transparent;
@@ -85,8 +85,8 @@
       border-radius: $border-radius-full;
       grid-column-start: 1;
       grid-row-start: 1;
-      transition: 0.2s ease-in-out;
-      scale: 0.7;
+      transition: 0.3s ease-in-out;
+      scale: 0.6;
       position: relative;
       background: var(--color-base-200);
 
@@ -114,7 +114,7 @@
 
     &:hover {
       .inner {
-        scale: 0.75;
+        scale: 0.7;
 
         svg {
           fill-opacity: 0.2;

@@ -141,7 +141,7 @@
 <aside
   class:desktop
   class:hidden={hide}
-  class={scrollDirection === 'up' ? 'expanded' : ''}
+  class={scrollDirection === 'up' ? '' : 'retracted'}
   class:mobile={!desktop}
   bind:this={aside}
   hidden={hide}
@@ -165,7 +165,7 @@
       <ol>
         {#each headings as heading, idx}
           <li
-            style:margin="0 0 0 {levels[idx] - minLevel}em"
+            style:margin-left="{levels[idx] - minLevel}em"
             style:font-size="{2 - 0.2 * (levels[idx] - minLevel)}ex"
             class:active={activeHeading === heading}
             on:click={handler(heading)}
@@ -193,9 +193,10 @@
     &.desktop {
       position: sticky;
       top: 1rem;
+      transform: translateY(10vh);
 
-      &.expanded {
-        transform: translateY(10vh);
+      &.retracted {
+        transform: translateY(0);
       }
     }
 
@@ -203,9 +204,13 @@
       position: fixed;
       bottom: 1rem;
       left: 1rem;
+      z-index: 6;
 
       nav {
         left: 0;
+        background: linear-gradient(135deg, rgba(var(--color-accent-500-rgb), 0.02), rgba(var(--color-base-200-rgb), 0)),
+          linear-gradient(315deg, rgba(var(--color-accent-500-rgb), 0.02), rgba(var(--color-base-200-rgb), 0)),
+          radial-gradient(rgba(var(--color-base-200-rgb), 1), rgba(var(--color-base-200-rgb), 1));
       }
     }
 
@@ -216,6 +221,10 @@
       padding: 1rem;
       position: relative;
       border: 1px solid rgba(var(--color-primary-900-rgb), 0.3);
+      border-radius: $border-radius-2;
+      background: linear-gradient(135deg, rgba(var(--color-primary-500-rgb), 0.02), rgba(var(--color-base-200-rgb), 0)),
+        linear-gradient(315deg, rgba(var(--color-primary-500-rgb), 0.02), rgba(var(--color-base-200-rgb), 0)),
+        radial-gradient(rgba(var(--color-base-200-rgb), 0.1), rgba(var(--color-base-200-rgb), 0.1));
 
       ol {
         list-style: none;
@@ -223,13 +232,24 @@
 
         li {
           cursor: pointer;
+          margin-block: 0.2rem;
+          padding: 0.25rem 0.5rem;
+          border-radius: $border-radius-2;
+          transition: 0.3s;
 
           &:hover {
             color: var(--color-accent-500);
           }
 
           &.active {
-            background: var(--color-primary-500);
+            background: linear-gradient(
+                135deg,
+                rgba(var(--color-primary-500-rgb), 0.2),
+                rgba(var(--color-base-200-rgb), 0.5)
+              ),
+              linear-gradient(315deg, rgba(var(--color-secondary-500-rgb), 0.2), rgba(var(--color-base-200-rgb), 0.5)),
+              linear-gradient(0deg, rgba(var(--color-accent-500-rgb), 0.2), rgba(var(--color-base-200-rgb), 0.5)),
+              radial-gradient(rgba(var(--color-base-200-rgb), 0.3), rgba(var(--color-base-200-rgb), 0.3));
           }
         }
       }
@@ -237,18 +257,27 @@
 
     button {
       position: absolute;
-      bottom: 0;
+      bottom: 0.25rem;
       left: 0;
       cursor: pointer;
       z-index: 2;
       padding: 0.5rem;
-      border-radius: $border-radius-2;
-      width: 4rem;
+      border-radius: $border-radius-full;
+      width: 3.75rem;
+      background: var(--color-base-200);
+      transition: 0.3s;
+      display: grid;
+      place-items: center;
+
+      &:hover {
+        scale: 1.1;
+      }
     }
 
     .toc-title {
       font-size: var(--fs-600);
       margin-top: 0;
+      margin-bottom: 1rem;
     }
   }
 </style>

@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { LayoutData } from './$types';
   import TableOfContents from '$lib/components/blog/TableOfContents.svelte';
+  import Breadcrumb from '$lib/components/base/Breadcrumb.svelte';
 
   export let data: LayoutData;
 
@@ -13,10 +14,13 @@
 </svelte:head>
 
 <section class="container container-wide">
-  <article class="prose">
-    <slot />
-  </article>
-  <TableOfContents />
+  <Breadcrumb name={post.title} type="post" />
+  <div class="post">
+    <article class="prose">
+      <slot />
+    </article>
+    <TableOfContents />
+  </div>
 </section>
 
 <style lang="scss">
@@ -26,7 +30,7 @@
     scroll-padding: 10vh;
   }
 
-  section {
+  .post {
     display: flex;
     justify-content: center;
     gap: 2rem;

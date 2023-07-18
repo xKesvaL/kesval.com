@@ -23,11 +23,11 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    font-size: 1rem;
+    font-size: var(--fs-300);
     padding: 0.5rem 0;
 
     @include mq(md) {
-      font-size: 1.25rem;
+      font-size: var(--fs-500);
     }
 
     span {
@@ -37,6 +37,8 @@
 
     a {
       color: var(--color-neutral-800);
+      text-align: center;
+      text-wrap: balance;
 
       &:hover {
         text-decoration: underline;
