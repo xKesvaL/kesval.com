@@ -34,8 +34,8 @@
     min-height: 20vh;
     background: linear-gradient(
       135deg,
-      rgba(var(--color-primary-100-rgb), 0.5),
-      rgba(var(--color-primary-100-rgb), 0.1)
+      rgba(var(--color-primary-100-rgb), 0.7),
+      rgba(var(--color-primary-100-rgb), 0.3)
     );
     color: white;
     padding: 2rem 1rem;
