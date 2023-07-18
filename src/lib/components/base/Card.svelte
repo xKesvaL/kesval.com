@@ -1,11 +1,15 @@
 <script lang="ts">
-  import type { MouseEventHandler } from 'svelte/elements/index';
+  import type { MouseEventHandler } from 'svelte/elements';
   let el: HTMLElement;
   export let href: string;
 
   export let padding: string;
 
+  export let cardBgStyle = '';
+
   export let classes: string[] = [];
+
+  export let scale = true;
 
   export let color: string;
 
@@ -21,8 +25,8 @@
     const x = ev.clientX - rect.left;
     const y = ev.clientY - rect.top;
 
-    el.style.setProperty('--drop-x', `${x}px`);
-    el.style.setProperty('--drop-y', `${y}px`);
+    target.style.setProperty('--drop-x', `${x}px`);
+    target.style.setProperty('--drop-y', `${y}px`);
   };
 </script>
 
@@ -32,8 +36,9 @@
   bind:this={el}
   on:mousemove={onHover}
   class="card {classes.join(' ')}"
+  class:scale
   role="region">
-  <div class="card-bg-img" style="padding: {padding}">
+  <div class="card-bg-img" style="padding: {padding}; {cardBgStyle}">
     <slot />
   </div>
 </svelte:element>
@@ -47,9 +52,6 @@
 
     --drop-color: rgba(var(--color-primary-300-rgb), 0.3);
 
-    --rot-x: 0;
-    --rot-y: 0;
-
     display: inline-flex;
     flex-direction: column;
     border: 1px solid rgba(var(--color-primary-900-rgb), 0.3);
@@ -60,6 +62,8 @@
     position: relative;
     box-shadow: $box-shadow-2;
     grid-row: span 2;
+    height: 100%;
+    width: 100%;
 
     @include mq(xs) {
       grid-row: span 1;
@@ -72,7 +76,9 @@
     }
 
     &:hover {
-      transform: scale(1.01);
+      &.scale {
+        transform: scale(1.01);
+      }
       border-color: rgba(var(--color-primary-900-rgb), 0.8);
     }
 

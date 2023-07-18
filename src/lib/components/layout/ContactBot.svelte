@@ -33,7 +33,7 @@
       "Send me a message and let's chat about it!",
       "Oh, and, I'm looking for little personal side jobs, not full-time jobs.",
     ],
-    other: ['Okay, no problem', 'Can I help you with anything else?'],
+    other: ['Okay, no problem.', 'Can I help you with anything else?'],
     confirmHire: [
       'Great, you can contact me here:',
       `e-mail: <a href="mailto:${email}" class="special-link">${email}</a>`,

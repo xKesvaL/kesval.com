@@ -1,61 +1,56 @@
 <script lang="ts">
   import type { Project } from '$lib';
   import AllSVGs from '$lib/icons/languages/AllSVGs.svelte';
-  import Image from '../base/Image.svelte';
-  let expandedIndex = '1';
+  import Card from '$lib/components/base/Card.svelte';
 
-  export let projects: Project[] = [];
-
+  export let projects: Project[];
   const arrayProjects = Object.values(projects).splice(0, 5);
 
+  let expandedIndex = '1';
+
   function projectClickHandle(e: MouseEvent) {
-    let target = (e.target as HTMLElement)?.closest('.project-panel');
+    let target = (e.target as HTMLElement)?.closest('.project');
     if (!target) return;
     expandedIndex = target.id.replace('project-', '');
   }
 </script>
 
-<section class="container container-wide section" id="projects">
+<section class="container container-wide section">
   <h2>Projects</h2>
-  <!-- svelte-ignore a11y-click-events-have-key-events -->
-  <div class="projects" on:click={projectClickHandle} role="region">
+  <div class="projects" role="region" on:click={projectClickHandle} on:keypress={projectClickHandle}>
     {#each arrayProjects as project, i (project.projectId)}
-      <div
-        class="project-panel"
-        aria-expanded={i + 1 === parseInt(expandedIndex) ? 'true' : 'false'}
-        id="project-{i + 1}">
-        <h3 class="project-heading" id="project-{i + 1}-heading">
-          <button
-            class="project-trigger"
-            aria-controls="project-{i + 1}-content"
-            aria-expanded={i + 1 === parseInt(expandedIndex) ? 'true' : 'false'}>
-            <span class="project-title">{project.name}</span>
-            <svg class="project-icon">
-              <use href="#{project.language}-logo" xlink:href="#{project.language}-logo" />
-            </svg>
-          </button>
-        </h3>
-        <div
-          class="project-content"
-          id="project-{i + 1}-content"
-          aria-labelledby="project-{i + 1}-heading"
-          aria-hidden={i + 1 === parseInt(expandedIndex) ? 'false' : 'true'}
-          role="region">
-          <div class="project-more">
-            {project.description}
+      <div class="project" id="project-{i + 1}" aria-expanded={i + 1 === parseInt(expandedIndex)}>
+        <Card padding="var(--panel-padding)" scale={false} cardBgStyle="padding-right: var(--panel-padding-right);">
+          <h3 class="project-heading" id="project-{i + 1}-heading">
+            <button
+              class="project-trigger"
+              aria-controls="project-{i + 1}-content"
+              aria-expanded={i + 1 === parseInt(expandedIndex)}>
+              <span class="project-title">{project.name}</span>
+              <svg class="project-icon">
+                <use href="#{project.language}-logo" xlink:href="#{project.language}-logo" />
+              </svg>
+            </button>
+          </h3>
+          <div
+            class="project-content"
+            id="project-{i + 1}-content"
+            aria-labelledby="project-{i + 1}-heading"
+            aria-hidden={i + 1 === parseInt(expandedIndex)}
+            role="region">
+            <div class="project-more">
+              {project.description}
+            </div>
           </div>
-          <div class="project-image">
-            <Image src={project.coverPath} alt={project.name} border={false} />
+          <div class="project-btn">
+            <a href={project.href} class="btn btn-accent">See More</a>
           </div>
-        </div>
-        <div class="project-btn">
-          <a href={project.href} class="btn btn-primary">See More</a>
-        </div>
+        </Card>
       </div>
     {/each}
   </div>
-  <div class="see-all">
-    <a href="/projects" class="btn btn-primary">See All Projects</a>
+  <div class="more">
+    <a href="/projects" class="btn btn-primary">All my projects</a>
   </div>
 </section>
 
@@ -69,16 +64,11 @@
       text-align: center;
     }
 
-    .see-all {
-      display: flex;
-      justify-content: center;
-      margin-block: $size-9 0;
-    }
-
     .projects {
       --button-size: 3.5rem;
-      --panel-padding: 0.25rem;
+      --panel-padding: 0.5rem;
       --panel-gap: 0.5rem;
+      --panel-padding-right: 0;
 
       display: flex;
       flex-direction: column;
@@ -93,47 +83,36 @@
         flex-direction: row;
         height: 30rem;
       }
-    }
 
-    .project {
-      &-panel {
+      .project {
         position: relative;
         isolation: isolate;
         flex-basis: calc(var(--button-size) + (var(--panel-padding) * 2));
         overflow: hidden;
-        padding: var(--panel-padding);
-        border-radius: calc((var(--button-size) + (var(--panel-padding) * 2)) / 2);
         cursor: pointer;
+        background: linear-gradient(
+            135deg,
+            rgba(var(--color-primary-500-rgb), 0.025),
+            rgba(var(--color-base-200-rgb), 0)
+          ),
+          linear-gradient(315deg, rgba(var(--color-primary-500-rgb), 0.025), rgba(var(--color-base-200-rgb), 0)),
+          radial-gradient(rgba(var(--color-base-200-rgb), 0.05), rgba(var(--color-base-200-rgb), 0.05));
 
-        transition: flex-basis 0.3s ease, flex-grow 0.3s ease;
+        transition: 0.3s;
         will-change: flex-basis, flex-grow;
-
-        &:hover,
-        &:focus {
-          .project-image {
-            transform: scale(1.05);
-            filter: brightness(0.75);
-          }
-        }
 
         &[aria-expanded='true'] {
           flex-basis: clamp(20rem, 40vh, 40rem);
           flex-grow: 1;
-          padding-right: $size-4;
 
           @include mq(md) {
-            padding-right: calc(var(--panel-padding) + var(--button-size) + var(--panel-gap));
+            --panel-padding-right: calc(var(--panel-padding) + var(--button-size) + var(--panel-gap));
           }
 
           & .project-content .project-more {
             transform: translateY(0);
             opacity: 1;
             transition: transform 0.3s 0.3s, opacity 0.3s 0.3s;
-          }
-
-          & .project-image {
-            transform: scale(1.05);
-            filter: brightness(0.5) blur(0.3rem);
           }
 
           & .project-btn {
@@ -143,15 +122,14 @@
             pointer-events: all;
           }
         }
-      }
 
-      &-content {
-        .project-more {
+        &-more {
           transform: translateY(2rem);
           opacity: 0;
           margin-top: 1rem;
-          color: white;
+          color: $color-neutral-800;
           margin-left: 1rem;
+          margin-right: 1rem;
           font-size: var(--fs-400);
 
           @include mq(xs) {
@@ -159,95 +137,100 @@
           }
 
           @include mq(md) {
-            font-size: var(--fs-600);
             margin-left: calc(var(--button-size) + var(--panel-gap));
           }
         }
-      }
 
-      &-title {
-        font-size: var(--fs-300);
-        padding-top: 0.5rem;
-        color: white;
-        position: relative;
-        isolation: isolate;
+        &-title {
+          font-size: var(--fs-300);
+          padding-top: 0.5rem;
+          color: $color-neutral-900;
+          position: relative;
+          isolation: isolate;
 
-        display: grid;
-        align-items: center;
+          display: grid;
+          align-items: center;
 
-        @include mq(xs) {
-          font-size: var(--fs-500);
+          @include mq(xs) {
+            font-size: var(--fs-500);
+          }
+
+          @include mq(lg) {
+            font-size: var(--fs-700);
+          }
+
+          &::after {
+            content: '';
+            position: absolute;
+
+            left: calc((var(--panel-gap) + var(--button-size)) * -1);
+            height: var(--button-size);
+            width: calc(100% + (var(--button-size) * 2));
+            z-index: -1;
+            border-radius: 100vw;
+            background: linear-gradient(
+                135deg,
+                rgba(var(--color-accent-500-rgb), 0.1),
+                rgba(var(--color-base-200-rgb), 0.5)
+              ),
+              radial-gradient(rgba(var(--color-base-200-rgb), 0.3), rgba(var(--color-base-200-rgb), 0.3));
+
+            @include mq(md) {
+              opacity: 0;
+            }
+          }
         }
 
-        @include mq(lg) {
-          font-size: var(--fs-700);
-        }
+        &-icon {
+          backdrop-filter: blur(0.5rem) saturate(3);
+          width: var(--button-size);
 
-        &::after {
-          content: '';
-          position: absolute;
-
-          left: calc((var(--panel-gap) + var(--button-size)) * -1);
-          height: var(--button-size);
-          width: calc(100% + (var(--button-size) * 2));
-          z-index: -1;
-          border-radius: 100vw;
-          background: hsl(0, 0%, 0%, 0.5);
+          aspect-ratio: 1/1;
+          border-radius: 50%;
+          padding: 0.75rem;
 
           @include mq(md) {
-            opacity: 0;
+            background: radial-gradient(rgba(var(--color-accent-500-rgb), 0.15), rgba(var(--color-base-200-rgb), 0.5)),
+              radial-gradient(rgba(var(--color-base-200-rgb), 0.5), rgba(var(--color-base-200-rgb), 0.5));
+          }
+        }
+
+        &-heading {
+          min-width: calc(var(--button-size) + (var(--panel-padding) * 2));
+        }
+
+        &-trigger {
+          display: flex;
+          width: 1000%;
+          align-items: center;
+          gap: var(--panel-gap);
+          flex-direction: row-reverse;
+          justify-content: flex-end;
+        }
+
+        &-btn {
+          position: absolute;
+          bottom: 1rem;
+          right: 1rem;
+
+          opacity: 0;
+          transform: translateX(2rem);
+          pointer-events: none;
+
+          z-index: 10;
+
+          @include mq(md) {
+            bottom: 2rem;
+            right: 2rem;
           }
         }
       }
+    }
 
-      &-image {
-        position: absolute;
-        inset: 0;
-        object-fit: cover;
-        z-index: -1;
-        transition: filter 0.6s, transform 0.6s;
-        filter: brightness(0.9);
-      }
-
-      &-icon {
-        background: hsl(0, 0%, 0%, 0.5);
-        backdrop-filter: blur(0.5rem) saturate(3);
-        width: var(--button-size);
-
-        aspect-ratio: 1/1;
-        border-radius: 50%;
-        padding: 0.75rem;
-      }
-
-      &-heading {
-        min-width: calc(var(--button-size) + (var(--panel-padding) * 2));
-      }
-
-      &-trigger {
-        display: flex;
-        width: 1000%;
-        align-items: center;
-        gap: var(--panel-gap);
-        flex-direction: row-reverse;
-        justify-content: flex-end;
-      }
-
-      &-btn {
-        position: absolute;
-        bottom: 1rem;
-        right: 1rem;
-
-        opacity: 0;
-        transform: translateX(2rem);
-        pointer-events: none;
-
-        z-index: 10;
-
-        @include mq(md) {
-          bottom: 2rem;
-          right: 2rem;
-        }
-      }
+    .more {
+      display: flex;
+      justify-content: center;
+      margin-block: $size-9 0;
     }
   }
 </style>
