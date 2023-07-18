@@ -1,5 +1,6 @@
 <script lang="ts">
   import Image from '../base/Image.svelte';
+  import Sparkles from '$lib/components/base/Sparkles.svelte';
 </script>
 
 <section id="about" class="container container-wide section">
@@ -20,15 +21,17 @@
       </p>
       <ul>
         <li>
-          <span>10</span>
+          <span>
+            <Sparkles highlight="off" color="primary">10</Sparkles>
+          </span>
           years of experience
         </li>
         <li>
-          <span>05</span>
+          <span><Sparkles highlight="off" color="accent">05</Sparkles></span>
           projects completed
         </li>
         <li>
-          <span>02</span>
+          <span><Sparkles highlight="off" color="secondary">02</Sparkles></span>
           companies worked
         </li>
       </ul>

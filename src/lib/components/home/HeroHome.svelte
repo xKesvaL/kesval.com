@@ -2,6 +2,7 @@
   import Image from '../base/Image.svelte';
   import Socials from '../base/Socials.svelte';
   import { botState } from '$lib/stores/bot';
+  import Sparkles from '$lib/components/base/Sparkles.svelte';
 
   function toggleBot() {
     botState.update((state) => !state);
@@ -20,7 +21,8 @@
     </h1>
     <p class="subtitle">Fullstack developer</p>
     <p>
-      I'm a fullstack developer with a passion for building beautiful, performant and accessible web apps or websites.
+      I'm a fullstack developer with a passion for building <Sparkles>beautiful</Sparkles>, performant and accessible
+      web apps or websites.
     </p>
     <div class="flex">
       <button on:click={toggleBot} class="btn btn-primary">Contact me</button>

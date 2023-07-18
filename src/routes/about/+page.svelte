@@ -5,6 +5,7 @@
   import Resume from '$lib/components/resume/Resume.svelte';
   import { onMount } from 'svelte';
   import type { LayoutData } from './$types';
+  import Sparkles from '$lib/components/base/Sparkles.svelte';
 
   export let data: LayoutData;
 
@@ -36,9 +37,10 @@
     </div>
     <div>
       <p>
-        I'm a french {age} year old programmer and I've been doing that since I was 8 years old, it's my passion. I started
-        with Java, creating minecraft plugins and later on moved on to NodeJS. I'm a student at the Technological University
-        of Mulhouse, France, studying Multimedia and Web Development, 2nd year.
+        I'm a french {age} year old programmer and I've been doing that since I was 8 years old, it's my <Sparkles>
+          passion
+        </Sparkles>. I started with Java, creating minecraft plugins and later on moved on to NodeJS. I'm a student at
+        the Technological University of Mulhouse, France, studying Multimedia and Web Development, 2nd year.
       </p>
       <p>
         I just love programming really, especially building new things that correlate to what I love in real life. For

@@ -93,3 +93,16 @@ export interface Post {
   slug: string;
   excerpt: string;
 }
+
+export interface SparkleType {
+  id: string;
+  createdAt: number;
+  color: string;
+  size: number;
+  style: SparkeStyle;
+}
+
+export interface SparkeStyle {
+  top: string;
+  left: string;
+}
