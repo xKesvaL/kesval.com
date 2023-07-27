@@ -10,7 +10,7 @@
   export let formats: string[] = ['avif', 'webp', 'png'];
   export let widths: string[] | undefined = undefined;
 
-  export let figcaption: string;
+  export let figcaption: string = '';
 
   export let border = true;
 
@@ -18,7 +18,7 @@
 
   export let loading: 'lazy' | 'eager' = 'lazy';
 
-  let fileName;
+  let fileName: string;
   $: if (src) {
     fileName = src.split('.')[0];
   }

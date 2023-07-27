@@ -165,6 +165,8 @@
             chooseQuestion(e);
           }
         }}
+        role="button"
+        tabindex={$botState ? 0 : -1}
         data-name={question.to}>
         <p>{question.text}</p>
       </div>
@@ -172,6 +174,7 @@
     {#each $history as action}
       {#each chatBotAnswers[action] as answer, i}
         <div class="answer" in:fly|global={{ y: 50, duration: 500, delay: 1000 * i }}>
+           <!-- eslint-disable-next-line svelte/no-at-html-tags -->
           <p>{@html answer}</p>
         </div>
       {/each}
@@ -186,6 +189,8 @@
               chooseQuestion(e);
             }
           }}
+          role="button"
+          tabindex={$botState ? 0 : -1}
           in:fade|global={{ duration: 500, delay: chatBotAnswers[action].length * 1000 }}
           data-name={question.to}>
           <p>{question.text}</p>

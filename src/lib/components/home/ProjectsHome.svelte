@@ -14,6 +14,7 @@
     expandedIndex = target.id.replace('project-', '');
   }
 </script>
+<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 
 <section class="container container-wide section">
   <h2>Projects</h2>

@@ -3,7 +3,7 @@ title: Building a portfolio with Svelte(Kit)
 slug: portfolio
 date: 2023-06-31
 excerpt: A summary of my experience building my website with Svelte(Kit).
-tags: 
+tags:
   - Svelte
 categories:
   - Tech

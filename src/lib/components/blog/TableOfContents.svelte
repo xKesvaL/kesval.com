@@ -18,7 +18,7 @@
   export let flashClickedHeadingsFor = 1000;
   export let getHeadingIds = (node: HTMLHeadingElement): string => node.id;
   export let getHeadingLevels = (node: HTMLHeadingElement): number => Number(node.nodeName[1]); // get the number from H1, H2, ...
-  export let getHeadingTitles = (node: HTMLHeadingElement): string => node.textContent.replace('#', '') ?? ``;
+  export let getHeadingTitles = (node: HTMLHeadingElement): string => node.textContent?.replace('#', '') ?? ``;
   export let headings: HTMLHeadingElement[] = [];
   export let headingSelector = `.prose :is(h2, h3, h4):not(.toc-exclude)`;
   export let hide = false;
@@ -70,7 +70,7 @@
 
   const requeryHeadings = () => {
     if (typeof document === `undefined`) return;
-    headings = [...document.querySelectorAll(headingSelector)];
+    headings = [...document.querySelectorAll(headingSelector)] as HTMLHeadingElement[];
     setActiveHeading();
     if (headings.length === 0) {
       if (warnOnEmpty) {
@@ -164,6 +164,7 @@
       {/if}
       <ol>
         {#each headings as heading, idx}
+          <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
           <li
             style:margin-left="{levels[idx] - minLevel}em"
             style:font-size="{2 - 0.2 * (levels[idx] - minLevel)}ex"
