@@ -31,26 +31,42 @@
   </div>
   <div class="section about">
     <Title>About</Title>
+    <!-- French -->
+    <!-- <Title>À Propos</Title> -->
     <p>
       I'm a passioned fullstack developer. I started when I was 8, writing my first lines of code in Java, creating
       minecraft mods. I then moved to web development, and I'm now working with the latest technologies, such as Svelte,
       Deno, and TypeScript. Later, I want to create some apps for myself, that will maybe be used by others.
+      <!-- French -->
+      <!-- Je suis un développeur fullstack passionné. J'ai commencé à 8 ans, en écrivant mes premières lignes de code en Java,
+      en créant des mods minecraft. J'ai ensuite migré vers le développement web, et je travaille maintenant avec les dernières
+      technologies, telles que Svelte, Deno et TypeScript. Plus tard, je veux créer des applications pour moi, qui seront
+      peut-être utilisées par d'autres. -->
     </p>
   </div>
   <div class="section experience">
     <Title>Experience</Title>
+    <!-- French -->
+    <!-- <Title>Expérience</Title> -->
     <Experience {experiences} />
   </div>
   <div class="section skills">
     <Title>Skills</Title>
+    <!-- French -->
+    <!-- <Title>Compétences</Title> -->
     <Skills {skills} />
   </div>
   <div class="section education">
     <Title>Education</Title>
+    <!-- French -->
+    <!-- <Title>Éducation</Title> -->
     <p>
       I have a High School Diploma in Computer Science and Mathematics, and I'm currently studying at the University of
       Mulhouse, in Multimedia and Internet, where I'm learning about web development, 3D, video, and audio. I'm in my
-      first year.
+      second year.
+      <!-- French -->
+      <!-- J'ai un baccalauréat en informatique et en mathématiques, et je suis actuellement étudiant à l'Université de Mulhouse,
+      en multimédia et internet, où j'apprends le développement web, la 3D, la vidéo et l'audio. Je suis en deuxième année. -->
     </p>
   </div>
 </article>

@@ -8,19 +8,23 @@
   import Star from '$lib/icons/IconStar.svelte';
   import Suitcase from '$lib/icons/IconSuitcase.svelte';
 
-  export let age;
-  export let email;
-  export let yearsOfCoding;
+  export let age: number;
+  export let email: string;
+  export let yearsOfCoding: number;
 </script>
 
 <ul class="resume-contact">
   <li class="birthday">
     <span class="icon"><Star /></span>
     <span>{age} years old</span>
+    <!-- French -->
+    <!-- <span>{age} ans</span> -->
   </li>
   <li class="experience">
     <span class="icon"><Suitcase /></span>
     <span>{yearsOfCoding} years of coding</span>
+    <!-- French -->
+    <!-- <span>{yearsOfCoding} années de code</span> -->
   </li>
   <li class="location">
     <span class="icon"><Pin /></span>
@@ -32,8 +36,10 @@
   </li>
   <li class="linkedin">
     <span class="icon"><LinkedIn /></span>
-    <a href="https://www.linkedin.com/in/jabeddou/" target="_blank" rel="noopener nofollow noreferrer">
+    <a href="https://www.linkedin.com/in/jordan-abeddou/" target="_blank" rel="noopener nofollow noreferrer">
       LinkedIn Profile
+      <!-- French -->
+      <!-- Profil LinkedIn -->
     </a>
   </li>
   <li class="website">
@@ -42,11 +48,17 @@
   </li>
   <li class="github">
     <span class="icon"><Github /></span>
-    <a href="https://github.com/xKesvaL" target="_blank" rel="noopener nofollow noreferrer">GitHub Profile</a>
+    <a href="https://github.com/xKesvaL" target="_blank" rel="noopener nofollow noreferrer">
+      GitHub Profile
+      <!-- French -->
+      <!-- Profil Github -->
+    </a>
   </li>
   <li class="languages">
     <span class="icon"><Language /></span>
     <span>English, French</span>
+    <!-- French -->
+    <!-- <span>Français, Anglais</span> -->
   </li>
 </ul>
 

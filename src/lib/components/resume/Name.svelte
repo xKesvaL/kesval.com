@@ -1,6 +1,8 @@
 <div class="resume-name">
   <h2 id="resume-name">Jordan Abeddou</h2>
   <h3>Fullstack Developer</h3>
+  <!-- French -->
+  <!-- <h3>Développeur Fullstack</h3> -->
 </div>
 
 <style lang="scss">

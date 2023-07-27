@@ -70,6 +70,69 @@ export const yearsOfCoding = getYearsOfCoding();
 
 export const yearsOfExperience = getYearsOfExperience();
 
+export const experiencesForFrenchCV: Company[] = [
+  {
+    name: 'Freelance',
+    slugName: 'freelance',
+    timeframe: '2023 → Mtn',
+    position: 'CEO',
+    current: true,
+    location: 'Ungersheim, France',
+    description:
+      "Je travaille pour moi en cherchant des petits jobs que je trouve intéressants, histoire de m'occuper et de gagner un peu d'argent.",
+    tags: [
+      {
+        color: 'primary',
+        name: 'svelte',
+      },
+      {
+        color: 'primary',
+        name: 'sveltekit',
+      },
+      {
+        color: 'primary',
+        name: 'react',
+      },
+      {
+        color: 'primary',
+        name: 'nextjs',
+      },
+    ],
+  },
+  {
+    name: 'Université',
+    slugName: 'student-university',
+    timeframe: '2022 → 2025',
+    position: 'Étudiant',
+    current: true,
+    location: 'Mulhouse, France',
+    description:
+      "Étudiant en BUT MMI (Métiers Multimédia de l'Internet), j'apprends à créer des sites web, faire du design et de la communication.",
+    tags: [],
+  },
+  {
+    name: 'Lycée',
+    slugName: 'student-high-school',
+    timeframe: '2019 → 2022',
+    position: 'Étudiant',
+    current: false,
+    location: 'Guebwiller, France',
+    description:
+      "Étudiant en spécalité mathématiques et NSI (Numérique et Sciences Informatique), j'ai obtenu mon bac mention assez bien.",
+    tags: [],
+  },
+  {
+    name: 'Le Bureau Ciotaden',
+    slugName: 'bureau-ciotaden',
+    timeframe: '2018 → 2018',
+    position: 'Receptionist / Assistant',
+    current: false,
+    location: 'La Ciotat, France',
+    description: 'Assistant et réceptionniste pour un magasin de réparation informatique.',
+    tags: [],
+  },
+];
+
 export const experiences: Company[] = [
   {
     name: 'Freelance Dev',

@@ -8,7 +8,7 @@
 
   let expandedIndex = '1';
 
-  function projectClickHandle(e: MouseEvent) {
+  function projectClickHandle(e: MouseEvent | KeyboardEvent) {
     let target = (e.target as HTMLElement)?.closest('.project');
     if (!target) return;
     expandedIndex = target.id.replace('project-', '');
@@ -77,7 +77,7 @@
 
       contain: content;
 
-      @include mq(md) {
+      @include mq(lg) {
         --panel-gap: 1rem;
         --panel-padding: 0.75rem;
         flex-direction: row;

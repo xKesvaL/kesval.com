@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { MouseEventHandler } from 'svelte/elements';
   let el: HTMLElement;
-  export let href: string;
+  export let href: string | null = null;
 
   export let padding: string;
 
@@ -11,10 +11,10 @@
 
   export let scale = true;
 
-  export let color: string;
+  export let color: string | null = null;
 
   $: if (el) {
-    el.style.setProperty('--drop-color', color ?? '');
+    el.style.setProperty('--drop-color', color || '');
   }
 
   const onHover: MouseEventHandler<HTMLDivElement> = (ev) => {

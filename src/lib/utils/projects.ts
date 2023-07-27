@@ -63,6 +63,21 @@ const projectsOrdered: {
     color: '',
     startDate: 'next',
   },
+  '5': {
+    name: 'Skills',
+    coverPath: '/images/about.png',
+    language: 'svelte',
+    href: '/projects/skills',
+    shortDescription: 'This is an app I made for myself, to track my skills and my progress.',
+    description:
+      "I have a lot of things to learn. Knowledge is scattered on the internet, but I want a place to regroup everything, so I made this app. It allows me to track my skills and my progress, and it's all open-source.",
+    category: 'tech',
+    tags: [],
+    projectId: '5',
+    color: '',
+    startDate: 'next',
+    github: 'https://github.com/xKesvaL/skills.kesval.com',
+  },
 };
 
 const projects = Object.values(projectsOrdered).reverse();

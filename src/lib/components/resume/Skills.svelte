@@ -27,6 +27,8 @@
   </li>
   <li>
     Other
+    <!-- French -->
+    <!-- Autres -->
     <div class="tags tertiary">
       {#each others as tag}
         <span class="tag">{tag.name}</span>
