@@ -119,13 +119,13 @@
             background: radial-gradient(rgba(var(--color-base-200-rgb), 0.5), rgba(var(--color-base-200-rgb), 0.5)),
               radial-gradient(rgba(var(--color-primary-500-rgb), 0.1), rgba(var(--color-base-200-rgb), 0.5));
             border-radius: var(--border-radius-full);
-            aspect-ratio: var(--ratio-square);
+            aspect-ratio: var(--aspect-square);
             display: flex;
             justify-content: center;
             flex-direction: column;
             align-items: center;
             width: var(--size-11);
-            padding: 0.75rem 1rem 0.5rem;
+            padding: 0.5rem 1rem;
             margin-bottom: var(--size-1);
 
             @include mq(xs) {
@@ -135,7 +135,7 @@
 
             @include mq(md) {
               width: 6rem;
-              padding: 1rem 1.5rem 0.75rem;
+              padding: 0.75rem 1.5rem;
             }
           }
         }

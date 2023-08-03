@@ -144,7 +144,6 @@
 
         &-title {
           font-size: var(--fs-300);
-          padding-top: 0.5rem;
           color: var(--color-neutral-900);
           position: relative;
           isolation: isolate;
