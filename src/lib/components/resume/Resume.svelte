@@ -77,18 +77,18 @@
   .resume {
     overflow: hidden;
     position: relative;
-    border-radius: $border-radius-4;
+    border-radius: var(--border-radius-4);
     background: radial-gradient(
         circle,
         rgba(var(--color-primary-500-rgb), 0.1) 0%,
         rgba(var(--color-base-100-rgb), 0) 100%
       ),
       linear-gradient(rgba(var(--color-base-200-rgb), 0.5), rgba(var(--color-base-200-rgb), 0.5));
-    padding: $size-4 $size-2;
+    padding: var(--size-4) var(--size-2);
     color: var(--color-neutral-900);
     isolation: isolate;
     display: grid;
-    gap: $size-6;
+    gap: var(--size-6);
     grid-template-columns: 1fr;
     grid-template-areas:
       'photo'
@@ -99,7 +99,7 @@
       'education';
 
     @mixin mdAndPrint {
-      padding: $size-8 $size-6;
+      padding: var(--size-8) var(--size-6);
       grid-template-columns: 3fr 2fr;
       grid-template-rows: 1fr 1fr 1fr 1fr;
 
@@ -111,7 +111,7 @@
     }
 
     @mixin lgAndPrint {
-      margin: $size-4 auto;
+      margin: var(--size-4) auto;
       max-width: 215.9mm;
       box-shadow: 0.5rem 1rem 2rem rgba(39, 44, 49, 0.6), 1px 3px 8px rgba(39, 44, 49, 0.3);
     }
@@ -144,14 +144,14 @@
         );
 
         &.one {
-          border-radius: $radius-blob-1;
+          border-radius: var(--border-blob-1);
           height: 110%;
           width: 110%;
           top: -64%;
           right: -45%;
         }
         &.two {
-          border-radius: $radius-blob-3;
+          border-radius: var(--border-blob-3);
           height: 45%;
           width: 45%;
           left: 0%;

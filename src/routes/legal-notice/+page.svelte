@@ -71,7 +71,7 @@
 
     a {
       text-decoration: underline;
-      color: $color-accent-500;
+      color: var(--color-accent-500);
     }
   }
 </style>

@@ -17,7 +17,7 @@
     --rotation: 135deg;
     padding: 0.25rem 0.5rem;
     display: inline-block;
-    border-radius: $border-radius-2;
+    border-radius: var(--border-radius-2);
 
     &.primary {
       border: 1px solid rgba(var(--color-primary-900-rgb), 0.3);

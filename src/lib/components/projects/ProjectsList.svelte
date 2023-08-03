@@ -10,7 +10,7 @@
   export let projects: Project[] = [];
 
   let searchValue = '';
-  let searchTags = [];
+  let searchTags: string[] = [];
   let projectsShowed = projects.slice(0).splice(0, projectsToShow);
   let search = new SearchJS('projectId');
   search.addIndex('name');
@@ -77,7 +77,7 @@
     }
 
     &-input {
-      border-radius: $border-radius-full;
+      border-radius: var(--border-radius-full);
       width: 100%;
       padding: 1rem 1rem 1rem 3.5rem;
       font-size: var(--fs-600);

@@ -57,7 +57,7 @@
     a {
       padding: 0.25rem 0.5rem;
       display: inline-block;
-      border-radius: $border-radius-2;
+      border-radius: var(--border-radius-2);
       border: 1px solid rgba(var(--color-accent-900-rgb), 0.3);
       background: linear-gradient(225deg, rgba(var(--color-accent-500-rgb), 0.15), rgba(var(--color-base-200-rgb), 0.5)),
         radial-gradient(rgba(var(--color-base-200-rgb), 0.3), rgba(var(--color-base-200-rgb), 0.3));
@@ -106,7 +106,7 @@
     .icon {
       max-height: 28px;
       max-width: 28px;
-      border-radius: $border-radius-2;
+      border-radius: var(--border-radius-2);
       padding: 0.25rem;
     }
   }

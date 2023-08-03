@@ -53,7 +53,7 @@
       justify-content: space-around;
       gap: 0.5rem;
       width: 100%;
-      color: $color-neutral-800;
+      color: var(--color-neutral-800);
       text-align: center;
       margin-top: 1rem;
 
@@ -91,7 +91,7 @@
         padding-bottom: 0.125rem;
         border-bottom: 1px dashed var(--color-neutral-800);
         transition: color 0.2s ease, border-bottom 0.2s ease;
-        color: $color-neutral-800;
+        color: var(--color-neutral-800);
 
         &:hover,
         &:focus {

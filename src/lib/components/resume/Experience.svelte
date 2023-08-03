@@ -119,7 +119,7 @@
             h3 {
               font-size: var(--fs-600);
             }
-            font-weight: $font-weight-semi-bold;
+            font-weight: var(--fw-semi-bold);
           }
         }
         .icon {

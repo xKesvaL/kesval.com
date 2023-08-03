@@ -4,7 +4,7 @@
   import { dev } from '$app/environment';
   import ImageIcon from '$lib/icons/IconImage.svelte';
 
-  export let src: string;
+  export let src: string | null = null;
   export let alt: string;
 
   export let formats: string[] = ['avif', 'webp', 'png'];
@@ -25,7 +25,7 @@
 
   function buildSrcset() {
     if (dev) return;
-    if (src.split('.')[1] === 'svg') return;
+    if (src?.split('.')[1] === 'svg') return;
 
     let srcset = '';
 
@@ -80,26 +80,26 @@
     height: 100%;
     object-fit: cover;
     overflow: hidden;
-    box-shadow: $box-shadow-4;
+    box-shadow: var(--box-shadow-4);
 
     &.border {
       border: 1px solid rgba(var(--color-primary-900-rgb), 0.3);
     }
 
     &.rounding-sm {
-      border-radius: $border-radius-3;
+      border-radius: var(--border-radius-3);
     }
 
     &.rounding-md {
-      border-radius: $border-radius-4;
+      border-radius: var(--border-radius-4);
     }
 
     &.rounding-lg {
-      border-radius: $border-radius-5;
+      border-radius: var(--border-radius-5);
     }
 
     &.rounding-full {
-      border-radius: $border-radius-full;
+      border-radius: var(--border-radius-full);
     }
   }
 

@@ -82,7 +82,7 @@
 
     .inner {
       backdrop-filter: blur(0.5rem);
-      border-radius: $border-radius-full;
+      border-radius: var(--border-radius-full);
       grid-column-start: 1;
       grid-row-start: 1;
       transition: 0.3s ease-in-out;
@@ -95,8 +95,8 @@
         top: 1.85rem;
         left: 1.85rem;
         z-index: 50;
-        height: $size-9;
-        width: $size-9;
+        height: var(--size-9);
+        width: var(--size-9);
         color: var(--color-text);
         transition: 0.3s ease-in-out;
 

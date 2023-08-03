@@ -97,10 +97,10 @@
       }
 
       .myresume {
-        margin-block: $size-4;
+        margin-block: var(--size-4);
 
         @include mq(sm) {
-          margin-block: $size-10;
+          margin-block: var(--size-10);
         }
       }
     }
@@ -172,7 +172,7 @@
     }
 
     .mysocials {
-      margin-bottom: $size-8;
+      margin-bottom: var(--size-8);
     }
   }
 </style>

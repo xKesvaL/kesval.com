@@ -65,7 +65,7 @@
       display: grid;
       justify-items: center;
       align-items: center;
-      gap: $size-8;
+      gap: var(--size-8);
       grid-template-rows: auto 1fr;
 
       @include mq(md) {
@@ -78,7 +78,7 @@
         grid-column: 1/-1;
 
         @include mq(md) {
-          margin-top: $size-8;
+          margin-top: var(--size-8);
         }
       }
     }
@@ -88,19 +88,19 @@
 
       p {
         font-size: var(--fs-500);
-        margin-bottom: $size-2;
+        margin-bottom: var(--size-2);
         text-align: justify;
       }
 
       ul {
         list-style: none;
         display: flex;
-        gap: $size-3;
+        gap: var(--size-3);
         justify-content: space-evenly;
         align-items: center;
 
         @include mq(md) {
-          gap: $size-4;
+          gap: var(--size-4);
         }
 
         li {
@@ -114,19 +114,19 @@
 
           span {
             font-size: var(--fs-600);
-            font-weight: $font-weight-bold;
-            font-family: $font-title;
+            font-weight: var(--fw-bold);
+            font-family: var(--ft-title);
             background: radial-gradient(rgba(var(--color-base-200-rgb), 0.5), rgba(var(--color-base-200-rgb), 0.5)),
               radial-gradient(rgba(var(--color-primary-500-rgb), 0.1), rgba(var(--color-base-200-rgb), 0.5));
-            border-radius: $border-radius-full;
-            aspect-ratio: $ratio-square;
+            border-radius: var(--border-radius-full);
+            aspect-ratio: var(--ratio-square);
             display: flex;
             justify-content: center;
             flex-direction: column;
             align-items: center;
-            width: $size-11;
+            width: var(--size-11);
             padding: 0.75rem 1rem 0.5rem;
-            margin-bottom: $size-1;
+            margin-bottom: var(--size-1);
 
             @include mq(xs) {
               font-size: var(--fs-700);

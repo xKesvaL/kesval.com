@@ -14,7 +14,7 @@
 </svelte:head>
 
 <section class="container container-wide">
-  <Breadcrumb name={post.title} type="post" />
+  <Breadcrumb name={post.title} type="blog" />
   <div class="post">
     <article class="prose">
       <slot />
@@ -37,7 +37,7 @@
   }
 
   article {
-    padding-block: $size-fluid-4;
+    padding-block: var(--size-fluid-4);
     margin-left: 0;
 
     @include mq(lg) {

@@ -73,7 +73,7 @@
 
       display: flex;
       flex-direction: column;
-      gap: $size-4;
+      gap: var(--size-4);
       justify-content: center;
 
       contain: content;
@@ -128,7 +128,7 @@
           transform: translateY(2rem);
           opacity: 0;
           margin-top: 1rem;
-          color: $color-neutral-800;
+          color: var(--color-neutral-800);
           margin-left: 1rem;
           margin-right: 1rem;
           font-size: var(--fs-400);
@@ -145,7 +145,7 @@
         &-title {
           font-size: var(--fs-300);
           padding-top: 0.5rem;
-          color: $color-neutral-900;
+          color: var(--color-neutral-900);
           position: relative;
           isolation: isolate;
 
@@ -231,7 +231,7 @@
     .more {
       display: flex;
       justify-content: center;
-      margin-block: $size-9 0;
+      margin-block: var(--size-9) 0;
     }
   }
 </style>

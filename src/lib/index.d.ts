@@ -98,7 +98,7 @@ export interface SparkleType {
   id: string;
   createdAt: number;
   color: string;
-  size: number;
+  size: string;
   style: SparkeStyle;
 }
 

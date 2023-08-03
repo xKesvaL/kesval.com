@@ -41,7 +41,7 @@
     grid-template-columns: 0.5fr 3fr;
     align-items: center;
     justify-items: center;
-    row-gap: $size-4;
+    row-gap: var(--size-4);
     background: radial-gradient(
       circle,
       rgba(var(--color-primary-500-rgb), 0.1) 0%,
@@ -49,7 +49,7 @@
     );
 
     @include mq(md) {
-      column-gap: $size-4;
+      column-gap: var(--size-4);
       grid-template-columns: max-content 2fr 1fr;
       padding-top: inherit;
     }
@@ -68,7 +68,7 @@
 
       h1 {
         font-size: var(--fs-800);
-        font-weight: $font-weight-bold;
+        font-weight: var(--fw-bold);
         line-height: 1.2;
 
         @include mq(lg) {
@@ -79,34 +79,34 @@
       .subtitle {
         font-size: var(--fs-600);
         color: var(--color-neutral-900);
-        margin-bottom: $size-4;
+        margin-bottom: var(--size-4);
       }
 
       p:not(.subtitle) {
         font-size: var(--fs-500);
         max-width: 40ch;
-        margin-bottom: $size-6;
+        margin-bottom: var(--size-6);
       }
     }
 
     .image {
-      border-radius: $radius-blob-4;
+      border-radius: var(--border-blob-4);
       overflow: hidden;
       background: var(--color-primary-500);
       outline: 2px var(--color-primary-500) solid;
       z-index: -1;
-      margin: $size-1;
-      margin-left: $size-8;
-      max-height: $size-16;
-      max-width: $size-16;
+      margin: var(--size-1);
+      margin-left: var(--size-8);
+      max-height: var(--size-16);
+      max-width: var(--size-16);
       aspect-ratio: 1/1;
 
       @include mq(md) {
         margin: 0.5rem;
         grid-column: 3/4;
 
-        max-height: $size-18;
-        max-width: $size-18;
+        max-height: var(--size-18);
+        max-width: var(--size-18);
       }
     }
   }

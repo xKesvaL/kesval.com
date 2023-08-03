@@ -25,7 +25,7 @@
 
       <div class="tags">
         <Chip label={post.categories[0]} />
-        <Chip label={post.tags[0]} color="accent" rotation="235" />
+        <Chip label={post.tags[0]} color="accent" rotation={235} />
       </div>
     </div>
   </div>
@@ -36,7 +36,7 @@
 
   .wrapper {
     display: flex;
-    color: $color-neutral-900;
+    color: var(--color-neutral-900);
     overflow: hidden;
     flex-direction: column;
     transition: 0.2s;
@@ -65,7 +65,7 @@
     }
 
     .text {
-      padding: $size-4;
+      padding: var(--size-4);
       display: grid;
       grid-template-rows: auto auto 1fr auto;
       background: linear-gradient(135deg, rgba(var(--color-primary-500-rgb), 0.05), rgba(var(--color-base-200-rgb), 0)),
@@ -74,7 +74,7 @@
 
       h3 {
         font-size: var(--fs-600);
-        margin-bottom: -$size-1;
+        margin-bottom: -var(--size-1);
       }
 
       & > span {
@@ -92,7 +92,7 @@
       .tags {
         margin-left: auto;
         display: flex;
-        gap: $size-2;
+        gap: var(--size-2);
         margin-top: auto;
       }
     }
