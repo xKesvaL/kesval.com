@@ -44,7 +44,7 @@
     row-gap: var(--size-4);
     background: radial-gradient(
       circle,
-      rgba(var(--color-primary-500-rgb), 0.1) 0%,
+      rgba(var(--color-primary-500-rgb), 0.15) 0%,
       rgba(var(--color-base-100-rgb), 0) 60%
     );
 
@@ -86,6 +86,10 @@
         font-size: var(--fs-500);
         max-width: 40ch;
         margin-bottom: var(--size-6);
+      }
+
+      .flex {
+        gap: var(--size-4);
       }
     }
 

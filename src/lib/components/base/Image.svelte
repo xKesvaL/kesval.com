@@ -18,6 +18,7 @@
 
   export let loading: 'lazy' | 'eager' = 'lazy';
 
+  let error = false;
   let fileName: string;
   $: if (src) {
     fileName = src.split('.')[0];
@@ -51,7 +52,7 @@
   }
 </script>
 
-{#if src}
+{#if src && !error}
   <img
     class={rounding === 'none' ? '' : `rounding-${rounding}`}
     class:border
@@ -59,7 +60,9 @@
     {src}
     {alt}
     {loading}
-    decoding="async" />
+    decoding="async"
+    on:error={() => (error = true)}
+    />
 {:else}
   <div class={rounding === 'none' ? '' : `rounding-${rounding}`} class:border>
     <span>
@@ -104,8 +107,8 @@
   }
 
   div {
-    background: radial-gradient(rgba(var(--color-primary-500-rgb), 0.15), rgba(var(--color-base-200-rgb), 0.5)),
-      radial-gradient(rgba(var(--color-base-200-rgb), 0.5), rgba(var(--color-base-200-rgb), 0.5));
+    background: radial-grad-primary(),
+      grad-base();
     display: grid;
     place-items: center;
     padding: 1rem;

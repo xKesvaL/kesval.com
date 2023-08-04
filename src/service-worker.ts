@@ -16,6 +16,8 @@ const ASSETS = [
 ];
 
 sw.addEventListener('install', (event) => {
+  sw.skipWaiting();
+
   event.waitUntil(cacheFiles(CACHE, ASSETS));
 });
 

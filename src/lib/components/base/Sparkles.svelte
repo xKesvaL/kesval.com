@@ -57,7 +57,7 @@
   {#each sparkles as sparkle (sparkle.id)}
     <SingleSparkle color={sparkle.color} size={sparkle.size} style={sparkle.style} />
   {/each}
-  <span class="slot-wrapper" style={highlight ? `color: var(--color-${highlight}-500); font-weight: 700;` : ''}>
+  <span class="slot-wrapper" style={highlight ? `color: var(--color-${highlight}-700); font-weight: 700;` : ''}>
     <slot />
   </span>
 </span>

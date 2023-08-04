@@ -91,13 +91,9 @@
         flex-basis: calc(var(--button-size) + (var(--panel-padding) * 2));
         overflow: hidden;
         cursor: pointer;
-        background: linear-gradient(
-            135deg,
-            rgba(var(--color-primary-500-rgb), 0.025),
-            rgba(var(--color-base-200-rgb), 0)
-          ),
-          linear-gradient(315deg, rgba(var(--color-primary-500-rgb), 0.025), rgba(var(--color-base-200-rgb), 0)),
-          radial-gradient(rgba(var(--color-base-200-rgb), 0.05), rgba(var(--color-base-200-rgb), 0.05));
+        background: linear-grad-primary(135deg, 0.025, 0),
+          linear-grad-primary(315deg, 0.025, 0),
+          grad-base(0.05);
 
         transition: 0.3s;
         will-change: flex-basis, flex-grow;
@@ -229,7 +225,7 @@
 
     .more {
       display: flex;
-      justify-content: center;
+      justify-content: flex-end;
       margin-block: var(--size-9) 0;
     }
   }

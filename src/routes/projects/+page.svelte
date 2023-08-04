@@ -22,6 +22,7 @@
   section {
     h1 {
       text-align: center;
+      margin-bottom: 4rem;
     }
   }
 </style>

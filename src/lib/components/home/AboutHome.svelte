@@ -89,7 +89,6 @@
       p {
         font-size: var(--fs-500);
         margin-bottom: var(--size-2);
-        text-align: justify;
       }
 
       ul {
@@ -116,8 +115,8 @@
             font-size: var(--fs-600);
             font-weight: var(--fw-bold);
             font-family: var(--ft-title);
-            background: radial-gradient(rgba(var(--color-base-200-rgb), 0.5), rgba(var(--color-base-200-rgb), 0.5)),
-              radial-gradient(rgba(var(--color-primary-500-rgb), 0.1), rgba(var(--color-base-200-rgb), 0.5));
+            background: radial-grad-primary(),
+              grad-base();
             border-radius: var(--border-radius-full);
             aspect-ratio: var(--aspect-square);
             display: flex;

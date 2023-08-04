@@ -9,7 +9,10 @@
   @use '$design' as *;
 
   .resume-name {
-    margin-right: auto;
+
+    @include mq(md) {
+      margin-right: auto;
+    }
   }
 
   h2 {

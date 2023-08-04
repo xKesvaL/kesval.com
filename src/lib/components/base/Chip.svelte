@@ -21,32 +21,20 @@
 
     &.primary {
       border: 1px solid rgba(var(--color-primary-900-rgb), 0.3);
-      background: linear-gradient(
-          var(--rotation),
-          rgba(var(--color-primary-500-rgb), 0.2),
-          rgba(var(--color-base-200-rgb), 0.5)
-        ),
-        radial-gradient(rgba(var(--color-base-200-rgb), 0.3), rgba(var(--color-base-200-rgb), 0.3));
+      background: linear-grad-primary(var(--rotation), 0.3),
+        grad-base();
     }
 
     &.secondary {
       border: 1px solid rgba(var(--color-secondary-900-rgb), 0.3);
-      background: linear-gradient(
-          var(--rotation),
-          rgba(var(--color-secondary-500-rgb), 0.2),
-          rgba(var(--color-base-200-rgb), 0.5)
-        ),
-        radial-gradient(rgba(var(--color-base-200-rgb), 0.3), rgba(var(--color-base-200-rgb), 0.3));
+      background: linear-grad-secondary(var(--rotation), 0.3),
+        grad-base();
     }
 
     &.accent {
       border: 1px solid rgba(var(--color-accent-900-rgb), 0.3);
-      background: linear-gradient(
-          var(--rotation),
-          rgba(var(--color-accent-500-rgb), 0.2),
-          rgba(var(--color-base-200-rgb), 0.5)
-        ),
-        radial-gradient(rgba(var(--color-base-200-rgb), 0.3), rgba(var(--color-base-200-rgb), 0.3));
+      background: linear-grad-accent(var(--rotation), 0.3),
+        grad-base();
     }
   }
 </style>

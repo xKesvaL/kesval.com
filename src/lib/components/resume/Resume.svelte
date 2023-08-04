@@ -184,9 +184,7 @@
       &.about {
         grid-area: about;
 
-        p {
-          text-align: justify;
-        }
+        
       }
 
       &.experience {

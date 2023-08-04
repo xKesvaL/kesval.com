@@ -138,7 +138,7 @@
 
       &.frontend {
         .progress-wrap {
-          background: hsl(var(--color-primary-500-hue), 10%, var(--color-primary-500-lightness));
+          background: rgba(var(--color-primary-100-rgb), 0.5);
 
           .progress {
             height: 0.5rem;
@@ -149,7 +149,7 @@
 
       &.backend {
         .progress-wrap {
-          background: hsl(var(--color-secondary-500-hue), 10%, var(--color-secondary-500-lightness));
+          background: rgba(var(--color-secondary-100-rgb), 0.5);
 
           .progress {
             height: 0.5rem;
@@ -160,7 +160,7 @@
 
       &.other {
         .progress-wrap {
-          background: hsl(var(--color-accent-500-hue), 10%, var(--color-accent-500-lightness));
+          background: rgba(var(--color-accent-100-rgb), 0.5);
 
           .progress {
             height: 0.5rem;

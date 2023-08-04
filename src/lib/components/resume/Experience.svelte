@@ -80,7 +80,7 @@
 
       &.current {
         .title {
-          margin-top: 1.75rem;
+          margin-top: 1.6rem;
         }
 
         .time {
@@ -109,15 +109,27 @@
       .content {
         flex: 1;
         width: fit-content;
+
+        p {
+          font-size: var(--fs-300);
+
+          @include mq(md) {
+            font-size: var(--fs-400);
+          }
+        }
       }
 
       .title {
-        margin-top: 0.25rem;
+        margin-top: 0;
         div {
-          margin-bottom: -0.5rem;
+          margin-bottom: -0.2rem;
           .company-name {
             h3 {
               font-size: var(--fs-600);
+
+              @include mq(md) {
+                font-size: var(--fs-700);
+              }
             }
             font-weight: var(--fw-semi-bold);
           }

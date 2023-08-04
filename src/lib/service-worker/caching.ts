@@ -12,8 +12,8 @@ export const deleteOldCaches = async (currentCacheKey: string) => {
 };
 
 export const getFromCache = async (cacheKey: string, assets: string[], request: Request) => {
-  if (request.method !== 'GET') {
-    return;
+  if (request.method !== 'GET' || request.url.startsWith('chrome-extension://') || request.url.includes('extension')) {
+    return await fetch(request);
   }
 
   const url = new URL(request.url);
