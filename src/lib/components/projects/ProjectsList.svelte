@@ -38,7 +38,7 @@
     <div class="search-icon">
       <IconSearch />
     </div>
-    <input type="text" placeholder="Search..." class="search-input" bind:value={searchValue} autofocus />
+    <input type="text" placeholder="Search..." class="search-input" bind:value={searchValue} />
   </div>
   <div class="projects-list">
     {#each projectsShowed as project}
