@@ -53,7 +53,10 @@
         "J'espère que tu aimes mon travail.",
         "Je peux t'aider pour autre chose ?"
       ],
-      "other": ["Ok, pas de soucis.", "Je peux t'aider pour autre chose ?"],
+      "other": [
+        "Ok, pas de soucis.",
+        "Je peux t'aider pour autre chose ?"
+      ],
       "teachHTMLCSS": [
         "Eh bien, je suggère <a target=\"_blank\" href=\"https://www.freecodecamp.org/learn/2022/responsive-web-design/\" class=\"special-link\" rel=\"external\">ce cours</a> (EN) de freeCodeCamp.",
         "C'est gratuit, interactif, et tu apprendras tout du basique à des choses avancées.",
@@ -221,7 +224,8 @@
         "projectId": "5",
         "shortDescription": "Une application pour suivre mes compétences et leurs progrès",
         "startDate": "next",
-        "tags": []
+        "tags": [
+        ]
       },
       {
         "category": "tech",
@@ -232,7 +236,8 @@
         "projectId": "4",
         "shortDescription": "PowerPoint m'ennuie. Créez des présentations interactives en utilisant Svelte.",
         "startDate": "next",
-        "tags": []
+        "tags": [
+        ]
       },
       {
         "category": "tech",
@@ -244,7 +249,8 @@
         "projectId": "3",
         "shortDescription": "Suis tes entraînements et trouve un programme adapté à tes besoins.",
         "startDate": "2023-06-1",
-        "tags": []
+        "tags": [
+        ]
       },
       {
         "category": "tech",
@@ -255,7 +261,16 @@
         "projectId": "2",
         "shortDescription": "Joue aux échecs avec tes amis, gratuitement pour toujours.",
         "startDate": "2023-04-16",
-        "tags": ["react", "front-end", "ts", "tailwind", "daisyui", "open-source", "serverless", "nextjs"]
+        "tags": [
+          "react",
+          "front-end",
+          "ts",
+          "tailwind",
+          "daisyui",
+          "open-source",
+          "serverless",
+          "nextjs"
+        ]
       },
       {
         "category": "tech",
@@ -268,7 +283,15 @@
         "shortDescription": "Mon site perso pour partager mon travail et mes pensées.",
         "site": "https://kesval.com",
         "startDate": "2023-03-19",
-        "tags": ["svelte", "front-end", "ts", "scss", "personal", "open-source", "sveltekit"]
+        "tags": [
+          "svelte",
+          "front-end",
+          "ts",
+          "scss",
+          "personal",
+          "open-source",
+          "sveltekit"
+        ]
       }
     ],
     "meta": {
@@ -385,6 +408,7 @@
       "8": "Septembre",
       "9": "Octobre"
     },
+    "my": "Mon",
     "of": "de",
     "ofContracted": "d'",
     "other": "autre",
@@ -404,4 +428,3 @@
     "yearsOld": "ans"
   }
 }
-

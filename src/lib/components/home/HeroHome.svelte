@@ -27,7 +27,7 @@
     </p>
     <div class="flex">
       <button on:click={toggleBot} class="btn btn-primary">{$t('std.contactMe')}</button>
-      <a href="/about?scroll=resume" class="btn btn-accent">{$t('std.resume')}</a>
+      <a href="/about?scroll=resume" class="btn btn-accent">{$t('std.my')} {$t('std.resume')}</a>
     </div>
   </div>
 </section>
