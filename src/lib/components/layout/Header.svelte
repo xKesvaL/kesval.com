@@ -5,6 +5,8 @@
   import ThemeSwitcher from './ThemeSwitcher.svelte';
   import { page } from '$app/stores';
   import { botState } from '$lib/stores/bot';
+  import { t } from 'svelte-i18n';
+  import LangSwitcher from './LangSwitcher.svelte';
 
   let expanded = false;
   let y: number;
@@ -37,17 +39,18 @@
 <svelte:window bind:scrollY={y} />
 
 <header class="container {scrolled ? 'scrolled' : ''} {scrollDirection === 'down' ? 'scrolled-down' : ''}">
-  <a href="/" aria-label="Site Logo" class="logo">
-    <Image src={'/images/logos/kesval.png'} alt="KesvaL's logo" rounding="full" border={false} />
+  <a href="/" aria-label={$t('std.kesvalLogo')} class="logo">
+    <Image src={'/images/logos/kesval.png'} alt={$t('std.kesvalLogo')} rounding="full" border={false} />
   </a>
   <div class="th-sw">
+    <LangSwitcher />
     <ThemeSwitcher />
   </div>
   <button class="open" aria-controls="navigation" on:click={toggleExpanded}>
     <span class="hamburger">
       <Hamburger />
     </span>
-    <span class="visually-hidden">Show Menu</span>
+    <span class="visually-hidden">{$t('std.show')} {$t('std.menu')}</span>
   </button>
   <!-- svelte-ignore a11y-role-supports-aria-props -->
   <!--suppress HtmlWrongAttributeValue -->
@@ -55,28 +58,31 @@
     <ul>
       <li class={$page.route.id === '/' ? 'active' : ''}>
         <a class="home" href="/" data-sveltekit-preload-data data-sveltekit-preload-code on:click={toggleExpanded}>
-          Home <span>/</span>
+          {$t('home.meta.title')}
+          <span>/</span>
         </a>
       </li>
       <li class={$page.route.id?.startsWith('/about') ? 'active' : ''}>
-        <a href="/about" data-sveltekit-preload-data data-sveltekit-preload-code on:click={toggleExpanded}>About</a>
+        <a href="/about" data-sveltekit-preload-data data-sveltekit-preload-code on:click={toggleExpanded}>
+          {$t('about.meta.title')}
+        </a>
       </li>
       <li class={$page.route.id?.startsWith('/projects') ? 'active' : ''}>
         <a href="/projects" data-sveltekit-preload-data data-sveltekit-preload-code on:click={toggleExpanded}>
-          Projects
+          {$t('projects.meta.title')}
         </a>
       </li>
       <li class={$page.route.id?.startsWith('/blog') ? 'active' : ''}>
         <a href="/blog" data-sveltekit-preload-data data-sveltekit-preload-code on:click={toggleExpanded}>Blog</a>
       </li>
       <li>
-        <button on:click={toggleBot}>Contact</button>
+        <button on:click={toggleBot}>{$t('contact.meta.title')}</button>
         <!-- ChatBot -->
       </li>
     </ul>
     <button class="close" aria-controls="navigation" on:click={toggleExpanded}>
       <Close />
-      <span class="visually-hidden">Close Menu</span>
+      <span class="visually-hidden">{$t('std.close')} {$t('std.menu')}</span>
     </button>
   </nav>
 </header>
@@ -133,8 +139,12 @@
     }
 
     .th-sw {
+      display: flex;
+      gap: clamp(var(--size-2), 2vw, var(--size-8));
+
       @include mq(lg) {
         order: 3;
+        gap: var(--size-4);
       }
     }
 
@@ -185,13 +195,9 @@
         }
 
         li {
-          padding: var(--size-3) var(--size-6);
           border-radius: var(--border-radius-3);
           transition: background 0.25s ease;
-
-          @include mq(lg) {
-            padding: 0.5rem var(--size-4);
-          }
+          display: flex;
 
           &:hover,
           &:focus,
@@ -203,8 +209,14 @@
             background: rgba(var(--color-primary-500-rgb), 0.3);
           }
 
-          a {
+          a,
+          button {
             color: var(--color-neutral-900);
+            padding: var(--size-3) var(--size-6);
+
+            @include mq(lg) {
+              padding: var(--size-2) var(--size-4);
+            }
           }
         }
 
@@ -241,9 +253,13 @@
     }
 
     button.open {
+      background: var(--color-base-200);
+      padding: 0.5rem;
+      border-radius: var(--border-radius-3);
+
       span.hamburger {
-        max-width: 32px;
-        max-height: 32px;
+        max-width: 24px;
+        max-height: 24px;
         display: block;
       }
 

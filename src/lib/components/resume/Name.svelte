@@ -1,6 +1,10 @@
+<script>
+  import { t } from 'svelte-i18n';
+</script>
+
 <div class="resume-name">
   <h2 id="resume-name">Jordan Abeddou</h2>
-  <h3>Fullstack Developer</h3>
+  <h3>{$t('std.fullstackDev')}</h3>
   <!-- French -->
   <!-- <h3>Développeur Fullstack</h3> -->
 </div>
@@ -9,7 +13,6 @@
   @use '$design' as *;
 
   .resume-name {
-
     @include mq(md) {
       margin-right: auto;
     }

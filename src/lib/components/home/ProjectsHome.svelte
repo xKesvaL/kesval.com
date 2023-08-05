@@ -2,9 +2,10 @@
   import type { Project } from '$lib';
   import AllSVGs from '$lib/icons/languages/AllSVGs.svelte';
   import Card from '$lib/components/base/Card.svelte';
+  import { json, t } from 'svelte-i18n';
 
-  export let projects: Project[];
-  const arrayProjects = Object.values(projects).splice(0, 6);
+  export let projects: Project[] = [];
+  $: projects = $json('projects.list') as Project[];
 
   let expandedIndex = '1';
 
@@ -14,44 +15,47 @@
     expandedIndex = target.id.replace('project-', '');
   }
 </script>
+
 <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 
 <section class="container container-wide section">
-  <h2>Projects</h2>
+  <h2>{$t('projects.meta.title')}</h2>
   <div class="projects" role="region" on:click={projectClickHandle} on:keypress={projectClickHandle}>
-    {#each arrayProjects as project, i (project.projectId)}
-      <div class="project" id="project-{i + 1}" aria-expanded={i + 1 === parseInt(expandedIndex)}>
-        <Card padding="var(--panel-padding)" scale={false} cardBgStyle="padding-right: var(--panel-padding-right);">
-          <h3 class="project-heading" id="project-{i + 1}-heading">
-            <button
-              class="project-trigger"
-              aria-controls="project-{i + 1}-content"
-              aria-expanded={i + 1 === parseInt(expandedIndex)}>
-              <span class="project-title">{project.name}</span>
-              <svg class="project-icon">
-                <use href="#{project.language}-logo" xlink:href="#{project.language}-logo" />
-              </svg>
-            </button>
-          </h3>
-          <div
-            class="project-content"
-            id="project-{i + 1}-content"
-            aria-labelledby="project-{i + 1}-heading"
-            aria-hidden={i + 1 === parseInt(expandedIndex)}
-            role="region">
-            <div class="project-more">
-              {project.description}
+    {#each projects as project, i (project.projectId)}
+      {#if i < 5}
+        <div class="project" id="project-{i + 1}" aria-expanded={i + 1 === parseInt(expandedIndex)}>
+          <Card padding="var(--panel-padding)" scale={false} cardBgStyle="padding-right: var(--panel-padding-right);">
+            <h3 class="project-heading" id="project-{i + 1}-heading">
+              <button
+                class="project-trigger"
+                aria-controls="project-{i + 1}-content"
+                aria-expanded={i + 1 === parseInt(expandedIndex)}>
+                <span class="project-title">{project.name}</span>
+                <svg class="project-icon">
+                  <use href="#{project.language}-logo" xlink:href="#{project.language}-logo" />
+                </svg>
+              </button>
+            </h3>
+            <div
+              class="project-content"
+              id="project-{i + 1}-content"
+              aria-labelledby="project-{i + 1}-heading"
+              aria-hidden={i + 1 === parseInt(expandedIndex)}
+              role="region">
+              <div class="project-more">
+                {project.description}
+              </div>
             </div>
-          </div>
-          <div class="project-btn">
-            <a href={project.href} class="btn btn-accent">See More</a>
-          </div>
-        </Card>
-      </div>
+            <div class="project-btn">
+              <a href={project.href} class="btn btn-accent">{$t('std.seeMore')}</a>
+            </div>
+          </Card>
+        </div>
+      {/if}
     {/each}
   </div>
   <div class="more">
-    <a href="/projects" class="btn btn-primary">All my projects</a>
+    <a href="/projects" class="btn btn-primary">{$t('projects.allMyProjects')}</a>
   </div>
 </section>
 
@@ -91,9 +95,7 @@
         flex-basis: calc(var(--button-size) + (var(--panel-padding) * 2));
         overflow: hidden;
         cursor: pointer;
-        background: linear-grad-primary(135deg, 0.025, 0),
-          linear-grad-primary(315deg, 0.025, 0),
-          grad-base(0.05);
+        background: linear-grad-primary(135deg, 0.025, 0), linear-grad-primary(315deg, 0.025, 0), grad-base(0.05);
 
         transition: 0.3s;
         will-change: flex-basis, flex-grow;

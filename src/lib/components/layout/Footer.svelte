@@ -2,6 +2,7 @@
   import Socials from '../base/Socials.svelte';
   import { updated } from '$lib/utils/data';
   import ClockIcon from '$lib/icons/IconClockIcon.svelte';
+  import { locale, t } from 'svelte-i18n';
 </script>
 
 <footer class="container container-full">
@@ -14,15 +15,15 @@
   </div>
   <div><Socials color="var(--color-neutral-800)" /></div>
   <div class="util-links">
-    <a href="/legal-notice">Legal Notice</a>
-    <a href="/privacy-policy">Privacy Policy</a>
-    <a href="/sitemap.xml">Sitemap</a>
+    <a href="/legal-notice">{$t('legalNotice.meta.title')}</a>
+    <a href="/privacy-policy">{$t('privacyPolicy.meta.title')}</a>
+    <a href="/sitemap.xml">{$t('sitemap.meta.title')}</a>
   </div>
   <div class="copyright">
-    <p>KesvaL © 2023. All rights reserved.</p>
+    <p>KesvaL © 2023. {$t('footer.allRightsReserved')}.</p>
     <p>
       <span><ClockIcon /></span>
-      Updated: {updated.toLocaleDateString('fr-FR')}
+      Updated: {updated.toLocaleDateString($locale || 'en')}
     </p>
   </div>
 </footer>

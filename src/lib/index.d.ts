@@ -15,7 +15,6 @@ export type Projects = {
 
 export interface Project {
   name: string;
-  coverPath: string;
   projectId: string;
   language: 'svelte' | 'react' | 'js' | 'ts';
   href: string;
@@ -23,7 +22,6 @@ export interface Project {
   description: string;
   category: TagPrimary;
   tags: TagSecondary[];
-  color: string;
   site?: string;
   github?: string;
   startDate: string;
@@ -65,7 +63,6 @@ export interface Company {
   current: boolean;
   location: string;
   description: string;
-  tags: CompanyTag[];
 }
 
 export interface CompanyTag {

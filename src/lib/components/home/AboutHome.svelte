@@ -1,43 +1,48 @@
 <script lang="ts">
   import Image from '../base/Image.svelte';
   import Sparkles from '$lib/components/base/Sparkles.svelte';
+  import { t } from 'svelte-i18n';
+  import { capitalizeFirstLetter } from '$lib/utils/functions';
 </script>
 
 <section id="about" class="container container-wide section">
-  <h2>Me, Myself & I</h2>
+  <h2>{$t('home.sections.about.title')}</h2>
   <div class="grid">
     <div class="image">
       <!-- TODO Put real photo & remove figcaption -->
-      <Image alt="Another photo of Jordan 'KesvaL'" rounding="md" figcaption="No image of me yet, sorry :)" />
+      <Image alt={$t('std.photoOfKesvaL')} rounding="md" figcaption="No image of me yet, sorry :)" />
     </div>
     <div class="text">
       <p>
-        Interested in development since I was a child, I started with the creation of minecraft plugins then I moved on
-        to discord bots. As of today, I'm a web developer as you can see!
+        {$t('home.sections.about.description')}
       </p>
       <p>
-        I'm currently in my first year of a bachelor's degree in Multimedia and Internet Jobs at the University of
-        Technology of Mulhouse.
+        {$t('home.sections.about.description-2')}
       </p>
       <ul>
         <li>
           <span>
             <Sparkles highlight="off" color="primary">10</Sparkles>
           </span>
-          years of experience
+          {$t('std.years')}
+          {$t('std.ofContracted')}
+          <br />
+          {$t('std.experience')}
         </li>
         <li>
           <span><Sparkles highlight="off" color="accent">05</Sparkles></span>
-          projects completed
+          {capitalizeFirstLetter($t('std.projects'))}
+          <br />
+          {$t('std.completeds')}
         </li>
         <li>
           <span><Sparkles highlight="off" color="secondary">02</Sparkles></span>
-          companies worked
+          {$t('home.sections.about.companiesWorkedAt')}
         </li>
       </ul>
     </div>
     <div class="button">
-      <a href="/about" class="btn btn-primary">More About Me</a>
+      <a href="/about" class="btn btn-primary">{$t('home.sections.about.moreAboutMe')}</a>
     </div>
   </div>
 </section>
@@ -115,8 +120,7 @@
             font-size: var(--fs-600);
             font-weight: var(--fw-bold);
             font-family: var(--ft-title);
-            background: radial-grad-primary(),
-              grad-base();
+            background: radial-grad-primary(), grad-base();
             border-radius: var(--border-radius-full);
             aspect-ratio: var(--aspect-square);
             display: flex;

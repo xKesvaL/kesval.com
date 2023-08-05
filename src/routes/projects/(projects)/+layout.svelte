@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Breadcrumbs from '$lib/components/base/Breadcrumb.svelte';
+  import Breadcrumbs from '$lib/components/base/Breadcrumbs.svelte';
   import RelatedProjects from '$lib/components/projects/RelatedProjects.svelte';
   import type { LayoutData } from './$types';
 
@@ -9,9 +9,20 @@
 </script>
 
 {#if project}
+<section class="container">
   <Breadcrumbs type="project" href={project.href} name={project.name} />
+  <div class="prose">
+    <slot />
+  </div>
+</section>
 {/if}
 
-<slot />
+{#if project}
+  <RelatedProjects {project} {projects} />
+{/if}
 
-<RelatedProjects {project} {projects} />
+<style lang="scss">
+  section {
+    margin-block: 2.5rem;
+  }
+</style>

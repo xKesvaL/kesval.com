@@ -4,14 +4,18 @@
   import ProjectCard from '$lib/components/projects/ProjectCard.svelte';
   import AllSVGs from '$lib/icons/languages/AllSVGs.svelte';
   import IconSearch from '$lib/icons/IconSearch.svelte';
+  import { json } from 'svelte-i18n';
 
   let projectsToShow = 9;
 
-  export let projects: Project[] = [];
+  let projects: Project[] = [];
+  $: projects = $json('projects.list') as Project[];
 
   let searchValue = '';
   let searchTags: string[] = [];
-  let projectsShowed = projects.slice(0).splice(0, projectsToShow);
+  let projectsShowed: Project[] = [];
+  $: projectsShowed = projects.slice(0).splice(0, projectsToShow);
+
   let search = new SearchJS('projectId');
   search.addIndex('name');
   search.addIndex('language');
@@ -20,7 +24,7 @@
   search.addIndex('projectId');
   search.addIndex('tags');
   search.addIndex('category');
-  search.addDocuments(projects);
+  $: search.addDocuments(projects);
 
   $: projectsSearched = search.search(`${searchValue} ${searchTags.join(' ')}`);
 

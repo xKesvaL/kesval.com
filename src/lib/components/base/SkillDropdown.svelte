@@ -4,14 +4,16 @@
   import Code from '$lib/icons/IconCode.svelte';
   import More from '$lib/icons/IconMore.svelte';
   import Server from '$lib/icons/IconServer.svelte';
+  import { capitalizeFirstLetter } from '$lib/utils/functions';
   import { onMount } from 'svelte';
+  import { t } from 'svelte-i18n';
   export let skills: Skill[];
   export let skillType: keyof typeof skillNames;
 
   let skillNames = {
     frontend: 'Front-End',
     backend: 'Back-End',
-    other: 'Others',
+    other: capitalizeFirstLetter($t('std.other')),
   };
 
   let opened = false;
@@ -97,7 +99,6 @@
         }
 
         h3 {
-          margin-bottom: -0.5rem;
           font-size: var(--fs-600);
         }
 
@@ -138,7 +139,7 @@
 
       &.frontend {
         .progress-wrap {
-          background: rgba(var(--color-primary-100-rgb), 0.5);
+          background: rgba(var(--color-primary-100-rgb), 0.75);
 
           .progress {
             height: 0.5rem;
@@ -149,7 +150,7 @@
 
       &.backend {
         .progress-wrap {
-          background: rgba(var(--color-secondary-100-rgb), 0.5);
+          background: rgba(var(--color-secondary-100-rgb), 0.75);
 
           .progress {
             height: 0.5rem;
@@ -160,7 +161,7 @@
 
       &.other {
         .progress-wrap {
-          background: rgba(var(--color-accent-100-rgb), 0.5);
+          background: rgba(var(--color-accent-100-rgb), 0.75);
 
           .progress {
             height: 0.5rem;

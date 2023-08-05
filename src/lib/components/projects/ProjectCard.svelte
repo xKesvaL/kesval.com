@@ -2,19 +2,22 @@
   import type { Project } from '$lib';
   import Github from '$lib/icons/socials/IconGithub.svelte';
   import IconLink from '$lib/icons/IconLink.svelte';
-  import { months } from '$lib/utils/data';
   import Chip from '$lib/components/base/Chip.svelte';
   import Card from '$lib/components/base/Card.svelte';
+  import { t } from 'svelte-i18n';
 
   export let project: Project;
 
-  const startDate =
+  let startDate: string;
+  $: startDate =
     project.startDate === 'next'
-      ? 'Not started'
-      : `${months[new Date(project.startDate).getMonth()]} ${new Date(project.startDate).getFullYear()}`;
+      ? $t('projects.card.notStarted')
+      : `${$t(`std.months.${new Date(project.startDate).getMonth().toString()}`)} ${new Date(
+          project.startDate,
+        ).getFullYear()}`;
 </script>
 
-<Card>
+<Card cardBgStyle="min-height: 20rem;">
   <svg class="card-icon">
     <use href="#{project.language}-logo" xlink:href="#{project.language}-logo" />
   </svg>
@@ -35,7 +38,7 @@
   </p>
   <div class="chips">
     <Chip label={startDate} />
-    <a href={project.href}>See more</a>
+    <a href={project.href}>{$t('std.seeMore')}</a>
   </div>
 </Card>
 

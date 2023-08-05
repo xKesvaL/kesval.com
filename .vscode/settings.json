@@ -1,0 +1,23 @@
+{
+  "i18n-ally.localesPaths": ["src/lib/lang"],
+  "i18n-ally.keystyle": "nested",
+  "i18n-ally.extract.ignored": [
+    "{$t('projects.meta.title')} - KesvaL",
+    "{$t('privacyPolicy.meta.title')} - KesvaL",
+    "{$t('legalNotice.meta.title')} - KesvaL",
+    "Svelte",
+    "Sean Halpin's",
+    "Matt Fantinel's.",
+    "portfolio",
+    "{$t('about.meta.title')} - KesvaL",
+    "React",
+    "PWAs",
+    "Firebase",
+    "Photoshop",
+    "Premiere Pro",
+    "Excel",
+    "Jordan Abeddou",
+    "Jordan Bot",
+    "\r\n      Jordan\r\n      "
+  ]
+}

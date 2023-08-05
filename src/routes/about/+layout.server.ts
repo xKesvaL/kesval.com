@@ -1,4 +1,4 @@
-import { age, email, yearsOfCoding, skills, skillTypes, experiences } from '$lib/utils/data';
+import { age, email, yearsOfCoding, skills, skillTypes } from '$lib/utils/data';
 
 export async function load() {
   return {
@@ -7,6 +7,5 @@ export async function load() {
     yearsOfCoding,
     skills,
     skillTypes,
-    experiences,
   };
 }

@@ -1,5 +1,6 @@
 <script lang="ts">
   import { theme } from '$lib/stores/theme';
+  import { t } from 'svelte-i18n';
 
   const toggleTheme = () => {
     if ($theme === 'auto') {
@@ -24,7 +25,7 @@
   <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
     <mask id="moon">
       <rect x="0" y="0" width="100%" height="100%" fill="white" />
-      <circle cx="40" cy="8" r="11" fill="black" />
+      <circle cx="42" cy="6" r="11" fill="black" />
     </mask>
     <circle id="sun" cx="12" cy="12" r="11" mask="url(#moon)" />
     <g id="sun-beams">
@@ -39,40 +40,27 @@
     </g>
   </svg>
   <span class="visually-hidden">{$theme}</span>
-  <span class="label">Auto</span>
+  <span class="label">{$t('std.auto')}</span>
 </button>
 
 <style lang="scss">
+  @use '$design' as *;
+
   button {
     color: var(--color-neutral-800);
     display: flex;
     align-items: center;
-    gap: 5px;
+    background: var(--color-base-200);
+    padding: 0.5rem;
+    border-radius: var(--border-radius-3);
+    transition: background 0.3s ease-out;
 
+    @include mq(lg) {
+      background: rgba(var(--color-base-200-rgb), 0.3);
+    }
     &:hover,
     &:focus {
-      .label {
-        color: var(--color-primary-500);
-      }
-
-      #moon,
-      #sun {
-        fill: var(--color-primary-500);
-      }
-
-      #moon {
-        > * {
-          filter: drop-shadow(0 0 0.25rem var(--color-primary-500));
-        }
-      }
-
-      #sun-beams {
-        stroke: var(--color-primary-500);
-
-        line {
-          filter: drop-shadow(0 0 0.25rem var(--color-primary-500));
-        }
-      }
+      background: rgba(var(--color-accent-500-rgb), 0.4);
     }
 
     .label {
@@ -84,7 +72,7 @@
       transform: scaleX(0);
       max-width: 0;
       color: var(--color-neutral-800);
-      z-index: -1;
+      z-index: 0;
     }
 
     #moon,
@@ -121,6 +109,10 @@
     }
 
     @mixin dark-icon {
+      #sun {
+        cx: 14;
+      }
+
       & #moon > circle {
         transform: translateX(-20px);
       }
@@ -134,6 +126,8 @@
     }
 
     &[data-theme='auto'] {
+      gap: 5px;
+
       .label {
         opacity: 1;
         transform: scaleX(1);

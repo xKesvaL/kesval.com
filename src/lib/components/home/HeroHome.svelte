@@ -3,6 +3,7 @@
   import Socials from '../base/Socials.svelte';
   import { botState } from '$lib/stores/bot';
   import Sparkles from '$lib/components/base/Sparkles.svelte';
+  import { t } from 'svelte-i18n';
 
   function toggleBot() {
     botState.update((state) => !state);
@@ -12,21 +13,21 @@
 <section id="hero" class="section container container-wide">
   <div class="socials"><Socials vertical={true} /></div>
   <div class="image">
-    <Image src="/images/me/hero.jpg" alt="A Photo of KesvaL" loading="eager" border={false} />
+    <Image src="/images/me/hero.jpg" alt={$t('std.photoOfKesvaL')} loading="eager" border={false} />
   </div>
   <div class="text">
     <h1>
-      Hi. I'm Jordan.
+      {$t('home.sections.hero.title')}
       <br />
     </h1>
-    <p class="subtitle">Fullstack developer</p>
+    <p class="subtitle">{$t('std.fullstackDev')}</p>
     <p>
-      I'm a fullstack developer with a passion for building <Sparkles>beautiful</Sparkles>, performant and accessible
-      web apps or websites.
+      {$t('home.sections.hero.description')}
+      <Sparkles>{$t('std.beautiful')}</Sparkles>{$t('home.sections.hero.description-2')}
     </p>
     <div class="flex">
-      <button on:click={toggleBot} class="btn btn-primary">Contact me</button>
-      <a href="/about?scroll=resume" class="btn btn-accent">Resume</a>
+      <button on:click={toggleBot} class="btn btn-primary">{$t('std.contactMe')}</button>
+      <a href="/about?scroll=resume" class="btn btn-accent">{$t('std.resume')}</a>
     </div>
   </div>
 </section>

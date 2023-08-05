@@ -1,0 +1,39 @@
+<script lang="ts">
+  import { t } from 'svelte-i18n';
+
+  export let type: 'project' | 'blog';
+
+  export let name: string;
+  export let href: string;
+</script>
+
+<div class="breadcrumbs">
+  <ul>
+    <li>
+      <a href="/">{$t('home.meta.title')}</a>
+    </li>
+    <li>
+      <a href="/{type === 'project' ? 'projects' : 'blog'}">
+        {type === 'project' ? 'Projects' : 'Blog'}
+      </a>
+    </li>
+    <li>
+      <a href="/{type === 'project' ? 'projects' : 'blog'}/{href}">{name}</a>
+    </li>
+  </ul>
+</div>
+
+<style lang="scss">
+  @use '$design' as *;
+
+  div {
+    font-size: var(--fs-300);
+    margin-inline: auto;
+    display: flex;
+    justify-content: center;
+
+    @include mq(md) {
+      font-size: var(--fs-400);
+    }
+  }
+</style>

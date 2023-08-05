@@ -1,5 +1,7 @@
 <script lang="ts">
   import type { Skill } from '$lib';
+  import { capitalizeFirstLetter } from '$lib/utils/functions';
+  import { t } from 'svelte-i18n';
 
   export let skills: Skill[];
 
@@ -26,9 +28,7 @@
     </div>
   </li>
   <li>
-    Other
-    <!-- French -->
-    <!-- Autres -->
+    {capitalizeFirstLetter($t('std.other'))}
     <div class="tags tertiary">
       {#each others as tag}
         <span class="tag">{tag.name}</span>
