@@ -19,7 +19,7 @@
           : color === 'secondary'
           ? 'var(--color-secondary-500)'
           : 'var(--color-accent-500)',
-      size: random(10, 20),
+      size: random(10, 20).toString(),
       style: {
         // Pick a random spot in the available space
         top: random(-10, 80) + '%',
@@ -53,14 +53,14 @@
   });
 </script>
 
-<div class="sparkle-wrapper">
+<span class="sparkle-wrapper">
   {#each sparkles as sparkle (sparkle.id)}
     <SingleSparkle color={sparkle.color} size={sparkle.size} style={sparkle.style} />
   {/each}
-  <span class="slot-wrapper" style={highlight ? `color: var(--color-${highlight}-500); font-weight: 700;` : ''}>
+  <span class="slot-wrapper" style={highlight ? `color: var(--color-${highlight}-700); font-weight: 700;` : ''}>
     <slot />
   </span>
-</div>
+</span>
 
 <style lang="scss">
   .sparkle-wrapper {

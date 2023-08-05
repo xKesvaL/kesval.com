@@ -3,7 +3,7 @@
   let el: HTMLElement;
   export let href: string | null = null;
 
-  export let padding: string;
+  export let padding: string | null = null;
 
   export let cardBgStyle = '';
 
@@ -38,7 +38,7 @@
   class="card {classes.join(' ')}"
   class:scale
   role="region">
-  <div class="card-bg-img" style="padding: {padding}; {cardBgStyle}">
+  <div class="card-bg-img" style="{padding ? `padding: ${padding}` : ""}; {cardBgStyle}">
     <slot />
   </div>
 </svelte:element>
@@ -56,11 +56,11 @@
     flex-direction: column;
     border: 1px solid rgba(var(--color-primary-900-rgb), 0.3);
     background: rgba(var(--color-base-200-rgb), 0.1);
-    border-radius: $border-radius-4;
+    border-radius: var(--border-radius-4);
     overflow: hidden;
     transition: 0.2s;
     position: relative;
-    box-shadow: $box-shadow-2;
+    box-shadow: var(--box-shadow-2);
     grid-row: span 2;
     height: 100%;
     width: 100%;

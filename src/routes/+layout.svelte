@@ -14,12 +14,14 @@
   import NProgress from 'nprogress';
   import '$lib/scss/nprogress.scss';
   import type { LayoutData } from './$types';
+  import { polyfillCountryFlagEmojis } from '$lib/utils/functions';
   NProgress.configure({ minimum: 0.2, easing: 'ease', speed: 600 });
   $: $navigating ? NProgress.start() : NProgress.done();
+  polyfillCountryFlagEmojis();
 
   export let data: LayoutData;
 
-  const { url, email } = data;
+  const { email } = data;
 
   if (!dev) {
     inject({

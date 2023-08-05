@@ -4,13 +4,13 @@
   import ProjectsHome from '$lib/components/home/ProjectsHome.svelte';
   import BlogHome from '$lib/components/home/BlogHome.svelte';
   import type { PageData } from './$types';
+  import { t } from 'svelte-i18n';
 
   export let data: PageData;
-  const { posts, projects } = data;
+  const { posts } = data;
 
-  const title = 'Home - KesvaL';
-  const description =
-    "I'm a fullstack developer with a passion for building beautiful, performant and accessible web apps or websites.";
+  const title = `${$t('home.meta.title')} - KesvaL`;
+  const description = $t('home.meta.description');
   const url = 'https://kesval.com/';
   const image = 'https://kesval.com/optimized-images/favicon-400w.png';
 </script>
@@ -38,5 +38,5 @@
 </svelte:head>
 <Hero />
 <About />
-<ProjectsHome {projects} />
+<ProjectsHome />
 <BlogHome {posts} />

@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { LayoutData } from './$types';
   import TableOfContents from '$lib/components/blog/TableOfContents.svelte';
-  import Breadcrumb from '$lib/components/base/Breadcrumb.svelte';
+  import Breadcrumbs from '$lib/components/base/Breadcrumbs.svelte';
 
   export let data: LayoutData;
 
@@ -14,7 +14,7 @@
 </svelte:head>
 
 <section class="container container-wide">
-  <Breadcrumb name={post.title} type="post" />
+  <Breadcrumbs name={post.title} type="blog" href={post.slug} />
   <div class="post">
     <article class="prose">
       <slot />
@@ -37,7 +37,7 @@
   }
 
   article {
-    padding-block: $size-fluid-4;
+    padding-block: var(--size-fluid-4);
     margin-left: 0;
 
     @include mq(lg) {

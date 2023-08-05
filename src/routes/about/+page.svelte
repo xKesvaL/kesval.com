@@ -6,10 +6,12 @@
   import { onMount } from 'svelte';
   import type { LayoutData } from './$types';
   import Sparkles from '$lib/components/base/Sparkles.svelte';
+  import { t } from 'svelte-i18n';
+  import { capitalizeFirstLetter } from '$lib/utils/functions';
 
   export let data: LayoutData;
 
-  const { age, email, yearsOfCoding, skillTypes, skills, experiences } = data;
+  const { age, email, yearsOfCoding, skillTypes, skills } = data;
 
   onMount(() => {
     let queries = new URLSearchParams(window.location.search);
@@ -24,34 +26,34 @@
 </script>
 
 <svelte:head>
-  <title>About - KesvaL</title>
-  <meta name="description" content="Come and discover who I truly am!" />
+  <title>{$t('about.meta.title')} - KesvaL</title>
+  <meta name="description" content="{$t('about.meta.description')} " />
 </svelte:head>
 
 <section id="welcome" class="container container-wide section min">
-  <h1 class="title">Hi. I'm Jordan.</h1>
+  <h1 class="title">{$t('about.sections.presentation.title')}</h1>
   <div class="presentation">
     <div class="img">
       <!-- TODO Put real photo -->
-      <Image alt="A Photo of KesvaL" figcaption="Sorry, no image of me here neither" rounding="md" />
+      <Image alt={$t('std.photoOfKesvaL')} figcaption="Sorry, no image of me here neither" rounding="md" />
     </div>
     <div>
       <p>
-        I'm a french {age} year old programmer and I've been doing that since I was 8 years old, it's my <Sparkles>
-          passion
-        </Sparkles>. I started with Java, creating minecraft plugins and later on moved on to NodeJS. I'm a student at
-        the Technological University of Mulhouse, France, studying Multimedia and Web Development, 2nd year.
+        {$t('about.sections.presentation.description', { values: { age } })}
+        <Sparkles>
+          {$t('std.passion')}.
+        </Sparkles>
+        {$t('about.sections.presentation.description-2')}
       </p>
       <p>
-        I just love programming really, especially building new things that correlate to what I love in real life. For
-        example, I'm planning on building a powerlifting app.
+        {$t('about.sections.presentation.description-3')}
       </p>
     </div>
   </div>
 </section>
 
 <section id="skills" class="container section container-wide">
-  <h2>Skills. Take a look.</h2>
+  <h2>{$t('about.sections.skills.title')}</h2>
   <div class="skills">
     {#each skillTypes as skillType}
       <SkillDropdown skills={skills.filter((sk) => sk.type === skillType)} {skillType} />
@@ -60,17 +62,19 @@
 </section>
 <section id="resume" class="container section container-wide min">
   <div class="resume">
-    <h2 class="myresume">My Resume</h2>
-    <a href="/resume.pdf" download="resume-kesval" id="download-resume" class="btn btn-primary">Download</a>
+    <h2 class="myresume">{$t('about.sections.resume.title')}</h2>
+    <a href="/resume.pdf" download="resume-kesval" id="download-resume" class="btn btn-primary">
+      {capitalizeFirstLetter($t('std.download'))}
+    </a>
   </div>
-  <Resume {age} {email} {yearsOfCoding} {skills} {experiences} />
+  <Resume {age} {email} {yearsOfCoding} {skills} />
 </section>
 
 <!-- TODO Certifications -->
 <!-- <section id="certifications" class="container" /> -->
 
 <section id="socials" class="container section">
-  <h2 class="mysocials">Socials</h2>
+  <h2 class="mysocials">{$t('about.sections.socials.title')}</h2>
   <div class="socials-list">
     <Socials full={true} />
   </div>
@@ -97,10 +101,10 @@
       }
 
       .myresume {
-        margin-block: $size-4;
+        margin-block: var(--size-4);
 
         @include mq(sm) {
-          margin-block: $size-10;
+          margin-block: var(--size-10);
         }
       }
     }
@@ -172,7 +176,7 @@
     }
 
     .mysocials {
-      margin-bottom: $size-8;
+      margin-bottom: var(--size-8);
     }
   }
 </style>

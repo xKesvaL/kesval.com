@@ -1,19 +1,16 @@
 <script lang="ts">
   import ProjectsList from '$lib/components/projects/ProjectsList.svelte';
-  import type { LayoutData } from './$types';
-
-  export let data: LayoutData;
-  const { projects, categories, tags } = data;
+  import { t } from 'svelte-i18n';
 </script>
 
 <svelte:head>
-  <title>Projects - KesvaL</title>
-  <meta name="description" content="The full list of all of KesvaL's projects, right here" />
+  <title>{$t('projects.meta.title')} - KesvaL</title>
+  <meta name="description" content={$t('projects.meta.description')} />
 </svelte:head>
 
 <section id="list" class="container container-wide section">
-  <h1 class="title">Projects</h1>
-  <ProjectsList {projects} />
+  <h1 class="title">{$t('projects.meta.title')} - KesvaL</h1>
+  <ProjectsList />
 </section>
 
 <style lang="scss">
@@ -22,6 +19,7 @@
   section {
     h1 {
       text-align: center;
+      margin-bottom: 4rem;
     }
   }
 </style>

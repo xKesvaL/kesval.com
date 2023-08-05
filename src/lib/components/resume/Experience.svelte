@@ -2,8 +2,11 @@
   import Circle from '$lib/icons/IconCircle.svelte';
   import Pin from '$lib/icons/IconPin.svelte';
   import type { Company } from '$lib';
+  import { json, t } from 'svelte-i18n';
+  import { capitalizeFirstLetter } from '$lib/utils/functions';
 
-  export let experiences: Company[];
+  let experiences = [] as Company[];
+  $: experiences = $json('resume.experiences') as Company[];
 </script>
 
 <div class="resume-experience">
@@ -11,7 +14,7 @@
     <div class="experience" class:current={experience.current}>
       <div class="timeline">
         <div class="time">
-          {#if experience.current}Current{/if}
+          {#if experience.current}{capitalizeFirstLetter($t('std.current'))}{/if}
           <Circle />
           {experience.timeframe.split(' ')[0]}
         </div>
@@ -80,7 +83,7 @@
 
       &.current {
         .title {
-          margin-top: 1.75rem;
+          margin-top: 1.45rem;
         }
 
         .time {
@@ -109,17 +112,29 @@
       .content {
         flex: 1;
         width: fit-content;
+
+        p {
+          font-size: var(--fs-300);
+
+          @include mq(md) {
+            font-size: var(--fs-400);
+          }
+        }
       }
 
       .title {
-        margin-top: 0.25rem;
+        margin-top: -0.15rem;
         div {
-          margin-bottom: -0.5rem;
+          margin-bottom: -0.2rem;
           .company-name {
             h3 {
               font-size: var(--fs-600);
+
+              @include mq(md) {
+                font-size: var(--fs-700);
+              }
             }
-            font-weight: $font-weight-semi-bold;
+            font-weight: var(--fw-semi-bold);
           }
         }
         .icon {

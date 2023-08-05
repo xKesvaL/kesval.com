@@ -222,7 +222,7 @@
       padding: 1rem;
       position: relative;
       border: 1px solid rgba(var(--color-primary-900-rgb), 0.3);
-      border-radius: $border-radius-2;
+      border-radius: var(--border-radius-2);
       background: linear-gradient(135deg, rgba(var(--color-primary-500-rgb), 0.02), rgba(var(--color-base-200-rgb), 0)),
         linear-gradient(315deg, rgba(var(--color-primary-500-rgb), 0.02), rgba(var(--color-base-200-rgb), 0)),
         radial-gradient(rgba(var(--color-base-200-rgb), 0.1), rgba(var(--color-base-200-rgb), 0.1));
@@ -235,7 +235,7 @@
           cursor: pointer;
           margin-block: 0.2rem;
           padding: 0.25rem 0.5rem;
-          border-radius: $border-radius-2;
+          border-radius: var(--border-radius-2);
           transition: 0.3s;
 
           &:hover {
@@ -263,7 +263,7 @@
       cursor: pointer;
       z-index: 2;
       padding: 0.5rem;
-      border-radius: $border-radius-full;
+      border-radius: var(--border-radius-full);
       width: 3.75rem;
       background: var(--color-base-200);
       transition: 0.3s;

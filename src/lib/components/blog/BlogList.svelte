@@ -8,7 +8,7 @@
   export let posts: Post[];
 
   let searchValue = '';
-  let searchTags = [];
+  const searchTags: string[] = [];
   let postsShowed = posts.slice(0).splice(0, blogPostToShow);
   const search = new SearchJS('slug');
   search.addIndex('title');

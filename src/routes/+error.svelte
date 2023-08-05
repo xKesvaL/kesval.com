@@ -1,10 +1,11 @@
 <script lang="ts">
   import { page } from '$app/stores';
   import Image from '$lib/components/base/Image.svelte';
+  import { t } from 'svelte-i18n';
   const error = $page.status === 404 ? 404 : $page.status ?? 404;
-  const message = `The page you are looking for does not exist.`;
+  const message = `${$t('notFound.meta.description')}`;
 
-  const title = `${error} - Page not found - KesvaL`;
+  const title = `${error} - ${$t('notFound.meta.title')} - KesvaL`;
   const description = message;
   const url = 'https://kesval.com/';
   const image = 'https://kesval.com/images/404.svg';
@@ -33,11 +34,11 @@
 </svelte:head>
 
 <section class="container">
-  <h1>{error} - Page not found</h1>
-  <p>{error === 404 ? message : $page.error.message}</p>
-  <a href="/" class="btn btn-primary">Return back home</a>
+  <h1>{error} - {$t('notFound.meta.title')}</h1>
+  <p>{error === 404 ? message : $page.error?.message}</p>
+  <a href="/" class="btn btn-primary">{$t('error.backHome')}</a>
   <div class="image">
-    <Image src="/images/error.svg" alt="Page not found illustration" />
+    <Image src="/images/error.svg" alt={$t('error.imageAlt')} border={false} />
   </div>
 </section>
 

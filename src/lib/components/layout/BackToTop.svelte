@@ -5,6 +5,7 @@
   import { fly } from 'svelte/transition';
   import ArrowTop from '$lib/icons/IconArrowTop.svelte';
   import { botState } from '$lib/stores/bot.js';
+  import { t } from 'svelte-i18n';
 
   let scrollY: number;
   let prevScrollY = 0;
@@ -41,7 +42,7 @@
       scrollY = scrollingUp ? 0 : scrollHeight;
     }}
     id="back-to-top"
-    aria-label="scroll to {scrollingUp ? 'top' : 'bottom'}"
+    aria-label="{$t('std.scrollTo')} {scrollingUp ? $t('std.top') : $t('std.bottom')}"
     in:fly={{ y: 50, duration: 300, delay: 300 }}
     out:fly={{ y: 50, duration: 300 }}>
     <div class="inner">
@@ -82,7 +83,7 @@
 
     .inner {
       backdrop-filter: blur(0.5rem);
-      border-radius: $border-radius-full;
+      border-radius: var(--border-radius-full);
       grid-column-start: 1;
       grid-row-start: 1;
       transition: 0.3s ease-in-out;
@@ -95,8 +96,8 @@
         top: 1.85rem;
         left: 1.85rem;
         z-index: 50;
-        height: $size-9;
-        width: $size-9;
+        height: var(--size-9);
+        width: var(--size-9);
         color: var(--color-text);
         transition: 0.3s ease-in-out;
 

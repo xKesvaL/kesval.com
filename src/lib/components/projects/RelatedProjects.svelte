@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { Project } from '$lib';
+  import { t } from 'svelte-i18n';
   import ProjectCard from './ProjectCard.svelte';
 
   export let project: Project;
@@ -18,7 +19,7 @@
 
 {#if relatedProjects && relatedProjects.length > 0}
   <section class="container container-wide">
-    <h2>Related Projects</h2>
+    <h2>{$t('projects.show.relatedProjects')}</h2>
     <div class="related-projects">
       {#each relatedProjects as relatedProject}
         <ProjectCard project={relatedProject} />

@@ -5,6 +5,8 @@
   import ThemeSwitcher from './ThemeSwitcher.svelte';
   import { page } from '$app/stores';
   import { botState } from '$lib/stores/bot';
+  import { t } from 'svelte-i18n';
+  import LangSwitcher from './LangSwitcher.svelte';
 
   let expanded = false;
   let y: number;
@@ -37,17 +39,18 @@
 <svelte:window bind:scrollY={y} />
 
 <header class="container {scrolled ? 'scrolled' : ''} {scrollDirection === 'down' ? 'scrolled-down' : ''}">
-  <a href="/" aria-label="Site Logo" class="logo">
-    <Image src={'/images/logos/kesval.png'} alt="KesvaL's logo" rounding="full" border={false} />
+  <a href="/" aria-label={$t('std.kesvalLogo')} class="logo">
+    <Image src={'/images/logos/kesval.png'} alt={$t('std.kesvalLogo')} rounding="full" border={false} />
   </a>
   <div class="th-sw">
+    <LangSwitcher />
     <ThemeSwitcher />
   </div>
   <button class="open" aria-controls="navigation" on:click={toggleExpanded}>
     <span class="hamburger">
       <Hamburger />
     </span>
-    <span class="visually-hidden">Show Menu</span>
+    <span class="visually-hidden">{$t('std.show')} {$t('std.menu')}</span>
   </button>
   <!-- svelte-ignore a11y-role-supports-aria-props -->
   <!--suppress HtmlWrongAttributeValue -->
@@ -55,28 +58,31 @@
     <ul>
       <li class={$page.route.id === '/' ? 'active' : ''}>
         <a class="home" href="/" data-sveltekit-preload-data data-sveltekit-preload-code on:click={toggleExpanded}>
-          Home <span>/</span>
+          {$t('home.meta.title')}
+          <span>/</span>
         </a>
       </li>
       <li class={$page.route.id?.startsWith('/about') ? 'active' : ''}>
-        <a href="/about" data-sveltekit-preload-data data-sveltekit-preload-code on:click={toggleExpanded}>About</a>
+        <a href="/about" data-sveltekit-preload-data data-sveltekit-preload-code on:click={toggleExpanded}>
+          {$t('about.meta.title')}
+        </a>
       </li>
       <li class={$page.route.id?.startsWith('/projects') ? 'active' : ''}>
         <a href="/projects" data-sveltekit-preload-data data-sveltekit-preload-code on:click={toggleExpanded}>
-          Projects
+          {$t('projects.meta.title')}
         </a>
       </li>
       <li class={$page.route.id?.startsWith('/blog') ? 'active' : ''}>
         <a href="/blog" data-sveltekit-preload-data data-sveltekit-preload-code on:click={toggleExpanded}>Blog</a>
       </li>
       <li>
-        <button on:click={toggleBot}>Contact</button>
+        <button on:click={toggleBot}>{$t('contact.meta.title')}</button>
         <!-- ChatBot -->
       </li>
     </ul>
     <button class="close" aria-controls="navigation" on:click={toggleExpanded}>
       <Close />
-      <span class="visually-hidden">Close Menu</span>
+      <span class="visually-hidden">{$t('std.close')} {$t('std.menu')}</span>
     </button>
   </nav>
 </header>
@@ -90,7 +96,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: clamp($size-2, 2vw, $size-8);
+    gap: clamp(var(--size-2), 2vw, var(--size-8));
 
     position: sticky;
     top: 0;
@@ -98,7 +104,7 @@
     right: 0;
     font-size: var(--fs-600);
     margin-bottom: 0;
-    padding-block: $size-4;
+    padding-block: var(--size-4);
     backdrop-filter: blur(0.5rem) saturate(1);
     min-height: 10vh;
     transition: transform 0.3s ease-in-out;
@@ -108,9 +114,9 @@
     @include mq(lg) {
       --padding: 2rem;
       justify-content: space-between;
-      border-radius: $size-8;
-      top: $size-4;
-      margin-bottom: $size-8;
+      border-radius: var(--size-8);
+      top: var(--size-4);
+      margin-bottom: var(--size-8);
     }
 
     &.scrolled {
@@ -123,8 +129,8 @@
 
     .logo {
       margin-right: auto;
-      width: $size-10;
-      aspect-ratio: $ratio-square;
+      width: var(--size-10);
+      aspect-ratio: var(--ratio-square);
       z-index: 200;
 
       @include mq(lg) {
@@ -133,8 +139,12 @@
     }
 
     .th-sw {
+      display: flex;
+      gap: clamp(var(--size-2), 2vw, var(--size-8));
+
       @include mq(lg) {
         order: 3;
+        gap: var(--size-4);
       }
     }
 
@@ -145,7 +155,7 @@
       top: 0;
       left: 0;
       transform: translateX(-100%);
-      transition: transform 0.5s $ease-4;
+      transition: transform 0.5s var(--ease-4);
       background: var(--color-base-100);
       z-index: 100;
 
@@ -155,7 +165,7 @@
 
       @include mq(xs) {
         border-right: 2px solid var(--color-primary-200);
-        width: $size-17;
+        width: var(--size-17);
       }
 
       @include mq(lg) {
@@ -173,10 +183,10 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding-block: $size-14;
+        padding-block: var(--size-14);
         height: 100%;
         list-style: none;
-        gap: clamp($size-4, 7vw, $size-8);
+        gap: clamp(var(--size-4), 7vw, var(--size-8));
         color: var(--color-neutral-900);
 
         @include mq(lg) {
@@ -185,13 +195,9 @@
         }
 
         li {
-          padding: $size-3 $size-6;
-          border-radius: $border-radius-3;
+          border-radius: var(--border-radius-3);
           transition: background 0.25s ease;
-
-          @include mq(lg) {
-            padding: 0.5rem $size-4;
-          }
+          display: flex;
 
           &:hover,
           &:focus,
@@ -203,8 +209,14 @@
             background: rgba(var(--color-primary-500-rgb), 0.3);
           }
 
-          a {
+          a,
+          button {
             color: var(--color-neutral-900);
+            padding: var(--size-3) var(--size-6);
+
+            @include mq(lg) {
+              padding: var(--size-2) var(--size-4);
+            }
           }
         }
 
@@ -212,14 +224,14 @@
           display: flex;
           align-items: center;
           justify-content: center;
-          gap: $size-2;
+          gap: var(--size-2);
 
           span {
             border: 2px solid rgba(var(--color-neutral-800-rgb), 0.9);
-            border-radius: $size-2;
-            aspect-ratio: $ratio-square;
-            width: $size-7;
-            height: $size-7;
+            border-radius: var(--size-2);
+            aspect-ratio: var(--ratio-square);
+            width: var(--size-7);
+            height: var(--size-7);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -232,7 +244,7 @@
         position: absolute;
         top: 0;
         right: 0;
-        padding: $size-6;
+        padding: var(--size-6);
 
         @include mq(lg) {
           display: none;
@@ -241,9 +253,13 @@
     }
 
     button.open {
+      background: var(--color-base-200);
+      padding: 0.5rem;
+      border-radius: var(--border-radius-3);
+
       span.hamburger {
-        max-width: 32px;
-        max-height: 32px;
+        max-width: 24px;
+        max-height: 24px;
         display: block;
       }
 

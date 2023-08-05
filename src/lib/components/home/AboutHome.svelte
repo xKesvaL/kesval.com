@@ -1,43 +1,48 @@
 <script lang="ts">
   import Image from '../base/Image.svelte';
   import Sparkles from '$lib/components/base/Sparkles.svelte';
+  import { t } from 'svelte-i18n';
+  import { capitalizeFirstLetter } from '$lib/utils/functions';
 </script>
 
 <section id="about" class="container container-wide section">
-  <h2>Me, Myself & I</h2>
+  <h2>{$t('home.sections.about.title')}</h2>
   <div class="grid">
     <div class="image">
       <!-- TODO Put real photo & remove figcaption -->
-      <Image alt="Another photo of Jordan 'KesvaL'" rounding="md" figcaption="No image of me yet, sorry :)" />
+      <Image alt={$t('std.photoOfKesvaL')} rounding="md" figcaption="No image of me yet, sorry :)" />
     </div>
     <div class="text">
       <p>
-        Interested in development since I was a child, I started with the creation of minecraft plugins then I moved on
-        to discord bots. As of today, I'm a web developer as you can see!
+        {$t('home.sections.about.description')}
       </p>
       <p>
-        I'm currently in my first year of a bachelor's degree in Multimedia and Internet Jobs at the University of
-        Technology of Mulhouse.
+        {$t('home.sections.about.description-2')}
       </p>
       <ul>
         <li>
           <span>
             <Sparkles highlight="off" color="primary">10</Sparkles>
           </span>
-          years of experience
+          {$t('std.years')}
+          {$t('std.ofContracted')}
+          <br />
+          {$t('std.experience')}
         </li>
         <li>
           <span><Sparkles highlight="off" color="accent">05</Sparkles></span>
-          projects completed
+          {capitalizeFirstLetter($t('std.projects'))}
+          <br />
+          {$t('std.completeds')}
         </li>
         <li>
           <span><Sparkles highlight="off" color="secondary">02</Sparkles></span>
-          companies worked
+          {$t('home.sections.about.companiesWorkedAt')}
         </li>
       </ul>
     </div>
     <div class="button">
-      <a href="/about" class="btn btn-primary">More About Me</a>
+      <a href="/about" class="btn btn-primary">{$t('home.sections.about.moreAboutMe')}</a>
     </div>
   </div>
 </section>
@@ -65,7 +70,7 @@
       display: grid;
       justify-items: center;
       align-items: center;
-      gap: $size-8;
+      gap: var(--size-8);
       grid-template-rows: auto 1fr;
 
       @include mq(md) {
@@ -78,7 +83,7 @@
         grid-column: 1/-1;
 
         @include mq(md) {
-          margin-top: $size-8;
+          margin-top: var(--size-8);
         }
       }
     }
@@ -88,19 +93,18 @@
 
       p {
         font-size: var(--fs-500);
-        margin-bottom: $size-2;
-        text-align: justify;
+        margin-bottom: var(--size-2);
       }
 
       ul {
         list-style: none;
         display: flex;
-        gap: $size-3;
+        gap: var(--size-3);
         justify-content: space-evenly;
         align-items: center;
 
         @include mq(md) {
-          gap: $size-4;
+          gap: var(--size-4);
         }
 
         li {
@@ -114,19 +118,18 @@
 
           span {
             font-size: var(--fs-600);
-            font-weight: $font-weight-bold;
-            font-family: $font-title;
-            background: radial-gradient(rgba(var(--color-base-200-rgb), 0.5), rgba(var(--color-base-200-rgb), 0.5)),
-              radial-gradient(rgba(var(--color-primary-500-rgb), 0.1), rgba(var(--color-base-200-rgb), 0.5));
-            border-radius: $border-radius-full;
-            aspect-ratio: $ratio-square;
+            font-weight: var(--fw-bold);
+            font-family: var(--ft-title);
+            background: radial-grad-primary(), grad-base();
+            border-radius: var(--border-radius-full);
+            aspect-ratio: var(--aspect-square);
             display: flex;
             justify-content: center;
             flex-direction: column;
             align-items: center;
-            width: $size-11;
-            padding: 0.75rem 1rem 0.5rem;
-            margin-bottom: $size-1;
+            width: var(--size-11);
+            padding: 0.5rem 1rem;
+            margin-bottom: var(--size-1);
 
             @include mq(xs) {
               font-size: var(--fs-700);
@@ -135,7 +138,7 @@
 
             @include mq(md) {
               width: 6rem;
-              padding: 1rem 1.5rem 0.75rem;
+              padding: 0.75rem 1.5rem;
             }
           }
         }

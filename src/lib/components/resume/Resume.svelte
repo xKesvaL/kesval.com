@@ -6,15 +6,14 @@
   import Photo from '$lib/components/resume/Photo.svelte';
   import Skills from '$lib/components/resume/Skills.svelte';
   import Title from '$lib/components/resume/Title.svelte';
-  import type { Company, Skill } from '$lib';
+  import type { Skill } from '$lib';
+  import { t } from 'svelte-i18n';
 
   export let age: number;
   export let email: string;
   export let yearsOfCoding: number;
 
   export let skills: Skill[];
-
-  export let experiences: Company[];
 </script>
 
 <article class="resume">
@@ -30,43 +29,23 @@
     <Photo />
   </div>
   <div class="section about">
-    <Title>About</Title>
-    <!-- French -->
-    <!-- <Title>À Propos</Title> -->
+    <Title>{$t('resume.about.title')}</Title>
     <p>
-      I'm a passioned fullstack developer. I started when I was 8, writing my first lines of code in Java, creating
-      minecraft mods. I then moved to web development, and I'm now working with the latest technologies, such as Svelte,
-      Deno, and TypeScript. Later, I want to create some apps for myself, that will maybe be used by others.
-      <!-- French -->
-      <!-- Je suis un développeur fullstack passionné. J'ai commencé à 8 ans, en écrivant mes premières lignes de code en Java,
-      en créant des mods minecraft. J'ai ensuite migré vers le développement web, et je travaille maintenant avec les dernières
-      technologies, telles que Svelte, Deno et TypeScript. Plus tard, je veux créer des applications pour moi, qui seront
-      peut-être utilisées par d'autres. -->
+      {$t('resume.about.description')}
     </p>
   </div>
   <div class="section experience">
-    <Title>Experience</Title>
-    <!-- French -->
-    <!-- <Title>Expérience</Title> -->
-    <Experience {experiences} />
+    <Title>{$t('resume.experience.title')}</Title>
+    <Experience />
   </div>
   <div class="section skills">
-    <Title>Skills</Title>
-    <!-- French -->
-    <!-- <Title>Compétences</Title> -->
+    <Title>{$t('resume.skills.title')}</Title>
     <Skills {skills} />
   </div>
   <div class="section education">
-    <Title>Education</Title>
-    <!-- French -->
-    <!-- <Title>Éducation</Title> -->
+    <Title>{$t('resume.education.title')}</Title>
     <p>
-      I have a High School Diploma in Computer Science and Mathematics, and I'm currently studying at the University of
-      Mulhouse, in Multimedia and Internet, where I'm learning about web development, 3D, video, and audio. I'm in my
-      second year.
-      <!-- French -->
-      <!-- J'ai un baccalauréat en informatique et en mathématiques, et je suis actuellement étudiant à l'Université de Mulhouse,
-      en multimédia et internet, où j'apprends le développement web, la 3D, la vidéo et l'audio. Je suis en deuxième année. -->
+      {$t('resume.education.description')}
     </p>
   </div>
 </article>
@@ -77,18 +56,18 @@
   .resume {
     overflow: hidden;
     position: relative;
-    border-radius: $border-radius-4;
+    border-radius: var(--border-radius-4);
     background: radial-gradient(
         circle,
         rgba(var(--color-primary-500-rgb), 0.1) 0%,
         rgba(var(--color-base-100-rgb), 0) 100%
       ),
       linear-gradient(rgba(var(--color-base-200-rgb), 0.5), rgba(var(--color-base-200-rgb), 0.5));
-    padding: $size-4 $size-2;
+    padding: var(--size-4) var(--size-2);
     color: var(--color-neutral-900);
     isolation: isolate;
     display: grid;
-    gap: $size-6;
+    gap: var(--size-6);
     grid-template-columns: 1fr;
     grid-template-areas:
       'photo'
@@ -99,7 +78,7 @@
       'education';
 
     @mixin mdAndPrint {
-      padding: $size-8 $size-6;
+      padding: var(--size-8) var(--size-6);
       grid-template-columns: 3fr 2fr;
       grid-template-rows: 1fr 1fr 1fr 1fr;
 
@@ -111,7 +90,7 @@
     }
 
     @mixin lgAndPrint {
-      margin: $size-4 auto;
+      margin: var(--size-4) auto;
       max-width: 215.9mm;
       box-shadow: 0.5rem 1rem 2rem rgba(39, 44, 49, 0.6), 1px 3px 8px rgba(39, 44, 49, 0.3);
     }
@@ -144,14 +123,14 @@
         );
 
         &.one {
-          border-radius: $radius-blob-1;
+          border-radius: var(--border-blob-1);
           height: 110%;
           width: 110%;
           top: -64%;
           right: -45%;
         }
         &.two {
-          border-radius: $radius-blob-3;
+          border-radius: var(--border-blob-3);
           height: 45%;
           width: 45%;
           left: 0%;
@@ -183,10 +162,6 @@
 
       &.about {
         grid-area: about;
-
-        p {
-          text-align: justify;
-        }
       }
 
       &.experience {

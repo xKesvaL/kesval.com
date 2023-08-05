@@ -4,7 +4,7 @@
   import { dev } from '$app/environment';
   import ImageIcon from '$lib/icons/IconImage.svelte';
 
-  export let src: string;
+  export let src: string | null = null;
   export let alt: string;
 
   export let formats: string[] = ['avif', 'webp', 'png'];
@@ -18,6 +18,7 @@
 
   export let loading: 'lazy' | 'eager' = 'lazy';
 
+  let error = false;
   let fileName: string;
   $: if (src) {
     fileName = src.split('.')[0];
@@ -25,7 +26,7 @@
 
   function buildSrcset() {
     if (dev) return;
-    if (src.split('.')[1] === 'svg') return;
+    if (src?.split('.')[1] === 'svg') return;
 
     let srcset = '';
 
@@ -51,7 +52,7 @@
   }
 </script>
 
-{#if src}
+{#if src && !error}
   <img
     class={rounding === 'none' ? '' : `rounding-${rounding}`}
     class:border
@@ -59,7 +60,9 @@
     {src}
     {alt}
     {loading}
-    decoding="async" />
+    decoding="async"
+    on:error={() => (error = true)}
+    />
 {:else}
   <div class={rounding === 'none' ? '' : `rounding-${rounding}`} class:border>
     <span>
@@ -80,32 +83,32 @@
     height: 100%;
     object-fit: cover;
     overflow: hidden;
-    box-shadow: $box-shadow-4;
+    box-shadow: var(--box-shadow-4);
 
     &.border {
       border: 1px solid rgba(var(--color-primary-900-rgb), 0.3);
     }
 
     &.rounding-sm {
-      border-radius: $border-radius-3;
+      border-radius: var(--border-radius-3);
     }
 
     &.rounding-md {
-      border-radius: $border-radius-4;
+      border-radius: var(--border-radius-4);
     }
 
     &.rounding-lg {
-      border-radius: $border-radius-5;
+      border-radius: var(--border-radius-5);
     }
 
     &.rounding-full {
-      border-radius: $border-radius-full;
+      border-radius: var(--border-radius-full);
     }
   }
 
   div {
-    background: radial-gradient(rgba(var(--color-primary-500-rgb), 0.15), rgba(var(--color-base-200-rgb), 0.5)),
-      radial-gradient(rgba(var(--color-base-200-rgb), 0.5), rgba(var(--color-base-200-rgb), 0.5));
+    background: radial-grad-primary(),
+      grad-base();
     display: grid;
     place-items: center;
     padding: 1rem;

@@ -7,6 +7,7 @@
   import Pin from '$lib/icons/IconPin.svelte';
   import Star from '$lib/icons/IconStar.svelte';
   import Suitcase from '$lib/icons/IconSuitcase.svelte';
+  import { t } from 'svelte-i18n';
 
   export let age: number;
   export let email: string;
@@ -16,19 +17,19 @@
 <ul class="resume-contact">
   <li class="birthday">
     <span class="icon"><Star /></span>
-    <span>{age} years old</span>
+    <span>{age} {$t('std.yearsOld')}</span>
     <!-- French -->
     <!-- <span>{age} ans</span> -->
   </li>
   <li class="experience">
     <span class="icon"><Suitcase /></span>
-    <span>{yearsOfCoding} years of coding</span>
+    <span>{yearsOfCoding} {$t('std.years')} {$t('std.of')} {$t('std.coding')}</span>
     <!-- French -->
     <!-- <span>{yearsOfCoding} années de code</span> -->
   </li>
   <li class="location">
     <span class="icon"><Pin /></span>
-    <span>Mulhouse, France</span>
+    <span>Mulhouse, {$t('std.countries.france')}</span>
   </li>
   <li class="email">
     <span class="icon"><Email /></span>
@@ -37,9 +38,7 @@
   <li class="linkedin">
     <span class="icon"><LinkedIn /></span>
     <a href="https://www.linkedin.com/in/jordan-abeddou/" target="_blank" rel="noopener nofollow noreferrer">
-      LinkedIn Profile
-      <!-- French -->
-      <!-- Profil LinkedIn -->
+      LinkedIn {$t('std.profile')}
     </a>
   </li>
   <li class="website">
@@ -49,16 +48,12 @@
   <li class="github">
     <span class="icon"><Github /></span>
     <a href="https://github.com/xKesvaL" target="_blank" rel="noopener nofollow noreferrer">
-      GitHub Profile
-      <!-- French -->
-      <!-- Profil Github -->
+      GitHub {$t('std.profile')}
     </a>
   </li>
   <li class="languages">
     <span class="icon"><Language /></span>
-    <span>English, French</span>
-    <!-- French -->
-    <!-- <span>Français, Anglais</span> -->
+    <span>{$t('std.langs.english')}, {$t('std.langs.french')}</span>
   </li>
 </ul>
 
