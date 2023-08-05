@@ -56,13 +56,6 @@ export const yearsOfCoding = getYearsOfCoding();
 
 export const yearsOfExperience = getYearsOfExperience();
 
-export const langCookieParams: CookieAttributes = {
-  path: '/',
-  expires: new Date(2030, 1, 1),
-  secure: true,
-  sameSite: 'lax',
-};
-
 export const skillTypes: SkillType[] = ['frontend', 'backend', 'other'];
 
 export const skills: Skill[] = [

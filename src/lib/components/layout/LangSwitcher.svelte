@@ -1,8 +1,6 @@
 <script lang="ts">
   import { getFlagEmoji } from '$lib/utils/functions';
   import { locale, locales } from 'svelte-i18n';
-  import Cookies from 'js-cookie';
-  import { langCookieParams } from '$lib/utils/data';
 
   const transformLocaleToFlag = (locale: string) => {
     switch (locale) {
@@ -16,11 +14,11 @@
 
 <select
   on:change={(e) => {
-    Cookies.set('lang', e.currentTarget.value, langCookieParams);
+    localStorage.setItem('lang', e.currentTarget.value);
     locale.set(e.currentTarget.value);
   }}>
   {#each $locales as lang, i}
-    <option value={lang} selected={i === $locales.indexOf($locale || 'en')}>
+    <option value={lang} selected={i === $locales.indexOf($locale || localStorage?.getItem('lang') || 'en')}>
       {getFlagEmoji(transformLocaleToFlag(lang))}
     </option>
   {/each}

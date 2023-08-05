@@ -15,13 +15,22 @@
   import '$lib/scss/nprogress.scss';
   import type { LayoutData } from './$types';
   import { polyfillCountryFlagEmojis } from '$lib/utils/functions';
+  import { locale } from 'svelte-i18n';
   NProgress.configure({ minimum: 0.2, easing: 'ease', speed: 600 });
   $: $navigating ? NProgress.start() : NProgress.done();
   polyfillCountryFlagEmojis();
 
   export let data: LayoutData;
 
-  const { email } = data;
+  const { email, url } = data;
+
+  $: if (browser) {
+    const paramsLang = url.searchParams.get('lang');
+    let lang = paramsLang || localStorage.getItem('lang') || window.navigator.language || 'en';
+    lang = lang.split('-')[0];
+    localStorage.setItem('lang', lang);
+    locale.set(lang);
+  }
 
   if (!dev) {
     inject({
@@ -48,7 +57,7 @@
 
 <Header />
 
-{#key data.url}
+{#key data.url.pathname}
   <main in:fly={{ y: 100, duration: 300, delay: 300 }} out:fly={{ y: -100, duration: 300 }}>
     <slot />
   </main>
