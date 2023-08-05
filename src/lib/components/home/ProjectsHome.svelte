@@ -21,40 +21,38 @@
 <section class="container container-wide section">
   <h2>{$t('projects.meta.title')}</h2>
   <div class="projects" role="region" on:click={projectClickHandle} on:keypress={projectClickHandle}>
-    {#if !isLoading}
-      {#each projects as project, i (project.projectId)}
-        {#if i < 5}
-          <div class="project" id="project-{i + 1}" aria-expanded={i + 1 === parseInt(expandedIndex)}>
-            <Card padding="var(--panel-padding)" scale={false} cardBgStyle="padding-right: var(--panel-padding-right);">
-              <h3 class="project-heading" id="project-{i + 1}-heading">
-                <button
-                  class="project-trigger"
-                  aria-controls="project-{i + 1}-content"
-                  aria-expanded={i + 1 === parseInt(expandedIndex)}>
-                  <span class="project-title">{project.name}</span>
-                  <svg class="project-icon">
-                    <use href="#{project.language}-logo" xlink:href="#{project.language}-logo" />
-                  </svg>
-                </button>
-              </h3>
-              <div
-                class="project-content"
-                id="project-{i + 1}-content"
-                aria-labelledby="project-{i + 1}-heading"
-                aria-hidden={i + 1 === parseInt(expandedIndex)}
-                role="region">
-                <div class="project-more">
-                  {project.description}
-                </div>
+    {#each projects as project, i (project.projectId)}
+      {#if i < 5}
+        <div class="project" id="project-{i + 1}" aria-expanded={i + 1 === parseInt(expandedIndex)}>
+          <Card padding="var(--panel-padding)" scale={false} cardBgStyle="padding-right: var(--panel-padding-right);">
+            <h3 class="project-heading" id="project-{i + 1}-heading">
+              <button
+                class="project-trigger"
+                aria-controls="project-{i + 1}-content"
+                aria-expanded={i + 1 === parseInt(expandedIndex)}>
+                <span class="project-title">{project.name}</span>
+                <svg class="project-icon">
+                  <use href="#{project.language}-logo" xlink:href="#{project.language}-logo" />
+                </svg>
+              </button>
+            </h3>
+            <div
+              class="project-content"
+              id="project-{i + 1}-content"
+              aria-labelledby="project-{i + 1}-heading"
+              aria-hidden={i + 1 === parseInt(expandedIndex)}
+              role="region">
+              <div class="project-more">
+                {project.description}
               </div>
-              <div class="project-btn">
-                <a href={project.href} class="btn btn-accent">{$t('std.seeMore')}</a>
-              </div>
-            </Card>
-          </div>
-        {/if}
-      {/each}
-    {/if}
+            </div>
+            <div class="project-btn">
+              <a href={project.href} class="btn btn-accent">{$t('std.seeMore')}</a>
+            </div>
+          </Card>
+        </div>
+      {/if}
+    {/each}
   </div>
   <div class="more">
     <a href="/projects" class="btn btn-primary">{$t('projects.allMyProjects')}</a>
