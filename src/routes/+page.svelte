@@ -12,7 +12,7 @@
   const title = `${$t('home.meta.title')} - KesvaL`;
   const description = $t('home.meta.description');
   const url = 'https://kesval.com/';
-  const image = 'https://kesval.com/optimized-images/favicon-400w.png';
+  const image = 'https://kesval.com/images/logos/kesval.png';
 </script>
 
 <svelte:head>
@@ -24,17 +24,11 @@
   <meta name="og:description" content={description} />
   <meta name="twitter:description" content={description} />
 
-  <meta name="keywords" content="kesval, fullstack, developer, frontend, backend, front, back, end" />
-  <meta name="subject" content="The portfolio for a fullstack developer named Jordan, KesvaL" />
-
   <meta name="og:url" content={url} />
   <meta name="twitter:url" content={url} />
 
   <meta name="og:image" content={image} />
   <meta name="twitter:image" content={image} />
-
-  <meta name="og:locale" content="en" />
-  <meta name="og:site_name" content="KesvaL" />
 </svelte:head>
 <Hero />
 <About />

@@ -4,13 +4,26 @@
 
   export let data: PageData;
   const { email } = data;
+  const title = `${$t('legalNotice.meta.title')} - KesvaL`
+  const description = $t('legalNotice.meta.description')
+  const url = 'https://kesval.com/legal-notice';
 </script>
 
 <svelte:head>
-  <title>{$t('legalNotice.meta.title')} - KesvaL</title>
-  <meta name="description" content={$t('legalNotice.meta.description')} />
+  <title>{title}</title>
+  <meta name="og:title" content={title} />
+  <meta name="twitter:title" content={title} />
+
+  <meta name="description" content={description} />
+  <meta name="og:description" content={description} />
+  <meta name="twitter:description" content={description} />
+
+  <meta name="og:url" content={url} />
+  <meta name="twitter:url" content={url} />
+
   <meta name="robots" content="noindex, nofollow" />
 </svelte:head>
+
 
 <section class="container section">
   <h1>{$t('legalNotice.meta.title')}</h1>

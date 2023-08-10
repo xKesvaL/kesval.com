@@ -2,12 +2,26 @@
 
   import { t } from "svelte-i18n";
 
+  const title = `${$t('privacyPolicy.meta.title')} - KesvaL`
+  const description = $t('privacyPolicy.meta.description')
+  const url = 'https://kesval.com/privacy-policy';
 </script>
+
 <svelte:head>
-  <title>{$t('privacyPolicy.meta.title')} - KesvaL</title>
-  <meta name="description" content="{$t('privacyPolicy.meta.description')}" />
+  <title>{title}</title>
+  <meta name="og:title" content={title} />
+  <meta name="twitter:title" content={title} />
+
+  <meta name="description" content={description} />
+  <meta name="og:description" content={description} />
+  <meta name="twitter:description" content={description} />
+
+  <meta name="og:url" content={url} />
+  <meta name="twitter:url" content={url} />
+
   <meta name="robots" content="noindex, nofollow" />
 </svelte:head>
+
 
 <section class="container section">
   <h1>{$t('privacyPolicy.meta.title')}</h1>

@@ -1,5 +1,5 @@
 {
-  "name": "KesvaL",
+  "name": "KesvaL | Web Developer",
   "short_name": "KesvaL",
   "icons": [
     {
@@ -15,5 +15,6 @@
   ],
   "theme_color": "#ffffff",
   "background_color": "#ffffff",
-  "display": "standalone"
+  "display": "standalone",
+  "start_url": "/"
 }

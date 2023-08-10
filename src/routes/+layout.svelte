@@ -15,7 +15,7 @@
   import '$lib/scss/nprogress.scss';
   import type { LayoutData } from './$types';
   import { polyfillCountryFlagEmojis } from '$lib/utils/functions';
-  import { locale } from 'svelte-i18n';
+  import { locale, locales } from 'svelte-i18n';
   NProgress.configure({ minimum: 0.2, easing: 'ease', speed: 600 });
   $: $navigating ? NProgress.start() : NProgress.done();
   polyfillCountryFlagEmojis();
@@ -50,9 +50,13 @@
 </script>
 
 <svelte:head>
-  <meta name="robots" content="index, follow" />
-
-  <meta name="og:type" content="website" />
+  <meta name="og:locale" content="{$locale || 'en'}" />
+  {#each $locales as l} 
+    {#if l !== $locale}
+      <meta name="og:locale:alternate" content="{l}" />
+    {/if}
+  {/each}
+  <meta http-equiv="Content-Language" content="{$locale || 'en'}" />
 </svelte:head>
 
 <Header />

@@ -23,11 +23,23 @@
         }, 500);
     }
   });
+
+  const title = `${$t('about.meta.title')} - KesvaL`
+  const description = $t('about.meta.description')
+  const url = 'https://kesval.com/about';
 </script>
 
 <svelte:head>
-  <title>{$t('about.meta.title')} - KesvaL</title>
-  <meta name="description" content="{$t('about.meta.description')} " />
+  <title>{title}</title>
+  <meta name="og:title" content={title} />
+  <meta name="twitter:title" content={title} />
+
+  <meta name="description" content={description} />
+  <meta name="og:description" content={description} />
+  <meta name="twitter:description" content={description} />
+
+  <meta name="og:url" content={url} />
+  <meta name="twitter:url" content={url} />
 </svelte:head>
 
 <section id="welcome" class="container container-wide section min">

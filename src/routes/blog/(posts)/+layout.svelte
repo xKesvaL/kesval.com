@@ -6,11 +6,23 @@
   export let data: LayoutData;
 
   const { post } = data;
+
+  const title = `${post.title} - KesvaL`;	
+  const description = post.excerpt;
+  const url = `https://kesval.com/blog/${post.slug}`;
 </script>
 
 <svelte:head>
-  <title>{post.title} - KesvaL</title>
-  <meta name="description" content={post.excerpt} />
+  <title>{title}</title>
+  <meta name="og:title" content={title} />
+  <meta name="twitter:title" content={title} />
+
+  <meta name="description" content={description} />
+  <meta name="og:description" content={description} />
+  <meta name="twitter:description" content={description} />
+
+  <meta name="og:url" content={url} />
+  <meta name="twitter:url" content={url} />
 </svelte:head>
 
 <section class="container container-wide">
