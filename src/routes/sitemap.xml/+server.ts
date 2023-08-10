@@ -10,7 +10,8 @@ export async function GET() {
       .replace('+error', '')
       .replace('+server', '')
       .replace('+404', '')
-      .replace(/\(([^)]+)\)\//g, '');
+      .replace(/\(([^)]+)\)\//g, '')
+      .slice(0, -1);
     return `https://kesval.com${url}`;
   });
 
