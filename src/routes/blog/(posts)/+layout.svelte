@@ -83,8 +83,12 @@
 <style lang="scss">
   @use '$design' as *;
 
+  section {
+    padding: 1rem;
+  }
+
   :root {
-    scroll-padding: 10vh;
+    scroll-padding: 12vh;
   }
 
   .post {
