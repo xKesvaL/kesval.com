@@ -411,6 +411,8 @@
     "my": "My",
     "of": "of",
     "ofContracted": "of",
+    "on": "on",
+    "onDay": "on",
     "other": "other",
     "others": "others",
     "passion": "passion",
@@ -418,12 +420,14 @@
     "profile": "profile",
     "project": "project",
     "projects": "projects",
+    "published": "published",
     "resume": "Resume",
     "scrollTo": "Scroll to",
     "seeMore": "See more",
     "show": "show",
     "switch": "switch",
     "top": "top",
+    "updated": "updated",
     "years": "years",
     "yearsOld": "years old"
   }

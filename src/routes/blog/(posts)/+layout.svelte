@@ -3,7 +3,8 @@
   import TableOfContents from '$lib/components/blog/TableOfContents.svelte';
   import Breadcrumbs from '$lib/components/base/Breadcrumbs.svelte';
   import Chip from '$lib/components/base/Chip.svelte';
-  import { locale } from 'svelte-i18n';
+  import { locale, t } from 'svelte-i18n';
+  import { capitalizeFirstLetter } from '$lib/utils/functions';
 
   export let data: LayoutData;
 
@@ -42,7 +43,9 @@
         </h1>
         <div class="infos">
           <time datetime={post.date}>
-            Published on {new Date(post.date).toLocaleDateString($locale || 'en', {
+            {capitalizeFirstLetter($t('std.published'))}
+            {$t('std.onDay')}
+            {new Date(post.date).toLocaleDateString($locale || 'en', {
               year: 'numeric',
               month: 'long',
               day: 'numeric',
@@ -50,7 +53,9 @@
           </time>
           {#if post.updatedAt}
             <time datetime={post.updatedAt}>
-              Updated on {new Date(post.updatedAt).toLocaleDateString($locale || 'en', {
+              {capitalizeFirstLetter($t('std.updated'))}
+              {$t('std.onDay')}
+              {new Date(post.updatedAt).toLocaleDateString($locale || 'en', {
                 year: 'numeric',
                 month: 'long',
                 day: 'numeric',

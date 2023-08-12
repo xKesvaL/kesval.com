@@ -411,6 +411,8 @@
     "my": "Mon",
     "of": "de",
     "ofContracted": "d'",
+    "on": "sur",
+    "onDay": "le",
     "other": "autre",
     "others": "autres",
     "passion": "passion",
@@ -418,12 +420,14 @@
     "profile": "profil",
     "project": "projet",
     "projects": "projets",
+    "published": "publié",
     "resume": "CV",
     "scrollTo": "Faire défiler vers",
     "seeMore": "Voir plus",
     "show": "voir",
     "switch": "changer",
     "top": "haut",
+    "updated": "mis à jour",
     "years": "années",
     "yearsOld": "ans"
   }
