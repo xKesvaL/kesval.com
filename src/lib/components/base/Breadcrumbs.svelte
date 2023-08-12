@@ -32,6 +32,12 @@
     display: flex;
     justify-content: center;
 
+    &::-webkit-scrollbar {
+      height: 0.25rem;
+    }
+
+    scrollbar-width: thin;
+
     @include mq(md) {
       font-size: var(--fs-400);
     }

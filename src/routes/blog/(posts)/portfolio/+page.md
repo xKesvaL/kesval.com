@@ -9,6 +9,10 @@ categories:
   - Tech
 ---
 
-You're currently on the blog itself.
+<script>
+  import Sparkles from '$lib/components/base/Sparkles.svelte';
+</script>
 
-This page is in work in progress.
+Just right now, you're on my personal portfolio and also on my blog. I've been working on this website for a while now and I'm really happy with the <Sparkles>result</Sparkles>.
+
+## Why Svelte(Kit)?

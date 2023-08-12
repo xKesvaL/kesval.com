@@ -6,7 +6,9 @@
   "trailingComma": "all",
   "printWidth": 120,
   "htmlWhitespaceSensitivity": "ignore",
+  "plugins": ["prettier-plugin-svelte"],
   "bracketSameLine": true,
   "bracketSpacing": true,
-  "arrowParens": "always"
+  "arrowParens": "always",
+  "overrides": [{ "files": "*.svelte", "options": { "parser": "svelte" } }]
 }

@@ -47,6 +47,32 @@ svg {
 .prose {
   overflow-x: auto;
 
+  a:not(.heading-link) {
+    color: var(--color-accent-600);
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--color-accent-600);
+      transition: 0.3s ease-in-out;
+      transform: scaleX(0);
+      transform-origin: center;
+    }
+
+    &:hover {
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+
   blockquote {
     background: linear-gradient(225deg, rgba(var(--color-primary-500-rgb), 0.05), rgba(32, 32, 44, 0)),
       linear-gradient(45deg, rgba(var(--color-primary-500-rgb), 0.05), rgba(32, 32, 44, 0)),
@@ -62,5 +88,32 @@ svg {
     background: linear-gradient(225deg, rgba(var(--color-primary-500-rgb), 0.1), rgba(32, 32, 44, 0)),
       linear-gradient(45deg, rgba(var(--color-primary-500-rgb), 0.05), rgba(32, 32, 44, 0)),
       radial-gradient(rgba(32, 32, 44, 1), rgba(32, 32, 44, 1));
+    position: relative;
+    font-family: var(--ft-mono);
+    border-radius: var(--border-radius-2);
+
+    code {
+      background: none;
+    }
+  }
+}
+
+.iw {
+  max-width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  gap: 0.5rem;
+
+  @include mq(md) {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  & img {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }

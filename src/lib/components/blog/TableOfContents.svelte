@@ -11,10 +11,6 @@
   export let activeHeadingScrollOffset = 100;
   export let activeTocLi: HTMLLIElement | null = null;
 
-  export let breakpoint: 480 | 600 | 720 | 1024 | 1280 = 1024;
-
-  export let desktop = true;
-
   export let flashClickedHeadingsFor = 1000;
   export let getHeadingIds = (node: HTMLHeadingElement): string => node.id;
   export let getHeadingLevels = (node: HTMLHeadingElement): number => Number(node.nodeName[1]); // get the number from H1, H2, ...
@@ -44,7 +40,6 @@
 
   $: levels = headings.map(getHeadingLevels);
   $: minLevel = Math.min(...levels);
-  $: desktop = windowWidth >= breakpoint;
 
   let y: number;
   let scrolled = false;
@@ -139,22 +134,18 @@
 <svelte:window bind:innerWidth={windowWidth} on:scroll|passive={setActiveHeading} on:click={close} bind:scrollY={y} />
 
 <aside
-  class:desktop
   class:hidden={hide}
   class={scrollDirection === 'up' ? '' : 'retracted'}
-  class:mobile={!desktop}
   bind:this={aside}
   hidden={hide}
   aria-hidden={hide}>
-  {#if !open && !desktop && headings.length >= minItems}
-    <button on:click|preventDefault|stopPropagation={() => (open = true)} aria-label={openButtonLabel}>
-      <slot name="open-toc-icon">
-        <IconList />
-      </slot>
-    </button>
-  {/if}
-  {#if open || (desktop && headings.length >= minItems)}
-    <nav transition:blur|local bind:this={nav}>
+  <button on:click|preventDefault|stopPropagation={() => (open = true)} aria-label={openButtonLabel} class:open>
+    <slot name="open-toc-icon">
+      <IconList />
+    </slot>
+  </button>
+  {#if open || headings.length >= minItems}
+    <nav transition:blur|local bind:this={nav} class:open>
       {#if title}
         <slot name="title">
           <svelte:element this={titleTag} class="toc-title toc-exclude">
@@ -190,28 +181,33 @@
     height: max-content;
     z-index: 1;
     transition: transform 0.3s ease-in-out;
+    flex-shrink: 0;
+    min-width: 320px;
+    min-height: 200px;
+    width: calc(100% - 2rem);
+    max-height: 90vh;
 
-    &.desktop {
+    // mobile
+
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    z-index: 6;
+
+    @include mq(xs) {
+      width: auto;
+      max-width: 320px;
+    }
+
+    @include mq(xl) {
       position: sticky;
       top: 1rem;
+      left: auto;
+      bottom: auto;
       transform: translateY(10vh);
 
       &.retracted {
         transform: translateY(0);
-      }
-    }
-
-    &.mobile {
-      position: fixed;
-      bottom: 1rem;
-      left: 1rem;
-      z-index: 6;
-
-      nav {
-        left: 0;
-        background: linear-gradient(135deg, rgba(var(--color-accent-500-rgb), 0.02), rgba(var(--color-base-200-rgb), 0)),
-          linear-gradient(315deg, rgba(var(--color-accent-500-rgb), 0.02), rgba(var(--color-base-200-rgb), 0)),
-          radial-gradient(rgba(var(--color-base-200-rgb), 1), rgba(var(--color-base-200-rgb), 1));
       }
     }
 
@@ -223,9 +219,28 @@
       position: relative;
       border: 1px solid rgba(var(--color-primary-900-rgb), 0.3);
       border-radius: var(--border-radius-2);
-      background: linear-gradient(135deg, rgba(var(--color-primary-500-rgb), 0.02), rgba(var(--color-base-200-rgb), 0)),
-        linear-gradient(315deg, rgba(var(--color-primary-500-rgb), 0.02), rgba(var(--color-base-200-rgb), 0)),
-        radial-gradient(rgba(var(--color-base-200-rgb), 0.1), rgba(var(--color-base-200-rgb), 0.1));
+      left: 0;
+      background: linear-gradient(135deg, rgba(var(--color-accent-500-rgb), 0.02), rgba(var(--color-base-200-rgb), 0)),
+        linear-gradient(315deg, rgba(var(--color-accent-500-rgb), 0.02), rgba(var(--color-base-200-rgb), 0)),
+        radial-gradient(rgba(var(--color-base-200-rgb), 1), rgba(var(--color-base-200-rgb), 1));
+      opacity: 0;
+      transition: 0.3s ease-in-out;
+
+      &.open {
+        opacity: 1;
+      }
+
+      @include mq(xl) {
+        left: auto;
+        background: linear-gradient(
+            135deg,
+            rgba(var(--color-primary-500-rgb), 0.02),
+            rgba(var(--color-base-200-rgb), 0)
+          ),
+          linear-gradient(315deg, rgba(var(--color-primary-500-rgb), 0.02), rgba(var(--color-base-200-rgb), 0)),
+          radial-gradient(rgba(var(--color-base-200-rgb), 0.1), rgba(var(--color-base-200-rgb), 0.1));
+        opacity: 1;
+      }
 
       ol {
         list-style: none;
@@ -271,7 +286,16 @@
       place-items: center;
 
       &:hover {
-        scale: 1.1;
+        scale: 1.05;
+      }
+
+      &.open {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      @include mq(xl) {
+        display: none;
       }
     }
 
@@ -279,6 +303,7 @@
       font-size: var(--fs-600);
       margin-top: 0;
       margin-bottom: 1rem;
+      text-align: center;
     }
   }
 </style>

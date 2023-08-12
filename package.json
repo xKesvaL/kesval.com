@@ -23,6 +23,7 @@
     "vercel-build": "npm run build && npm run vercel-optimize-images"
   },
   "devDependencies": {
+    "@kesval/design": "^2.3.0",
     "@sveltejs/adapter-auto": "^2.1.0",
     "@sveltejs/adapter-static": "^2.0.3",
     "@sveltejs/kit": "^1.22.4",
@@ -54,7 +55,6 @@
   },
   "type": "module",
   "dependencies": {
-    "@kesval/design": "^2.2.1",
     "@sveltejs/adapter-vercel": "^3.0.2",
     "@types/js-search": "^1.4.0",
     "image-transmutation": "^0.1.2",

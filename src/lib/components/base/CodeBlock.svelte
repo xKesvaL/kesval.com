@@ -14,12 +14,10 @@
 </div>
 
 <style lang="scss">
-  @use '$design' as *;
-
   .code-block {
     position: relative;
     padding-top: 1px;
-    font-family: $font-mono;
+    font-family: var(--ft-mono);
 
     .lang,
     .filename {
@@ -27,7 +25,7 @@
       top: 0;
       border: 1px solid rgba(var(--color-secondary-900-rgb), 0.3);
       padding: 0.25rem 0.5rem;
-      border-radius: $border-radius-2;
+      border-radius: var(--border-radius-2);
       font-size: var(--fs-200);
     }
 

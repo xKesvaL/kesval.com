@@ -84,6 +84,7 @@ export interface Post {
   tags: TagSecondary[];
   hidden?: boolean;
   date: string;
+  updatedAt?: string;
   html?: string;
   readingTime: string;
   relatedPosts: Post[];

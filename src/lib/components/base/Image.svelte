@@ -61,8 +61,7 @@
     {alt}
     {loading}
     decoding="async"
-    on:error={() => (error = true)}
-    />
+    on:error={() => (error = true)} />
 {:else}
   <div class={rounding === 'none' ? '' : `rounding-${rounding}`} class:border>
     <span>
@@ -80,7 +79,9 @@
   img,
   div {
     width: 100%;
+    max-width: 100%;
     height: 100%;
+    max-height: 100%;
     object-fit: cover;
     overflow: hidden;
     box-shadow: var(--box-shadow-4);
@@ -107,8 +108,7 @@
   }
 
   div {
-    background: radial-grad-primary(),
-      grad-base();
+    background: radial-grad-primary(), grad-base();
     display: grid;
     place-items: center;
     padding: 1rem;
