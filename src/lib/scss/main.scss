@@ -1,6 +1,26 @@
 @use '$design' as *;
 @use 'code-hightlights' as *;
 
+@font-face {
+  font-family: 'Benzin';
+  src:
+    local('Benzin Bold'),
+    local('Benzin'),
+    url('/fonts/benz.woff2') format('woff2');
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+}
+
+body {
+  color: var(--base-800);
+}
+
+section {
+  padding-top: clamp(5rem, 10vh, 6rem) !important;
+  padding-bottom: clamp(5rem, 10vh, 6rem) !important;
+}
+
 button {
   background: transparent;
   color: inherit;
@@ -16,10 +36,10 @@ section > h2 {
   font-weight: var(--fw-bold);
   letter-spacing: 2px !important;
 
-  margin-block: 0 var(--size-12);
+  margin-block: 0 5rem;
 
   @include mq(md) {
-    margin-block: var(--size-9) var(--size-14);
+    margin-block: 2rem 8rem;
   }
 }
 
@@ -29,6 +49,7 @@ h3 {
 
 :is(h1, h2, h3, h4, h5, h6) {
   font-family: var(--ft-title);
+  color: var(--base-950);
 }
 
 #svelte {
@@ -41,14 +62,14 @@ svg {
 
 .special-link {
   text-decoration: underline;
-  color: var(--color-accent-500);
+  color: var(--secondary-500);
 }
 
 .prose {
   overflow-x: auto;
 
   a:not(.heading-link) {
-    color: var(--color-accent-600);
+    color: var(--secondary-600);
     text-decoration: none;
     transition: 0.3s ease-in-out;
     position: relative;
@@ -60,7 +81,7 @@ svg {
       left: 0;
       right: 0;
       height: 1px;
-      background: var(--color-accent-600);
+      background: var(--secondary-600);
       transition: 0.3s ease-in-out;
       transform: scaleX(0);
       transform-origin: center;
@@ -74,8 +95,8 @@ svg {
   }
 
   blockquote {
-    background: linear-gradient(225deg, rgba(var(--color-primary-500-rgb), 0.05), rgba(32, 32, 44, 0)),
-      linear-gradient(45deg, rgba(var(--color-primary-500-rgb), 0.05), rgba(32, 32, 44, 0)),
+    background: linear-gradient(225deg, rgba(var(--primary-500-rgb), 0.05), rgba(32, 32, 44, 0)),
+      linear-gradient(45deg, rgba(var(--primary-500-rgb), 0.05), rgba(32, 32, 44, 0)),
       radial-gradient(rgba(32, 32, 44, 0.05), rgba(32, 32, 44, 0.05));
   }
 
@@ -85,12 +106,12 @@ svg {
   }
 
   pre {
-    background: linear-gradient(225deg, rgba(var(--color-primary-500-rgb), 0.1), rgba(32, 32, 44, 0)),
-      linear-gradient(45deg, rgba(var(--color-primary-500-rgb), 0.05), rgba(32, 32, 44, 0)),
+    background: linear-gradient(225deg, rgba(var(--primary-500-rgb), 0.1), rgba(32, 32, 44, 0)),
+      linear-gradient(45deg, rgba(var(--primary-500-rgb), 0.05), rgba(32, 32, 44, 0)),
       radial-gradient(rgba(32, 32, 44, 1), rgba(32, 32, 44, 1));
     position: relative;
     font-family: var(--ft-mono);
-    border-radius: var(--border-radius-2);
+    border-radius: 0.5rem;
 
     code {
       background: none;

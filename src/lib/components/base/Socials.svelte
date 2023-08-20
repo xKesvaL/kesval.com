@@ -6,7 +6,7 @@
   import Youtube from '$lib/icons/socials/IconYoutube.svelte';
 
   export let vertical = false;
-  export let color = 'var(--color-text)';
+  export let color = 'var(--text)';
   export let full = false;
 </script>
 
@@ -67,7 +67,7 @@
 
       &:hover,
       &:focus {
-        color: var(--color-accent-500) !important;
+        color: var(--secondary-500) !important;
       }
     }
   }

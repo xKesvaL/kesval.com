@@ -16,7 +16,8 @@
   on:change={(e) => {
     localStorage.setItem('lang', e.currentTarget.value);
     locale.set(e.currentTarget.value);
-  }}>
+  }}
+  class="no-anim">
   {#each $locales as lang, i}
     <option value={lang} selected={i === $locales.indexOf($locale || localStorage?.getItem('lang') || 'en')}>
       {getFlagEmoji(transformLocaleToFlag(lang))}
@@ -36,23 +37,36 @@
     border: none;
     padding: 0.5rem;
     line-height: 1.1;
-    border-radius: var(--border-radius-3);
-    font-family: 'Twemoji Country Flags', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background: var(--color-base-200);
+    border-radius: 0.75rem;
+    text-align: center;
+    font-family:
+      'Twemoji Country Flags',
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      'Segoe UI',
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      'Open Sans',
+      'Helvetica Neue',
+      sans-serif;
+    background: var(--base-200);
     transition: background 0.3s ease-out;
-
-    @include mq(lg) {
-      background: rgba(var(--color-base-200-rgb), 0.3);
-    }
+    height: auto;
+    font-size: var(--fs-500);
+    aspect-ratio: 1;
+    width: 2.5rem;
+    background: rgba(var(--base-200-rgb), 0.7);
 
     &:hover {
-      background: rgba(var(--color-accent-500-rgb), 0.4);
+      background: rgba(var(--secondary-500-rgb), 0.4);
     }
 
     &:focus {
       outline: none;
-      background: rgba(var(--color-accent-500-rgb), 0.4);
+      background: rgba(var(--secondary-500-rgb), 0.4);
     }
 
     &:focus-visible {
@@ -60,11 +74,7 @@
     }
 
     option {
-      background: var(--color-base-300);
-
-      &:hover {
-        background: var(--color-accent-500);
-      }
+      background: var(--base-200);
     }
   }
 </style>

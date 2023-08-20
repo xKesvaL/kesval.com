@@ -30,7 +30,7 @@
           {$t('std.experience')}
         </li>
         <li>
-          <span><Sparkles highlight="off" color="accent">05</Sparkles></span>
+          <span><Sparkles highlight="off" color="secondary">05</Sparkles></span>
           {capitalizeFirstLetter($t('std.projects'))}
           <br />
           {$t('std.completeds')}
@@ -41,9 +41,7 @@
         </li>
       </ul>
     </div>
-    <div class="button">
-      <a href="/about" class="btn btn-primary">{$t('home.sections.about.moreAboutMe')}</a>
-    </div>
+    <a href="/about" class="button primary">{$t('home.sections.about.moreAboutMe')}</a>
   </div>
 </section>
 
@@ -70,7 +68,7 @@
       display: grid;
       justify-items: center;
       align-items: center;
-      gap: var(--size-8);
+      gap: 2rem;
       grid-template-rows: auto 1fr;
 
       @include mq(md) {
@@ -83,7 +81,7 @@
         grid-column: 1/-1;
 
         @include mq(md) {
-          margin-top: var(--size-8);
+          margin-top: 2rem;
         }
       }
     }
@@ -92,19 +90,23 @@
       display: grid;
 
       p {
+        margin-bottom: 0.5rem;
         font-size: var(--fs-500);
-        margin-bottom: var(--size-2);
+
+        @include mq(lg) {
+          font-size: 1.15rem;
+        }
       }
 
       ul {
         list-style: none;
         display: flex;
-        gap: var(--size-3);
+        gap: 0.75rem;
         justify-content: space-evenly;
         align-items: center;
 
         @include mq(md) {
-          gap: var(--size-4);
+          gap: 1rem;
         }
 
         li {
@@ -112,7 +114,7 @@
           display: flex;
           flex-direction: column;
           align-items: center;
-          font-size: var(--fs-600);
+          font-size: var(--fs-500);
           flex: 1;
           margin-top: 1.5rem;
 
@@ -120,16 +122,17 @@
             font-size: var(--fs-600);
             font-weight: var(--fw-bold);
             font-family: var(--ft-title);
-            background: radial-grad-primary(), grad-base();
-            border-radius: var(--border-radius-full);
-            aspect-ratio: var(--aspect-square);
+            background: radial-gradient(rgba(var(--base-200-rgb), 0.3), rgba(var(--base-200-rgb), 0.3)),
+              radial-grad-primary(0.15);
+            border-radius: 9999px;
+            aspect-ratio: 1;
             display: flex;
             justify-content: center;
             flex-direction: column;
             align-items: center;
-            width: var(--size-11);
+            width: 4rem;
             padding: 0.5rem 1rem;
-            margin-bottom: var(--size-1);
+            margin-bottom: 0.25rem;
 
             @include mq(xs) {
               font-size: var(--fs-700);

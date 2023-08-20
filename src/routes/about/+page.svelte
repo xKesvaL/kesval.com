@@ -24,8 +24,8 @@
     }
   });
 
-  const title = `${$t('about.meta.title')} - KesvaL`
-  const description = $t('about.meta.description')
+  const title = `${$t('about.meta.title')} - KesvaL`;
+  const description = $t('about.meta.description');
   const url = 'https://kesval.com/about';
 </script>
 
@@ -75,7 +75,7 @@
 <section id="resume" class="container section container-wide min">
   <div class="resume">
     <h2 class="myresume">{$t('about.sections.resume.title')}</h2>
-    <a href="/resume.pdf" download="resume-kesval" id="download-resume" class="btn btn-primary">
+    <a href="/resume.pdf" download="resume-kesval" id="download-resume" class="button primary">
       {capitalizeFirstLetter($t('std.download'))}
     </a>
   </div>
@@ -113,10 +113,10 @@
       }
 
       .myresume {
-        margin-block: var(--size-4);
+        margin-block: 1rem;
 
         @include mq(sm) {
-          margin-block: var(--size-10);
+          margin-block: 3rem;
         }
       }
     }
@@ -150,7 +150,7 @@
       }
 
       p {
-        font-size: var(--fs-600);
+        font-size: 1.25rem;
         margin-block: 1rem;
 
         @include mq(sm) {
@@ -187,8 +187,16 @@
       }
     }
 
+    .resume {
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
     .mysocials {
-      margin-bottom: var(--size-8);
+      margin-bottom: 2rem;
     }
   }
 </style>

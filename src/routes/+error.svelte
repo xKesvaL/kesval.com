@@ -30,7 +30,7 @@
 <section class="container">
   <h1>{error} - {$t('notFound.meta.title')}</h1>
   <p>{error === 404 ? message : $page.error?.message}</p>
-  <a href="/" class="btn btn-primary">{$t('error.backHome')}</a>
+  <a href="/" class="button primary">{$t('error.backHome')}</a>
   <div class="image">
     <Image src="/images/error.svg" alt={$t('error.imageAlt')} border={false} />
   </div>

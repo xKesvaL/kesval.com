@@ -83,14 +83,16 @@
       }
 
       a {
-        color: var(--color-neutral-900);
-        border-bottom: 2px dotted var(--color-primary-500);
-        transition: border-bottom 0.25s ease, color 0.25s ease;
+        color: var(--base-900);
+        border-bottom: 2px dotted var(--primary-500);
+        transition:
+          border-bottom 0.25s ease,
+          color 0.25s ease;
 
         &:hover,
         &:focus {
-          border-bottom: 2px solid var(--color-primary-500);
-          color: var(--color-primary-800);
+          border-bottom: 2px solid var(--primary-500);
+          color: var(--primary-800);
         }
       }
 

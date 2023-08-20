@@ -14,7 +14,7 @@
   href="/blog/{post.slug}"
   padding={'0'}
   classes={vertical ? ['vertical'] : []}
-  color="rgba(var(--color-secondary-300-rgb), 0.3)">
+  color="rgba(var(--secondary-300-rgb), 0.3)">
   <div class:vertical class="wrapper">
     <div class="image">
       <Image src="/images/blog/{post.slug}/cover.{dev ? 'png' : 'avif'}" alt={post.excerpt} border={false} />
@@ -26,18 +26,16 @@
 
       <div class="tags">
         <Chip label={post.categories[0]} />
-        <Chip label={post.tags[0]} color="accent" rotation={235} />
+        <Chip label={post.tags[0]} color="secondary" rotation={235} />
       </div>
     </div>
   </div>
 </Card>
 
 <style lang="scss">
-  @use '$design' as *;
-
   .wrapper {
     display: flex;
-    color: var(--color-neutral-900);
+    color: var(--base-900);
     overflow: hidden;
     flex-direction: column;
     transition: 0.2s;
@@ -66,16 +64,14 @@
     }
 
     .text {
-      padding: var(--size-4);
+      padding: 1rem;
       display: grid;
       grid-template-rows: auto auto 1fr auto;
-      background: linear-grad-secondary(135deg, 0.025, 0),
-          linear-grad-secondary(315deg, 0.025, 0),
-          grad-base(0.05);
+      background: linear-grad-secondary(135deg, 0.025), linear-grad-secondary(315deg, 0.025);
 
       h3 {
         font-size: var(--fs-600);
-        margin-bottom: -var(--size-1);
+        margin-bottom: -0.25rem;
       }
 
       & > span {
@@ -93,7 +89,7 @@
       .tags {
         margin-left: auto;
         display: flex;
-        gap: var(--size-2);
+        gap: 0.5rem;
         margin-top: auto;
       }
     }

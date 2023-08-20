@@ -38,7 +38,7 @@
 
 <svelte:window bind:scrollY={y} />
 
-<header class="container {scrolled ? 'scrolled' : ''} {scrollDirection === 'down' ? 'scrolled-down' : ''}">
+<header class="container container-sm {scrolled ? 'scrolled' : ''} {scrollDirection === 'down' ? 'scrolled-down' : ''}">
   <a href="/" aria-label={$t('std.kesvalLogo')} class="logo">
     <Image src={'/images/logos/kesval.png'} alt={$t('std.kesvalLogo')} rounding="full" border={false} />
   </a>
@@ -46,7 +46,7 @@
     <LangSwitcher />
     <ThemeSwitcher />
   </div>
-  <button class="open" aria-controls="navigation" on:click={toggleExpanded}>
+  <button class="open no-anim" aria-controls="navigation" on:click={toggleExpanded}>
     <span class="hamburger">
       <Hamburger />
     </span>
@@ -76,11 +76,11 @@
         <a href="/blog" data-sveltekit-preload-data data-sveltekit-preload-code on:click={toggleExpanded}>Blog</a>
       </li>
       <li>
-        <button on:click={toggleBot}>{$t('contact.meta.title')}</button>
+        <button class="no-anim" on:click={toggleBot}>{$t('contact.meta.title')}</button>
         <!-- ChatBot -->
       </li>
     </ul>
-    <button class="close" aria-controls="navigation" on:click={toggleExpanded}>
+    <button class="close no-anim" aria-controls="navigation" on:click={toggleExpanded}>
       <Close />
       <span class="visually-hidden">{$t('std.close')} {$t('std.menu')}</span>
     </button>
@@ -96,27 +96,26 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: clamp(var(--size-2), 2vw, var(--size-8));
+    gap: clamp(0.5rem, 2vw, 2rem);
 
     position: sticky;
     top: 0;
     left: 0;
     right: 0;
-    font-size: var(--fs-600);
     margin-bottom: 0;
-    padding-block: var(--size-4);
+    padding-block: 1rem;
     backdrop-filter: blur(0.5rem) saturate(1);
     min-height: 10vh;
     transition: transform 0.3s ease-in-out;
-    background: rgba(var(--color-base-100-rgb), 0.85);
+    background: rgba(var(--base-100-rgb), 0.85);
     z-index: 10;
 
     @include mq(lg) {
       --padding: 2rem;
       justify-content: space-between;
-      border-radius: var(--size-8);
-      top: var(--size-4);
-      margin-bottom: var(--size-8);
+      border-radius: 2rem;
+      top: 1rem;
+      margin-bottom: 2rem;
     }
 
     &.scrolled {
@@ -129,8 +128,8 @@
 
     .logo {
       margin-right: auto;
-      width: var(--size-10);
-      aspect-ratio: var(--ratio-square);
+      width: 3rem;
+      aspect-ratio: 1;
       z-index: 200;
 
       @include mq(lg) {
@@ -140,11 +139,11 @@
 
     .th-sw {
       display: flex;
-      gap: clamp(var(--size-2), 2vw, var(--size-8));
+      gap: clamp(0.5rem, 2vw, 2rem);
 
       @include mq(lg) {
         order: 3;
-        gap: var(--size-4);
+        gap: 1rem;
       }
     }
 
@@ -155,8 +154,8 @@
       top: 0;
       left: 0;
       transform: translateX(-100%);
-      transition: transform 0.5s var(--ease-4);
-      background: var(--color-base-100);
+      transition: transform 0.5s ease-in-out;
+      background: var(--base-100);
       z-index: 100;
 
       &[aria-expanded='true'] {
@@ -164,8 +163,8 @@
       }
 
       @include mq(xs) {
-        border-right: 2px solid var(--color-primary-200);
-        width: var(--size-17);
+        border-right: 2px solid var(--primary-200);
+        width: 20rem;
       }
 
       @include mq(lg) {
@@ -183,11 +182,11 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding-block: var(--size-14);
+        padding-block: 8rem;
         height: 100%;
         list-style: none;
-        gap: clamp(var(--size-4), 7vw, var(--size-8));
-        color: var(--color-neutral-900);
+        gap: clamp(1rem, 7vw, 2rem);
+        color: var(--base-900);
 
         @include mq(lg) {
           flex-direction: row;
@@ -195,27 +194,30 @@
         }
 
         li {
-          border-radius: var(--border-radius-3);
+          border-radius: 0.75rem;
           transition: background 0.25s ease;
           display: flex;
 
           &:hover,
           &:focus,
           &:focus-within {
-            background: rgba(var(--color-accent-500-rgb), 0.4);
+            background: rgba(var(--secondary-500-rgb), 0.4);
           }
 
           &.active {
-            background: rgba(var(--color-primary-500-rgb), 0.3);
+            background: rgba(var(--primary-500-rgb), 0.3);
           }
 
           a,
           button {
-            color: var(--color-neutral-900);
-            padding: var(--size-3) var(--size-6);
+            color: var(--base-900);
+            padding: 0.75rem 1.5rem;
+            background: none;
+            font-size: var(--fs-500);
+            font-weight: 400;
 
             @include mq(lg) {
-              padding: var(--size-2) var(--size-4);
+              padding: 0.5rem 1rem;
             }
           }
         }
@@ -224,14 +226,14 @@
           display: flex;
           align-items: center;
           justify-content: center;
-          gap: var(--size-2);
+          gap: 0.5rem;
 
           span {
-            border: 2px solid rgba(var(--color-neutral-800-rgb), 0.9);
-            border-radius: var(--size-2);
-            aspect-ratio: var(--ratio-square);
-            width: var(--size-7);
-            height: var(--size-7);
+            border: 2px solid rgba(var(--base-800-rgb), 0.9);
+            border-radius: 0.5rem;
+            aspect-ratio: 1;
+            width: 2rem;
+            height: 2rem;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -244,7 +246,9 @@
         position: absolute;
         top: 0;
         right: 0;
-        padding: var(--size-6);
+        padding: 1.5rem;
+        background: none;
+        height: auto;
 
         @include mq(lg) {
           display: none;
@@ -253,9 +257,9 @@
     }
 
     button.open {
-      background: var(--color-base-200);
+      background: rgba(var(--base-200-rgb), 0.7);
       padding: 0.5rem;
-      border-radius: var(--border-radius-3);
+      border-radius: 0.75rem;
 
       span.hamburger {
         max-width: 24px;

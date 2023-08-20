@@ -57,13 +57,13 @@
         margin-bottom: -1.25rem;
 
         .line {
-          border-left: 2px dashed var(--color-primary-500);
+          border-left: 2px dashed var(--primary-500);
           width: 2px;
           flex: 1;
         }
 
         .time {
-          color: var(--color-neutral-800);
+          color: var(--base-800);
           width: 1.5rem;
           display: flex;
           flex-direction: column;
@@ -76,7 +76,7 @@
           :global(svg) {
             width: 1.5rem;
             height: 1.5rem;
-            color: var(--color-primary-500);
+            color: var(--primary-500);
           }
         }
       }
@@ -89,10 +89,10 @@
         .time {
           :global(svg) {
             padding: 0.25rem;
-            background: var(--color-base-200);
-            border: 1px solid var(--color-primary-500);
+            background: var(--base-200);
+            border: 1px solid var(--primary-500);
             border-radius: 50%;
-            fill: var(--color-primary-500);
+            fill: var(--primary-500);
           }
         }
       }
@@ -147,8 +147,8 @@
         }
 
         small {
-          color: var(--color-neutral-700);
-          fill: var(--color-neutral-700);
+          color: var(--base-700);
+          fill: var(--base-700);
           font-size: var(--fs-200);
         }
       }

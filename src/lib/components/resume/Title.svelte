@@ -5,6 +5,6 @@
     font-size: var(--fs-600);
     padding-bottom: 0.5rem;
     margin-bottom: 0.5rem;
-    border-bottom: 2px solid var(--color-primary-500);
+    border-bottom: 2px solid var(--primary-500);
   }
 </style>

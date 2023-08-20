@@ -1,9 +1,8 @@
 <script>
+  import { t } from 'svelte-i18n';
 
-  import { t } from "svelte-i18n";
-
-  const title = `${$t('privacyPolicy.meta.title')} - KesvaL`
-  const description = $t('privacyPolicy.meta.description')
+  const title = `${$t('privacyPolicy.meta.title')} - KesvaL`;
+  const description = $t('privacyPolicy.meta.description');
   const url = 'https://kesval.com/privacy-policy';
 </script>
 
@@ -22,22 +21,25 @@
   <meta name="robots" content="noindex, nofollow" />
 </svelte:head>
 
-
 <section class="container section">
   <h1>{$t('privacyPolicy.meta.title')}</h1>
 
   <h2>{$t('privacyPolicy.sections.thirdParty.title')}</h2>
   <p>
-    {$t('privacyPolicy.sections.thirdParty.description') }<a href="https://vercel.com/docs/concepts/analytics/privacy">
+    {$t('privacyPolicy.sections.thirdParty.description')}
+    <a href="https://vercel.com/docs/concepts/analytics/privacy">
       {$t('std.here')}.
     </a>
-    { $t('privacyPolicy.sections.thirdParty.description-2') } </p>
+    {$t('privacyPolicy.sections.thirdParty.description-2')}
+  </p>
 
-  <h2>{ $t('privacyPolicy.sections.cookies.title') }</h2>
+  <h2>{$t('privacyPolicy.sections.cookies.title')}</h2>
   <p>
-    { $t('privacyPolicy.sections.cookies.description') } </p>
+    {$t('privacyPolicy.sections.cookies.description')}
+  </p>
   <p>
-    { $t('privacyPolicy.sections.cookies.description-2') } </p>
+    {$t('privacyPolicy.sections.cookies.description-2')}
+  </p>
 </section>
 
 <style lang="scss">
@@ -57,7 +59,7 @@
 
     a {
       text-decoration: underline;
-      color: var(--color-accent-500);
+      color: var(--secondary-500);
     }
   }
 </style>

@@ -38,7 +38,7 @@
   class="card {classes.join(' ')}"
   class:scale
   role="region">
-  <div class="card-bg-img" style="{padding ? `padding: ${padding}` : ""}; {cardBgStyle}">
+  <div class="card-bg-img" style="{padding ? `padding: ${padding}` : ''}; {cardBgStyle}">
     <slot />
   </div>
 </svelte:element>
@@ -50,20 +50,15 @@
     --drop-x: 0;
     --drop-y: 0;
 
-    --drop-color: rgba(var(--color-primary-300-rgb), 0.3);
+    --drop-color: rgba(var(--primary-300-rgb), 0.3);
 
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
-    border: 1px solid rgba(var(--color-primary-900-rgb), 0.3);
-    background: rgba(var(--color-base-200-rgb), 0.1);
-    border-radius: var(--border-radius-4);
-    overflow: hidden;
     transition: 0.2s;
-    position: relative;
-    box-shadow: var(--box-shadow-2);
-    grid-row: span 2;
+    padding: 0;
+    max-width: none;
+    min-width: auto;
     height: 100%;
-    width: 100%;
 
     @include mq(xs) {
       grid-row: span 1;
@@ -79,7 +74,7 @@
       &.scale {
         transform: scale(1.01);
       }
-      border-color: rgba(var(--color-primary-900-rgb), 0.8);
+      border-color: rgba(var(--primary-900-rgb), 0.8);
     }
 
     &-bg-img {
@@ -90,7 +85,7 @@
       flex-direction: column;
 
       &:hover {
-        background-color: rgba(var(--color-base-200-rgb), 0.3);
+        background-color: rgba(var(--base-200-rgb), 0.3);
         background-image: radial-gradient(circle at var(--drop-x) var(--drop-y), var(--drop-color), transparent);
       }
     }

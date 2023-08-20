@@ -27,7 +27,7 @@
   h3 {
     font-size: var(--fs-600);
     text-align: center;
-    color: var(--color-neutral-800);
+    color: var(--base-800);
   }
 
   @mixin mdAndPrint {

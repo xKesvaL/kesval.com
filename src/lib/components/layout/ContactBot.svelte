@@ -157,15 +157,17 @@
   .chat-bot {
     position: fixed;
     inset: 0;
-    border: 2px solid var(--color-primary-400);
+    border: 2px solid var(--primary-400);
     z-index: 20;
-    background: linear-gradient(135deg, rgba(var(--color-primary-500-rgb), 0.15), rgba(var(--color-primary-100-rgb), 0)),
-      linear-gradient(225deg, rgba(var(--color-secondary-500-rgb), 0.1), rgba(var(--color-primary-100-rgb), 0)),
-      linear-gradient(0deg, rgba(var(--color-accent-500-rgb), 0.05), rgba(var(--color-primary-100-rgb), 0)),
-      radial-gradient(rgba(var(--color-primary-100-rgb), 0.9), rgba(var(--color-primary-100-rgb), 0.9));
+    background: linear-gradient(135deg, rgba(var(--primary-500-rgb), 0.15), rgba(var(--primary-100-rgb), 0)),
+      linear-gradient(225deg, rgba(var(--secondary-500-rgb), 0.1), rgba(var(--primary-100-rgb), 0)),
+      linear-gradient(0deg, rgba(var(--secondary-500-rgb), 0.05), rgba(var(--primary-100-rgb), 0)),
+      radial-gradient(rgba(var(--primary-100-rgb), 0.9), rgba(var(--primary-100-rgb), 0.9));
     backdrop-filter: blur(0.5rem) saturate(2);
     box-shadow: var(--box-shadow-5);
-    transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out;
+    transition:
+      transform 0.25s ease-in-out,
+      opacity 0.25s ease-in-out;
     opacity: 0;
     pointer-events: none;
     transform: translateY(5%);
@@ -183,7 +185,7 @@
       left: auto;
       height: 38rem;
       width: 22rem;
-      border-radius: var(--border-radius-3);
+      border-radius: 0.75rem;
     }
 
     @include mq(md) {
@@ -200,35 +202,31 @@
 
       .answer {
         margin-bottom: 0.5rem;
-        background: linear-gradient(
-            135deg,
-            rgba(var(--color-accent-500-rgb), 0.05),
-            rgba(var(--color-primary-100-rgb), 0)
-          ),
-          linear-gradient(315deg, rgba(var(--color-accent-500-rgb), 0.05), rgba(var(--color-primary-100-rgb), 0)),
-          radial-gradient(rgba(var(--color-primary-100-rgb), 0.9), rgba(var(--color-primary-100-rgb), 0.9));
+        background: linear-gradient(135deg, rgba(var(--primary-500-rgb), 0.05), rgba(var(--primary-100-rgb), 0)),
+          linear-gradient(315deg, rgba(var(--primary-500-rgb), 0.05), rgba(var(--primary-100-rgb), 0)),
+          radial-gradient(rgba(var(--base-50-rgb), 0.8), rgba(var(--base-50-rgb), 0.8));
         padding: 1rem;
-        border-radius: var(--border-radius-3);
-        color: var(--color-primary-900);
+        border-radius: 0.75rem;
+        color: var(--primary-900);
         max-width: 90%;
       }
 
       .question {
         margin-bottom: 0.5rem;
-        border: var(--color-primary-500) solid 2px;
+        border: var(--primary-500) solid 2px;
         padding: 1rem;
-        border-radius: var(--border-radius-4);
-        color: hsl(var(--color-primary-hue), 100%, var(--primary-darker-lightness));
+        border-radius: 1rem;
+        color: hsl(var(--primary-hue), 100%, var(--primary-darker-lightness));
         width: fit-content;
         cursor: pointer;
-        background: rgba(var(--color-base-100-rgb), 0.4);
+        background: rgba(var(--base-100-rgb), 0.4);
 
         &.not-chosen {
           display: none;
         }
 
         &.chosen {
-          background: rgba(var(--color-primary-500-rgb), 1);
+          background: rgba(var(--primary-500-rgb), 1);
           border-radius: 1em;
           justify-self: end;
           border: none;
@@ -237,21 +235,21 @@
 
           &:hover,
           &:focus {
-            background: rgba(var(--color-primary-500-rgb), 1);
+            background: rgba(var(--primary-500-rgb), 1);
           }
 
           &:active {
-            background: rgba(var(--color-primary-500-rgb), 1);
+            background: rgba(var(--primary-500-rgb), 1);
           }
         }
 
         &:hover,
         &:focus {
-          background: rgba(var(--color-base-200), 0.5);
+          background: rgba(var(--base-200), 0.5);
         }
 
         &:active {
-          background: rgba(var(--color-base-200), 0.9);
+          background: rgba(var(--base-200), 0.9);
         }
       }
     }
@@ -259,7 +257,7 @@
     header {
       padding-inline: 1rem;
       height: 10%;
-      background: var(--color-primary-400);
+      background: var(--primary-400);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -271,7 +269,7 @@
       .wrapper {
         display: flex;
         align-items: center;
-        gap: var(--size-4);
+        gap: 1rem;
         width: fit-content;
         height: 100%;
 

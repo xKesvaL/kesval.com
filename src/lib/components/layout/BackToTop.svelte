@@ -56,7 +56,7 @@
           cy="50"
           r="40"
           stroke-width="6"
-          stroke="var(--color-primary-500)"
+          stroke="var(--primary-500)"
           style="stroke-dashoffset: {251 - 251 * scrollPercent};" />
       </svg>
     </div>
@@ -74,6 +74,7 @@
     z-index: 5;
     border-radius: 100vw;
     background: transparent;
+    height: auto;
 
     &.bot {
       @include mq(sm) {
@@ -83,22 +84,22 @@
 
     .inner {
       backdrop-filter: blur(0.5rem);
-      border-radius: var(--border-radius-full);
+      border-radius: 9999px;
       grid-column-start: 1;
       grid-row-start: 1;
       transition: 0.3s ease-in-out;
       scale: 0.6;
       position: relative;
-      background: var(--color-base-200);
+      background: var(--base-200);
 
       .arrow {
         position: absolute;
-        top: 1.85rem;
-        left: 1.85rem;
+        top: 2.1rem;
+        left: 2.1rem;
         z-index: 50;
-        height: var(--size-9);
-        width: var(--size-9);
-        color: var(--color-text);
+        height: 2rem;
+        width: 2rem;
+        color: var(--text);
         transition: 0.3s ease-in-out;
 
         &.down {
@@ -107,7 +108,7 @@
       }
 
       svg {
-        fill: var(--color-base-200);
+        fill: var(--base-200);
         fill-opacity: 1;
         transition: 0.3s ease-in-out;
       }
@@ -115,7 +116,7 @@
 
     &:hover {
       .inner {
-        scale: 0.7;
+        scale: 0.65;
 
         svg {
           fill-opacity: 0.2;

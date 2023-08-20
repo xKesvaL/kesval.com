@@ -31,7 +31,7 @@
 
 <div class="main">
   <button
-    class="dropdown"
+    class="dropdown no-anim"
     class:opened
     on:click={() => {
       toggleDropdown();
@@ -70,14 +70,17 @@
     width: 100%;
 
     .dropdown {
-      color: var(--color-neutral-800);
-      background: linear-gradient(90deg, rgba(var(--color-primary-500-rgb), 0.05), rgba(var(--color-base-200-rgb), 1)),
-        linear-gradient(135deg, rgba(var(--color-base-200-rgb), 1), rgba(var(--color-base-200-rgb), 1));
+      color: var(--base-800);
+      background: linear-gradient(90deg, rgba(var(--primary-500-rgb), 0.05), transparent),
+        linear-gradient(270deg, rgba(var(--secondary-500-rgb), 0.05), transparent),
+        linear-gradient(135deg, rgba(var(--base-200-rgb), 0.8), rgba(var(--base-200-rgb), 0.8));
       padding: 1.5rem 1rem 0.5rem 1rem;
       border-radius: 1rem 1rem 0 0;
       width: 100%;
       z-index: 10;
       transition: border-radius 0.3s ease-in-out;
+      height: auto;
+      display: block;
 
       &.opened {
         margin-bottom: 0;
@@ -119,8 +122,9 @@
       position: relative;
       list-style: none;
       text-align: left;
-      background: linear-gradient(90deg, rgba(var(--color-primary-500-rgb), 0.05), rgba(var(--color-base-200-rgb), 1)),
-        linear-gradient(135deg, rgba(var(--color-base-200-rgb), 1), rgba(var(--color-base-200-rgb), 1));
+      background: linear-gradient(90deg, rgba(var(--primary-500-rgb), 0.05), transparent),
+        linear-gradient(270deg, rgba(var(--secondary-500-rgb), 0.05), transparent),
+        linear-gradient(135deg, rgba(var(--base-200-rgb), 0.8), rgba(var(--base-200-rgb), 0.8));
       z-index: -1;
       border-radius: 0 0 1rem 1rem;
       padding: 0 1rem 1rem;
@@ -139,33 +143,33 @@
 
       &.frontend {
         .progress-wrap {
-          background: rgba(var(--color-primary-100-rgb), 0.75);
+          background: rgba(var(--primary-100-rgb), 0.75);
 
           .progress {
             height: 0.5rem;
-            background: linear-gradient(135deg, var(--color-primary-400), var(--color-primary-600));
+            background: linear-gradient(135deg, var(--primary-400), var(--primary-600));
           }
         }
       }
 
       &.backend {
         .progress-wrap {
-          background: rgba(var(--color-secondary-100-rgb), 0.75);
+          background: rgba(var(--secondary-100-rgb), 0.75);
 
           .progress {
             height: 0.5rem;
-            background: linear-gradient(135deg, var(--color-secondary-400), var(--color-secondary-600));
+            background: linear-gradient(135deg, var(--secondary-400), var(--secondary-600));
           }
         }
       }
 
       &.other {
         .progress-wrap {
-          background: rgba(var(--color-accent-100-rgb), 0.75);
+          background: rgba(var(--success-100-rgb), 0.75);
 
           .progress {
             height: 0.5rem;
-            background: linear-gradient(135deg, var(--color-accent-400), var(--color-accent-600));
+            background: linear-gradient(135deg, var(--success-400), var(--success-600));
           }
         }
       }

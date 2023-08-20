@@ -9,7 +9,7 @@
   import { webVitals } from '$lib/utils/vitals';
   import { inject } from '@vercel/analytics';
   import BackToTop from '$lib/components/layout/BackToTop.svelte';
-  import { fly } from 'svelte/transition';
+  import { blur, fly } from 'svelte/transition';
   import { navigating } from '$app/stores';
   import NProgress from 'nprogress';
   import '$lib/scss/nprogress.scss';
@@ -50,19 +50,19 @@
 </script>
 
 <svelte:head>
-  <meta name="og:locale" content="{$locale || 'en'}" />
-  {#each $locales as l} 
+  <meta name="og:locale" content={$locale || 'en'} />
+  {#each $locales as l}
     {#if l !== $locale}
-      <meta name="og:locale:alternate" content="{l}" />
+      <meta name="og:locale:alternate" content={l} />
     {/if}
   {/each}
-  <meta http-equiv="Content-Language" content="{$locale || 'en'}" />
+  <meta http-equiv="Content-Language" content={$locale || 'en'} />
 </svelte:head>
 
 <Header />
 
 {#key data.url.pathname}
-  <main in:fly={{ y: 100, duration: 300, delay: 300 }} out:fly={{ y: -100, duration: 300 }}>
+  <main in:blur={{ duration: 300, delay: 300 }} out:blur={{ duration: 300 }}>
     <slot />
   </main>
 {/key}

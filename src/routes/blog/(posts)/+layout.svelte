@@ -65,7 +65,7 @@
           <div class="tags">
             {#each post.tags as tag, i}
               {#if i < 2}
-                <Chip label={tag} color={i == 0 ? 'primary' : 'accent'} rotation={i == 0 ? 135 : 225} />
+                <Chip label={tag} color={i == 0 ? 'primary' : 'secondary'} rotation={i == 0 ? 135 : 225} />
               {/if}
             {/each}
           </div>
@@ -84,7 +84,7 @@
   @use '$design' as *;
 
   section {
-    padding: 1rem;
+    padding: 1rem !important;
   }
 
   :root {
@@ -102,7 +102,7 @@
   }
 
   article {
-    padding-block: var(--size-fluid-4);
+    padding-block: 2rem;
     margin-left: 0;
     max-width: 90ch;
     width: 100%;
@@ -114,7 +114,7 @@
 
     header {
       h1 {
-        margin-bottom: var(--size-fluid-1);
+        margin-bottom: 2rem;
         font-size: var(--fs-800);
         text-align: center;
       }
@@ -126,7 +126,7 @@
         gap: 0.5rem;
         time {
           font-size: 0.9rem;
-          color: var(--color-neutral-700);
+          color: var(--base-700);
         }
 
         .tags {

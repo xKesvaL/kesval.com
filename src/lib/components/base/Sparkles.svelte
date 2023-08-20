@@ -3,9 +3,9 @@
   import { onDestroy, onMount } from 'svelte';
   import type { SparkleType } from '$lib';
 
-  export let color: 'primary' | 'secondary' | 'accent' = 'accent';
+  export let color: 'primary' | 'secondary' = 'secondary';
 
-  export let highlight: 'off' | 'primary' | 'secondary' | 'accent' = 'primary';
+  export let highlight: 'off' | 'primary' | 'secondary' = 'primary';
 
   const random = (min: number, max: number) => Math.floor(Math.random() * (max - min)) + min;
 
@@ -15,10 +15,10 @@
       createdAt: Date.now(),
       color:
         color === 'primary'
-          ? 'var(--color-primary-500)'
+          ? 'var(--primary-500)'
           : color === 'secondary'
-          ? 'var(--color-secondary-500)'
-          : 'var(--color-accent-500)',
+          ? 'var(--secondary-500)'
+          : 'var(--secondary-500)',
       size: random(10, 20).toString(),
       style: {
         // Pick a random spot in the available space
@@ -57,7 +57,7 @@
   {#each sparkles as sparkle (sparkle.id)}
     <SingleSparkle color={sparkle.color} size={sparkle.size} style={sparkle.style} />
   {/each}
-  <span class="slot-wrapper" style={highlight ? `color: var(--color-${highlight}-700); font-weight: 700;` : ''}>
+  <span class="slot-wrapper" style={highlight ? `color: var(--${highlight}-700); font-weight: 700;` : ''}>
     <slot />
   </span>
 </span>

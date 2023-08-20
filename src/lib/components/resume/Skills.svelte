@@ -50,9 +50,9 @@
       grid-template-columns: 1fr 1fr 1fr;
 
       .tag {
-        background: rgba(var(--color-primary-200-rgb), 0.4);
-        border: 1px solid var(--color-primary-500);
-        color: var(--color-neutral-900);
+        background: rgba(var(--primary-200-rgb), 0.4);
+        border: 1px solid var(--primary-500);
+        color: var(--base-900);
 
         border-radius: 0.25rem;
         display: inline-block;
@@ -65,15 +65,15 @@
 
       &.secondary {
         .tag {
-          background: rgba(var(--color-secondary-200-rgb), 0.4);
-          border: 1px solid var(--color-secondary-500);
+          background: rgba(var(--secondary-200-rgb), 0.4);
+          border: 1px solid var(--secondary-500);
         }
       }
 
       &.tertiary {
         .tag {
-          background: rgba(var(--color-accent-200-rgb), 0.4);
-          border: 1px solid var(--color-accent-500);
+          background: rgba(var(--success-200-rgb), 0.4);
+          border: 1px solid var(--success-500);
         }
       }
     }

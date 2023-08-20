@@ -217,12 +217,12 @@
       max-height: 90vh;
       padding: 1rem;
       position: relative;
-      border: 1px solid rgba(var(--color-primary-900-rgb), 0.3);
-      border-radius: var(--border-radius-2);
+      border: 1px solid rgba(var(--primary-900-rgb), 0.3);
+      border-radius: 0.5rem;
       left: 0;
-      background: linear-gradient(135deg, rgba(var(--color-accent-500-rgb), 0.02), rgba(var(--color-base-200-rgb), 0)),
-        linear-gradient(315deg, rgba(var(--color-accent-500-rgb), 0.02), rgba(var(--color-base-200-rgb), 0)),
-        radial-gradient(rgba(var(--color-base-200-rgb), 1), rgba(var(--color-base-200-rgb), 1));
+      background: linear-gradient(135deg, rgba(var(--secondary-500-rgb), 0.02), rgba(var(--base-200-rgb), 0)),
+        linear-gradient(315deg, rgba(var(--secondary-500-rgb), 0.02), rgba(var(--base-200-rgb), 0)),
+        radial-gradient(rgba(var(--base-200-rgb), 1), rgba(var(--base-200-rgb), 1));
       opacity: 0;
       transition: 0.3s ease-in-out;
 
@@ -232,13 +232,9 @@
 
       @include mq(xl) {
         left: auto;
-        background: linear-gradient(
-            135deg,
-            rgba(var(--color-primary-500-rgb), 0.02),
-            rgba(var(--color-base-200-rgb), 0)
-          ),
-          linear-gradient(315deg, rgba(var(--color-primary-500-rgb), 0.02), rgba(var(--color-base-200-rgb), 0)),
-          radial-gradient(rgba(var(--color-base-200-rgb), 0.1), rgba(var(--color-base-200-rgb), 0.1));
+        background: linear-gradient(135deg, rgba(var(--primary-500-rgb), 0.02), rgba(var(--base-200-rgb), 0)),
+          linear-gradient(315deg, rgba(var(--primary-500-rgb), 0.02), rgba(var(--base-200-rgb), 0)),
+          radial-gradient(rgba(var(--base-200-rgb), 0.1), rgba(var(--base-200-rgb), 0.1));
         opacity: 1;
       }
 
@@ -250,22 +246,18 @@
           cursor: pointer;
           margin-block: 0.2rem;
           padding: 0.25rem 0.5rem;
-          border-radius: var(--border-radius-2);
+          border-radius: 0.5rem;
           transition: 0.3s;
 
           &:hover {
-            color: var(--color-accent-500);
+            color: var(--secondary-500);
           }
 
           &.active {
-            background: linear-gradient(
-                135deg,
-                rgba(var(--color-primary-500-rgb), 0.2),
-                rgba(var(--color-base-200-rgb), 0.5)
-              ),
-              linear-gradient(315deg, rgba(var(--color-secondary-500-rgb), 0.2), rgba(var(--color-base-200-rgb), 0.5)),
-              linear-gradient(0deg, rgba(var(--color-accent-500-rgb), 0.2), rgba(var(--color-base-200-rgb), 0.5)),
-              radial-gradient(rgba(var(--color-base-200-rgb), 0.3), rgba(var(--color-base-200-rgb), 0.3));
+            background: linear-gradient(135deg, rgba(var(--primary-500-rgb), 0.2), rgba(var(--base-200-rgb), 0.5)),
+              linear-gradient(315deg, rgba(var(--secondary-500-rgb), 0.2), rgba(var(--base-200-rgb), 0.5)),
+              linear-gradient(0deg, rgba(var(--secondary-500-rgb), 0.2), rgba(var(--base-200-rgb), 0.5)),
+              radial-gradient(rgba(var(--base-200-rgb), 0.3), rgba(var(--base-200-rgb), 0.3));
           }
         }
       }
@@ -278,9 +270,9 @@
       cursor: pointer;
       z-index: 2;
       padding: 0.5rem;
-      border-radius: var(--border-radius-full);
+      border-radius: 9999px;
       width: 3.75rem;
-      background: var(--color-base-200);
+      background: var(--base-200);
       transition: 0.3s;
       display: grid;
       place-items: center;

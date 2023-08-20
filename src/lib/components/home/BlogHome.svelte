@@ -13,7 +13,7 @@
       <BlogCard {post} vertical={(i + 2) % 3 === 0} />
     {/each}
   </div>
-  <a href="/blog" class="btn btn-primary">{$t('blog.allMyPosts')}</a>
+  <a href="/blog" class="button primary">{$t('blog.allMyPosts')}</a>
 </section>
 
 <style lang="scss">

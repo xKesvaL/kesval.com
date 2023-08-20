@@ -23,27 +23,23 @@
     .filename {
       position: absolute;
       top: 0;
-      border: 1px solid rgba(var(--color-secondary-900-rgb), 0.3);
+      border: 1px solid rgba(var(--secondary-900-rgb), 0.3);
       padding: 0.25rem 0.5rem;
-      border-radius: var(--border-radius-2);
+      border-radius: 0.5rem;
       font-size: var(--fs-200);
     }
 
     .lang {
       right: 0.5rem;
-      background: linear-gradient(225deg, rgba(var(--color-accent-500-rgb), 0.15), rgba(var(--color-base-200-rgb), 0.5)),
-        radial-gradient(rgba(var(--color-base-200-rgb), 1), rgba(var(--color-base-200-rgb), 1));
+      background: linear-gradient(225deg, rgba(var(--secondary-500-rgb), 0.15), rgba(var(--base-200-rgb), 0.5)),
+        radial-gradient(rgba(var(--base-200-rgb), 1), rgba(var(--base-200-rgb), 1));
     }
 
     .filename {
       position: absolute;
       left: 0.5rem;
-      background: linear-gradient(
-          150deg,
-          rgba(var(--color-secondary-500-rgb), 0.2),
-          rgba(var(--color-base-200-rgb), 0.5)
-        ),
-        radial-gradient(rgba(var(--color-base-200-rgb), 1), rgba(var(--color-base-200-rgb), 1));
+      background: linear-gradient(150deg, rgba(var(--secondary-500-rgb), 0.2), rgba(var(--base-200-rgb), 0.5)),
+        radial-gradient(rgba(var(--base-200-rgb), 1), rgba(var(--base-200-rgb), 1));
     }
   }
 </style>

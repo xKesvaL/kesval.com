@@ -81,9 +81,9 @@
     }
 
     &-input {
-      border-radius: var(--border-radius-full);
+      border-radius: 9999px;
       width: 100%;
-      padding: 1rem 1rem 1rem 3.5rem;
+      padding: 2rem 3.5rem;
       font-size: var(--fs-600);
     }
   }

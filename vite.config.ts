@@ -7,10 +7,17 @@ export default defineConfig({
   resolve: {
     alias: {
       $routes: resolve('./src/routes'),
-      $design: resolve('./node_modules/@kesval/design/scss/abstracts'),
+      $design: resolve('./node_modules/@kesval/design/scss/utilities'),
     },
   },
   define: {
     'import.meta.env.VERCEL_ANALYTICS_ID': JSON.stringify(process.env.VERCEL_ANALYTICS_ID),
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: '@use "node_modules/@kesval/design/scss/utilities" as *;',
+      },
+    },
   },
 });

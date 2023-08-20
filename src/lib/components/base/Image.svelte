@@ -84,31 +84,31 @@
     max-height: 100%;
     object-fit: cover;
     overflow: hidden;
-    box-shadow: var(--box-shadow-4);
+    box-shadow: 0 0 0 0 rgba(var(--base-500-rgb), 0.3);
 
     &.border {
-      border: 1px solid rgba(var(--color-primary-900-rgb), 0.3);
+      border: 1px solid rgba(var(--primary-900-rgb), 0.3);
     }
 
     &.rounding-sm {
-      border-radius: var(--border-radius-3);
+      border-radius: 0.75rem;
     }
 
     &.rounding-md {
-      border-radius: var(--border-radius-4);
+      border-radius: 1rem;
     }
 
     &.rounding-lg {
-      border-radius: var(--border-radius-5);
+      border-radius: 1rem;
     }
 
     &.rounding-full {
-      border-radius: var(--border-radius-full);
+      border-radius: 9999px;
     }
   }
 
   div {
-    background: radial-grad-primary(), grad-base();
+    background: radial-grad-primary();
     display: grid;
     place-items: center;
     padding: 1rem;

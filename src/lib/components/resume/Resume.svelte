@@ -56,18 +56,14 @@
   .resume {
     overflow: hidden;
     position: relative;
-    border-radius: var(--border-radius-4);
-    background: radial-gradient(
-        circle,
-        rgba(var(--color-primary-500-rgb), 0.1) 0%,
-        rgba(var(--color-base-100-rgb), 0) 100%
-      ),
-      linear-gradient(rgba(var(--color-base-200-rgb), 0.5), rgba(var(--color-base-200-rgb), 0.5));
-    padding: var(--size-4) var(--size-2);
-    color: var(--color-neutral-900);
+    border-radius: 1rem;
+    background: radial-gradient(circle, rgba(var(--primary-500-rgb), 0.1) 0%, rgba(var(--base-100-rgb), 0) 100%),
+      linear-gradient(rgba(var(--base-200-rgb), 0.5), rgba(var(--base-200-rgb), 0.5));
+    padding: 1rem 0.5rem;
+    color: var(--base-900);
     isolation: isolate;
     display: grid;
-    gap: var(--size-6);
+    gap: 1.5rem;
     grid-template-columns: 1fr;
     grid-template-areas:
       'photo'
@@ -78,7 +74,7 @@
       'education';
 
     @mixin mdAndPrint {
-      padding: var(--size-8) var(--size-6);
+      padding: 2rem 1.5rem;
       grid-template-columns: 3fr 2fr;
       grid-template-rows: 1fr 1fr 1fr 1fr;
 
@@ -90,9 +86,11 @@
     }
 
     @mixin lgAndPrint {
-      margin: var(--size-4) auto;
+      margin: 1rem auto;
       max-width: 215.9mm;
-      box-shadow: 0.5rem 1rem 2rem rgba(39, 44, 49, 0.6), 1px 3px 8px rgba(39, 44, 49, 0.3);
+      box-shadow:
+        0.5rem 1rem 2rem rgba(39, 44, 49, 0.6),
+        1px 3px 8px rgba(39, 44, 49, 0.3);
     }
 
     @include mq(md) {
@@ -115,12 +113,7 @@
 
       .blob {
         position: absolute;
-        background: hsla(
-          var(--color-primary-500-hue),
-          var(--color-primary-500-saturation),
-          var(--color-primary-500-lightness),
-          0.2
-        );
+        background: hsla(var(--primary-500-hue), var(--primary-500-saturation), var(--primary-500-lightness), 0.2);
 
         &.one {
           border-radius: var(--border-blob-1);

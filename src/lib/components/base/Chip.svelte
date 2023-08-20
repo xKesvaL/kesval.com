@@ -17,21 +17,16 @@
     --rotation: 135deg;
     padding: 0.25rem 0.5rem;
     display: inline-block;
-    border-radius: var(--border-radius-2);
+    border-radius: 0.5rem;
 
     &.primary {
-      border: 1px solid rgba(var(--color-primary-900-rgb), 0.3);
-      background: linear-grad-primary(var(--rotation), 0.3), grad-base();
+      border: 1px solid rgba(var(--primary-900-rgb), 0.3);
+      background: linear-grad-primary(var(--rotation), 0.3);
     }
 
     &.secondary {
-      border: 1px solid rgba(var(--color-secondary-900-rgb), 0.3);
-      background: linear-grad-secondary(var(--rotation), 0.3), grad-base();
-    }
-
-    &.accent {
-      border: 1px solid rgba(var(--color-accent-900-rgb), 0.3);
-      background: linear-grad-accent(var(--rotation), 0.3), grad-base();
+      border: 1px solid rgba(var(--secondary-900-rgb), 0.3);
+      background: linear-grad-secondary(var(--rotation), 0.3);
     }
   }
 </style>

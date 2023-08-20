@@ -5,7 +5,7 @@
   import { locale, t } from 'svelte-i18n';
 </script>
 
-<footer class="container container-full">
+<footer>
   <div>
     <h2>
       Jordan
@@ -13,7 +13,7 @@
       "KesvaL"
     </h2>
   </div>
-  <div><Socials color="var(--color-neutral-800)" /></div>
+  <div><Socials color="var(--base-800)" /></div>
   <div class="util-links">
     <a href="/legal-notice">{$t('legalNotice.meta.title')}</a>
     <a href="/privacy-policy">{$t('privacyPolicy.meta.title')}</a>
@@ -33,11 +33,7 @@
 
   footer {
     min-height: 20vh;
-    background: linear-gradient(
-      135deg,
-      rgba(var(--color-primary-100-rgb), 0.7),
-      rgba(var(--color-primary-100-rgb), 0.3)
-    );
+    background: linear-gradient(135deg, rgba(var(--primary-100-rgb), 0.7), rgba(var(--primary-100-rgb), 0.3));
     color: white;
     padding: 2rem 1rem;
     display: grid;
@@ -54,7 +50,7 @@
       justify-content: space-around;
       gap: 0.5rem;
       width: 100%;
-      color: var(--color-neutral-800);
+      color: var(--base-800);
       text-align: center;
       margin-top: 1rem;
 
@@ -90,14 +86,16 @@
 
       a {
         padding-bottom: 0.125rem;
-        border-bottom: 1px dashed var(--color-neutral-800);
-        transition: color 0.2s ease, border-bottom 0.2s ease;
-        color: var(--color-neutral-800);
+        border-bottom: 1px dashed var(--base-800);
+        transition:
+          color 0.2s ease,
+          border-bottom 0.2s ease;
+        color: var(--base-800);
 
         &:hover,
         &:focus {
-          border-bottom: 1px solid var(--color-accent-500);
-          color: var(--color-accent-500);
+          border-bottom: 1px solid var(--secondary-500);
+          color: var(--secondary-500);
         }
       }
     }

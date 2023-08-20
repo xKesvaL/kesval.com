@@ -3,12 +3,12 @@
   import { t } from 'svelte-i18n';
 
   const toggleTheme = () => {
-    if ($theme === 'auto') {
+    if ($theme === 'dark') {
       theme.set('light');
     } else if ($theme === 'light') {
       theme.set('dark');
     } else {
-      theme.set('auto');
+      theme.set('dark');
     }
   };
 </script>
@@ -21,7 +21,7 @@
   </style>
 </noscript>
 
-<button class="theme-switcher" on:click={toggleTheme} data-theme={$theme} aria-controls="body">
+<button class="theme-switcher no-anim" on:click={toggleTheme} data-theme={$theme} aria-controls="body">
   <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
     <mask id="moon">
       <rect x="0" y="0" width="100%" height="100%" fill="white" />
@@ -40,44 +40,31 @@
     </g>
   </svg>
   <span class="visually-hidden">{$theme}</span>
-  <span class="label">{$t('std.auto')}</span>
 </button>
 
 <style lang="scss">
   @use '$design' as *;
 
   button {
-    color: var(--color-neutral-800);
+    color: var(--base-800);
     display: flex;
     align-items: center;
-    background: var(--color-base-200);
-    padding: 0.5rem;
-    border-radius: var(--border-radius-3);
+    background: rgba(var(--base-200-rgb), 0.7);
+    border-radius: 0.75rem;
     transition: background 0.3s ease-out;
+    aspect-ratio: 1;
+    height: auto;
+    padding: 0.5rem;
+    width: 2.5rem;
 
-    @include mq(lg) {
-      background: rgba(var(--color-base-200-rgb), 0.3);
-    }
     &:hover,
     &:focus {
-      background: rgba(var(--color-accent-500-rgb), 0.4);
-    }
-
-    .label {
-      transition: all 0.25s ease-in-out;
-      text-transform: uppercase;
-      font-size: 0.75rem;
-      opacity: 0;
-      transform-origin: left;
-      transform: scaleX(0);
-      max-width: 0;
-      color: var(--color-neutral-800);
-      z-index: 0;
+      background: rgba(var(--secondary-500-rgb), 0.4);
     }
 
     #moon,
     #sun {
-      fill: var(--color-neutral-800);
+      fill: var(--base-800);
       stroke: none;
     }
 
@@ -88,10 +75,12 @@
 
     #sun-beams {
       --opacity-duration: 0.15s;
-      stroke: var(--color-neutral-800);
+      stroke: var(--base-800);
       stroke-width: 2px;
       transform-origin: center center;
-      transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity var(--opacity-duration) ease-in-out;
+      transition:
+        all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        opacity var(--opacity-duration) ease-in-out;
     }
 
     #moon > circle {
@@ -123,22 +112,6 @@
 
     .theme-toggle:not([data-theme]) {
       @include light-icon;
-    }
-
-    &[data-theme='auto'] {
-      gap: 5px;
-
-      .label {
-        opacity: 1;
-        transform: scaleX(1);
-        max-width: 30px;
-      }
-      @media not all and (prefers-color-scheme: dark) {
-        @include light-icon;
-      }
-      @media (prefers-color-scheme: dark) {
-        @include dark-icon;
-      }
     }
 
     &[data-theme='light'] {

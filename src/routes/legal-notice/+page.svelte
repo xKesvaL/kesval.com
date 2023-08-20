@@ -4,8 +4,8 @@
 
   export let data: PageData;
   const { email } = data;
-  const title = `${$t('legalNotice.meta.title')} - KesvaL`
-  const description = $t('legalNotice.meta.description')
+  const title = `${$t('legalNotice.meta.title')} - KesvaL`;
+  const description = $t('legalNotice.meta.description');
   const url = 'https://kesval.com/legal-notice';
 </script>
 
@@ -23,7 +23,6 @@
 
   <meta name="robots" content="noindex, nofollow" />
 </svelte:head>
-
 
 <section class="container section">
   <h1>{$t('legalNotice.meta.title')}</h1>
@@ -84,7 +83,7 @@
 
     a {
       text-decoration: underline;
-      color: var(--color-accent-500);
+      color: var(--secondary-500);
     }
   }
 </style>
