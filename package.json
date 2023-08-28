@@ -60,7 +60,7 @@
     "image-transmutation": "^0.1.2",
     "is-emoji-supported": "^0.0.5",
     "js-search": "^2.0.1",
-    "luxon": "^3.4.0",
+    "luxon": "^3.4.2",
     "mdsvex": "^0.11.0",
     "nprogress": "^0.2.0",
     "prismjs": "^1.29.0",
