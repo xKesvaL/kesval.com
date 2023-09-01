@@ -88,10 +88,9 @@
 </header>
 
 <style lang="scss">
-  @use '$design' as *;
-
   header {
     --padding: 1rem;
+    view-transition-name: header;
 
     display: flex;
     justify-content: flex-end;

@@ -43,8 +43,6 @@
 </button>
 
 <style lang="scss">
-  @use '$design' as *;
-
   button {
     color: var(--base-800);
     display: flex;

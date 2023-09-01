@@ -46,8 +46,6 @@
 </section>
 
 <style lang="scss">
-  @use '$design' as *;
-
   section {
     display: grid;
     grid-template-rows: auto 1fr;
@@ -123,7 +121,7 @@
             font-weight: var(--fw-bold);
             font-family: var(--ft-title);
             background: radial-gradient(rgba(var(--base-200-rgb), 0.3), rgba(var(--base-200-rgb), 0.3)),
-              radial-grad-primary(0.15);
+              radial-gradient(rgba(var(--primary-200-rgb), 0.3), transparent);
             border-radius: 9999px;
             aspect-ratio: 1;
             display: flex;

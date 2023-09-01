@@ -36,8 +36,6 @@
 </div>
 
 <style lang="scss">
-  @use '$design' as *;
-
   div {
     display: grid;
     gap: 1rem;

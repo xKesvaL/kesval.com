@@ -37,8 +37,6 @@
 </section>
 
 <style lang="scss">
-  @use '$design' as *;
-
   section {
     padding-block: 2.5rem;
     display: flex;

@@ -25,8 +25,6 @@
 </section>
 
 <style lang="scss">
-  @use '$design' as *;
-
   section {
     --ct-max-width: 72rem;
     h1 {

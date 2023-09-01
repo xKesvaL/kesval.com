@@ -24,8 +24,6 @@
 </div>
 
 <style lang="scss">
-  @use '$design' as *;
-
   div {
     font-size: var(--fs-300);
     margin-inline: auto;

@@ -45,7 +45,7 @@
     align-items: center;
     justify-items: center;
     row-gap: 1rem;
-    background: radial-gradient(circle, rgba(var(--primary-500-rgb), 0.2) 0%, transparent 60%);
+    background: radial-gradient(circle, rgba(var(--primary-500-rgb), 0.15) 0%, transparent 50%);
 
     @include mq(md) {
       column-gap: 1rem;

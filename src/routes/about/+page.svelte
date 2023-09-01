@@ -93,8 +93,6 @@
 </section>
 
 <style lang="scss">
-  @use '$design' as *;
-
   section {
     &.min {
       min-height: 90vh;

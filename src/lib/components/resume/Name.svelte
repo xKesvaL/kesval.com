@@ -10,8 +10,6 @@
 </div>
 
 <style lang="scss">
-  @use '$design' as *;
-
   .resume-name {
     @include mq(md) {
       margin-right: auto;

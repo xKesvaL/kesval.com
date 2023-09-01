@@ -51,8 +51,6 @@
 </article>
 
 <style lang="scss">
-  @use '$design' as *;
-
   .resume {
     overflow: hidden;
     position: relative;

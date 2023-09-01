@@ -11,8 +11,6 @@
 </span>
 
 <style lang="scss">
-  @use '$design' as *;
-
   .chip {
     --rotation: 135deg;
     padding: 0.25rem 0.5rem;
@@ -21,12 +19,12 @@
 
     &.primary {
       border: 1px solid rgba(var(--primary-900-rgb), 0.3);
-      background: linear-grad-primary(var(--rotation), 0.3);
+      background: linear-gradient(var(--rotation), rgba(var(--primary-500-rgb), 0.3), transparent);
     }
 
     &.secondary {
       border: 1px solid rgba(var(--secondary-900-rgb), 0.3);
-      background: linear-grad-secondary(var(--rotation), 0.3);
+      background: linear-gradient(var(--rotation), rgba(var(--secondary-500-rgb), 0.3), transparent);
     }
   }
 </style>

@@ -64,9 +64,8 @@
 {/if}
 
 <style lang="scss">
-  @use '$design' as *;
-
   .scroll-button {
+    view-transition-name: back-to-top;
     position: fixed;
     display: grid;
     bottom: 0;

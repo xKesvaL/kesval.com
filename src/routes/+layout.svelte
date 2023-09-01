@@ -9,13 +9,13 @@
   import { webVitals } from '$lib/utils/vitals';
   import { inject } from '@vercel/analytics';
   import BackToTop from '$lib/components/layout/BackToTop.svelte';
-  import { blur, fly } from 'svelte/transition';
   import { navigating } from '$app/stores';
   import NProgress from 'nprogress';
   import '$lib/scss/nprogress.scss';
   import type { LayoutData } from './$types';
   import { polyfillCountryFlagEmojis } from '$lib/utils/functions';
   import { locale, locales } from 'svelte-i18n';
+  import { onNavigate } from '$app/navigation';
   NProgress.configure({ minimum: 0.2, easing: 'ease', speed: 600 });
   $: $navigating ? NProgress.start() : NProgress.done();
   polyfillCountryFlagEmojis();
@@ -47,6 +47,17 @@
       analyticsId,
     });
   }
+
+  onNavigate((navigation) => {
+    if (!document.startViewTransition) return;
+
+    return new Promise((resolve) => {
+      document.startViewTransition(async () => {
+        resolve();
+        await navigation.complete;
+      });
+    });
+  });
 </script>
 
 <svelte:head>
@@ -61,11 +72,9 @@
 
 <Header />
 
-{#key data.url.pathname}
-  <main in:blur={{ duration: 300, delay: 300 }} out:blur={{ duration: 300 }}>
-    <slot />
-  </main>
-{/key}
+<main>
+  <slot />
+</main>
 
 <ContactBot {email} />
 <BackToTop />

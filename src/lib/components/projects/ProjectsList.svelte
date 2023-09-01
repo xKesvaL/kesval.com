@@ -54,8 +54,6 @@
 <AllSVGs />
 
 <style lang="scss">
-  @use '$design' as *;
-
   .wrapper {
     display: flex;
     flex-direction: column;

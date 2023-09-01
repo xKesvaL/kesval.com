@@ -1,5 +1,6 @@
 /* Make clicks pass-through */
 #nprogress {
+  view-transition-name: nprogress;
   pointer-events: none;
 
   .bar {

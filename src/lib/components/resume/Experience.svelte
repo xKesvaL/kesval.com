@@ -42,8 +42,6 @@
 </div>
 
 <style lang="scss">
-  @use '$design' as *;
-
   .resume-experience {
     .experience {
       display: flex;

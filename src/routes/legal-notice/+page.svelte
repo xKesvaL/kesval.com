@@ -67,8 +67,6 @@
 </section>
 
 <style lang="scss">
-  @use '$design' as *;
-
   section {
     h1 {
       text-align: center;

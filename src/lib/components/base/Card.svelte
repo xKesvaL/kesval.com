@@ -44,8 +44,6 @@
 </svelte:element>
 
 <style lang="scss">
-  @use '$design' as *;
-
   .card {
     --drop-x: 0;
     --drop-y: 0;
@@ -59,6 +57,7 @@
     max-width: none;
     min-width: auto;
     height: 100%;
+    background: rgba(var(--base-200-rgb), 0.25);
 
     @include mq(xs) {
       grid-row: span 1;

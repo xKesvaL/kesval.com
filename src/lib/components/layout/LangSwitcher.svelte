@@ -26,8 +26,6 @@
 </select>
 
 <style lang="scss">
-  @use '$design' as *;
-
   select {
     background: none;
     display: flex;

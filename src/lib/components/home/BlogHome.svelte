@@ -17,8 +17,6 @@
 </section>
 
 <style lang="scss">
-  @use '$design' as *;
-
   section {
     display: grid;
     h2 {

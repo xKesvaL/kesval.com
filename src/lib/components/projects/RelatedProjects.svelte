@@ -29,8 +29,6 @@
 {/if}
 
 <style lang="scss">
-  @use '$design' as *;
-
   section {
     padding-block: 5rem;
 

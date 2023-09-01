@@ -81,8 +81,6 @@
 </section>
 
 <style lang="scss">
-  @use '$design' as *;
-
   section {
     padding: 1rem !important;
   }

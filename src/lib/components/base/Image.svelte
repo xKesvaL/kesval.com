@@ -74,8 +74,6 @@
 {/if}
 
 <style lang="scss">
-  @use '$design' as *;
-
   img,
   div {
     width: 100%;

@@ -43,8 +43,6 @@
 </Card>
 
 <style lang="scss">
-  @use '$design' as *;
-
   .card-icon {
     height: 50px;
     width: 50px;

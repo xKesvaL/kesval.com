@@ -152,9 +152,8 @@
 </div>
 
 <style lang="scss">
-  @use '$design' as *;
-
   .chat-bot {
+    view-transition-name: contact-bot;
     position: fixed;
     inset: 0;
     border: 2px solid var(--primary-400);

@@ -58,8 +58,6 @@
 </ul>
 
 <style lang="scss">
-  @use '$design' as *;
-
   .resume-contact {
     list-style: none;
     display: grid;

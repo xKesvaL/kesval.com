@@ -29,9 +29,8 @@
 </footer>
 
 <style lang="scss">
-  @use '$design' as *;
-
   footer {
+    view-transition-name: footer;
     min-height: 20vh;
     background: linear-gradient(135deg, rgba(var(--primary-100-rgb), 0.7), rgba(var(--primary-100-rgb), 0.3));
     color: white;

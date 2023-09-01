@@ -174,8 +174,6 @@
 </aside>
 
 <style lang="scss">
-  @use '$design' as *;
-
   aside {
     overflow-wrap: break-word;
     height: max-content;
