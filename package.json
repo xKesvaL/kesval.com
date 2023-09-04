@@ -70,7 +70,7 @@
     "rehype-external-links": "^2.1.0",
     "rehype-slug": "^5.1.0",
     "striptags": "^3.2.0",
-    "svelte-i18n": "^3.7.0",
+    "svelte-i18n": "^3.7.3",
     "xss": "^1.0.14"
   }
 }
