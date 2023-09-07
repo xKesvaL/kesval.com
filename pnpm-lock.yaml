@@ -52,7 +52,7 @@ dependencies:
     version: 3.2.0
   svelte-i18n:
     specifier: ^3.7.3
-    version: 3.7.3(svelte@4.2.0)
+    version: 3.7.4(svelte@4.2.0)
   xss:
     specifier: ^1.0.14
     version: 1.0.14
@@ -3355,8 +3355,8 @@ packages:
     dependencies:
       svelte: 4.2.0
 
-  /svelte-i18n@3.7.3(svelte@4.2.0):
-    resolution: {integrity: sha512-f5ZEQ8hfaRVgnzMxFZvaOP2iLOG4tLgKTK8xmVFAK728utG7pZlIm6G0dUkJ/9jyq7OyRWBx5DC1h3LyEBMvKQ==}
+  /svelte-i18n@3.7.4(svelte@4.2.0):
+    resolution: {integrity: sha512-yGRCNo+eBT4cPuU7IVsYTYjxB7I2V8qgUZPlHnNctJj5IgbJgV78flsRzpjZ/8iUYZrS49oCt7uxlU3AZv/N5Q==}
     engines: {node: '>= 16'}
     hasBin: true
     peerDependencies:
