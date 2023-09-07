@@ -79,6 +79,7 @@
       .subtitle {
         font-size: var(--fs-600);
         color: var(--base-900);
+        margin-top: -0.5rem;
         margin-bottom: 1rem;
       }
 
