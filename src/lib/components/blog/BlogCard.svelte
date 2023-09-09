@@ -16,7 +16,7 @@
   padding={'0'}
   classes={vertical ? ['vertical'] : []}
   color="rgba(var(--secondary-300-rgb), 0.3)"
-  cardLabel={$t('std.seeMoreOf', { values: { name: post.title } })}>
+  cardLabel="{$t('std.seeMoreOf', { values: { name: post.title } })} {post.readingTime} {post.excerpt}">
   <div class:vertical class="wrapper">
     <div class="image">
       <Image
