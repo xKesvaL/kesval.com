@@ -4,6 +4,7 @@
   import Card from '$lib/components/base/Card.svelte';
   import Chip from '$lib/components/base/Chip.svelte';
   import Image from '../base/Image.svelte';
+  import { t } from 'svelte-i18n';
 
   export let post: Post;
 
@@ -14,7 +15,8 @@
   href="/blog/{post.slug}"
   padding={'0'}
   classes={vertical ? ['vertical'] : []}
-  color="rgba(var(--secondary-300-rgb), 0.3)">
+  color="rgba(var(--secondary-300-rgb), 0.3)"
+  cardLabel={$t('std.seeMoreOf', { values: { name: post.title } })}>
   <div class:vertical class="wrapper">
     <div class="image">
       <Image

@@ -13,6 +13,8 @@
 
   export let color: string | null = null;
 
+  export let cardLabel = '';
+
   $: if (el) {
     el.style.setProperty('--drop-color', color || '');
   }
@@ -37,7 +39,8 @@
   on:mousemove={onHover}
   class="card {classes.join(' ')}"
   class:scale
-  role={href ? 'link' : 'none'}>
+  role={href ? 'link' : 'none'}
+  aria-label={cardLabel}>
   <div class="card-bg-img" style="{padding ? `padding: ${padding}` : ''}; {cardBgStyle}">
     <slot />
   </div>

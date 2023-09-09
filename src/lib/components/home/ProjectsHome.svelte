@@ -23,7 +23,7 @@
   <div class="projects" role="region" on:click={projectClickHandle} on:keypress={projectClickHandle}>
     {#each projects as project, i (project.projectId)}
       {#if i < 5}
-        <div class="project" id="project-{i + 1}">
+        <div class="project" id="project-{i + 1}" data-expanded={i + 1 === parseInt(expandedIndex)}>
           <Card padding="var(--panel-padding)" scale={false} cardBgStyle="padding-right: var(--panel-padding-right);">
             <h3 class="project-heading" id="project-{i + 1}-heading">
               <button
@@ -99,7 +99,7 @@
         transition: 0.3s;
         will-change: flex-basis, flex-grow;
 
-        &[aria-expanded='true'] {
+        &[data-expanded='true'] {
           flex-basis: clamp(20rem, 30vh, 27.5rem);
           flex-grow: 1;
 

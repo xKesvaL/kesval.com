@@ -1,6 +1,6 @@
 <script lang="ts">
   import { getFlagEmoji } from '$lib/utils/functions';
-  import { locale, locales } from 'svelte-i18n';
+  import { locale, locales, t } from 'svelte-i18n';
 
   const transformLocaleToFlag = (locale: string) => {
     switch (locale) {
@@ -12,18 +12,23 @@
   };
 </script>
 
-<select
-  on:change={(e) => {
-    localStorage.setItem('lang', e.currentTarget.value);
-    locale.set(e.currentTarget.value);
-  }}
-  class="no-anim">
-  {#each $locales as lang, i}
-    <option value={lang} selected={i === $locales.indexOf($locale || localStorage?.getItem('lang') || 'en')}>
-      {getFlagEmoji(transformLocaleToFlag(lang))}
-    </option>
-  {/each}
-</select>
+<label>
+  <span class="visually-hidden">
+    {$t('std.changeLanguage')}
+  </span>
+  <select
+    on:change={(e) => {
+      localStorage.setItem('lang', e.currentTarget.value);
+      locale.set(e.currentTarget.value);
+    }}
+    class="no-anim">
+    {#each $locales as lang, i}
+      <option value={lang} selected={i === $locales.indexOf($locale || localStorage?.getItem('lang') || 'en')}>
+        {getFlagEmoji(transformLocaleToFlag(lang))}
+      </option>
+    {/each}
+  </select>
+</label>
 
 <style lang="scss">
   select {
