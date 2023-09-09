@@ -23,7 +23,7 @@
   <div class="projects" role="region" on:click={projectClickHandle} on:keypress={projectClickHandle}>
     {#each projects as project, i (project.projectId)}
       {#if i < 5}
-        <div class="project" id="project-{i + 1}" aria-expanded={i + 1 === parseInt(expandedIndex)}>
+        <div class="project" id="project-{i + 1}">
           <Card padding="var(--panel-padding)" scale={false} cardBgStyle="padding-right: var(--panel-padding-right);">
             <h3 class="project-heading" id="project-{i + 1}-heading">
               <button
