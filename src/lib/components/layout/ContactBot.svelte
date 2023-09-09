@@ -170,6 +170,7 @@
     opacity: 0;
     pointer-events: none;
     transform: translateY(5%);
+    overflow: hidden;
 
     &.open {
       transform: translateY(0);
@@ -263,6 +264,7 @@
 
       .close {
         color: white;
+        background: none;
       }
 
       .wrapper {

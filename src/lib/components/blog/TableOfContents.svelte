@@ -274,6 +274,7 @@
       transition: 0.3s;
       display: grid;
       place-items: center;
+      height: auto;
 
       &:hover {
         scale: 1.05;

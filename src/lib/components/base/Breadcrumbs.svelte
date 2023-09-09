@@ -14,7 +14,7 @@
     </li>
     <li>
       <a href="/{type === 'project' ? 'projects' : 'blog'}">
-        {type === 'project' ? 'Projects' : 'Blog'}
+        {type === 'project' ? $t('projects.meta.title') : $t('blog.meta.title')}
       </a>
     </li>
     <li>

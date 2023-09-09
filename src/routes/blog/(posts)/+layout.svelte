@@ -95,21 +95,22 @@
 
     .cover {
       height: 20rem;
+      margin-bottom: 1rem;
+    }
+
+    .post {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .side {
+      flex: 1 1 0%;
     }
   }
 
   :root {
     scroll-padding: 12vh;
-  }
-
-  .post {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-  }
-
-  .side {
-    flex: 1 1 0%;
   }
 
   article {

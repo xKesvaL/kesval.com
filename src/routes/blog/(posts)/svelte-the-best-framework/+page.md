@@ -1,6 +1,6 @@
 ---
-title: Svelte(Kit), The best framework?
-slug: svelte-kit-the-best-framework
+title: Svelte, The best framework?
+slug: svelte-the-best-framework
 date: 2023-08-12
 excerpt: Why I think SvelteKit is the best framework for building websites of any size, and why I think you should use it.
 tags:
@@ -211,7 +211,6 @@ You can always pass data from one file to another, for example, the data that th
 If you're not using TypeScript yet, I don't know what you're doing. Svelte has great support for typescript, as everything is carefuly typed and there's also plenty of generated types as you might've seen in the previous example! Let's say this was my `+page.ts` file:
 
 ```ts
-
 export const load = () => {
   return {
     title: 'Hello World',
