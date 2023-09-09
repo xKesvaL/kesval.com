@@ -24,6 +24,7 @@
     padding: 1.5rem;
     border-radius: 0 1rem 1rem 0;
     margin-inline: 2rem;
+    margin-top: 3rem;
 
     &.info {
       background: rgba(var(--info-300-rgb), 0.3);
