@@ -47,7 +47,7 @@
               </div>
             </div>
             <div class="project-button">
-              <a href={project.href} class="button secondary">{$t('std.seeMore')}</a>
+              <a href={project.href} class="button secondary">{project.name}</a>
             </div>
           </Card>
         </div>
