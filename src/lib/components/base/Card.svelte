@@ -37,7 +37,7 @@
   on:mousemove={onHover}
   class="card {classes.join(' ')}"
   class:scale
-  role="region">
+  role={href ? 'link' : 'none'}>
   <div class="card-bg-img" style="{padding ? `padding: ${padding}` : ''}; {cardBgStyle}">
     <slot />
   </div>
