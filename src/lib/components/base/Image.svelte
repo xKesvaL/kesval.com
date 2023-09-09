@@ -17,6 +17,7 @@
   export let rounding: 'none' | 'sm' | 'md' | 'lg' | 'full' = 'none';
 
   export let loading: 'lazy' | 'eager' = 'lazy';
+  export let viewTransitionName: string | undefined = undefined;
 
   let error = false;
   let fileName: string;
@@ -57,6 +58,7 @@
     class={rounding === 'none' ? '' : `rounding-${rounding}`}
     class:border
     srcset={buildSrcset()}
+    style={viewTransitionName ? `view-transition-name: ${viewTransitionName};` : ''}
     {src}
     {alt}
     {loading}

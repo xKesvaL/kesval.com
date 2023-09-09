@@ -5,6 +5,8 @@
   import Chip from '$lib/components/base/Chip.svelte';
   import { locale, t } from 'svelte-i18n';
   import { capitalizeFirstLetter } from '$lib/utils/functions';
+  import Image from '$lib/components/base/Image.svelte';
+  import { dev } from '$app/environment';
 
   export let data: LayoutData;
 
@@ -33,6 +35,13 @@
 </svelte:head>
 
 <section>
+  <div class="cover">
+    <Image
+      src="/images/blog/{post.slug}/cover.png"
+      alt={post.excerpt}
+      border={false}
+      viewTransitionName={`blog-img-${post.slug}`} />
+  </div>
   <Breadcrumbs name={post.title} type="blog" href={post.slug} />
   <div class="post">
     <div class="side"></div>
@@ -83,6 +92,10 @@
 <style lang="scss">
   section {
     padding: 1rem !important;
+
+    .cover {
+      height: 20rem;
+    }
   }
 
   :root {

@@ -58,6 +58,7 @@
     min-width: auto;
     height: 100%;
     background: rgba(var(--base-200-rgb), 0.25);
+    overflow: hidden;
 
     @include mq(xs) {
       grid-row: span 1;

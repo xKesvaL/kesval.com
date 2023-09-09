@@ -17,7 +17,11 @@
   color="rgba(var(--secondary-300-rgb), 0.3)">
   <div class:vertical class="wrapper">
     <div class="image">
-      <Image src="/images/blog/{post.slug}/cover.{dev ? 'png' : 'avif'}" alt={post.excerpt} border={false} />
+      <Image
+        src="/images/blog/{post.slug}/cover.png"
+        alt={post.excerpt}
+        border={false}
+        viewTransitionName={`blog-img-${post.slug}`} />
     </div>
     <div class="text">
       <h3>{post.title}</h3>
@@ -40,6 +44,7 @@
     flex-direction: column;
     transition: 0.2s;
     height: 100%;
+    max-height: 16rem;
 
     @include mq(xs) {
       flex-direction: row;
@@ -47,6 +52,7 @@
 
     &.vertical {
       @include mq(lg) {
+        max-height: none;
         flex-direction: column;
       }
     }
