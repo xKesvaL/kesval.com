@@ -122,6 +122,10 @@ svg {
     text-decoration: none;
   }
 
+  code {
+    font-size: 1rem;
+  }
+
   pre {
     background: linear-gradient(225deg, rgba(var(--primary-500-rgb), 0.1), rgba(32, 32, 44, 0)),
       linear-gradient(45deg, rgba(var(--primary-500-rgb), 0.05), rgba(32, 32, 44, 0)),
