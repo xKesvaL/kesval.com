@@ -1,5 +1,5 @@
 ---
-title: Svelte, The best framework?
+title: Svelte, The Best Framework?
 slug: svelte-the-best-framework
 date: 2023-08-12
 excerpt: Why I think SvelteKit is the best framework for building websites of any size, and why I think you should use it.
@@ -19,7 +19,6 @@ categories:
 <script>
   import Callout from '$lib/components/base/Callout.svelte';
   import Image from '$lib/components/base/Image.svelte';
-  import CodeBlock from '$lib/components/base/CodeBlock.svelte';
 </script>
 
 ## Svelte, a cool kid
@@ -38,10 +37,10 @@ Below, you can see the results of the State of JS 2022 survey about the most pop
 
 <div class="iw">
   <div>
-    <Image src="/images/blog/svelte-kit-the-best-framework/stateofjs-2022-framework-list.png" alt="State of JS 2022 Survey, Front End Frameworks List" figcaption="Frameworks list" />
+    <Image src="/images/blog/svelte-the-best-framework/stateofjs-2022-framework-list.png" alt="State of JS 2022 Survey, Front End Frameworks List" figcaption="Frameworks list" />
   </div>
   <div>
-    <Image src="/images/blog/svelte-kit-the-best-framework/stateofjs-2022-framework-interest.png" alt="State of JS 2022 Survey, Front End Frameworks Interest" figcaption="Frameworks interest" />
+    <Image src="/images/blog/svelte-the-best-framework/stateofjs-2022-framework-interest.png" alt="State of JS 2022 Survey, Front End Frameworks Interest" figcaption="Frameworks interest" />
   </div>
 </div>
 

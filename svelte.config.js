@@ -19,7 +19,13 @@ const config = {
       extensions,
       rehypePlugins: [
         rehypeAccessibleEmojis,
-        rehypeExternalLinks,
+        [
+          rehypeExternalLinks,
+          {
+            target: '_blank',
+            rel: ['noopener', 'noreferrer'],
+          },
+        ],
         rehypeSlug,
         [
           rehypeAutolinkHeadings,
@@ -57,3 +63,4 @@ const config = {
 };
 
 export default config;
+
