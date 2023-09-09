@@ -23,9 +23,10 @@
     position: relative;
     padding: 1.5rem;
     border-radius: 0 1rem 1rem 0;
+    margin-inline: 2rem;
 
     &.info {
-      background: linear-grad-info(135deg, 0.4), linear-grad-info(315deg, 0.3), linear-grad-primary(315deg, 0.1);
+      background: rgba(var(--info-300-rgb), 0.3);
       border-left: var(--clt-border-w) solid var(--info-500);
 
       .icon {
@@ -34,7 +35,7 @@
     }
 
     &.danger {
-      background: linear-grad-danger(135deg, 0.5), linear-grad-danger(315deg, 0.4), linear-grad-primary(315deg, 0.1);
+      background: rgba(var(--danger-300-rgb), 0.3);
       border-left: var(--clt-border-w) solid var(--danger-500);
 
       .icon {
@@ -55,6 +56,7 @@
       background: var(--base-100);
       transform: translate(calc(-50% - (var(--clt-border-w) / 2)), -50%);
       padding: 0.5rem;
+      box-shadow: 0 0 0.5rem 2px var(--base-200);
     }
   }
 </style>
