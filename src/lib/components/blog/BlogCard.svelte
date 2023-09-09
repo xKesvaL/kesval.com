@@ -46,9 +46,9 @@
     flex-direction: column;
     transition: 0.2s;
     height: 100%;
-    max-height: 16rem;
 
     @include mq(xs) {
+      max-height: 16rem;
       flex-direction: row;
     }
 
