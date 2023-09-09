@@ -67,6 +67,12 @@ svg {
 .prose {
   overflow-x: auto;
 
+  p > code {
+    color: var(--primary-700);
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+
   h2 {
     font-size: var(--fs-700);
   }
