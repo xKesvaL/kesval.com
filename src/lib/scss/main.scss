@@ -67,6 +67,14 @@ svg {
 .prose {
   overflow-x: auto;
 
+  h2 {
+    font-size: var(--fs-700);
+  }
+
+  h3 {
+    font-size: var(--fs-600);
+  }
+
   a:not(.heading-link) {
     color: var(--secondary-600);
     text-decoration: none;
@@ -187,3 +195,4 @@ svg {
     300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right,
     150ms cubic-bezier(0.4, 0, 1, 1) both blur-in;
 }
+
