@@ -55,6 +55,10 @@
     &.vertical {
       @include mq(lg) {
         max-height: none;
+        .image {
+          max-height: 16.5rem;
+        }
+
         flex-direction: column;
       }
     }
