@@ -24,7 +24,7 @@
         viewTransitionName={`blog-img-${post.slug}`} />
     </div>
     <div class="text">
-      <h3>{post.title}</h3>
+      <h3 style="view-transition-name: blog-title-{post.slug}">{post.title}</h3>
       <span>{post.readingTime}</span>
       <p>{post.excerpt}</p>
 
@@ -59,14 +59,6 @@
 
     div {
       flex: 1;
-    }
-
-    .image {
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
     }
 
     .text {

@@ -47,7 +47,7 @@
     <div class="side"></div>
     <article class="prose">
       <header>
-        <h1>
+        <h1 style="view-transition-name: blog-title-{post.slug}">
           {post.title}
         </h1>
         <div class="infos">
