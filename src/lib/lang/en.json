@@ -214,30 +214,19 @@
       {
         "category": "tech",
         "description": "I have a lot of things to learn. Knowledge is scattered on the internet, but I want a place to regroup everything, so I made this app. It allows me to track my skills and my progress, and it's all open-source.",
-        "github": "https://github.com/xKesvaL/skills.kesval.com",
+        "github": "https://github.com/xKesvaL/supaskills.kesval.com",
         "href": "/projects/skills",
         "language": "svelte",
-        "name": "Skills",
-        "projectId": "5",
+        "name": "SupaSkills",
+        "projectId": "4",
         "shortDescription": "This is an app I made for myself, to track my skills and my progress.",
         "startDate": "next",
         "tags": []
       },
       {
         "category": "tech",
-        "description": "I think presentations can be really cool, but really hard to make. So I made this website to help me make them, using my methods. You can create interactive presentations with it, and it's all code-logic based.",
-        "href": "/projects/presentations",
-        "language": "svelte",
-        "name": "Presentations",
-        "projectId": "4",
-        "shortDescription": "PowerPoint is boring. Create interactive presentations using code, you just need Svelte.",
-        "startDate": "next",
-        "tags": []
-      },
-      {
-        "category": "tech",
         "description": "I love going to the gym, but finding a good program can be hard or expensive. So I made SupaPower, an open-source app made to to help you track your workouts and create a program suited to your needs.",
-        "github": "https://github.com/xKesvaL/lifting.kesval.com",
+        "github": "https://github.com/xKesvaL/supapower.kesval.com",
         "href": "/projects/supapower",
         "language": "svelte",
         "name": "SupaPower",
@@ -248,14 +237,14 @@
       },
       {
         "category": "tech",
-        "description": "In my free time, I like to play chess. So I made this website to play chess with my friends. It's really simple to use, but I won't be adding any new features to it. It's just a fun project to learn react and nextjs.",
-        "href": "/projects/chessval",
-        "language": "react",
-        "name": "Chessval",
+        "description": "I think presentations can be really cool, but really hard to make. So I made this website to help me make them, using my methods. You can create interactive presentations with it, and it's all code-logic based.",
+        "href": "/projects/presentations",
+        "language": "svelte",
+        "name": "Presentations",
         "projectId": "2",
-        "shortDescription": "Play chess with your friends for free.",
-        "startDate": "2023-04-16",
-        "tags": ["react", "front-end", "ts", "tailwind", "daisyui", "open-source", "serverless", "nextjs"]
+        "shortDescription": "PowerPoint is boring. Create interactive presentations using code, you just need Svelte.",
+        "startDate": "next",
+        "tags": []
       },
       {
         "category": "tech",
@@ -411,4 +400,3 @@
     "yearsOld": "years old"
   }
 }
-

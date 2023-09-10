@@ -53,10 +53,7 @@
         "J'espère que tu aimes mon travail.",
         "Je peux t'aider pour autre chose ?"
       ],
-      "other": [
-        "Ok, pas de soucis.",
-        "Je peux t'aider pour autre chose ?"
-      ],
+      "other": ["Ok, pas de soucis.", "Je peux t'aider pour autre chose ?"],
       "teachHTMLCSS": [
         "Eh bien, je suggère <a target=\"_blank\" href=\"https://www.freecodecamp.org/learn/2022/responsive-web-design/\" class=\"special-link\" rel=\"external\">ce cours</a> (EN) de freeCodeCamp.",
         "C'est gratuit, interactif, et tu apprendras tout du basique à des choses avancées.",
@@ -217,15 +214,26 @@
       {
         "category": "tech",
         "description": "J'ai beaucoup de choses à apprendre. La connaissance est dispersée sur internet, mais je voulais un endroit pour regrouper tout, alors j'ai fait cette app. Elle me permet de suivre mes compétences et mes progrès, et tout est open-source.",
-        "github": "https://github.com/xKesvaL/skills.kesval.com",
+        "github": "https://github.com/xKesvaL/supaskills.kesval.com",
         "href": "/projects/skills",
         "language": "svelte",
-        "name": "Skills",
-        "projectId": "5",
+        "name": "SupaSkills",
+        "projectId": "4",
         "shortDescription": "Une application pour suivre mes compétences et leurs progrès",
         "startDate": "next",
-        "tags": [
-        ]
+        "tags": []
+      },
+      {
+        "category": "tech",
+        "description": "J'adore aller à la salle, mais trouver un bon programme est souvent dur ou cher. Donc j'ai créé SupaPower, une app open-source faite pour t'aider à suivre tes entraînements et créer un programme adapté à tes besoins.",
+        "github": "https://github.com/xKesvaL/supapower.kesval.com",
+        "href": "/projects/supapower",
+        "language": "svelte",
+        "name": "SupaPower",
+        "projectId": "3",
+        "shortDescription": "Suis tes entraînements et trouve un programme adapté à tes besoins.",
+        "startDate": "2023-06-1",
+        "tags": []
       },
       {
         "category": "tech",
@@ -233,44 +241,10 @@
         "href": "/projects/presentations",
         "language": "svelte",
         "name": "Presentations",
-        "projectId": "4",
+        "projectId": "2",
         "shortDescription": "PowerPoint m'ennuie. Créez des présentations interactives en utilisant Svelte.",
         "startDate": "next",
-        "tags": [
-        ]
-      },
-      {
-        "category": "tech",
-        "description": "J'adore aller à la salle, mais trouver un bon programme est souvent dur ou cher. Donc j'ai créé SupaPower, une app open-source faite pour t'aider à suivre tes entraînements et créer un programme adapté à tes besoins.",
-        "github": "https://github.com/xKesvaL/lifting.kesval.com",
-        "href": "/projects/supapower",
-        "language": "svelte",
-        "name": "SupaPower",
-        "projectId": "3",
-        "shortDescription": "Suis tes entraînements et trouve un programme adapté à tes besoins.",
-        "startDate": "2023-06-1",
-        "tags": [
-        ]
-      },
-      {
-        "category": "tech",
-        "description": "Dans mon temps libre, j'aime bien jouer aux échecs. Donc, j'ai fait ce site pour pouvoir jouer aux échecs avec mes amis. C'est simple à utiliser, mais je n'irais pas plus loin que ça (je pense).",
-        "href": "/projects/chessval",
-        "language": "react",
-        "name": "Chessval",
-        "projectId": "2",
-        "shortDescription": "Joue aux échecs avec tes amis, gratuitement pour toujours.",
-        "startDate": "2023-04-16",
-        "tags": [
-          "react",
-          "front-end",
-          "ts",
-          "tailwind",
-          "daisyui",
-          "open-source",
-          "serverless",
-          "nextjs"
-        ]
+        "tags": []
       },
       {
         "category": "tech",
@@ -283,15 +257,7 @@
         "shortDescription": "Mon site perso pour partager mon travail et mes pensées.",
         "site": "https://kesval.com",
         "startDate": "2023-03-19",
-        "tags": [
-          "svelte",
-          "front-end",
-          "ts",
-          "scss",
-          "personal",
-          "open-source",
-          "sveltekit"
-        ]
+        "tags": ["svelte", "front-end", "ts", "scss", "personal", "open-source", "sveltekit"]
       }
     ],
     "meta": {
@@ -432,3 +398,4 @@
     "yearsOld": "ans"
   }
 }
+
