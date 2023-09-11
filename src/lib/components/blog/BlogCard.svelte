@@ -76,6 +76,7 @@
       h3 {
         font-size: var(--fs-600);
         margin-bottom: -0.25rem;
+        text-wrap: balance;
       }
 
       & > span {
