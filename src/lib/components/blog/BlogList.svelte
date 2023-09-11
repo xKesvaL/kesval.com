@@ -42,6 +42,7 @@
 
     @include mq(lg) {
       grid-template-columns: 2fr 1fr;
+      grid-template-rows: 1fr 1fr;
     }
   }
 </style>

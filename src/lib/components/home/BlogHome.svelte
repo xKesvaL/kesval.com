@@ -26,6 +26,7 @@
     .list {
       display: grid;
       grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
       gap: 1rem;
 
       @include mq(lg) {
