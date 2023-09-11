@@ -57,4 +57,4 @@ Thank you for reading, and have a nice day. Never stop learning new things guys.
 
 ---
 
-If you wonder what the second logo is in the cover image, it's actually the JSON logo. I was really surprised when I saw it was the actual official logo.
+If you wonder what the first logo is in the cover image, it's actually the JSON logo. I was really surprised when I saw it was the actual official logo.
