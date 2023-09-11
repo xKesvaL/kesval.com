@@ -129,6 +129,7 @@
         margin-bottom: 2rem;
         font-size: var(--fs-800);
         text-align: center;
+        text-wrap: balance;
       }
 
       .infos {
