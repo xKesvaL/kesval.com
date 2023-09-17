@@ -2,17 +2,21 @@ import { defineConfig } from 'unlighthouse';
 
 export default defineConfig({
   site: 'kesval.com',
-  debug: true,
   ci: {
     buildStatic: true,
-  },
-  discovery: {
-    pagesDir: 'src/routes',
-    supportedExtensions: ['svelte', 'md', 'svx'],
   },
   scanner: {
     sitemap: ['https://kesval.com/sitemap.xml'],
     crawler: true,
     maxRoutes: false,
   },
+  urls: [
+    'https://kesval.com/',
+    'https://kesval.com/about/',
+    'https://kesval.com/projects/',
+    'https://kesval.com/blog/',
+    'https://kesval.com/blog/svelte-the-best-framework',
+    'https://kesval.com/blog/bun-a-revolution',
+    'https://kesval.com/blog/adding-types-to-json',
+  ],
 });
