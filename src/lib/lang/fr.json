@@ -215,7 +215,7 @@
         "category": "tech",
         "description": "J'ai beaucoup de choses à apprendre. La connaissance est dispersée sur internet, mais je voulais un endroit pour regrouper tout, alors j'ai fait cette app. Elle me permet de suivre mes compétences et mes progrès, et tout est open-source.",
         "github": "https://github.com/xKesvaL/supaskills.kesval.com",
-        "href": "/projects/skills",
+        "href": "/projects/supaskills",
         "language": "svelte",
         "name": "SupaSkills",
         "projectId": "4",
