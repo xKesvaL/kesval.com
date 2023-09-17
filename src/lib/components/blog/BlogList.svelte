@@ -31,7 +31,7 @@
 
 <div>
   {#each postsShowed as post, i}
-    <BlogCard {post} vertical={(i + 3) % 4 === 0 || (i + 2) % 5 === 0} />
+    <BlogCard {post} vertical={(i + 3) % 4 === 0 || (i + 5) % 4 === 0} />
   {/each}
 </div>
 
