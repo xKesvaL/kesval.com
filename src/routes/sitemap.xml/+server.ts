@@ -32,7 +32,7 @@ export async function GET() {
     ResponseToReturn += `
             <url>
                 <loc>${url}</loc>
-                <changefreq>monthly</changefreq>
+                <changefreq>daily</changefreq>
                 <priority>0.9</priority>
             </url>`;
   }
