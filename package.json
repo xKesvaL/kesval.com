@@ -10,7 +10,7 @@
   "homepage": "https://kesval.com",
   "license": "MIT",
   "scripts": {
-    "dev": "vite dev",
+    "dev": "vite dev --host",
     "build": "vite build",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -28,7 +28,6 @@
     "@sveltejs/adapter-static": "^2.0.3",
     "@sveltejs/kit": "^1.24.0",
     "@types/cookie": "^0.5.1",
-    "@types/js-cookie": "^3.0.3",
     "@types/luxon": "^3.3.1",
     "@types/node": "^20.5.9",
     "@types/nprogress": "^0.2.0",
