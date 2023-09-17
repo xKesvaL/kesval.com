@@ -16,7 +16,8 @@
   padding={'0'}
   classes={vertical ? ['vertical'] : []}
   color="rgba(var(--secondary-300-rgb), 0.3)"
-  cardLabel="{$t('std.seeMoreOf', { values: { name: post.title } })} {post.readingTime} {post.excerpt}">
+  cardLabel="{$t('std.seeMoreOf', { values: { name: post.title } })} {post.readingTime} {post.excerpt}"
+  cardStyle="grid-column: span 2; {vertical ? 'grid-column: span 1;' : ''} view-transition-name: blog-card-{post.slug}">
   <div class:vertical class="wrapper">
     <div class="image">
       <Image
@@ -68,7 +69,7 @@
     }
 
     .text {
-      padding: 1rem;
+      padding: 0.5rem;
       display: grid;
       grid-template-rows: auto auto 1fr auto;
       background: linear-grad-secondary(135deg, 0.025), linear-grad-secondary(315deg, 0.025);
@@ -77,18 +78,21 @@
         font-size: var(--fs-600);
         margin-bottom: -0.25rem;
         text-wrap: balance;
+        padding: 0.5rem 0.5rem 0 0.5rem;
       }
 
       & > span {
         font-size: var(--fs-300);
         margin-top: 0;
         opacity: 0.85;
+        padding: 0 0.5rem;
       }
 
       p {
         font-size: var(--fs-400);
         margin-top: 0.25rem;
         flex: 1;
+        padding: 0 0.5rem;
       }
 
       .tags {

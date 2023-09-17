@@ -5,6 +5,8 @@
 
   export let padding: string | null = null;
 
+  export let cardStyle = '';
+
   export let cardBgStyle = '';
 
   export let classes: string[] = [];
@@ -40,7 +42,8 @@
   class="card {classes.join(' ')}"
   class:scale
   role={href ? 'link' : 'none'}
-  aria-label={cardLabel}>
+  aria-label={cardLabel}
+  style={cardStyle}>
   <div class="card-bg-img" style="{padding ? `padding: ${padding}` : ''}; {cardBgStyle}">
     <slot />
   </div>

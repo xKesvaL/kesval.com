@@ -30,7 +30,7 @@
       gap: 1rem;
 
       @include mq(lg) {
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
       }
     }
 

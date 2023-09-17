@@ -31,7 +31,7 @@
 
 <div>
   {#each postsShowed as post, i}
-    <BlogCard {post} vertical={(i + 3) % 4 === 0} />
+    <BlogCard {post} vertical={(i + 3) % 4 === 0 || (i + 2) % 5 === 0} />
   {/each}
 </div>
 
@@ -41,8 +41,8 @@
     gap: 1rem;
 
     @include mq(lg) {
-      grid-template-columns: 2fr 1fr;
-      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-auto-rows: 1fr;
     }
   }
 </style>
