@@ -147,6 +147,7 @@
     }
 
     nav {
+      view-transition-name: header-nav;
       position: absolute;
       height: 100vh;
       width: 100%;
