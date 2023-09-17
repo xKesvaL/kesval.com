@@ -1,5 +1,4 @@
 import type { Skill, SkillType, TagPrimary, TagSecondary } from '$lib';
-import type { CookieAttributes } from 'js-cookie';
 import { DateTime } from 'luxon';
 
 export const updated = new Date('08-05-2023');
