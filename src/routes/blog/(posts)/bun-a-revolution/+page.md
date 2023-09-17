@@ -5,8 +5,9 @@ date: 2023-09-09
 excerpt: Bun is a Revolution in JavaScript runtimes, and you should be excited. Here's why.
 tags:
   - Bun
-  - Runtime
   - JavaScript
+  - Runtime
+  - Buntime
   - TypeScript
   - Backend
   - Opinion

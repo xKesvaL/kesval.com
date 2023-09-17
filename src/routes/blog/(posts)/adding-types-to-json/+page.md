@@ -5,9 +5,9 @@ date: 2023-09-11
 excerpt: I just learned you can add types to JSON files. Let me show you how.
 tags:
   - JSON
+  - TypeScript
   - Types
   - JavaScript
-  - TypeScript
   - Tutorial
   - How To
 categories:

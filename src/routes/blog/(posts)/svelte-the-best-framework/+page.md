@@ -13,7 +13,7 @@ tags:
   - Framework
   - Opinion
 categories:
-  - Tech
+  - Opinion
 ---
 
 <script>

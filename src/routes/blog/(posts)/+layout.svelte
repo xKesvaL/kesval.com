@@ -40,6 +40,7 @@
       src="/images/blog/{post.slug}/cover.png"
       alt={post.excerpt}
       border={false}
+      loading="eager"
       viewTransitionName={`blog-img-${post.slug}`} />
   </div>
   <Breadcrumbs name={post.title} type="blog" href={post.slug} />

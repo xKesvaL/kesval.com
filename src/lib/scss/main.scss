@@ -67,6 +67,24 @@ svg {
 .prose {
   overflow-x: auto;
 
+  table {
+    th,
+    td {
+      padding: 0.5rem 0.75rem !important;
+    }
+  }
+
+  b {
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: rgba(var(--base-950-rgb), 0.3);
+    text-shadow:
+      0 0 rgba(var(--danger-500-rgb), var(--dgstr)),
+      0 0 rgba(var(--success-500-rgb), calc(1 - (var(--dgstr))));
+    font-family: var(--ft-mono);
+  }
+
   p > code {
     color: var(--primary-700);
     font-weight: 700;
@@ -215,4 +233,3 @@ svg {
   width: 100%;
   height: 100%;
 }
-
