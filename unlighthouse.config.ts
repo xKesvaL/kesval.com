@@ -3,7 +3,6 @@ import { defineConfig } from 'unlighthouse';
 export default defineConfig({
   site: 'kesval.com',
   debug: true,
-  outputPath: '.vercel/output/static/performance',
   ci: {
     buildStatic: true,
   },
@@ -16,5 +15,4 @@ export default defineConfig({
     crawler: true,
     maxRoutes: false,
   },
-  
 });

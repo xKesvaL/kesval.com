@@ -20,9 +20,7 @@
     "postbuild": "npm run optimize-images",
     "optimize-images": "image-transmutation --run --sourceFolder './build/images' --targetFolder './build/images' --inputFormats 'jpg' --inputFormats 'jpeg' --inputFormats 'png' --outputFormats 'png' --outputFormats 'webp' --outputFormats 'avif'",
     "vercel-optimize-images": "image-transmutation --run --sourceFolder '.vercel/output/static/images' --targetFolder '.vercel/output/static/images' --inputFormats 'jpg' --inputFormats 'jpeg' --inputFormats 'png' --outputFormats 'png' --outputFormats 'webp' --outputFormats 'avif'",
-    "vercel-build": "npm run build && npm run vercel-optimize-images && npm run unlighthouse",
-    "unlighthouse": "unlighthouse-ci",
-    "deploy": "npm run unlighthouse && git add . && git commit -m 'feat: unlighthouse last build' && git push"
+    "vercel-build": "npm run build && npm run vercel-optimize-images"
   },
   "devDependencies": {
     "@kesval/design": "^3.1.0",
