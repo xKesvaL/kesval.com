@@ -65,6 +65,7 @@
     height: 100%;
     background: rgba(var(--base-200-rgb), 0.25);
     overflow: hidden;
+    grid-column: span 2;
 
     @include mq(xs) {
       grid-row: span 1;
@@ -73,6 +74,7 @@
     &.vertical {
       @include mq(lg) {
         grid-row: span 2;
+        grid-column: span 1;
       }
     }
 

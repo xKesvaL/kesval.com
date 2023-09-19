@@ -39,6 +39,7 @@
   div {
     display: grid;
     gap: 1rem;
+    grid-template-columns: 1fr;
 
     @include mq(lg) {
       grid-template-columns: 1fr 1fr 1fr;

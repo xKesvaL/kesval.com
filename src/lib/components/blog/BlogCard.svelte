@@ -17,7 +17,7 @@
   classes={vertical ? ['vertical'] : []}
   color="rgba(var(--secondary-300-rgb), 0.3)"
   cardLabel="{$t('std.seeMoreOf', { values: { name: post.title } })} {post.readingTime} {post.excerpt}"
-  cardStyle="grid-column: span 2; {vertical ? 'grid-column: span 1;' : ''} view-transition-name: blog-card-{post.slug}">
+  cardStyle="view-transition-name: blog-card-{post.slug}">
   <div class:vertical class="wrapper">
     <div class="image">
       <Image
