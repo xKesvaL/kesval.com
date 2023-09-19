@@ -100,6 +100,7 @@
         display: flex;
         gap: 0.5rem;
         margin-top: auto;
+        padding-top: 0.5rem;
       }
     }
   }
