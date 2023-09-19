@@ -48,7 +48,7 @@
     transition: 0.2s;
     height: 100%;
 
-    @include mq(xs) {
+    @include mq(sm) {
       max-height: 16rem;
       flex-direction: row;
     }

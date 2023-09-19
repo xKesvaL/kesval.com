@@ -67,7 +67,7 @@
     overflow: hidden;
     grid-column: span 2;
 
-    @include mq(xs) {
+    @include mq(sm) {
       grid-row: span 1;
     }
 
