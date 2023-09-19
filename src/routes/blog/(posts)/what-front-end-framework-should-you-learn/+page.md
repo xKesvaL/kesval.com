@@ -2,7 +2,7 @@
 title: What front-end framework should you learn?
 slug: what-front-end-framework-should-you-learn
 date: 2023-09-17
-excerpt: There are so many front-end frameworks out there, which one should you learn? I'll give you my opinion on the matter.
+excerpt: There are so many front-end frameworks out there, which one should you learn?
 tags:
   - Frameworks
   - Web Development
