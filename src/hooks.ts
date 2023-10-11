@@ -1,32 +1,33 @@
 import type { Handle } from '@sveltejs/kit';
-import * as cookie from 'cookie';
+
 import { dev } from '$app/environment';
+import * as cookie from 'cookie';
 
-export const handle = (async ({ event, resolve }) => {
-  const cookies = cookie.parse(event.request.headers.get('cookie') || '');
-  event.locals.userid = cookies['userid'] || crypto.randomUUID();
+export const handle: Handle = async ({ event, resolve }) => {
+	const cookies = cookie.parse(event.request.headers.get('cookie') || '');
+	event.locals.uid = cookies['uid'] || crypto.randomUUID();
 
-  const response = await resolve(event);
+	const response = await resolve(event);
 
-  if (dev) {
-    return response;
-  }
+	if (dev) {
+		return response;
+	}
 
-  if (!cookies['userid']) {
-    const expires = new Date();
-    expires.setFullYear(expires.getFullYear() + 1);
-    // if this is the first time the user has visited this app,
-    // set a cookie so that we recognise them when they return
-    response.headers.set(
-      'set-cookie',
-      cookie.serialize('userid', event.locals.userid, {
-        path: '/',
-        httpOnly: true,
-        secure: true,
-        expires,
-      }),
-    );
-  }
+	if (!cookies['uid']) {
+		const expires = new Date();
+		expires.setFullYear(expires.getFullYear() + 1);
+		// if this is the first time the user has visited this app,
+		// set a cookie so that we recognize them when they return
+		response.headers.set(
+			'set-cookie',
+			cookie.serialize('uid', event.locals.uid, {
+				expires,
+				httpOnly: true,
+				path: '/',
+				secure: true
+			})
+		);
+	}
 
-  return response;
-}) satisfies Handle;
+	return response;
+};

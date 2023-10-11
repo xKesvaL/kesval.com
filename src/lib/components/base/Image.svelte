@@ -1,128 +1,112 @@
 <script lang="ts">
-  // Source: https://github.com/matfantinel/sveltekit-static-blog-template
+	import type { ThemeSize } from '$lib/typings/standard';
 
-  import { dev } from '$app/environment';
-  import ImageIcon from '$lib/icons/IconImage.svelte';
+	import IconPhotoOff from '$lib/icons/IconPhotoOff.svelte';
+	import { Image } from '@kesval/image-svelte';
 
-  export let src: string | null = null;
-  export let alt: string;
+	export let src: string;
+	export let alt: string;
 
-  export let formats: string[] = ['avif', 'webp', 'png'];
-  export let widths: string[] | undefined = undefined;
+	export let loading: 'eager' | 'lazy' = 'lazy';
+	export let figcaption: null | string = null;
+	export let rounding: 'full' | ThemeSize = 'md';
 
-  export let figcaption: string = '';
+	export let objectFit: 'contain' | 'cover' = 'cover';
 
-  export let border = true;
-
-  export let rounding: 'none' | 'sm' | 'md' | 'lg' | 'full' = 'none';
-
-  export let loading: 'lazy' | 'eager' = 'lazy';
-  export let viewTransitionName: string | undefined = undefined;
-
-  let error = false;
-  let fileName: string;
-  $: if (src) {
-    fileName = src.split('.')[0];
-  }
-
-  function buildSrcset() {
-    if (dev) return;
-    if (src?.split('.')[1] === 'svg') return;
-
-    let srcset = '';
-
-    if (widths) {
-      for (let i = 0; i < widths.length; i++) {
-        srcset += `${fileName}-${widths[i]}.${formats[0]} ${widths[i]}w`;
-
-        if (i < widths.length - 1) {
-          srcset += ', ';
-        }
-      }
-    } else {
-      for (let i = 0; i < formats.length; i++) {
-        srcset += `${fileName}.${formats[i]}`;
-
-        if (i < formats.length - 1) {
-          srcset += ', ';
-        }
-      }
-    }
-
-    return srcset;
-  }
+	let error = false;
 </script>
 
-{#if src && !error}
-  <img
-    class={rounding === 'none' ? '' : `rounding-${rounding}`}
-    class:border
-    srcset={buildSrcset()}
-    style={viewTransitionName ? `view-transition-name: ${viewTransitionName};` : ''}
-    {src}
-    {alt}
-    {loading}
-    decoding="async"
-    on:error={() => (error = true)} />
-{:else}
-  <div class={rounding === 'none' ? '' : `rounding-${rounding}`} class:border>
-    <span>
-      <ImageIcon />
-    </span>
-  </div>
-{/if}
-{#if figcaption}
-  <p>{figcaption}</p>
-{/if}
+<Image {alt} let:srcSet {src} srcPrefix="/images.vercel/output/static">
+	{#if error}
+		<div class="invalid-source rounding-{rounding}">
+			<div class="icon">
+				<IconPhotoOff />
+			</div>
+		</div>
+		{#if figcaption}
+			<p class="caption">{figcaption}</p>
+		{/if}
+	{:else}
+		<figure>
+			<img
+				{alt}
+				class="rounding-{rounding} {objectFit}"
+				decoding="async"
+				{loading}
+				on:error={() => {
+					error = true;
+				}}
+				{src}
+				srcset={srcSet}
+			/>
+			{#if figcaption}
+				<figcaption>{figcaption}</figcaption>
+			{/if}
+		</figure>
+	{/if}
+</Image>
 
 <style lang="scss">
-  img,
-  div {
-    width: 100%;
-    max-width: 100%;
-    height: 100%;
-    max-height: 100%;
-    object-fit: cover;
-    overflow: hidden;
-    box-shadow: 0 0 0 0 rgba(var(--base-500-rgb), 0.3);
+	figure img,
+	.invalid-source {
+		&.rounding-sm {
+			border-radius: 0.25rem;
+		}
 
-    &.border {
-      border: 1px solid rgba(var(--primary-900-rgb), 0.3);
-    }
+		&.rounding-md {
+			border-radius: 0.5rem;
+		}
 
-    &.rounding-sm {
-      border-radius: 0.75rem;
-    }
+		&.rounding-lg {
+			border-radius: 1rem;
+		}
 
-    &.rounding-md {
-      border-radius: 1rem;
-    }
+		&.rounding-full {
+			border-radius: 9999px;
+		}
+	}
 
-    &.rounding-lg {
-      border-radius: 1rem;
-    }
+	figure figcaption,
+	.caption {
+		text-align: center;
+		margin-top: 0.5rem;
+		font-size: var(--fs-300);
+		font-style: italic;
+		color: hsl(var(--base-800));
+		letter-spacing: 0.025em;
+	}
 
-    &.rounding-full {
-      border-radius: 9999px;
-    }
-  }
+	figure {
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		img {
+			width: 100%;
+			height: 100%;
 
-  div {
-    background: radial-grad-primary();
-    display: grid;
-    place-items: center;
-    padding: 1rem;
+			&.cover {
+				object-fit: cover;
+			}
 
-    span {
-      display: block;
-      max-width: 80px;
-      max-height: 80px;
-    }
-  }
+			&.contain {
+				object-fit: contain;
+			}
+		}
+	}
 
-  p {
-    font-style: italic;
-    text-align: center;
-    margin-top: 0.25rem;
-  }
+	.invalid-source {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+		aspect-ratio: 1;
+		width: 100%;
+		background-color: hsl(var(--base-100));
+		color: hsl(var(--base-800));
+
+		.icon {
+			height: 3rem;
+			width: 3rem;
+		}
+	}
 </style>

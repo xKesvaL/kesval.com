@@ -1,23 +1,26 @@
+import { BRAND } from '$lib/config';
+
 export async function GET() {
-  const files = import.meta.glob('$routes/**/*.{svelte,md}');
-  const urls = Object.keys(files).map((file) => {
-    const url = file
-      .replace('/src/routes', '')
-      .replace('.svelte', '')
-      .replace('.md', '')
-      .replace('+page', '')
-      .replace('+layout', '')
-      .replace('+error', '')
-      .replace('+server', '')
-      .replace('+404', '')
-      .replace(/\(([^)]+)\)\//g, '')
-      .slice(0, -1);
-    return `https://kesval.com${url}`;
-  });
+	const files = import.meta.glob('$routes/**/*.{svelte,md}');
+	const urls = Object.keys(files).map((file) => {
+		const url = file
+			.replace('/src/routes', '')
+			.replace('[[lang]]', '')
+			.replace('.svelte', '')
+			.replace('.md', '')
+			.replace('+page', '')
+			.replace('+layout', '')
+			.replace('+error', '')
+			.replace('+server', '')
+			.replace('+404', '')
+			.replace(/\(([^)]+)\)\//g, '')
+			.slice(0, -1);
+		return `${BRAND.url}${url}`;
+	});
 
-  const uniqueUrls = [...new Set(urls)];
+	const uniqueUrls = [...new Set(urls)];
 
-  let ResponseToReturn = `
+	let ResponseToReturn = `
         <?xml version="1.0" encoding="UTF-8" ?>
         <urlset
             xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"
@@ -28,21 +31,21 @@ export async function GET() {
             xmlns:video="https://www.google.com/schemas/sitemap-video/1.1"
         >`;
 
-  for (const url of uniqueUrls) {
-    ResponseToReturn += `
+	for (const url of uniqueUrls) {
+		ResponseToReturn += `
             <url>
                 <loc>${url}</loc>
-                <changefreq>daily</changefreq>
+                <changefreq>monthly</changefreq>
                 <priority>0.9</priority>
             </url>`;
-  }
+	}
 
-  ResponseToReturn += `
+	ResponseToReturn += `
         </urlset>`;
 
-  return new Response(ResponseToReturn.trim(), {
-    headers: {
-      'Content-Type': 'application/xml',
-    },
-  });
+	return new Response(ResponseToReturn.trim(), {
+		headers: {
+			'Content-Type': 'application/xml'
+		}
+	});
 }

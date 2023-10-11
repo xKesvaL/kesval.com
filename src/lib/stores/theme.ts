@@ -1,24 +1,41 @@
-import { writable } from 'svelte/store';
 import { browser } from '$app/environment';
+import { writable } from 'svelte/store';
 
 const createTheme = () => {
-  let currentTheme;
-  if (browser) {
-    currentTheme = localStorage.getItem('theme') || 'dark';
-  }
+	let currentTheme;
+	if (browser) {
+		currentTheme = localStorage.getItem('theme') || 'auto';
+	}
 
-  const { subscribe, set } = writable<string>(currentTheme);
+	const { set, subscribe, update } = writable<string>(currentTheme);
 
-  return {
-    subscribe,
-    set: (value: string) => {
-      if (browser) {
-        localStorage.setItem('theme', value);
-        document.firstElementChild?.setAttribute('data-theme', value);
-      }
-      set(value);
-    },
-  };
+	const setTheme = (theme: string) => {
+		if (browser) {
+			localStorage.setItem('theme', theme);
+			document.firstElementChild?.setAttribute('data-theme', theme);
+		}
+		set(theme);
+
+		return theme;
+	};
+
+	return {
+		set: (value: string) => {
+			setTheme(value);
+		},
+		subscribe,
+		toggle: () => {
+			update((t) => {
+				if (t === 'dark') {
+					return setTheme('light');
+				} else if (t === 'light') {
+					return setTheme('auto');
+				} else {
+					return setTheme('dark');
+				}
+			});
+		}
+	};
 };
 
 export const theme = createTheme();

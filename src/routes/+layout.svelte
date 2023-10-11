@@ -1,82 +1,35 @@
 <script lang="ts">
-  import ContactBot from '$lib/components/layout/ContactBot.svelte';
-  import Footer from '$lib/components/layout/Footer.svelte';
-  import Header from '$lib/components/layout/Header.svelte';
-  import { page } from '$app/stores';
-  import { browser, dev } from '$app/environment';
-  import '@kesval/design';
-  import '$lib/scss/main.scss';
-  import { webVitals } from '$lib/utils/vitals';
-  import { inject } from '@vercel/analytics';
-  import BackToTop from '$lib/components/layout/BackToTop.svelte';
-  import { navigating } from '$app/stores';
-  import NProgress from 'nprogress';
-  import '$lib/scss/nprogress.scss';
-  import type { LayoutData } from './$types';
-  import { polyfillCountryFlagEmojis } from '$lib/utils/functions';
-  import { locale, locales } from 'svelte-i18n';
-  import { onNavigate } from '$app/navigation';
-  NProgress.configure({ minimum: 0.2, easing: 'ease', speed: 600 });
-  $: $navigating ? NProgress.start() : NProgress.done();
-  polyfillCountryFlagEmojis();
+	import { navigating } from '$app/stores';
+	import { BRAND } from '$lib/config';
+	import '$lib/styles/main.scss';
+	import '$lib/styles/nprogress.scss';
+	import '@kesval/design';
+	import nprogress from 'nprogress';
+	import { isLoading, locales } from 'svelte-i18n';
+	import { setupViewTransition } from 'sveltekit-view-transition';
 
-  export let data: LayoutData;
+	import '../app.postcss';
+	import Loading from '$lib/containers/layout/Loading.svelte';
 
-  const { email, url } = data;
+	nprogress.configure({ easing: 'ease', minimum: 0.2, speed: 600 });
+	$: $navigating ? nprogress.start() : nprogress.done();
 
-  $: if (browser) {
-    const paramsLang = url.searchParams.get('lang');
-    let lang = paramsLang || localStorage.getItem('lang') || window.navigator.language || 'en';
-    lang = lang.split('-')[0];
-    localStorage.setItem('lang', lang);
-    locale.set(lang);
-  }
-
-  if (!dev) {
-    inject({
-      mode: 'production',
-    });
-  }
-
-  let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
-
-  $: if (browser && analyticsId && !dev) {
-    webVitals({
-      path: $page.url.pathname,
-      params: $page.params,
-      analyticsId,
-    });
-  }
-
-  onNavigate((navigation) => {
-    if (!document.startViewTransition) return;
-
-    return new Promise((resolve) => {
-      document.startViewTransition(async () => {
-        resolve();
-        await navigation.complete;
-      });
-    });
-  });
+	setupViewTransition();
 </script>
 
 <svelte:head>
-  <meta name="og:locale" content={$locale || 'en'} />
-  {#each $locales as l}
-    {#if l !== $locale}
-      <meta name="og:locale:alternate" content={l} />
-    {/if}
-  {/each}
-  <meta http-equiv="Content-Language" content={$locale || 'en'} />
+	<meta content={BRAND.author.name} name="copyright" />
+	<meta content={BRAND.name} name="og:site_name" />
+
+	<!-- Href langs -->
+	<link href={BRAND.url} hreflang="x-default" rel="alternate" />
+	{#each $locales as locale}
+		<link href={BRAND.url + '?lang=' + locale} hreflang={locale} rel="alternate" />
+	{/each}
 </svelte:head>
 
-<Header />
-
-<main>
-  <slot />
-</main>
-
-<ContactBot {email} />
-<BackToTop />
-
-<Footer />
+{#if $isLoading}
+	<Loading />
+{:else}
+	<slot />
+{/if}
