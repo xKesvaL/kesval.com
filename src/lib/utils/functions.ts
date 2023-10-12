@@ -18,3 +18,8 @@ export const formatZodError = (error: ZodError): FormattedZodError => {
 		return acc;
 	}, {} as FormattedZodError);
 };
+
+export const transition = (cb: () => Promise<void>) => {
+	if (!document.startViewTransition) return cb();
+	return document.startViewTransition(cb);
+};

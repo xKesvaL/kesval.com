@@ -1,8 +1,13 @@
 {
-	"std": {
-		"bottom": "bottom",
-		"scrollTo": "scroll to",
-		"top": "top"
-	},
-	"title": "test"
+  "common": {
+    "auto": "auto",
+    "dark": "dark",
+    "light": "light"
+  },
+  "std": {
+    "bottom": "bottom",
+    "scrollTo": "scroll to",
+    "top": "top"
+  },
+  "title": "test"
 }
