@@ -65,7 +65,7 @@
     "rehype-external-links": "^3.0.0",
     "rehype-slug": "^6.0.0",
     "striptags": "^3.2.0",
-    "svelte-i18n": "^3.7.3"
+    "svelte-i18n": "^4.0.0"
   },
   "type": "module"
 }
