@@ -1,7 +1,6 @@
-import type { Locale } from '$lib/typings/standard';
 
 import { browser } from '$app/environment';
-import { DEFAULT_LOCALE } from '$lib/config';
+import { DEFAULT_LOCALE, type Locale } from '$lib/config';
 import { writable } from 'svelte/store';
 import { locale } from 'svelte-i18n';
 

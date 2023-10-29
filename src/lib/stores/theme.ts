@@ -1,3 +1,5 @@
+import type { Theme } from '$lib/config';
+
 import { browser } from '$app/environment';
 import { writable } from 'svelte/store';
 
@@ -20,7 +22,7 @@ const createTheme = () => {
 	};
 
 	return {
-		set: (value: string) => {
+		set: (value: Theme) => {
 			setTheme(value);
 		},
 		subscribe,

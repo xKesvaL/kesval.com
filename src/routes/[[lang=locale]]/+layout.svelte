@@ -1,7 +1,13 @@
 <script lang="ts">
+	import { browser } from '$app/environment';
 	import BackToTopButton from '$lib/components/layout/BackToTopButton.svelte';
 	import Footer from '$lib/components/layout/Footer.svelte';
 	import Navigation from '$lib/components/layout/Navigation.svelte';
+	import { scrollLocked } from '$lib/stores/common';
+
+	$: if (browser) {
+		document.body.setAttribute('data-scroll-locked', $scrollLocked ? 'true' : 'false');
+	}
 </script>
 
 <Navigation />
@@ -18,9 +24,13 @@
 		background: radial-gradient(circle at 28% 37%, hsl(var(--primary-300) / 0.15), transparent 40%),
 			radial-gradient(circle at 70% 66%, hsl(var(--secondary-300) / 0.15), transparent 40%);
 
-		margin-top: -6rem;
+		margin-top: -8rem;
 		padding-top: 8rem;
 
 		min-height: calc(100vh + 1rem);
+
+		@include mq(lg) {
+			margin-top: -6rem;
+		}
 	}
 </style>

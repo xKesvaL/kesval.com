@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { navigating } from '$app/stores';
+	import { navigating, page } from '$app/stores';
 	import { BRAND } from '$lib/config';
 	import '$lib/styles/main.scss';
 	import '$lib/styles/nprogress.scss';
@@ -22,9 +22,9 @@
 	<meta content={BRAND.name} name="og:site_name" />
 
 	<!-- Href langs -->
-	<link href={BRAND.url} hreflang="x-default" rel="alternate" />
+	<link href={$page.url.pathname} hreflang="x-default" rel="alternate" />
 	{#each $locales as locale}
-		<link href={BRAND.url + '?lang=' + locale} hreflang={locale} rel="alternate" />
+		<link href={`/${locale}${$page.url.pathname}`} hreflang={locale} rel="alternate" />
 	{/each}
 </svelte:head>
 

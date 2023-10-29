@@ -1,8 +1,17 @@
 {
   "common": {
-    "auto": "auto",
-    "dark": "dark",
-    "light": "light"
+    "auto": "Auto",
+    "dark": "Dark",
+    "light": "Light",
+    "reset": "Reset",
+    "settings": "Settings"
+  },
+  "settings": {
+    "chooseATheme": "Choose a theme",
+    "fontSize": "Blog font size",
+    "label": "Settings",
+    "readingHeight": "Blog line height",
+    "readingLength": "Blog reading length"
   },
   "std": {
     "bottom": "bottom",

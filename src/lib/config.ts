@@ -7,12 +7,16 @@ export const BRAND = {
 		name: 'KesvaL',
 		url: 'https://kesval.com'
 	},
+	color: {
+		primary: '#5920df',
+		secondary: '#df20b9'
+	},
 	logo: {
 		dark: '/images/logos/logo.png',
 		light: '/images/logos/logo.png'
 	},
-	name: 'Starter',
-	url: 'https://starter.kesval.com'
+	name: 'KesvaL',
+	url: 'https://kesval.com'
 } as const satisfies Brand;
 
 export const ROUTES = {
@@ -24,3 +28,23 @@ export const ROUTES = {
 export const LOCALES = ['en', 'fr'] as const;
 
 export type Locale = (typeof LOCALES)[number];
+
+export const VERSION = '3.0.0';
+
+export const THEMES = ['light', 'auto', 'dark'] as const;
+
+export type Theme = (typeof THEMES)[number];
+
+export interface Settings {
+	dislexia: boolean;
+	readingHeight: number;
+	readingLength: number;
+	readingSize: number;
+}
+
+export const DEFAULT_SETTINGS: Settings = {
+	dislexia: false,
+	readingHeight: 1.75,
+	readingLength: 90,
+	readingSize: 18
+};

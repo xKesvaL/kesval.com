@@ -34,9 +34,8 @@
 		aria-label="{$t('std.scrollTo')} {$t('std.top')}"
 		class="scroll-button"
 		id="back-to-top"
-		in:fly={{ delay: 300, duration: 300, y: 50 }}
+		transition:fly={{ duration: 200, y: 20 }}
 		on:click={() => scrollToTop()}
-		out:fly={{ duration: 300, y: 50 }}
 	>
 		<div class="inner">
 			<div class="arrow">
@@ -86,8 +85,8 @@
 				z-index: 50;
 				width: 100%;
 				height: 100%;
-				padding: 1.25rem;
-				color: hsl(var(--base-900));
+				padding: 1.125rem;
+				color: hsl(var(--base-950));
 				transition: 0.3s ease-in-out;
 			}
 
