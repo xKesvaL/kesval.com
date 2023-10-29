@@ -2,14 +2,14 @@ import { browser } from '$app/environment';
 import { DEFAULT_SETTINGS, type Settings } from '$lib/config';
 import { writable } from 'svelte/store';
 
-export const fontSizes = [16, 18, 20, 22, 24] as const;
+export const readingSizes = [16, 18, 20, 22, 24] as const;
 
 export const readingHeights = [1.5, 1.75, 2] as const;
 
 export const readingLengths = [60, 70, 80, 90, 100] as const;
 
 const createSettingsStore = () => {
-	let settings = DEFAULT_SETTINGS;
+	let settings = { ...DEFAULT_SETTINGS };
 
 	if (browser) {
 		const settingsString = localStorage.getItem('settings');
@@ -28,10 +28,10 @@ const createSettingsStore = () => {
 	};
 
 	const resetSettings = () => {
-		console.log('reset', DEFAULT_SETTINGS);
-		set(DEFAULT_SETTINGS);
+		const newSettings = { ...DEFAULT_SETTINGS, lastReset: Date.now() };
+		set(newSettings);
 		if (browser) {
-			localStorage.setItem('settings', JSON.stringify(DEFAULT_SETTINGS));
+			localStorage.setItem('settings', JSON.stringify(newSettings));
 		}
 	};
 

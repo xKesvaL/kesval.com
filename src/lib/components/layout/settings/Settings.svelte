@@ -10,6 +10,14 @@
 	import SettingsFontMaxWidth from './SettingsFontMaxWidth.svelte';
 	import SettingsFontLineHeight from './SettingsFontLineHeight.svelte';
 	import { settings } from '$lib/stores/settings';
+	import SettingsFontDyslexia from './SettingsFontDyslexia.svelte';
+	import { transition } from '$lib/utils/functions';
+
+	const resetSettings = () => {
+		transition(async () => {
+			settings.reset();
+		});
+	};
 </script>
 
 <Popover>
@@ -26,24 +34,21 @@
 	<PopoverContent class="flex flex-col gap-4">
 		<div class="flex items-center justify-between">
 			<h2 class="text-xl">{$t('settings.label')}</h2>
-			<Button size="sm" on:click={() => settings.reset()}>
+			<Button size="sm" on:click={resetSettings}>
 				{$t('common.reset')}
 			</Button>
 		</div>
-		<Separator />
-		<SettingsThemeSwitcher />
-		<Separator class="mt-2" />
-		{#key $settings.readingSize}
+		{#key $settings.lastReset}
+			<Separator />
+			<SettingsThemeSwitcher />
+			<Separator class="mt-2" />
 			<SettingsFontSize />
-		{/key}
-		<Separator class="mt-2" />
-		{#key $settings.readingLength}
+			<Separator class="mt-2" />
 			<SettingsFontMaxWidth />
-		{/key}
-		<Separator class="mt-2" />
-		{#key $settings.readingHeight}
+			<Separator class="mt-2" />
 			<SettingsFontLineHeight />
+			<Separator class="mt-2" />
+			<SettingsFontDyslexia />
 		{/key}
-		<Separator class="mt-2" />
 	</PopoverContent>
 </Popover>

@@ -8,10 +8,11 @@
   },
   "settings": {
     "chooseATheme": "Choose a theme",
-    "fontSize": "Blog font size",
+    "dyslexia": "Dyslexic font",
     "label": "Settings",
     "readingHeight": "Blog line height",
-    "readingLength": "Blog reading length"
+    "readingLength": "Blog reading length",
+    "readingSize": "Blog font size"
   },
   "std": {
     "bottom": "bottom",

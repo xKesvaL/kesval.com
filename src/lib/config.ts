@@ -36,15 +36,17 @@ export const THEMES = ['light', 'auto', 'dark'] as const;
 export type Theme = (typeof THEMES)[number];
 
 export interface Settings {
-	dislexia: boolean;
+	dyslexia: boolean;
+	lastReset: number;
 	readingHeight: number;
 	readingLength: number;
 	readingSize: number;
 }
 
 export const DEFAULT_SETTINGS: Settings = {
-	dislexia: false,
+	dyslexia: false,
+	lastReset: Date.now(),
 	readingHeight: 1.75,
 	readingLength: 90,
 	readingSize: 18
-};
+} as const;

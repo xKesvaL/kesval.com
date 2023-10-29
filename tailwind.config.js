@@ -8,6 +8,7 @@ const config = {
 			padding: '1rem',
 			screens: {}
 		},
+
 		extend: {
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -56,6 +57,10 @@ const config = {
 					DEFAULT: 'hsl(var(--success))',
 					foreground: 'hsl(var(--success-foreground))'
 				}
+			},
+			fontFamily: {
+				sans: [],
+				title: []
 			}
 		}
 	}

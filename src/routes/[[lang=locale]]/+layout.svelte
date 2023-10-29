@@ -4,9 +4,14 @@
 	import Footer from '$lib/components/layout/Footer.svelte';
 	import Navigation from '$lib/components/layout/Navigation.svelte';
 	import { scrollLocked } from '$lib/stores/common';
+	import { settings } from '$lib/stores/settings';
 
 	$: if (browser) {
 		document.body.setAttribute('data-scroll-locked', $scrollLocked ? 'true' : 'false');
+	}
+
+	$: if (browser) {
+		document.documentElement.setAttribute('data-dyslexic', $settings.dyslexia ? 'true' : 'false');
 	}
 </script>
 

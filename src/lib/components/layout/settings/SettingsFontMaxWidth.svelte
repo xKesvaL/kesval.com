@@ -2,15 +2,11 @@
 	import { t } from 'svelte-i18n';
 	import { Slider } from '$lib/components/ui/slider';
 	import { readingLengths, settings } from '$lib/stores/settings';
+	import { DEFAULT_SETTINGS } from '$lib/config';
 
-	let readingLengthLevel: number[] = [readingLengths.indexOf($settings.readingLength)];
+	let readingLength: number[] = [$settings.readingLength];
 
-	$: settings.update((s) => {
-		s.readingLength = readingLengths[
-			readingLengthLevel[0] as keyof typeof readingLengths
-		] as (typeof readingLengths)[number];
-		return s;
-	});
+	$: $settings.readingLength = readingLength[0] || DEFAULT_SETTINGS.readingLength;
 </script>
 
 <div class="flex flex-col gap-2">
@@ -22,5 +18,11 @@
 			{$settings.readingLength}ch
 		</p>
 	</div>
-	<Slider min={0} step={1} max={4} bind:value={readingLengthLevel} class="mx-2 mt-2 w-auto" />
+	<Slider
+		min={readingLengths[0]}
+		step={readingLengths[1] - readingLengths[0]}
+		max={readingLengths.at(-1)}
+		bind:value={readingLength}
+		class="mx-2 mt-2 w-auto"
+	/>
 </div>
