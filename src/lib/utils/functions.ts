@@ -1,6 +1,8 @@
 import type { FormattedZodError } from '$lib/typings/standard';
 import type { ZodError } from 'zod';
 
+import { isEmojiSupported } from 'is-emoji-supported';
+
 export const capitalizeFirstLetter = (str: string) => {
 	return str.charAt(0).toUpperCase() + str.slice(1);
 };
@@ -22,4 +24,31 @@ export const formatZodError = (error: ZodError): FormattedZodError => {
 export const transition = (cb: () => Promise<void>) => {
 	if (!document.startViewTransition) return cb();
 	return document.startViewTransition(cb);
+};
+
+export const getFlagEmoji = (countryCode: string) => {
+	return [...countryCode.toUpperCase()]
+		.map((char) => String.fromCodePoint(127397 + char.charCodeAt(0)))
+		.reduce((a, b) => a + b);
+};
+
+export const polyfillCountryFlagEmojis = (
+	fontName = 'Twemoji Country Flags',
+	fontUrl = '/fonts/TwemojiCountryFlags.woff2'
+) => {
+	if (isEmojiSupported('😊') && !isEmojiSupported('🇨🇭')) {
+		const style = document.createElement('style');
+
+		style.textContent = `@font-face {
+      font-family: "${fontName}";
+      unicode-range: U+1F1E6-1F1FF, U+1F3F4, U+E0062-E0063, U+E0065, U+E0067,
+        U+E006C, U+E006E, U+E0073-E0074, U+E0077, U+E007F;
+      src: url('${fontUrl}') format('woff2');
+      font-display: swap;
+    }`;
+		document.head.appendChild(style);
+
+		return true;
+	}
+	return false;
 };

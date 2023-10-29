@@ -1,6 +1,7 @@
 <script>
 	import { navigationOpen } from '$lib/stores/common';
 	import Image from '../base/Image.svelte';
+	import LangSwitcher from './LangSwitcher.svelte';
 	import NavigationMenuButton from './NavigationMenuButton.svelte';
 	import Settings from './settings/Settings.svelte';
 </script>
@@ -19,7 +20,8 @@
 	>
 		mid
 	</div>
-	<div class="-mr-2 flex items-center">
+	<div class="flex items-center gap-2 text-muted-foreground">
+		<LangSwitcher />
 		<Settings />
 		<div class="flex items-center lg:hidden">
 			<NavigationMenuButton />

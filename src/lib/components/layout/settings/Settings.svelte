@@ -22,7 +22,7 @@
 
 <Popover>
 	<PopoverTrigger>
-		<Button variant="ghost" size="icon" class="hover:bg-muted hover:text-foreground">
+		<Button variant="ghost" size="icon" class="bg-muted hover:bg-muted hover:text-foreground">
 			<div class="sr-only">
 				{$t('common.settings')}
 			</div>
@@ -33,7 +33,7 @@
 	</PopoverTrigger>
 	<PopoverContent class="flex flex-col gap-4">
 		<div class="flex items-center justify-between">
-			<h2 class="text-xl">{$t('settings.label')}</h2>
+			<h2 class="text-2xl">{$t('settings.label')}</h2>
 			<Button size="sm" on:click={resetSettings}>
 				{$t('common.reset')}
 			</Button>

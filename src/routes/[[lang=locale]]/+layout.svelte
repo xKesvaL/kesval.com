@@ -32,10 +32,11 @@
 		margin-top: -8rem;
 		padding-top: 8rem;
 
-		min-height: calc(100vh + 1rem);
+		min-height: calc(100vh + 3rem);
 
 		@include mq(lg) {
 			margin-top: -6rem;
+			min-height: calc(100vh + 1rem);
 		}
 	}
 </style>

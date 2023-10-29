@@ -1,6 +1,7 @@
 {
   "common": {
     "auto": "Auto",
+    "changeLanguage": "Change language",
     "dark": "Dark",
     "light": "Light",
     "reset": "Reset",

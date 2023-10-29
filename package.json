@@ -50,6 +50,7 @@
 		"eslint-plugin-perfectionist": "^2.1.0",
 		"eslint-plugin-storybook": "^0.6.14",
 		"eslint-plugin-svelte": "^2.33.2",
+		"is-emoji-supported": "^0.0.5",
 		"lucide-svelte": "^0.284.0",
 		"nprogress": "^0.2.0",
 		"postcss": "^8.4.24",

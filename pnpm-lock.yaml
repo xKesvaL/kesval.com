@@ -104,6 +104,9 @@ devDependencies:
   eslint-plugin-svelte:
     specifier: ^2.33.2
     version: 2.33.2(eslint@8.50.0)(svelte@4.2.1)
+  is-emoji-supported:
+    specifier: ^0.0.5
+    version: 0.0.5
   lucide-svelte:
     specifier: ^0.284.0
     version: 0.284.0(svelte@4.2.1)
@@ -6856,6 +6859,10 @@ packages:
     resolution: {integrity: sha512-F+i2BKsFrH66iaUFc0woD8sLy8getkwTwtOBjvs56Cx4CgJDeKQeqfz8wAYiSb8JOprWhHH5p77PbmYCvvUuXQ==}
     engines: {node: '>=8'}
     hasBin: true
+    dev: true
+
+  /is-emoji-supported@0.0.5:
+    resolution: {integrity: sha512-WOlXUhDDHxYqcSmFZis+xWhhqXiK2SU0iYiqmth5Ip0FHLZQAt9rKL5ahnilE8/86WH8tZ3bmNNNC+bTzamqlw==}
     dev: true
 
   /is-extglob@2.1.1:

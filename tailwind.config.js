@@ -59,6 +59,15 @@ const config = {
 				}
 			},
 			fontFamily: {
+				emoji: [
+					'Twemoji Country Flags',
+					'Segoe UI Emoji',
+					'Noto Color Emoji',
+					'Segoe UI Symbol',
+					'Apple Color Emoji',
+					'EmojiSymbols',
+					'Android Emoji'
+				],
 				sans: [],
 				title: []
 			}

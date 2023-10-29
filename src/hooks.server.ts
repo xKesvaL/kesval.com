@@ -1,19 +1,9 @@
 import type { Handle } from '@sveltejs/kit';
 
 import { dev } from '$app/environment';
-import { DEFAULT_LOCALE, type Locale } from '$lib/config';
-import { langStore } from '$lib/stores/lang';
 import * as cookie from 'cookie';
 
 export const handle: Handle = async ({ event, resolve }) => {
-	let lang =
-		event.url.searchParams.get('lang') ||
-		event.request.headers.get('accept-language')?.split(',')[0];
-
-	lang = lang?.split('-')[0];
-
-	langStore.set((lang as Locale) || DEFAULT_LOCALE);
-
 	const cookies = cookie.parse(event.request.headers.get('cookie') || '');
 	event.locals.uid = cookies['uid'] || crypto.randomUUID();
 
