@@ -1,6 +1,6 @@
 // See https://kit.svelte.dev/docs/types#app
 
-import type { SearchParam } from '$lib/config';
+import type { LocalStorageKey, SearchParam } from '$lib/config';
 
 // for information about these interfaces
 declare global {
@@ -29,6 +29,11 @@ declare global {
 
 	interface URLSearchParams {
 		get(name: SearchParam): null | string;
+	}
+
+	interface Storage {
+		getItem(key: LocalStorageKey): null | string;
+		setItem(key: LocalStorageKey, value: string): void;
 	}
 }
 

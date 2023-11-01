@@ -1,6 +1,6 @@
 import type { Brand, Route } from './typings/standard';
 
-export const DEFAULT_LOCALE: Locale = 'en';
+export const DEFAULT_LOCALE: Locale = 'en' as const;
 
 export const BRAND = {
 	author: {
@@ -75,3 +75,10 @@ export const DEFAULT_SETTINGS: Settings = {
 export const SEARCH_PARAMS_LIST = ['owlang'] as const;
 
 export type SearchParam = (typeof SEARCH_PARAMS_LIST)[number];
+
+export interface LocalStorage {
+	settings: Settings;
+	theme: Theme;
+}
+
+export type LocalStorageKey = keyof LocalStorage;

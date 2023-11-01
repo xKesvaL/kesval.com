@@ -6,10 +6,19 @@ import { DEFAULT_LOCALE } from '$lib/config';
 export const handle: Handle = async ({ event, resolve }) => {
 	event.locals.uid = event.cookies.get('uid') || crypto.randomUUID();
 
-	const lang =
-		event.cookies.get('lang') ||
-		event.request.headers.get('accept-language')?.split(',')[0]?.split('-')[0] ||
-		DEFAULT_LOCALE;
+	const overwriteLang = event.url.searchParams.get('owlang');
+	const langParam = event.params?.lang;
+
+	let lang: string;
+	if (overwriteLang && langParam) {
+		lang = langParam;
+	} else {
+		lang =
+			event.cookies.get('lang') ||
+			langParam ||
+			event.request.headers.get('accept-language')?.split(',')[0]?.split('-')[0] ||
+			DEFAULT_LOCALE;
+	}
 
 	event.locals.lang = lang;
 

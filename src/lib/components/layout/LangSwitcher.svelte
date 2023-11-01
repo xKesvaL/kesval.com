@@ -5,7 +5,7 @@
 	import * as Select from '$lib/components/ui/select';
 	import { langStore } from '$lib/stores/lang';
 	import type { Locale } from '$lib/config';
-	import { goto } from '$app/navigation';
+	import { browser } from '$app/environment';
 
 	const transformLocaleToFlag = (locale: string) => {
 		switch (locale.toLowerCase().split('-')[0]) {
@@ -18,19 +18,13 @@
 
 	let selected = {
 		value: $langStore,
-		label: getFlagEmoji(transformLocaleToFlag($langStore))
+		label: getFlagEmoji(transformLocaleToFlag($langStore)),
+		disabled: false
 	};
 
-	$: selected = {
-		value: $langStore,
-		label: getFlagEmoji(transformLocaleToFlag($langStore))
-	};
-
-	const switchToLocale = async (locale: string) => {
-		const url = langStore.getUrlForLang(locale as Locale);
-		langStore.set(locale as Locale);
-		await goto(url);
-	};
+	$: if (browser) {
+		langStore.set(selected.value as Locale);
+	}
 </script>
 
 <div class="font-emoji">
@@ -50,7 +44,6 @@
 					class="font-emoji text-lg"
 					value={lang}
 					label={getFlagEmoji(transformLocaleToFlag(lang))}
-					on:click={() => switchToLocale(lang)}
 				>
 					{getFlagEmoji(transformLocaleToFlag(lang))}
 				</Select.Item>
