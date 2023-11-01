@@ -26,7 +26,7 @@
 	<!-- Href langs -->
 	<link href={$page.url.pathname} hreflang="x-default" rel="alternate" />
 	{#each $locales as locale}
-		<link href={`/${locale}${$page.url.pathname}`} hreflang={locale} rel="alternate" />
+		<link href={`/${locale}${$page.url.pathname}?owlang=true`} hreflang={locale} rel="alternate" />
 	{/each}
 </svelte:head>
 

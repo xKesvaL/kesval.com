@@ -1,12 +1,18 @@
 // See https://kit.svelte.dev/docs/types#app
+
+import type { SearchParam } from '$lib/config';
+
 // for information about these interfaces
 declare global {
 	namespace App {
 		// interface Error {}
 		interface Locals {
+			lang: string;
 			uid: string;
 		}
-		// interface PageData {}
+		interface PageData {
+			lang: string;
+		}
 		// interface Platform {}
 	}
 
@@ -19,6 +25,10 @@ declare global {
 
 	interface Document {
 		startViewTransition(updateCallback: () => Promise<void>): ViewTransition;
+	}
+
+	interface URLSearchParams {
+		get(name: SearchParam): null | string;
 	}
 }
 

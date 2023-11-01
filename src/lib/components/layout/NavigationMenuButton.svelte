@@ -9,7 +9,9 @@
 	aria-expanded={$navigationOpen}
 	aria-controls="navigation"
 	on:click={() => navigationOpen.toggle()}
-	class="bg-muted text-muted-foreground !transition-colors hover:bg-muted hover:text-foreground"
+	class="bg-muted text-muted-foreground !transition-all !duration-0 hover:bg-muted hover:text-foreground {$navigationOpen
+		? 'scale-[2] bg-transparent text-white !duration-300 hover:bg-transparent hover:text-white'
+		: ''}"
 >
 	<div class="h-8 w-8 overflow-hidden">
 		<svg

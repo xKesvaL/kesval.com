@@ -4,8 +4,18 @@
     "changeLanguage": "Change language",
     "dark": "Dark",
     "light": "Light",
+    "photoOfMe": "A photo of me! (KesvaL)",
     "reset": "Reset",
     "settings": "Settings"
+  },
+  "home": {
+    "hero": {
+      "contactMe": "Contact Me",
+      "description": "I am a full-stack developer with a passion for building performant, beautiful and accessible \t\t\twebsites and applications.",
+      "subtitle": "Fullstack Developer",
+      "title": "Hi. I'm Jordan.",
+      "workWithMe": "Work With Me"
+    }
   },
   "settings": {
     "chooseATheme": "Choose a theme",

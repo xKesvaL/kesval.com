@@ -3,7 +3,7 @@
 	pointer-events: none;
 
 	.bar {
-		background: var(--color-primary-500);
+		background: hsl(var(--primary-500));
 
 		position: fixed;
 
@@ -22,7 +22,9 @@
 		right: 0;
 		width: 100px;
 		height: 100%;
-		box-shadow: 0.5rem 1rem 2rem rgba(39, 44, 49, 0.6), 1px 3px 8px rgba(39, 44, 49, 0.3);
+		box-shadow:
+			0.5rem 1rem 2rem rgba(39, 44, 49, 0.6),
+			1px 3px 8px rgba(39, 44, 49, 0.3);
 		opacity: 1;
 
 		-ms-transform: rotate(3deg) translate(0px, -4px);
@@ -44,8 +46,8 @@
 		box-sizing: border-box;
 
 		border: solid 2px transparent;
-		border-top-color: var(--color-primary-500);
-		border-left-color: var(--color-primary-500);
+		border-top-color: hsl(var(--primary-500));
+		border-left-color: hsl(var(--primary-500));
 		border-radius: 50%;
 
 		-webkit-animation: nprogress-spinner 400ms linear infinite;

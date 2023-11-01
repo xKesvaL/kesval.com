@@ -16,9 +16,14 @@
 		}
 	};
 
+	let selected = {
+		value: $langStore,
+		label: getFlagEmoji(transformLocaleToFlag($langStore))
+	};
+
 	$: selected = {
 		value: $langStore,
-		label: getFlagEmoji(transformLocaleToFlag($locale || $langStore))
+		label: getFlagEmoji(transformLocaleToFlag($langStore))
 	};
 
 	const switchToLocale = async (locale: string) => {

@@ -59,9 +59,9 @@ devDependencies:
   '@total-typescript/ts-reset':
     specifier: ^0.5.1
     version: 0.5.1
-  '@types/cookie':
-    specifier: ^0.5.2
-    version: 0.5.2
+  '@types/js-cookie':
+    specifier: ^3.0.5
+    version: 3.0.5
   '@types/node':
     specifier: ^20.8.2
     version: 20.8.2
@@ -86,9 +86,6 @@ devDependencies:
   concurrently:
     specifier: ^8.2.1
     version: 8.2.1
-  cookie:
-    specifier: ^0.5.0
-    version: 0.5.0
   eslint:
     specifier: ^8.50.0
     version: 8.50.0
@@ -107,6 +104,9 @@ devDependencies:
   is-emoji-supported:
     specifier: ^0.0.5
     version: 0.0.5
+  js-cookie:
+    specifier: ^3.0.5
+    version: 3.0.5
   lucide-svelte:
     specifier: ^0.284.0
     version: 0.284.0(svelte@4.2.1)
@@ -4057,6 +4057,10 @@ packages:
       '@types/istanbul-lib-report': 3.0.0
     dev: true
 
+  /@types/js-cookie@3.0.5:
+    resolution: {integrity: sha512-dtLshqoiGRDHbHueIT9sjkd2F4tW1qPSX2xKAQK8p1e6pM+Z913GM1shv7dOqqasEMYbC5zEaClJomQe8OtQLA==}
+    dev: true
+
   /@types/json-schema@7.0.12:
     resolution: {integrity: sha512-Hr5Jfhc9eYOQNPYO5WLDq/n4jqijdHNlDXjuAQkkt+mWdQR+XJToOHrsD4cPaMXpn6KO7y2+wM8AZEs8VpBLVA==}
     dev: true
@@ -7133,6 +7137,11 @@ packages:
   /jiti@1.20.0:
     resolution: {integrity: sha512-3TV69ZbrvV6U5DfQimop50jE9Dl6J8O1ja1dvBbMba/sZ3YBEQqJ2VZRoQPVnhlzjNtU1vaXRZVrVjU4qtm8yA==}
     hasBin: true
+    dev: true
+
+  /js-cookie@3.0.5:
+    resolution: {integrity: sha512-cEiJEAEoIbWfCZYKWhVwFuvPX1gETRYPw6LlaTKoxD3s2AkXzkCjnp6h0V77ozyqj0jakteJ4YqDJT830+lVGw==}
+    engines: {node: '>=14'}
     dev: true
 
   /js-tokens@4.0.0:

@@ -19,9 +19,30 @@ export const BRAND = {
 	url: 'https://kesval.com'
 } as const satisfies Brand;
 
+export const SOCIALS = {
+	github: {
+		url: 'https://github.com/xKesvaL'
+	},
+	instagram: {
+		url: 'https://instagram.com/xkesval'
+	},
+	linkedin: {
+		url: 'https://linkedin.com/in/jordan-abeddou'
+	}
+} as const;
+
 export const ROUTES = {
+	about: {
+		path: '/about'
+	},
+	blog: {
+		path: '/blog'
+	},
 	home: {
 		path: '/'
+	},
+	work: {
+		path: '/work'
 	}
 } as const satisfies Record<string, Route>;
 
@@ -50,3 +71,7 @@ export const DEFAULT_SETTINGS: Settings = {
 	readingLength: 90,
 	readingSize: 18
 } as const;
+
+export const SEARCH_PARAMS_LIST = ['owlang'] as const;
+
+export type SearchParam = (typeof SEARCH_PARAMS_LIST)[number];

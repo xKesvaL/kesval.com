@@ -31,8 +31,8 @@
 			</div>
 		</Button>
 	</PopoverTrigger>
-	<PopoverContent class="flex flex-col gap-4">
-		<div class="flex items-center justify-between">
+	<PopoverContent class="flex w-80 flex-col gap-4">
+		<div class="flex items-center justify-between gap-4">
 			<h2 class="text-2xl">{$t('settings.label')}</h2>
 			<Button size="sm" on:click={resetSettings}>
 				{$t('common.reset')}
