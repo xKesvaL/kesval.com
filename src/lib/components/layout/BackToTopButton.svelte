@@ -5,6 +5,7 @@
 	import { afterUpdate } from 'svelte';
 	import { fly } from 'svelte/transition';
 	import { t } from 'svelte-i18n';
+	import { bot } from '$lib/stores/bot';
 
 	let scrollY: number;
 	let scrollPercent: number;
@@ -32,7 +33,7 @@
 {#if scrollPercent > topPercent}
 	<button
 		aria-label="{$t('std.scrollTo')} {$t('std.top')}"
-		class="scroll-button"
+		class="scroll-button {$bot.open ? 'bottom-96' : 'bottom-4'}"
 		id="back-to-top"
 		transition:fly={{ duration: 200, y: 20 }}
 		on:click={() => scrollToTop()}
@@ -61,7 +62,6 @@
 		view-transition-name: back-to-top;
 		position: fixed;
 		display: grid;
-		bottom: 1rem;
 		right: 1rem;
 		z-index: 5;
 		border-radius: 100vw;

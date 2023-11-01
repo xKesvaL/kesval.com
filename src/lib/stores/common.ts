@@ -4,7 +4,10 @@ const createNavigationOpenStore = () => {
 	const { set, subscribe, update } = writable<boolean>(false);
 
 	return {
-		set,
+		set: (value: boolean) => {
+			scrollLocked.set(value);
+			set(value);
+		},
 		subscribe,
 		toggle: () => {
 			update((t) => {

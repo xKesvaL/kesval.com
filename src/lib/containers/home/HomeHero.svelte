@@ -3,6 +3,7 @@
 	import Socials from '$lib/components/base/Socials.svelte';
 	import Sparkles from '$lib/components/base/Sparkles.svelte';
 	import { Button } from '$lib/components/ui/button';
+	import { bot } from '$lib/stores/bot';
 	import { t } from 'svelte-i18n';
 </script>
 
@@ -30,7 +31,7 @@
 			<Button>
 				{$t('home.hero.workWithMe')}
 			</Button>
-			<Button variant="secondary">
+			<Button variant="secondary" on:click={bot.toggle}>
 				{$t('home.hero.contactMe')}
 			</Button>
 		</div>

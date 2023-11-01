@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
 	import BackToTopButton from '$lib/components/layout/BackToTopButton.svelte';
+	import ContactBot from '$lib/components/layout/ContactBot.svelte';
 	import Footer from '$lib/components/layout/Footer.svelte';
 	import Navigation from '$lib/components/layout/Navigation.svelte';
 	import { scrollLocked } from '$lib/stores/common';
@@ -21,6 +22,7 @@
 	<slot />
 </main>
 
+<ContactBot />
 <BackToTopButton />
 <Footer />
 

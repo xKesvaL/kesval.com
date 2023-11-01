@@ -1,4 +1,10 @@
 {
+  "about": {
+    "name": "About"
+  },
+  "blog": {
+    "name": "Blog"
+  },
   "common": {
     "auto": "Auto",
     "changeLanguage": "Change language",
@@ -8,6 +14,9 @@
     "reset": "Reset",
     "settings": "Settings"
   },
+  "contact": {
+    "name": "Contact"
+  },
   "home": {
     "hero": {
       "contactMe": "Contact Me",
@@ -15,7 +24,8 @@
       "subtitle": "Fullstack Developer",
       "title": "Hi. I'm Jordan.",
       "workWithMe": "Work With Me"
-    }
+    },
+    "name": "Home"
   },
   "settings": {
     "chooseATheme": "Choose a theme",
@@ -30,5 +40,8 @@
     "scrollTo": "scroll to",
     "top": "top"
   },
-  "title": "test"
+  "title": "test",
+  "work": {
+    "name": "Work"
+  }
 }
