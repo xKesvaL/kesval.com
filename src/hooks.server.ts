@@ -22,13 +22,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 
 	event.locals.lang = lang;
 
-	const response = await resolve(event);
-
-	if (dev) {
-		return response;
-	}
-
-	if (!event.cookies.get('uid')) {
+	if (!event.cookies.get('uid') && !dev) {
 		const expires = new Date();
 		expires.setFullYear(expires.getFullYear() + 1);
 		// if this is the first time the user has visited this app,
@@ -41,5 +35,5 @@ export const handle: Handle = async ({ event, resolve }) => {
 		});
 	}
 
-	return response;
+	return await resolve(event);
 };
