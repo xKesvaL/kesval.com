@@ -22,14 +22,16 @@ const createLangStore = (): LangStore => {
 		locale.set(lang);
 		Cookies.set('lang', lang, {
 			expires: 300,
-			path: '/'
+			path: '/',
+			sameSite: 'lax',
+			secure: true,
 		});
 		set(lang);
 	};
 
 	return {
 		set: setLang,
-		subscribe
+		subscribe,
 	};
 };
 
