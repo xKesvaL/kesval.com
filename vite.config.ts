@@ -1,6 +1,7 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
+import { kitRoutes } from 'vite-plugin-kit-routes';
 
 export default defineConfig({
 	css: {
@@ -10,7 +11,7 @@ export default defineConfig({
 			}
 		}
 	},
-	plugins: [sveltekit()],
+	plugins: [sveltekit(), kitRoutes()],
 
 	resolve: {
 		alias: {
