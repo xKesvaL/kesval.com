@@ -11,12 +11,16 @@
 	import '../app.postcss';
 	import Loading from '$lib/containers/layout/Loading.svelte';
 	import { polyfillCountryFlagEmojis } from '$lib/utils/functions';
+	import { onMount } from 'svelte';
 
 	nprogress.configure({ easing: 'ease', minimum: 0.2, speed: 600 });
 	$: $navigating ? nprogress.start() : nprogress.done();
 
 	setupViewTransition();
-	polyfillCountryFlagEmojis();
+
+	onMount(() => {
+		polyfillCountryFlagEmojis();
+	});
 </script>
 
 <svelte:head>
