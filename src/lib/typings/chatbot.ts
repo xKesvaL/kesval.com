@@ -1,22 +1,33 @@
-export const CHATBOT_KEYS = ['first', 'base', 'hire', 'confirmHire'] as const;
-
-export type ChatbotKey = (typeof CHATBOT_KEYS)[number];
-
-export interface ChatbotQuestion {
-	answer: ChatbotKey;
-	text: string;
-}
-
-export interface Chatbot {
-	history: ChatbotKey[];
+export interface ChatBot {
+	history: ChatBotKey[];
 	open: boolean;
 }
 
-const chatbotDefaultQuestions: ChatbotQuestion[] = [];
+export type ChatBotKey = (typeof ChatBotKeys)[number];
 
-export const chatbotQuestions: Record<ChatbotKey, ChatbotQuestion[]> = {
-	base: chatbotDefaultQuestions,
-	confirmHire: chatbotDefaultQuestions,
-	first: chatbotDefaultQuestions,
-	hire: chatbotDefaultQuestions
+export const ChatBotKeys = [
+	'confirmHire',
+	'first',
+	'hire',
+	'looking',
+	'other',
+	'teachHTMLCSS',
+	'teachJS',
+	'teachMe',
+	'teachSvelte',
+] as const;
+
+export type ChatBotAnswers = {
+	[key in ChatBotKey]: string[];
+};
+
+export interface ChatBotQuestion {
+	text: string;
+	to: ChatBotAnswers;
+}
+
+export type ChatBotDefaultQuestions = ChatBotQuestion[];
+
+export type ChatBotQuestions = {
+	[key in ChatBotKey]: ChatBotQuestion[];
 };

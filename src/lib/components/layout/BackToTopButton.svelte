@@ -33,7 +33,7 @@
 {#if scrollPercent > topPercent}
 	<button
 		aria-label="{$t('std.scrollTo')} {$t('std.top')}"
-		class="scroll-button {$bot.open ? 'bottom-96' : 'bottom-4'}"
+		class="scroll-button {$bot.open ? 'sm:bottom-[38rem]' : 'bottom-4'}"
 		id="back-to-top"
 		transition:fly={{ duration: 200, y: 20 }}
 		on:click={() => scrollToTop()}

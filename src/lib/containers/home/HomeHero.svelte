@@ -39,7 +39,9 @@
 </section>
 
 <style lang="scss">
-	.image {
-		border-radius: 63% 37% 37% 63%/43% 37% 63% 57%;
+	section.container {
+		.image {
+			border-radius: 63% 37% 37% 63%/43% 37% 63% 57%;
+		}
 	}
 </style>

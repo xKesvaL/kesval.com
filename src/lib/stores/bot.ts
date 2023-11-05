@@ -1,11 +1,11 @@
-import type { Chatbot } from '$lib/typings/chatbot';
+import type { ChatBot } from '$lib/typings/chatbot';
 
 import { writable } from 'svelte/store';
 
 const createBotStore = () => {
-	const { set, subscribe, update } = writable<Chatbot>({
+	const { set, subscribe, update } = writable<ChatBot>({
 		history: [],
-		open: false
+		open: false,
 	});
 
 	return {
@@ -17,7 +17,7 @@ const createBotStore = () => {
 				return t;
 			});
 		},
-		update
+		update,
 	};
 };
 
