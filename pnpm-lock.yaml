@@ -171,8 +171,8 @@ devDependencies:
     specifier: ^4.4.9
     version: 4.4.9(@types/node@20.8.2)(sass@1.68.0)
   vite-plugin-kit-routes:
-    specifier: ^0.0.5
-    version: 0.0.5
+    specifier: ^0.0.6
+    version: 0.0.6
   zod:
     specifier: ^3.22.2
     version: 3.22.2
@@ -9913,8 +9913,8 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
-  /vite-plugin-kit-routes@0.0.5:
-    resolution: {integrity: sha512-021W/QSynhKgdrWbS6nP4Vk2z4TcpMpzdPEw2yn2bJAo+O3MsIL4YKdCGLPYz1+0TJIjl05tMpE55aulhlGWmQ==}
+  /vite-plugin-kit-routes@0.0.6:
+    resolution: {integrity: sha512-+8Mnf0p88rG3jPqaLJgmPnjCIjETHrvGwq9p+INp8H+4D3Ak5HW7OvEk1NLcDjXG1UKHik8lXRYXymKKo2MBBA==}
     dependencies:
       '@babel/parser': 7.23.0
       '@kitql/helpers': 0.8.2

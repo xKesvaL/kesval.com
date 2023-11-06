@@ -7,16 +7,23 @@ export default defineConfig({
 	css: {
 		preprocessorOptions: {
 			scss: {
-				additionalData: '@use "node_modules/@kesval/design/scss/utilities" as *;'
-			}
-		}
+				additionalData: '@use "node_modules/@kesval/design/scss/utilities" as *;',
+			},
+		},
 	},
-	plugins: [sveltekit(), kitRoutes()],
+	plugins: [
+		sveltekit(),
+		kitRoutes({
+			default_type: 'number | string',
+			extend: { PAGES: {} },
+			extra_search_params: 'with',
+		}),
+	],
 
 	resolve: {
 		alias: {
 			$design: resolve('./node_modules/@kesval/design/scss/utilities'),
-			$routes: resolve('./src/routes')
-		}
-	}
+			$routes: resolve('./src/routes'),
+		},
+	},
 });

@@ -1,21 +1,29 @@
 export const PAGES = {
-  "lang_locale_\": (params?: {lang?: string | number}, sp?: Record<string, string | number>) =>  { return `/${params?.lang ?? ''}\${appendSp(sp)}` },
-  "lang_locale_\about\": (params?: {lang?: string | number}, sp?: Record<string, string | number>) =>  { return `/${params?.lang ?? ''}\about\${appendSp(sp)}` },
-  "lang_locale_\blog\": (params?: {lang?: string | number}, sp?: Record<string, string | number>) =>  { return `/${params?.lang ?? ''}\blog\${appendSp(sp)}` },
-  "lang_locale_\blog\_slug_\": (params: {lang?: string | number,slug: string | number}, sp?: Record<string, string | number>) =>  { return `/${params?.lang ?? ''}\blog\${params.slug}\${appendSp(sp)}` },
-  "lang_locale_\work\": (params?: {lang?: string | number}, sp?: Record<string, string | number>) =>  { return `/${params?.lang ?? ''}\work\${appendSp(sp)}` }
-}
+  "lang_locale": (params?: {lang?: number | string}, sp?: Record<string, string | number>) =>  { return `/${params?.lang ?? ''}${appendSp(sp)}` },
+  "lang_locale_about": (params?: {lang?: number | string}, sp?: Record<string, string | number>) =>  { return `/${params?.lang ?? ''}/about${appendSp(sp)}` },
+  "lang_locale_blog": (params?: {lang?: number | string}, sp?: Record<string, string | number>) =>  { return `/${params?.lang ?? ''}/blog${appendSp(sp)}` },
+  "lang_locale_blog_slug": (params: {lang?: number | string,slug: number | string}, sp?: Record<string, string | number>) =>  { return `/${params?.lang ?? ''}/blog/${params.slug}${appendSp(sp)}` },
+  "lang_locale_work": (params?: {lang?: number | string}, sp?: Record<string, string | number>) =>  { return `/${params?.lang ?? ''}/work${appendSp(sp)}` }
+          }
 
 export const SERVERS = {
-  "assets_\site.webmanifest\": (sp?: Record<string, string | number>) =>  { return `/\site.webmanifest\${appendSp(sp)}` },
-  "assets_\sitemap.xml\": (sp?: Record<string, string | number>) =>  { return `/\sitemap.xml\${appendSp(sp)}` }
-}
+  "assets_site.webmanifest": (sp?: Record<string, string | number>) =>  { return `/site.webmanifest${appendSp(sp)}` },
+  "assets_sitemap.xml": (sp?: Record<string, string | number>) =>  { return `/sitemap.xml${appendSp(sp)}` }
+          }
 
 export const ACTIONS = {
   
-}
+          }
 
-const appendSp = (sp?: Record<string, string | number>) => {
+const appendSp = (sp?: Record<string, string | number | undefined>) => {
   if (sp === undefined) return ''
-  return `?${new URLSearchParams(sp as Record<string, string> || {}).toString()}`
+  const mapping = Object.entries(sp)
+    .filter(c => c[1] !== undefined)
+    .map(c => [c[0], String(c[1])])
+
+  const formated = new URLSearchParams(mapping).toString()
+  if (formated) {
+    return `?${formated}`
+  }
+  return ''
 }
