@@ -2,7 +2,6 @@ export const PAGES = {
   "lang_locale": (params?: {lang?: number | string}, sp?: Record<string, string | number>) =>  { return `/${params?.lang ?? ''}${appendSp(sp)}` },
   "lang_locale_about": (params?: {lang?: number | string}, sp?: Record<string, string | number>) =>  { return `/${params?.lang ?? ''}/about${appendSp(sp)}` },
   "lang_locale_blog": (params?: {lang?: number | string}, sp?: Record<string, string | number>) =>  { return `/${params?.lang ?? ''}/blog${appendSp(sp)}` },
-  "lang_locale_blog_slug": (params: {lang?: number | string,slug: number | string}, sp?: Record<string, string | number>) =>  { return `/${params?.lang ?? ''}/blog/${params.slug}${appendSp(sp)}` },
   "lang_locale_work": (params?: {lang?: number | string}, sp?: Record<string, string | number>) =>  { return `/${params?.lang ?? ''}/work${appendSp(sp)}` }
           }
 

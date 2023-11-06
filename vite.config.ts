@@ -15,7 +15,9 @@ export default defineConfig({
 		sveltekit(),
 		kitRoutes({
 			default_type: 'number | string',
-			extend: { PAGES: {} },
+			extend: {
+				PAGES: {},
+			},
 			extra_search_params: 'with',
 		}),
 	],

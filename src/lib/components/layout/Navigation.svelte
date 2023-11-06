@@ -1,6 +1,5 @@
 <script>
 	import { page } from '$app/stores';
-	import { ROUTES } from '$lib/config';
 	import { navigationOpen } from '$lib/stores/common';
 	import { t } from 'svelte-i18n';
 	import Image from '../base/Image.svelte';
@@ -8,6 +7,7 @@
 	import NavigationMenuButton from './NavigationMenuButton.svelte';
 	import Settings from './settings/Settings.svelte';
 	import { bot } from '$lib/stores/bot';
+	import { PAGES } from '$lib/ROUTES';
 
 	let pathWithoutlang = $page.url.pathname.replace(`/${$page.params.lang}`, '') || '/';
 	$: pathWithoutlang = $page.url.pathname.replace(`/${$page.params.lang}`, '') || '/';
@@ -18,7 +18,7 @@
 	id="navigation"
 	style="view-transition-name: header"
 >
-	<a href={ROUTES.home.path} class="relative h-12 w-12">
+	<a href={PAGES.lang_locale()} class="relative h-12 w-12">
 		<Image src="/images/logos/logo.png" alt="KesvaL Logo" />
 	</a>
 	<div
@@ -29,44 +29,44 @@
 	>
 		<a
 			class="rounded-md px-4 py-2 transition-colors duration-200 hover:bg-accent/40 {pathWithoutlang ===
-			ROUTES.home.path
+			PAGES.lang_locale()
 				? 'bg-primary/40 hover:bg-primary/40'
 				: ''} "
 			on:click={() => navigationOpen.set(false)}
-			href={ROUTES.home.path}
+			href={PAGES.lang_locale()}
 		>
 			{$t('home.name')}
 		</a>
 		<a
 			class="rounded-md px-4 py-2 transition-colors duration-200 hover:bg-accent/40 {pathWithoutlang.startsWith(
-				ROUTES.about.path
+				PAGES.lang_locale_about(),
 			)
 				? 'bg-primary/40 hover:bg-primary/40'
 				: ''} "
 			on:click={() => navigationOpen.set(false)}
-			href={ROUTES.about.path}
+			href={PAGES.lang_locale_about()}
 		>
 			{$t('about.name')}</a
 		>
 		<a
 			class="rounded-md px-4 py-2 transition-colors duration-200 hover:bg-accent/40 {pathWithoutlang.startsWith(
-				ROUTES.work.path
+				PAGES.lang_locale_work(),
 			)
 				? 'bg-primary/40 hover:bg-primary/40'
 				: ''} "
 			on:click={() => navigationOpen.set(false)}
-			href={ROUTES.work.path}
+			href={PAGES.lang_locale_work()}
 		>
 			{$t('work.name')}</a
 		>
 		<a
 			class="rounded-md px-4 py-2 transition-colors duration-200 hover:bg-accent/40 {pathWithoutlang.startsWith(
-				ROUTES.blog.path
+				PAGES.lang_locale_blog(),
 			)
 				? 'bg-primary/40 hover:bg-primary/40'
 				: ''} "
 			on:click={() => navigationOpen.set(false)}
-			href={ROUTES.blog.path}
+			href={PAGES.lang_locale_blog()}
 		>
 			{$t('blog.name')}</a
 		>
