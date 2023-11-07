@@ -18,7 +18,7 @@
 	id="navigation"
 	style="view-transition-name: header"
 >
-	<a href={PAGES.lang_locale()} class="relative h-12 w-12">
+	<a href={PAGES.lang_locale() || '/'} class="relative h-12 w-12">
 		<Image src="/images/logos/logo.png" alt="KesvaL Logo" />
 	</a>
 	<div
@@ -29,11 +29,11 @@
 	>
 		<a
 			class="rounded-md px-4 py-2 transition-colors duration-200 hover:bg-accent/40 {pathWithoutlang ===
-			PAGES.lang_locale()
+				PAGES.lang_locale() || pathWithoutlang === '/'
 				? 'bg-primary/40 hover:bg-primary/40'
 				: ''} "
 			on:click={() => navigationOpen.set(false)}
-			href={PAGES.lang_locale()}
+			href={PAGES.lang_locale() || '/'}
 		>
 			{$t('home.name')}
 		</a>
