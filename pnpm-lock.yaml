@@ -171,8 +171,8 @@ devDependencies:
     specifier: ^4.4.9
     version: 4.4.9(@types/node@20.8.2)(sass@1.68.0)
   vite-plugin-kit-routes:
-    specifier: ^0.0.8
-    version: 0.0.8
+    specifier: ^0.0.9
+    version: 0.0.9
   zod:
     specifier: ^3.22.2
     version: 3.22.2
@@ -467,14 +467,6 @@ packages:
       '@babel/helper-validator-identifier': 7.22.5
       chalk: 2.4.2
       js-tokens: 4.0.0
-    dev: true
-
-  /@babel/parser@7.22.14:
-    resolution: {integrity: sha512-1KucTHgOvaw/LzCVrEOAyXkr9rQlp0A1HiHRYnSUE9dmb8PvPW7o5sscg+5169r54n3vGlbx6GevTE/Iw/P3AQ==}
-    engines: {node: '>=6.0.0'}
-    hasBin: true
-    dependencies:
-      '@babel/types': 7.22.11
     dev: true
 
   /@babel/parser@7.23.0:
@@ -3570,7 +3562,7 @@ packages:
     resolution: {integrity: sha512-xbm5HGYvlwF0Efivx37v9rO7Exel1/Tdb/Yv/vXn4D/hQeljNVLNz4Bomfy4EQ207rRsrGDSOHEhLUbHDimnxg==}
     dependencies:
       '@babel/generator': 7.22.10
-      '@babel/parser': 7.22.14
+      '@babel/parser': 7.23.0
       '@babel/traverse': 7.22.11
       '@babel/types': 7.22.11
       '@storybook/csf': 0.1.1
@@ -9913,8 +9905,8 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
-  /vite-plugin-kit-routes@0.0.8:
-    resolution: {integrity: sha512-7Zyipq4qEdPafbC/gKScXWoYZPWRU2DzHCrYMY1O83wGJAEUwcz2SEfz+DXv8WP458RECf0vMlbFSMH/9IaFCw==}
+  /vite-plugin-kit-routes@0.0.9:
+    resolution: {integrity: sha512-woSZNF8xstN0KXtArcK37MZGmg1w1fp8/rXOAwJSjv0ERdE8rjl+HNG3JfrkxgfcZU14IUQRA5gN6f0FEPJ0vA==}
     dependencies:
       '@babel/parser': 7.23.0
       '@kitql/helpers': 0.8.2

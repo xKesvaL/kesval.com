@@ -9,16 +9,16 @@ export const PAGES = {
   "lang_locale_about": (params: {lang?: number | string}= {}, sp?: Record<string, string | number>) =>  { return `${params?.lang ? `/${params?.lang}`: ''}/about${appendSp(sp)}` },
   "lang_locale_blog": (params: {lang?: number | string}= {}, sp?: Record<string, string | number>) =>  { return `${params?.lang ? `/${params?.lang}`: ''}/blog${appendSp(sp)}` },
   "lang_locale_work": (params: {lang?: number | string}= {}, sp?: Record<string, string | number>) =>  { return `${params?.lang ? `/${params?.lang}`: ''}/work${appendSp(sp)}` }
-          }
+}
 
 export const SERVERS = {
   "assets_site.webmanifest": (sp?: Record<string, string | number>) =>  { return `/site.webmanifest${appendSp(sp)}` },
   "assets_sitemap.xml": (sp?: Record<string, string | number>) =>  { return `/sitemap.xml${appendSp(sp)}` }
-          }
+}
 
 export const ACTIONS = {
   
-          }
+}
 
 const appendSp = (sp?: Record<string, string | number | undefined>) => {
   if (sp === undefined) return ''
@@ -32,3 +32,35 @@ const appendSp = (sp?: Record<string, string | number | undefined>) => {
   }
   return ''
 }
+
+const ensurePrefix = (str: string) => {
+  if (str.startsWith('/')) {
+    return str
+  }
+  return `/${str}`
+}
+
+
+/**
+ * Add this type as a generic of the vite plugin `kitRoutes<ROUTES>`.
+ * 
+ * Full example:
+ * ```ts
+ * import type { ROUTES } from './ROUTES'
+ * import { kitRoutes } from 'vite-plugin-kit-routes'
+ * 
+ * kitRoutes<ROUTES>({
+ *  extend: {
+ *    PAGES: {
+ *      // here, "paths" it will be typed!
+ *    }
+ *  }
+ * })
+ * ```
+ */
+export type ROUTES = { 
+  PAGES: { 'lang_locale': 'lang', 'lang_locale_about': 'lang', 'lang_locale_blog': 'lang', 'lang_locale_work': 'lang' }
+  SERVERS: { 'assets_site.webmanifest': never, 'assets_sitemap.xml': never }
+  ACTIONS: {  }
+}
+  
