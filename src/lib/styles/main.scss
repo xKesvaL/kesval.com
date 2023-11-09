@@ -193,6 +193,7 @@
 :is(h1, h2) {
 	font-family: var(--ft-title);
 	font-weight: 900 !important;
+	text-wrap: balance;
 }
 
 body {
@@ -214,4 +215,8 @@ body[data-scroll-locked='true'] {
 .font-title {
 	font-family: var(--ft-title);
 	font-weight: 900;
+}
+
+section.section {
+	@apply gap-8 py-20 lg:gap-28 lg:py-40;
 }

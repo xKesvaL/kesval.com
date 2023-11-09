@@ -28,8 +28,8 @@
 
 <style lang="scss">
 	main {
-		background: radial-gradient(circle at 28% 37%, hsl(var(--primary-300) / 0.15), transparent 40%),
-			radial-gradient(circle at 70% 66%, hsl(var(--secondary-300) / 0.15), transparent 40%);
+		background: radial-gradient(circle at 28% 37%, hsl(var(--primary-300) / 0.1), transparent 40%),
+			radial-gradient(circle at 70% 66%, hsl(var(--secondary-300) / 0.1), transparent 40%);
 
 		margin-top: -8rem;
 		padding-top: 8rem;

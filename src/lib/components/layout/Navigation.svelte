@@ -14,7 +14,7 @@
 </script>
 
 <header
-	class="container-sm container sticky top-0 flex min-h-[4rem] items-center justify-between p-4 backdrop-blur-lg backdrop-saturate-200 lg:top-4 lg:rounded-3xl"
+	class="container-sm container sticky top-0 z-10 flex min-h-[4rem] items-center justify-between p-4 backdrop-blur-lg backdrop-saturate-200 lg:top-4 lg:rounded-3xl"
 	id="navigation"
 	style="view-transition-name: header"
 >

@@ -1,3 +1,3 @@
-<section class="container-wide container">
+<section class="section container">
 	<h2>I'm open to work</h2>
 </section>

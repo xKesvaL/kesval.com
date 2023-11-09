@@ -1,31 +1,52 @@
-<section class="container-wide container flex flex-col justify-center gap-8 py-12">
-	<h2 class="text-center text-4xl lg:text-5xl">Me, Myself and I</h2>
-	<div class="flex flex-col gap-8 lg:flex-row">
-		<div class="flex-grow">
-			<h3 class="font-sans font-bold">Texte</h3>
-			<p>Texte</p>
-			<h3 class="font-sans font-bold">Texte</h3>
-			<p>Texte</p>
+<script>
+	import CardGlass from '$lib/components/cards/CardGlass.svelte';
+	import PERSONAL from '$lib/data/personal';
+	import { t } from 'svelte-i18n';
+</script>
+
+<section class="container-sm section container flex flex-col justify-center">
+	<h2 class="text-center text-4xl lg:text-5xl">
+		{$t('hero.about.title')}
+	</h2>
+	<div class="grid gap-8 lg:grid-cols-2">
+		<div class="grid h-full grid-rows-2 gap-4">
+			<div>
+				<h3 class="font-sans text-4xl font-bold">Texte</h3>
+				<p>Texte</p>
+			</div>
+			<div>
+				<h3 class="font-sans text-4xl font-bold">Texte</h3>
+				<p>Texte</p>
+			</div>
 		</div>
-		<div class="grid flex-grow grid-cols-2 grid-rows-2 gap-4">
-			<div class="glass rounded-lg p-4"></div>
-			<div class="glass rounded-lg p-4"></div>
-			<div class="glass rounded-lg p-4"></div>
-			<div class="glass rounded-lg p-4"></div>
+		<div class="grid grid-cols-2 grid-rows-2 gap-4">
+			<CardGlass>
+				<span class="font-title text-6xl"> {PERSONAL.yearsOfExperience} </span>
+				<p class="lg:text-lg">
+					{$t('common.yearsOfExperience')}
+				</p>
+			</CardGlass>
+			<CardGlass delay={Math.random()}>
+				<span class="font-title text-6xl"> 05 </span>
+				<p class="lg:text-lg">
+					{$t('home.about.projectsDelivered')}
+				</p></CardGlass
+			>
+			<CardGlass delay={Math.random() * 2}>
+				<span class="font-title text-6xl"> 02 </span>
+				<p class="lg:text-lg">
+					{$t('home.about.professionalExperiences')}
+				</p></CardGlass
+			>
+			<CardGlass delay={Math.random() * 3}>
+				<span class="font-title text-6xl"> 08 </span>
+				<p class="lg:text-lg">
+					{$t('home.about.openSourceContributions')}
+				</p></CardGlass
+			>
 		</div>
 	</div>
 </section>
 
 <style lang="scss">
-	section.container {
-		.glass {
-			background: radial-gradient(
-					circle at 28% 37%,
-					hsl(var(--primary-300) / 0.15),
-					transparent 75%
-				),
-				radial-gradient(circle at 70% 66%, hsl(var(--secondary-300) / 0.15), transparent 75%),
-				hsl(var(--base-200) / 1);
-		}
-	}
 </style>
