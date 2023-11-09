@@ -23,7 +23,7 @@ export type ChatBotAnswers = {
 
 export interface ChatBotQuestion {
 	text: string;
-	to: ChatBotAnswers;
+	to: ChatBotKey;
 }
 
 export type ChatBotDefaultQuestions = ChatBotQuestion[];

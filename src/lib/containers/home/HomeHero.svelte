@@ -8,7 +8,7 @@
 </script>
 
 <section
-	class="container-wide container grid min-h-[80vh] grid-cols-[0.5fr,3fr] items-center justify-items-center gap-4 lg:grid-cols-[max-content,2fr,1fr]"
+	class="container-wide container grid grid-cols-[0.5fr,3fr] items-center justify-items-center gap-4 lg:grid-cols-[max-content,2fr,1fr]"
 >
 	<div class="">
 		<Socials vertical={true} />
@@ -40,6 +40,7 @@
 
 <style lang="scss">
 	section.container {
+		min-height: calc(100vh - 8rem);
 		.image {
 			border-radius: 63% 37% 37% 63%/43% 37% 63% 57%;
 		}

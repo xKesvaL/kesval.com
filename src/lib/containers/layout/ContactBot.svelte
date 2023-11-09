@@ -14,7 +14,7 @@
 	} from '$lib/typings/chatbot';
 
 	let content: HTMLElement;
-	let autoscroll: boolean;
+	let autoscroll = false;
 
 	let chatBotAnswers = $json('bot.answers') as ChatBotAnswers;
 	$: chatBotAnswers = $json('bot.answers') as ChatBotAnswers;
@@ -39,17 +39,13 @@
 			const target = e.currentTarget;
 
 			target.dataset.chosen = 'true';
+
 			$bot.history = [...$bot.history, target.dataset.name as ChatBotKey];
-			content.querySelectorAll('.question').forEach((el) => {
-				if ((el as HTMLElement).dataset.chosen !== 'true') {
-					(el as HTMLElement).dataset.chosen = 'false';
-				}
-			});
 		}
 	}
 
 	beforeUpdate(() => {
-		autoscroll = content && content.offsetHeight + content.scrollTop > content.scrollHeight - 20;
+		autoscroll = content && content.offsetHeight + content.scrollTop > content.scrollHeight - 80;
 	});
 
 	afterUpdate(() => {
@@ -60,9 +56,9 @@
 			for (let i = 0; i <= lengthAnswers; i++) {
 				setTimeout(() => {
 					if (i === lengthAnswers) {
-						content.scrollTo(0, content.scrollHeight);
+						content?.scrollTo(0, content.scrollHeight);
 					} else {
-						content.scrollTo(
+						content?.scrollTo(
 							0,
 							content.scrollHeight -
 								content.offsetHeight -
@@ -145,14 +141,19 @@
 			bind:this={content}
 		>
 			{#each chatBotAnswers['first'] as answer}
-				<div class="answer">
+				<div class="text-foreground; mb-2 max-w-[90%] rounded-lg bg-background/95 p-4">
 					<p>{answer}</p>
 				</div>
 			{/each}
 
 			{#each chatBotQuestions['first'] as question}
 				<button
-					class="question"
+					class="mb-2 w-fit justify-self-end p-4 transition-all duration-150
+				{$bot.history.length && $bot.history[0]
+						? $bot.history[0] === question.to
+							? 'cursor-default rounded-lg bg-primary text-primary-foreground'
+							: 'hidden'
+						: 'cursor-pointer rounded-5xl border-2 border-primary bg-background/40 hover:bg-primary hover:text-primary-foreground'}"
 					on:click|once={(e) => {
 						chooseQuestion(e);
 					}}
@@ -162,16 +163,24 @@
 					<p>{question.text}</p>
 				</button>
 			{/each}
-			{#each $bot.history as action}
+			{#each $bot.history as action, actionIndex}
 				{#each chatBotAnswers[action] as answer, i}
-					<div class="answer" in:fly|global={{ y: 50, duration: 500, delay: 1000 * i }}>
+					<div
+						class="text-foreground; mb-2 max-w-[90%] rounded-lg bg-background/95 p-4"
+						in:fly|global={{ y: 50, duration: 500, delay: 1000 * i }}
+					>
 						<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 						{answer}
 					</div>
 				{/each}
 				{#each chatBotQuestions[action] as question}
 					<button
-						class="question"
+						class="mb-2 w-fit justify-self-end p-4 transition-all duration-150
+								{$bot.history.length && $bot.history[actionIndex + 1]
+							? $bot.history[actionIndex + 1] === question.to
+								? 'cursor-default rounded-lg bg-primary text-primary-foreground'
+								: 'hidden'
+							: 'cursor-pointer rounded-5xl border-2 border-primary bg-background/40 hover:bg-primary hover:text-primary-foreground'}"
 						on:click|once={(e) => {
 							chooseQuestion(e);
 						}}

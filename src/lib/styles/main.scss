@@ -215,19 +215,3 @@ body[data-scroll-locked='true'] {
 	font-family: var(--ft-title);
 	font-weight: 900;
 }
-
-.answer {
-	@apply mb-2 max-w-[90%] rounded-lg bg-background/95 p-4 text-foreground;
-}
-
-.question {
-	@apply rounded-5xl mb-2 w-fit cursor-pointer justify-self-end border-2 border-primary bg-background/40 p-4 transition-all duration-150 hover:bg-primary hover:text-primary-foreground;
-
-	&[data-chosen='false'] {
-		@apply hidden;
-	}
-
-	&[data-chosen='true'] {
-		@apply cursor-default rounded-lg border-none bg-primary text-primary-foreground;
-	}
-}
