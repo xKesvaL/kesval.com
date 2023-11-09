@@ -191,8 +191,8 @@
 		background: linear-gradient(135deg, hsl(var(--primary-500) / 0.05), hsl(var(--primary-100) / 0)),
 			linear-gradient(225deg, hsl(var(--secondary-500) / 0.05), transparent),
 			linear-gradient(0deg, hsl(var(--secondary-500) / 0.05), transparent),
-			radial-gradient(hsl(var(--primary-50) / 0.6), hsl(var(--primary-50) / 0.6));
-		box-shadow: 0px 0px 16px 4px hsl(var(--foreground) / 0.5);
+			radial-gradient(hsl(var(--primary-50) / 0.8), hsl(var(--primary-50) / 0.8));
+		box-shadow: 0px 0px 16px 4px hsla(0, 0%, 0%, 0.5);
 		view-transition-name: chat-bot;
 	}
 </style>
