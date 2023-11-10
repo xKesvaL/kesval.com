@@ -9,7 +9,7 @@
 </script>
 
 <div
-	class="card relative isolate overflow-hidden rounded-lg p-4 transition-all hover:-translate-y-1 hover:bg-muted/40"
+	class="card relative isolate overflow-hidden rounded-lg p-4 shadow-lg transition-all hover:-translate-y-1 hover:bg-muted/40"
 	style="--cdg-fc: var(--{firstColor}); --cdg-sc: var(--{secondColor}); --cdg-d: {delay}s; --cdg-du: {duration}s;"
 >
 	<slot />

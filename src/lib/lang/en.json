@@ -117,7 +117,9 @@
   },
   "home": {
     "about": {
+      "ambitious": "Ambitious",
       "openSourceContributions": "Open Source contributions",
+      "passionate": "Passionate",
       "professionalExperiences": "Professional experiences",
       "projectsDelivered": "Projects delivered"
     },
