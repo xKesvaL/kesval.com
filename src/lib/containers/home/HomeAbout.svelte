@@ -19,9 +19,8 @@
 				Perferendis, labore? Eius omnis suscipit aspernatur.
 			</p>
 			<p>
-				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est quisquam pariatur
-				reprehenderit error porro provident dolores laboriosam a. Quaerat, eum consequatur.
-				Perferendis, labore? Eius omnis suscipit aspernatur.
+				Interested in development since I was a child, I started with the creation of minecraft
+				plugins then I moved on to discord bots. As of today, I'm a web developer as you can see!
 			</p>
 		</div>
 		<div class="grid grid-cols-2 grid-rows-2 gap-4">

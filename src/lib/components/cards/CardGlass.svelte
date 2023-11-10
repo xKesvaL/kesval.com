@@ -28,11 +28,11 @@
 			z-index: -1;
 			background: linear-gradient(
 					45deg,
-					hsl(var(--cdg-fc) / 0.03) 0%,
-					hsl(var(--cdg-sc) / 0.03) 25%,
-					hsl(var(--cdg-fc) / 0.03) 50%,
-					hsl(var(--cdg-sc) / 0.03) 75%,
-					hsl(var(--cdg-fc) / 0.03) 100%
+					hsl(var(--cdg-fc) / 0.075) 0%,
+					hsl(var(--cdg-sc) / 0.075) 25%,
+					hsl(var(--cdg-fc) / 0.075) 50%,
+					hsl(var(--cdg-sc) / 0.075) 75%,
+					hsl(var(--cdg-fc) / 0.075) 100%
 				),
 				hsl(var(--base-200) / 0.7);
 			background-size: 400% 400%;
@@ -48,9 +48,15 @@
 			background-position: 0% 50%;
 			transform: rotate(0deg);
 		}
+		25% {
+			background-position: 50% 100%;
+		}
 		50% {
 			background-position: 100% 50%;
 			transform: rotate(720deg);
+		}
+		75% {
+			background-position: 50% 0%;
 		}
 	}
 </style>
