@@ -112,12 +112,13 @@
   },
   "hero": {
     "about": {
-      "title": "My, Myself & I"
+      "title": "Me, Myself & I"
     }
   },
   "home": {
     "about": {
       "ambitious": "Ambitious",
+      "button": "Learn more about me",
       "openSourceContributions": "Open Source contributions",
       "passionate": "Passionate",
       "professionalExperiences": "Professional experiences",
