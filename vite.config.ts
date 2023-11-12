@@ -1,4 +1,4 @@
-import type { ROUTES } from '$lib/ROUTES';
+import type { KIT_ROUTES } from '$lib/ROUTES';
 
 import { sveltekit } from '@sveltejs/kit/vite';
 import { resolve } from 'path';
@@ -15,7 +15,7 @@ export default defineConfig({
 	},
 	plugins: [
 		sveltekit(),
-		kitRoutes<ROUTES>({
+		kitRoutes<KIT_ROUTES>({
 			default_type: 'number | string',
 			extend: {
 				PAGES: {},

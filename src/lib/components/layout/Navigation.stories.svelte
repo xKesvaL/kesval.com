@@ -3,7 +3,7 @@
 
 	import { Meta, Story, Template } from '@storybook/addon-svelte-csf';
 
-	import Navigation from './Navigation.svelte';
+	import Navigation from '../../containers/layout/Navigation.svelte';
 
 	type Story = ComponentProps<Navigation>;
 

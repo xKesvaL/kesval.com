@@ -1,62 +1,70 @@
 <script lang="ts">
 	import type { ThemeColor } from '$lib/typings/standard';
+	import type { MouseEventHandler } from 'svelte/elements';
 
-	export let firstColor: ThemeColor = 'primary';
-	export let secondColor: ThemeColor = 'accent';
+	export let color: ThemeColor = 'primary';
+	export let href: string | null = null;
 
-	export let delay = 0;
-	export let duration = 10;
+	export let classes = '';
+	export let classesBg = '';
+
+	export let scale = true;
+
+	let el: HTMLElement;
+
+	$: if (el) {
+		el.style.setProperty('--drop-color', `var(--${color}-300)`);
+	}
+
+	const onHover: MouseEventHandler<HTMLDivElement> = (ev) => {
+		const target = ev.currentTarget;
+
+		const rect = target.getBoundingClientRect();
+
+		const x = ev.clientX - rect.left;
+		const y = ev.clientY - rect.top;
+
+		target.style.setProperty('--drop-x', `${x}px`);
+		target.style.setProperty('--drop-y', `${y}px`);
+	};
 </script>
 
-<div
-	class="card relative isolate overflow-hidden rounded-lg p-4 shadow-lg transition-all hover:-translate-y-1 hover:bg-muted/40"
-	style="--cdg-fc: var(--{firstColor}); --cdg-sc: var(--{secondColor}); --cdg-d: {delay}s; --cdg-du: {duration}s;"
+<svelte:element
+	this={href ? 'a' : 'div'}
+	bind:this={el}
+	{href}
+	class="card flex h-full flex-col overflow-hidden rounded-xl border border-transparent transition-all hover:border-foreground/25 {classes}"
+	class:scale
+	role={href ? 'link' : 'none'}
+	on:mousemove={onHover}
 >
-	<slot />
-</div>
+	<div class="card-bg-img flex h-full flex-col p-4 transition-all {classesBg}">
+		<slot />
+	</div>
+</svelte:element>
 
 <style lang="scss">
 	.card {
-		z-index: 0;
+		--drop-x: 0;
+		--drop-y: 0;
 
-		&::before {
-			content: '';
-			position: absolute;
-			inset: -400%;
-			border-radius: inherit;
-			/* make sure the gradient is behind the content */
-			z-index: -1;
-			background: linear-gradient(
-					45deg,
-					hsl(var(--cdg-fc) / 0.075) 0%,
-					hsl(var(--cdg-sc) / 0.075) 25%,
-					hsl(var(--cdg-fc) / 0.075) 50%,
-					hsl(var(--cdg-sc) / 0.075) 75%,
-					hsl(var(--cdg-fc) / 0.075) 100%
-				),
-				hsl(var(--base-200) / 0.7);
-			background-size: 400% 400%;
-			animation: cdg-anim var(--cdg-du) alternate infinite ease both var(--cdg-d);
-		}
-		// generate a cool gradient using the two colors
-		// put 4 colors in the gradient to make it more interesting
-	}
+		--drop-color: hsl(var(--primary-300) / 0.3);
 
-	@keyframes cdg-anim {
-		0%,
-		100% {
-			background-position: 0% 50%;
-			transform: rotate(0deg);
+		background: hsl(var(--base-300) / 0.25);
+
+		&:hover {
+			transform: scale(1.02);
 		}
-		25% {
-			background-position: 50% 100%;
-		}
-		50% {
-			background-position: 100% 50%;
-			transform: rotate(720deg);
-		}
-		75% {
-			background-position: 50% 0%;
+
+		&-bg-img {
+			&:hover {
+				background-color: rgba(var(--base-200-rgb), 0.3);
+				background-image: radial-gradient(
+					circle at var(--drop-x) var(--drop-y),
+					hsl(var(--drop-color) / 0.3),
+					transparent
+				);
+			}
 		}
 	}
 </style>

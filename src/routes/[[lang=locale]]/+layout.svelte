@@ -3,7 +3,7 @@
 	import BackToTopButton from '$lib/components/layout/BackToTopButton.svelte';
 	import ContactBot from '$lib/containers/layout/ContactBot.svelte';
 	import Footer from '$lib/components/layout/Footer.svelte';
-	import Navigation from '$lib/components/layout/Navigation.svelte';
+	import Navigation from '$lib/containers/layout/Navigation.svelte';
 	import { scrollLocked } from '$lib/stores/common';
 	import { settings } from '$lib/stores/settings';
 

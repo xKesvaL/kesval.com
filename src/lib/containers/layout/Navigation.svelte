@@ -2,10 +2,10 @@
 	import { page } from '$app/stores';
 	import { navigationOpen } from '$lib/stores/common';
 	import { t } from 'svelte-i18n';
-	import Image from '../base/Image.svelte';
-	import LangSwitcher from './LangSwitcher.svelte';
-	import NavigationMenuButton from './NavigationMenuButton.svelte';
-	import Settings from './settings/Settings.svelte';
+	import Image from '../../components/base/Image.svelte';
+	import LangSwitcher from '../../components/layout/LangSwitcher.svelte';
+	import NavigationMenuButton from '../../components/layout/NavigationMenuButton.svelte';
+	import Settings from '../../components/layout/settings/Settings.svelte';
 	import { bot } from '$lib/stores/bot';
 	import { PAGES } from '$lib/ROUTES';
 
