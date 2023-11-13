@@ -8,7 +8,10 @@
 	export let classes = '';
 	export let classesBg = '';
 
-	export let scale = true;
+	export let styleBg = '';
+
+	export let scale = 1.02;
+	export let defaultBorder = true;
 
 	let el: HTMLElement;
 
@@ -33,12 +36,14 @@
 	this={href ? 'a' : 'div'}
 	bind:this={el}
 	{href}
-	class="card flex h-full flex-col overflow-hidden rounded-xl border border-transparent transition-all hover:border-foreground/25 {classes}"
-	class:scale
+	class="card flex h-full flex-col overflow-hidden rounded-xl border transition-all hover:border-foreground/30 {defaultBorder
+		? 'border border-foreground/5'
+		: 'border-transparent'} {classes}"
 	role={href ? 'link' : 'none'}
 	on:mousemove={onHover}
+	style="--cg-sc: {scale}"
 >
-	<div class="card-bg-img flex h-full flex-col p-4 transition-all {classesBg}">
+	<div class="card-bg-img flex h-full flex-col p-4 transition-all {classesBg}" style={styleBg}>
 		<slot />
 	</div>
 </svelte:element>
@@ -53,7 +58,7 @@
 		background: hsl(var(--base-300) / 0.25);
 
 		&:hover {
-			transform: scale(1.02);
+			transform: scale(var(--cg-sc));
 		}
 
 		&-bg-img {

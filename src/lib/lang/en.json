@@ -119,6 +119,10 @@
     "about": {
       "ambitious": "Ambitious",
       "button": "Learn more about me",
+      "descriptions": {
+        "0": "Interested in development since I was a child, I began coding at the age of 8 with the \t\t\t\tcreation of minecraft plugins and mods.",
+        "1": "Then, as discord rose in popularity, I moved on to making discord bots. As of today, I'm a \t\t\t\tfullstack web developer as you can see!"
+      },
       "openSourceContributions": "Open Source contributions",
       "passionate": "Passionate",
       "professionalExperiences": "Professional experiences",
@@ -131,7 +135,11 @@
       "title": "Hi. I'm KesvaL.",
       "workWithMe": "Work With Me"
     },
-    "name": "Home"
+    "name": "Home",
+    "work": {
+      "discoverProject": "Discover {project}",
+      "title": "A glimpse of my projects"
+    }
   },
   "settings": {
     "chooseATheme": "Choose a theme",
@@ -149,5 +157,13 @@
   "title": "test",
   "work": {
     "name": "Work"
+  },
+  "projects": {
+    "portfolio": {
+      "name": "Portfolio"
+    },
+    "leetstrength": {
+      "name": "LeetStrength"
+    }
   }
 }

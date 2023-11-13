@@ -5,27 +5,17 @@
  */
 
 export const PAGES = {
-  "lang_locale": (params: {lang?: number | string}= {}, sp?: Record<string, string | number>) =>  {
-    return ensurePrefix(`${params?.lang ? `/${params?.lang}`: ''}${appendSp(sp)}`)
-  },
-  "lang_locale_about": (params: {lang?: number | string}= {}, sp?: Record<string, string | number>) =>  {
-    return ensurePrefix(`${params?.lang ? `/${params?.lang}`: ''}/about${appendSp(sp)}`)
-  },
-  "lang_locale_blog": (params: {lang?: number | string}= {}, sp?: Record<string, string | number>) =>  {
-    return ensurePrefix(`${params?.lang ? `/${params?.lang}`: ''}/blog${appendSp(sp)}`)
-  },
-  "lang_locale_work": (params: {lang?: number | string}= {}, sp?: Record<string, string | number>) =>  {
-    return ensurePrefix(`${params?.lang ? `/${params?.lang}`: ''}/work${appendSp(sp)}`)
-  }
+  "lang_locale": (params: {lang?: number | string}= {}, sp?: Record<string, string | number>) =>  { return `${params?.lang ? `/${params?.lang}`: ''}${appendSp(sp)}` },
+  "lang_locale_about": (params: {lang?: number | string}= {}, sp?: Record<string, string | number>) =>  { return `${params?.lang ? `/${params?.lang}`: ''}/about${appendSp(sp)}` },
+  "lang_locale_blog": (params: {lang?: number | string}= {}, sp?: Record<string, string | number>) =>  { return `${params?.lang ? `/${params?.lang}`: ''}/blog${appendSp(sp)}` },
+  "lang_locale_work": (params: {lang?: number | string}= {}, sp?: Record<string, string | number>) =>  { return `${params?.lang ? `/${params?.lang}`: ''}/work${appendSp(sp)}` },
+  "lang_locale_work_leetstrength": (params: {lang?: number | string}= {}, sp?: Record<string, string | number>) =>  { return `${params?.lang ? `/${params?.lang}`: ''}/work/leetstrength${appendSp(sp)}` },
+  "lang_locale_work_portfolio": (params: {lang?: number | string}= {}, sp?: Record<string, string | number>) =>  { return `${params?.lang ? `/${params?.lang}`: ''}/work/portfolio${appendSp(sp)}` }
 }
 
 export const SERVERS = {
-  "assets_site.webmanifest": (sp?: Record<string, string | number>) =>  {
-    return ensurePrefix(`/site.webmanifest${appendSp(sp)}`)
-  },
-  "assets_sitemap.xml": (sp?: Record<string, string | number>) =>  {
-    return ensurePrefix(`/sitemap.xml${appendSp(sp)}`)
-  }
+  "assets_site.webmanifest": (sp?: Record<string, string | number>) =>  { return `/site.webmanifest${appendSp(sp)}` },
+  "assets_sitemap.xml": (sp?: Record<string, string | number>) =>  { return `/sitemap.xml${appendSp(sp)}` }
 }
 
 export const ACTIONS = {
@@ -52,91 +42,27 @@ const ensurePrefix = (str: string) => {
   return `/${str}`
 }
 
+
 /**
-* Add this type as a generic of the vite plugin `kitRoutes<KIT_ROUTES>`.
-* 
-* Full example:
-* ```ts
-* import type { KIT_ROUTES } from './ROUTES'
-* import { kitRoutes } from 'vite-plugin-kit-routes'
-* 
-* kitRoutes<KIT_ROUTES>({
-*  extend: {
-*    PAGES: {
-*      // here, "paths" it will be typed!
-*    }
-*  }
-* })
-* ```
-*/
-export type KIT_ROUTES = { 
-  PAGES: { 'lang_locale': 'lang', 'lang_locale_about': 'lang', 'lang_locale_blog': 'lang', 'lang_locale_work': 'lang' }
+ * Add this type as a generic of the vite plugin `kitRoutes<ROUTES>`.
+ * 
+ * Full example:
+ * ```ts
+ * import type { ROUTES } from './ROUTES'
+ * import { kitRoutes } from 'vite-plugin-kit-routes'
+ * 
+ * kitRoutes<ROUTES>({
+ *  extend: {
+ *    PAGES: {
+ *      // here, "paths" it will be typed!
+ *    }
+ *  }
+ * })
+ * ```
+ */
+export type ROUTES = { 
+  PAGES: { 'lang_locale': 'lang', 'lang_locale_about': 'lang', 'lang_locale_blog': 'lang', 'lang_locale_work': 'lang', 'lang_locale_work_leetstrength': 'lang', 'lang_locale_work_portfolio': 'lang' }
   SERVERS: { 'assets_site.webmanifest': never, 'assets_sitemap.xml': never }
   ACTIONS: {  }
-  Storage_Params: { lang: never }
 }
-
-import { browser } from '$app/environment'
-import { writable } from 'svelte/store'
-
-const _kitRoutes = <T>(key: string, initValues?: T) => {
-  const store = writable<T>(initValues, set => {
-    if (browser) {
-      if(initValues){
-        const v = localStorage.getItem(key)
-        if (v) {
-          try {
-            const json = JSON.parse(v)
-            set(json)
-          } catch (error) {
-            set(initValues)
-          }
-        } else {
-          set(initValues)
-        }
-      } else {
-        set({} as any)
-      }
-
-      const handleStorage = (event: StorageEvent) => {
-        if (event.key === key) set(event.newValue ? JSON.parse(event.newValue) : null)
-      }
-      window.addEventListener('storage', handleStorage)
-      return () => window.removeEventListener('storage', handleStorage)
-    } else {
-      if(initValues) {
-        set(initValues)
-      } else {
-        set({} as any)
-      }
-    }
-  })
-
-  return {
-    subscribe: store.subscribe,
-    update: (u: T) => {
-      if (browser) {
-        localStorage.setItem(key, JSON.stringify(u))
-      } 
-      store.update(() => u)
-    },
-  }
-}
-
-export type StorageParams = { }
-/**
- *
- * Example of usage:
- * ```ts
- *  import { afterNavigate } from '$app/navigation'
- *  import { kitRoutes } from './ROUTES.js'
- *
- *  afterNavigate(() => {
- *	  kitRoutes.update({ lang: $page.params.lang })
- *  })
- * ```
- *
- */
-export let kitRoutes = _kitRoutes<StorageParams>('kitRoutes')
-
-
+  

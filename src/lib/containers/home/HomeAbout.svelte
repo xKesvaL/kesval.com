@@ -16,12 +16,10 @@
 				{$t('home.about.passionate')}
 			</h3>
 			<p class="text-lg lg:text-xl">
-				Interested in development since I was a child, I began coding at the age of 8 with the
-				creation of minecraft plugins and mods.
+				{$t('home.about.descriptions.0')}
 			</p>
 			<p class="text-lg lg:text-xl">
-				Then, as discord rose in popularity, I moved on to making discord bots. As of today, I'm a
-				fullstack web developer as you can see!
+				{$t('home.about.descriptions.1')}
 			</p>
 		</div>
 		<div class="grid grid-cols-2 grid-rows-2 gap-4">
@@ -31,19 +29,19 @@
 					{$t('common.yearsOfExperience')}
 				</p>
 			</CardGlass>
-			<CardGlass delay={Math.random()}>
+			<CardGlass>
 				<span class="font-title text-6xl"> 05 </span>
 				<p class="lg:text-xl">
 					{$t('home.about.projectsDelivered')}
 				</p></CardGlass
 			>
-			<CardGlass delay={Math.random() * 2}>
+			<CardGlass>
 				<span class="font-title text-6xl"> 02 </span>
 				<p class="lg:text-xl">
 					{$t('home.about.professionalExperiences')}
 				</p></CardGlass
 			>
-			<CardGlass delay={Math.random() * 3}>
+			<CardGlass>
 				<span class="font-title text-6xl"> 08 </span>
 				<p class="lg:text-xl">
 					{$t('home.about.openSourceContributions')}
