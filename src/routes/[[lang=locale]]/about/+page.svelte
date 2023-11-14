@@ -1,5 +1,7 @@
 <script lang="ts">
-	import { t } from 'svelte-i18n';
+	import AboutHero from '$lib/containers/about/AboutHero.svelte';
+	import AboutSocials from '$lib/containers/about/AboutSocials.svelte';
 </script>
 
-{$t('title')}
+<AboutHero />
+<AboutSocials />

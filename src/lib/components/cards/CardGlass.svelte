@@ -6,17 +6,19 @@
 	export let href: string | null = null;
 
 	export let classes = '';
-	export let classesBg = '';
+	export let classBg = '';
 
 	export let styleBg = '';
 
 	export let scale = 1.02;
 	export let defaultBorder = true;
 
+	export let strength = 0.15;
+
 	let el: HTMLElement;
 
 	$: if (el) {
-		el.style.setProperty('--drop-color', `var(--${color}-300)`);
+		el.style.setProperty('--drop-color', `var(--${color})`);
 	}
 
 	const onHover: MouseEventHandler<HTMLDivElement> = (ev) => {
@@ -41,9 +43,9 @@
 		: 'border-transparent'} {classes}"
 	role={href ? 'link' : 'none'}
 	on:mousemove={onHover}
-	style="--cg-sc: {scale}"
+	style="--cg-sc: {scale}; --cg-st: {strength}"
 >
-	<div class="card-bg-img flex h-full flex-col p-4 transition-all {classesBg}" style={styleBg}>
+	<div class="card-bg-img flex h-full flex-col p-4 transition-all {classBg}" style={styleBg}>
 		<slot />
 	</div>
 </svelte:element>
@@ -53,7 +55,7 @@
 		--drop-x: 0;
 		--drop-y: 0;
 
-		--drop-color: hsl(var(--primary-300) / 0.3);
+		--drop-color: var(--primary);
 
 		background: hsl(var(--base-300) / 0.25);
 
@@ -66,7 +68,7 @@
 				background-color: rgba(var(--base-200-rgb), 0.3);
 				background-image: radial-gradient(
 					circle at var(--drop-x) var(--drop-y),
-					hsl(var(--drop-color) / 0.3),
+					hsl(var(--drop-color) / var(--cg-st)),
 					transparent
 				);
 			}

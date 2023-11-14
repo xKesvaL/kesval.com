@@ -8,3 +8,7 @@ const PERSONAL = {
 } as const;
 
 export default PERSONAL;
+
+export const PROGRAMMING_LANGUAGES = ['svelte'] as const;
+
+export type ProgrammingLanguage = (typeof PROGRAMMING_LANGUAGES)[number];

@@ -5,9 +5,10 @@
 	import IconBrandLinkedin from '$lib/icons/IconBrandLinkedin.svelte';
 
 	export let vertical = false;
+	export let gap = 6;
 </script>
 
-<div class="flex gap-6 lg:gap-8 {vertical ? 'flex-col' : ''}">
+<div class="flex gap-{gap} lg:gap-{gap + 2} {vertical ? 'flex-col' : ''}">
 	<a
 		href={SOCIALS.github.url}
 		class="aspect-square h-10 w-10 transition-colors duration-200 hover:text-accent"

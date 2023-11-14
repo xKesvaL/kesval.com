@@ -1,5 +1,7 @@
 import { PAGES } from '$lib/ROUTES';
 
+import type { ProgrammingLanguage } from './personal';
+
 export interface Project {
 	description: string;
 	endDate: Date | null;
@@ -7,6 +9,7 @@ export interface Project {
 	github: null | string;
 	href: string;
 	id: number;
+	languages: ProgrammingLanguage[];
 	name: string;
 	site: null | string;
 	startDate: Date;
@@ -22,6 +25,7 @@ const PROJECTS: Project[] = [
 		github: 'https://github.com/xKesvaL/kesval.com',
 		href: PAGES.lang_locale_work_portfolio(),
 		id: 1,
+		languages: ['svelte'],
 		name: 'portfolio',
 		site: 'https://kesval.com',
 		startDate: new Date('2023-03-19'),
@@ -34,6 +38,7 @@ const PROJECTS: Project[] = [
 		github: 'https://github.com/Leet-Apps/app.leetstrength.com',
 		href: PAGES.lang_locale_work_leetstrength(),
 		id: 2,
+		languages: ['svelte'],
 		name: 'leetstrength',
 		site: null, // https://leetstrength.com',
 		startDate: new Date('2023-05-01'),

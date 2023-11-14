@@ -1,9 +1,10 @@
 <script lang="ts">
-	import Image from '$lib/components/base/Image.svelte';
 	import CardGlass from '$lib/components/cards/CardGlass.svelte';
 	import { Button } from '$lib/components/ui/button';
 	import { FEATURED_PROJECTS, PROJECTS } from '$lib/data/projects';
 	import { t } from 'svelte-i18n';
+	import HomeWorkIcons from './HomeWorkIcons.svelte';
+	import { PAGES } from '$lib/ROUTES';
 
 	let expandedIndex = '1';
 
@@ -46,9 +47,12 @@
 							<span class="project-title relative isolate grid items-center text-2xl lg:text-3xl"
 								>{$t(`projects.${project.name}.name`)}</span
 							>
-							<div class="project-icon">
-								<Image src="" alt="" />
-							</div>
+							<svg class="project-icon">
+								<use
+									href="#{project.languages[0]}-logo"
+									xlink:href="#{project.languages[0]}-logo"
+								/>
+							</svg>
 						</button>
 					</h3>
 					<div
@@ -75,7 +79,12 @@
 			</div>
 		{/each}
 	</div>
+	<Button class="mx-auto" href={PAGES.lang_locale_work()}>
+		{$t('home.work.discoverMore')}
+	</Button>
 </section>
+
+<HomeWorkIcons />
 
 <style lang="scss">
 	section {
@@ -146,7 +155,7 @@
 				}
 
 				&-icon {
-					backdrop-filter: blur(0.5rem) saturate(3);
+					backdrop-filter: blur(0.5rem) saturate(5);
 					width: var(--button-size);
 
 					aspect-ratio: 1/1;
@@ -155,10 +164,10 @@
 
 					@include mq(md) {
 						background: radial-gradient(
-								rgba(var(--secondary-500-rgb), 0.15),
-								rgba(var(--base-200-rgb), 0.5)
+								hsl(var(--secondary-500) / 0.15),
+								hsl(var(--base-200) / 0.5)
 							),
-							radial-gradient(rgba(var(--base-200-rgb), 0.5), rgba(var(--base-200-rgb), 0.5));
+							radial-gradient(hsl(var(--base-200) / 0.2), hsl(var(--base-200) / 0.2));
 					}
 				}
 			}
