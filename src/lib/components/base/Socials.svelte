@@ -31,3 +31,11 @@
 		<div class="sr-only">LinkedIn</div></a
 	>
 </div>
+
+<style lang="scss">
+	div a {
+		&:hover {
+			filter: drop-shadow(0 0 0.4rem hsl(var(--accent) / 0.4));
+		}
+	}
+</style>
