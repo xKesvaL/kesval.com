@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { getFlagEmoji } from '$lib/utils/functions';
-	import { locale, locales, t } from 'svelte-i18n';
+	import { locales, t } from 'svelte-i18n';
 
 	import * as Select from '$lib/components/ui/select';
 	import { langStore } from '$lib/stores/lang';
@@ -31,6 +31,7 @@
 		<Select.Trigger
 			class="trigger flex aspect-square justify-center border-0 bg-muted p-2 text-lg"
 			icon={false}
+			aria-label={$t('common.changeLanguage')}
 		>
 			{getFlagEmoji(transformLocaleToFlag($langStore))}
 			<div class="sr-only">

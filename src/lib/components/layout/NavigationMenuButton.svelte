@@ -1,5 +1,6 @@
 <script>
 	import { navigationOpen } from '$lib/stores/common';
+	import { t } from 'svelte-i18n';
 	import { Button } from '../ui/button';
 </script>
 
@@ -12,7 +13,8 @@
 	class="bg-muted text-muted-foreground !transition-all !duration-0 hover:bg-muted hover:text-foreground {$navigationOpen
 		? 'scale-[2] bg-transparent text-white !duration-300 hover:bg-transparent hover:text-white'
 		: ''}"
->
+		aria-label={$t('common.toggleMenu')}
+			>
 	<div class="h-8 w-8 overflow-hidden">
 		<svg
 			stroke="currentColor"
