@@ -39,7 +39,7 @@
 	bind:this={el}
 	{href}
 	class="card flex h-full flex-col overflow-hidden rounded-xl border transition-all hover:border-foreground/30 {defaultBorder
-		? 'border border-foreground/5'
+		? 'border border-foreground/10'
 		: 'border-transparent'} {classes}"
 	role={href ? 'link' : 'none'}
 	on:mousemove={onHover}
