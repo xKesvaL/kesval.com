@@ -30,9 +30,7 @@ export default defineConfig({
 	resolve: {
 		alias: {
 			$assets: './src/assets',
-			$design: './node_modules/@kesval/design/scss/abstracts',
 			$paraglide: './src/paraglide',
-			'$paraglide/*': './src/paraglide/*',
 			$routes: './src/routes',
 		},
 	},

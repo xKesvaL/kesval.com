@@ -3,7 +3,6 @@
 	import Image from '../../components/base/Image.svelte';
 	import IconX from '$lib/icons/IconX.svelte';
 	import { Button } from '../../components/ui/button';
-	// import { json, t } from 'svelte-i18n';
 	import { beforeUpdate, afterUpdate, onDestroy } from 'svelte';
 	import { fade, fly } from 'svelte/transition';
 	import type {
@@ -14,6 +13,8 @@
 	} from '$lib/typings/chatbot';
 
 	import * as m from '../../../paraglide/messages';
+	import { getI18n } from '$lib/utils/functions';
+	import { EMAIL } from '$lib/config';
 
 	let content: HTMLElement;
 	let autoscroll = false;
@@ -21,15 +22,16 @@
 	function transformArrays<T = Record<string, string[]>>(arrays: string[]): T {
 		const transformedObject: Record<string, string[]> = {};
 
-		arrays.forEach((array) => {
+		arrays?.forEach((array) => {
 			const key = array.split('_')[2] as string; // Extract the key from the array string
-			const index = parseInt(array.split('_')[3] as string); // Extract the index from the array string
+			const index =
+				parseInt(array.split('_')[3] as string) || (array.split('_')[3] as never as number); // Extract the index from the array string
 
 			if (!transformedObject[key]) {
 				transformedObject[key] = []; // Create an empty array for the key if it doesn't exist
 			}
 
-			(transformedObject[key] as string[])[index] = array; // Assign the array string to the corresponding index in the transformed object
+			(transformedObject[key] as string[])[index] = getI18n(array, { email: EMAIL }); // Assign the array string to the corresponding index in the transformed object
 		});
 
 		return transformedObject as T;
@@ -43,14 +45,34 @@
 	const chatBotDefaultQuestionsKeys = messages.filter((message) =>
 		message.startsWith('bot_defaultQuestions_'),
 	);
-	let chatBotDefaultQuestions = transformArrays<ChatBotDefaultQuestions>(
-		chatBotDefaultQuestionsKeys,
+	let chatBotDefaultQuestions = Object.values(
+		transformArrays<ChatBotDefaultQuestions>(chatBotDefaultQuestionsKeys),
 	);
 
 	const chatBotQuestionsKeys = messages.filter((message) => message.startsWith('bot_questions_'));
-	let chatBotQuestions = transformArrays<ChatBotQuestions>(chatBotQuestionsKeys);
+	const chatBotQuestionsArray = Object.entries(
+		transformArrays<ChatBotQuestions>(chatBotQuestionsKeys),
+	);
 
-	console.log(chatBotAnswers, chatBotDefaultQuestions, chatBotQuestions);
+	let chatBotQuestions = {
+		first: chatBotDefaultQuestions,
+		looking: chatBotDefaultQuestions,
+		other: chatBotDefaultQuestions,
+		confirmHire: chatBotDefaultQuestions,
+		teachHTMLCSS: chatBotDefaultQuestions,
+		teachJS: chatBotDefaultQuestions,
+		teachSvelte: chatBotDefaultQuestions,
+	} as ChatBotQuestions;
+
+	chatBotQuestionsArray.forEach(([key, value]) => {
+		chatBotQuestions[key as ChatBotKey] = value.map((_, i) => {
+			return {
+				to: getI18n(`bot_questions_${key}_${i}_to`),
+				text: getI18n(`bot_questions_${key}_${i}_text`),
+			};
+		}) as any;
+	});
+	console.log(chatBotQuestions);
 
 	// let defaultQuestions = $json('bot.defaultQuestions') as ChatBotDefaultQuestions;
 	// $: defaultQuestions = $json('bot.defaultQuestions') as ChatBotDefaultQuestions;
@@ -81,28 +103,28 @@
 		autoscroll = content && content.offsetHeight + content.scrollTop > content.scrollHeight - 80;
 	});
 
-	// afterUpdate(() => {
-	// 	if (autoscroll && $bot.history && $bot.history.length > 0) {
-	// 		let lengthAnswers = chatBotAnswers[$bot.history.at(-1) as ChatBotKey].length || 0;
-	// 		let lengthQuestions = chatBotQuestions[$bot.history.at(-1) as ChatBotKey].length || 0;
+	afterUpdate(() => {
+		if (autoscroll && $bot.history && $bot.history.length > 0) {
+			let lengthAnswers = chatBotAnswers[$bot.history.at(-1) as ChatBotKey].length || 0;
+			let lengthQuestions = chatBotQuestions[$bot.history.at(-1) as ChatBotKey].length || 0;
 
-	// 		for (let i = 0; i <= lengthAnswers; i++) {
-	// 			setTimeout(() => {
-	// 				if (i === lengthAnswers) {
-	// 					content?.scrollTo(0, content.scrollHeight);
-	// 				} else {
-	// 					content?.scrollTo(
-	// 						0,
-	// 						content.scrollHeight -
-	// 							content.offsetHeight -
-	// 							80 * (lengthAnswers - i) -
-	// 							60 * (lengthQuestions - 1),
-	// 					);
-	// 				}
-	// 			}, 1000 * i);
-	// 		}
-	// 	}
-	// });
+			for (let i = 0; i <= lengthAnswers; i++) {
+				setTimeout(() => {
+					if (i === lengthAnswers) {
+						content?.scrollTo(0, content.scrollHeight);
+					} else {
+						content?.scrollTo(
+							0,
+							content.scrollHeight -
+								content.offsetHeight -
+								80 * (lengthAnswers - i) -
+								60 * (lengthQuestions - 1),
+						);
+					}
+				}, 1000 * i);
+			}
+		}
+	});
 
 	onDestroy(() => {
 		$bot.history = [];
@@ -144,7 +166,7 @@
 
 {#if $bot.open}
 	<div
-		class="fixed inset-0 z-0 overflow-hidden text-primary-foreground backdrop-blur-lg backdrop-saturate-200 sm:bottom-4 sm:left-auto sm:right-4 sm:top-auto sm:h-[36rem] sm:w-[22rem] sm:rounded-lg"
+		class="fixed inset-0 z-20 overflow-hidden text-primary-foreground backdrop-blur-lg backdrop-saturate-200 sm:bottom-4 sm:left-auto sm:right-4 sm:top-auto sm:h-[36rem] sm:w-[22rem] sm:rounded-lg"
 		transition:fly={{ y: 20, duration: 300, opacity: 0 }}
 		aria-hidden={$bot.open ? false : true}
 	>
@@ -173,13 +195,13 @@
 			class="content grid max-h-[90%] overflow-y-scroll overscroll-contain scroll-smooth p-4 text-foreground"
 			bind:this={content}
 		>
-			{#each chatBotAnswers['first'] as answer}
+			{#each chatBotAnswers.first as answer}
 				<div class="text-foreground; mb-2 max-w-[90%] rounded-lg bg-background/95 p-4">
 					<p>{answer}</p>
 				</div>
 			{/each}
 
-			{#each chatBotQuestions['first'] as question}
+			{#each chatBotQuestions.first as question}
 				<button
 					class="mb-2 w-fit justify-self-end p-4 transition-all duration-150
 				{$bot.history.length && $bot.history[0]
@@ -196,15 +218,17 @@
 					<p>{question.text}</p>
 				</button>
 			{/each}
+
 			{#each $bot.history as action, actionIndex}
 				{#each chatBotAnswers[action] as answer, i}
 					<div
 						class="text-foreground; mb-2 max-w-[90%] rounded-lg bg-background/95 p-4"
 						in:fly|global={{ y: 50, duration: 500, delay: 1000 * i }}
 					>
-						{answer}
+						{@html answer}
 					</div>
 				{/each}
+
 				{#each chatBotQuestions[action] as question}
 					<button
 						class="mb-2 w-fit justify-self-end p-4 transition-all duration-150

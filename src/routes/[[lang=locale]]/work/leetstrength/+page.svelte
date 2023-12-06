@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { t } from 'svelte-i18n';
+	import * as m from '../../../../paraglide/messages';
 </script>
 
-{$t('title')}
+{m.work_name()}

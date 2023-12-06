@@ -220,3 +220,8 @@ body[data-scroll-locked='true'] {
 section.section {
 	@apply gap-8 py-20 lg:gap-28 lg:py-40;
 }
+
+.special-link {
+	color: hsl(var(--primary-700));
+	text-decoration: underline;
+}
