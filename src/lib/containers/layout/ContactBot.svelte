@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { bot } from '$lib/stores/bot';
-	import Image from '../../components/base/Image.svelte';
 	import IconX from '$lib/icons/IconX.svelte';
 	import { Button } from '../../components/ui/button';
 	import { beforeUpdate, afterUpdate, onDestroy } from 'svelte';
@@ -15,7 +14,6 @@
 	import * as m from '../../../paraglide/messages';
 	import { getI18n } from '$lib/utils/functions';
 	import { EMAIL } from '$lib/config';
-
 	let content: HTMLElement;
 	let autoscroll = false;
 
@@ -172,7 +170,7 @@
 	>
 		<header class="grid grid-cols-[auto,1fr,auto] items-center gap-4 bg-primary px-2 py-4">
 			<div class="ml-2 h-10 w-10">
-				<Image src="/images/logos/logo.png" alt="KesvaL Logo" />
+				<enhanced:img src="../../../assets/images/logos/logo.png" alt="KesvaL Logo" />
 			</div>
 			<div class="flex h-full flex-col justify-between">
 				<h2 class="font-sans leading-none">
