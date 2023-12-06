@@ -2,10 +2,11 @@
 	import type { Skill, SkillType } from '$lib/data/skills';
 	import { onMount } from 'svelte';
 	import CardGlass from '../cards/CardGlass.svelte';
-	import { t } from 'svelte-i18n';
 	import IconCode from '$lib/icons/IconCode.svelte';
 	import IconServer from '$lib/icons/IconServer.svelte';
 	import IconMore from '$lib/icons/IconMore.svelte';
+
+	import * as m from '$paraglide/messages';
 
 	export let skills: Skill[];
 	export let type: SkillType;
@@ -75,8 +76,8 @@
 							class="h-full rounded-full {type === 'front-end'
 								? 'bg-primary'
 								: type === 'back-end'
-								? 'bg-accent'
-								: 'bg-success'}"
+								  ? 'bg-accent'
+								  : 'bg-success'}"
 							role="progressbar"
 							style="width: {skill.progress}%"
 						/>

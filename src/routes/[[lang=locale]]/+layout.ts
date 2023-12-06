@@ -1,17 +1,9 @@
-import type { Locale } from '$lib/config';
-
-import { langStore } from '$lib/stores/lang';
-import '$lib/utils/i18n';
-import { waitLocale } from 'svelte-i18n';
-
 import type { LayoutLoad } from './$types';
 
-export const load: LayoutLoad = async ({ data }) => {
-	const lang = data.lang;
+import { languageTag } from '../../paraglide/runtime';
 
-	langStore.set(lang as Locale);
-
-	await waitLocale();
+export const load: LayoutLoad = async () => {
+	const lang = languageTag();
 
 	return {
 		lang,

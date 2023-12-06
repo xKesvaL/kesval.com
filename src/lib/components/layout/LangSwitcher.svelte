@@ -1,10 +1,9 @@
 <script lang="ts">
 	import { getFlagEmoji } from '$lib/utils/functions';
-	import { locales, t } from 'svelte-i18n';
 
 	import * as Select from '$lib/components/ui/select';
-	import { langStore } from '$lib/stores/lang';
 	import type { Locale } from '$lib/config';
+	import { languageTag, setLanguageTag } from '$paraglide/runtime';
 
 	const transformLocaleToFlag = (locale: string) => {
 		switch (locale.toLowerCase().split('-')[0]) {
@@ -16,13 +15,13 @@
 	};
 
 	let selected = {
-		value: $langStore,
-		label: getFlagEmoji(transformLocaleToFlag($langStore)),
+		value: languageTag(),
+		label: getFlagEmoji(transformLocaleToFlag(languageTag())),
 		disabled: false,
 	};
 
 	const onChange = (opt: any) => {
-		langStore.set(opt.value as Locale);
+		setLanguageTag(opt.value as Locale);
 	};
 </script>
 
@@ -33,7 +32,7 @@
 			icon={false}
 			aria-label={$t('common.changeLanguage')}
 		>
-			{getFlagEmoji(transformLocaleToFlag($langStore))}
+			{getFlagEmoji(transformLocaleToFlag(languageTag()))}
 			<div class="sr-only">
 				{$t('common.changeLanguage')}
 			</div>

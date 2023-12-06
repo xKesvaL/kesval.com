@@ -7,7 +7,7 @@
 	import NavigationMenuButton from '../../components/layout/NavigationMenuButton.svelte';
 	import Settings from '../../components/layout/settings/Settings.svelte';
 	import { bot } from '$lib/stores/bot';
-	import { PAGES } from '$lib/ROUTES';
+	import { route } from '$lib/ROUTES';
 
 	let pathWithoutlang = $page.url.pathname.replace(`/${$page.params.lang}`, '') || '/';
 	$: pathWithoutlang = $page.url.pathname.replace(`/${$page.params.lang}`, '') || '/';
@@ -18,7 +18,7 @@
 	id="navigation"
 	style="view-transition-name: header"
 >
-	<a href={PAGES.lang_locale() || '/'} class="relative h-12 w-12">
+	<a href={route('/')} class="relative h-12 w-12">
 		<Image src="/images/logos/logo.png" alt="KesvaL Logo" />
 	</a>
 	<div
@@ -29,44 +29,44 @@
 	>
 		<a
 			class="rounded-md px-4 py-2 transition-colors duration-200 hover:bg-accent/40 {pathWithoutlang ===
-				PAGES.lang_locale() || pathWithoutlang === '/'
+			route('/')
 				? 'bg-primary/40 hover:bg-primary/40'
 				: ''} "
 			on:click={() => navigationOpen.set(false)}
-			href={PAGES.lang_locale() || '/'}
+			href={route('/')}
 		>
 			{$t('home.name')}
 		</a>
 		<a
 			class="rounded-md px-4 py-2 transition-colors duration-200 hover:bg-accent/40 {pathWithoutlang.startsWith(
-				PAGES.lang_locale_about(),
+				route('/about')
 			)
 				? 'bg-primary/40 hover:bg-primary/40'
 				: ''} "
 			on:click={() => navigationOpen.set(false)}
-			href={PAGES.lang_locale_about()}
+			href={route('/about')}
 		>
 			{$t('about.name')}</a
 		>
 		<a
 			class="rounded-md px-4 py-2 transition-colors duration-200 hover:bg-accent/40 {pathWithoutlang.startsWith(
-				PAGES.lang_locale_work(),
+				route('/work'),
 			)
 				? 'bg-primary/40 hover:bg-primary/40'
 				: ''} "
 			on:click={() => navigationOpen.set(false)}
-			href={PAGES.lang_locale_work()}
+			href={route('/work')}
 		>
 			{$t('work.name')}</a
 		>
 		<a
 			class="rounded-md px-4 py-2 transition-colors duration-200 hover:bg-accent/40 {pathWithoutlang.startsWith(
-				PAGES.lang_locale_blog(),
+				route('/blog'),
 			)
 				? 'bg-primary/40 hover:bg-primary/40'
 				: ''} "
 			on:click={() => navigationOpen.set(false)}
-			href={PAGES.lang_locale_blog()}
+			href={route('/blog')}
 		>
 			{$t('blog.name')}</a
 		>

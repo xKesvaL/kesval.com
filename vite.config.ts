@@ -1,9 +1,10 @@
 import type { KIT_ROUTES } from '$lib/ROUTES';
 
+import { enhancedImages } from '@sveltejs/enhanced-img';
 import { sveltekit } from '@sveltejs/kit/vite';
-import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import { kitRoutes } from 'vite-plugin-kit-routes';
+import { watch } from 'vite-plugin-watch';
 
 export default defineConfig({
 	css: {
@@ -14,20 +15,25 @@ export default defineConfig({
 		},
 	},
 	plugins: [
+		enhancedImages(),
 		sveltekit(),
 		kitRoutes<KIT_ROUTES>({
-			default_type: 'number | string',
-			extend: {
-				PAGES: {},
-			},
 			extra_search_params: 'with',
+			format: 'route(path)',
+		}),
+		watch({
+			command: 'paraglide-js compile --project ./project.inlang',
+			pattern: 'src/lang/*.json',
 		}),
 	],
 
 	resolve: {
 		alias: {
-			$design: resolve('./node_modules/@kesval/design/scss/utilities'),
-			$routes: resolve('./src/routes'),
+			$assets: './src/assets',
+			$design: './node_modules/@kesval/design/scss/abstracts',
+			$paraglide: './src/paraglide',
+			'$paraglide/*': './src/paraglide/*',
+			$routes: './src/routes',
 		},
 	},
 });

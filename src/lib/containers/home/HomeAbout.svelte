@@ -1,5 +1,5 @@
 <script>
-	import { PAGES } from '$lib/ROUTES';
+	import { route } from '$lib/ROUTES';
 	import CardGlass from '$lib/components/cards/CardGlass.svelte';
 	import { Button } from '$lib/components/ui/button';
 	import PERSONAL from '$lib/data/personal';
@@ -49,7 +49,7 @@
 			>
 		</div>
 	</div>
-	<Button class="mx-auto" href={PAGES.lang_locale_about()}>
+	<Button class="mx-auto" href={route('/about')}>
 		{$t('home.about.button')}
 	</Button>
 </section>

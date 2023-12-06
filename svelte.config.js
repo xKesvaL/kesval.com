@@ -10,15 +10,16 @@ const config = {
 		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
 		adapter: adapter(),
 		alias: {
+			$assets: './src/assets',
 			$design: './node_modules/@kesval/design/scss/abstracts',
-			'$design/*': './node_modules/@kesval/design/scss/abstracts/*',
+			$paraglide: './src/paraglide',
+			'$paraglide/*': './src/paraglide/*',
 			$routes: './src/routes',
-			'$routes/*': './src/routes/*'
-		}
+		},
 	},
 
 	// for more information about preprocessors
-	preprocess: [vitePreprocess({})]
+	preprocess: [vitePreprocess({})],
 };
 
 export default config;

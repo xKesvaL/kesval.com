@@ -4,7 +4,7 @@
 	import { FEATURED_PROJECTS, PROJECTS } from '$lib/data/projects';
 	import { t } from 'svelte-i18n';
 	import HomeWorkIcons from './HomeWorkIcons.svelte';
-	import { PAGES } from '$lib/ROUTES';
+	import { route } from '$lib/ROUTES';
 
 	let expandedIndex = '1';
 
@@ -79,7 +79,7 @@
 			</div>
 		{/each}
 	</div>
-	<Button class="mx-auto" href={PAGES.lang_locale_work()}>
+	<Button class="mx-auto" href={route('/work')}>
 		{$t('home.work.discoverMore')}
 	</Button>
 </section>

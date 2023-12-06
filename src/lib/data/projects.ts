@@ -1,4 +1,4 @@
-import { PAGES } from '$lib/ROUTES';
+import { route } from '$lib/ROUTES';
 
 import type { ProgrammingLanguage } from './personal';
 
@@ -23,7 +23,7 @@ const PROJECTS: Project[] = [
 		excerpt:
 			'My own website to share my work and my thoughts made with TypeScript, SvelteKit, TailwindCSS and Shadcn/ui.',
 		github: 'https://github.com/xKesvaL/kesval.com',
-		href: PAGES.lang_locale_work_portfolio(),
+		href: route('/work/portfolio'),
 		id: 1,
 		languages: ['svelte'],
 		name: 'portfolio',
@@ -35,8 +35,8 @@ const PROJECTS: Project[] = [
 			'I love going to the gym, but finding a good program can be hard or expensive. So I made SupaPower, an open-source app made to to help you track your workouts and create a program suited to your needs.',
 		endDate: null,
 		excerpt: 'Track your workouts and find a program suited to your needs.',
-		github: 'https://github.com/Leet-Apps/app.leetstrength.com',
-		href: PAGES.lang_locale_work_leetstrength(),
+		github: 'https://github.com/xKesvaL/leetstrength',
+		href: route('/work/leetstrength'),
 		id: 2,
 		languages: ['svelte'],
 		name: 'leetstrength',
