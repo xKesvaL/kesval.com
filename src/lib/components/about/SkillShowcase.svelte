@@ -6,7 +6,7 @@
 	import IconServer from '$lib/icons/IconServer.svelte';
 	import IconMore from '$lib/icons/IconMore.svelte';
 
-	import * as m from '$paraglide/messages';
+	import { getI18n } from '$lib/utils/functions';
 
 	export let skills: Skill[];
 	export let type: SkillType;
@@ -44,7 +44,7 @@
 			{/if}
 		</div>
 		<h3 class="font-sans text-3xl font-bold">
-			{$t(`skills.${type}`)}
+			{getI18n(`skills.${type}`)}
 		</h3>
 		<div
 			class="absolute right-4 mb-1 h-fit origin-[53%_62%] text-4xl transition-transform {opened

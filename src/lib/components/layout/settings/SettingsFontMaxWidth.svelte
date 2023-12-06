@@ -1,8 +1,9 @@
 <script lang="ts">
-	import { t } from 'svelte-i18n';
 	import { Slider } from '$lib/components/ui/slider';
 	import { readingLengths, settings } from '$lib/stores/settings';
 	import { DEFAULT_SETTINGS } from '$lib/config';
+
+	import * as m from '../../../../paraglide/messages';
 
 	let readingLength: number[] = [$settings.readingLength];
 
@@ -12,7 +13,7 @@
 <div class="flex flex-col gap-2">
 	<div class="flex items-center justify-between font-bold text-muted-foreground">
 		<h3 class="font-sans text-lg">
-			{$t('settings.readingLength')}
+			{m.settings_readingLength()}
 		</h3>
 		<p>
 			{$settings.readingLength}ch

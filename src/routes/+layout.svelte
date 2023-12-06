@@ -5,13 +5,12 @@
 	import '$lib/styles/nprogress.scss';
 	import '@kesval/design';
 	import nprogress from 'nprogress';
-	import { isLoading, locales } from 'svelte-i18n';
 	import { setupViewTransition } from 'sveltekit-view-transition';
 
 	import '../app.postcss';
-	import Loading from '$lib/containers/layout/Loading.svelte';
 	import { polyfillCountryFlagEmojis } from '$lib/utils/functions';
 	import { onMount } from 'svelte';
+	import { availableLanguageTags } from '../paraglide/runtime';
 
 	nprogress.configure({ easing: 'ease', minimum: 0.2, speed: 600 });
 	$: $navigating ? nprogress.start() : nprogress.done();
@@ -29,13 +28,9 @@
 
 	<!-- Href langs -->
 	<link href={$page.url.pathname} hreflang="x-default" rel="alternate" />
-	{#each $locales as locale}
+	{#each availableLanguageTags as locale}
 		<link href={`/${locale}${$page.url.pathname}?owlang=true`} hreflang={locale} rel="alternate" />
 	{/each}
 </svelte:head>
 
-{#if $isLoading}
-	<Loading />
-{:else}
-	<slot />
-{/if}
+<slot />

@@ -14,7 +14,7 @@
 	class="bg-muted text-muted-foreground !transition-all !duration-0 hover:bg-muted hover:text-foreground {$navigationOpen
 		? 'scale-[2] bg-transparent text-white !duration-300 hover:bg-transparent hover:text-white'
 		: ''}"
-	aria-label={m.common.toggleMenu()}
+	aria-label={m.common_toggleMenu()}
 >
 	<div class="h-8 w-8 overflow-hidden">
 		<svg

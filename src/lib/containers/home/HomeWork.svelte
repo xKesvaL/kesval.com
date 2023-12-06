@@ -2,9 +2,11 @@
 	import CardGlass from '$lib/components/cards/CardGlass.svelte';
 	import { Button } from '$lib/components/ui/button';
 	import { FEATURED_PROJECTS, PROJECTS } from '$lib/data/projects';
-	import { t } from 'svelte-i18n';
 	import HomeWorkIcons from './HomeWorkIcons.svelte';
 	import { route } from '$lib/ROUTES';
+
+	import * as m from '../../../paraglide/messages';
+	import { getI18n } from '$lib/utils/functions';
 
 	let expandedIndex = '1';
 
@@ -19,7 +21,7 @@
 
 <section class="section container flex flex-col">
 	<h2 class="text-center text-4xl lg:text-5xl">
-		{$t('home.work.title')}
+		{m.home_work_title()}
 	</h2>
 	<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 	<div
@@ -44,9 +46,9 @@
 							aria-controls="project-{i + 1}-content"
 							aria-expanded={i + 1 === parseInt(expandedIndex)}
 						>
-							<span class="project-title relative isolate grid items-center text-2xl lg:text-3xl"
-								>{$t(`projects.${project.name}.name`)}</span
-							>
+							<span class="project-title relative isolate grid items-center text-2xl lg:text-3xl">
+								{getI18n(`projects.${project.name}.name`)}
+							</span>
 							<svg class="project-icon">
 								<use
 									href="#{project.languages[0]}-logo"
@@ -70,9 +72,7 @@
 						class="project-button pointer-events-none absolute bottom-4 right-4 z-10 translate-x-8 opacity-0 lg:bottom-8 lg:right-8"
 					>
 						<Button href={project.href} variant="secondary">
-							{$t('home.work.discoverProject', {
-								values: { project: $t(`projects.${project.name}.name`) },
-							})}
+							{m.home_work_discoverProject({ project: getI18n(`projects.${project.name}.name`) })}
 						</Button>
 					</div>
 				</CardGlass>
@@ -80,7 +80,7 @@
 		{/each}
 	</div>
 	<Button class="mx-auto" href={route('/work')}>
-		{$t('home.work.discoverMore')}
+		{m.home_work_discoverMore()}
 	</Button>
 </section>
 

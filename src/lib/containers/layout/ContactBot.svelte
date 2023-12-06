@@ -3,36 +3,69 @@
 	import Image from '../../components/base/Image.svelte';
 	import IconX from '$lib/icons/IconX.svelte';
 	import { Button } from '../../components/ui/button';
-	import { json, t } from 'svelte-i18n';
+	// import { json, t } from 'svelte-i18n';
 	import { beforeUpdate, afterUpdate, onDestroy } from 'svelte';
 	import { fade, fly } from 'svelte/transition';
 	import type {
-		ChatBotAnswers,
 		ChatBotDefaultQuestions,
-		ChatBotKey,
+		ChatBotAnswers,
 		ChatBotQuestions,
+		ChatBotKey,
 	} from '$lib/typings/chatbot';
+
+	import * as m from '../../../paraglide/messages';
 
 	let content: HTMLElement;
 	let autoscroll = false;
 
-	let chatBotAnswers = $json('bot.answers') as ChatBotAnswers;
-	$: chatBotAnswers = $json('bot.answers') as ChatBotAnswers;
+	function transformArrays<T = Record<string, string[]>>(arrays: string[]): T {
+		const transformedObject: Record<string, string[]> = {};
 
-	let defaultQuestions = $json('bot.defaultQuestions') as ChatBotDefaultQuestions;
-	$: defaultQuestions = $json('bot.defaultQuestions') as ChatBotDefaultQuestions;
+		arrays.forEach((array) => {
+			const key = array.split('_')[2] as string; // Extract the key from the array string
+			const index = parseInt(array.split('_')[3] as string); // Extract the index from the array string
 
-	let chatBotQuestions = $json('bot.questions') as ChatBotQuestions;
-	$: chatBotQuestions = {
-		first: defaultQuestions,
-		looking: defaultQuestions,
-		other: defaultQuestions,
-		confirmHire: defaultQuestions,
-		teachHTMLCSS: defaultQuestions,
-		teachJS: defaultQuestions,
-		teachSvelte: defaultQuestions,
-		...($json('bot.questions') as Partial<ChatBotQuestions>),
-	} as ChatBotQuestions;
+			if (!transformedObject[key]) {
+				transformedObject[key] = []; // Create an empty array for the key if it doesn't exist
+			}
+
+			(transformedObject[key] as string[])[index] = array; // Assign the array string to the corresponding index in the transformed object
+		});
+
+		return transformedObject as T;
+	}
+
+	let messages = Object.keys(m);
+
+	const chatBotAnswersKeys = messages.filter((message) => message.startsWith('bot_answers_'));
+	let chatBotAnswers = transformArrays<ChatBotAnswers>(chatBotAnswersKeys);
+
+	const chatBotDefaultQuestionsKeys = messages.filter((message) =>
+		message.startsWith('bot_defaultQuestions_'),
+	);
+	let chatBotDefaultQuestions = transformArrays<ChatBotDefaultQuestions>(
+		chatBotDefaultQuestionsKeys,
+	);
+
+	const chatBotQuestionsKeys = messages.filter((message) => message.startsWith('bot_questions_'));
+	let chatBotQuestions = transformArrays<ChatBotQuestions>(chatBotQuestionsKeys);
+
+	console.log(chatBotAnswers, chatBotDefaultQuestions, chatBotQuestions);
+
+	// let defaultQuestions = $json('bot.defaultQuestions') as ChatBotDefaultQuestions;
+	// $: defaultQuestions = $json('bot.defaultQuestions') as ChatBotDefaultQuestions;
+
+	// let chatBotQuestions = $json('bot.questions') as ChatBotQuestions;
+	// $: chatBotQuestions = {
+	// 	first: defaultQuestions,
+	// 	looking: defaultQuestions,
+	// 	other: defaultQuestions,
+	// 	confirmHire: defaultQuestions,
+	// 	teachHTMLCSS: defaultQuestions,
+	// 	teachJS: defaultQuestions,
+	// 	teachSvelte: defaultQuestions,
+	// 	...($json('bot.questions') as Partial<ChatBotQuestions>),
+	// } as ChatBotQuestions;
 
 	async function chooseQuestion(e: MouseEvent | KeyboardEvent) {
 		if (e.currentTarget instanceof HTMLElement) {
@@ -48,28 +81,28 @@
 		autoscroll = content && content.offsetHeight + content.scrollTop > content.scrollHeight - 80;
 	});
 
-	afterUpdate(() => {
-		if (autoscroll && $bot.history && $bot.history.length > 0) {
-			let lengthAnswers = chatBotAnswers[$bot.history.at(-1) as ChatBotKey].length || 0;
-			let lengthQuestions = chatBotQuestions[$bot.history.at(-1) as ChatBotKey].length || 0;
+	// afterUpdate(() => {
+	// 	if (autoscroll && $bot.history && $bot.history.length > 0) {
+	// 		let lengthAnswers = chatBotAnswers[$bot.history.at(-1) as ChatBotKey].length || 0;
+	// 		let lengthQuestions = chatBotQuestions[$bot.history.at(-1) as ChatBotKey].length || 0;
 
-			for (let i = 0; i <= lengthAnswers; i++) {
-				setTimeout(() => {
-					if (i === lengthAnswers) {
-						content?.scrollTo(0, content.scrollHeight);
-					} else {
-						content?.scrollTo(
-							0,
-							content.scrollHeight -
-								content.offsetHeight -
-								80 * (lengthAnswers - i) -
-								60 * (lengthQuestions - 1),
-						);
-					}
-				}, 1000 * i);
-			}
-		}
-	});
+	// 		for (let i = 0; i <= lengthAnswers; i++) {
+	// 			setTimeout(() => {
+	// 				if (i === lengthAnswers) {
+	// 					content?.scrollTo(0, content.scrollHeight);
+	// 				} else {
+	// 					content?.scrollTo(
+	// 						0,
+	// 						content.scrollHeight -
+	// 							content.offsetHeight -
+	// 							80 * (lengthAnswers - i) -
+	// 							60 * (lengthQuestions - 1),
+	// 					);
+	// 				}
+	// 			}, 1000 * i);
+	// 		}
+	// 	}
+	// });
 
 	onDestroy(() => {
 		$bot.history = [];
@@ -121,10 +154,10 @@
 			</div>
 			<div class="flex h-full flex-col justify-between">
 				<h2 class="font-sans leading-none">
-					{$t('bot.title')}
+					{m.bot_title()}
 				</h2>
 				<p class="text-sm">
-					{$t('bot.subtitle')}
+					{m.bot_subtitle()}
 				</p>
 			</div>
 			<Button
@@ -169,7 +202,6 @@
 						class="text-foreground; mb-2 max-w-[90%] rounded-lg bg-background/95 p-4"
 						in:fly|global={{ y: 50, duration: 500, delay: 1000 * i }}
 					>
-						<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 						{answer}
 					</div>
 				{/each}

@@ -1,12 +1,13 @@
 <script lang="ts">
 	import SkillShowcase from '$lib/components/about/SkillShowcase.svelte';
 	import { SKILLS } from '$lib/data/skills';
-	import { t } from 'svelte-i18n';
+
+	import * as m from '../../../paraglide/messages';
 </script>
 
 <section class="container flex flex-col justify-center gap-8 py-8 lg:gap-20">
 	<h1 class="text-center text-4xl lg:text-6xl">
-		{$t('about.hero.title')}
+		{m.about_hero_title()}
 	</h1>
 	<div class="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
 		<SkillShowcase type="front-end" skills={SKILLS['front-end']} />

@@ -4,8 +4,9 @@
 	import ArrowTop from '$lib/icons/IconArrowTop.svelte';
 	import { afterUpdate } from 'svelte';
 	import { fly } from 'svelte/transition';
-	import { t } from 'svelte-i18n';
 	import { bot } from '$lib/stores/bot';
+
+	import * as m from '../../../paraglide/messages'
 
 	let scrollY: number;
 	let scrollPercent: number;
@@ -32,7 +33,7 @@
 
 {#if scrollPercent > topPercent}
 	<button
-		aria-label="{$t('std.scrollTo')} {$t('std.top')}"
+		aria-label="{m.std_scrollTo()} {m.std_top()}"
 		class="scroll-button {$bot.open ? 'sm:bottom-[38rem]' : 'bottom-4'}"
 		id="back-to-top"
 		transition:fly={{ duration: 200, y: 20 }}

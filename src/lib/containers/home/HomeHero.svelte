@@ -4,7 +4,8 @@
 	import Sparkles from '$lib/components/base/Sparkles.svelte';
 	import { Button } from '$lib/components/ui/button';
 	import { bot } from '$lib/stores/bot';
-	import { t } from 'svelte-i18n';
+
+	import * as m from '../../../paraglide/messages';
 </script>
 
 <section
@@ -14,25 +15,25 @@
 		<Socials vertical={true} />
 	</div>
 	<div class="image max-w-sm overflow-hidden border-4 border-primary shadow-2xl shadow-primary/40">
-		<Image src="/images/me/hero.jpg" alt={$t('common.photoOfMe')} loading="eager" />
+		<Image src="/images/me/hero.jpg" alt={m.common_photoOfMe()} loading="eager" />
 	</div>
 	<div
 		class="col-span-full flex flex-col gap-4 lg:col-start-2 lg:col-end-3 lg:row-start-1 lg:row-end-2"
 	>
 		<Sparkles>
 			<h1 class="text-6xl">
-				{$t('home.hero.title')}
+				{m.home_hero_title()}
 			</h1>
 		</Sparkles>
 		<p class="max-w-[45ch] text-lg">
-			{$t('home.hero.description')}
+			{m.home_hero_description()}
 		</p>
 		<div class="flex gap-4">
 			<Button>
-				{$t('home.hero.workWithMe')}
+				{m.home_hero_workWithMe()}
 			</Button>
 			<Button variant="secondary" on:click={bot.toggle}>
-				{$t('home.hero.contactMe')}
+				{m.home_hero_contactMe()}
 			</Button>
 		</div>
 	</div>

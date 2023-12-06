@@ -3,7 +3,8 @@
 
 	import * as Select from '$lib/components/ui/select';
 	import type { Locale } from '$lib/config';
-	import { languageTag, setLanguageTag } from '$paraglide/runtime';
+	import { availableLanguageTags, languageTag, setLanguageTag } from '../../../paraglide/runtime';
+	import * as m from '../../../paraglide/messages';
 
 	const transformLocaleToFlag = (locale: string) => {
 		switch (locale.toLowerCase().split('-')[0]) {
@@ -30,15 +31,15 @@
 		<Select.Trigger
 			class="trigger flex aspect-square justify-center border-0 bg-muted p-2 text-lg"
 			icon={false}
-			aria-label={$t('common.changeLanguage')}
+			aria-label={m.common_changeLanguage()}
 		>
 			{getFlagEmoji(transformLocaleToFlag(languageTag()))}
 			<div class="sr-only">
-				{$t('common.changeLanguage')}
+				{m.common_changeLanguage()}
 			</div>
 		</Select.Trigger>
 		<Select.Content class="!w-[4.5rem]">
-			{#each $locales as lang}
+			{#each availableLanguageTags as lang}
 				<Select.Item
 					class="font-emoji text-lg"
 					value={lang}

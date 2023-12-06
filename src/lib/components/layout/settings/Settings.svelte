@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { Popover, PopoverTrigger, PopoverContent } from '$lib/components/ui/popover';
 	import { Button } from '$lib/components/ui/button';
-	import { t } from 'svelte-i18n';
+
+	import * as m from '../../../../paraglide/messages';
 
 	import IconSettings from '$lib/icons/IconSettings.svelte';
 	import SettingsThemeSwitcher from './SettingsThemeSwitcher.svelte';
@@ -24,7 +25,7 @@
 	<PopoverTrigger>
 		<Button variant="ghost" size="icon" class="bg-muted hover:bg-muted hover:text-foreground">
 			<div class="sr-only">
-				{$t('common.settings')}
+				{m.common_settings()}
 			</div>
 			<div class="h-6 w-6 transition-colors duration-200">
 				<IconSettings />
@@ -33,9 +34,11 @@
 	</PopoverTrigger>
 	<PopoverContent class="flex w-80 flex-col gap-4">
 		<div class="flex items-center justify-between gap-4">
-			<h2 class="text-2xl">{$t('settings.label')}</h2>
+			<h2 class="text-2xl">
+				{m.settings_label()}
+			</h2>
 			<Button size="sm" on:click={resetSettings}>
-				{$t('common.reset')}
+				{m.common_reset()}
 			</Button>
 		</div>
 		{#key $settings.lastReset}

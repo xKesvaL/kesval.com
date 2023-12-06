@@ -1,13 +1,14 @@
 <script>
 	import { page } from '$app/stores';
 	import { navigationOpen } from '$lib/stores/common';
-	import { t } from 'svelte-i18n';
 	import Image from '../../components/base/Image.svelte';
 	import LangSwitcher from '../../components/layout/LangSwitcher.svelte';
 	import NavigationMenuButton from '../../components/layout/NavigationMenuButton.svelte';
 	import Settings from '../../components/layout/settings/Settings.svelte';
 	import { bot } from '$lib/stores/bot';
 	import { route } from '$lib/ROUTES';
+
+	import * as m from '../../../paraglide/messages';
 
 	let pathWithoutlang = $page.url.pathname.replace(`/${$page.params.lang}`, '') || '/';
 	$: pathWithoutlang = $page.url.pathname.replace(`/${$page.params.lang}`, '') || '/';
@@ -35,19 +36,19 @@
 			on:click={() => navigationOpen.set(false)}
 			href={route('/')}
 		>
-			{$t('home.name')}
+			{m.home_name()}
 		</a>
 		<a
 			class="rounded-md px-4 py-2 transition-colors duration-200 hover:bg-accent/40 {pathWithoutlang.startsWith(
-				route('/about')
+				route('/about'),
 			)
 				? 'bg-primary/40 hover:bg-primary/40'
 				: ''} "
 			on:click={() => navigationOpen.set(false)}
 			href={route('/about')}
 		>
-			{$t('about.name')}</a
-		>
+			{m.about_name()}
+		</a>
 		<a
 			class="rounded-md px-4 py-2 transition-colors duration-200 hover:bg-accent/40 {pathWithoutlang.startsWith(
 				route('/work'),
@@ -57,8 +58,8 @@
 			on:click={() => navigationOpen.set(false)}
 			href={route('/work')}
 		>
-			{$t('work.name')}</a
-		>
+			{m.work_name()}
+		</a>
 		<a
 			class="rounded-md px-4 py-2 transition-colors duration-200 hover:bg-accent/40 {pathWithoutlang.startsWith(
 				route('/blog'),
@@ -68,8 +69,8 @@
 			on:click={() => navigationOpen.set(false)}
 			href={route('/blog')}
 		>
-			{$t('blog.name')}</a
-		>
+			{m.blog_name()}
+		</a>
 		<button
 			class="rounded-md px-4 py-2 transition-colors duration-200 hover:bg-accent/40 {$bot.open
 				? 'bg-primary/40 hover:bg-primary/40'
@@ -79,8 +80,8 @@
 				bot.toggle();
 			}}
 		>
-			{$t('contact.name')}</button
-		>
+			{m.contact_name()}
+		</button>
 	</div>
 	<div class="flex items-center gap-2 text-muted-foreground">
 		<LangSwitcher />
