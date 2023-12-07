@@ -3,7 +3,7 @@ import type { ZodError } from 'zod';
 
 import { isEmojiSupported } from 'is-emoji-supported';
 
-import * as m from '../../paraglide/messages';
+import * as m from '$lib/paraglide/messages';
 
 export const capitalizeFirstLetter = (str: string) => {
 	return str.charAt(0).toUpperCase() + str.slice(1);

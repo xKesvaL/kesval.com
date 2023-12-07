@@ -36,9 +36,9 @@
 
 		min-height: calc(100vh + 3rem);
 
-		@include mq(lg) {
+		/* @include mq(lg) {
 			margin-top: -6rem;
 			min-height: calc(100vh + 1rem);
-		}
+		} */
 	}
 </style>

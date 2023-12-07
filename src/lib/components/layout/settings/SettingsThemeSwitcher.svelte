@@ -3,7 +3,7 @@
 	import * as Select from '$lib/components/ui/select';
 	import { THEMES, type Theme } from '$lib/config';
 
-	import * as m from '../../../../paraglide/messages';
+	import * as m from '$lib/paraglide/messages';
 	import { getI18n } from '$lib/utils/functions';
 
 	const setTheme = (newTheme: Theme) => {

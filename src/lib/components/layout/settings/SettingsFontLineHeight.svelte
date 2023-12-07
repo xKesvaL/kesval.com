@@ -3,7 +3,7 @@
 	import { readingHeights, settings } from '$lib/stores/settings';
 	import { DEFAULT_SETTINGS } from '$lib/config';
 
-	import * as m from '../../../../paraglide/messages';
+	import * as m from '$lib/paraglide/messages';
 
 	let readingHeight: number[] = [$settings.readingHeight];
 

@@ -6,7 +6,7 @@
 	import { fly } from 'svelte/transition';
 	import { bot } from '$lib/stores/bot';
 
-	import * as m from '../../../paraglide/messages'
+	import * as m from '$lib/paraglide/messages';
 
 	let scrollY: number;
 	let scrollPercent: number;

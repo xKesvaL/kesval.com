@@ -4,7 +4,7 @@
 	import { Button } from '$lib/components/ui/button';
 	import PERSONAL from '$lib/data/personal';
 
-	import * as m from '../../../paraglide/messages';
+	import * as m from '$lib/paraglide/messages';
 </script>
 
 <section class="container-sm section container flex flex-col justify-center">

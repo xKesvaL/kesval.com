@@ -11,7 +11,7 @@
 		ChatBotKey,
 	} from '$lib/typings/chatbot';
 
-	import * as m from '../../../paraglide/messages';
+	import * as m from '$lib/paraglide/messages';
 	import { getI18n } from '$lib/utils/functions';
 	import { EMAIL } from '$lib/config';
 	let content: HTMLElement;
@@ -70,22 +70,6 @@
 			};
 		}) as any;
 	});
-	console.log(chatBotQuestions);
-
-	// let defaultQuestions = $json('bot.defaultQuestions') as ChatBotDefaultQuestions;
-	// $: defaultQuestions = $json('bot.defaultQuestions') as ChatBotDefaultQuestions;
-
-	// let chatBotQuestions = $json('bot.questions') as ChatBotQuestions;
-	// $: chatBotQuestions = {
-	// 	first: defaultQuestions,
-	// 	looking: defaultQuestions,
-	// 	other: defaultQuestions,
-	// 	confirmHire: defaultQuestions,
-	// 	teachHTMLCSS: defaultQuestions,
-	// 	teachJS: defaultQuestions,
-	// 	teachSvelte: defaultQuestions,
-	// 	...($json('bot.questions') as Partial<ChatBotQuestions>),
-	// } as ChatBotQuestions;
 
 	async function chooseQuestion(e: MouseEvent | KeyboardEvent) {
 		if (e.currentTarget instanceof HTMLElement) {
@@ -129,39 +113,6 @@
 	});
 </script>
 
-<!-- <div class="chat-bot {$botState ? 'open' : ''}" aria-hidden={$botState ? 'false' : 'true'} id="chat-bot">
-
-  <div class="content" bind:this={content}>
-    {#each $history as action}
-      {#each chatBotAnswers[action] as answer, i}
-        <div class="answer" in:fly|global={{ y: 50, duration: 500, delay: 1000 * i }}> -->
-<!-- eslint-disable-next-line svelte/no-at-html-tags -->
-<!--
-          <p>{@html answer.replaceAll('{email}', email)}</p>
-        </div>
-      {/each}
-      {#each chatBotQuestions[action] as question, i}
-        <div
-          class="question"
-          on:click|once={(e) => {
-            chooseQuestion(e);
-          }}
-          on:keypress|once={(e) => {
-            if (e.key === 'Enter') {
-              chooseQuestion(e);
-            }
-          }}
-          role="button"
-          tabindex={$botState ? 0 : -1}
-          in:fade|global={{ duration: 500, delay: chatBotAnswers[action].length * 1000 }}
-          data-name={question.to}>
-          <p>{question.text}</p>
-        </div>
-      {/each}
-    {/each}
-  </div>
-</div> -->
-
 {#if $bot.open}
 	<div
 		class="fixed inset-0 z-20 overflow-hidden text-primary-foreground backdrop-blur-lg backdrop-saturate-200 sm:bottom-4 sm:left-auto sm:right-4 sm:top-auto sm:h-[36rem] sm:w-[22rem] sm:rounded-lg"
@@ -170,7 +121,7 @@
 	>
 		<header class="grid grid-cols-[auto,1fr,auto] items-center gap-4 bg-primary px-2 py-4">
 			<div class="ml-2 h-10 w-10">
-				<enhanced:img src="../../../assets/images/logos/logo.png" alt="KesvaL Logo" />
+				<!-- <enhanced:img src="../../../assets/images/logos/logo.png" alt="KesvaL Logo" /> -->
 			</div>
 			<div class="flex h-full flex-col justify-between">
 				<h2 class="font-sans leading-none">

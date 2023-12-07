@@ -9,11 +9,6 @@ const config = {
 		// If your environment is not supported or you settled on a specific environment, switch out the adapter.
 		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
 		adapter: adapter(),
-		alias: {
-			$assets: './src/assets',
-			$paraglide: './src/paraglide',
-			$routes: './src/routes',
-		},
 	},
 
 	// for more information about preprocessors

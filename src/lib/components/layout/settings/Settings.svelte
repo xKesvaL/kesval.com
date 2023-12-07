@@ -2,7 +2,7 @@
 	import { Popover, PopoverTrigger, PopoverContent } from '$lib/components/ui/popover';
 	import { Button } from '$lib/components/ui/button';
 
-	import * as m from '../../../../paraglide/messages';
+	import * as m from '$lib/paraglide/messages';
 
 	import IconSettings from '$lib/icons/IconSettings.svelte';
 	import SettingsThemeSwitcher from './SettingsThemeSwitcher.svelte';

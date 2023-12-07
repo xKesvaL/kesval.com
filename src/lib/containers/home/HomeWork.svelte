@@ -5,7 +5,7 @@
 	import HomeWorkIcons from './HomeWorkIcons.svelte';
 	import { route } from '$lib/ROUTES';
 
-	import * as m from '../../../paraglide/messages';
+	import * as m from '$lib/paraglide/messages';
 	import { getI18n } from '$lib/utils/functions';
 
 	let expandedIndex = '1';
@@ -96,10 +96,10 @@
 			--panel-gap: 0.5rem;
 			--panel-padding-right: 0;
 
-			@include mq(lg) {
+			/* @include mq(lg) {
 				--panel-gap: 1rem;
 				--panel-padding: 0.75rem;
-			}
+			} */
 
 			.project {
 				flex-basis: calc(var(--button-size) + (var(--panel-padding) * 2));
@@ -111,11 +111,11 @@
 					flex-basis: clamp(20rem, 30vh, 27.5rem);
 					flex-grow: 1;
 
-					@include mq(md) {
+					/* @include mq(md) {
 						--panel-padding-right: calc(
 							var(--panel-padding) + var(--button-size) + var(--panel-gap)
 						);
-					}
+					} */
 
 					& .project-content .project-more {
 						transform: translateY(0);
@@ -136,13 +136,13 @@
 				}
 
 				&-more {
-					@include mq(xs) {
+					/* @include mq(xs) {
 						font-size: 1.15rem;
 					}
 
 					@include mq(md) {
 						margin-left: calc(var(--button-size) + var(--panel-gap));
-					}
+					} */
 				}
 
 				&-heading {
@@ -162,13 +162,13 @@
 					border-radius: 50%;
 					padding: 0.75rem;
 
-					@include mq(md) {
+					/* @include mq(md) {
 						background: radial-gradient(
 								hsl(var(--secondary-500) / 0.15),
 								hsl(var(--base-200) / 0.5)
 							),
 							radial-gradient(hsl(var(--base-200) / 0.2), hsl(var(--base-200) / 0.2));
-					}
+					} */
 				}
 			}
 		}

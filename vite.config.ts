@@ -1,10 +1,10 @@
 import type { KIT_ROUTES } from '$lib/ROUTES';
 
+import { paraglide } from '@inlang/paraglide-js-adapter-vite';
 import { enhancedImages } from '@sveltejs/enhanced-img';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 import { kitRoutes } from 'vite-plugin-kit-routes';
-import { watch } from 'vite-plugin-watch';
 
 export default defineConfig({
 	css: {
@@ -21,17 +21,13 @@ export default defineConfig({
 			extra_search_params: 'with',
 			format: 'route(path)',
 		}),
-		watch({
-			command: 'paraglide-js compile --project ./project.inlang',
-			pattern: 'src/lang/*.json',
+		// watch({
+		// 	command: 'paraglide-js compile --project ./project.inlang',
+		// 	pattern: 'src/lang/*.json',
+		// }),
+		paraglide({
+			outdir: './src/lib/paraglide',
+			project: './project.inlang',
 		}),
 	],
-
-	resolve: {
-		alias: {
-			$assets: './src/assets',
-			$paraglide: './src/paraglide',
-			$routes: './src/routes',
-		},
-	},
 });
