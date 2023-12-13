@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: /fonts/
-Disallow: /optimized-images/
-Disallow: /images/
