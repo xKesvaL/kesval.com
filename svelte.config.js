@@ -13,8 +13,9 @@ const config = {
 		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
 		adapter: adapter(),
 		alias: {
-			'$assets': './src/assets',
-			'$paraglide': './src/paraglide',
+			$assets: './src/assets',
+			$routes: './src/routes',
+			$paraglide: './src/paraglide'
 		}
 	}
 };
