@@ -47,7 +47,7 @@
 							aria-expanded={i + 1 === parseInt(expandedIndex)}
 						>
 							<span class="project-title relative isolate grid items-center text-2xl lg:text-3xl">
-								{getI18n(`projects.${project.name}.name`)}
+								{getI18n(`projects_${project.name}_name`)}
 							</span>
 							<svg class="project-icon">
 								<use
@@ -72,7 +72,7 @@
 						class="project-button pointer-events-none absolute bottom-4 right-4 z-10 translate-x-8 opacity-0 lg:bottom-8 lg:right-8"
 					>
 						<Button href={project.href} variant="secondary">
-							{m.home_work_discoverProject({ project: getI18n(`projects.${project.name}.name`) })}
+							{m.home_work_discoverProject({ project: getI18n(`projects_${project.name}_name`) })}
 						</Button>
 					</div>
 				</CardGlass>

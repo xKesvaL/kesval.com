@@ -8,7 +8,7 @@
 	export let gap = 6;
 </script>
 
-<div class="flex gap-{gap} lg:gap-{gap + 2} {vertical ? 'flex-col' : ''}">
+<div class="flex gap-{gap} {vertical ? 'flex-col' : ''}" style="--sc-gp: {gap + 2}">
 	<a
 		href={SOCIALS.github.url}
 		class="aspect-square h-10 w-10 transition-colors duration-200 hover:text-accent"
@@ -33,9 +33,13 @@
 </div>
 
 <style lang="scss">
-	div a {
-		&:hover {
-			filter: drop-shadow(0 0 0.4rem hsl(var(--accent) / 0.4));
+	div {
+		gap: calc(var(--sc-gp) * 4px);
+
+		a {
+			&:hover {
+				filter: drop-shadow(0 0 0.4rem hsl(var(--accent) / 0.4));
+			}
 		}
 	}
 </style>
