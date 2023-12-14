@@ -3,13 +3,15 @@ import type { Theme } from '$lib/config';
 import { browser } from '$app/environment';
 import { writable } from 'svelte/store';
 
+export const DEFAULT_THEME = 'auto';
+
 const createTheme = () => {
 	let currentTheme;
 	if (browser) {
-		currentTheme = localStorage.getItem('theme') || 'auto';
+		currentTheme = localStorage.getItem('theme') || DEFAULT_THEME;
 	}
 
-	const { set, subscribe, update } = writable<string>(currentTheme);
+	const { set, subscribe, update } = writable<string>(currentTheme || DEFAULT_THEME);
 
 	const setTheme = (theme: string) => {
 		if (browser) {

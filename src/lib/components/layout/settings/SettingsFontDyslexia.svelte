@@ -2,7 +2,7 @@
 	import { settings } from '$lib/stores/settings';
 	import { Switch } from '$lib/components/ui/switch';
 
-	import * as m from '$lib/paraglide/messages';
+	import * as m from '$paraglide/messages';
 </script>
 
 <div class="flex items-center justify-between gap-2 font-bold text-muted-foreground">

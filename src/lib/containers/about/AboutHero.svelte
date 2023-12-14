@@ -2,7 +2,7 @@
 	import SkillShowcase from '$lib/components/about/SkillShowcase.svelte';
 	import { SKILLS } from '$lib/data/skills';
 
-	import * as m from '$lib/paraglide/messages';
+	import * as m from '$paraglide/messages';
 </script>
 
 <section class="container flex flex-col justify-center gap-8 py-8 lg:gap-20">

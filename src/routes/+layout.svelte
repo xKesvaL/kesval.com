@@ -11,7 +11,7 @@
 	import '../app.postcss';
 	import { polyfillCountryFlagEmojis } from '$lib/utils/functions';
 	import { onMount } from 'svelte';
-	import { availableLanguageTags } from '$lib/paraglide/runtime';
+	import { availableLanguageTags } from '$paraglide/runtime';
 
 	nprogress.configure({ easing: 'ease', minimum: 0.2, speed: 600 });
 	$: $navigating ? nprogress.start() : nprogress.done();

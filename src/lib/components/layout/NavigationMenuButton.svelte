@@ -2,7 +2,7 @@
 	import { navigationOpen } from '$lib/stores/common';
 	import { Button } from '../ui/button';
 
-	import * as m from '$lib/paraglide/messages';
+	import * as m from '$paraglide/messages';
 </script>
 
 <Button

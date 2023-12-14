@@ -5,7 +5,7 @@
 	import HomeWorkIcons from './HomeWorkIcons.svelte';
 	import { route } from '$lib/ROUTES';
 
-	import * as m from '$lib/paraglide/messages';
+	import * as m from '$paraglide/messages';
 	import { getI18n } from '$lib/utils/functions';
 
 	let expandedIndex = '1';

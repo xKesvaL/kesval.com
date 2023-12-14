@@ -3,7 +3,7 @@ import type { ZodError } from 'zod';
 
 import { isEmojiSupported } from 'is-emoji-supported';
 
-import * as m from '$lib/paraglide/messages';
+import * as m from '$paraglide/messages';
 
 export const capitalizeFirstLetter = (str: string) => {
 	return str.charAt(0).toUpperCase() + str.slice(1);
@@ -16,7 +16,7 @@ export const formatZodError = (error: ZodError): FormattedZodError => {
 		}
 
 		acc[curr.path[0]] = {
-			message: curr.message,
+			message: curr.message
 		};
 
 		return acc;
@@ -36,7 +36,7 @@ export const getFlagEmoji = (countryCode: string) => {
 
 export const polyfillCountryFlagEmojis = (
 	fontName = 'Twemoji Country Flags',
-	fontUrl = '/fonts/TwemojiCountryFlags.woff2',
+	fontUrl = '/fonts/TwemojiCountryFlags.woff2'
 ) => {
 	if (isEmojiSupported('😊') && !isEmojiSupported('🇨🇭')) {
 		const style = document.createElement('style');

@@ -3,7 +3,7 @@
 	import { readingSizes, settings } from '$lib/stores/settings';
 	import { DEFAULT_SETTINGS } from '$lib/config';
 
-	import * as m from '$lib/paraglide/messages';
+	import * as m from '$paraglide/messages';
 
 	let readingSize: number[] = [$settings.readingSize];
 

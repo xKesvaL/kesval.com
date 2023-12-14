@@ -7,7 +7,7 @@
 	import { bot } from '$lib/stores/bot';
 	import { route } from '$lib/ROUTES';
 
-	import * as m from '$lib/paraglide/messages';
+	import * as m from '$paraglide/messages';
 
 	let pathWithoutlang = $page.url.pathname.replace(`/${$page.params.lang}`, '') || '/';
 	$: pathWithoutlang = $page.url.pathname.replace(`/${$page.params.lang}`, '') || '/';
@@ -19,7 +19,7 @@
 	style="view-transition-name: header"
 >
 	<a href={route('/')} class="relative h-12 w-12">
-		<!-- <enhanced:img src="../../../assets/images/logos/logo.png" alt="KesvaL Logo" /> -->
+		<enhanced:img src="$assets/logos/logo.png" alt="KesvaL Logo" />
 	</a>
 	<div
 		class={`nav fixed left-0 right-0 top-0 z-50 flex min-h-screen flex-col items-start justify-center gap-10 overflow-hidden bg-primary p-12 text-5xl font-bold text-white transition-transform duration-500 lg:relative lg:min-h-0 lg:translate-x-0 lg:flex-row lg:bg-transparent lg:p-0 lg:text-2xl lg:font-normal lg:text-foreground ${
@@ -28,7 +28,7 @@
 		style="view-transition-name: header-nav"
 	>
 		<a
-			class="rounded-md px-4 py-2 transition-colors duration-200 hover:bg-accent/40 {pathWithoutlang ===
+			class="rounded-md px-4 py-2 transition-colors duration-200 lg:hover:bg-accent/40 {pathWithoutlang ===
 			route('/')
 				? 'bg-primary/40 hover:bg-primary/40'
 				: ''} "
@@ -38,8 +38,8 @@
 			{m.home_name()}
 		</a>
 		<a
-			class="rounded-md px-4 py-2 transition-colors duration-200 hover:bg-accent/40 {pathWithoutlang.startsWith(
-				route('/about'),
+			class="rounded-md px-4 py-2 transition-colors duration-200 lg:hover:bg-accent/40 {pathWithoutlang.startsWith(
+				route('/about')
 			)
 				? 'bg-primary/40 hover:bg-primary/40'
 				: ''} "
@@ -49,8 +49,8 @@
 			{m.about_name()}
 		</a>
 		<a
-			class="rounded-md px-4 py-2 transition-colors duration-200 hover:bg-accent/40 {pathWithoutlang.startsWith(
-				route('/work'),
+			class="rounded-md px-4 py-2 transition-colors duration-200 lg:hover:bg-accent/40 {pathWithoutlang.startsWith(
+				route('/work')
 			)
 				? 'bg-primary/40 hover:bg-primary/40'
 				: ''} "
@@ -60,8 +60,8 @@
 			{m.work_name()}
 		</a>
 		<a
-			class="rounded-md px-4 py-2 transition-colors duration-200 hover:bg-accent/40 {pathWithoutlang.startsWith(
-				route('/blog'),
+			class="rounded-md px-4 py-2 transition-colors duration-200 lg:hover:bg-accent/40 {pathWithoutlang.startsWith(
+				route('/blog')
 			)
 				? 'bg-primary/40 hover:bg-primary/40'
 				: ''} "
@@ -71,7 +71,7 @@
 			{m.blog_name()}
 		</a>
 		<button
-			class="rounded-md px-4 py-2 transition-colors duration-200 hover:bg-accent/40 {$bot.open
+			class="rounded-md px-4 py-2 transition-colors duration-200 lg:hover:bg-accent/40 {$bot.open
 				? 'bg-primary/40 hover:bg-primary/40'
 				: ''} "
 			on:click={() => {

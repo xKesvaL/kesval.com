@@ -8,10 +8,10 @@
 		ChatBotDefaultQuestions,
 		ChatBotAnswers,
 		ChatBotQuestions,
-		ChatBotKey,
+		ChatBotKey
 	} from '$lib/typings/chatbot';
 
-	import * as m from '$lib/paraglide/messages';
+	import * as m from '$paraglide/messages';
 	import { getI18n } from '$lib/utils/functions';
 	import { EMAIL } from '$lib/config';
 	let content: HTMLElement;
@@ -41,15 +41,15 @@
 	let chatBotAnswers = transformArrays<ChatBotAnswers>(chatBotAnswersKeys);
 
 	const chatBotDefaultQuestionsKeys = messages.filter((message) =>
-		message.startsWith('bot_defaultQuestions_'),
+		message.startsWith('bot_defaultQuestions_')
 	);
 	let chatBotDefaultQuestions = Object.values(
-		transformArrays<ChatBotDefaultQuestions>(chatBotDefaultQuestionsKeys),
+		transformArrays<ChatBotDefaultQuestions>(chatBotDefaultQuestionsKeys)
 	);
 
 	const chatBotQuestionsKeys = messages.filter((message) => message.startsWith('bot_questions_'));
 	const chatBotQuestionsArray = Object.entries(
-		transformArrays<ChatBotQuestions>(chatBotQuestionsKeys),
+		transformArrays<ChatBotQuestions>(chatBotQuestionsKeys)
 	);
 
 	let chatBotQuestions = {
@@ -59,14 +59,14 @@
 		confirmHire: chatBotDefaultQuestions,
 		teachHTMLCSS: chatBotDefaultQuestions,
 		teachJS: chatBotDefaultQuestions,
-		teachSvelte: chatBotDefaultQuestions,
+		teachSvelte: chatBotDefaultQuestions
 	} as ChatBotQuestions;
 
 	chatBotQuestionsArray.forEach(([key, value]) => {
 		chatBotQuestions[key as ChatBotKey] = value.map((_, i) => {
 			return {
 				to: getI18n(`bot_questions_${key}_${i}_to`),
-				text: getI18n(`bot_questions_${key}_${i}_text`),
+				text: getI18n(`bot_questions_${key}_${i}_text`)
 			};
 		}) as any;
 	});
@@ -100,7 +100,7 @@
 							content.scrollHeight -
 								content.offsetHeight -
 								80 * (lengthAnswers - i) -
-								60 * (lengthQuestions - 1),
+								60 * (lengthQuestions - 1)
 						);
 					}
 				}, 1000 * i);
@@ -121,7 +121,7 @@
 	>
 		<header class="grid grid-cols-[auto,1fr,auto] items-center gap-4 bg-primary px-2 py-4">
 			<div class="ml-2 h-10 w-10">
-				<!-- <enhanced:img src="../../../assets/images/logos/logo.png" alt="KesvaL Logo" /> -->
+				<enhanced:img src="$assets/logos/logo.png" alt="KesvaL Logo" />
 			</div>
 			<div class="flex h-full flex-col justify-between">
 				<h2 class="font-sans leading-none">

@@ -3,8 +3,8 @@
 
 	import * as Select from '$lib/components/ui/select';
 	import type { Locale } from '$lib/config';
-	import { availableLanguageTags, languageTag, setLanguageTag } from '$lib/paraglide/runtime';
-	import * as m from '$lib/paraglide/messages';
+	import { availableLanguageTags, languageTag, setLanguageTag } from '$paraglide/runtime';
+	import * as m from '$paraglide/messages';
 
 	const transformLocaleToFlag = (locale: string) => {
 		switch (locale.toLowerCase().split('-')[0]) {
