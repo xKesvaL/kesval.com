@@ -51,7 +51,10 @@
 	on:mousemove={onHover}
 	style="--cg-sc: {scale}; --cg-st: {strength};"
 >
-	<div class="card-bg-img flex h-full flex-col p-4 transition-all {classBg}" style={styleBg}>
+	<div
+		class={twMerge('card-bg-img flex h-full flex-col p-4 transition-all', classBg)}
+		style={styleBg}
+	>
 		<slot />
 	</div>
 </svelte:element>

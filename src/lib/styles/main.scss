@@ -89,3 +89,7 @@ section.section {
 	color: hsl(var(--primary-700));
 	text-decoration: underline;
 }
+
+:where(img, svg, video, canvas, audio, iframe, embed, object, picture) {
+	max-height: 100%;
+}
