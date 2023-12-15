@@ -24,7 +24,7 @@
 			fill="full"
 			color="primary"
 			class="lg:col-span-3 row-span-1 lg:col-start-1 lg:col-end-4 text-4xl xl:text-5xl font-title"
-			classBg="justify-center items-center flex-row gap-4 py-2 lg:py-4"
+			classBg="justify-center items-center flex-row gap-6 py-2 lg:py-4"
 		>
 			<enhanced:img
 				src="$assets/logos/logo.png"
@@ -38,13 +38,36 @@
 			1
 		</CardGlass>
 
-		<CardGlass fill="bento" class="lg:col-span-5 row-span-2 lg:col-start-4 lg:row-start-1">
-			2
+		<CardGlass
+			fill="bento"
+			class="lg:col-span-5 row-span-2 lg:col-start-4 lg:row-start-1"
+			classBg="w-full grid grid-cols-4 md:grid-cols-2 lg:grid-cols-4 gap-4 items-center justify-center justify-items-center"
+		>
+			<enhanced:img
+				src="$assets/brands/css.svg"
+				alt="Profile Photo"
+				class="aspect-square img h-12 md:h-[4.5rem] lg:h-20"
+			/>
+			<enhanced:img
+				src="$assets/brands/react.svg"
+				alt="Profile Photo"
+				class="aspect-square img h-12 md:h-[4.5rem] lg:h-20"
+			/>
+			<enhanced:img
+				src="$assets/brands/svelte.svg"
+				alt="Profile Photo"
+				class="aspect-square img h-12 md:h-[4.5rem] lg:h-20"
+			/>
+			<enhanced:img
+				src="$assets/brands/typescript.svg"
+				alt="Profile Photo"
+				class="aspect-square img h-12 md:h-[4.5rem] lg:h-20"
+			/>
 		</CardGlass>
 		<CardGlass fill="bento" class="lg:col-span-4 row-span-2 lg:row-start-1">3</CardGlass>
-		<CardGlass fill="bento" class="lg:col-span-3 row-span-3 lg:col-start-4 lg:row-start-3"
-			>4</CardGlass
-		>
+		<CardGlass fill="bento" class="lg:col-span-3 row-span-3 lg:col-start-4 lg:row-start-3">
+			langues
+		</CardGlass>
 		<CardGlass
 			fill="full"
 			color="secondary"
@@ -56,9 +79,32 @@
 			</span>
 			<span class="text-2xl font-bold"> years old </span>
 		</CardGlass>
-		<CardGlass fill="bento" class="lg:col-span-3 row-span-3 lg:col-start-10 lg:row-start-3"
-			>6</CardGlass
+		<CardGlass
+			fill="bento"
+			class="lg:col-span-3 row-span-3 lg:col-start-10 lg:row-start-3"
+			classBg="w-full items-center justify-center justify-items-center gap-8 grid grid-cols-2 grid-rows-2"
 		>
+			<enhanced:img
+				src="$assets/brands/figma.svg"
+				alt="Profile Photo"
+				class="aspect-square img h-[4.5rem] lg:h-20"
+			/>
+			<enhanced:img
+				src="$assets/brands/photoshop.svg"
+				alt="Profile Photo"
+				class="aspect-square img h-[4.5rem] lg:h-20"
+			/>
+			<enhanced:img
+				src="$assets/brands/premiere_pro.svg"
+				alt="Profile Photo"
+				class="aspect-square img h-[4.5rem] lg:h-20"
+			/>
+			<enhanced:img
+				src="$assets/brands/after_effects.svg"
+				alt="Profile Photo"
+				class="aspect-square img h-[4.5rem] lg:h-20"
+			/>
+		</CardGlass>
 		<CardGlass
 			fill="full"
 			color="secondary"
@@ -71,10 +117,31 @@
 			<span class="text-2xl font-bold"> years of experience </span>
 		</CardGlass>
 		<CardGlass
-			fill="full"
-			color="primary"
+			fill="bento"
 			class="lg:col-span-3 row-span-3 lg:col-start-7 lg:row-start-5"
-		></CardGlass>
+			classBg="w-full items-center justify-center justify-items-center gap-8 grid grid-cols-2 grid-rows-2"
+		>
+			<enhanced:img
+				src="$assets/brands/nodejs.svg"
+				alt="Profile Photo"
+				class="aspect-square img h-[4.5rem] lg:h-20"
+			/>
+			<enhanced:img
+				src="$assets/brands/firebase.svg"
+				alt="Profile Photo"
+				class="aspect-square img h-[4.5rem] lg:h-20"
+			/>
+			<enhanced:img
+				src="$assets/brands/mariadb.svg"
+				alt="Profile Photo"
+				class="aspect-square img h-[4.5rem] lg:h-20"
+			/>
+			<enhanced:img
+				src="$assets/brands/php.svg"
+				alt="Profile Photo"
+				class="aspect-square img h-[4.5rem] lg:h-20"
+			/>
+		</CardGlass>
 		<CardGlass
 			fill="full"
 			color="secondary"
@@ -98,6 +165,10 @@
 			@media screen and (min-width: 1024px) {
 				max-height: 720px;
 			}
+		}
+
+		.img {
+			filter: drop-shadow(0px 0px 12px rgba(255, 0, 0, 0.25));
 		}
 	}
 </style>
