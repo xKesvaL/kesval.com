@@ -9,22 +9,22 @@
  * PAGES
  */
 const PAGES = {
-  "/": (params?: { lang?: (Parameters<typeof import('../params/locale.ts').match>[0]) }) => {
+  "/": (params?: { lang?: (Parameters<typeof import('..\params/locale.ts').match>[0]) }) => {
     return `${params?.lang ? `/${params?.lang}`: '/'}`
   },
-  "/about": (params?: { lang?: (Parameters<typeof import('../params/locale.ts').match>[0]) }) => {
+  "/about": (params?: { lang?: (Parameters<typeof import('..\params/locale.ts').match>[0]) }) => {
     return `${params?.lang ? `/${params?.lang}`: ''}/about`
   },
-  "/blog": (params?: { lang?: (Parameters<typeof import('../params/locale.ts').match>[0]) }) => {
+  "/blog": (params?: { lang?: (Parameters<typeof import('..\params/locale.ts').match>[0]) }) => {
     return `${params?.lang ? `/${params?.lang}`: ''}/blog`
   },
-  "/work": (params?: { lang?: (Parameters<typeof import('../params/locale.ts').match>[0]) }) => {
+  "/work": (params?: { lang?: (Parameters<typeof import('..\params/locale.ts').match>[0]) }) => {
     return `${params?.lang ? `/${params?.lang}`: ''}/work`
   },
-  "/work/leetstrength": (params?: { lang?: (Parameters<typeof import('../params/locale.ts').match>[0]) }) => {
+  "/work/leetstrength": (params?: { lang?: (Parameters<typeof import('..\params/locale.ts').match>[0]) }) => {
     return `${params?.lang ? `/${params?.lang}`: ''}/work/leetstrength`
   },
-  "/work/portfolio": (params?: { lang?: (Parameters<typeof import('../params/locale.ts').match>[0]) }) => {
+  "/work/portfolio": (params?: { lang?: (Parameters<typeof import('..\params/locale.ts').match>[0]) }) => {
     return `${params?.lang ? `/${params?.lang}`: ''}/work/portfolio`
   }
 }
@@ -33,7 +33,8 @@ const PAGES = {
  * SERVERS
  */
 const SERVERS = {
-  
+  "GET /site.webmanifest": `/site.webmanifest`,
+  "GET /sitemap.xml": `/sitemap.xml`
 }
 
 /**
@@ -127,7 +128,7 @@ export function route<T extends keyof AllTypes>(key: T, ...params: any[]): strin
 */
 export type KIT_ROUTES = { 
   PAGES: { '/': 'lang', '/about': 'lang', '/blog': 'lang', '/work': 'lang', '/work/leetstrength': 'lang', '/work/portfolio': 'lang' }
-  SERVERS: Record<string, never>
+  SERVERS: { 'GET /site.webmanifest': never, 'GET /sitemap.xml': never }
   ACTIONS: Record<string, never>
   LINKS: Record<string, never>
   Params: { lang: never }
