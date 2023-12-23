@@ -1,6 +1,7 @@
 <script lang="ts">
 	import SkillShowcase from '$lib/components/about/SkillShowcase.svelte';
 	import CardGlass from '$lib/components/cards/CardGlass.svelte';
+	import { Progress } from '$lib/components/ui/progress';
 	import PERSONAL from '$lib/data/personal';
 	import { SKILLS } from '$lib/data/skills';
 
@@ -45,34 +46,86 @@
 		>
 			<enhanced:img
 				src="$assets/brands/css.svg"
-				alt="Profile Photo"
+				alt="CSS"
 				class="aspect-square img h-12 md:h-[4.5rem] lg:h-20"
+				style:--img-ds-clr="rgba(41, 101, 241, 0.75)"
 			/>
 			<enhanced:img
 				src="$assets/brands/react.svg"
-				alt="Profile Photo"
+				alt="React"
 				class="aspect-square img h-12 md:h-[4.5rem] lg:h-20"
+				style:--img-ds-clr="rgba(97, 218, 251, 0.75)"
 			/>
 			<enhanced:img
 				src="$assets/brands/svelte.svg"
-				alt="Profile Photo"
+				alt="Svelte"
 				class="aspect-square img h-12 md:h-[4.5rem] lg:h-20"
+				style:--img-ds-clr="rgba(255, 62, 0, 0.75)"
 			/>
 			<enhanced:img
 				src="$assets/brands/typescript.svg"
-				alt="Profile Photo"
+				alt="TypeScript"
 				class="aspect-square img h-12 md:h-[4.5rem] lg:h-20"
+				style:--img-ds-clr="rgba(49, 120, 198, 0.75)"
 			/>
 		</CardGlass>
 		<CardGlass fill="bento" class="lg:col-span-4 row-span-2 lg:row-start-1">3</CardGlass>
-		<CardGlass fill="bento" class="lg:col-span-3 row-span-3 lg:col-start-4 lg:row-start-3">
-			langues
+		<CardGlass
+			fill="bento"
+			class="lg:col-span-3 row-span-3 lg:col-start-4 lg:row-start-3 text-2xl font-bold "
+			classBg="gap-8 justify-center"
+		>
+			<div class="flex flex-col gap-2 text-foreground">
+				<div class="flex justify-between items-center relative">
+					<div class="flex items-center gap-2">
+						<span class="font-emoji mb-0.5 text-3xl relative z-10"> 🇫🇷 </span>
+						<span
+							class="font-emoji text-[12rem] absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 scale-x-150 blur-3xl opacity-15"
+						>
+							🇫🇷
+						</span>
+						<span class="font-normal text-xl relative z-10"> French </span>
+					</div>
+					<div class="relative z-10">C2</div>
+				</div>
+				<Progress value={100} class="h-2 border-none relative z-10" classChild="bg-primary" />
+			</div>
+			<div class="flex flex-col gap-2 text-foreground">
+				<div class="flex justify-between items-center relative">
+					<div class="flex items-center gap-2">
+						<span class="font-emoji mb-0.5 text-3xl"> 🇺🇸 </span>
+						<span
+							class="font-emoji text-[12rem] absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 scale-x-150 blur-3xl opacity-15"
+						>
+							🇺🇸
+						</span>
+						<span class="font-normal text-xl"> English </span>
+					</div>
+					<div>C1</div>
+				</div>
+				<Progress value={90} class="h-2 border-none" classChild="bg-primary" />
+			</div>
+			<div class="flex flex-col gap-2 text-foreground">
+				<div class="flex justify-between items-center relative">
+					<div class="flex items-center gap-2">
+						<span class="font-emoji mb-0.5 text-3xl"> 🇩🇪 </span>
+						<span
+							class="font-emoji text-[12rem] absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 scale-x-150 blur-3xl opacity-15"
+						>
+							🇩🇪
+						</span>
+						<span class="font-normal text-xl"> German </span>
+					</div>
+					<div>A2</div>
+				</div>
+				<Progress value={45} class="h-2 border-none" classChild="bg-primary" />
+			</div>
 		</CardGlass>
 		<CardGlass
 			fill="full"
-			color="secondary"
+			color="primary"
 			class="lg:col-span-3 row-span-2 lg:col-start-7 lg:row-start-3"
-			classBg="justify-center items-center text-secondary-foreground text-center"
+			classBg="justify-center items-center text-primary-foreground text-center"
 		>
 			<span class="text-9xl font-title">
 				{PERSONAL.age}
@@ -86,30 +139,34 @@
 		>
 			<enhanced:img
 				src="$assets/brands/figma.svg"
-				alt="Profile Photo"
+				alt="Figma"
 				class="aspect-square img h-[4.5rem] lg:h-20"
+				style:--img-ds-clr="rgba(26, 188, 254, 0.75)"
 			/>
 			<enhanced:img
 				src="$assets/brands/photoshop.svg"
-				alt="Profile Photo"
+				alt="Photoshop"
 				class="aspect-square img h-[4.5rem] lg:h-20"
+				style:--img-ds-clr="rgba(49, 168, 255, 0.5)"
 			/>
 			<enhanced:img
 				src="$assets/brands/premiere_pro.svg"
-				alt="Profile Photo"
+				alt="Premiere Pro"
 				class="aspect-square img h-[4.5rem] lg:h-20"
+				style:--img-ds-clr="rgba(153, 153, 255, 0.5)"
 			/>
 			<enhanced:img
 				src="$assets/brands/after_effects.svg"
-				alt="Profile Photo"
+				alt="After Effects"
 				class="aspect-square img h-[4.5rem] lg:h-20"
+				style:--img-ds-clr="rgba(153, 153, 255, 0.5)"
 			/>
 		</CardGlass>
 		<CardGlass
 			fill="full"
-			color="secondary"
+			color="primary"
 			class="lg:col-span-3 row-span-2 lg:col-start-4 lg:row-start-6"
-			classBg="justify-center items-center text-secondary-foreground text-center"
+			classBg="justify-center items-center text-primary-foreground text-center"
 		>
 			<span class="text-9xl font-title">
 				{PERSONAL.yearsOfExperience}
@@ -123,30 +180,34 @@
 		>
 			<enhanced:img
 				src="$assets/brands/nodejs.svg"
-				alt="Profile Photo"
+				alt="NodeJS"
 				class="aspect-square img h-[4.5rem] lg:h-20"
+				style:--img-ds-clr="rgba(83, 158, 67, 0.75)"
 			/>
 			<enhanced:img
 				src="$assets/brands/firebase.svg"
-				alt="Profile Photo"
+				alt="Firebase"
 				class="aspect-square img h-[4.5rem] lg:h-20"
+				style:--img-ds-clr="rgba(255, 202, 40, 0.75)"
 			/>
 			<enhanced:img
 				src="$assets/brands/mariadb.svg"
-				alt="Profile Photo"
+				alt="MariaDB"
 				class="aspect-square img h-[4.5rem] lg:h-20"
+				style:--img-ds-clr="rgba(196, 154, 108, 0.75)"
 			/>
 			<enhanced:img
 				src="$assets/brands/php.svg"
-				alt="Profile Photo"
+				alt="PHP"
 				class="aspect-square img h-[4.5rem] lg:h-20"
+				style:--img-ds-clr="rgba(119, 123, 179, 0.75)"
 			/>
 		</CardGlass>
 		<CardGlass
 			fill="full"
-			color="secondary"
+			color="primary"
 			class="lg:col-span-3 row-span-2 lg:col-start-10 lg:row-start-6"
-			classBg="justify-center items-center text-secondary-foreground text-center"
+			classBg="justify-center items-center text-primary-foreground text-center"
 		>
 			<span class="text-9xl font-title">
 				{PERSONAL.projects}
@@ -168,7 +229,7 @@
 		}
 
 		.img {
-			filter: drop-shadow(0px 0px 12px rgba(255, 0, 0, 0.25));
+			filter: drop-shadow(0px 0px 4rem var(--img-ds-clr));
 		}
 	}
 </style>
