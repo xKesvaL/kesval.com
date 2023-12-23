@@ -80,7 +80,7 @@
 					<div class="flex items-center gap-2">
 						<span class="font-emoji mb-0.5 text-3xl relative z-10"> 🇫🇷 </span>
 						<span
-							class="font-emoji text-[12rem] absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 scale-x-150 blur-3xl opacity-15"
+							class="font-emoji text-[12rem] absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 scale-x-150 blur-3xl opacity-10"
 						>
 							🇫🇷
 						</span>
@@ -95,7 +95,7 @@
 					<div class="flex items-center gap-2">
 						<span class="font-emoji mb-0.5 text-3xl"> 🇺🇸 </span>
 						<span
-							class="font-emoji text-[12rem] absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 scale-x-150 blur-3xl opacity-15"
+							class="font-emoji text-[12rem] absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 scale-x-150 blur-3xl opacity-10"
 						>
 							🇺🇸
 						</span>
@@ -110,7 +110,7 @@
 					<div class="flex items-center gap-2">
 						<span class="font-emoji mb-0.5 text-3xl"> 🇩🇪 </span>
 						<span
-							class="font-emoji text-[12rem] absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 scale-x-150 blur-3xl opacity-15"
+							class="font-emoji text-[12rem] absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 scale-x-150 blur-3xl opacity-10"
 						>
 							🇩🇪
 						</span>
