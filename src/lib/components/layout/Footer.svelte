@@ -2,8 +2,8 @@
 	import Socials from '../base/Socials.svelte';
 </script>
 
-<footer class="bg-muted/25">
-	<div class="container-sm container p-4">
+<footer class="bg-muted/50">
+	<div class="container-sm container px-4 py-8">
 		<div class="flex items-center justify-between">
 			<span class="font-title text-2xl">
 				Jordan <br />

@@ -26,7 +26,7 @@
 	"bot_answers_teachJS_2": "You can still contact me on my <a href=\"/about?scroll=socials\" class=\"special-link\">socials</a> if you have any questions.",
 	"bot_answers_teachMe_0": "Hum, sure, I'm not a teacher but I can give you resources or help you.",
 	"bot_answers_teachMe_1": "What do you want to learn?",
-	"bot_answers_teachSvelte_0": "Svelte is a great framework, and I would say it is close to React.",
+	"bot_answers_teachSvelte_0": "Svelte is a great framework, and I would say it is as simple as any other framework.",
 	"bot_answers_teachSvelte_1": "You can check out this <a target=\"_blank\" href=\"https://www.youtube.com/@WebDevSimplified\" class=\"special-link\" rel=\"external\">channel</a> to learn more about React, and then implement it in Svelte.",
 	"bot_answers_teachSvelte_2": "Or, simply try to make a Svelte project and you'll learn a lot by doing it. A simple thing like a ToDo app is a good start.",
 	"bot_answers_teachSvelte_3": "You can still contact me on my <a href='/about?scroll=socials' class='special-link'>socials</a> if you have any questions.",

@@ -17,6 +17,10 @@
 	let content: HTMLElement;
 	let autoscroll = false;
 
+	//
+	// TODO: needs to be refactored at some point
+	//
+
 	function transformArrays<T = Record<string, string[]>>(arrays: string[]): T {
 		const transformedObject: Record<string, string[]> = {};
 
@@ -115,7 +119,7 @@
 
 {#if $bot.open}
 	<div
-		class="fixed inset-0 z-20 overflow-hidden text-primary-foreground backdrop-blur-lg backdrop-saturate-200 sm:bottom-4 sm:left-auto sm:right-4 sm:top-auto sm:h-[36rem] sm:w-[22rem] sm:rounded-lg"
+		class="fixed inset-0 z-20 overflow-hidden text-primary-foreground backdrop-blur-lg backdrop-saturate-200 sm:bottom-4 sm:left-auto sm:right-4 sm:top-auto sm:h-[36rem] sm:w-[22rem] sm:rounded-lg border border-primary/25"
 		transition:fly={{ y: 20, duration: 300, opacity: 0 }}
 		aria-hidden={$bot.open ? false : true}
 	>

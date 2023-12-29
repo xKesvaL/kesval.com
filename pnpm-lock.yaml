@@ -80,8 +80,8 @@ devDependencies:
     specifier: ^0.0.5
     version: 0.0.5
   lucide-svelte:
-    specifier: ^0.300.0
-    version: 0.300.0(svelte@4.2.8)
+    specifier: ^0.303.0
+    version: 0.303.0(svelte@4.2.8)
   nprogress:
     specifier: ^0.2.0
     version: 0.2.0
@@ -2650,8 +2650,8 @@ packages:
       yallist: 4.0.0
     dev: true
 
-  /lucide-svelte@0.300.0(svelte@4.2.8):
-    resolution: {integrity: sha512-oRWQR+ESh1zedKipUir8aXxbPeThrJ32OYJzcVpTMA2fj9mZUhG9Gn9MDFSLapKpzBF63XvA91eaxqeAhQ0icQ==}
+  /lucide-svelte@0.303.0(svelte@4.2.8):
+    resolution: {integrity: sha512-Lt5kH3pGSSQdFDgL+y09xkp8FCGm7pQBdxmRxdpA0/im5AHl6WGDECWdiB4dnBCp8njOgWd0TaSqgkL0dF0efg==}
     peerDependencies:
       svelte: '>=3 <5'
     dependencies:

@@ -33,7 +33,7 @@
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-svelte": "^2.35.1",
 		"is-emoji-supported": "^0.0.5",
-		"lucide-svelte": "^0.300.0",
+		"lucide-svelte": "^0.303.0",
 		"nprogress": "^0.2.0",
 		"prettier": "^3.1.1",
 		"prettier-plugin-svelte": "^3.1.2",
