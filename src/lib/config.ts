@@ -17,6 +17,7 @@ export const BRAND = {
 	},
 	name: 'KesvaL',
 	url: 'https://kesval.com',
+	shortUrl: 'kesval.com'
 } as const satisfies Brand;
 
 export const SOCIALS = {

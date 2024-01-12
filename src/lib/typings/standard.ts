@@ -4,6 +4,7 @@ export interface Brand {
 	logo: BrandLogo;
 	name: string;
 	url: string;
+	shortUrl: string;
 }
 
 export interface BrandLogo {
@@ -35,7 +36,6 @@ export type ThemeColor =
 	| 'success'
 	| BrandColor;
 
-// eslint-disable-next-line perfectionist/sort-union-types
 export type ThemeSize = 'sm' | 'md' | 'lg';
 
 export interface FormattedZodError {

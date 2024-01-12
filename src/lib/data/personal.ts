@@ -8,7 +8,9 @@ const PERSONAL = {
 	dateOfBirth: dayjs('2004-10-14'),
 	age: dayjs().diff(dayjs('2004-10-14'), 'year'),
 	openSourceContributions: '08',
-	projects: '06'
+	projects: '06',
+	location: 'Mulhouse, France',
+	email: 'jabeddou@gmail.com'
 } as const;
 
 export default PERSONAL;

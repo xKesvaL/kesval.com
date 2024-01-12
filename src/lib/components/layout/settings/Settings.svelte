@@ -23,7 +23,11 @@
 
 <Popover>
 	<PopoverTrigger>
-		<Button variant="ghost" size="icon" class="bg-muted hover:bg-muted hover:text-foreground">
+		<Button
+			variant="ghost"
+			size="icon"
+			class="bg-popover transition-all rounded-full hover:bg-background hover:text-foreground"
+		>
 			<div class="sr-only">
 				{m.common_settings()}
 			</div>

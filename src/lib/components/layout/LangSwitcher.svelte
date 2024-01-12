@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { getFlagEmoji } from '$lib/utils/functions';
-
+	import { browser } from '$app/environment';
 	import * as Select from '$lib/components/ui/select';
 	import type { Locale } from '$lib/config';
 	import { availableLanguageTags, languageTag, setLanguageTag } from '$paraglide/runtime';
@@ -18,18 +18,22 @@
 	let selected = {
 		value: languageTag(),
 		label: getFlagEmoji(transformLocaleToFlag(languageTag())),
-		disabled: false,
+		disabled: false
 	};
 
 	const onChange = (opt: any) => {
 		setLanguageTag(opt.value as Locale);
+
+		if (browser) {
+			window.location.reload();
+		}
 	};
 </script>
 
 <div class="font-emoji">
 	<Select.Root bind:selected onSelectedChange={onChange}>
 		<Select.Trigger
-			class="trigger flex aspect-square justify-center border-0 bg-muted p-2 text-lg"
+			class="trigger flex aspect-square justify-center border-0 bg-popover p-2 text-lg rounded-full"
 			icon={false}
 			aria-label={m.common_changeLanguage()}
 		>
