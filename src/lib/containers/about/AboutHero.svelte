@@ -78,17 +78,17 @@
 			<div class="flex flex-col gap-2 text-foreground">
 				<div class="flex justify-between items-center relative">
 					<div class="flex items-center gap-2">
-						<span class="font-emoji mb-0.5 text-3xl relative z-10"> 🇫🇷 </span>
+						<span class="font-emoji mb-0.5 text-3xl relative"> 🇫🇷 </span>
 						<span
 							class="font-emoji text-[12rem] absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 scale-x-150 blur-3xl opacity-10"
 						>
 							🇫🇷
 						</span>
-						<span class="font-normal text-xl relative z-10"> French </span>
+						<span class="font-normal text-xl relative"> French </span>
 					</div>
-					<div class="relative z-10">C2</div>
+					<div class="relative">C2</div>
 				</div>
-				<Progress value={100} class="h-2 border-none relative z-10" classChild="bg-primary" />
+				<Progress value={100} class="h-2 border-none relative" classChild="bg-primary" />
 			</div>
 			<div class="flex flex-col gap-2 text-foreground">
 				<div class="flex justify-between items-center relative">

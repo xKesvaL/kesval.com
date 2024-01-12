@@ -62,10 +62,11 @@
 
 body {
 	transition: background-color 0.2s ease-in-out;
+	overflow-x: hidden;
 }
 
 body[data-scroll-locked='true'] {
-	overflow: hidden;
+	overflow-y: hidden;
 }
 
 .font-sans {

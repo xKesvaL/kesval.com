@@ -33,7 +33,7 @@
 <div class="font-emoji">
 	<Select.Root bind:selected onSelectedChange={onChange}>
 		<Select.Trigger
-			class="trigger flex aspect-square justify-center border-0 bg-popover p-2 text-lg rounded-full"
+			class="trigger flex aspect-square justify-center border-0 bg-popover p-2 text-lg transition-all rounded-full hover:bg-background"
 			icon={false}
 			aria-label={m.common_changeLanguage()}
 		>
