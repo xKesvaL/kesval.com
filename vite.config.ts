@@ -21,6 +21,9 @@ export default defineConfig({
 				},
 				github: {
 					href: 'https://github.com/xKesvaL'
+				},
+				instagram: {
+					href: 'https://www.instagram.com/xKesvaL/'
 				}
 			}
 		}),

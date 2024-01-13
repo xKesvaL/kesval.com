@@ -50,7 +50,8 @@ const ACTIONS = {
 const LINKS = {
   "linkedin": `https://www.linkedin.com/in/jordan-abeddou/`,
   "email": `mailto:jabeddou@gmail.com`,
-  "github": `https://github.com/xKesvaL`
+  "github": `https://github.com/xKesvaL`,
+  "instagram": `https://www.instagram.com/xKesvaL/`
 }
 
 type ParamValue = string | number | undefined
@@ -156,6 +157,6 @@ export type KIT_ROUTES = {
   PAGES: { '/': 'lang', '/about': 'lang', '/blog': 'lang', '/work': 'lang', '/work/leetstrength': 'lang', '/work/portfolio': 'lang' }
   SERVERS: { 'GET /site.webmanifest': never, 'GET /sitemap.xml': never }
   ACTIONS: Record<string, never>
-  LINKS: { 'linkedin': never, 'email': never, 'github': never }
+  LINKS: { 'linkedin': never, 'email': never, 'github': never, 'instagram': never }
   Params: { lang: never }
 }

@@ -22,7 +22,7 @@
 		<enhanced:img src="$assets/logos/logo.png" alt="KesvaL Logo" />
 	</a>
 	<nav
-		class={`nav fixed left-0 -right-4 top-0 z-50 flex flex-col items-start justify-center gap-4 overflow-hidden bg-primary p-12 text-5xl font-bold text-white transition-transform duration-500 lg:relative lg:min-h-0 lg:translate-x-0 lg:flex-row lg:bg-transparent lg:p-0 lg:text-xl lg:font-normal lg:text-foreground ${
+		class={`nav fixed left-0 -right-2 top-0 z-50 flex flex-col items-start justify-center gap-4 overflow-hidden bg-primary p-12 text-5xl font-bold text-white transition-transform duration-500 lg:relative lg:min-h-0 lg:translate-x-0 lg:flex-row lg:bg-transparent lg:p-0 lg:text-xl lg:font-normal lg:text-foreground ${
 			$navigationOpen ? 'translate-x-0' : '-translate-x-full'
 		}`}
 		style="view-transition-name: header-nav"
@@ -30,7 +30,7 @@
 		<a
 			class="rounded-none lg:rounded-full px-4 py-2 transition-colors duration-200 {pathWithoutlang ===
 			route('/')
-				? 'border-b-2 border-background lg:border lg:border-border/50 active'
+				? 'border-b-2 border-primary-foreground lg:border lg:border-border/50 active'
 				: 'border border-transparent lg:hover:border-border/50 lg:hover:bg-background/50'} "
 			on:click={() => navigationOpen.set(false)}
 			href={route('/')}
@@ -41,7 +41,7 @@
 			class="rounded-none lg:rounded-full px-4 py-2 transition-colors duration-200 {pathWithoutlang.startsWith(
 				route('/about')
 			)
-				? 'border-b-2 border-background lg:border lg:border-border/50 active'
+				? 'border-b-2 border-primary-foreground lg:border lg:border-border/50 active'
 				: 'border border-transparent lg:hover:border-border/50 lg:hover:bg-background/50'} "
 			on:click={() => navigationOpen.set(false)}
 			href={route('/about')}
@@ -52,7 +52,7 @@
 			class="rounded-none lg:rounded-full px-4 py-2 transition-colors duration-200 {pathWithoutlang.startsWith(
 				route('/work')
 			)
-				? 'border-b-2 border-background lg:border lg:border-border/50 active'
+				? 'border-b-2 border-primary-foreground lg:border lg:border-border/50 active'
 				: 'border border-transparent lg:hover:border-border/50 lg:hover:bg-background/50'} "
 			on:click={() => navigationOpen.set(false)}
 			href={route('/work')}
@@ -63,7 +63,7 @@
 			class="rounded-none lg:rounded-full px-4 py-2 transition-colors duration-200 {pathWithoutlang.startsWith(
 				route('/blog')
 			)
-				? 'border-b-2 border-background lg:border lg:border-border/50 active'
+				? 'border-b-2 border-primary-foreground lg:border lg:border-border/50 active'
 				: 'border border-transparent lg:hover:border-border/50 lg:hover:bg-background/50'} "
 			on:click={() => navigationOpen.set(false)}
 			href={route('/blog')}
@@ -72,7 +72,7 @@
 		</a>
 		<button
 			class="rounded-none lg:rounded-full px-4 py-2 transition-colors duration-200 {$bot.open
-				? 'border-b-2 border-background lg:border lg:border-border/50 active'
+				? 'border-b-2 border-primary-foreground lg:border lg:border-border/50 active'
 				: 'border border-transparent lg:hover:border-border/50 lg:hover:bg-background/50'} "
 			on:click={() => {
 				navigationOpen.set(false);
@@ -104,7 +104,7 @@
 		}
 
 		.nav {
-			min-height: 90vh;
+			min-height: 95vh;
 			height: calc(100dvh + 1.5rem);
 
 			@media (min-width: 1024px) {

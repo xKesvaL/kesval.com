@@ -69,17 +69,21 @@
 		--cg-st: 0.15;
 		--cg-st-base: 0.3;
 
-		background: hsl(var(--base-300) / 0.25);
+		background: hsl(var(--primary-300) / 0.1);
 
 		&.fill-full {
-			background: hsl(var(--drop-color));
-			border-color: hsl(var(--drop-color));
+			background: radial-gradient(
+				circle at 50% 50%,
+				hsl(var(--drop-color) / 0.7),
+				hsl(var(--drop-color) / 0.5)
+			);
+			border-color: transparent;
 			color: white;
 		}
 
 		&.fill-bento {
-			background: hsl(var(--base-300) / 0.4);
-			border-color: hsl(var(--base-300) / 0.4);
+			background: hsl(var(--primary-300) / 0.1);
+			border-color: hsl(var(--primary-300) / 0.1);
 			color: white;
 		}
 
