@@ -18,7 +18,7 @@ const config = {
 			$paraglide: './src/paraglide'
 		},
 		prerender: {
-			handleHttpError: 'warn'
+			handleHttpError: 'ignore'
 		}
 	}
 };
