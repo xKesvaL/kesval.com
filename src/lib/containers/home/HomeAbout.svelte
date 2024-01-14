@@ -2,7 +2,7 @@
 	import { route } from '$lib/ROUTES';
 	import CardGlass from '$lib/components/cards/CardGlass.svelte';
 	import { Button } from '$lib/components/ui/button';
-	import PERSONAL from '$lib/data/personal';
+	import { PERSONAL } from '$lib/data/personal';
 
 	import * as m from '$paraglide/messages';
 </script>
@@ -54,6 +54,3 @@
 		{m.home_about_button()}
 	</Button>
 </section>
-
-<style lang="scss">
-</style>

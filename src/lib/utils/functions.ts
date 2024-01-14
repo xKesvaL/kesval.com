@@ -1,5 +1,6 @@
 import type { FormattedZodError } from '$lib/typings/standard';
 import type { ZodError } from 'zod';
+import dayjs from 'dayjs';
 
 import * as m from '$paraglide/messages';
 
@@ -59,4 +60,27 @@ export const getI18n = (key: string, args?: { [key: string]: unknown }) => {
 	}
 
 	return key;
+};
+
+const dateFormats = {
+	short: 'MMM YYYY'
+} as const;
+
+interface FormatDateOptions {
+	locale?: string;
+	format?: keyof typeof dateFormats;
+}
+
+export const formatDate = (date: Date, options: FormatDateOptions) => {
+	const dayjsDate = dayjs(date);
+
+	if (options.locale) {
+		dayjsDate.locale(options.locale);
+	}
+
+	if (options.format) {
+		return dayjsDate.format(dateFormats[options.format]);
+	}
+
+	return dayjsDate.format();
 };

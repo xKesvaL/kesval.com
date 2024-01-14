@@ -7,10 +7,12 @@ import IconBriefcase from './IconBriefcase.svelte';
 import IconCake from './IconCake.svelte';
 import IconCircleCheck from './IconCircleCheck.svelte';
 import IconCode from './IconCode.svelte';
+import IconDots from './IconDots.svelte';
 import IconInfoCircle from './IconInfoCircle.svelte';
 import IconLanguage from './IconLanguage.svelte';
 import IconMail from './IconMail.svelte';
 import IconMapPin from './IconMapPin.svelte';
+import IconMapPinFilled from './IconMapPinFilled.svelte';
 import IconMenu from './IconMenu.svelte';
 import IconMore from './IconMore.svelte';
 import IconPhotoOff from './IconPhotoOff.svelte';
@@ -30,10 +32,12 @@ export {
 	IconCake,
 	IconCircleCheck,
 	IconCode,
+	IconDots,
 	IconInfoCircle,
 	IconLanguage,
 	IconMail,
 	IconMapPin,
+	IconMapPinFilled,
 	IconMenu,
 	IconMore,
 	IconPhotoOff,

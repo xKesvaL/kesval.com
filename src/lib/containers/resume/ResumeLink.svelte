@@ -2,15 +2,15 @@
 	import { cn } from '$lib/utils/ui';
 
 	export let href: string | undefined = undefined;
-	export let classes: string = '';
+	export let classes = '';
 </script>
 
 <div class="flex items-center gap-4">
-	<div class={cn('rounded-full w-10 h-10 overflow-hidden icon p-2', classes)}>
+	<div class={cn('icon h-10 w-10 overflow-hidden rounded-full p-2', classes)}>
 		<slot name="icon" />
 	</div>
-	<div class="flex justify-between flex-col h-full">
-		<span class="text-muted-foreground text-xs leading-none">
+	<div class="flex h-full flex-col justify-between">
+		<span class="text-xs leading-none text-muted-foreground">
 			<slot name="label" />
 		</span>
 		<svelte:element

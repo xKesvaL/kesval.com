@@ -3,9 +3,7 @@
 	import ResumeContent from './ResumeContent.svelte';
 </script>
 
-<div
-	class="bg-popover max-w-[51rem] w-full rounded-xl overflow-hidden resume flex flex-col sm:flex-row"
->
+<div class="resume flex w-full max-w-[64rem] flex-col overflow-hidden rounded-xl md:flex-row">
 	<ResumeSidebar />
 	<ResumeContent />
 </div>

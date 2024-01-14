@@ -5,7 +5,7 @@ import { resolve } from 'path';
 import { enhancedImages } from '@sveltejs/enhanced-img';
 import { paraglide } from '@inlang/paraglide-js-adapter-vite';
 import type { KIT_ROUTES } from '$lib/ROUTES';
-import PERSONAL from './src/lib/data/personal';
+import { PERSONAL } from './src/lib/data/personal';
 
 export default defineConfig({
 	plugins: [

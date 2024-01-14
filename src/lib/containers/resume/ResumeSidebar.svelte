@@ -5,22 +5,20 @@
 	import IconWorldWww from '$lib/icons/IconWorldWww.svelte';
 	import IconMapPin from '$lib/icons/IconMapPin.svelte';
 	import IconLanguage from '$lib/icons/IconLanguage.svelte';
-	import PERSONAL from '$lib/data/personal';
+	import { PERSONAL } from '$lib/data/personal';
 	import { BRAND } from '$lib/config';
 	import { route } from '$lib/ROUTES';
-	import { theme } from '$lib/stores/theme';
 </script>
-
-<aside class="p-4 lg:p-8 h-full">
-	<div class="lg:p-4 flex flex-col">
+<aside class="relative p-4 md:p-8">
+	<div class="flex flex-col md:p-4">
 		<enhanced:img class="h-28 w-28" src="$assets/logos/logo.png" alt={m.common_kesval_logo()} />
-		<h3 class="font-sans font-bold text-2xl mt-2">Jordan Abeddou</h3>
+		<h3 class="mt-2 font-sans text-2xl font-medium">Jordan Abeddou</h3>
 		<p class="subtitle bg-clip-text text-lg">
 			{m.common_fullstack_developer()}
 		</p>
 		<hr class="mt-6" />
 	</div>
-	<div class="pt-8 lg:p-4 flex flex-col gap-4">
+	<div class="flex flex-col gap-4 pt-8 md:p-4">
 		<ResumeLink href={route('email')}>
 			<span slot="icon">
 				<IconMail />
@@ -67,7 +65,7 @@
 		</ResumeLink>
 		<hr class="mt-4" />
 	</div>
-	<div class="pt-8 lg:p-4 flex flex-col gap-4">
+	<div class="flex flex-col gap-4 pt-8 md:p-4">
 		<span class="text-xs text-muted-foreground">
 			{m.about_socials_title()}
 		</span>
@@ -94,57 +92,62 @@
 		</ResumeLink>
 		<hr class="mt-4" />
 	</div>
-	<div class="pt-8 lg:p-4 flex flex-col gap-6">
+	<div class="flex flex-col gap-6 pt-8 md:p-4">
 		<span class="text-xs text-muted-foreground">
 			{m.about_languages_title()}
 		</span>
-		<div class="flex gap-4 items-center h-8">
-			<span class="font-emoji text-4xl ml-1">🇫🇷</span>
-			<div class="flex justify-between flex-col h-full">
+		<div class="flex h-8 items-center gap-4">
+			<span class="ml-1 font-emoji text-4xl">🇫🇷</span>
+			<div class="flex h-full flex-col justify-between">
 				<p class="text-sm leading-none">
 					{m.language_french()}
 				</p>
-				<span class="text-muted-foreground text-xs leading-none">
+				<span class="text-xs leading-none text-muted-foreground">
 					{m.about_language_french()}
 				</span>
 			</div>
 		</div>
-		<div class="flex gap-4 items-center h-8">
-			<span class="font-emoji text-4xl ml-1">🇺🇸</span>
-			<div class="flex justify-between flex-col h-full">
+		<div class="flex h-8 items-center gap-4">
+			<span class="ml-1 font-emoji text-4xl">🇺🇸</span>
+			<div class="flex h-full flex-col justify-between">
 				<p class="text-sm leading-none">
 					{m.language_english()}
 				</p>
-				<span class="text-muted-foreground text-xs leading-none">
+				<span class="text-xs leading-none text-muted-foreground">
 					{m.about_language_english()}
 				</span>
 			</div>
 		</div>
-		<div class="flex gap-4 items-center h-8">
-			<span class="font-emoji text-4xl ml-1">🇩🇪</span>
-			<div class="flex justify-between flex-col h-full">
+		<div class="flex h-8 items-center gap-4">
+			<span class="ml-1 font-emoji text-4xl">🇩🇪</span>
+			<div class="flex h-full flex-col justify-between">
 				<p class="text-sm leading-none">
 					{m.language_german()}
 				</p>
-				<span class="text-muted-foreground text-xs leading-none">
+				<span class="text-xs leading-none text-muted-foreground">
 					{m.about_language_german()}
 				</span>
 			</div>
 		</div>
 	</div>
+
+	<!-- Blobs -->
+	<div class="absolute right-0 top-8 h-40 w-40 rounded-full bg-primary opacity-10 blur-3xl"></div>
+	<div class="absolute left-0 top-0 h-40 w-40 rounded-full bg-accent opacity-10 blur-3xl"></div>
+	<div class="absolute right-0 top-0 h-40 w-40 rounded-full bg-accent opacity-10 blur-3xl"></div>
+	<div class="absolute right-16 top-40 h-40 w-40 rounded-full bg-primary opacity-10 blur-3xl"></div>
+	<div
+		class="absolute bottom-64 right-16 h-40 w-40 rounded-full bg-accent opacity-10 blur-3xl"
+	></div>
+	<div
+		class="absolute bottom-32 left-8 h-40 w-40 rounded-full bg-primary opacity-10 blur-3xl"
+	></div>
+	<div
+		class="absolute bottom-0 right-0 h-40 w-40 translate-x-1/2 translate-y-1/2 rounded-full bg-accent opacity-10 blur-3xl"
+	></div>
+	<div
+		class="absolute right-0 top-1/2 h-80 w-40 -translate-y-1/2 rounded-full bg-primary opacity-10 blur-3xl"
+	></div>
 </aside>
 
-<style lang="scss">
-	aside {
-		background: hsl(var(--primary-50) / 0.25);
-
-		.subtitle {
-			background-clip: text;
-			background: linear-gradient(45deg, hsl(var(--primary-400)), hsl(var(--primary-700)) 100%);
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
-			-moz-background-clip: text;
-			-moz-text-fill-color: transparent;
-		}
-	}
-</style>
+<style lang="scss" ✂prettier:content✂="Cglhc2lkZSB7CiAgICBiYWNrZ3JvdW5kOiBoc2wodmFyKC0tcHJpbWFyeS0xMDApIC8gMC4yNSk7CgoJCS5zdWJ0aXRsZSB7CgkJCWJhY2tncm91bmQtY2xpcDogdGV4dDsKCQkJYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDQ1ZGVnLCBoc2wodmFyKC0tcHJpbWFyeS00MDApKSwgaHNsKHZhcigtLXByaW1hcnktNzAwKSkgMTAwJSk7CgkJCS13ZWJraXQtYmFja2dyb3VuZC1jbGlwOiB0ZXh0OwoJCQktd2Via2l0LXRleHQtZmlsbC1jb2xvcjogdHJhbnNwYXJlbnQ7CgkJfQoJfQo="></style>
