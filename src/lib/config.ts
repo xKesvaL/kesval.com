@@ -5,15 +5,15 @@ export const DEFAULT_LOCALE: Locale = 'en' as const;
 export const BRAND = {
 	author: {
 		name: 'KesvaL',
-		url: 'https://kesval.com',
+		url: 'https://kesval.com'
 	},
 	color: {
 		primary: '#5920df',
-		secondary: '#df20b9',
+		secondary: '#df20b9'
 	},
 	logo: {
-		dark: '/images/logos/logo.png',
-		light: '/images/logos/logo.png',
+		dark: '/logos/logo.png',
+		light: '/logos/logo.png'
 	},
 	name: 'KesvaL',
 	url: 'https://kesval.com',
@@ -22,29 +22,29 @@ export const BRAND = {
 
 export const SOCIALS = {
 	github: {
-		url: 'https://github.com/xKesvaL',
+		url: 'https://github.com/xKesvaL'
 	},
 	instagram: {
-		url: 'https://instagram.com/xkesval',
+		url: 'https://instagram.com/xkesval'
 	},
 	linkedin: {
-		url: 'https://linkedin.com/in/jordan-abeddou',
-	},
+		url: 'https://linkedin.com/in/jordan-abeddou'
+	}
 } as const;
 
 export const ROUTES = {
 	about: {
-		path: '/about',
+		path: '/about'
 	},
 	blog: {
-		path: '/blog',
+		path: '/blog'
 	},
 	home: {
-		path: '/',
+		path: '/'
 	},
 	work: {
-		path: '/work',
-	},
+		path: '/work'
+	}
 } as const satisfies Record<string, Route>;
 
 export const LOCALES = ['en', 'fr'] as const;
@@ -70,7 +70,7 @@ export const DEFAULT_SETTINGS: Settings = {
 	lastReset: Date.now(),
 	readingHeight: 1.75,
 	readingLength: 90,
-	readingSize: 18,
+	readingSize: 18
 } as const;
 
 export const SEARCH_PARAMS_LIST = ['owlang'] as const;
