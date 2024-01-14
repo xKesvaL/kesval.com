@@ -1,12 +1,13 @@
 <script lang="ts">
 	import CardGlass from '$lib/components/cards/CardGlass.svelte';
 	import { Button } from '$lib/components/ui/button';
-	import { FEATURED_PROJECTS, PROJECTS } from '$lib/data/projects';
+	import { FEATURED_PROJECTS, PROJECTS } from '$lib/data/work';
 	import HomeWorkIcons from './HomeWorkIcons.svelte';
 	import { route } from '$lib/ROUTES';
 
 	import * as m from '$paraglide/messages';
 	import { getI18n } from '$lib/utils/functions';
+	import { languageTag } from '$paraglide/runtime';
 
 	let expandedIndex = '1';
 
@@ -49,7 +50,11 @@
 							<span class="project-title relative isolate grid items-center text-2xl lg:text-3xl">
 								{getI18n(`projects_${project.name}_name`)}
 							</span>
-							<img class="project-icon" src={project.imageUrl} alt={getI18n(`projects_${project.name}_name`)} />
+							<img
+								class="project-icon"
+								src={project.imageUrl}
+								alt={getI18n(`projects_${project.name}_name`)}
+							/>
 							<!-- <svg class="project-icon">
 								<use
 									href="#{project.languages[0]}-logo"
@@ -66,7 +71,7 @@
 						role="region"
 					>
 						<div class="project-more mx-4 mt-4 translate-y-8 opacity-0">
-							{project.description}
+							{getI18n(`projects_${project.name}_description`)}
 						</div>
 					</div>
 					<div
@@ -80,7 +85,7 @@
 			</div>
 		{/each}
 	</div>
-	<Button class="mx-auto" href={route('/work')}>
+	<Button class="mx-auto" href={route('/work', { lang: languageTag() })}>
 		{m.home_work_discoverMore()}
 	</Button>
 </section>

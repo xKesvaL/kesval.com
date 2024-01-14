@@ -8,6 +8,7 @@
 	import { route } from '$lib/ROUTES';
 
 	import * as m from '$paraglide/messages';
+	import { languageTag } from '$paraglide/runtime';
 
 	let pathWithoutlang = $page.url.pathname.replace(`/${$page.params.lang}`, '') || '/';
 	$: pathWithoutlang = $page.url.pathname.replace(`/${$page.params.lang}`, '') || '/';
@@ -18,7 +19,7 @@
 	id="navigation"
 	style="view-transition-name: header;"
 >
-	<a href={route('/')} class="relative h-10 w-10">
+	<a href={route('/', { lang: languageTag() })} class="relative h-10 w-10">
 		<enhanced:img src="$assets/logos/logo.png" alt="KesvaL Logo" />
 	</a>
 	<nav
@@ -33,7 +34,7 @@
 				? 'active border-b-2 border-primary-foreground lg:border lg:border-border/50'
 				: 'border border-transparent lg:hover:border-border/50 lg:hover:bg-background/50'} "
 			on:click={() => navigationOpen.set(false)}
-			href={route('/')}
+			href={route('/', { lang: languageTag() })}
 		>
 			{m.home_name()}
 		</a>
@@ -44,7 +45,7 @@
 				? 'active border-b-2 border-primary-foreground lg:border lg:border-border/50'
 				: 'border border-transparent lg:hover:border-border/50 lg:hover:bg-background/50'} "
 			on:click={() => navigationOpen.set(false)}
-			href={route('/about')}
+			href={route('/about', { lang: languageTag() })}
 		>
 			{m.about_name()}
 		</a>
@@ -55,7 +56,7 @@
 				? 'active border-b-2 border-primary-foreground lg:border lg:border-border/50'
 				: 'border border-transparent lg:hover:border-border/50 lg:hover:bg-background/50'} "
 			on:click={() => navigationOpen.set(false)}
-			href={route('/work')}
+			href={route('/work', { lang: languageTag() })}
 		>
 			{m.work_name()}
 		</a>
@@ -66,7 +67,7 @@
 				? 'active border-b-2 border-primary-foreground lg:border lg:border-border/50'
 				: 'border border-transparent lg:hover:border-border/50 lg:hover:bg-background/50'} "
 			on:click={() => navigationOpen.set(false)}
-			href={route('/blog')}
+			href={route('/blog', { lang: languageTag() })}
 		>
 			{m.blog_name()}
 		</a>

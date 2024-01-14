@@ -5,6 +5,7 @@
 	import { PERSONAL } from '$lib/data/personal';
 
 	import * as m from '$paraglide/messages';
+	import { languageTag } from '$paraglide/runtime';
 </script>
 
 <section class="container-sm section container flex flex-col justify-center">
@@ -50,7 +51,7 @@
 			>
 		</div>
 	</div>
-	<Button class="mx-auto" href={route('/about')}>
+	<Button class="mx-auto" href={route('/about', { lang: languageTag() })}>
 		{m.home_about_button()}
 	</Button>
 </section>
