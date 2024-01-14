@@ -2,7 +2,7 @@
 	import Socials from '../base/Socials.svelte';
 </script>
 
-<footer class="bg-muted/50">
+<footer>
 	<div class="container-sm container px-4 py-8">
 		<div class="flex items-center justify-between">
 			<span class="font-title text-2xl">
@@ -13,3 +13,9 @@
 		</div>
 	</div>
 </footer>
+
+<style>
+	footer {
+		background: hsl(var(--primary-200) / 0.25);
+	}
+</style>

@@ -15,7 +15,9 @@
 		availableLanguageTags,
 		sourceLanguageTag,
 		type AvailableLanguageTag,
-		setLanguageTag
+		setLanguageTag,
+		onSetLanguageTag,
+		languageTag
 	} from '$paraglide/runtime';
 	import { browser } from '$app/environment';
 
@@ -46,4 +48,6 @@
 	{/each}
 </svelte:head>
 
-<slot />
+{#key lang}
+	<slot />
+{/key}
