@@ -1,7 +1,7 @@
 import type { ParamMatcher } from '@sveltejs/kit';
 
-import { LOCALES } from '$lib/config';
+import { isAvailableLanguageTag } from '$paraglide/runtime';
 
 export const match: ParamMatcher = (param) => {
-	return LOCALES.includes(param);
+	return isAvailableLanguageTag(param);
 };

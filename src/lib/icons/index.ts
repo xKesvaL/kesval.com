@@ -10,6 +10,7 @@ import IconCode from './IconCode.svelte';
 import IconDots from './IconDots.svelte';
 import IconInfoCircle from './IconInfoCircle.svelte';
 import IconLanguage from './IconLanguage.svelte';
+import IconLink from './IconLink.svelte';
 import IconMail from './IconMail.svelte';
 import IconMapPin from './IconMapPin.svelte';
 import IconMapPinFilled from './IconMapPinFilled.svelte';
@@ -35,6 +36,7 @@ export {
 	IconDots,
 	IconInfoCircle,
 	IconLanguage,
+	IconLink,
 	IconMail,
 	IconMapPin,
 	IconMapPinFilled,

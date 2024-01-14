@@ -11,16 +11,28 @@
 	import '../app.postcss';
 	import { polyfillCountryFlagEmojis } from '$lib/utils/functions';
 	import { onMount } from 'svelte';
-	import { availableLanguageTags } from '$paraglide/runtime';
+	import {
+		availableLanguageTags,
+		sourceLanguageTag,
+		type AvailableLanguageTag,
+		setLanguageTag
+	} from '$paraglide/runtime';
+	import { browser } from '$app/environment';
 
 	nprogress.configure({ easing: 'ease', minimum: 0.2, speed: 600 });
 	$: $navigating ? nprogress.start() : nprogress.done();
+	$: lang = ($page.params.lang as AvailableLanguageTag) ?? sourceLanguageTag;
+	$: setLanguageTag(lang);
 
 	setupViewTransition();
 
 	onMount(() => {
 		polyfillCountryFlagEmojis();
 	});
+
+	$: if (browser) {
+		document.documentElement.lang = lang;
+	}
 </script>
 
 <svelte:head>

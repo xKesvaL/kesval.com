@@ -11,6 +11,7 @@ export interface Project {
 	id: number;
 	languages: ProgrammingLanguage[];
 	name: string;
+	imageUrl: string;
 	site: null | string;
 	startDate: Date;
 }
@@ -27,6 +28,7 @@ const PROJECTS: Project[] = [
 		id: 1,
 		languages: ['svelte'],
 		name: 'portfolio',
+		imageUrl: "/experiences/kesval.png",
 		site: 'https://kesval.com',
 		startDate: new Date('2023-03-19'),
 	},
@@ -36,15 +38,16 @@ const PROJECTS: Project[] = [
 		endDate: null,
 		excerpt: 'Track your workouts and find a program suited to your needs.',
 		github: 'https://github.com/xKesvaL/leetstrength',
-		href: route('/work/leetstrength'),
+		href: route('/work/supapower'),
 		id: 2,
 		languages: ['svelte'],
-		name: 'leetstrength',
-		site: null, // https://leetstrength.com',
+		name: 'supapower',
+		imageUrl: "/projects/supapower.png",
+		site: null, // https://supapower.com',
 		startDate: new Date('2023-05-01'),
 	},
-];
+] as const;
 
-const FEATURED_PROJECTS = ['portfolio', 'leetstrength'] as const;
+const FEATURED_PROJECTS = ['portfolio', 'supapower'] as const satisfies (typeof PROJECTS)[number]['name'][]
 
 export { FEATURED_PROJECTS, PROJECTS };

@@ -49,12 +49,13 @@
 							<span class="project-title relative isolate grid items-center text-2xl lg:text-3xl">
 								{getI18n(`projects_${project.name}_name`)}
 							</span>
-							<svg class="project-icon">
+							<img class="project-icon" src={project.imageUrl} alt={getI18n(`projects_${project.name}_name`)} />
+							<!-- <svg class="project-icon">
 								<use
 									href="#{project.languages[0]}-logo"
 									xlink:href="#{project.languages[0]}-logo"
 								/>
-							</svg>
+							</svg> -->
 						</button>
 					</h3>
 					<div
@@ -160,7 +161,7 @@
 
 					aspect-ratio: 1/1;
 					border-radius: 50%;
-					padding: 0.75rem;
+					padding: 0.5rem;
 
 					/* @include mq(md) {
 						background: radial-gradient(

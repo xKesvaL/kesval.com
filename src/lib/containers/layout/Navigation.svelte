@@ -22,15 +22,15 @@
 		<enhanced:img src="$assets/logos/logo.png" alt="KesvaL Logo" />
 	</a>
 	<nav
-		class={`nav fixed left-0 -right-2 top-0 z-50 flex flex-col items-start justify-center gap-4 overflow-hidden bg-primary p-12 text-5xl font-bold text-white transition-transform duration-500 lg:relative lg:min-h-0 lg:translate-x-0 lg:flex-row lg:bg-transparent lg:p-0 lg:text-xl lg:font-normal lg:text-foreground ${
+		class={`nav fixed -right-2 left-0 top-0 z-50 flex flex-col items-start justify-center gap-4 overflow-hidden bg-primary p-12 text-5xl font-bold text-white transition-transform duration-500 lg:relative lg:min-h-0 lg:translate-x-0 lg:flex-row lg:bg-transparent lg:p-0 lg:text-xl lg:font-normal lg:text-foreground ${
 			$navigationOpen ? 'translate-x-0' : '-translate-x-full'
 		}`}
 		style="view-transition-name: header-nav"
 	>
 		<a
-			class="rounded-none lg:rounded-full px-4 py-2 transition-colors duration-200 {pathWithoutlang ===
+			class="rounded-none px-4 py-2 transition-colors duration-200 lg:rounded-full {pathWithoutlang ===
 			route('/')
-				? 'border-b-2 border-primary-foreground lg:border lg:border-border/50 active'
+				? 'active border-b-2 border-primary-foreground lg:border lg:border-border/50'
 				: 'border border-transparent lg:hover:border-border/50 lg:hover:bg-background/50'} "
 			on:click={() => navigationOpen.set(false)}
 			href={route('/')}
@@ -38,10 +38,10 @@
 			{m.home_name()}
 		</a>
 		<a
-			class="rounded-none lg:rounded-full px-4 py-2 transition-colors duration-200 {pathWithoutlang.startsWith(
+			class="rounded-none px-4 py-2 transition-colors duration-200 lg:rounded-full {pathWithoutlang.startsWith(
 				route('/about')
 			)
-				? 'border-b-2 border-primary-foreground lg:border lg:border-border/50 active'
+				? 'active border-b-2 border-primary-foreground lg:border lg:border-border/50'
 				: 'border border-transparent lg:hover:border-border/50 lg:hover:bg-background/50'} "
 			on:click={() => navigationOpen.set(false)}
 			href={route('/about')}
@@ -49,10 +49,10 @@
 			{m.about_name()}
 		</a>
 		<a
-			class="rounded-none lg:rounded-full px-4 py-2 transition-colors duration-200 {pathWithoutlang.startsWith(
+			class="rounded-none px-4 py-2 transition-colors duration-200 lg:rounded-full {pathWithoutlang.startsWith(
 				route('/work')
 			)
-				? 'border-b-2 border-primary-foreground lg:border lg:border-border/50 active'
+				? 'active border-b-2 border-primary-foreground lg:border lg:border-border/50'
 				: 'border border-transparent lg:hover:border-border/50 lg:hover:bg-background/50'} "
 			on:click={() => navigationOpen.set(false)}
 			href={route('/work')}
@@ -60,10 +60,10 @@
 			{m.work_name()}
 		</a>
 		<a
-			class="rounded-none lg:rounded-full px-4 py-2 transition-colors duration-200 {pathWithoutlang.startsWith(
+			class="rounded-none px-4 py-2 transition-colors duration-200 lg:rounded-full {pathWithoutlang.startsWith(
 				route('/blog')
 			)
-				? 'border-b-2 border-primary-foreground lg:border lg:border-border/50 active'
+				? 'active border-b-2 border-primary-foreground lg:border lg:border-border/50'
 				: 'border border-transparent lg:hover:border-border/50 lg:hover:bg-background/50'} "
 			on:click={() => navigationOpen.set(false)}
 			href={route('/blog')}
@@ -71,8 +71,8 @@
 			{m.blog_name()}
 		</a>
 		<button
-			class="rounded-none lg:rounded-full px-4 py-2 transition-colors duration-200 {$bot.open
-				? 'border-b-2 border-primary-foreground lg:border lg:border-border/50 active'
+			class="rounded-none px-4 py-2 transition-colors duration-200 lg:rounded-full {$bot.open
+				? 'active border-b-2 border-primary-foreground lg:border lg:border-border/50'
 				: 'border border-transparent lg:hover:border-border/50 lg:hover:bg-background/50'} "
 			on:click={() => {
 				navigationOpen.set(false);

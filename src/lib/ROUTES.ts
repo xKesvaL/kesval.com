@@ -21,11 +21,11 @@ const PAGES = {
   "/work": (params?: { lang?: (Parameters<typeof import('../params/locale.ts').match>[0]) }) => {
     return `${params?.lang ? `/${params?.lang}`: ''}/work`
   },
-  "/work/leetstrength": (params?: { lang?: (Parameters<typeof import('../params/locale.ts').match>[0]) }) => {
-    return `${params?.lang ? `/${params?.lang}`: ''}/work/leetstrength`
-  },
   "/work/portfolio": (params?: { lang?: (Parameters<typeof import('../params/locale.ts').match>[0]) }) => {
     return `${params?.lang ? `/${params?.lang}`: ''}/work/portfolio`
+  },
+  "/work/supapower": (params?: { lang?: (Parameters<typeof import('../params/locale.ts').match>[0]) }) => {
+    return `${params?.lang ? `/${params?.lang}`: ''}/work/supapower`
   }
 }
 
@@ -154,7 +154,7 @@ export function route<T extends keyof AllTypes>(key: T, ...params: any[]): strin
 * ```
 */
 export type KIT_ROUTES = {
-  PAGES: { '/': 'lang', '/about': 'lang', '/blog': 'lang', '/work': 'lang', '/work/leetstrength': 'lang', '/work/portfolio': 'lang' }
+  PAGES: { '/': 'lang', '/about': 'lang', '/blog': 'lang', '/work': 'lang', '/work/portfolio': 'lang', '/work/supapower': 'lang' }
   SERVERS: { 'GET /site.webmanifest': never, 'GET /sitemap.xml': never }
   ACTIONS: Record<string, never>
   LINKS: { 'linkedin': never, 'email': never, 'github': never, 'instagram': never }

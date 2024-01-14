@@ -1,5 +1,5 @@
 <script lang="ts">
-	import * as m from '$paraglide/messages';
+	import WorkList from '$lib/containers/work/WorkList.svelte';
 </script>
 
-{m.work_name()}
+<WorkList />

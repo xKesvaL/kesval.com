@@ -5,6 +5,9 @@
 	import type { Locale } from '$lib/config';
 	import { availableLanguageTags, languageTag, setLanguageTag } from '$paraglide/runtime';
 	import * as m from '$paraglide/messages';
+	import { goto } from '$app/navigation';
+	import { translatePath } from '$lib/utils/i18n';
+	import { page } from '$app/stores';
 
 	const transformLocaleToFlag = (locale: string) => {
 		switch (locale.toLowerCase().split('-')[0]) {
@@ -21,23 +24,23 @@
 		disabled: false
 	};
 
-	const onChange = (opt: any) => {
-		setLanguageTag(opt.value as Locale);
-
-		if (browser) {
-			window.location.reload();
-		}
+	const onChange = async (opt: any) => {
+		await goto(translatePath($page.url.pathname, opt.value));
+		// setLanguageTag('fr');
+		// setLanguageTag(opt.value as Locale);
 	};
+
+	$: emoji = getFlagEmoji(transformLocaleToFlag(selected.value));
 </script>
 
 <div class="font-emoji">
 	<Select.Root bind:selected onSelectedChange={onChange}>
 		<Select.Trigger
-			class="trigger flex aspect-square justify-center border-0 bg-popover p-2 text-lg transition-all rounded-full hover:bg-background"
+			class="trigger flex aspect-square justify-center rounded-full border-0 bg-popover p-2 text-lg transition-all hover:bg-background"
 			icon={false}
 			aria-label={m.common_changeLanguage()}
 		>
-			{getFlagEmoji(transformLocaleToFlag(languageTag()))}
+			{emoji}
 			<div class="sr-only">
 				{m.common_changeLanguage()}
 			</div>
