@@ -16,6 +16,9 @@ const config = {
 			$assets: './src/assets',
 			$routes: './src/routes',
 			$paraglide: './src/paraglide'
+		},
+		prerender: {
+			handleHttpError: 'warn'
 		}
 	}
 };
