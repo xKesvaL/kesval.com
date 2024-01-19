@@ -125,7 +125,7 @@
 	>
 		<header class="grid grid-cols-[auto,1fr,auto] items-center gap-4 bg-primary px-2 py-4">
 			<div class="ml-2 h-10 w-10">
-				<enhanced:img src="$assets/logos/logo.png" alt="KesvaL Logo" />
+				<enhanced:img src="$assets/logos/logo.png" alt={m.common_profile_picture()} />
 			</div>
 			<div class="flex h-full flex-col justify-between">
 				<h2 class="font-sans leading-none">

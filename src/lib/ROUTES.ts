@@ -18,6 +18,9 @@ const PAGES = {
   "/blog": (params?: { lang?: (Parameters<typeof import('../params/locale.ts').match>[0]) }) => {
     return `${params?.lang ? `/${params?.lang}`: ''}/blog`
   },
+  "/blog/[slug]": (params: { slug: (string | number), lang?: (Parameters<typeof import('../params/locale.ts').match>[0]) }) => {
+    return `${params?.lang ? `/${params?.lang}`: ''}/blog/${params.slug}`
+  },
   "/work": (params?: { lang?: (Parameters<typeof import('../params/locale.ts').match>[0]) }) => {
     return `${params?.lang ? `/${params?.lang}`: ''}/work`
   },
@@ -154,9 +157,9 @@ export function route<T extends keyof AllTypes>(key: T, ...params: any[]): strin
 * ```
 */
 export type KIT_ROUTES = {
-  PAGES: { '/': 'lang', '/about': 'lang', '/blog': 'lang', '/work': 'lang', '/work/portfolio': 'lang', '/work/supapower': 'lang' }
+  PAGES: { '/': 'lang', '/about': 'lang', '/blog': 'lang', '/blog/[slug]': 'slug' | 'lang', '/work': 'lang', '/work/portfolio': 'lang', '/work/supapower': 'lang' }
   SERVERS: { 'GET /site.webmanifest': never, 'GET /sitemap.xml': never }
   ACTIONS: Record<string, never>
   LINKS: { 'linkedin': never, 'email': never, 'github': never, 'instagram': never }
-  Params: { lang: never }
+  Params: { lang: never, slug: never }
 }

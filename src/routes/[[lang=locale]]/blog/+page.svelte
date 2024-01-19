@@ -1,5 +1,7 @@
 <script lang="ts">
-	import * as m from '$paraglide/messages';
+	import BlogList from '$lib/containers/blog/BlogList.svelte';
+
+	export let data;
 </script>
 
-{m.blog_name()}
+<BlogList posts={data.posts} />

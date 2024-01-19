@@ -14,7 +14,7 @@
 		<Socials vertical={true} />
 	</div>
 	<div class="image max-w-sm overflow-hidden border-4 border-primary shadow-2xl shadow-primary/40">
-		<enhanced:img src="$assets/me/hero.jpg" alt="An alt text" />
+		<enhanced:img src="$assets/me/hero.jpg" alt={m.common_profile_picture()} />
 	</div>
 	<div
 		class="col-span-full flex flex-col gap-4 lg:col-start-2 lg:col-end-3 lg:row-start-1 lg:row-end-2"

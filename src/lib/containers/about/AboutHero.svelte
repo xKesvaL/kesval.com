@@ -18,7 +18,7 @@
 			class="row-span-3 lg:col-span-3"
 			classBg="p-0 justify-center items-center"
 		>
-			<enhanced:img src="$assets/me/hero.jpg" alt="Profile Photo" />
+			<enhanced:img src="$assets/me/hero.jpg" alt={m.common_profile_picture()} />
 		</CardGlass>
 		<!-- Profile Name -->
 		<CardGlass
@@ -29,7 +29,7 @@
 		>
 			<enhanced:img
 				src="$assets/logos/logo.png"
-				alt="Profile Photo"
+				alt={m.common_profile_picture()}
 				class="aspect-square h-full max-h-[3.5rem] w-full max-w-[3.5rem] flex-shrink-0"
 			/>
 			<span class="text-primary-foreground"> KesvaL </span>

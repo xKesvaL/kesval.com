@@ -20,7 +20,7 @@
 	style="view-transition-name: header;"
 >
 	<a href={route('/', { lang: languageTag() })} class="relative h-10 w-10">
-		<enhanced:img src="$assets/logos/logo.png" alt="KesvaL Logo" />
+		<enhanced:img src="$assets/logos/logo.png" alt={m.common_profile_picture()} />
 	</a>
 	<nav
 		class={`nav fixed -right-2 left-0 top-0 z-50 flex flex-col items-start justify-center gap-4 overflow-hidden bg-primary p-12 text-5xl font-bold text-white transition-transform duration-500 lg:relative lg:min-h-0 lg:translate-x-0 lg:flex-row lg:bg-transparent lg:p-0 lg:text-xl lg:font-normal lg:text-foreground ${
