@@ -1,6 +1,6 @@
 // See https://kit.svelte.dev/docs/types#app
 // for information about these interfaces
-import type { LocalStorageKey, SearchParam } from '$lib/config';
+import type { LocalStorageKey, SearchParam } from "$lib/config";
 
 declare global {
 	namespace App {
@@ -30,5 +30,3 @@ declare global {
 		setItem(key: LocalStorageKey, value: string): void;
 	}
 }
-
-export {};

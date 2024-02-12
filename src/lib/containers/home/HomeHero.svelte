@@ -20,7 +20,7 @@
 		class="col-span-full flex flex-col gap-4 lg:col-start-2 lg:col-end-3 lg:row-start-1 lg:row-end-2"
 	>
 		<Sparkles>
-			<h1 class="text-6xl">
+			<h1 class="max-w-[15ch] text-6xl">
 				{m.home_hero_title()}
 			</h1>
 		</Sparkles>

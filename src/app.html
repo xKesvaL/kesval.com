@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="%lang%">
+<html lang="%paraglide.lang%" dir="%paraglide.textDirection%">
 	<head>
 		<!-- Charset -->
 		<meta charset="utf-8" />
@@ -54,7 +54,7 @@
 
 		<!-- Theming -->
 		<script>
-			const theme = localStorage.getItem('theme') || 'auto';
+			const theme = localStorage.getItem('theme') || 'dark';
 			document.firstElementChild?.setAttribute('data-theme', theme);
 		</script>
 		%sveltekit.head%

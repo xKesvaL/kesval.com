@@ -8,46 +8,66 @@
 	import nprogress from 'nprogress';
 	import { setupViewTransition } from 'sveltekit-view-transition';
 
+	import BackToTopButton from '$lib/components/layout/BackToTopButton.svelte';
+	import ContactBot from '$lib/containers/layout/ContactBot.svelte';
+	import Footer from '$lib/components/layout/Footer.svelte';
+	import Navigation from '$lib/containers/layout/Navigation.svelte';
+
 	import '../app.postcss';
-	import { polyfillCountryFlagEmojis } from '$lib/utils/functions';
+	import { polyfillCountryFlagEmojis, transition } from '$lib/utils/functions';
 	import { onMount } from 'svelte';
-	import {
-		availableLanguageTags,
-		sourceLanguageTag,
-		type AvailableLanguageTag,
-		setLanguageTag,
-		onSetLanguageTag,
-		languageTag
-	} from '$paraglide/runtime';
+	import { availableLanguageTags, onSetLanguageTag, languageTag } from '$paraglide/runtime';
 	import { browser } from '$app/environment';
+	import { ParaglideJS } from '@inlang/paraglide-js-adapter-sveltekit';
+	import { i18n } from '$lib/utils/i18n';
+
+	import { scrollLocked } from '$lib/stores/common';
+	import { settings } from '$lib/stores/settings';
+
+	$: if (browser) {
+		document.body.setAttribute('data-scroll-locked', $scrollLocked ? 'true' : 'false');
+		document.documentElement.setAttribute('data-dyslexic', $settings.dyslexia ? 'true' : 'false');
+	}
 
 	nprogress.configure({ easing: 'ease', minimum: 0.2, speed: 600 });
-	$: $navigating ? nprogress.start() : nprogress.done();
-	$: lang = ($page.params.lang as AvailableLanguageTag) ?? sourceLanguageTag;
-	$: setLanguageTag(lang);
+	$: $navigating && browser ? nprogress.start() : nprogress.done();
 
 	setupViewTransition();
 
 	onMount(() => {
 		polyfillCountryFlagEmojis();
 	});
-
-	$: if (browser) {
-		document.documentElement.lang = lang;
-	}
 </script>
 
 <svelte:head>
 	<meta content={BRAND.author.name} name="copyright" />
 	<meta content={BRAND.name} name="og:site_name" />
-
-	<!-- Href langs -->
-	<link href={$page.url.pathname} hreflang="x-default" rel="alternate" />
-	{#each availableLanguageTags as locale}
-		<link href={`/${locale}${$page.url.pathname}?owlang=true`} hreflang={locale} rel="alternate" />
-	{/each}
 </svelte:head>
 
-{#key lang}
-	<slot />
-{/key}
+<ParaglideJS {i18n}>
+	<Navigation />
+
+	<main>
+		<slot />
+	</main>
+
+	<ContactBot />
+	<BackToTopButton />
+	<Footer />
+</ParaglideJS>
+
+<style lang="scss">
+	main {
+		background: radial-gradient(circle at 28% 37%, hsl(var(--primary-300) / 0.1), transparent 40%),
+			radial-gradient(circle at 70% 66%, hsl(var(--secondary-300) / 0.1), transparent 40%);
+
+		margin-top: -4rem;
+		padding-top: 4rem;
+
+		min-height: 100vh;
+
+		@media (min-width: 1024px) {
+			padding-top: 6rem;
+		}
+	}
+</style>

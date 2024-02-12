@@ -1,3 +1,2 @@
 import { i18n } from "$lib/utils/i18n";
-
-export const handle = i18n.handle();
+export const reroute = i18n.reroute();

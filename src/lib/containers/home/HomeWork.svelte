@@ -85,7 +85,7 @@
 			</div>
 		{/each}
 	</div>
-	<Button class="mx-auto" href={route('/work', { lang: languageTag() })}>
+	<Button class="mx-auto" href={route('/work')}>
 		{m.home_work_discoverMore()}
 	</Button>
 </section>

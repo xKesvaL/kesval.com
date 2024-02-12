@@ -1,13 +1,12 @@
 <script lang="ts">
 	import { getFlagEmoji } from '$lib/utils/functions';
-	import { browser } from '$app/environment';
 	import * as Select from '$lib/components/ui/select';
-	import type { Locale } from '$lib/config';
-	import { availableLanguageTags, languageTag, setLanguageTag } from '$paraglide/runtime';
+	import { availableLanguageTags, languageTag } from '$paraglide/runtime';
 	import * as m from '$paraglide/messages';
 	import { goto } from '$app/navigation';
-	import { translatePath } from '$lib/utils/i18n';
+	import { i18n } from '$lib/utils/i18n';
 	import { page } from '$app/stores';
+	import { LucideCheck } from 'lucide-svelte';
 
 	const transformLocaleToFlag = (locale: string) => {
 		switch (locale.toLowerCase().split('-')[0]) {
@@ -25,7 +24,10 @@
 	};
 
 	const onChange = async (opt: any) => {
-		await goto(translatePath($page.url.pathname, opt.value));
+		console.log(opt.value);
+		console.log(i18n.resolveRoute($page.url.pathname, opt.value));
+		console.log(i18n.route($page.url.pathname));
+		// goto(i18n.resolveRoute($page.url.pathname, opt.value));
 		// setLanguageTag('fr');
 		// setLanguageTag(opt.value as Locale);
 	};
@@ -52,8 +54,21 @@
 					value={lang}
 					label={getFlagEmoji(transformLocaleToFlag(lang))}
 					disabled={false}
+					asChild
 				>
-					{getFlagEmoji(transformLocaleToFlag(lang))}
+					<a
+						class="relative flex w-full cursor-default select-none items-center rounded-sm bg-card p-4 py-1.5 pl-8 pr-2 font-emoji text-lg outline-none hover:bg-accent hover:text-accent-foreground disabled:pointer-events-none disabled:opacity-50"
+						href={i18n.route($page.url.pathname)}
+						hreflang={lang}
+						aria-current={lang === languageTag() ? 'page' : undefined}
+					>
+						<span class="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
+							{#if lang === languageTag()}
+								<LucideCheck />
+							{/if}
+						</span>
+						{getFlagEmoji(transformLocaleToFlag(lang))}
+					</a>
 				</Select.Item>
 			{/each}
 		</Select.Content>

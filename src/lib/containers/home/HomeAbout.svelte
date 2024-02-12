@@ -52,7 +52,7 @@
 				>
 			</div>
 		</div>
-		<Button class="mx-auto lg:ml-auto lg:mr-0" href={route('/about', { lang: languageTag() })}>
+		<Button class="mx-auto lg:ml-auto lg:mr-0" href={route('/about')}>
 			{m.home_about_button()}
 		</Button>
 	</div>

@@ -10,8 +10,8 @@
 	import * as m from '$paraglide/messages';
 	import { languageTag } from '$paraglide/runtime';
 
-	let pathWithoutlang = $page.url.pathname.replace(`/${$page.params.lang}`, '') || '/';
-	$: pathWithoutlang = $page.url.pathname.replace(`/${$page.params.lang}`, '') || '/';
+	let pathWithoutlang = $page.url.pathname.replace(`/${languageTag()}`, '') || '/';
+	$: pathWithoutlang = $page.url.pathname.replace(`/${languageTag()}`, '') || '/';
 </script>
 
 <header
@@ -19,7 +19,7 @@
 	id="navigation"
 	style="view-transition-name: header;"
 >
-	<a href={route('/', { lang: languageTag() })} class="relative h-10 w-10">
+	<a href={route('/')} class="relative h-10 w-10">
 		<enhanced:img src="$assets/logos/logo.png" alt={m.common_profile_picture()} />
 	</a>
 	<nav
@@ -34,7 +34,7 @@
 				? 'active border-b-2 border-primary-foreground lg:border lg:border-border/50'
 				: 'border border-transparent lg:hover:border-border/50 lg:hover:bg-background/50'} "
 			on:click={() => navigationOpen.set(false)}
-			href={route('/', { lang: languageTag() })}
+			href={route('/')}
 		>
 			{m.home_name()}
 		</a>
@@ -45,7 +45,7 @@
 				? 'active border-b-2 border-primary-foreground lg:border lg:border-border/50'
 				: 'border border-transparent lg:hover:border-border/50 lg:hover:bg-background/50'} "
 			on:click={() => navigationOpen.set(false)}
-			href={route('/about', { lang: languageTag() })}
+			href={route('/about')}
 		>
 			{m.about_name()}
 		</a>
@@ -56,7 +56,7 @@
 				? 'active border-b-2 border-primary-foreground lg:border lg:border-border/50'
 				: 'border border-transparent lg:hover:border-border/50 lg:hover:bg-background/50'} "
 			on:click={() => navigationOpen.set(false)}
-			href={route('/work', { lang: languageTag() })}
+			href={route('/work')}
 		>
 			{m.work_name()}
 		</a>
@@ -67,7 +67,7 @@
 				? 'active border-b-2 border-primary-foreground lg:border lg:border-border/50'
 				: 'border border-transparent lg:hover:border-border/50 lg:hover:bg-background/50'} "
 			on:click={() => navigationOpen.set(false)}
-			href={route('/blog', { lang: languageTag() })}
+			href={route('/blog')}
 		>
 			{m.blog_name()}
 		</a>
