@@ -14,15 +14,15 @@
 	import Navigation from '$lib/containers/layout/Navigation.svelte';
 
 	import '../app.postcss';
-	import { polyfillCountryFlagEmojis, transition } from '$lib/utils/functions';
+	import { polyfillCountryFlagEmojis } from '$lib/utils/functions';
 	import { onMount } from 'svelte';
-	import { availableLanguageTags, onSetLanguageTag, languageTag } from '$paraglide/runtime';
 	import { browser } from '$app/environment';
 	import { ParaglideJS } from '@inlang/paraglide-js-adapter-sveltekit';
 	import { i18n } from '$lib/utils/i18n';
 
 	import { scrollLocked } from '$lib/stores/common';
 	import { settings } from '$lib/stores/settings';
+	import type { LayoutServerData } from './$types';
 
 	$: if (browser) {
 		document.body.setAttribute('data-scroll-locked', $scrollLocked ? 'true' : 'false');

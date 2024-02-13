@@ -9,9 +9,10 @@
 
 	import * as m from '$paraglide/messages';
 	import { languageTag } from '$paraglide/runtime';
+	import { i18n } from '$lib/utils/i18n';
 
-	let pathWithoutlang = $page.url.pathname.replace(`/${languageTag()}`, '') || '/';
-	$: pathWithoutlang = $page.url.pathname.replace(`/${languageTag()}`, '') || '/';
+	let pathWithoutlang = i18n.route($page.url.pathname);
+	$: pathWithoutlang = i18n.route($page.url.pathname);
 </script>
 
 <header

@@ -1,3 +1,5 @@
 import { i18n } from "$lib/utils/i18n";
 
-export const handle = i18n.handle();
+import { sequence } from "@sveltejs/kit/hooks";
+
+export const handle = sequence(i18n.handle());

@@ -141,5 +141,8 @@
 	"tools_webstorm": "Éditeur de code",
 	"tools_dribbble": "Inspiration de Design",
 	"skills_backend": "Back-end",
-	"skills_frontend": "Front-end"
+	"skills_frontend": "Front-end",
+	"about_path": "/a-propos",
+	"work_path": "/travail",
+	"blog_path": "/blog"
 }

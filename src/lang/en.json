@@ -140,5 +140,8 @@
 	"tools_vercel": "Serverless Deployment",
 	"tools_github": "Version Control",
 	"tools_webstorm": "Code Editor",
-	"tools_dribbble": "Design Inspiration"
+	"tools_dribbble": "Design Inspiration",
+	"about_path": "/about",
+	"work_path": "/work",
+	"blog_path": "/blog"
 }
