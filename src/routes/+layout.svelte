@@ -23,6 +23,7 @@
 	import { scrollLocked } from '$lib/stores/common';
 	import { settings } from '$lib/stores/settings';
 	import type { LayoutServerData } from './$types';
+	import Seo from '$lib/components/base/SEO.svelte';
 
 	$: if (browser) {
 		document.body.setAttribute('data-scroll-locked', $scrollLocked ? 'true' : 'false');
@@ -37,12 +38,11 @@
 	onMount(() => {
 		polyfillCountryFlagEmojis();
 	});
+
+	$: pathname = $page.url.pathname;
 </script>
 
-<svelte:head>
-	<meta content={BRAND.author.name} name="copyright" />
-	<meta content={BRAND.name} name="og:site_name" />
-</svelte:head>
+<Seo {pathname} />
 
 <ParaglideJS {i18n}>
 	<Navigation />

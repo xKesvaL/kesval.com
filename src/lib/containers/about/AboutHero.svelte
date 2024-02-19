@@ -45,10 +45,10 @@
 			classBg="w-full grid grid-cols-4 md:grid-cols-2 lg:grid-cols-4 gap-4 items-center justify-center justify-items-center"
 		>
 			<enhanced:img
-				src="$assets/brands/css.svg"
-				alt="CSS"
+				src="$assets/brands/tailwindcss.svg"
+				alt="TailwindCSS"
 				class="img aspect-square h-12 md:h-[4.5rem] lg:h-20"
-				style:--img-ds-clr="rgba(41, 101, 241, 0.75)"
+				style:--img-ds-clr="rgba(57, 190, 248, 0.75)"
 			/>
 			<enhanced:img
 				src="$assets/brands/react.svg"
@@ -84,7 +84,7 @@
 						>
 							🇫🇷
 						</span>
-						<span class="relative text-xl font-normal"> French </span>
+						<span class="relative text-xl font-normal"> {m.language_french()} </span>
 					</div>
 					<div class="relative">C2</div>
 				</div>
@@ -99,7 +99,7 @@
 						>
 							🇺🇸
 						</span>
-						<span class="text-xl font-normal"> English </span>
+						<span class="text-xl font-normal"> {m.language_english()} </span>
 					</div>
 					<div>C1</div>
 				</div>
@@ -114,7 +114,7 @@
 						>
 							🇩🇪
 						</span>
-						<span class="text-xl font-normal"> German </span>
+						<span class="text-xl font-normal"> {m.language_german()} </span>
 					</div>
 					<div>A2</div>
 				</div>
@@ -130,7 +130,7 @@
 			<span class="font-title text-9xl">
 				{PERSONAL.age}
 			</span>
-			<span class="text-2xl font-bold"> years old </span>
+			<span class="text-2xl font-bold"> {m.common_years_old()} </span>
 		</CardGlass>
 		<CardGlass
 			fill="bento"
@@ -171,7 +171,7 @@
 			<span class="font-title text-9xl">
 				{PERSONAL.yearsOfExperience}
 			</span>
-			<span class="text-2xl font-bold"> years of experience </span>
+			<span class="text-2xl font-bold"> {m.common_yearsOfExperience().toLowerCase()} </span>
 		</CardGlass>
 		<CardGlass
 			fill="bento"
@@ -212,7 +212,7 @@
 			<span class="font-title text-9xl">
 				{PERSONAL.projects}
 			</span>
-			<span class="text-2xl font-bold"> projects completed </span>
+			<span class="text-2xl font-bold"> {m.home_about_projectsDelivered().toLowerCase()} </span>
 		</CardGlass>
 	</div>
 </section>

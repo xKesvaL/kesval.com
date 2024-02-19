@@ -12,13 +12,13 @@
 
 @keyframes slide-from-right {
 	from {
-		transform: translateY(-0px);
+		transform: translateX(30px);
 	}
 }
 
 @keyframes slide-to-left {
 	to {
-		transform: translateY(-0px);
+		transform: translateX(-30px);
 	}
 }
 
