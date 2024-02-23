@@ -3,8 +3,6 @@
 	import type { BlogPost } from '$lib/typings/blog';
 
 	export let posts: BlogPost[];
-
-	$: console.log(posts);
 </script>
 
 {#each posts as post}
