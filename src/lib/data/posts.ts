@@ -15,7 +15,9 @@ interface GetPostsOptions {
 	count?: number;
 }
 
-export const getPosts = async (options: GetPostsOptions): Promise<PaginatedResponse<BlogPost>> => {
+export const getPosts = async (
+	options: GetPostsOptions,
+): Promise<PaginatedResponse<BlogPost>> => {
 	// Read all files in the specified directory and get the .md files
 	const fileNames = await fs.readdir(`${BASE_FILE_PATH}/${options.language}`);
 	const mdFiles = fileNames.filter((fileName) => fileName.endsWith(".md"));
@@ -40,6 +42,7 @@ export const getPosts = async (options: GetPostsOptions): Promise<PaginatedRespo
 			frontmatterToBlogPost(
 				parsedData.data as Record<string, never>,
 				parsedData.content,
+				mdFile.split("-").slice(3).join("-").replace(".md", ""),
 			),
 		);
 	}
@@ -56,9 +59,7 @@ export const getPostBySlug = async (
 	slug: string,
 	language: AvailableLanguageTag,
 ): Promise<BlogPost | null> => {
-	const allPosts = await getPosts({
-		language,
-	});
+	const allPosts = await getPosts({ language: language });
 	const post = allPosts.items?.find((post) => post.slug === slug) ?? null;
 	if (post) {
 		post.relatedPosts = getRelatedPosts(post, allPosts.items);

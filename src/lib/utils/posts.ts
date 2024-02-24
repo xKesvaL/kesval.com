@@ -5,9 +5,10 @@ import striptags from "striptags";
 export const frontmatterToBlogPost = (
 	frontmatter: Record<string, never>,
 	content: string,
+	slug: string,
 ): BlogPost => {
 	return {
-		slug: frontmatter.slug,
+		slug,
 		title: frontmatter.title,
 		description: frontmatter.description,
 		excerpt: frontmatter.excerpt,
