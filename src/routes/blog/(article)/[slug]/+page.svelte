@@ -2,8 +2,6 @@
 	import Markdown from '$lib/components/markdown/Markdown.svelte';
 
 	export let data;
-
-	$: console.log(data.post);
 </script>
 
 <div>

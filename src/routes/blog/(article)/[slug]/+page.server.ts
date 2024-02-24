@@ -4,8 +4,6 @@ import type { EntryGenerator, PageServerLoad } from "./$types";
 export const load: PageServerLoad = async ({ parent }) => {
 	const data = await parent();
 
-	console.log(data);
-
 	return data;
 };
 

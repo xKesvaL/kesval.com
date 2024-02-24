@@ -5,8 +5,6 @@
 
 	export let post: BlogPost;
 	export let isLazy = false;
-
-	$: console.log(post);
 </script>
 
 <CardGlass class="@container/card" classBg="p-0" href={route('/blog/[slug]', { slug: post.slug })}>
