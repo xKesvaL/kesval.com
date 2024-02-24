@@ -42,6 +42,7 @@
     "is-emoji-supported": "^0.0.5",
     "js-cookie": "^3.0.5",
     "lucide-svelte": "^0.309.0",
+    "marked": "^12.0.0",
     "nprogress": "^0.2.0",
     "prettier": "^3.1.1",
     "prettier-plugin-svelte": "^3.1.2",
