@@ -19,10 +19,9 @@
 	import { ParaglideJS } from '@inlang/paraglide-js-adapter-sveltekit';
 	import { i18n } from '$lib/utils/i18n';
 
-	import { scrollLocked } from '$lib/stores/common';
+	import { activeLayout, scrollLocked } from '$lib/stores/common';
 	import { settings } from '$lib/stores/settings';
 	import Seo from '$lib/components/base/SEO.svelte';
-	import { activeSeoLayout } from '$lib/stores/seo';
 
 	$: if (browser) {
 		document.body.setAttribute('data-scroll-locked', $scrollLocked ? 'true' : 'false');
@@ -39,10 +38,10 @@
 	});
 
 	$: pathname = $page.url.pathname;
-	$: activeSeoLayout.handle($page.url);
+	$: activeLayout.handle($page.url);
 </script>
 
-{#if $activeSeoLayout === 'base'}
+{#if $activeLayout === 'base'}
 	<Seo {pathname} />
 {/if}
 
