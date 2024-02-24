@@ -1,6 +1,5 @@
 export interface BlogPost {
 	title: string;
-	description: string;
 	excerpt: string;
 	slug: string;
 	publishedAt: Date;

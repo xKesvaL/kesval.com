@@ -43,6 +43,7 @@ export const getPosts = async (
 				parsedData.data as Record<string, never>,
 				parsedData.content,
 				mdFile.split("-").slice(3).join("-").replace(".md", ""),
+				options.language,
 			),
 		);
 	}

@@ -6,11 +6,11 @@ export const frontmatterToBlogPost = (
 	frontmatter: Record<string, never>,
 	content: string,
 	slug: string,
+	language: string,
 ): BlogPost => {
 	return {
 		slug,
 		title: frontmatter.title,
-		description: frontmatter.description,
 		excerpt: frontmatter.excerpt,
 		content: content,
 		publishedAt: frontmatter.publishedAt,
@@ -19,6 +19,10 @@ export const frontmatterToBlogPost = (
 		coverImageAlt: frontmatter.coverImageAlt,
 		categories: frontmatter.categories,
 		hidden: frontmatter.hidden,
-		readingTime: readingTime(striptags(content) || "").text,
+		readingTime: readingTime(
+			striptags(content) || "",
+			undefined,
+			language as never,
+		).text,
 	};
 };
