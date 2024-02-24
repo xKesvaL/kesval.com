@@ -3,15 +3,21 @@
 	import { getI18n } from '$lib/utils/functions';
 	import { i18n } from '$lib/utils/i18n';
 
-	export let pathname: string;
+	export let pathname: string | undefined = undefined;
+	export let title: string | undefined = undefined;
+	export let description: string | undefined = undefined;
+	export let url: string | undefined = undefined;
 
-	$: route = i18n.route(pathname).replace('/', '').replaceAll('/', '_');
-	$: title = route === '' ? 'home' : route;
+	$: route = i18n
+		.route(pathname || '')
+		.replace('/', '')
+		.replaceAll('/', '_');
+	$: pageTitle = route === '' ? 'home' : route;
 
 	$: seo = {
-		title: getI18n(`seo_${title}_title`),
-		description: getI18n(`seo_${title}_description`),
-		url: `${BRAND.url}${pathname}`
+		title: title || getI18n(`seo_${pageTitle}_title`),
+		description: description || getI18n(`seo_${pageTitle}_description`),
+		url: url || `${BRAND.url}${pathname}`
 	};
 </script>
 

@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { navigating, page } from '$app/stores';
-	import { BRAND } from '$lib/config';
 	import '$lib/styles/fonts.scss';
 	import '$lib/styles/main.scss';
 	import '$lib/styles/nprogress.scss';
@@ -22,8 +21,8 @@
 
 	import { scrollLocked } from '$lib/stores/common';
 	import { settings } from '$lib/stores/settings';
-	import type { LayoutServerData } from './$types';
 	import Seo from '$lib/components/base/SEO.svelte';
+	import { activeSeoLayout } from '$lib/stores/seo';
 
 	$: if (browser) {
 		document.body.setAttribute('data-scroll-locked', $scrollLocked ? 'true' : 'false');
@@ -40,9 +39,12 @@
 	});
 
 	$: pathname = $page.url.pathname;
+	$: activeSeoLayout.handle($page.url);
 </script>
 
-<Seo {pathname} />
+{#if $activeSeoLayout === 'base'}
+	<Seo {pathname} />
+{/if}
 
 <ParaglideJS {i18n}>
 	<Navigation />
