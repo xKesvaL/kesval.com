@@ -1,9 +1,9 @@
 import { getPostBySlug } from "$lib/data/posts.js";
 import { i18n } from "$lib/utils/i18n.js";
-import { languageTag } from "$paraglide/runtime.js";
 
-export async function load({ params }) {
+export async function load({ params, url }) {
 	const { slug } = params;
+	const lang = i18n.getLanguageFromUrl(url);
 
 	if (!slug) {
 		return {
@@ -12,7 +12,7 @@ export async function load({ params }) {
 	}
 
 	const response = {
-		post: await getPostBySlug(i18n.route(slug), languageTag()),
+		post: await getPostBySlug(slug, lang),
 	};
 
 	return response;
