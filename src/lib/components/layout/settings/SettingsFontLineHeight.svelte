@@ -16,7 +16,7 @@
 			{m.settings_readingHeight()}
 		</h3>
 		<p>
-			{$settings.readingHeight * $settings.readingSize}px
+			{Math.round($settings.readingHeight * $settings.readingSize)}px
 		</p>
 	</div>
 	<Slider

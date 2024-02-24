@@ -1,23 +1,13 @@
 {
   "name": "kesval.com",
   "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "dev": "vite dev --host",
-    "build": "vite build",
-    "preview": "vite preview",
-    "test": "playwright test",
-    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-    "lint": "prettier --check . && eslint .",
-    "format": "prettier --write ."
-  },
   "devDependencies": {
     "@inlang/paraglide-js": "1.1.1",
-    "@inlang/paraglide-js-adapter-vite": "^1.2.1",
+    "@inlang/paraglide-js-adapter-sveltekit": "latest",
     "@internationalized/date": "^3.5.1",
     "@kesval/design": "^4.1.2",
     "@playwright/test": "^1.40.1",
+    "@sentry/sveltekit": "^7.93.0",
     "@sveltejs/adapter-vercel": "^5.1.0",
     "@sveltejs/enhanced-img": "^0.1.8",
     "@sveltejs/kit": "^2.3.2",
@@ -39,6 +29,8 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-svelte": "^2.35.1",
     "formsnap": "^0.4.2",
+    "fs-extra": "^11.2.0",
+    "gray-matter": "^4.0.3",
     "is-emoji-supported": "^0.0.5",
     "js-cookie": "^3.0.5",
     "lucide-svelte": "^0.309.0",
@@ -46,11 +38,10 @@
     "nprogress": "^0.2.0",
     "prettier": "^3.1.1",
     "prettier-plugin-svelte": "^3.1.2",
+    "prettier-plugin-tailwindcss": "^0.5.11",
     "reading-time-estimator": "^1.9.4",
-    "rehype-slug": "^6.0.0",
-    "remark-toc": "^9.0.0",
-    "remark-unwrap-images": "^4.0.0",
     "sass": "^1.69.7",
+    "striptags": "^3.2.0",
     "svelte": "^4.2.8",
     "svelte-check": "^3.6.3",
     "svelte-markdown": "^0.4.1",
@@ -65,14 +56,16 @@
     "vite-plugin-kit-routes": "^0.5.1",
     "zod": "^3.22.4"
   },
-  "type": "module",
-  "dependencies": {
-    "@inlang/paraglide-js-adapter-sveltekit": "^0.4.0",
-    "@sentry/sveltekit": "^7.93.0",
-    "fs-extra": "^11.2.0",
-    "gray-matter": "^4.0.3",
-    "mdsvex": "^0.11.0",
-    "prettier-plugin-tailwindcss": "^0.5.11",
-    "striptags": "^3.2.0"
-  }
+  "private": true,
+  "scripts": {
+    "dev": "vite dev --host",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "playwright test",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "lint": "prettier --check . && eslint .",
+    "format": "prettier --write ."
+  },
+  "type": "module"
 }

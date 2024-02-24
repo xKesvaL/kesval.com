@@ -1,18 +1,18 @@
-import { browser } from '$app/environment';
-import { DEFAULT_SETTINGS, type Settings } from '$lib/config';
-import { writable } from 'svelte/store';
+import { browser } from "$app/environment";
+import { DEFAULT_SETTINGS, type Settings } from "$lib/config";
+import { writable } from "svelte/store";
 
-export const readingSizes = [16, 18, 20, 22, 24] as const;
+export const readingSizes = [14, 16, 18, 20, 22, 24] as const;
 
-export const readingHeights = [1.5, 1.75, 2] as const;
+export const readingHeights = [1.1, 1.3, 1.5, 1.7, 1.9, 2.1] as const;
 
-export const readingLengths = [60, 70, 80, 90, 100] as const;
+export const readingLengths = [50, 55, 60, 65, 70, 75, 80] as const;
 
 const createSettingsStore = () => {
 	let settings = { ...DEFAULT_SETTINGS };
 
 	if (browser) {
-		const settingsString = localStorage.getItem('settings');
+		const settingsString = localStorage.getItem("settings");
 		if (settingsString) {
 			settings = JSON.parse(settingsString) as Settings;
 		}
@@ -23,7 +23,7 @@ const createSettingsStore = () => {
 	const setSettings = (value: Settings) => {
 		set(value);
 		if (browser) {
-			localStorage.setItem('settings', JSON.stringify(value));
+			localStorage.setItem("settings", JSON.stringify(value));
 		}
 	};
 
@@ -31,7 +31,7 @@ const createSettingsStore = () => {
 		const newSettings = { ...DEFAULT_SETTINGS, lastReset: Date.now() };
 		set(newSettings);
 		if (browser) {
-			localStorage.setItem('settings', JSON.stringify(newSettings));
+			localStorage.setItem("settings", JSON.stringify(newSettings));
 		}
 	};
 
@@ -39,7 +39,7 @@ const createSettingsStore = () => {
 		update((val) => {
 			const newValue = fn(val);
 			if (browser) {
-				localStorage.setItem('settings', JSON.stringify(newValue));
+				localStorage.setItem("settings", JSON.stringify(newValue));
 			}
 			return newValue;
 		});
@@ -49,7 +49,7 @@ const createSettingsStore = () => {
 		reset: resetSettings,
 		set: setSettings,
 		subscribe,
-		update: updateSettings
+		update: updateSettings,
 	};
 };
 
