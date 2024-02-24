@@ -1,9 +1,7 @@
 <script lang="ts">
 	import type { Project } from '$lib/data/work';
-	import { IconBrandGithub, IconLink } from '$lib/icons';
 	import { formatDate, getI18n } from '$lib/utils/functions';
-	import Button from '../ui/button/button.svelte';
-
+	import * as m from '$paraglide/messages';
 	import CardGlass from './CardGlass.svelte';
 
 	export let project: Project;
@@ -11,7 +9,11 @@
 
 <CardGlass classes="w-full" classBg="gap-4" href={project.href}>
 	<header class="flex items-center gap-4">
-		<img class="h-10 w-10" src={project.imageUrl} alt={getI18n(`projects_${project.name}_name`)} />
+		<img
+			class="h-10 w-10"
+			src={project.imageUrl}
+			alt={m.common_logo_of({ brand: getI18n(`projects_${project.name}_name`) })}
+		/>
 		<h2 class="text-2xl">
 			{getI18n(`projects_${project.name}_name`)}
 		</h2>
