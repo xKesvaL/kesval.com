@@ -164,5 +164,6 @@
 	"category_tool": "Tool",
 	"category_other": "Other",
 	"category_website": "Website",
-	"common_logo_of": "Logo of {brand}"
+	"common_logo_of": "Logo of {brand}",
+	"home_hero_my_resume": "My resume"
 }

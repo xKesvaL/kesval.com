@@ -28,8 +28,9 @@
 			{m.home_hero_description()}
 		</p>
 		<div class="flex gap-4">
-			<Button>
-				{m.home_hero_workWithMe()}
+			<Button href="/about#resume">
+				<!-- {m.home_hero_workWithMe()} -->
+				{m.home_hero_my_resume()}
 			</Button>
 			<Button variant="secondary" on:click={bot.toggle}>
 				{m.home_hero_contactMe()}
