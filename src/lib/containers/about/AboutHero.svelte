@@ -130,7 +130,7 @@
 			<span class="font-title text-9xl">
 				{PERSONAL.age}
 			</span>
-			<span class="text-2xl font-bold"> {m.common_years_old()} </span>
+			<span class="text-2xl font-bold"> {m.common_years_old_slf()} </span>
 		</CardGlass>
 		<CardGlass
 			fill="bento"
@@ -169,9 +169,9 @@
 			classBg="justify-center items-center text-primary-foreground text-center"
 		>
 			<span class="font-title text-9xl">
-				{PERSONAL.yearsOfExperience}
+				{PERSONAL.yearsOfCoding}
 			</span>
-			<span class="text-2xl font-bold"> {m.common_yearsOfExperience().toLowerCase()} </span>
+			<span class="text-2xl font-bold"> {m.common_years_of_coding_slf().toLowerCase()} </span>
 		</CardGlass>
 		<CardGlass
 			fill="bento"

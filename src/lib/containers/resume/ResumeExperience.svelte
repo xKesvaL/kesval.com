@@ -1,72 +1,48 @@
 <script lang="ts">
-	import { formatDate, getI18n } from '$lib/utils/functions';
 	import type { Experience } from '$lib/data/personal';
+	import IconMapPin from '$lib/icons/IconMapPin.svelte';
+	import { getI18n } from '$lib/utils/functions';
+
 	import * as m from '$paraglide/messages';
-	import { IconMapPinFilled } from '$lib/icons';
 
 	export let experience: Experience;
-	export let first = false;
+	export let nextExperienceHasCurrent: boolean;
+	export let isLast: boolean;
 </script>
 
-<div
-	class="experience flex w-full gap-4 p-4 last:rounded-b-lg {first
-		? 'rounded-t-lg'
-		: ''} {!experience.endDate ? 'active' : ''}"
->
-	<div class="flex-shrink-0">
-		<img
-			alt={getI18n(`experience_company_${experience.company}`)}
-			class="h-10 w-10 flex-shrink-0 rounded-full"
-			src={experience.imageUrl}
-		/>
-	</div>
-	<div class="flex h-full flex-grow flex-col justify-between gap-1">
-		<span class="text-xs text-muted-foreground">{getI18n(`experience_job_${experience.role}`)}</span
-		>
-		<p class="text-sm font-medium">
-			{getI18n(`experience_company_${experience.company}`)}
-		</p>
-	</div>
-	<div class="flex h-full flex-col items-end justify-between gap-1">
-		<span
-			class="date rounded-md px-1 py-0.5 text-[10px] text-muted-foreground {!experience.endDate
-				? 'active'
-				: ''} relative -right-1 -top-0.5"
-		>
-			{formatDate(experience.startDate, { format: 'short' })} -
-			{#if experience.endDate}
-				{formatDate(experience.endDate, { format: 'short' })}
-			{:else}
-				<span class="present">{m.common_present()}</span>
+<div class="flex gap-2">
+	<div class="relative flex w-12 flex-col items-center gap-1">
+		<span class="h-5 flex-shrink-0 text-xs text-muted-foreground">
+			{#if !experience.endDate}
+				{m.common_current()}
 			{/if}
 		</span>
-		<p class="flex items-center gap-1 text-[10px] text-muted-foreground">
-			<span class="block h-4 w-4 text-muted-foreground/75">
-				<IconMapPinFilled />
-			</span>
+		<div class="flex h-8 w-8 flex-shrink-0 rounded-full border border-primary p-1.5">
+			{#if !experience.endDate}
+				<div class="h-full w-full rounded-full bg-primary"></div>
+			{/if}
+		</div>
+		<span class="mt-1 h-4 flex-shrink-0 text-xs text-muted-foreground">
+			{experience.startDate.getFullYear()}
+		</span>
+		{#if !isLast}
+			<div
+				class={`absolute ${nextExperienceHasCurrent ? '-bottom-4' : '-bottom-8'} ${nextExperienceHasCurrent ? 'h-[calc(100%-4.25rem)]' : 'h-[calc(100%-3.25rem)]'}  border border-dashed border-primary`}
+			></div>
+		{/if}
+	</div>
+	<div>
+		<h4 class="mt-6 text-2xl">
+			{getI18n(`experience_${experience.company}_title`)}
+		</h4>
+		<div class="-mt-1 flex items-center gap-1 text-sm text-muted-foreground">
+			{getI18n(`experience_job_${experience.role}`)}
+			<div>|</div>
+			<div class="h-4 w-4"><IconMapPin /></div>
 			{experience.location}
+		</div>
+		<p>
+			{getI18n(`experience_${experience.company}_description`)}
 		</p>
 	</div>
 </div>
-
-<style lang="scss">
-	.experience {
-		background: hsl(var(--primary-200) / 0.1);
-
-		&.active {
-			background: hsl(var(--primary-200) / 0.2);
-		}
-
-		.date {
-			background: hsl(var(--primary-200) / 0.1);
-
-			&.active {
-				background: hsl(var(--primary-200) / 0.2);
-			}
-
-			.present {
-				color: hsl(var(--primary-800));
-			}
-		}
-	}
-</style>
