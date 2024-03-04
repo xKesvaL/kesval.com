@@ -1,12 +1,8 @@
 <script lang="ts">
 	import { route } from '$lib/ROUTES';
 	import { BRAND } from '$lib/config';
-	import { EXPERIENCES, EDUCATIONS, PERSONAL } from '$lib/data/personal';
-	import { SKILLS } from '$lib/data/skills';
+	import { PERSONAL } from '$lib/data/personal';
 	import {
-		IconCode,
-		IconServer,
-		IconDots,
 		IconBrandGithub,
 		IconMapPin,
 		IconCake,
@@ -16,7 +12,6 @@
 		IconLanguage
 	} from '$lib/icons';
 	import IconWorldWww from '$lib/icons/IconWorldWww.svelte';
-	import { getI18n } from '$lib/utils/functions';
 
 	import * as m from '$paraglide/messages';
 	import ResumeLink from './ResumeLink.svelte';

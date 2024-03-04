@@ -1,9 +1,7 @@
 <script lang="ts">
-	import SkillShowcase from '$lib/components/about/SkillShowcase.svelte';
 	import CardGlass from '$lib/components/cards/CardGlass.svelte';
 	import { Progress } from '$lib/components/ui/progress';
 	import { PERSONAL } from '$lib/data/personal';
-	import { SKILLS } from '$lib/data/skills';
 
 	import * as m from '$paraglide/messages';
 </script>

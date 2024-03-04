@@ -10,14 +10,14 @@
 	export let isLast: boolean;
 </script>
 
-<div class="flex gap-2">
-	<div class="relative flex w-12 flex-col items-center gap-1">
+<div class="grid grid-cols-[48px,1fr] gap-3">
+	<div class="relative flex flex-col items-center gap-1">
 		<span class="h-5 flex-shrink-0 text-xs text-muted-foreground">
 			{#if !experience.endDate}
 				{m.common_current()}
 			{/if}
 		</span>
-		<div class="flex h-8 w-8 flex-shrink-0 rounded-full border border-primary p-1.5">
+		<div class="flex size-6 flex-shrink-0 rounded-full border border-primary p-1">
 			{#if !experience.endDate}
 				<div class="h-full w-full rounded-full bg-primary"></div>
 			{/if}
@@ -27,12 +27,12 @@
 		</span>
 		{#if !isLast}
 			<div
-				class={`absolute ${nextExperienceHasCurrent ? '-bottom-4' : '-bottom-8'} ${nextExperienceHasCurrent ? 'h-[calc(100%-4.25rem)]' : 'h-[calc(100%-3.25rem)]'}  border border-dashed border-primary`}
+				class={`absolute ${nextExperienceHasCurrent ? '-bottom-4' : '-bottom-8'} ${nextExperienceHasCurrent ? 'h-[calc(100%-4rem)]' : 'h-[calc(100%-3rem)]'}  border border-primary`}
 			></div>
 		{/if}
 	</div>
 	<div>
-		<h4 class="mt-6 text-2xl">
+		<h4 class="mt-5 text-2xl">
 			{getI18n(`experience_${experience.company}_title`)}
 		</h4>
 		<div class="-mt-1 flex items-center gap-1 text-sm text-muted-foreground">
@@ -41,7 +41,7 @@
 			<div class="h-4 w-4"><IconMapPin /></div>
 			{experience.location}
 		</div>
-		<p>
+		<p class="mt-1">
 			{getI18n(`experience_${experience.company}_description`)}
 		</p>
 	</div>

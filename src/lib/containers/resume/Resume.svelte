@@ -5,10 +5,10 @@
 </script>
 
 <div
-	class="resume relative flex aspect-[1/1.414] w-full max-w-[48rem] flex-col gap-4 overflow-hidden rounded-xl bg-background p-4 md:gap-8 md:p-8"
+	class="resume relative flex w-full max-w-[56rem] flex-col gap-4 overflow-hidden rounded-xl bg-background p-4 md:gap-8 md:p-8 lg:aspect-[1/1.414]"
 >
 	<ResumeHeader />
-	<div class="flex flex-col md:flex-row">
+	<div class="grid h-full w-full gap-4 md:grid-cols-[6fr,4fr] md:gap-8">
 		<ResumeLeftSide />
 		<ResumeRightSide />
 	</div>

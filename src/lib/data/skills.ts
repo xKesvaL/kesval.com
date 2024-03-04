@@ -1,8 +1,22 @@
-export type SkillType = 'back_end' | 'front_end' | 'other';
+import IconBrandAfterEffects from "$lib/icons/custom/IconBrandAfterEffects.svelte";
+import IconBrandExpress from "$lib/icons/custom/IconBrandExpress.svelte";
+import IconBrandFigma from "$lib/icons/custom/IconBrandFigma.svelte";
+import IconBrandFirebase from "$lib/icons/custom/IconBrandFirebase.svelte";
+import IconBrandMariaDb from "$lib/icons/custom/IconBrandMariaDb.svelte";
+import IconBrandNotion from "$lib/icons/custom/IconBrandNotion.svelte";
+import IconBrandPhotoshop from "$lib/icons/custom/IconBrandPhotoshop.svelte";
+import IconBrandPremierePro from "$lib/icons/custom/IconBrandPremierePro.svelte";
+import IconBrandReact from "$lib/icons/custom/IconBrandReact.svelte";
+import IconBrandSvelte from "$lib/icons/custom/IconBrandSvelte.svelte";
+import IconBrandTypescript from "$lib/icons/custom/IconBrandTypescript.svelte";
+import IconMonitorSmartphone from "$lib/icons/lucide/IconMonitorSmartphone.svelte";
+import type { ComponentType } from "svelte";
+
+export type SkillType = "back_end" | "front_end" | "other";
 
 export interface Skill {
 	name: string;
-	progress: number;
+	icon: ComponentType;
 }
 
 export type Skills = {
@@ -12,68 +26,56 @@ export type Skills = {
 export const SKILLS: Skills = {
 	front_end: [
 		{
-			name: 'Svelte',
-			progress: 100
+			name: "React",
+			icon: IconBrandReact,
 		},
 		{
-			name: 'SvelteKit',
-			progress: 95
+			name: "Svelte",
+			icon: IconBrandSvelte,
 		},
 		{
-			name: 'React',
-			progress: 80
+			name: "PWAs",
+			icon: IconMonitorSmartphone,
 		},
 		{
-			name: 'NextJS',
-			progress: 85
+			name: "TypeScript",
+			icon: IconBrandTypescript,
 		},
 		{
-			name: 'TypeScript',
-			progress: 95
+			name: "Figma",
+			icon: IconBrandFigma,
 		},
-		{
-			name: 'PWAs',
-			progress: 90
-		}
 	],
 	back_end: [
 		{
-			name: 'Node',
-			progress: 85
+			name: "Express",
+			icon: IconBrandExpress,
 		},
 		{
-			name: 'Express',
-			progress: 85
+			name: "MariaDB",
+			icon: IconBrandMariaDb,
 		},
 		{
-			name: 'Git/Github',
-			progress: 85
+			name: "Firebase",
+			icon: IconBrandFirebase,
 		},
-		{
-			name: 'MariaDB',
-			progress: 75
-		},
-		{
-			name: 'Prisma',
-			progress: 75
-		},
-		{
-			name: 'Firebase',
-			progress: 85
-		}
 	],
 	other: [
 		{
-			name: 'Figma',
-			progress: 75
+			name: "Photoshop",
+			icon: IconBrandPhotoshop,
 		},
 		{
-			name: 'Photoshop',
-			progress: 65
+			name: "Premiere Pro",
+			icon: IconBrandPremierePro,
 		},
 		{
-			name: 'Premiere Pro',
-			progress: 65
-		}
-	]
+			name: "After Effects",
+			icon: IconBrandAfterEffects,
+		},
+		{
+			name: "Notion",
+			icon: IconBrandNotion,
+		},
+	],
 } as const;

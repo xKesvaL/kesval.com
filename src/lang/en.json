@@ -19,14 +19,14 @@
 	"experience_job_fullstack_dev": "Fullstack Developer",
 	"experience_job_tech_assistant": "Tech Assistant",
 	"experience_olwe_title": "OLWE Development",
-	"experience_olwe_description": "Fullstack Developer, working on a lot of different projects, but moslty on web apps using React with Next for the front-end and Express with MariaDB on the back-end.",
+	"experience_olwe_description": "Fullstack Developer, mostly on web apps using React with Next for the front-end and Express with MariaDB on the back-end.",
 	"experience_kesval_title": "Freelance Developer",
 	"experience_kesval_description": "Working for myself as a fullstack web developer. I'm open to small work! I also create my own little things and open source them.",
 	"experience_ciotadin_office_title": "The Ciotadin Office",
 	"experience_ciotadin_office_description": "Assistant and receptionist for a general purpose computer science repair shop.",
 	"common_present": "Present",
 	"experience_uha_title": "UHA (University)",
-	"experience_uha_description": "Student in Multimedia and Internet at the University of Mulhouse. This is a 3-year degree, and is linked to my job at OLWE Development, I am doing an apprenticeship.",
+	"experience_uha_description": "Student in Multimedia and Internet at the University of Mulhouse. This is a 3-year degree, and is linked to my job at OLWE Development. (apprenticeship)",
 	"experience_theodore_deck_title": "Théodore Deck HS",
 	"experience_theodore_deck_description": "Student in computer science and mathematics, I got my high school degree.",
 	"experience_job_mmi": "Multimedia & Internet",
@@ -177,5 +177,9 @@
 	"home_hero_my_resume": "My resume",
 	"common_github_profile": "GitHub Profile",
 	"common_linkedin_profile": "LinkedIn Profile",
-	"common_current": "Current"
+	"common_current": "Current",
+	"common_skills": "Skills",
+	"common_about": "About",
+	"resume_about": "I'm a passioned fullstack developer. I started when I was 8, writing my first lines of code in Java, creating minecraft mods. I then moved to web development, and I'm now working with the latest technologies, such as Svelte, Bun and TypeScript. Later, I want to create apps for everyone that simplify life.",
+	"resume_education": "I have a High School Diploma in Computer Science and Mathematics, and I'm currently studying at the University of Mulhouse, in Multimedia and Internet, where I'm learning about web development, communication, 3D, video, and audio. I'm in my second year and currently majoring in web development."
 }
