@@ -1,8 +1,7 @@
-import { sentrySvelteKit } from "@sentry/sveltekit";
 import { sveltekit } from "@sveltejs/kit/vite";
 import { defineConfig } from "vite";
 import { kitRoutes } from "vite-plugin-kit-routes";
-import { resolve } from "path";
+import { resolve } from "node:path";
 import { enhancedImages } from "@sveltejs/enhanced-img";
 import type { KIT_ROUTES } from "$lib/ROUTES";
 import { PERSONAL } from "./src/lib/data/personal";
@@ -10,12 +9,6 @@ import { paraglide } from "@inlang/paraglide-js-adapter-sveltekit/vite";
 
 export default defineConfig({
 	plugins: [
-		sentrySvelteKit({
-			sourceMapsUploadOptions: {
-				org: "kesval",
-				project: "javascript-sveltekit",
-			},
-		}),
 		kitRoutes<KIT_ROUTES>({
 			format: "route(path)",
 			LINKS: {
