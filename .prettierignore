@@ -11,8 +11,3 @@ node_modules
 pnpm-lock.yaml
 package-lock.json
 yarn.lock
-
-.vercel_build_output
-.vercel
-
-src/i18n/i18n-*

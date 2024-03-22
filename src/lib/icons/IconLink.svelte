@@ -1,15 +1,17 @@
 <svg
-  width="100%"
-  height="100%"
-  viewBox="0 0 24 24"
-  fill="none"
-  xmlns="http://www.w3.org/2000/svg"
-  stroke="currentColor"
-  stroke-width="1.5"
-  stroke-linecap="round"
-  stroke-linejoin="round">
-  <path
-    d="M14 11.998C14 9.506 11.683 7 8.857 7H7.143C4.303 7 2 9.238 2 11.998c0 2.378 1.71 4.368 4 4.873a5.3 5.3 0 001.143.124" />
-  <path
-    d="M10 11.998c0 2.491 2.317 4.997 5.143 4.997h1.714c2.84 0 5.143-2.237 5.143-4.997 0-2.379-1.71-4.37-4-4.874A5.304 5.304 0 0016.857 7" />
-</svg>
+	xmlns="http://www.w3.org/2000/svg"
+	class="icon icon-tabler icon-tabler-link"
+	width="100%"
+	height="100%"
+	viewBox="0 0 24 24"
+	stroke-width="1.5"
+	stroke="currentColor"
+	fill="none"
+	stroke-linecap="round"
+	stroke-linejoin="round"
+	><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M9 15l6 -6" /><path
+		d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464"
+	/><path
+		d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463"
+	/></svg
+>

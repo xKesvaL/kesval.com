@@ -1,17 +1,24 @@
-import type { ChatBotAnswers } from '$lib';
+import type { ChatBot } from '$lib/typings/chatbot';
+
 import { writable } from 'svelte/store';
 
-const createBot = () => {
-  const { subscribe, set, update } = writable<boolean>(false);
+const createBotStore = () => {
+	const { set, subscribe, update } = writable<ChatBot>({
+		history: [],
+		open: false,
+	});
 
-  return {
-    subscribe,
-    set: (value: boolean) => {
-      set(value);
-    },
-    update,
-  };
+	return {
+		set,
+		subscribe,
+		toggle: () => {
+			update((t) => {
+				t.open = !t.open;
+				return t;
+			});
+		},
+		update,
+	};
 };
-export const botState = createBot();
 
-export const history = writable<ChatBotAnswers[]>([]);
+export const bot = createBotStore();

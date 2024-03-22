@@ -1,2 +1,4 @@
 User-agent: *
-Sitemap: https://kesval.com/sitemap.xml
+Disallow: /fonts/
+Disallow: /optimized-images/
+Disallow: /images/
