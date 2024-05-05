@@ -34,7 +34,7 @@
 		</CardGlass>
 		<!-- Profile Infos -->
 		<CardGlass class="row-span-3 lg:col-span-3 lg:col-start-1 lg:col-end-4" fill="bento">
-			1
+			{m.lolfunxd()}
 		</CardGlass>
 
 		<CardGlass
@@ -67,7 +67,9 @@
 				style:--img-ds-clr="rgba(49, 120, 198, 0.75)"
 			/>
 		</CardGlass>
-		<CardGlass class="row-span-2 lg:col-span-4 lg:row-start-1" fill="bento">3</CardGlass>
+		<CardGlass class="row-span-2 lg:col-span-4 lg:row-start-1" fill="bento">
+			{m.lolfunxdreal()}
+		</CardGlass>
 		<CardGlass
 			fill="bento"
 			class="row-span-3 text-2xl font-bold lg:col-span-3 lg:col-start-4 lg:row-start-3 "

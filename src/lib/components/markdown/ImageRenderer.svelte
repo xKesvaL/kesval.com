@@ -18,10 +18,6 @@
 		}
 		return false;
 	});
-
-	console.log(image);
-
-	$: console.log({ title, text, href });
 </script>
 
 {#await image then img}
