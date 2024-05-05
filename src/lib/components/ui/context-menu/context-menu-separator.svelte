@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { ContextMenu as ContextMenuPrimitive } from "bits-ui";
-	import { cn } from "$lib/utils/ui";
+	import { cn } from "$lib/utils/ui.js";
 
 	type $$Props = ContextMenuPrimitive.SeparatorProps;
 

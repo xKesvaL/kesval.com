@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { cn } from "$lib/utils/ui";
 	import type { HTMLThAttributes } from "svelte/elements";
+	import { cn } from "$lib/utils/ui.js";
 
 	type $$Props = HTMLThAttributes;
 

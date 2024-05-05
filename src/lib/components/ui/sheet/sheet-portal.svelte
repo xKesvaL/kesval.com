@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Dialog as SheetPrimitive } from "bits-ui";
-	import { cn } from "$lib/utils/ui";
+	import { cn } from "$lib/utils/ui.js";
 
 	type $$Props = SheetPrimitive.PortalProps;
 

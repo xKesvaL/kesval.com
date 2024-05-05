@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { cn } from "$lib/utils/ui";
 	import type { HTMLAttributes } from "svelte/elements";
-	import { alertVariants, type Variant } from ".";
+	import { type Variant, alertVariants } from "./index.js";
+	import { cn } from "$lib/utils/ui.js";
 
 	type $$Props = HTMLAttributes<HTMLDivElement> & {
 		variant?: Variant;
@@ -12,10 +12,6 @@
 	export { className as class };
 </script>
 
-<div
-	class={cn(alertVariants({ variant }), className)}
-	{...$$restProps}
-	role="alert"
->
+<div class={cn(alertVariants({ variant }), className)} {...$$restProps} role="alert">
 	<slot />
 </div>

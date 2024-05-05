@@ -43,8 +43,8 @@
 	<Select.Root bind:selected>
 		<Select.Trigger
 			class="trigger flex aspect-square justify-center rounded-full border-0 bg-popover p-2 text-lg transition-all hover:bg-background"
-			icon={false}
 			aria-label={m.common_changeLanguage()}
+			icon={false}
 		>
 			{emoji}
 			<div class="sr-only">

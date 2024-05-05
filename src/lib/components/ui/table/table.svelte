@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { cn } from "$lib/utils/ui";
 	import type { HTMLTableAttributes } from "svelte/elements";
+	import { cn } from "$lib/utils/ui.js";
 
 	type $$Props = HTMLTableAttributes;
 
@@ -8,11 +8,8 @@
 	export { className as class };
 </script>
 
-<div class="w-full overflow-auto">
-	<table
-		class={cn("w-full caption-bottom text-sm", className)}
-		{...$$restProps}
-	>
+<div class="relative w-full overflow-auto">
+	<table class={cn("w-full caption-bottom text-sm", className)} {...$$restProps}>
 		<slot />
 	</table>
 </div>

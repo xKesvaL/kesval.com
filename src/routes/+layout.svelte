@@ -16,7 +16,7 @@
 	import { polyfillCountryFlagEmojis } from '$lib/utils/functions';
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
-	import { ParaglideJS } from '@inlang/paraglide-js-adapter-sveltekit';
+	import { ParaglideJS } from '@inlang/paraglide-sveltekit';
 	import { i18n } from '$lib/utils/i18n';
 
 	import { activeLayout, scrollLocked } from '$lib/stores/common';

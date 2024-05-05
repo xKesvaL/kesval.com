@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { ContextMenu as ContextMenuPrimitive } from "bits-ui";
-	import { cn, flyAndScale } from "$lib/utils/ui";
+	import { cn, flyAndScale } from "$lib/utils/ui.js";
 
 	type $$Props = ContextMenuPrimitive.ContentProps;
 

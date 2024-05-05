@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { ContextMenu as ContextMenuPrimitive } from "bits-ui";
-	import { cn } from "$lib/utils/ui";
+	import { cn } from "$lib/utils/ui.js";
 
 	type $$Props = ContextMenuPrimitive.LabelProps & {
 		inset?: boolean;
@@ -12,11 +12,7 @@
 </script>
 
 <ContextMenuPrimitive.Label
-	class={cn(
-		"px-2 py-1.5 text-sm font-semibold text-foreground",
-		inset && "pl-8",
-		className
-	)}
+	class={cn("px-2 py-1.5 text-sm font-semibold text-foreground", inset && "pl-8", className)}
 	{...$$restProps}
 >
 	<slot />

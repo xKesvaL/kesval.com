@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { cn } from "$lib/utils/ui";
 	import type { HTMLTdAttributes } from "svelte/elements";
+	import { cn } from "$lib/utils/ui.js";
 
 	type $$Props = HTMLTdAttributes;
 

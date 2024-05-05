@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { cn } from "$lib/utils/ui";
 	import type { HTMLAttributes } from "svelte/elements";
+	import { cn } from "$lib/utils/ui.js";
 
 	type $$Props = HTMLAttributes<HTMLTableSectionElement>;
 
@@ -8,9 +8,6 @@
 	export { className as class };
 </script>
 
-<tfoot
-	class={cn("bg-primary font-medium text-primary-foreground", className)}
-	{...$$restProps}
->
+<tfoot class={cn("bg-primary font-medium text-primary-foreground", className)} {...$$restProps}>
 	<slot />
 </tfoot>
