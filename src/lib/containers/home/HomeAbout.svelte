@@ -29,7 +29,7 @@
 				<CardGlass>
 					<span class="font-title text-6xl"> {PERSONAL.yearsOfExperience} </span>
 					<p class="lg:text-xl">
-						{m.common_yearsOfExperience()}
+						{m.common_years_of_experience_slf()}
 					</p>
 				</CardGlass>
 				<CardGlass>

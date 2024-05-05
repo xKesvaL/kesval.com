@@ -48,7 +48,7 @@ const EXPERIENCES: Experience[] = [
 		company: "ciotadin_office",
 		role: "tech_assistant",
 		startDate: new Date("2019-04-01"),
-		endDate: new Date("2019-04-07"),
+		endDate: new Date("2019-04-08"),
 		imageUrl: "/experiences/ciotadin_office.jpeg",
 		location: "La Ciotat, France",
 	},

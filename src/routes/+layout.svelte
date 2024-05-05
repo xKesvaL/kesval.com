@@ -22,6 +22,7 @@
 	import { activeLayout, scrollLocked } from '$lib/stores/common';
 	import { settings } from '$lib/stores/settings';
 	import Seo from '$lib/components/base/SEO.svelte';
+	import { injectSpeedInsights } from '@vercel/speed-insights';
 
 	$: if (browser) {
 		document.body.setAttribute('data-scroll-locked', $scrollLocked ? 'true' : 'false');
@@ -39,6 +40,8 @@
 
 	$: pathname = $page.url.pathname;
 	$: activeLayout.handle($page.url);
+
+	injectSpeedInsights();
 </script>
 
 {#if $activeLayout === 'base'}

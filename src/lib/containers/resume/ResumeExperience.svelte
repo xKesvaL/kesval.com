@@ -1,13 +1,25 @@
 <script lang="ts">
 	import type { Experience } from '$lib/data/personal';
 	import IconMapPin from '$lib/icons/IconMapPin.svelte';
-	import { getI18n } from '$lib/utils/functions';
+	import { capitalizeFirstLetter, getI18n } from '$lib/utils/functions';
+	import dayjs from 'dayjs';
+	import durationPlugin from "dayjs/plugin/duration";
+	import relativeTimePlugin from "dayjs/plugin/relativeTime";
+	import "dayjs/locale/en";
+	import "dayjs/locale/fr";
+
+	dayjs.extend(durationPlugin);
+	dayjs.extend(relativeTimePlugin);
 
 	import * as m from '$paraglide/messages';
+	import { languageTag } from '$paraglide/runtime';
 
 	export let experience: Experience;
 	export let nextExperienceHasCurrent: boolean;
 	export let isLast: boolean;
+
+	const durationDate = dayjs(experience.endDate || Date.now()).diff(experience.startDate);
+	const duration = dayjs.duration(durationDate).locale(languageTag()).humanize();
 </script>
 
 <div class="grid grid-cols-[48px,1fr] gap-3">
@@ -36,6 +48,8 @@
 			{getI18n(`experience_${experience.company}_title`)}
 		</h4>
 		<div class="-mt-1 flex items-center gap-1 text-sm text-muted-foreground">
+		{capitalizeFirstLetter(duration)}
+			<div>|</div>
 			{getI18n(`experience_job_${experience.role}`)}
 			<div>|</div>
 			<div class="h-4 w-4"><IconMapPin /></div>

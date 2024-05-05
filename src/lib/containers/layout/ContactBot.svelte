@@ -123,8 +123,8 @@
 		transition:fly={{ y: 20, duration: 300, opacity: 0 }}
 		aria-hidden={$bot.open ? false : true}
 	>
-		<header class="grid grid-cols-[auto,1fr,auto] items-center gap-4 bg-primary px-2 py-4">
-			<div class="ml-2 h-10 w-10">
+		<header class="grid grid-cols-[auto,1fr,auto] items-center gap-3 bg-primary px-2 py-4">
+			<div class="ml-2 h-10 w-10 rounded-full border-2 border-foreground">
 				<enhanced:img src="$assets/logos/logo.png" alt={m.common_profile_picture()} />
 			</div>
 			<div class="flex h-full flex-col justify-between">
