@@ -70,6 +70,7 @@
   "type": "module",
   "trustedDependencies": [
     "@sveltejs/kit",
+    "@vercel/speed-insights",
     "esbuild",
     "sharp",
     "svelte-preprocess"

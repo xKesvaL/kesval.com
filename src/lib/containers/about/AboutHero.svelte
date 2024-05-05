@@ -28,7 +28,7 @@
 			<enhanced:img
 				src="$assets/logos/logo.png"
 				alt={m.common_profile_picture()}
-				class="aspect-square h-full max-h-[3.5rem] w-full max-w-[3.5rem] flex-shrink-0"
+				class="aspect-square h-full max-h-[3.5rem] w-full max-w-[3.5rem] flex-shrink-0 rounded-full border-2 border-white"
 			/>
 			<span class="text-primary-foreground"> KesvaL </span>
 		</CardGlass>
