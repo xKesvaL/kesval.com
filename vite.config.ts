@@ -9,6 +9,10 @@ import { paraglide } from "@inlang/paraglide-sveltekit/vite";
 
 export default defineConfig({
 	plugins: [
+		paraglide({
+			outdir: "./src/paraglide",
+			project: "./project.inlang",
+		}),
 		kitRoutes<KIT_ROUTES>({
 			format: "route(path)",
 			LINKS: {
@@ -27,10 +31,6 @@ export default defineConfig({
 			},
 		}),
 		enhancedImages(),
-		paraglide({
-			outdir: "./src/paraglide",
-			project: "./project.inlang",
-		}),
 		sveltekit(),
 	],
 	define: {
