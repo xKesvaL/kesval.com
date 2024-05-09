@@ -219,7 +219,6 @@
 
 <style lang="scss">
 	section.container {
-		--ct-max-width: 1280px;
 		min-height: calc(100vh - 8rem);
 
 		.grid {

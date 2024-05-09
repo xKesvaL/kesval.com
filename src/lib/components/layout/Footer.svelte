@@ -16,6 +16,6 @@
 
 <style>
 	footer {
-		background: hsl(var(--primary-200) / 0.25);
+		background: hsl(var(--primary) / 0.1);
 	}
 </style>

@@ -36,7 +36,7 @@
 <style lang="scss">
 	.resume {
 		box-shadow:
-			0 0 12px 1px hsl(var(--primary-500) / 0.1),
-			0 2px 12px 0 hsl(var(--primary-500) / 0.1);
+			0 0 12px 1px hsl(var(--primary) / 0.1),
+			0 2px 12px 0 hsl(var(--primary) / 0.1);
 	}
 </style>

@@ -4,7 +4,7 @@
 
 <svelte:element this={href ? 'a' : 'div'} class="group flex items-center gap-2" {href}>
 	<div
-		class="h-8 w-8 flex-shrink-0 rounded-full border border-primary bg-primary/50 p-1.5 text-primary-foreground"
+		class="h-8 w-8 flex-shrink-0 rounded-full border border-primary bg-primary/10 p-1.5 text-foreground"
 	>
 		<slot name="icon" />
 	</div>

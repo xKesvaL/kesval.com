@@ -36,9 +36,9 @@
 
 <style lang="scss">
 	.logo {
-		--logo-text-color: hsl(var(--base-600));
-		--logo-text-color-mid: hsl(var(--base-800));
-		--logo-text-color-end: hsl(var(--primary-900));
+		--logo-text-color: hsl(var(--foreground) / .75);
+		--logo-text-color-mid: hsl(var(--foreground) / .9);
+		--logo-text-color-end: hsl(var(--primary));
 		display: flex;
 		height: 100%;
 		width: auto;

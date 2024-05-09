@@ -167,14 +167,6 @@
 					aspect-ratio: 1/1;
 					border-radius: 50%;
 					padding: 0.5rem;
-
-					/* @include mq(md) {
-						background: radial-gradient(
-								hsl(var(--secondary-500) / 0.15),
-								hsl(var(--base-200) / 0.5)
-							),
-							radial-gradient(hsl(var(--base-200) / 0.2), hsl(var(--base-200) / 0.2));
-					} */
 				}
 			}
 		}

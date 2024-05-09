@@ -64,7 +64,7 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			background: hsl(var(--base-50));
+			background: hsl(var(--background));
 			transform: translate(calc(-50% - (var(--clt-border-w) / 2)), -50%);
 			padding: 0.5rem;
 		}

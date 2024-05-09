@@ -49,7 +49,7 @@
 					cx="30"
 					cy="30"
 					r="24"
-					stroke="hsl(var(--primary-500))"
+					stroke="hsl(var(--primary))"
 					stroke-width="3"
 					style="stroke-dashoffset: {160 - 160 * scrollPercent};"
 				/>
@@ -79,7 +79,7 @@
 			grid-row-start: 1;
 			transition: 0.3s ease-in-out;
 			position: relative;
-			background: hsl(var(--base-200));
+			background: hsl(var(--muted));
 
 			.arrow {
 				position: absolute;
@@ -87,12 +87,12 @@
 				width: 100%;
 				height: 100%;
 				padding: 1.125rem;
-				color: hsl(var(--base-950));
+				color: hsl(var(--foreground));
 				transition: 0.3s ease-in-out;
 			}
 
 			svg {
-				fill: hsl(var(--base-200));
+				fill: hsl(var(--muted));
 				fill-opacity: 1;
 				transition: 0.3s ease-in-out;
 			}

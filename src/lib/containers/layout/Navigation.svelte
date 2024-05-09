@@ -97,8 +97,8 @@
 	header {
 		background: linear-gradient(
 			45deg,
-			hsl(var(--primary-500) / 0.1),
-			hsl(var(--primary-200) / 0.25)
+			hsl(var(--primary) / 0.1),
+			hsl(var(--primary) / 0.15)
 		);
 
 		@media (min-width: 1024px) {
@@ -127,7 +127,7 @@
 					}
 
 					&.active {
-						background: hsl(var(--base-50) / 0.75);
+						background: hsl(var(--background));
 					}
 				}
 			}

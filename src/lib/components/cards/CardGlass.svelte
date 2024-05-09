@@ -69,7 +69,7 @@
 		--cg-st: 0.15;
 		--cg-st-base: 0.3;
 
-		background: hsl(var(--primary-300) / 0.1);
+		background: hsl(var(--primary) / 0.1);
 
 		&.fill-full {
 			background: radial-gradient(
@@ -82,8 +82,8 @@
 		}
 
 		&.fill-bento {
-			background: hsl(var(--primary-300) / 0.1);
-			border-color: hsl(var(--primary-300) / 0.1);
+			background: hsl(var(--primary) / 0.1);
+			border-color: hsl(var(--primary) / 0.1);
 			color: white;
 		}
 
@@ -93,7 +93,7 @@
 
 		&-bg-img {
 			&:hover {
-				background-color: rgba(var(--base-200-rgb), 0.3);
+				background-color: hsl(var(--muted), 0.3);
 				background-image: radial-gradient(
 					circle at var(--drop-x) var(--drop-y),
 					hsl(var(--drop-color) / var(--cg-st)),
