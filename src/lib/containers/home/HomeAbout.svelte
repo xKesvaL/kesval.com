@@ -8,7 +8,7 @@
 	import { languageTag } from '$paraglide/runtime';
 </script>
 
-<section class="container-sm section container flex flex-col justify-center">
+<section class="container-sm section flex flex-col justify-center">
 	<h2 class="text-center text-4xl lg:text-5xl">
 		{m.home_about_title()}
 	</h2>
@@ -27,25 +27,25 @@
 			</div>
 			<div class="grid grid-cols-2 grid-rows-2 gap-4">
 				<CardGlass>
-					<span class="font-title text-6xl"> {PERSONAL.yearsOfExperience} </span>
+					<span class="font-sans font-bold text-6xl"> {PERSONAL.yearsOfExperience} </span>
 					<p class="lg:text-xl">
 						{m.common_years_of_experience_slf()}
 					</p>
 				</CardGlass>
 				<CardGlass>
-					<span class="font-title text-6xl"> 05 </span>
+					<span class="font-sans font-bold text-6xl"> 05 </span>
 					<p class="lg:text-xl">
 						{m.home_about_projectsDelivered()}
 					</p></CardGlass
 				>
 				<CardGlass>
-					<span class="font-title text-6xl"> 02 </span>
+					<span class="font-sans font-bold text-6xl"> 02 </span>
 					<p class="lg:text-xl">
 						{m.home_about_professionalExperiences()}
 					</p></CardGlass
 				>
 				<CardGlass>
-					<span class="font-title text-6xl"> 08 </span>
+					<span class="font-sans font-bold text-6xl"> 08 </span>
 					<p class="lg:text-xl">
 						{m.home_about_openSourceContributions()}
 					</p></CardGlass

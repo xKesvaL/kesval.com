@@ -9,7 +9,9 @@ const config = {
 		container: {
 			center: true,
 			padding: "1rem",
-			screens: {},
+			screens: {
+				DEFAULT: "1280px"
+			},
 		},
 
 		extend: {
@@ -73,8 +75,8 @@ const config = {
 					"EmojiSymbols",
 					"Android Emoji",
 				],
-				sans: ["var(--font-sans)"],
-				title: ["var(--font-title)"],
+				sans: ["var(--ft-sans)"],
+				title: ["var(--ft-title)"],
 			},
 		},
 	},

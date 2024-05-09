@@ -3,7 +3,6 @@
 	import '$lib/styles/fonts.scss';
 	import '$lib/styles/main.scss';
 	import '$lib/styles/nprogress.scss';
-	import '@kesval/design';
 	import nprogress from 'nprogress';
 	import { setupViewTransition } from 'sveltekit-view-transition';
 

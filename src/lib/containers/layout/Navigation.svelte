@@ -16,7 +16,7 @@
 </script>
 
 <header
-	class="container sticky top-0 z-10 flex min-h-[4rem] items-center justify-between px-3 py-2 backdrop-blur-xl backdrop-saturate-150 lg:top-4 lg:rounded-full"
+	class="container sticky top-0 z-10 flex min-h-[4rem] items-center justify-between px-3 py-2 backdrop-blur-xl backdrop-saturate-150 lg:top-4 lg:rounded-full lg:container-xs"
 	id="navigation"
 	style="view-transition-name: header;"
 >
@@ -100,11 +100,6 @@
 			hsl(var(--primary) / 0.1),
 			hsl(var(--primary) / 0.15)
 		);
-
-		@media (min-width: 1024px) {
-			--ct-max-width: 760px;
-		}
-
 		.nav {
 			min-height: 95vh;
 			height: calc(100dvh + 1.5rem);

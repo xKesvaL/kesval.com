@@ -20,7 +20,7 @@
 	};
 </script>
 
-<section class="section container flex flex-col">
+<section class="section container-sm flex flex-col">
 	<h2 class="text-center text-4xl lg:text-5xl">
 		{m.home_work_title()}
 	</h2>
@@ -47,7 +47,7 @@
 							aria-controls="project-{i + 1}-content"
 							aria-expanded={i + 1 === parseInt(expandedIndex)}
 						>
-							<span class="project-title relative isolate grid items-center text-2xl lg:text-3xl">
+							<span class="project-title relative isolate grid items-center font-title text-2xl lg:text-3xl">
 								{getI18n(`projects_${project.name}_name`)}
 							</span>
 							<img
@@ -94,12 +94,10 @@
 
 <style lang="scss">
 	section {
-		--ct-max-width: 72rem;
-
 		.projects {
 			--button-size: 3.5rem;
 			--panel-padding: 0.5rem;
-			--panel-gap: 0.5rem;
+			--panel-gap: 1rem;
 			--panel-padding-right: 0;
 
 			/* @include mq(lg) {
@@ -161,7 +159,7 @@
 				}
 
 				&-icon {
-					backdrop-filter: blur(0.5rem) saturate(5);
+					backdrop-filter: blur(0.5rem) saturate(3);
 					width: var(--button-size);
 
 					aspect-ratio: 1/1;
