@@ -44,10 +44,10 @@
 		{/if}
 	</div>
 	<div>
-		<h4 class="mt-5 text-2xl">
+		<h4 class="mt-5 text-2xl font-black">
 			{getI18n(`experience_${experience.company}_title`)}
 		</h4>
-		<div class="-mt-1 flex items-center gap-1 text-sm text-muted-foreground">
+		<div class="-mt-0.5 flex items-center gap-1 text-sm text-muted-foreground">
 		{capitalizeFirstLetter(duration)}
 			<div>|</div>
 			{getI18n(`experience_job_${experience.role}`)}
