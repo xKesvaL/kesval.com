@@ -30,7 +30,7 @@
 <CardGlass
 	classes="flex-grow !h-fit"
 	classBg="isolate !p-0"
-	color={type === 'front-end' ? 'primary' : type === 'back-end' ? 'accent' : 'success'}
+	color={type === 'front-end' ? 'primary' : type === 'back-end' ? 'tertiary' : 'success'}
 	scale={1}
 >
 	<button class="relative flex w-full items-center gap-4 p-4" on:click={toggleDropdown}>
@@ -76,7 +76,7 @@
 							class="h-full rounded-full {type === 'front-end'
 								? 'bg-primary'
 								: type === 'back-end'
-								  ? 'bg-accent'
+								  ? 'bg-tertiary'
 								  : 'bg-success'}"
 							role="progressbar"
 							style="width: {skill.progress}%"

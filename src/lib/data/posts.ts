@@ -1,7 +1,7 @@
 import type { BlogPost, PaginatedResponse } from "$lib/typings/blog";
 import type { AvailableLanguageTag } from "$paraglide/runtime";
 import fs from "fs-extra";
-import { join } from "path";
+import { join } from "node:path";
 import grayMatter from "gray-matter";
 import { frontmatterToBlogPost } from "$lib/utils/posts";
 
@@ -108,8 +108,8 @@ const getRelatedPosts = (
 		.map((otherPost) => {
 			return {
 				post: otherPost,
-				score: otherPost.categories.filter((category) =>
-					post.categories.includes(category),
+				score: otherPost.tags.filter((category) =>
+					post.tags.includes(category),
 				).length,
 			};
 		})

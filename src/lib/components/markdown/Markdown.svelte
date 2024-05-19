@@ -1,11 +1,15 @@
 <script lang="ts">
 	import SvelteMarkdown, { type Renderers } from 'svelte-markdown';
-	import ImageRenderer from './ImageRenderer.svelte';
+	import RendererImage from './RendererImage.svelte';
+	import RendererCodeBlock from './RendererCodeBlock.svelte';
+	import RendererHeading from './RendererHeading.svelte';
 
 	export let content: string;
 
 	const renderers: Partial<Renderers> = {
-		image: ImageRenderer
+		image: RendererImage,
+		code: RendererCodeBlock,
+		heading: RendererHeading,
 	};
 </script>
 

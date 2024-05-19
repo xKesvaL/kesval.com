@@ -33,7 +33,7 @@ export interface CategoryBase {
 }
 
 export interface CategoryWithThemeColor extends CategoryBase {
-	color: "primary" | "secondary" | "accent";
+	color: "primary" | "secondary" | "tertiary";
 	colorType: "theme";
 }
 

@@ -112,7 +112,7 @@
 			a,
 			button {
 				position: relative;
-				padding: 0.5rem 1rem;
+				padding: 1rem;
 
 				@media (min-width: 1024px) {
 					&:not(.active) {
@@ -120,6 +120,8 @@
 							0 0 1.25rem hsl(var(--background)),
 							0 0 1.25rem hsl(var(--background));
 					}
+
+					padding: 0.5rem 1rem;
 
 					&.active {
 						background: hsl(var(--background));

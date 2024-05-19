@@ -27,6 +27,8 @@
 		<span class="h-5 flex-shrink-0 text-xs text-muted-foreground">
 			{#if !experience.endDate}
 				{m.common_current()}
+			{:else if experience.endDate}
+				{experience.endDate.getFullYear()}
 			{/if}
 		</span>
 		<div class="flex size-6 flex-shrink-0 rounded-full border border-primary p-1">
@@ -39,7 +41,7 @@
 		</span>
 		{#if !isLast}
 			<div
-				class={`absolute ${nextExperienceHasCurrent ? '-bottom-4' : '-bottom-8'} ${nextExperienceHasCurrent ? 'h-[calc(100%-4rem)]' : 'h-[calc(100%-3rem)]'}  border border-primary`}
+				class={`absolute -bottom-4 h-[calc(100%-4rem)] border border-primary`}
 			></div>
 		{/if}
 	</div>

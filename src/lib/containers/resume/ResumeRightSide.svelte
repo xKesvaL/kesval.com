@@ -24,7 +24,7 @@
 			<div class="flex flex-wrap gap-2">
 				{#each SKILLS.front_end as skill}
 					<div
-						class="flex h-10 flex-grow items-center justify-center gap-2 rounded-lg border border-accent bg-accent/10 px-2 py-3 text-sm"
+						class="flex h-10 flex-grow items-center justify-center gap-2 rounded-lg border border-tertiary bg-tertiary/10 px-2 py-3 text-sm"
 					>
 						<div class="size-5 flex-shrink-0">
 							<svelte:component this={skill.icon} />

@@ -18,7 +18,7 @@ export const frontmatterToBlogPost = (
 		updatedAt: frontmatter.updated,
 		coverImage: frontmatter.coverImage,
 		coverImageAlt: frontmatter.coverImageAlt,
-		categories: frontmatter.categories,
+		tags: frontmatter.categories,
 		hidden: frontmatter.hidden,
 		readingTime: readingTime(
 			striptags(content) || "",

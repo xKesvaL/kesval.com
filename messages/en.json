@@ -183,5 +183,11 @@
 	"resume_about": "I'm a passioned fullstack developer. I started when I was 8, writing my first lines of code in Java, creating minecraft mods. I then moved to web development, and I'm now working with the latest technologies, such as Svelte, Bun and TypeScript. Later, I want to create apps for everyone that simplify life.",
 	"resume_education": "I have a High School Diploma in Computer Science and Mathematics, and I'm currently studying at the University of Mulhouse, in Multimedia and Internet, where I'm learning about web development, communication, 3D, video, and audio. I'm in my second year and currently majoring in web development.",
 	"lolfunxd": "I might have no idea what to put here",
-	"lolfunxdreal": "Okay I actually have no idea what to put here"
+	"lolfunxdreal": "Okay I actually have no idea what to put here",
+	"copy_link": "Copy link",
+	"by_author": "By {author}",
+	"cancel": "Cancel",
+	"share_to_platform": "Share to {platform}",
+	"share_post": "Share this post",
+	"share_post_content": "Check out this post, \"{title}\" on KesvaL's blog! {url}"
 }

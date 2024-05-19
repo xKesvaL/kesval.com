@@ -64,6 +64,10 @@ const config = {
 					DEFAULT: "hsl(var(--success))",
 					foreground: "hsl(var(--success-foreground))",
 				},
+				tertiary: {
+					DEFAULT: "hsl(var(--tertiary))",
+					foreground: "hsl(var(--tertiary-foreground))",
+				},
 			},
 			fontFamily: {
 				emoji: [
@@ -77,6 +81,7 @@ const config = {
 				],
 				sans: ["var(--ft-sans)"],
 				title: ["var(--ft-title)"],
+				mono: ["var(--ft-mono)"],
 			},
 		},
 	},

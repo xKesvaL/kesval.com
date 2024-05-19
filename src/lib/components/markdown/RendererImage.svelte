@@ -11,7 +11,7 @@
 
 	let image: Promise<{ default: string }> | undefined;
 	Object.keys(allImages).find((key) => {
-		let hrefWithoutDollar = href.replace('$', '');
+		const hrefWithoutDollar = href.replace('$', '');
 		if (key.includes(hrefWithoutDollar)) {
 			image = allImages[key]() as Promise<{ default: string }>;
 			return true;

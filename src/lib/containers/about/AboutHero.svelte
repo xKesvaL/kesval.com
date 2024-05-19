@@ -33,7 +33,7 @@
 			<span class="text-primary-foreground"> KesvaL </span>
 		</CardGlass>
 		<!-- Profile Infos -->
-		<CardGlass class="row-span-3 lg:col-span-3 lg:col-start-1 lg:col-end-4" fill="bento">
+		<CardGlass class="row-span-3 lg:col-span-3 lg:col-start-1 lg:col-end-4" classBg="text-foreground" fill="bento">
 			{m.lolfunxd()}
 		</CardGlass>
 
@@ -67,7 +67,7 @@
 				style:--img-ds-clr="rgba(49, 120, 198, 0.75)"
 			/>
 		</CardGlass>
-		<CardGlass class="row-span-2 lg:col-span-4 lg:row-start-1" fill="bento">
+		<CardGlass class="row-span-2 lg:col-span-4 lg:row-start-1" classBg="text-foreground" fill="bento">
 			{m.lolfunxdreal()}
 		</CardGlass>
 		<CardGlass
@@ -88,7 +88,7 @@
 					</div>
 					<div class="relative">C2</div>
 				</div>
-				<Progress class="relative h-2 border-none" classChild="bg-primary" value={100} />
+				<Progress class="relative h-2 border-none" value={100} />
 			</div>
 			<div class="flex flex-col gap-2 text-foreground">
 				<div class="relative flex items-center justify-between">
@@ -103,7 +103,7 @@
 					</div>
 					<div>C1</div>
 				</div>
-				<Progress value={90} class="h-2 border-none" classChild="bg-primary" />
+				<Progress value={90} class="h-2 border-none" />
 			</div>
 			<div class="flex flex-col gap-2 text-foreground">
 				<div class="relative flex items-center justify-between">
@@ -118,7 +118,7 @@
 					</div>
 					<div>A2</div>
 				</div>
-				<Progress value={45} class="h-2 border-none" classChild="bg-primary" />
+				<Progress value={45} class="h-2 border-none" />
 			</div>
 		</CardGlass>
 		<CardGlass

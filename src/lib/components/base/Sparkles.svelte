@@ -10,8 +10,8 @@
 		style: { top: string; left: string };
 	}
 
-	export let color: 'primary' | 'secondary' | 'accent' = 'accent';
-	export let highlight: 'off' | 'primary' | 'secondary' | 'accent' = 'off';
+	export let color: 'primary' | 'secondary' | 'tertiary' = 'tertiary';
+	export let highlight: 'off' | 'primary' | 'secondary' | 'tertiary' = 'off';
 	export let size: 10 | 20 | 30 = 20;
 	const random = (min: number, max: number) => Math.floor(Math.random() * (max - min)) + min;
 

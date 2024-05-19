@@ -39,7 +39,7 @@
 
 <style lang="scss">
 	.category {
-		--cat-bg-color: hsl(var(--primary) / 0.15);
+		--cat-bg-color: hsl(var(--primary) / 0.1);
 		--cat-bd-color: hsl(var(--border));
 		background: var(--cat-bg-color);
 		border-color: var(--cat-bd-color);

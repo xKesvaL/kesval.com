@@ -11,7 +11,7 @@
 	<div class="grid gap-4 @2xl/card:grid-cols-2">
 		{#if post.coverImage}
 			<div class="max-h-[22rem] min-h-64">
-				<enhanced:img
+				<img
 					src={post.coverImage}
 					alt={post.coverImageAlt}
 					loading={isLazy ? 'lazy' : 'eager'}

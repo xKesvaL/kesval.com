@@ -1,22 +1,22 @@
 export interface BlogPost {
 	title: string;
 	excerpt: string;
-	slug: string;
 	publishedAt: Date;
 	updatedAt?: Date;
 	published?: boolean;
-	categories: Categories[];
+	tags: BlogTags[];
 	content: string;
 	readingTime: string;
 	relatedPosts?: BlogPost[];
 	hidden?: boolean;
 	coverImage?: string;
 	coverImageAlt?: string;
+	slug: string;
 }
 
-export type Categories = (typeof blogCategories)[number];
+export type BlogTags = (typeof blogTags)[number];
 
-export const blogCategories = [] as const;
+export const blogTags = [] as const;
 
 export interface PaginatedResponse<T> {
 	items: T[];

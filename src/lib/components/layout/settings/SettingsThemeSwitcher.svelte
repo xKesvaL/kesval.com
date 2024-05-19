@@ -22,7 +22,7 @@
 	</h3>
 	<Select.Root bind:selected>
 		<Select.Trigger>
-			<Select.Value placeholder="Select a theme" />
+			<Select.Value />
 		</Select.Trigger>
 		<Select.Content>
 			<Select.Group>

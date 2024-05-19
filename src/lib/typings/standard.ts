@@ -26,7 +26,7 @@ export type BrandColors = Record<BrandColor, string>;
 export type BrandColor = 'primary' | 'secondary';
 
 export type ThemeColor =
-	| 'accent'
+	| 'tertiary'
 	| 'background'
 	| 'card'
 	| 'destructive'
