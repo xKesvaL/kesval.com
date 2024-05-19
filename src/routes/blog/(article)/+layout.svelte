@@ -16,6 +16,7 @@
 	import ResponsiveDialog from '$lib/components/base/ResponsiveDialog.svelte';
 	import IconBrandX from '$lib/icons/IconBrandX.svelte';
 	import { languageTag } from '$paraglide/runtime.js';
+	import { theme } from '$lib/stores/theme';
 
 </script>
 
@@ -90,7 +91,7 @@
 				reactionsEnabled="1"
 				emitMetadata="1"
 				inputPosition="top"
-				theme="https://giscus.app/themes/custom_example.css"
+				theme={$theme === 'dark' ? 'dark' : $theme === 'auto' ? 'preferred_color_scheme' : 'light'}
 				lang={languageTag()}
 				loading="lazy"
 			/>
