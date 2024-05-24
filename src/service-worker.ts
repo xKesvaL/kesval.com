@@ -26,5 +26,9 @@ sw.addEventListener('activate', (event) => {
 });
 
 sw.addEventListener('fetch', async (event) => {
+	if (event.request.method !== 'GET' || event.request.url.startsWith('chrome-extension://') || event.request.url.includes('extension')) {
+		return;
+	}
+
 	event.respondWith(getFromCache(CACHE, ASSETS, event.request));
 });

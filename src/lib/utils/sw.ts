@@ -28,7 +28,15 @@ export const getFromCache = async (
 	const cache = await caches.open(cacheKey);
 
 	if (assets.includes(url.pathname)) {
-		return cache.match(url.pathname) as Promise<Response>;
+		const cachedResponse = await cache.match(url.pathname);
+
+		if (cachedResponse) {
+			return cachedResponse;
+		}
+		
+		const response = await fetch(request);
+		cache.put(url.pathname, response.clone());
+		return response;
 	}
 
 	try {
@@ -40,6 +48,12 @@ export const getFromCache = async (
 
 		return response;
 	} catch (e) {
-		return cache.match(request) as Promise<Response>;
+		const cachedResponse = await cache.match(url.pathname);
+
+		if (cachedResponse) {
+			return cachedResponse;
+		}
+
+		throw e;
 	}
 };

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { page } from '$app/stores';
 
 	import Seo from '$lib/components/base/SEO.svelte';
@@ -6,6 +6,8 @@
 	import { activeLayout } from '$lib/stores/common';
 	import { settings } from '$lib/stores/settings';
 	import dayjs from 'dayjs';
+	import "dayjs/locale/en";
+	import "dayjs/locale/fr";
 	import Giscus from '@giscus/svelte';
 
 	export let data;
@@ -55,7 +57,7 @@
 							{m.by_author({ author: "Jordan Abeddou" })}
 						</p>
 						<p class="!m-0 !text-sm md:!text-base text-foreground/75">
-							{dayjs(data.post.publishedAt).format("DD MMMM YYYY")} - {data.post.readingTime}
+							{dayjs(data.post.publishedAt).locale(languageTag()).format("DD MMMM YYYY")} - {data.post.readingTime}
 						</p>
 					</div>
 					<div class="ml-auto flex items-center">
@@ -83,10 +85,10 @@
 			<Giscus
 				id="comments"
 				repo="xKesvaL/kesval.com"
-				repoId="R_kgDOJLg2dQ="
-				category="Comments"
-				categoryId="DIC_kwDOJLg2dc4CWYLK"
-				mapping="pathname"
+        repoId="R_kgDOJLg2dQ"
+        category="Comments"
+        categoryId="DIC_kwDOJLg2dc4Cfd7h"
+				mapping="title"
 				term="Welcome to @giscus/react component!"
 				reactionsEnabled="1"
 				emitMetadata="1"
@@ -99,9 +101,3 @@
 
 	{/if}
 {/key}
-
-<style lang="postcss">
-	:global(#comments) {
-		--color-border-default: hsl(var(--border));
-	} 
-</style>

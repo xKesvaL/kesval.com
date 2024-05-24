@@ -13,6 +13,9 @@
 
 	import cookies from 'js-cookie';
 	import { goto } from '$app/navigation';
+	import { translateBlogPostSlug } from '$lib/utils/posts';
+	import { activeLayout } from '$lib/stores/common';
+	import { route } from '$lib/ROUTES';
 
 	const transformLocaleToFlag = (locale: string) => {
 		switch (locale.toLowerCase().split('-')[0]) {
@@ -31,9 +34,17 @@
 
 	const onChange = async (event: MouseEvent, lang: AvailableLanguageTag) => {
 		event.preventDefault();
+		const anchor = event.currentTarget as HTMLAnchorElement;
+		
+		if ($activeLayout === 'blog') {
+			const slug = $page.url.pathname.split('/').pop();
+			if (!slug) return await goto(anchor.href);
+			const translatedSlug = translateBlogPostSlug($page.data.posts[lang]?.items, slug);
+			await goto(`${i18n.resolveRoute(route('/blog'))}/${translatedSlug}`);
+		}
 
 		cookies.set('lang', lang);
-		await goto((event.currentTarget as HTMLAnchorElement).href);
+		await goto(anchor.href);
 	};
 
 	$: emoji = getFlagEmoji(transformLocaleToFlag(selected.value));

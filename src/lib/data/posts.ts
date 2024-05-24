@@ -42,7 +42,7 @@ export const getPosts = async (
 			frontmatterToBlogPost(
 				parsedData.data as Record<string, never>,
 				parsedData.content,
-				mdFile.split("-").slice(3).join("-").replace(".md", ""),
+				mdFile.replace(".md", ""),
 				options.language,
 			),
 		);

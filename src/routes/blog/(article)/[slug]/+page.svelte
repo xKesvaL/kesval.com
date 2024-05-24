@@ -1,7 +1,8 @@
 <script lang="ts">
 	import Markdown from '$lib/components/markdown/Markdown.svelte';
+	import type { PageData } from './$types';
 
-	export let data;
+	export let data: PageData;
 </script>
 
 <div>

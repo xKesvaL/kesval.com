@@ -1,6 +1,6 @@
 ---
 title: Svelte, the best framework
-excerpt: Why Svelte and SvelteKit are the best choices to build the best web applications. We'll also explore the upcoming Svelte 5 release.
+excerpt: Why Svelte and SvelteKit are the best choices to build the best web applications.
 publishedAt: 2023-08-12
 updatedAt: 2024-05-10
 tags:
@@ -13,6 +13,8 @@ tags:
   - Framework
   - Opinion
 coverImage: "/blog/svelte-the-best-framework/cover.png"
+coverImageAlt: "Svelte logo"
+id: 1
 ---
 
 ## Svelte, a cool kid
@@ -80,6 +82,8 @@ As I said before, Svelte is a compiler. This means that it compiles your code in
 ### Stores
 
 When you have a big application, you usually have plenty of states that need to be shared between components, and you often use a state management library like Redux or MobX. Svelte has a built-in solution for that, and it's called Svelte Stores. It's basically a reactive variable that can be shared between components, and is really easy to use.
+
+`game.ts`
 
 ```ts
 import { writable } from 'svelte/store';
@@ -203,7 +207,7 @@ There's all sorts of different pages you can use, and here's a list of them:
 - `+layout.server.(js|ts)` : Any code that you want to run only on the server before the layout is rendered
 - `+error.svelte` : The error page that will be rendered when an error occurs
 
-### TypeScript
+### TypeScript Support
 
 If you're not using TypeScript yet, you really should because Svelte has incredible support for typescript, as everything is carefuly typed and there's also plenty of useful generated types! Let's say this was my `+page.ts` file:
 

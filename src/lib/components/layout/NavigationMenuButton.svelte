@@ -10,8 +10,8 @@
 	variant="ghost"
 	aria-expanded={$navigationOpen}
 	aria-controls="navigation"
-	on:click={() => navigationOpen.toggle()}
-	class="bg-popover/75 rounded-full text-muted-foreground !transition-all !duration-0 hover:bg-background/75 hover:text-foreground {$navigationOpen
+	on:click={() => navigationOpen.toggle()} 
+	class="bg-popover rounded-full text-muted-foreground !transition-all !duration-0 hover:bg-popover/90 hover:text-foreground {$navigationOpen
 		? 'scale-[2] bg-transparent text-white !duration-300 hover:bg-transparent hover:text-white'
 		: ''}"
 	aria-label={m.common_toggleMenu()}

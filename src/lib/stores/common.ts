@@ -24,7 +24,7 @@ export const navigationOpen = createNavigationOpenStore();
 
 export const scrollLocked = writable<boolean>(false);
 
-const layouts = ["base", "blog"];
+const layouts = ["base", "blog"] as const;
 
 export type Layout = (typeof layouts)[number];
 
