@@ -42,7 +42,4 @@ export default defineConfig({
 			$paraglide: resolve("./src/paraglide"),
 		},
 	},
-	build: {
-		target: ['es2020', 'edge89', 'firefox89', 'chrome89', 'safari15']
-	}
 });

@@ -10,9 +10,9 @@ interface GetPostsOptions {
 	language: AvailableLanguageTag;
 }
 
-export const getPosts = async (
+export const getPosts = (
 	options: GetPostsOptions,
-): Promise<PaginatedResponse<BlogPost>> => {
+): PaginatedResponse<BlogPost> => {
 	// Read all files in the specified directory and get the .md files
 	const files = import.meta.glob("/src/posts/**/*.md", {
 		eager: true,
@@ -63,7 +63,7 @@ export const getPostBySlug = async (
 	slug: string,
 	language: AvailableLanguageTag,
 ): Promise<BlogPost | null> => {
-	const allPosts = await getPosts({ language: language });
+	const allPosts = getPosts({ language: language });
 	const post = allPosts.items?.find((post) => post.slug === slug) ?? null;
 	if (post) {
 		post.relatedPosts = getRelatedPosts(post, allPosts.items);
@@ -134,6 +134,6 @@ const getRelatedPosts = (
 
 
 export const posts = {
-	en: await getPosts({ language: "en" }),
-	fr: await getPosts({ language: "fr" }),
+	en: getPosts({ language: "en" }),
+	fr: getPosts({ language: "fr" }),
 } as const;
