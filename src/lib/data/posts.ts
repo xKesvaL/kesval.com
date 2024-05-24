@@ -59,19 +59,6 @@ export const getPosts = (
 	};
 };
 
-export const getPostBySlug = async (
-	slug: string,
-	language: AvailableLanguageTag,
-): Promise<BlogPost | null> => {
-	const allPosts = getPosts({ language: language });
-	const post = allPosts.items?.find((post) => post.slug === slug) ?? null;
-	if (post) {
-		post.relatedPosts = getRelatedPosts(post, allPosts.items);
-	}
-
-	return post;
-};
-
 export const getAllSlugs = async (): Promise<string[]> => {
 	const files = import.meta.glob("/src/posts/en/*.md", {
 		eager: true,

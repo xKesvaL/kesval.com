@@ -9,8 +9,9 @@
 	import "dayjs/locale/en";
 	import "dayjs/locale/fr";
 	import Giscus from '@giscus/svelte';
+	import type { LayoutData } from './$types';
 
-	export let data;
+	export let data: LayoutData;
 
 	import * as m from "$paraglide/messages";
 	import { Button } from '$lib/components/ui/button';
@@ -36,7 +37,7 @@
 		</header>
 
 		<div
-			class="mx-auto -mt-64 relative pt-1 md:pt-10 max-w-[calc((var(--prose-mw-num)*1ch)+(44px*var(--prose-fs-num))-40rem)] transition-all isolate"
+			class="article-container mx-auto -mt-64 relative pt-1 md:pt-10 max-w-[calc((var(--prose-mw-num)*1ch)+(44px*var(--prose-fs-num))-40rem)] transition-all isolate"
 			style:--prose-mw-num={`${$settings.readingLength}`}
 			style:--prose-fs-num={`${$settings.readingSize}`}
 			>
@@ -101,3 +102,10 @@
 
 	{/if}
 {/key}
+
+<style>
+	article-container {
+		--prose-mw-num: 65;
+		--prose-fs-num: 18;
+	}
+</style>

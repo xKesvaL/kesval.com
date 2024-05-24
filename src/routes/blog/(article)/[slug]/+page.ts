@@ -9,6 +9,5 @@ export const load: PageLoad = async ({ parent }) => {
 
 export const entries: EntryGenerator = async () => {
 	const slugs = await getAllSlugs();
-	console.log('slugs', slugs);
 	return slugs.map((slug) => ({ slug }));
 };
