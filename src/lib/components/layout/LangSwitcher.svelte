@@ -16,7 +16,6 @@
 	import { translateBlogPostSlug } from '$lib/utils/posts';
 	import { activeLayout } from '$lib/stores/common';
 	import { route } from '$lib/ROUTES';
-	import { posts } from '$lib/data/posts';
 
 	const transformLocaleToFlag = (locale: string) => {
 		switch (locale.toLowerCase().split('-')[0]) {
@@ -40,7 +39,7 @@
 		if ($activeLayout === 'blog') {
 			const slug = $page.url.pathname.split('/').pop();
 			if (!slug) return await goto(anchor.href);
-			const translatedSlug = translateBlogPostSlug(posts[lang]?.items, slug);
+			const translatedSlug = translateBlogPostSlug($page.data.posts[lang]?.items, slug);
 			await goto(`${i18n.resolveRoute(route('/blog'))}/${translatedSlug}`);
 		}
 

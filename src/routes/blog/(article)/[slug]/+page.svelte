@@ -1,14 +1,12 @@
 <script lang="ts">
-	import { page } from '$app/stores';
 	import Markdown from '$lib/components/markdown/Markdown.svelte';
-	import { posts } from '$lib/data/posts';
-	import { languageTag } from '$paraglide/runtime';
+	import type { PageData } from './$types';
 
-	const post = posts[languageTag()].items.find((post) => post.slug === $page.params.slug);
+	export let data: PageData;
 </script>
 
 <div>
-	{#if post}
-		<Markdown content={post.content} />
+	{#if data.post}
+		<Markdown content={data.post.content} />
 	{/if}
 </div>

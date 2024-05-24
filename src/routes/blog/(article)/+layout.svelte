@@ -11,6 +11,8 @@
 	import Giscus from '@giscus/svelte';
 	import type { LayoutData } from './$types';
 
+	export let data: LayoutData;
+
 	import * as m from "$paraglide/messages";
 	import { Button } from '$lib/components/ui/button';
 	import IconShare from '$lib/icons/IconShare.svelte';
@@ -18,23 +20,20 @@
 	import IconBrandX from '$lib/icons/IconBrandX.svelte';
 	import { languageTag } from '$paraglide/runtime.js';
 	import { theme } from '$lib/stores/theme';
-	import { posts } from '$lib/data/posts';
-
-	const post = posts[languageTag()]?.items.find((post) => post.slug === $page.params.slug);
 
 </script>
 
 {#key $page.url.pathname}
-	{#if post && $activeLayout === 'blog'}
+	{#if data.post && $activeLayout === 'blog'}
 		<Seo
-			title={post.title}
-			description={post.excerpt}
+			title={data.post.title}
+			description={data.post?.excerpt}
 			url={`${BRAND.url}${$page.url.pathname}`}
 		/>
 
 		<header class="-mt-24 h-[28rem] relative isolate bg-card">
 			<div class="bg-gradient-to-b from-background/25 to-transparent via-75% via-background z-10 h-[calc(100%+16.5rem)] w-full absolute" /> 
-			<img class="object-cover w-full h-full" src={post.coverImage} alt={post.coverImageAlt} />
+			<img class="object-cover w-full h-full" src={data.post.coverImage} alt={data.post.coverImageAlt} />
 		</header>
 
 		<div
@@ -49,7 +48,7 @@
 				style:--prose-fs={`${$settings.readingSize}px`}
 				style:--prose-lh={`${$settings.readingHeight}`}
 			>
-				<img class="object-cover rounded-xl !w-full !h-48 md:!h-96 !my-0" src={post.coverImage} alt={post.coverImageAlt} />
+				<img class="object-cover rounded-xl !w-full !h-48 md:!h-96 !my-0" src={data.post.coverImage} alt={data.post.coverImageAlt} />
 				<div class="mt-4 md:mt-8 flex gap-4">
 					<div class="w-12 h-12 md:w-14 md:h-14 rounded-full overflow-hidden border-2 border-primary">
 						<enhanced:img src="$assets/me/hero.jpg" class="!my-0" alt={m.common_photoOfMe()} />
@@ -59,14 +58,14 @@
 							{m.by_author({ author: "Jordan Abeddou" })}
 						</p>
 						<p class="!m-0 !text-sm md:!text-base text-foreground/75">
-							{dayjs(post.publishedAt).locale(languageTag()).format("DD MMMM YYYY")} - {post.readingTime}
+							{dayjs(data.post.publishedAt).locale(languageTag()).format("DD MMMM YYYY")} - {data.post.readingTime}
 						</p>
 					</div>
 					<div class="ml-auto flex items-center">
 						<ResponsiveDialog title={m.share_post()} buttonProps={{ size: "icon", class: "p-2", variant: "ghost" }}>
 							<IconShare slot="trigger" />
 
-							<Button href={`https://x.com/intent/post?text=${m.share_post_content({ title: post.title, url: `${BRAND.url}/blog/${post.slug}` })}`} target="_blank" class="gap-2 w-full" variant="outline">
+							<Button href={`https://x.com/intent/post?text=${m.share_post_content({ title: data.post.title, url: `${BRAND.url}/blog/${data.post.slug}` })}`} target="_blank" class="gap-2 w-full" variant="outline">
 								<div class="w-6 h-6">
 								<IconBrandX />
 								</div>
@@ -75,8 +74,8 @@
 						</ResponsiveDialog>
 					</div>
 				</div>
-				<h1 class="text-[2.25em] leading-tight mt-4 md:mt-8">{post.title}</h1>
-				<p class="text-foreground/90">{post.excerpt}</p>
+				<h1 class="text-[2.25em] leading-tight mt-4 md:mt-8">{data.post.title}</h1>
+				<p class="text-foreground/90">{data.post.excerpt}</p>
 
 				<div class="w-full h-[1px] bg-border mt-10" />
 
@@ -105,7 +104,7 @@
 {/key}
 
 <style>
-	.article-container {
+	article-container {
 		--prose-mw-num: 65;
 		--prose-fs-num: 18;
 	}
