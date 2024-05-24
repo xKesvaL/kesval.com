@@ -11,3 +11,5 @@ export const load: PageLoad = async ({ parent }) => {
 // 	const slugs = await getAllSlugs();
 // 	return slugs.map((slug) => ({ slug }));
 // };
+
+export const prerender = false;
