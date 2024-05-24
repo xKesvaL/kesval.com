@@ -21,6 +21,7 @@
 	import { languageTag } from '$paraglide/runtime.js';
 	import { theme } from '$lib/stores/theme';
 
+	console.log('layout.svelte', data)
 </script>
 
 {#key $page.url.pathname}

@@ -3,6 +3,7 @@
 	import type { PageData } from './$types';
 
 	export let data: PageData;
+	console.log('slug.page.svelte', data)
 </script>
 
 <div>
