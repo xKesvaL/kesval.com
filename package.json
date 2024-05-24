@@ -57,6 +57,7 @@
     "typescript": "^5.4.5",
     "vite": "^5.2.11",
     "vite-plugin-kit-routes": "^0.6.2",
+    "vite-plugin-node-polyfills": "^0.22.0",
     "zod": "^3.23.8"
   },
   "private": true,

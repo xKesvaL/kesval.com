@@ -1,58 +1,61 @@
 import type { BlogPost, PaginatedResponse } from "$lib/typings/blog";
 import type { AvailableLanguageTag } from "$paraglide/runtime";
-import fs from "fs-extra";
-import { join } from "node:path";
 import grayMatter from "gray-matter";
 import { frontmatterToBlogPost } from "$lib/utils/posts";
 
 const PAGE_SIZE = 10;
-const BASE_FILE_PATH = join(process.cwd(), "/src/posts");
-const BASE_EN_FILE_PATH = `${BASE_FILE_PATH}/en`;
+const BASE_EN_FILE_PATH = "src/posts/en";
 
 interface GetPostsOptions {
 	language: AvailableLanguageTag;
-	page?: number;
-	count?: number;
 }
 
 export const getPosts = async (
 	options: GetPostsOptions,
 ): Promise<PaginatedResponse<BlogPost>> => {
 	// Read all files in the specified directory and get the .md files
-	const fileNames = await fs.readdir(`${BASE_FILE_PATH}/${options.language}`);
-	const mdFiles = fileNames.filter((fileName) => fileName.endsWith(".md"));
-	// Reverse the array so that the newest posts are first
-	mdFiles.reverse();
-
-	const paginatedMdFiles = paginate({
-		items: mdFiles,
-		page: options.page,
-		count: options.count,
+	const files = import.meta.glob("/src/posts/**/*.md", {
+		eager: true,
+		query: '?raw'
 	});
+
+	// Reverse the array so that the newest posts are first
+	// mdFiles.reverse();
 
 	const blogPosts: BlogPost[] = [];
 
-	for (const mdFile of paginatedMdFiles) {
-		const fileContent = await fs.readFile(
-			`${BASE_FILE_PATH}/${options.language}/${mdFile}`,
-			"utf-8",
-		);
-		const parsedData = grayMatter(fileContent);
+	const entries = Object.entries(files).map(([filename, content]) => {
+		const baseSlug = filename.split("/").slice(3);
+
+		if (baseSlug[0] !== options.language) {
+			return null;
+		}
+
+		const slug = baseSlug.join("/").replace(".md", "").replace(`${options.language}/`, "")
+		
+		return [slug, content] as [string, string];
+	}).filter(Boolean);
+
+
+	for (const [filename, content] of entries) {
+		// biome-ignore lint/suspicious/noExplicitAny: It's an import. The type is { default: string }
+		const parsedData = grayMatter((content as any).default);
 		blogPosts.push(
 			frontmatterToBlogPost(
 				parsedData.data as Record<string, never>,
 				parsedData.content,
-				mdFile.replace(".md", ""),
+				filename.replace(".md", ""),
 				options.language,
 			),
 		);
 	}
 
+	const length = Object.keys(files).length;
+
 	return {
 		items: blogPosts,
-		totalItems: mdFiles.length,
-		totalPages: Math.ceil(mdFiles.length / (options.count ?? PAGE_SIZE)),
-		currentPage: options.page ?? 1,
+		totalItems: length,
+		totalPages: Math.ceil(length / PAGE_SIZE),
 	};
 };
 
@@ -70,11 +73,14 @@ export const getPostBySlug = async (
 };
 
 export const getAllSlugs = async (): Promise<string[]> => {
-	const fileNames = await fs.readdir(BASE_EN_FILE_PATH);
+	const files = import.meta.glob("/src/posts/en/*.md", {
+		eager: true,
+		query: '?raw'
+	});
 
 	// Filenames are in the format yyyy-MM-dd-slug.md
 	// Grab only the slug
-	const slugs = fileNames.map((fileName) =>
+	const slugs = Object.keys(files).map((fileName) =>
 		fileName.split("-").slice(3).join("-").replace(".md", ""),
 	);
 
@@ -125,3 +131,9 @@ const getRelatedPosts = (
 
 	return rankedPosts.map((p) => p.post).slice(0, count);
 };
+
+
+export const posts = {
+	en: await getPosts({ language: "en" }),
+	fr: await getPosts({ language: "fr" }),
+} as const;

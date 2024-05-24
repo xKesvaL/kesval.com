@@ -1,5 +1,4 @@
 import type { BlogPost } from "$lib/typings/blog";
-import type { AvailableLanguageTag } from "$paraglide/runtime";
 import { readingTime } from "reading-time-estimator";
 import striptags from "striptags";
 

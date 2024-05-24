@@ -6,6 +6,7 @@ import { enhancedImages } from "@sveltejs/enhanced-img";
 import type { KIT_ROUTES } from "$lib/ROUTES";
 import { PERSONAL } from "./src/lib/data/personal";
 import { paraglide } from "@inlang/paraglide-sveltekit/vite";
+import { nodePolyfills } from 'vite-plugin-node-polyfills';
 
 export default defineConfig({
 	plugins: [
@@ -31,6 +32,7 @@ export default defineConfig({
 			},
 		}),
 		enhancedImages(),
+		nodePolyfills(),
 		sveltekit(),
 	],
 	define: {
