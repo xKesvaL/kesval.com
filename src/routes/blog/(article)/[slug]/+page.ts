@@ -7,7 +7,7 @@ export const load: PageLoad = async ({ parent }) => {
 	return data;
 };
 
-export const entries: EntryGenerator = async () => {
-	const slugs = await getAllSlugs();
-	return slugs.map((slug) => ({ slug }));
-};
+// export const entries: EntryGenerator = async () => {
+// 	const slugs = await getAllSlugs();
+// 	return slugs.map((slug) => ({ slug }));
+// };
