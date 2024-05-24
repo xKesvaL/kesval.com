@@ -15,7 +15,6 @@
 		{#each totalExperiences as experience, i (experience.company)}
 			<ResumeExperience
 				{experience}
-				nextExperienceHasCurrent={!totalExperiences[i + 1]?.endDate}
 				isLast={i === totalExperiences.length - 1}
 			/>
 		{/each}

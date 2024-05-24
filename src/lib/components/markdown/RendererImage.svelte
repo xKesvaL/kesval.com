@@ -1,5 +1,4 @@
 <script lang="ts">
-	export let title: string | undefined;
 	export let text: string;
 	export let href: string;
 

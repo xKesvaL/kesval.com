@@ -15,7 +15,6 @@
 	import { languageTag } from '$paraglide/runtime';
 
 	export let experience: Experience;
-	export let nextExperienceHasCurrent: boolean;
 	export let isLast: boolean;
 
 	const durationDate = dayjs(experience.endDate || Date.now()).diff(experience.startDate);
