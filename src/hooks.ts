@@ -1,2 +1,2 @@
-// import { i18n } from "$lib/utils/i18n";
-// export const reroute = i18n.reroute();
+import { i18n } from "$lib/utils/i18n";
+export const reroute = i18n.reroute();
