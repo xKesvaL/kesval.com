@@ -11,7 +11,6 @@
 	import { page } from '$app/stores';
 	import { LucideCheck } from 'lucide-svelte';
 
-	import cookies from 'js-cookie';
 	import { goto } from '$app/navigation';
 	import { translateBlogPostSlug } from '$lib/utils/posts';
 	import { activeLayout } from '$lib/stores/common';
@@ -40,10 +39,11 @@
 			const slug = $page.url.pathname.split('/').pop();
 			if (!slug) return await goto(anchor.href);
 			const translatedSlug = translateBlogPostSlug($page.data.posts[lang]?.items, slug);
-			await goto(`${i18n.resolveRoute(route('/blog'))}/${translatedSlug}`);
+			console.log(i18n.resolveRoute(route('/blog')), lang);
+			console.log(translatedSlug);
+			return await goto(`${i18n.resolveRoute(route('/blog'), lang)}/${translatedSlug}`);
 		}
 
-		cookies.set('lang', lang);
 		await goto(anchor.href);
 	};
 
