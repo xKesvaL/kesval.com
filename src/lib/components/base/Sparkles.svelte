@@ -1,75 +1,75 @@
 <script lang="ts">
-  import SingleSparkle from '$lib/components/base/SingleSparkle.svelte';
-  import { onDestroy, onMount } from 'svelte';
-  import type { SparkleType } from '$lib';
+	import SparklesSingle from '$lib/components/base/SparklesSingle.svelte';
+	import { onDestroy, onMount } from 'svelte';
 
-  export let color: 'primary' | 'secondary' = 'secondary';
+	interface SparkleType {
+		id: string;
+		createdAt: number;
+		color: string;
+		size: string;
+		style: { top: string; left: string };
+	}
 
-  export let highlight: 'off' | 'primary' | 'secondary' = 'primary';
+	export let color: 'primary' | 'secondary' | 'tertiary' = 'tertiary';
+	export let highlight: 'off' | 'primary' | 'secondary' | 'tertiary' = 'off';
+	export let size: 10 | 20 | 30 = 20;
+	const random = (min: number, max: number) => Math.floor(Math.random() * (max - min)) + min;
 
-  const random = (min: number, max: number) => Math.floor(Math.random() * (max - min)) + min;
+	const generateSparkle = (): SparkleType => {
+		return {
+			id: String(random(10000, 99999)),
+			createdAt: Date.now(),
+			color: `hsl(var(--${color}))`,
+			size: random(size, size * 2).toString(),
+			style: {
+				// Pick a random spot in the available space
+				top: random(-10, 100) + '%',
+				left: random(-10, 110) + '%'
+			}
+		};
+	};
 
-  const generateSparkle = (): SparkleType => {
-    return {
-      id: String(random(10000, 99999)),
-      createdAt: Date.now(),
-      color:
-        color === 'primary'
-          ? 'var(--primary-500)'
-          : color === 'secondary'
-          ? 'var(--secondary-500)'
-          : 'var(--secondary-500)',
-      size: random(10, 20).toString(),
-      style: {
-        // Pick a random spot in the available space
-        top: random(-10, 80) + '%',
-        left: random(0, 100) + '%',
-      },
-    };
-  };
+	let sparkles: SparkleType[] = [];
+	// eslint-disable-next-line no-undef
+	let sparklesInterval: NodeJS.Timeout;
 
-  let sparkles: SparkleType[] = [];
-  // eslint-disable-next-line no-undef
-  let sparklesInterval: NodeJS.Timer;
+	onMount(() => {
+		sparklesInterval = setInterval(() => {
+			const now = Date.now();
+			const sparkle = generateSparkle();
+			const nextSparkles = sparkles.filter((sparkle) => {
+				const delta = now - sparkle.createdAt;
+				return delta < 2000;
+			});
+			nextSparkles.push(sparkle);
+			sparkles = nextSparkles;
+		}, 500);
+	});
 
-  onMount(() => {
-    sparklesInterval = setInterval(() => {
-      const now = Date.now();
-      // Create a new sparkle
-      const sparkle = generateSparkle();
-      // Clean up any "expired" sparkles
-      const nextSparkles = sparkles.filter((sparkle) => {
-        const delta = now - sparkle.createdAt;
-        return delta < 1500;
-      });
-      // Include our new sparkle
-      nextSparkles.push(sparkle);
-      sparkles = nextSparkles;
-    }, 400);
-  });
-
-  onDestroy(() => {
-    clearInterval(sparklesInterval);
-  });
+	onDestroy(() => {
+		clearInterval(sparklesInterval);
+	});
 </script>
 
-<span class="sparkle-wrapper">
-  {#each sparkles as sparkle (sparkle.id)}
-    <SingleSparkle color={sparkle.color} size={sparkle.size} style={sparkle.style} />
-  {/each}
-  <span class="slot-wrapper" style={highlight ? `color: var(--${highlight}-700); font-weight: 700;` : ''}>
-    <slot />
-  </span>
+<span class="sparkle-wrapper -z-50">
+	{#each sparkles as sparkle (sparkle.id)}
+		<SparklesSingle color={sparkle.color} size={sparkle.size} style={sparkle.style} />
+	{/each}
+	<span
+		class="slot-wrapper relative"
+		style={highlight !== 'off' ? `color: hsl(var(--${highlight})); font-weight: 700;` : ''}
+	>
+		<slot />
+	</span>
 </span>
 
 <style lang="scss">
-  .sparkle-wrapper {
-    position: relative;
-    display: inline-block;
+	.sparkle-wrapper {
+		position: relative;
+		display: inline-block;
 
-    .slot-wrapper {
-      position: relative;
-      z-index: 1;
-    }
-  }
+		.slot-wrapper {
+			position: relative;
+		}
+	}
 </style>

@@ -1,82 +1,79 @@
 <script lang="ts">
-  import ContactBot from '$lib/components/layout/ContactBot.svelte';
-  import Footer from '$lib/components/layout/Footer.svelte';
-  import Header from '$lib/components/layout/Header.svelte';
-  import { page } from '$app/stores';
-  import { browser, dev } from '$app/environment';
-  import '@kesval/design';
-  import '$lib/scss/main.scss';
-  import { webVitals } from '$lib/utils/vitals';
-  import { inject } from '@vercel/analytics';
-  import BackToTop from '$lib/components/layout/BackToTop.svelte';
-  import { navigating } from '$app/stores';
-  import NProgress from 'nprogress';
-  import '$lib/scss/nprogress.scss';
-  import type { LayoutData } from './$types';
-  import { polyfillCountryFlagEmojis } from '$lib/utils/functions';
-  import { locale, locales } from 'svelte-i18n';
-  import { onNavigate } from '$app/navigation';
-  NProgress.configure({ minimum: 0.2, easing: 'ease', speed: 600 });
-  $: $navigating ? NProgress.start() : NProgress.done();
-  polyfillCountryFlagEmojis();
+	import { navigating, page } from '$app/stores';
+	import '$lib/styles/fonts.scss';
+	import '$lib/styles/main.scss';
+	import '$lib/styles/nprogress.scss';
+	import nprogress from 'nprogress';
+	import { setupViewTransition } from 'sveltekit-view-transition';
 
-  export let data: LayoutData;
+	import BackToTopButton from '$lib/components/layout/BackToTopButton.svelte';
+	import ContactBot from '$lib/containers/layout/ContactBot.svelte';
+	import Footer from '$lib/components/layout/Footer.svelte';
+	import Navigation from '$lib/containers/layout/Navigation.svelte';
 
-  const { email, url } = data;
+	import '../app.postcss';
+	import { polyfillCountryFlagEmojis } from '$lib/utils/functions';
+	import { onMount } from 'svelte';
+	import { browser } from '$app/environment';
+	import { ParaglideJS } from '@inlang/paraglide-sveltekit';
+	import { i18n } from '$lib/utils/i18n';
 
-  $: if (browser) {
-    const paramsLang = url.searchParams.get('lang');
-    let lang = paramsLang || localStorage.getItem('lang') || window.navigator.language || 'en';
-    lang = lang.split('-')[0];
-    localStorage.setItem('lang', lang);
-    locale.set(lang);
-  }
+	import { activeLayout, scrollLocked } from '$lib/stores/common';
+	import { settings } from '$lib/stores/settings';
+	import Seo from '$lib/components/base/SEO.svelte';
+	import { injectSpeedInsights } from '@vercel/speed-insights';
 
-  if (!dev) {
-    inject({
-      mode: 'production',
-    });
-  }
+	$: if (browser) {
+		document.body.setAttribute('data-scroll-locked', $scrollLocked ? 'true' : 'false');
+		document.documentElement.setAttribute('data-dyslexic', $settings.dyslexia ? 'true' : 'false');
+	}
 
-  let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
+	nprogress.configure({ easing: 'ease', minimum: 0.2, speed: 600 });
+	$: $navigating && browser ? nprogress.start() : nprogress.done();
 
-  $: if (browser && analyticsId && !dev) {
-    webVitals({
-      path: $page.url.pathname,
-      params: $page.params,
-      analyticsId,
-    });
-  }
+	setupViewTransition();
 
-  onNavigate((navigation) => {
-    if (!document.startViewTransition) return;
+	onMount(() => {
+		polyfillCountryFlagEmojis();
+	});
 
-    return new Promise((resolve) => {
-      document.startViewTransition(async () => {
-        resolve();
-        await navigation.complete;
-      });
-    });
-  });
+	$: pathname = $page.url.pathname;
+	$: activeLayout.handle($page.url);
+
+	injectSpeedInsights();
 </script>
 
-<svelte:head>
-  <meta name="og:locale" content={$locale || 'en'} />
-  {#each $locales as l}
-    {#if l !== $locale}
-      <meta name="og:locale:alternate" content={l} />
-    {/if}
-  {/each}
-  <meta http-equiv="Content-Language" content={$locale || 'en'} />
-</svelte:head>
+{#if $activeLayout === 'base'}
+	<Seo {pathname} />
+{/if}
 
-<Header />
+<ParaglideJS {i18n}>
+	<Navigation />
 
-<main>
-  <slot />
-</main>
+	<main>
+		<slot />
+	</main>
 
-<ContactBot {email} />
-<BackToTop />
+	<ContactBot />
+	<BackToTopButton />
+	<Footer />
+</ParaglideJS>
 
-<Footer />
+<style lang="scss">
+	main {
+		background: radial-gradient(circle at 78% 11%, hsl(var(--tertiary) / 0.075), transparent 40%),
+			radial-gradient(circle at 28% 37%, hsl(var(--primary) / 0.1), transparent 40%),
+			radial-gradient(circle at 70% 66%, hsl(var(--tertiary) / 0.075), transparent 40%),
+			radial-gradient(circle at 17% 87%, hsl(var(--primary) / 0.1), transparent 40%);
+
+		margin-top: -4rem;
+		padding-top: 4rem;
+		padding-bottom: 4rem;
+
+		min-height: 100vh;
+
+		@media (min-width: 1024px) {
+			padding-top: 6rem;
+		}
+	}
+</style>

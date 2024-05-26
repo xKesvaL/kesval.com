@@ -1,13 +1,18 @@
 <svg
-  width="100%"
-  height="100%"
-  stroke-width="1.5"
-  viewBox="0 0 24 24"
-  fill="none"
-  xmlns="http://www.w3.org/2000/svg"
-  stroke="currentColor">
-  >
-  <path d="M6 18.01l.01-.011M6 6.01l.01-.011" stroke-linecap="round" stroke-linejoin="round" />
-  <path
-    d="M2 9.4V2.6a.6.6 0 01.6-.6h18.8a.6.6 0 01.6.6v6.8a.6.6 0 01-.6.6H2.6a.6.6 0 01-.6-.6zM2 21.4v-6.8a.6.6 0 01.6-.6h18.8a.6.6 0 01.6.6v6.8a.6.6 0 01-.6.6H2.6a.6.6 0 01-.6-.6z" />
+	xmlns="http://www.w3.org/2000/svg"
+	class="icon icon-tabler icon-tabler-server"
+	width="100%"
+	height="100%"
+	viewBox="0 0 24 24"
+	stroke-width="1.5"
+	stroke="currentColor"
+	fill="none"
+	stroke-linecap="round"
+	stroke-linejoin="round"
+>
+	<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+	<path d="M3 4m0 3a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v2a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3z"></path>
+	<path d="M3 12m0 3a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v2a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3z"></path>
+	<path d="M7 8l0 .01"></path>
+	<path d="M7 16l0 .01"></path>
 </svg>

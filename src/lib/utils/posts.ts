@@ -1,69 +1,46 @@
-import type { Post } from '$lib';
-import Prism from 'prismjs';
+import type { BlogPost } from "$lib/typings/blog";
+import { readingTime } from "reading-time-estimator";
+import striptags from "striptags";
 
-const ifYouRemoveMeTheBuildFails = Prism;
-// this is so prism is included in the build
-import readingTime from 'reading-time';
-import stripTags from 'striptags';
-
-const importPosts = (): Post[] => {
-  const imports = import.meta.glob('$routes/blog/**/*.md', {
-    eager: true,
-  });
-
-  const posts: Post[] = [];
-  for (const path in imports) {
-    const slug = path.split('/').at(-2);
-    const post = imports[path] as any;
-    if (post) {
-      posts.push({
-        ...post.metadata,
-        html: post.default.render()?.html, // for reading time
-        slug,
-      });
-    }
-  }
-
-  return posts;
+export const frontmatterToBlogPost = (
+	frontmatter: Record<string, never>,
+	content: string,
+	slug: string,
+	language: string,
+): BlogPost => {
+	return {
+		slug,
+		title: frontmatter.title,
+		excerpt: frontmatter.excerpt,
+		content: content,
+		publishedAt: frontmatter.publishedAt,
+		updatedAt: frontmatter.updated,
+		coverImage: frontmatter.coverImage,
+		coverImageAlt: frontmatter.coverImageAlt,
+		tags: frontmatter.categories,
+		hidden: frontmatter.hidden,
+		readingTime: readingTime(
+			striptags(content) || "",
+			undefined,
+			language as never,
+		).text,
+	};
 };
 
-const filterPosts = (posts: Post[]): Post[] => {
-  return posts
-    .filter((post) => !post.hidden)
-    .sort((a, b) =>
-      new Date(a.date).getTime() > new Date(b.date).getTime()
-        ? -1
-        : new Date(a.date).getTime() < new Date(b.date).getTime()
-        ? 1
-        : 0,
-    )
-    .map((post) => {
-      const readingTimeResult = post.html ? readingTime(stripTags(post.html)).text : undefined;
-      const relatedPosts = getRelatedPosts(posts, post);
+export const translateBlogPostSlug = (
+	posts: BlogPost[],
+	slug: string,
+) => {
+	// We have only got the slug of the url (translated), so we need to find the identifier of the post
+	// the identifier is before the whole slug (in the filename) and is the date of the post (YYYY-MM-DD)
+	// Using the identifier we can find the translated slug in any language by searching in any
+	// language folder for a file with the same identifier. the slug looks like this "yyy-mm-dd-slug-name"
+	const datePart = slug.split("-").slice(0, 3).join("-");
+	const post = posts.find((post) => post.slug.startsWith(datePart));
 
-      return {
-        ...post,
-        readingTime: readingTimeResult ? readingTimeResult : '',
-        relatedPosts,
-      };
-    });
+	if (!post) {
+		return slug;
+	}
+
+	return post.slug;
 };
-
-const getRelatedPosts = (posts: Post[], post: Post): Post[] => {
-  const relatedPosts: Post[] = posts
-    .filter((p) => p.slug !== post.slug)
-    .filter((p) => p.categories.some((c) => post.categories.includes(c)))
-    .sort((a, b) => {
-      const aTags = a.tags.filter((t) => post.tags.includes(t));
-      const bTags = b.tags.filter((t) => post.tags.includes(t));
-      return aTags.length > bTags.length ? -1 : aTags.length < bTags.length ? 1 : 0;
-    });
-  return relatedPosts.slice(0, 3).map((p) => ({
-    ...p,
-    readingTime: p.html ? readingTime(stripTags(p.html)).text : '',
-  }));
-};
-
-export const allPosts = importPosts();
-
-export const filteredPosts = filterPosts(allPosts);

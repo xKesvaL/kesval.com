@@ -1,83 +1,90 @@
 <script lang="ts">
-  import { getFlagEmoji } from '$lib/utils/functions';
-  import { locale, locales, t } from 'svelte-i18n';
+	import { getFlagEmoji } from '$lib/utils/functions';
+	import * as Select from '$lib/components/ui/select';
+	import {
+		availableLanguageTags,
+		languageTag,
+		type AvailableLanguageTag
+	} from '$paraglide/runtime';
+	import * as m from '$paraglide/messages';
+	import { i18n } from '$lib/utils/i18n';
+	import { page } from '$app/stores';
+	import { LucideCheck } from 'lucide-svelte';
 
-  const transformLocaleToFlag = (locale: string) => {
-    switch (locale) {
-      case 'en':
-        return 'US';
-      default:
-        return locale;
-    }
-  };
+	import { goto } from '$app/navigation';
+	import { translateBlogPostSlug } from '$lib/utils/posts';
+	import { activeLayout } from '$lib/stores/common';
+	import { route } from '$lib/ROUTES';
+
+	const transformLocaleToFlag = (locale: string) => {
+		switch (locale.toLowerCase().split('-')[0]) {
+			case 'en':
+				return 'US';
+			default:
+				return locale;
+		}
+	};
+
+	let selected = {
+		value: languageTag(),
+		label: getFlagEmoji(transformLocaleToFlag(languageTag())),
+		disabled: false
+	};
+
+	const onChange = async (event: MouseEvent, lang: AvailableLanguageTag) => {
+		event.preventDefault();
+		const anchor = event.currentTarget as HTMLAnchorElement;
+		
+		if ($activeLayout === 'blog') {
+			const slug = $page.url.pathname.split('/').pop();
+			if (!slug) return await goto(anchor.href);
+			const translatedSlug = translateBlogPostSlug($page.data.posts[lang]?.items, slug);
+			return await goto(`${i18n.resolveRoute(route('/blog'), lang)}/${translatedSlug}`);
+		}
+
+		await goto(anchor.href);
+	};
+
+	$: emoji = getFlagEmoji(transformLocaleToFlag(selected.value));
 </script>
 
-<label>
-  <span class="visually-hidden">
-    {$t('std.changeLanguage')}
-  </span>
-  <select
-    on:change={(e) => {
-      localStorage.setItem('lang', e.currentTarget.value);
-      locale.set(e.currentTarget.value);
-    }}
-    class="no-anim">
-    {#each $locales as lang, i}
-      <option value={lang} selected={i === $locales.indexOf($locale || localStorage?.getItem('lang') || 'en')}>
-        {getFlagEmoji(transformLocaleToFlag(lang))}
-      </option>
-    {/each}
-  </select>
-</label>
-
-<style lang="scss">
-  select {
-    background: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    appearance: none;
-    border: none;
-    padding: 0.5rem;
-    line-height: 1.1;
-    border-radius: 0.75rem;
-    text-align: center;
-    font-family:
-      'Twemoji Country Flags',
-      system-ui,
-      -apple-system,
-      BlinkMacSystemFont,
-      'Segoe UI',
-      Roboto,
-      Oxygen,
-      Ubuntu,
-      Cantarell,
-      'Open Sans',
-      'Helvetica Neue',
-      sans-serif;
-    background: var(--base-200);
-    transition: background 0.3s ease-out;
-    height: auto;
-    font-size: var(--fs-500);
-    aspect-ratio: 1;
-    width: 2.5rem;
-    background: rgba(var(--base-200-rgb), 0.7);
-
-    &:hover {
-      background: rgba(var(--secondary-500-rgb), 0.4);
-    }
-
-    &:focus {
-      outline: none;
-      background: rgba(var(--secondary-500-rgb), 0.4);
-    }
-
-    &:focus-visible {
-      outline: 2px solid currentColor;
-    }
-
-    option {
-      background: var(--base-200);
-    }
-  }
-</style>
+<div class="font-emoji">
+	<Select.Root bind:selected>
+		<Select.Trigger
+			class="trigger flex aspect-square justify-center rounded-full border-0 bg-popover p-2 text-lg transition-all hover:bg-background"
+			aria-label={m.common_changeLanguage()}
+			icon={false}
+		>
+			{emoji}
+			<div class="sr-only">
+				{m.common_changeLanguage()}
+			</div>
+		</Select.Trigger>
+		<Select.Content class="!w-[4.5rem]">
+			{#each availableLanguageTags as lang}
+				<Select.Item
+					class="font-emoji text-lg"
+					value={lang}
+					label={getFlagEmoji(transformLocaleToFlag(lang))}
+					disabled={false}
+					asChild
+				>
+					<a
+						class="relative flex w-full cursor-default select-none items-center rounded-sm bg-card p-4 py-1.5 pl-8 pr-2 font-emoji text-lg outline-none hover:bg-accent hover:text-accent-foreground disabled:pointer-events-none disabled:opacity-50"
+						href={i18n.route($page.url.pathname)}
+						hreflang={lang}
+						aria-current={lang === languageTag() ? 'page' : undefined}
+						on:click={(event) => onChange(event, lang)}
+					>
+						<span class="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
+							{#if lang === languageTag()}
+								<LucideCheck />
+							{/if}
+						</span>
+						{getFlagEmoji(transformLocaleToFlag(lang))}
+					</a>
+				</Select.Item>
+			{/each}
+		</Select.Content>
+	</Select.Root>
+</div>

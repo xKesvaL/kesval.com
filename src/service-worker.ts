@@ -5,25 +5,30 @@
 
 const sw = self as unknown as ServiceWorkerGlobalScope;
 
-import { version, build, files, prerendered } from '$service-worker';
-import { cacheFiles, deleteOldCaches, getFromCache } from './lib/service-worker/caching';
+import { build, files, prerendered, version } from '$service-worker';
+
+import { cacheFiles, deleteOldCaches, getFromCache } from './lib/utils/sw';
 
 const CACHE = `cache-${version}`;
 
 const ASSETS = [
-  ...build, // the app itself
-  ...files, // everything in `static`
-  ...prerendered, // prerendered pages
+	...build, // the app itself
+	...files, // everything in `static`
+	...prerendered // prerendered pages
 ];
 
 sw.addEventListener('install', (event) => {
-  event.waitUntil(cacheFiles(CACHE, ASSETS).then(() => sw.skipWaiting()));
+	event.waitUntil(cacheFiles(CACHE, ASSETS).then(() => sw.skipWaiting()));
 });
 
 sw.addEventListener('activate', (event) => {
-  event.waitUntil(deleteOldCaches(CACHE).then(() => sw.clients.claim()));
+	event.waitUntil(deleteOldCaches(CACHE).then(() => sw.clients.claim()));
 });
 
-sw.addEventListener('fetch', (event) => {
-  event.respondWith(getFromCache(CACHE, ASSETS, event.request) as any);
+sw.addEventListener('fetch', async (event) => {
+	if (event.request.method !== 'GET' || event.request.url.startsWith('chrome-extension://') || event.request.url.includes('extension')) {
+		return;
+	}
+
+	event.respondWith(getFromCache(CACHE, ASSETS, event.request));
 });

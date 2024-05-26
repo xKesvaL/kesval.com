@@ -1,23 +1,45 @@
-import { sveltekit } from '@sveltejs/kit/vite';
-import { defineConfig } from 'vite';
-import { resolve } from 'path';
+import { sveltekit } from "@sveltejs/kit/vite";
+import { defineConfig } from "vite";
+import { kitRoutes } from "vite-plugin-kit-routes";
+import { resolve } from "node:path";
+import { enhancedImages } from "@sveltejs/enhanced-img";
+import type { KIT_ROUTES } from "$lib/ROUTES";
+import { PERSONAL } from "./src/lib/data/personal";
+import { paraglide } from "@inlang/paraglide-sveltekit/vite";
+import { nodePolyfills } from 'vite-plugin-node-polyfills';
 
 export default defineConfig({
-  plugins: [sveltekit()],
-  resolve: {
-    alias: {
-      $routes: resolve('./src/routes'),
-      $design: resolve('./node_modules/@kesval/design/scss/utilities'),
-    },
-  },
-  define: {
-    'import.meta.env.VERCEL_ANALYTICS_ID': JSON.stringify(process.env.VERCEL_ANALYTICS_ID),
-  },
-  css: {
-    preprocessorOptions: {
-      scss: {
-        additionalData: '@use "node_modules/@kesval/design/scss/utilities" as *;',
-      },
-    },
-  },
+	plugins: [
+		paraglide({
+			outdir: "./src/paraglide",
+			project: "./project.inlang",
+		}),
+		kitRoutes<KIT_ROUTES>({
+			format: "route(path)",
+			LINKS: {
+				linkedin: {
+					href: "https://www.linkedin.com/in/jordan-abeddou/",
+				},
+				email: {
+					href: `mailto:${PERSONAL.email}`,
+				},
+				github: {
+					href: "https://github.com/xKesvaL",
+				},
+				instagram: {
+					href: "https://www.instagram.com/xKesvaL/",
+				},
+			},
+		}),
+		enhancedImages(),
+		nodePolyfills(),
+		sveltekit(),
+	],
+	define: {
+		alias: {
+			$assets: resolve("/src/assets"),
+			$routes: resolve("./src/routes"),
+			$paraglide: resolve("./src/paraglide"),
+		},
+	},
 });
