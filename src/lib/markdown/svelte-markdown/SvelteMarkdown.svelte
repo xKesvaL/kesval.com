@@ -3,11 +3,11 @@
   import Parser from './Parser.svelte'
   import { Lexer, defaultOptions, defaultRenderers } from './markdown-parser'
   import { key } from './context'
-  import { slug } from 'github-slugger';
 	import type { Renderers } from './types';
 	import type { Token } from 'marked';
+	import { slug } from 'github-slugger';
 
-  export let source = "";
+  export let source = ""
   export let renderers: Partial<Renderers> = {}
   export let options = {}
   export let isInline = false
@@ -28,13 +28,13 @@
     dispatch('parsed', { tokens })
   }
 
-  $: combinedRenderers = { ...defaultRenderers, ...renderers }
+  $: combinedRenderers = { ...defaultRenderers, ...renderers } as Renderers;
 
   setContext(key, {
     slug: (val) => slugger ? slugger(val) : '',
     getOptions: () => combinedOptions
   })
-  $: mounted && dispatch('parsed', { tokens })
+  $: mounted  && dispatch('parsed', { tokens })
 
   onMount(() => {
     mounted = true

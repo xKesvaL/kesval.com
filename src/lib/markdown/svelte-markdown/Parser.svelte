@@ -4,7 +4,7 @@
 	import type { Renderers } from './types';
 
   export let type = undefined
-  export let tokens: Token[] = []
+  export let tokens: Token[] | undefined = undefined
   export let header = undefined
   export let rows = undefined
   export let ordered = false
