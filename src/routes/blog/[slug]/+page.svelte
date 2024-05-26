@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Markdown from '$lib/components/markdown/Markdown.svelte';
 	import type { PageData } from './$types';
+	import Markdown from '$lib/markdown/Markdown.svelte';
 
 	export let data: PageData;
 	console.log('slug.page.svelte', data)

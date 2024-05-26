@@ -1,8 +1,9 @@
 <script lang="ts">
-	import SvelteMarkdown, { type Renderers } from 'svelte-markdown';
 	import RendererImage from './RendererImage.svelte';
 	import RendererCodeBlock from './RendererCodeBlock.svelte';
 	import RendererHeading from './RendererHeading.svelte';
+	import SvelteMarkdown from './svelte-markdown/SvelteMarkdown.svelte';
+	import type { Renderers } from './svelte-markdown/types';
 
 	export let content: string;
 
