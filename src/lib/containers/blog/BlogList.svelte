@@ -8,7 +8,7 @@
 </script>
 
 <section class="container">
-	<div class="grid gap-4 lg:grid-cols-6">
+	<div class="grid gap-4 md:grid-cols-4 lg:grid-cols-6">
 		{#each reversePosts as post, i (post.slug)}
 			<CardBlog {post} isLazy={i > 6} />
 		{/each}
@@ -22,20 +22,19 @@
 		// Select every 6 elements, starting from position 1
 		// And make it take up 6 columns
 		> :global(:nth-child(6n + 1)) {
-			grid-column: span 4;
+			@apply md:col-span-2 lg:col-span-4;
 		}
 
 		// Select every 6 elements, starting from position 2
 		// And make it take up 3 columns
 		> :global(:nth-child(6n + 2)) {
-			grid-column: span 2;
-			grid-row: span 2;
+			@apply md:col-span-2 lg:col-span-2 lg:row-span-2;
 		}
 
 		// Select every 6 elements, starting from position 3
 		// And make it take up 3 columns
 		> :global(:nth-child(6n + 3)) {
-			grid-column: span 4;
+			@apply md:col-span-2 lg:col-span-4;
 		}
 
 		// Select every 6 elements, starting from position 4, 5 and 6
@@ -43,7 +42,7 @@
 		> :global(:nth-child(6n + 4)),
 		:global(:nth-child(6n + 5)),
 		:global(:nth-child(6n + 6)) {
-			grid-column: span 2;
+			@apply md:col-span-2 lg:col-span-2;
 		}
 	}
 </style>
