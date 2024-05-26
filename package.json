@@ -57,7 +57,13 @@
     "vite": "^5.2.11",
     "vite-plugin-kit-routes": "^0.6.2",
     "vite-plugin-node-polyfills": "^0.22.0",
-    "zod": "^3.23.8"
+    "zod": "^3.23.8",
+    "@giscus/svelte": "^3.0.0",
+    "embla-carousel-svelte": "^8.1.1",
+    "mode-watcher": "^0.3.0",
+    "paneforge": "^0.0.4",
+    "svelte-sonner": "^0.3.24",
+    "vaul-svelte": "^0.3.1"
   },
   "private": true,
   "scripts": {
@@ -77,13 +83,5 @@
     "esbuild",
     "sharp",
     "svelte-preprocess"
-  ],
-  "dependencies": {
-    "@giscus/svelte": "^3.0.0",
-    "embla-carousel-svelte": "^8.1.1",
-    "mode-watcher": "^0.3.0",
-    "paneforge": "^0.0.4",
-    "svelte-sonner": "^0.3.24",
-    "vaul-svelte": "^0.3.1"
-  }
+  ]
 }
