@@ -123,3 +123,4 @@ Bun est disponible sur Windows, Linux et macOS ! Vous pouvez installer Bun dès 
 Je pense que tout le monde devrait commencer à utiliser Bun dès maintenant. Il n'y a aucune raison de ne pas le faire, cela prend 2 minutes à configurer, et c'est plus rapide. Faites-moi confiance, même pour des choses telles que l'exécution de scripts, les `150ms` gagnées semblent être 10x plus rapides car cela semble instantané et non lentes. Vous pouvez consulter le [site Web de Bun](https://bun.sh/) pour plus d'informations sur Bun.
 
 Merci d'avoir lu, et passez une bonne journée.
+  

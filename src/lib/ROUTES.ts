@@ -17,8 +17,7 @@ const PAGES = {
   },
   "/work": `/work`,
   "/work/kesval": `/work/kesval`,
-  "/work/portfolio": `/work/portfolio`,
-  "/work/supapower": `/work/supapower`
+  "/work/portfolio": `/work/portfolio`
 }
 
 /**
@@ -146,7 +145,7 @@ export function route<T extends keyof AllTypes>(key: T, ...params: any[]): strin
 * ```
 */
 export type KIT_ROUTES = {
-  PAGES: { '/': never, '/about': never, '/blog': never, '/blog/[slug]': 'slug', '/work': never, '/work/kesval': never, '/work/portfolio': never, '/work/supapower': never }
+  PAGES: { '/': never, '/about': never, '/blog': never, '/blog/[slug]': 'slug', '/work': never, '/work/kesval': never, '/work/portfolio': never }
   SERVERS: { 'GET /site.webmanifest': never, 'GET /sitemap.xml': never }
   ACTIONS: Record<string, never>
   LINKS: { 'linkedin': never, 'email': never, 'github': never, 'instagram': never }
