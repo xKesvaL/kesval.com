@@ -1,7 +1,7 @@
 ---
 title: Svelte, the best framework
 excerpt: Why Svelte and SvelteKit are the best choices to build the best web applications.
-publishedAt: 2023-08-12
+publishedAt: 2024-02-24
 updatedAt: 2024-05-10
 tags:
   - Svelte
@@ -14,7 +14,6 @@ tags:
   - Opinion
 coverImage: "/blog/svelte-the-best-framework/cover.png"
 coverImageAlt: "Svelte logo"
-id: 1
 ---
 
 ## Svelte, a cool kid

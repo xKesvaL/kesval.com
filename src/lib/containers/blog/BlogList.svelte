@@ -3,11 +3,13 @@
 	import type { BlogPost, PaginatedResponse } from '$lib/typings/blog';
 
 	export let posts: PaginatedResponse<BlogPost>;
+
+	const reversePosts = posts.items.slice().reverse();
 </script>
 
 <section class="container">
 	<div class="grid gap-4 lg:grid-cols-6">
-		{#each posts.items as post, i (post.slug)}
+		{#each reversePosts as post, i (post.slug)}
 			<CardBlog {post} isLazy={i > 6} />
 		{/each}
 	</div>
@@ -20,19 +22,20 @@
 		// Select every 6 elements, starting from position 1
 		// And make it take up 6 columns
 		> :global(:nth-child(6n + 1)) {
-			grid-column: span 6;
+			grid-column: span 4;
 		}
 
 		// Select every 6 elements, starting from position 2
 		// And make it take up 3 columns
 		> :global(:nth-child(6n + 2)) {
-			grid-column: span 3;
+			grid-column: span 2;
+			grid-row: span 2;
 		}
 
 		// Select every 6 elements, starting from position 3
 		// And make it take up 3 columns
 		> :global(:nth-child(6n + 3)) {
-			grid-column: span 3;
+			grid-column: span 4;
 		}
 
 		// Select every 6 elements, starting from position 4, 5 and 6

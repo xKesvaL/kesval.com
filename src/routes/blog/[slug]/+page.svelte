@@ -98,7 +98,7 @@
 					</ResponsiveDialog>
 				</div>
 			</div>
-			<h1 class="mt-4 text-[2.25em] leading-tight md:mt-8" style:view-transition-name="blog-title">
+			<h1 class="mt-4 text-[2.25em] leading-tight md:mt-8" style:view-transition-name="blog-title-{keyDate}">
 				{data.post.title}
 			</h1>
 			<p class="text-foreground/90">{data.post.excerpt}</p>
@@ -109,7 +109,7 @@
 				<Markdown content={data.post.content} />
 			</div>
 		</article>
-		<div class="giscus"></div>
+		<div class="giscus mt-8"></div>
 		<Giscus
 			id="comments"
 			repo="xKesvaL/kesval.com"

@@ -7,8 +7,13 @@
   font-size: var(--prose-fs);
 
   a:not(.button) {
+    color: hsl(var(--tertiary));
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    transition: 0.3s;
+
     &:hover {
-      filter: drop-shadow(0px 0px 3px var(--primary));
+      filter: drop-shadow(0px 0px 3px hsl(var(--primary)));
     }
   }
 
@@ -72,23 +77,11 @@
 
   blockquote {
     position: relative;
-    padding: 25px 25px 15px;
-    border-radius: 0 20px 20px 0;
-    font-size: 1.1em;
-    border-left: 4px solid var(--primary);
-    background: var(--muted);
-
-    &:before {
-      content: '';
-      background-image: url('/images/quotes.svg');
-      height: 64px;
-      width: 64px;
-      display: block;
-      position: absolute;
-      top: 0;
-      right: 0;
-      opacity: 0.3;
-    }
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius);
+    border-left: 4px solid hsl(var(--primary));
+    background: hsl(var(--muted) / 0.5);
+    margin: 1.5em 0;
   }
 
   code:not(pre code) {
@@ -123,5 +116,9 @@
     &::marker {
       color: hsl(var(--secondary));
     }
+  }
+  
+  hr {
+    margin: 2em 0;
   }
 }

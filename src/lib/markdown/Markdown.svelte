@@ -4,6 +4,7 @@
 	import RendererHeading from './RendererHeading.svelte';
 	import SvelteMarkdown from './svelte-markdown/SvelteMarkdown.svelte';
 	import type { Renderers } from './svelte-markdown/types';
+	import RendererBlockQuote from './RendererBlockQuote.svelte';
 
 	export let content: string;
 
@@ -11,6 +12,7 @@
 		image: RendererImage,
 		code: RendererCodeBlock,
 		heading: RendererHeading,
+		blockquote: RendererBlockQuote,
 	};
 </script>
 

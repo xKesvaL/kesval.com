@@ -8,7 +8,7 @@
 </script>
 
 <section
-	class="container grid grid-cols-[0.5fr,3fr] items-center justify-items-center gap-4 lg:grid-cols-[max-content,2fr,1fr]"
+	class="container grid grid-cols-[0.5fr,3fr] items-center justify-items-center py-4 gap-4 lg:grid-cols-[max-content,2fr,1fr]"
 >
 	<div class="">
 		<Socials vertical={true} />
