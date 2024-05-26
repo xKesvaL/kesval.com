@@ -39,8 +39,6 @@
 			const slug = $page.url.pathname.split('/').pop();
 			if (!slug) return await goto(anchor.href);
 			const translatedSlug = translateBlogPostSlug($page.data.posts[lang]?.items, slug);
-			console.log(i18n.resolveRoute(route('/blog')), lang);
-			console.log(translatedSlug);
 			return await goto(`${i18n.resolveRoute(route('/blog'), lang)}/${translatedSlug}`);
 		}
 
