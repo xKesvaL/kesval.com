@@ -105,7 +105,7 @@
 {/key}
 
 <style>
-	article-container {
+	.article-container {
 		--prose-mw-num: 65;
 		--prose-fs-num: 18;
 	}
