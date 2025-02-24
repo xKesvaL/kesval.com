@@ -1,5 +1,4 @@
-import { i18n } from "$lib/utils/i18n";
+import type { Handle } from '@sveltejs/kit';
+import * as paraglideAdapter from '$lib/paraglide/adapter';
 
-import { sequence } from "@sveltejs/kit/hooks";
-
-export const handle = sequence(i18n.handle());
+export const handle: Handle = paraglideAdapter.handle;

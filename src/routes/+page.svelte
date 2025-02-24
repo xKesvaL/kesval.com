@@ -1,9 +1,8 @@
-<script>
-	import HomeHero from '$lib/containers/home/HomeHero.svelte';
-	import HomeAbout from '$lib/containers/home/HomeAbout.svelte';
-	import HomeWork from '$lib/containers/home/HomeWork.svelte';
+<script lang="ts">
+	import AuroraBackground from '$lib/components/animated/AuroraBackground.svelte';
 </script>
 
-<HomeHero />
-<HomeAbout />
-<HomeWork />
+<h1 class="text-primary">Welcome to SvelteKit</h1>
+<p>
+	Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation
+</p>

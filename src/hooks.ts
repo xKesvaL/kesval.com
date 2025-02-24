@@ -1,2 +1,4 @@
-import { i18n } from "$lib/utils/i18n";
-export const reroute = i18n.reroute();
+import type { Reroute } from '@sveltejs/kit';
+import * as paraglideAdapter from '$lib/paraglide/adapter';
+
+export const reroute: Reroute = paraglideAdapter.reroute;
