@@ -5,4 +5,6 @@
 </script>
 
 <Navigation />
-{@render children()}
+<main class="kcontainer-nav-padding kcontainer">
+	{@render children()}
+</main>

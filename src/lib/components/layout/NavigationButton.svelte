@@ -5,6 +5,8 @@
 	const toggleNavigation = () => {
 		navigation.state = navigation.state === 'open' ? 'closed' : 'open';
 	};
+
+	let { ...props } = $props();
 </script>
 
 <Button
@@ -13,20 +15,21 @@
 	aria-expanded={navigation.state === 'open'}
 	aria-controls="navigation"
 	onclick={toggleNavigation}
-	class="cursor-pointer {navigation.state === 'open' ? '' : ''}"
+	class="size-12 cursor-pointer hover:bg-transparent {navigation.state === 'open' ? '' : ''}"
 	aria-label={'Toggle navigation'}
+	{...props}
 >
 	<svg
 		stroke="currentColor"
 		fill="none"
-		class="hamburger {navigation.state} size-10!"
+		class="hamburger {navigation.state} size-14!"
 		viewBox="-10 -10 120 120"
 		width="32px"
 		height="32px"
 	>
 		<path
-			class="line transition-all duration-500"
-			stroke-width="6"
+			class="line"
+			stroke-width="5"
 			stroke-linecap="round"
 			stroke-linejoin="round"
 			d="m 20 40 h 60 a 1 1 0 0 1 0 20 h -60 a 1 1 0 0 1 0 -40 h 30 v 70"
@@ -44,11 +47,16 @@
 
 	.line {
 		stroke-dasharray: 60 31 60 300;
+		/* Transition all 0.5s, delay colors by 150ms */
+		transition:
+			all 0.5s,
+			color 0.5s 0.15s;
 	}
 
 	.hamburger.open {
 		translate: 2px -2px;
 		rotate: 0.125turn;
+		color: var(--color-primary-foreground);
 	}
 
 	.hamburger.open .line {

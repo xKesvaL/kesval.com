@@ -88,17 +88,40 @@
 			background-position: 350% 50%, 350% 50%;
 		}
 	}
+
+	/* Custom keys */
+
+	--nav-height: 3rem;
+	--nav-spacing: 1rem;
+
+	--ct-max-w: 75rem;
+	--ct-max-w-sm: 60rem;
 }
 
-@utility container {
+/* Utilities */
+
+@utility kcontainer {
 	margin-inline: auto;
-	padding-inline: 1rem;
-	max-width: 75rem;
+	max-width: var(--ct-max-w);
 }
 
-@utility container-sm {
-	max-width: 60rem;
+@utility kcontainer-sm {
+	max-width: var(--ct-max-w-sm);
 }
+
+@utility h-nav {
+	height: var(--nav-height);
+}
+
+@utility position-nav {
+	@apply right-[var(--nav-spacing)] left-[var(--nav-spacing)] top-[var(--nav-spacing)] mx-auto;
+}
+
+@utility kcontainer-nav-padding {
+	@apply pt-[calc(var(--nav-height)+var(--nav-spacing))];
+}
+
+/* Special Nav Gradient */
 
 @property --gradient-angle {
   syntax: "<angle>";
