@@ -43,6 +43,7 @@
 	},
 	"dependencies": {
 		"@inlang/paraglide-sveltekit": "^1.0.0-beta.7",
-		"lucide-svelte": "^0.476.0"
+		"lucide-svelte": "^0.476.0",
+		"vite-plugin-kit-routes": "^0.8.2"
 	}
 }
