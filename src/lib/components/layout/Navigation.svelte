@@ -60,7 +60,9 @@
 
 <nav class="position-nav h-nav kcontainer fixed z-50">
 	<div class="flex h-full w-full items-center justify-between rounded-[15px]">
-		<enhanced:img src="$assets/logo.png" alt="An alt text" class="size-12 rounded-lg" />
+		<a href={route('/')} aria-label="home">
+			<enhanced:img src="$assets/logo.png" alt="An alt text" class="size-12 rounded-lg" />
+		</a>
 		<NavigationButton />
 	</div>
 </nav>

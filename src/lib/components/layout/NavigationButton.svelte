@@ -15,7 +15,7 @@
 	aria-expanded={navigation.state === 'open'}
 	aria-controls="navigation"
 	onclick={toggleNavigation}
-	class="size-12 cursor-pointer hover:bg-transparent {navigation.state === 'open' ? '' : ''}"
+	class="size-12 cursor-pointer {navigation.state === 'open' ? 'hover:bg-muted/10' : ''}"
 	aria-label={'Toggle navigation'}
 	{...props}
 >
@@ -54,7 +54,7 @@
 	}
 
 	.hamburger.open {
-		translate: 2px -2px;
+		translate: 3px -3px;
 		rotate: 0.125turn;
 		color: var(--color-primary-foreground);
 	}
