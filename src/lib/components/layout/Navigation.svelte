@@ -5,6 +5,12 @@
 	import { innerHeight } from 'svelte/reactivity/window';
 	import { circOut, cubicIn } from 'svelte/easing';
 	import { route } from '$lib/ROUTES';
+	import { translate } from '$lib/utils/i18n';
+
+	type Link = {
+		label: string;
+		href: string;
+	};
 
 	const baseFlyParams = {
 		y: (innerHeight.current || 0) * -1,
@@ -36,7 +42,7 @@
 			label: 'blog',
 			href: route('/')
 		}
-	];
+	] as const satisfies Link[];
 
 	const otherLinks = [
 		{
@@ -51,14 +57,14 @@
 			label: 'privacy_policy',
 			href: route('/')
 		}
-	];
+	] as const satisfies Link[];
 
-	let latestHoveredLink = $state(navLinks[0]);
+	let latestHoveredLink = $state<Link>(navLinks[0]);
 
 	$inspect(latestHoveredLink);
 </script>
 
-<nav class="position-nav h-nav kcontainer fixed z-50">
+<nav class="position-nav h-nav kcontainer fixed z-50 px-4">
 	<div class="flex h-full w-full items-center justify-between rounded-[15px]">
 		<a href={route('/')} aria-label="home">
 			<enhanced:img src="$assets/logo.png" alt="An alt text" class="size-12 rounded-lg" />
@@ -70,8 +76,8 @@
 <!-- This is the part that comes down -->
 <div>
 	{#if navigation.state === 'open'}
-		<div in:fly={baseFlyParams} out:fly={baseFlyOutParams} class="bg-muted fixed inset-0 p-4">
-			<div class="kcontainer flex h-full flex-col items-stretch justify-center gap-8">
+		<div in:fly={baseFlyParams} out:fly={baseFlyOutParams} class="fixed inset-0 bg-white shadow-sm">
+			<div class="kcontainer flex h-full flex-col items-stretch justify-center gap-8 p-4">
 				<ul class="flex flex-col">
 					{#each navLinks as link}
 						{@const { label, href } = link}
@@ -79,10 +85,10 @@
 							<a
 								onmouseenter={() => (latestHoveredLink = link)}
 								onclick={() => (navigation.state = 'closed')}
-								class=" text-muted-foreground hover:text-primary flex translate-x-0 py-6 text-7xl font-semibold uppercase transition-all duration-200 hover:-translate-x-12"
+								class=" text-muted-foreground/80 hover:text-primary flex translate-x-0 py-6 text-7xl font-semibold uppercase transition-all duration-300 hover:-translate-x-12"
 								{href}
 							>
-								{label}
+								{translate(`nav_${label}`)}
 							</a>
 						</li>
 					{/each}
@@ -97,7 +103,7 @@
 									class="text-muted-foreground uppercase"
 									{href}
 								>
-									{label}
+									{translate(`nav_${label}`)}
 								</a>
 							</li>
 						{/each}
@@ -114,7 +120,7 @@
 				...baseFlyOutParams,
 				delay: 150
 			}}
-			class="bg-primary fixed top-0 right-0 bottom-0 w-1/3"
+			class="bg-primary fixed top-0 right-0 bottom-0 w-1/3 shadow-sm"
 		></div>
 	{/if}
 </div>

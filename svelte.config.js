@@ -12,7 +12,8 @@ const config = {
 		adapter: adapter(),
 
 		alias: {
-			$assets: './src/assets'
+			$assets: './src/assets',
+			$paraglide: './src/lib/paraglide'
 		}
 	},
 

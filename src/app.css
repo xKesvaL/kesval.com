@@ -2,18 +2,39 @@
 
 @plugin "tailwindcss-animate";
 
+@font-face {
+  font-family: "Helvetica Neue";
+  src:
+    local("Helvetica Neue"),
+    url("/fonts/HelveticaNeue400.woff2") format("woff2"),
+		url("/fonts/HelveticaNeue400.otf") format("opentype");
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Helvetica Neue";
+	src:
+		local("Helvetica Neue"),
+		url("/fonts/HelveticaNeue700.woff2") format("woff2"),
+		url("/fonts/HelveticaNeue700.otf") format("opentype");
+	font-weight: 700;
+	font-style: normal;
+}
+
+
 @theme {
-	--color-background: oklch(1 0 0 / 1);
-	--color-foreground: oklch(0.13 0.03 261.59 / 1);
+	--color-background: oklch(99.09% 0.0021 300);
+	--color-foreground: oklch(15.48% 0.0253 267.94);
 	--color-muted: oklch(0.97 0 264.54 / 1);
-	--color-muted-foreground: oklch(0.55 0.02 264.36 / 1);
+	--color-muted-foreground: oklch(41.01% 0.0146 264.36);
 	--color-popover: oklch(1 0 0 / 1);
 	--color-popover-foreground: oklch(0.13 0.03 261.59 / 1);
 	--color-card: oklch(1 0 0 / 1);
 	--color-card-foreground: oklch(0.13 0.03 261.59 / 1);
 	--color-border: oklch(0.93 0.01 264.53 / 1);
 	--color-input: oklch(0.93 0.01 264.53 / 1);
-	--color-primary: oklch(0.47 0.26 283.14 / 1);
+	--color-primary: oklch(48.1% 0.2952 277.69 / 1);
 	--color-primary-foreground: oklch(0.98 0 247.84 / 1);
 	--color-secondary: oklch(0.97 0 264.54 / 1);
 	--color-secondary-foreground: oklch(0.21 0.03 263.57 / 1);
@@ -36,6 +57,8 @@
 	--animate-caret-blink: caret-blink 1.25s ease-out infinite;
 	--animate-shine-pulse: shine-pulse 2s linear infinite;
 	--animate-aurora: aurora 60s linear infinite;
+
+	--font-sans: "Helvetica Neue", sans-serif;
 
 	@keyframes accordion-down {
 		from {
@@ -98,6 +121,18 @@
 	--ct-max-w-sm: 60rem;
 }
 
+/* Base */
+
+@layer base {
+	body {
+		@apply bg-background text-foreground;
+	}
+
+	p {
+		@apply leading-relaxed
+	}
+}
+
 /* Utilities */
 
 @utility kcontainer {
@@ -114,11 +149,15 @@
 }
 
 @utility position-nav {
-	@apply right-[var(--nav-spacing)] left-[var(--nav-spacing)] top-[var(--nav-spacing)] mx-auto;
+	@apply right-0 left-0 top-[var(--nav-spacing)] mx-auto;
 }
 
 @utility kcontainer-nav-padding {
 	@apply pt-[calc(var(--nav-height)+var(--nav-spacing))];
+}
+
+@utility min-h-screen-wo-nav {
+	@apply min-h-[calc(100vh-var(--nav-height)-var(--nav-spacing))];
 }
 
 /* Special Nav Gradient */

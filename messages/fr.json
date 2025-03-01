@@ -1,4 +1,13 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
-	"hello_world": "Hello, {name} from fr!"
+	"hello_world": "Hello, {name} from fr!",
+	"nav_home": "Accueil",
+	"nav_about": "À propos",
+	"nav_projects": "Projets",
+	"nav_blog": "Blog",
+	"nav_contact": "Contact",
+	"nav_legal_notice": "Mentions légales",
+	"nav_privacy_policy": "Politique de confidentialité",
+	"home_hero_title": "Développeur web fullstack, web designer et powerlifter amateur.",
+	"home_hero_subtitle": "Je suis KesvaL, ou Jordan de mon vrai nom, développeur web fullstack français. J'ai fondé KesvaL Développement pour accompagner les entrepreneurs locaux dans le développement de leur présence en ligne."
 }
