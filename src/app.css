@@ -16,6 +16,16 @@
 	font-family: "Helvetica Neue";
 	src:
 		local("Helvetica Neue"),
+		url("/fonts/HelveticaNeue500.woff2") format("woff2"),
+		url("/fonts/HelveticaNeue500.otf") format("opentype");
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Helvetica Neue";
+	src:
+		local("Helvetica Neue"),
 		url("/fonts/HelveticaNeue700.woff2") format("woff2"),
 		url("/fonts/HelveticaNeue700.otf") format("opentype");
 	font-weight: 700;
@@ -57,6 +67,7 @@
 	--animate-caret-blink: caret-blink 1.25s ease-out infinite;
 	--animate-shine-pulse: shine-pulse 2s linear infinite;
 	--animate-aurora: aurora 60s linear infinite;
+	--animate-bounce-x: bounce-x 1.2s ease-in-out infinite;
 
 	--font-sans: "Helvetica Neue", sans-serif;
 
@@ -112,9 +123,21 @@
 		}
 	}
 
+	
+	@keyframes bounce {
+		0%, 100% {
+			transform: translateX(-25%);
+			animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+		}
+		50% {
+			transform: none;
+			animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+		}
+	}
+
 	/* Custom keys */
 
-	--nav-height: 3rem;
+	--nav-height: 2.5rem;
 	--nav-spacing: 1rem;
 
 	--ct-max-w: 75rem;

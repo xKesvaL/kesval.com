@@ -15,7 +15,7 @@
 	aria-expanded={navigation.state === 'open'}
 	aria-controls="navigation"
 	onclick={toggleNavigation}
-	class="size-12 cursor-pointer {navigation.state === 'open'
+	class="size-10 cursor-pointer {navigation.state === 'open'
 		? 'hover:bg-muted/10'
 		: 'bg-muted border'}"
 	aria-label={'Toggle navigation'}
@@ -24,7 +24,7 @@
 	<svg
 		stroke="currentColor"
 		fill="none"
-		class="hamburger {navigation.state} size-12!"
+		class="hamburger {navigation.state} size-10!"
 		viewBox="-10 -10 120 120"
 		width="32px"
 		height="32px"
@@ -56,7 +56,7 @@
 	}
 
 	.hamburger.open {
-		translate: 3px -3px;
+		translate: 2.5px -2.5px;
 		rotate: 0.125turn;
 		color: var(--color-primary-foreground);
 	}
