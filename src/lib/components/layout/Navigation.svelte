@@ -42,24 +42,33 @@
 	let latestHoveredLink = $state<Link>(navigationLinks[0]);
 </script>
 
-<nav class="position-nav h-nav kcontainer fixed z-50 px-4">
-	<div class="flex h-full w-full items-center justify-between rounded-[15px]">
-		<a href={route('/')} aria-label="home">
-			<enhanced:img src="$assets/logo.png" alt="An alt text" class="size-10 rounded-lg" />
-		</a>
-		<div class="flex items-center gap-2">
-			<Button
-				class={cn(
-					'ring-1 backdrop-blur-xl transition-all duration-300',
-					navigation.state === 'open' &&
-						'bg-background text-primary hover:bg-background/90 ring-primary delay-50',
-					navigation.state === 'closed' && 'delay-[400ms]'
-				)}
-				href={route('/')}
-			>
-				{m.hire_me()}
-			</Button>
-			<NavigationButton />
+<nav class={cn('position-nav h-nav kcontainer fixed z-50 transition duration-300 lg:px-4')}>
+	<!-- wrapper -->
+	<div
+		class={cn(
+			'flex h-full w-full items-center justify-between transition-all duration-300 lg:rounded-b-2xl',
+			navigation.state === 'open' && 'px-4 lg:px-0',
+			navigation.state === 'closed' && 'bg-background px-4 shadow-md delay-[300ms]'
+		)}
+	>
+		<div class="flex h-full w-full items-center justify-between rounded-[15px]">
+			<a href={route('/')} aria-label="home">
+				<enhanced:img src="$assets/logo.png" alt="An alt text" class="size-10 rounded-lg" />
+			</a>
+			<div class="flex items-center gap-2">
+				<Button
+					class={cn(
+						'ring-1 backdrop-blur-xl transition-all duration-300',
+						navigation.state === 'open' &&
+							'md:bg-background md:text-primary md:hover:bg-background/90 md:ring-primary mr-6 delay-50 md:mr-0',
+						navigation.state === 'closed' && 'delay-[400ms]'
+					)}
+					href={route('/')}
+				>
+					{m.hire_me()}
+				</Button>
+				<NavigationButton />
+			</div>
 		</div>
 	</div>
 </nav>
@@ -67,7 +76,11 @@
 <!-- This is the part that comes down -->
 <div>
 	{#if navigation.state === 'open'}
-		<div in:fly={baseFlyParams} out:fly={baseFlyOutParams} class="fixed inset-0 bg-white shadow-sm">
+		<div
+			in:fly={baseFlyParams}
+			out:fly={baseFlyOutParams}
+			class="fixed inset-0 z-10 bg-white shadow-sm"
+		>
 			<div class="kcontainer flex h-full flex-col items-stretch justify-center gap-8 p-4">
 				<ul class="flex flex-col">
 					{#each navigationLinks as link}
@@ -76,7 +89,7 @@
 							<a
 								onmouseenter={() => (latestHoveredLink = link)}
 								onclick={() => (navigation.state = 'closed')}
-								class=" text-muted-foreground/80 hover:text-primary flex translate-x-0 py-6 text-7xl font-semibold uppercase transition-all duration-300 hover:-translate-x-12"
+								class=" text-muted-foreground/80 hover:text-primary flex translate-x-0 py-6 text-5xl font-semibold uppercase transition-all duration-300 hover:-translate-x-12 md:text-6xl lg:text-7xl"
 								{href}
 							>
 								{translate(label)}
@@ -111,7 +124,7 @@
 				...baseFlyOutParams,
 				delay: 150
 			}}
-			class="bg-primary fixed top-0 right-0 bottom-0 w-1/3 shadow-sm"
+			class="bg-primary fixed top-0 right-0 bottom-0 z-10 w-18 shadow-sm transition-all md:w-1/3"
 		></div>
 	{/if}
 </div>

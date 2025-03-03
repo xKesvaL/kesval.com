@@ -8,7 +8,7 @@
 	class="min-h-screen-wo-nav flex flex-col-reverse items-center justify-between p-4 lg:flex-row"
 >
 	<div class="flex grow flex-col gap-4">
-		<h1 class="max-w-[30ch] text-5xl leading-snug font-bold">
+		<h1 class="max-w-[30ch] text-3xl leading-snug font-bold md:text-4xl lg:text-5xl">
 			{m.home_hero_title()}
 		</h1>
 		<p class="text-muted-foreground max-w-prose">

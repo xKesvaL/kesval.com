@@ -9,13 +9,15 @@
 	"nav_legal_notice": "Mentions légales",
 	"nav_privacy_policy": "Politique de confidentialité",
 	"nav_github": "GitHub",
+	"nav_instagram": "Instagram",
 
-	"home_hero_title": "Développeur web fullstack, web designer et powerlifter amateur.",
-	"home_hero_subtitle": "Je suis KesvaL, ou Jordan de mon vrai nom, développeur web fullstack français. J'ai fondé {brand} pour accompagner les entrepreneurs locaux dans le développement de leur présence en ligne.",
+	"home_hero_title": "Développeur web fullstack, web designer et jeune entrepreneur",
+	"home_hero_subtitle": "Je suis KesvaL, ou Jordan de mon vrai nom, développeur web fullstack français. J'ai fondé {brand} pour accompagner les entrepreneurs dans le développement de leur présence en ligne.",
 
 	"hire_me": "Embauchez-moi",
 	"my_resume": "Mon CV",
 	"contact_me": "Contactez-moi",
+	"see_all": "Voir tout",
 
 	"brand_name": "KesvaL Développement",
 	"brand_name_short": "KesvaL",

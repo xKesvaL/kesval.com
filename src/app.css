@@ -71,6 +71,12 @@
 
 	--font-sans: "Helvetica Neue", sans-serif;
 
+	--shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05), 0 1px 3px -1px rgba(0, 0, 0, 0.05);
+	--shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05), 0 1px 5px -1px rgba(0, 0, 0, 0.05);
+	--shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.05);
+
+
+
 	@keyframes accordion-down {
 		from {
 			height: 0;
@@ -124,9 +130,9 @@
 	}
 
 	
-	@keyframes bounce {
+	@keyframes bounce-x {
 		0%, 100% {
-			transform: translateX(-25%);
+			transform: translateX(25%);
 			animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
 		}
 		50% {
@@ -137,8 +143,8 @@
 
 	/* Custom keys */
 
-	--nav-height: 2.5rem;
-	--nav-spacing: 1rem;
+	--nav-height: 4.5rem;
+	--nav-spacing: 0rem;
 
 	--ct-max-w: 75rem;
 	--ct-max-w-sm: 60rem;

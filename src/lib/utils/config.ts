@@ -13,15 +13,15 @@ export const navigationLinks = [
 	},
 	{
 		label: 'nav_about',
-		href: route('/')
+		href: route('/about')
 	},
 	{
 		label: 'nav_projects',
-		href: route('/')
+		href: route('/projects')
 	},
 	{
 		label: 'nav_blog',
-		href: route('/')
+		href: route('/blog')
 	}
 ] as const satisfies Link[];
 
@@ -29,5 +29,9 @@ export const socialLinks = [
 	{
 		label: 'nav_github',
 		href: 'https://github.com/xKesvaL'
+	},
+	{
+		label: 'nav_instagram',
+		href: 'https://instagram.com/xkesval'
 	}
 ] as const satisfies Link[];
