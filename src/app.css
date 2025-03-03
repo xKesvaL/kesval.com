@@ -27,7 +27,7 @@
 	src:
 		local("Helvetica Neue"),
 		url("/fonts/HelveticaNeue700.woff2") format("woff2"),
-		url("/fonts/HelveticaNeue700.otf") format("opentype");
+		url("/fonts/HelveticaNeue700.ttf") format("truetype");
 	font-weight: 700;
 	font-style: normal;
 }
