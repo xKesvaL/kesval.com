@@ -3,6 +3,7 @@
 	import Navigation from '$lib/components/layout/Navigation.svelte';
 	import Footer from '$lib/components/layout/Footer.svelte';
 	import { navigation } from '$lib/stores/common.svelte';
+	import { locales, localizeHref } from '$lib/paraglide/runtime';
 	let { children } = $props();
 
 	$effect(() => {
@@ -13,6 +14,13 @@
 		}
 	});
 </script>
+
+<!-- This is a hack so sveltekit pre-renders all locales -->
+<div style="display:none">
+	{#each locales as locale}
+		<a href={localizeHref(page.url.pathname, { locale })}>{locale}</a>
+	{/each}
+</div>
 
 <Navigation />
 <main class="kcontainer-nav-padding kcontainer">
