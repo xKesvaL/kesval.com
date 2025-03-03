@@ -4,6 +4,7 @@
 	import Footer from '$lib/components/layout/Footer.svelte';
 	import { navigation } from '$lib/stores/common.svelte';
 	import { locales, localizeHref } from '$lib/paraglide/runtime';
+	import { page } from '$app/state';
 	let { children } = $props();
 
 	$effect(() => {
