@@ -15,8 +15,8 @@
 	aria-expanded={navigation.state === 'open'}
 	aria-controls="navigation"
 	onclick={toggleNavigation}
-	class="size-10 cursor-pointer {navigation.state === 'open'
-		? 'hover:bg-muted/10'
+	class="size-10 cursor-pointer ring-1 ring-transparent {navigation.state === 'open'
+		? 'hover:bg-muted/10 ring-primary bg-primary'
 		: 'bg-muted border'}"
 	aria-label={'Toggle navigation'}
 	{...props}

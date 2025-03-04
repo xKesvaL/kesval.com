@@ -41,8 +41,6 @@
 		}
 	] as const satisfies Link[];
 
-	$inspect(deLocalizeHref(page.url.pathname));
-
 	const currentRoute =
 		navigationLinks.find((link) => link.href === page.url.pathname) ?? navigationLinks[0];
 
@@ -54,7 +52,7 @@
 	<div
 		class={cn(
 			'flex h-full w-full items-center justify-between transition-all duration-300 lg:rounded-b-2xl',
-			navigation.state === 'open' && 'px-4 lg:px-0',
+			navigation.state === 'open' && 'px-4',
 			navigation.state === 'closed' && 'bg-background px-4 shadow-md delay-[300ms]'
 		)}
 	>
@@ -65,7 +63,7 @@
 			<div class="flex items-center gap-2">
 				<Button
 					class={cn(
-						'ring-1 backdrop-blur-xl transition-all duration-300',
+						'ring-1 backdrop-blur-xl transition-all duration-300 ring-transparent',
 						navigation.state === 'open' &&
 							'md:bg-background md:text-primary md:hover:bg-background/90 md:ring-primary mr-6 delay-50 md:mr-0',
 						navigation.state === 'closed' && 'delay-[400ms]'
@@ -88,7 +86,7 @@
 			out:fly={baseFlyOutParams}
 			class="fixed inset-0 z-10 bg-white shadow-sm"
 		>
-			<div class="kcontainer flex h-full flex-col items-stretch justify-center gap-8 p-4">
+			<div class="kcontainer flex h-full flex-col items-stretch justify-center gap-8 p-4 lg:px-8">
 				<ul class="flex flex-col">
 					{#each navigationLinks as link}
 						{@const { label, href: absoluteHref } = link}
