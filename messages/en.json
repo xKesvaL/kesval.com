@@ -1,4 +1,31 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
-	"hello_world": "Hello, {name} from en!"
+
+	"nav_home": "Home",
+	"nav_about": "About",
+	"nav_projects": "Projects",
+	"nav_blog": "Blog",
+	"nav_contact": "Contact",
+	"nav_legal_notice": "Legal notice",
+	"nav_privacy_policy": "Privacy policy",
+	"nav_github": "GitHub",
+	"nav_instagram": "Instagram",
+
+	"home_hero_title": "Développeur web fullstack, web designer et jeune entrepreneur",
+	"home_hero_subtitle": "Je suis KesvaL, ou Jordan de mon vrai nom, développeur web fullstack français. J'ai fondé {brand} pour accompagner les entrepreneurs dans le développement de leur présence en ligne.",
+
+	"hire_me": "Hire me",
+	"my_resume": "My resume",
+	"contact_me": "Contact me",
+	"see_all": "See all",
+
+	"brand_name": "KesvaL Développement",
+	"brand_name_short": "KesvaL",
+	"brand_connect": "Réseaux",
+
+	"footer_copyright": "© {year} {brand}. Tous droits réservés.",
+	"footer_cta": "Vous avez un projet en tête ?",
+	"footer_cta_desc": "Vous avez un projet en tête ?",
+	"footer_cta_secondary": "Vous avez une question ?",
+	"footer_cta_secondary_desc": "{brand} est là pour vous écouter et vous conseiller, gratuitement !"
 }

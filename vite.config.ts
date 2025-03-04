@@ -8,7 +8,11 @@ import type { KIT_ROUTES } from '$lib/ROUTES';
 
 export default defineConfig({
 	plugins: [
-		paraglideVitePlugin({ project: './project.inlang', outdir: './src/lib/paraglide' }),
+		paraglideVitePlugin({
+			project: './project.inlang',
+			outdir: './src/lib/paraglide',
+			strategy: ['url', 'preferredLanguage']
+		}),
 		kitRoutes<KIT_ROUTES>(),
 		enhancedImages(),
 		sveltekit(),

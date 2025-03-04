@@ -2,6 +2,7 @@
 	import { Button } from '$lib/components/ui/button';
 	import { route } from '$lib/ROUTES';
 	import * as m from '$paraglide/messages';
+	import { setLocale } from '$paraglide/runtime';
 </script>
 
 <section

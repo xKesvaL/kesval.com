@@ -13,11 +13,11 @@ export const navigationLinks = [
 	},
 	{
 		label: 'nav_about',
-		href: route('/about')
+		href: route('/a-propos')
 	},
 	{
 		label: 'nav_projects',
-		href: route('/projects')
+		href: route('/projets')
 	},
 	{
 		label: 'nav_blog',

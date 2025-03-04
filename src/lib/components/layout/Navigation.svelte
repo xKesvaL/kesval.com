@@ -10,6 +10,8 @@
 	import * as m from '$paraglide/messages';
 	import { cn } from '$lib/utils/ui';
 	import { navigationLinks, type Link } from '$lib/utils/config';
+	import { page } from '$app/state';
+	import { deLocalizeHref, localizeHref } from '$paraglide/runtime';
 
 	const baseFlyParams = {
 		y: (innerHeight.current || 0) * -1,
@@ -39,7 +41,12 @@
 		}
 	] as const satisfies Link[];
 
-	let latestHoveredLink = $state<Link>(navigationLinks[0]);
+	$inspect(deLocalizeHref(page.url.pathname));
+
+	const currentRoute =
+		navigationLinks.find((link) => link.href === page.url.pathname) ?? navigationLinks[0];
+
+	let latestHoveredLink = $state<Link>(currentRoute);
 </script>
 
 <nav class={cn('position-nav h-nav kcontainer fixed z-50 transition duration-300 lg:px-4')}>
@@ -52,7 +59,7 @@
 		)}
 	>
 		<div class="flex h-full w-full items-center justify-between rounded-[15px]">
-			<a href={route('/')} aria-label="home">
+			<a href={localizeHref(route('/'))} aria-label="home">
 				<enhanced:img src="$assets/logo.png" alt="An alt text" class="size-10 rounded-lg" />
 			</a>
 			<div class="flex items-center gap-2">
@@ -63,7 +70,7 @@
 							'md:bg-background md:text-primary md:hover:bg-background/90 md:ring-primary mr-6 delay-50 md:mr-0',
 						navigation.state === 'closed' && 'delay-[400ms]'
 					)}
-					href={route('/')}
+					href={localizeHref(route('/engager'))}
 				>
 					{m.hire_me()}
 				</Button>
@@ -84,7 +91,8 @@
 			<div class="kcontainer flex h-full flex-col items-stretch justify-center gap-8 p-4">
 				<ul class="flex flex-col">
 					{#each navigationLinks as link}
-						{@const { label, href } = link}
+						{@const { label, href: absoluteHref } = link}
+						{@const href = localizeHref(absoluteHref)}
 						<li class="border-b-border border-b-[1px] last:border-b-0">
 							<a
 								onmouseenter={() => (latestHoveredLink = link)}
@@ -100,7 +108,8 @@
 				<div>
 					<ul>
 						{#each otherLinks as link}
-							{@const { label, href } = link}
+							{@const { label, href: absoluteHref } = link}
+							{@const href = localizeHref(absoluteHref)}
 							<li>
 								<a
 									onclick={() => (navigation.state = 'closed')}

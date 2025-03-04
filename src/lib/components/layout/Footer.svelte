@@ -37,7 +37,7 @@
 
 <footer class="kcontainer flex flex-col gap-12 px-4 pb-8 md:gap-20 md:pb-12">
 	<!-- CTA -->
-	<div class="bg-primary text-primary-foreground rounded-xl px-4 py-20">
+	<div class="bg-primary text-primary-foreground rounded-2xl px-4 py-20">
 		<div class="mx-auto flex max-w-4xl flex-col">
 			<h2 class="text-xl font-medium">
 				{m.footer_cta()}
