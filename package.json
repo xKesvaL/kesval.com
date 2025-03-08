@@ -17,6 +17,9 @@
 	"devDependencies": {
 		"@eslint/compat": "^1.2.7",
 		"@eslint/js": "^9.21.0",
+		"@inlang/cli": "^3.0.3",
+		"@inlang/paraglide-js": "2.0.0-beta.26",
+		"@number-flow/svelte": "^0.3.3",
 		"@sveltejs/adapter-node": "^5.2.12",
 		"@sveltejs/adapter-vercel": "^5.6.3",
 		"@sveltejs/enhanced-img": "^0.4.4",
@@ -26,6 +29,7 @@
 		"@tailwindcss/vite": "^4.0.9",
 		"bits-ui": "^1.3.5",
 		"clsx": "^2.1.1",
+		"dayjs": "^1.11.13",
 		"eslint": "^9.21.0",
 		"eslint-config-prettier": "^10.0.2",
 		"eslint-plugin-svelte": "^2.46.1",
@@ -42,9 +46,7 @@
 		"tailwindcss-animate": "^1.0.7",
 		"typescript": "^5.8.2",
 		"typescript-eslint": "^8.25.0",
-		"vite": "^6.2.0",
-		"@inlang/paraglide-js": "2.0.0-beta.26",
-		"@inlang/cli": "^3.0.3"
+		"vite": "^6.2.0"
 	},
 	"dependencies": {
 		"lucide-svelte": "^0.476.0",

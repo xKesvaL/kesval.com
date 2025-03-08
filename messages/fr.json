@@ -14,7 +14,10 @@
 	"home_hero_title": "Développeur web fullstack, web designer et jeune entrepreneur",
 	"home_hero_subtitle": "Je suis KesvaL, ou Jordan de mon vrai nom, développeur web fullstack français. J'ai fondé {brand} pour accompagner les entrepreneurs dans le développement de leur présence en ligne.",
 
-	"home_stats_title": "Qui suis-je ?",
+	"home_about_title": "Qui suis-je ?",
+	"home_about_experience": "ans d'expertise",
+	"home_about_projects": "projets réalisés",
+	"home_about_clients": "clients satisfaits",
 
 	"hire_me": "Embauchez-moi",
 	"my_resume": "Mon CV",

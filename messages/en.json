@@ -11,21 +11,19 @@
 	"nav_github": "GitHub",
 	"nav_instagram": "Instagram",
 
-	"home_hero_title": "Développeur web fullstack, web designer et jeune entrepreneur",
-	"home_hero_subtitle": "Je suis KesvaL, ou Jordan de mon vrai nom, développeur web fullstack français. J'ai fondé {brand} pour accompagner les entrepreneurs dans le développement de leur présence en ligne.",
+	"home_hero_title": "Fullstack web developer, web designer and young entrepreneur",
+	"home_hero_subtitle": "I am KesvaL, or Jordan in real life, a French fullstack web developer. I founded {brand} to help entrepreneurs develop their online presence.",
+
+	"home_about_title": "Who am I?",
 
 	"hire_me": "Hire me",
 	"my_resume": "My resume",
 	"contact_me": "Contact me",
 	"see_all": "See all",
 
-	"brand_name": "KesvaL Développement",
+	"brand_name": "KesvaL Development",
 	"brand_name_short": "KesvaL",
-	"brand_connect": "Réseaux",
+	"brand_connect": "Connect",
 
-	"footer_copyright": "© {year} {brand}. Tous droits réservés.",
-	"footer_cta": "Vous avez un projet en tête ?",
-	"footer_cta_desc": "Vous avez un projet en tête ?",
-	"footer_cta_secondary": "Vous avez une question ?",
-	"footer_cta_secondary_desc": "{brand} est là pour vous écouter et vous conseiller, gratuitement !"
+	"footer_copyright": "{brand} © {year}. All rights reserved."
 }
