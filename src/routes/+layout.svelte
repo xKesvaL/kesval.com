@@ -6,14 +6,6 @@
 	import { locales, localizeHref } from '$lib/paraglide/runtime';
 	import { page } from '$app/state';
 	let { children } = $props();
-
-	$effect(() => {
-		if (navigation.state === 'open') {
-			document.body.style.overflowY = 'hidden';
-		} else {
-			document.body.style.overflowY = '';
-		}
-	});
 </script>
 
 <!-- This is a hack so sveltekit pre-renders all locales -->

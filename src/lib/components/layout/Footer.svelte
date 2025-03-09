@@ -1,17 +1,16 @@
 <script lang="ts">
 	import { route } from '$lib/ROUTES';
-	import { navigationLinks, socialLinks } from '$lib/utils/config';
+	import { brand, navigationLinks, socialLinks, type LinkType } from '$lib/utils/config';
 	import { translate } from '$lib/utils/i18n';
 	import * as m from '$paraglide/messages';
+	import { localizeHref } from '$paraglide/runtime';
+	import Link from '../base/Link.svelte';
 	import Button from '../ui/button/button.svelte';
-	import { IconArrowRight } from '@tabler/icons-svelte';
+	import { IconArrowRight, IconMessageCirclePlus } from '@tabler/icons-svelte';
 
 	type Links = {
 		title: string;
-		links: {
-			label: string;
-			href: string;
-		}[];
+		links: LinkType[];
 	};
 
 	const footerLinks = {
@@ -20,7 +19,7 @@
 			links: [
 				{
 					label: 'see_all',
-					href: route('/projects')
+					href: route('/projets')
 				}
 			]
 		},
@@ -35,13 +34,37 @@
 	} as const satisfies Record<string, Links>;
 </script>
 
-<footer class="kcontainer flex flex-col gap-12 px-4 pb-8 md:gap-20 md:pb-12">
+<footer class="kcontainer flex flex-col gap-12 px-4 py-8 md:gap-20 md:py-12">
 	<!-- CTA -->
 	<div class="bg-primary text-primary-foreground rounded-2xl px-4 py-20">
-		<div class="mx-auto flex max-w-4xl flex-col">
-			<h2 class="text-xl font-medium">
-				{m.footer_cta()}
-			</h2>
+		<div class="mx-auto flex max-w-4xl flex-col items-start gap-4">
+			<div class="flex flex-col gap-8">
+				<h2 class="text-3xl font-medium">
+					{m.footer_cta()}
+				</h2>
+				<div class="flex gap-2">
+					<Button variant="secondary" href={localizeHref(route('/contact'))}>
+						<IconMessageCirclePlus />
+						{m.lets_talk_about_it()}
+					</Button>
+				</div>
+			</div>
+			<div class="bg-secondary/50 my-8 h-[1px] w-full"></div>
+			<div class="flex flex-col gap-8">
+				<h3 class="text-xl font-medium">
+					{m.footer_cta_other()}
+				</h3>
+				<div class="grid grid-cols-3 gap-16">
+					<div class="flex flex-col">
+						<h4 class="font-bold">
+							{m.my_email()}
+						</h4>
+						<Link href={`mailto:${brand.email}`}>
+							{brand.email}
+						</Link>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 
@@ -52,14 +75,15 @@
 			<div class="flex flex-col gap-4">
 				<h2 class="font-medium">{title}</h2>
 				<ul class="flex flex-col gap-2">
-					{#each sublinks as { label, href }}
+					{#each sublinks as link}
 						<li>
 							<a
-								{href}
+								href={localizeHref(link.href)}
 								class="text-muted-foreground/90 hover:text-primary flex items-center gap-1 transition"
+								target={'external' in link && link.external ? '_blank' : undefined}
 							>
-								{translate(label)}
-								{#if label === 'see_all'}
+								{translate(link.label)}
+								{#if link.label === 'see_all'}
 									<IconArrowRight class="size-4" />
 								{/if}
 							</a>

@@ -68,8 +68,8 @@
 	--animate-shine-pulse: shine-pulse 2s linear infinite;
 	--animate-aurora: aurora 60s linear infinite;
 	--animate-bounce-x: bounce-x 1.2s ease-in-out infinite;
-	--animate-marquee-left: marquee-left var(--marquee-duration, 40s) linear infinite;
-	--animate-marquee-up: marquee-up var(--marquee-duration, 40s) linear infinite;
+	--animate-marquee-left: marquee-left var(--marquee-duration, 60s) linear infinite;
+	--animate-marquee-up: marquee-up var(--marquee-duration, 60s) linear infinite;
 
 	--font-sans: "Helvetica Neue", sans-serif;
 

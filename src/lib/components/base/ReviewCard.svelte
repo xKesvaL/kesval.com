@@ -1,14 +1,15 @@
 <script lang="ts">
 	import { cn } from '$lib/utils/ui';
+	import type { Icon } from '@tabler/icons-svelte';
 
 	type Props = {
-		img: string;
+		img: string | Icon;
 		name: string;
 		username: string;
 		description: string;
 	};
 
-	let { img, name, username, description }: Props = $props();
+	let { img: Image, name, username, description }: Props = $props();
 </script>
 
 <div
@@ -17,8 +18,14 @@
 	)}
 >
 	<div class="flex flex-row items-center gap-4">
-		<img class="rounded-full" width="32" height="32" alt="" src={img} />
-		<div class="flex flex-col">
+		<div class="flex size-10 items-center justify-center overflow-hidden rounded-full border">
+			{#if typeof Image === 'string'}
+				<img class="h-full w-full" alt="" src={Image} />
+			{:else}
+				<Image class="size-6" />
+			{/if}
+		</div>
+		<div class="flex flex-col justify-between">
 			<span class="text-sm font-medium">
 				{name}
 			</span>

@@ -28,6 +28,8 @@
 	"contact_me": "Contactez-moi",
 	"see_all": "Voir tout",
 	"about_me": "À propos de moi",
+	"lets_talk_about_it": "Discutons-en !",
+	"my_email": "Mon e-mail",
 
 	"brand_name": "KesvaL Développement",
 	"brand_name_short": "KesvaL",
@@ -37,5 +39,6 @@
 	"footer_cta": "Vous avez un projet en tête ?",
 	"footer_cta_desc": "Vous avez un projet en tête ?",
 	"footer_cta_secondary": "Vous avez une question ?",
-	"footer_cta_secondary_desc": "{brand} est là pour vous écouter et vous conseiller, gratuitement !"
+	"footer_cta_secondary_desc": "Je suis là pour vous écouter et vous conseiller, gratuitement !",
+	"footer_cta_other": "Ou alors je reste disponible sur..."
 }

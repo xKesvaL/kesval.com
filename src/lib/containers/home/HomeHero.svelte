@@ -2,6 +2,8 @@
 	import { Button } from '$lib/components/ui/button';
 	import { route } from '$lib/ROUTES';
 	import * as m from '$paraglide/messages';
+	import { localizeHref } from '$paraglide/runtime';
+	import { IconMessageCirclePlus } from '@tabler/icons-svelte';
 </script>
 
 <section
@@ -15,10 +17,11 @@
 			{m.home_hero_subtitle({ brand: m.brand_name() })}
 		</p>
 		<div class="mt-4 flex gap-2">
-			<Button href={route('/')}>
-				{m.hire_me()}
+			<Button href={localizeHref(route('/contact'))}>
+				<IconMessageCirclePlus />
+				{m.contact_me()}
 			</Button>
-			<Button href={route('/')} variant="outline">
+			<Button href={localizeHref(`${route('/a-propos')}#resume`)} variant="outline">
 				{m.my_resume()}
 			</Button>
 		</div>

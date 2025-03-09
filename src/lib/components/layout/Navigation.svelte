@@ -9,7 +9,7 @@
 	import { Button } from '../ui/button';
 	import * as m from '$paraglide/messages';
 	import { cn } from '$lib/utils/ui';
-	import { navigationLinks, type Link } from '$lib/utils/config';
+	import { navigationLinks, type LinkType } from '$lib/utils/config';
 	import { page } from '$app/state';
 	import { deLocalizeHref, localizeHref } from '$paraglide/runtime';
 
@@ -29,7 +29,7 @@
 	const otherLinks = [
 		{
 			label: 'nav_contact',
-			href: route('/')
+			href: route('/contact')
 		},
 		{
 			label: 'nav_legal_notice',
@@ -39,12 +39,13 @@
 			label: 'nav_privacy_policy',
 			href: route('/')
 		}
-	] as const satisfies Link[];
+	] as const satisfies LinkType[];
 
 	const currentRoute =
-		navigationLinks.find((link) => link.href === page.url.pathname) ?? navigationLinks[0];
+		navigationLinks.find((link) => link.href === deLocalizeHref(page.url.pathname)) ??
+		navigationLinks[0];
 
-	let latestHoveredLink = $state<Link>(currentRoute);
+	let latestHoveredLink = $state<LinkType>(currentRoute);
 </script>
 
 <nav class={cn('position-nav h-nav kcontainer fixed z-50 transition duration-300 lg:px-4')}>
@@ -58,19 +59,19 @@
 	>
 		<div class="flex h-full w-full items-center justify-between rounded-[15px]">
 			<a href={localizeHref(route('/'))} aria-label="home">
-				<enhanced:img src="$assets/logo.png" alt="An alt text" class="size-10 rounded-lg" />
+				<enhanced:img src="$assets/logo.png" alt="An alt text" class="roundeLinkType size-10" />
 			</a>
 			<div class="flex items-center gap-2">
 				<Button
 					class={cn(
-						'ring-1 backdrop-blur-xl transition-all duration-300 ring-transparent',
+						'ring-1 ring-transparent backdrop-blur-xl transition-all duration-300',
 						navigation.state === 'open' &&
 							'md:bg-background md:text-primary md:hover:bg-background/90 md:ring-primary mr-6 delay-50 md:mr-0',
 						navigation.state === 'closed' && 'delay-[400ms]'
 					)}
-					href={localizeHref(route('/engager'))}
+					href={localizeHref(route('/contact'))}
 				>
-					{m.hire_me()}
+					{m.contact_me()}
 				</Button>
 				<NavigationButton />
 			</div>

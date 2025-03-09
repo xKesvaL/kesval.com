@@ -10,8 +10,8 @@
 
 	let actualValues = {
 		yearsOfExperience: dayjs().diff(dayjs('2022-01-01'), 'year'),
-		projects: 13,
-		clients: dayjs().diff(dayjs('2004-10-14'), 'year')
+		projects: 11,
+		clients: 4
 	};
 
 	let values = $state({
@@ -27,8 +27,8 @@
 	};
 </script>
 
-<section class="kcontainer flex flex-col gap-16 px-4 py-20">
-	<div class="grid gap-16 md:grid-cols-12">
+<section class="kcontainer flex flex-col gap-8 px-4 py-8 md:gap-16 md:py-20">
+	<div class="grid gap-8 md:grid-cols-12 md:gap-16">
 		<div class="flex flex-col items-start gap-4 md:col-span-5">
 			<div class="flex flex-col gap-2">
 				<span class="text-primary text-xs tracking-widest uppercase">
@@ -64,7 +64,7 @@
 		</div>
 	</div>
 	<div
-		class="border-border/50 to-muted/10 after:bg-[radial-gradient(circle_at_center,theme(colors.primary.DEFAULT/3%)_0%,transparent_70%),radial-gradient(circle_at_bottom_right,theme(colors.secondary.DEFAULT/2%)_0%,transparent_60%)] relative grid gap-8 rounded-2xl border bg-gradient-to-br from-white via-white px-8 pt-2 pb-8 shadow-[0_4px_20px_-1px_rgba(0,0,0,0.03),0_1px_6px_-1px_rgba(0,0,0,0.02)] backdrop-blur-[1px] transition-all duration-300 after:absolute after:inset-0 after:-z-10 after:rounded-2xl after:opacity-40 hover:shadow-[0_8px_30px_rgba(0,0,0,0.05)] md:grid-cols-3"
+		class="border-border/50 to-muted/10 after:bg-[radial-gradient(circle_at_center,theme(colors.primary.DEFAULT/3%)_0%,transparent_70%),radial-gradient(circle_at_bottom_right,theme(colors.secondary.DEFAULT/2%)_0%,transparent_60%)] relative grid gap-4 rounded-2xl border bg-gradient-to-br from-white via-white px-8 pt-2 pb-8 shadow-[0_4px_20px_-1px_rgba(0,0,0,0.03),0_1px_6px_-1px_rgba(0,0,0,0.02)] backdrop-blur-[1px] transition-all duration-300 after:absolute after:inset-0 after:-z-10 after:rounded-2xl after:opacity-40 hover:shadow-[0_8px_30px_rgba(0,0,0,0.05)] md:grid-cols-3 md:gap-8"
 		use:inView={{}}
 		onenter={() => updateValues()}
 	>
@@ -75,9 +75,9 @@
 						locales={getLocale()}
 						plugins={[continuous]}
 						value={values.yearsOfExperience}
-						class="text-8xl font-bold"
+						class="text-7xl font-bold md:text-8xl"
 					/>
-					<IconUserStar class="size-20" stroke={1.5} />
+					<IconUserStar class="size-16 md:size-20" stroke={1.5} />
 				</div>
 				<h2 class="text-3xl font-medium">
 					{m.home_about_experience()}
@@ -94,9 +94,9 @@
 						locales={getLocale()}
 						plugins={[continuous]}
 						value={values.projects}
-						class="text-8xl font-bold"
+						class="text-7xl font-bold md:text-8xl"
 					/>
-					<IconClipboardCheck class="size-20" stroke={1.5} />
+					<IconClipboardCheck class="size-16 md:size-20" stroke={1.5} />
 				</div>
 				<h2 class="text-3xl font-medium">
 					{m.home_about_projects()}
@@ -113,9 +113,9 @@
 						locales={getLocale()}
 						plugins={[continuous]}
 						value={values.clients}
-						class="text-8xl font-bold"
+						class="text-7xl font-bold md:text-8xl"
 					/>
-					<IconAward class="size-20" stroke={1.5} />
+					<IconAward class="size-16 md:size-20" stroke={1.5} />
 				</div>
 				<h2 class="text-3xl font-medium">
 					{m.home_about_clients()}
