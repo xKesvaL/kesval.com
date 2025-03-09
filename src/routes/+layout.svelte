@@ -24,7 +24,7 @@
 </div>
 
 <Navigation />
-<main class="kcontainer-nav-padding kcontainer">
+<main class="kcontainer-nav-padding">
 	{@render children()}
 </main>
 <Footer />

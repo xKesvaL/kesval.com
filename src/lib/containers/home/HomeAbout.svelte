@@ -3,9 +3,9 @@
 	import { Button } from '$lib/components/ui/button';
 	import { route } from '$lib/ROUTES';
 	import * as m from '$paraglide/messages';
-	import { localizeHref } from '$paraglide/runtime';
-	import NumberFlow from '@number-flow/svelte';
-	import { IconAward, IconClipboardCheck, IconUserStar } from '@tabler/icons-svelte';
+	import { getLocale, localizeHref } from '$paraglide/runtime';
+	import NumberFlow, { continuous } from '@number-flow/svelte';
+	import { IconAward, IconClipboardCheck, IconPhotoOff, IconUserStar } from '@tabler/icons-svelte';
 	import dayjs from 'dayjs';
 
 	let actualValues = {
@@ -27,53 +27,103 @@
 	};
 </script>
 
-<section class="kcontainer flex flex-col gap-8 px-4 py-12">
-	<div class="flex justify-between">
-		<div class="flex flex-col gap-2">
-			<span class="text-primary text-xs tracking-widest uppercase">
-				{m.brand_name()}
-			</span>
-			<h2 class="text-3xl font-medium">
-				{m.home_about_title()}
-			</h2>
-			<p>desc</p>
+<section class="kcontainer flex flex-col gap-16 px-4 py-20">
+	<div class="grid gap-16 md:grid-cols-12">
+		<div class="flex flex-col items-start gap-4 md:col-span-5">
+			<div class="flex flex-col gap-2">
+				<span class="text-primary text-xs tracking-widest uppercase">
+					{m.brand_name()}
+				</span>
+				<h2 class="text-3xl font-medium">
+					{m.home_about_title()}
+				</h2>
+				<p class="max-w-prose">
+					{m.home_about_description()}
+				</p>
+			</div>
 			<Button href={localizeHref(route('/a-propos'))}>
 				{m.about_me()}
 			</Button>
 		</div>
-		<div>imgs</div>
+		<div class="grid grid-cols-3 gap-2 md:col-span-7 md:gap-6">
+			<div
+				class="bg-muted flex h-full rotate-3 items-center justify-center rounded-lg p-4 transition hover:scale-105"
+			>
+				<IconPhotoOff class="size-16" stroke={1} />
+			</div>
+			<div
+				class="bg-muted flex h-full -rotate-3 items-center justify-center rounded-lg p-4 transition hover:scale-105"
+			>
+				<IconPhotoOff class="size-16" stroke={1} />
+			</div>
+			<div
+				class="bg-muted flex h-full rotate-3 items-center justify-center rounded-lg p-4 transition hover:scale-105"
+			>
+				<IconPhotoOff class="size-16" stroke={1} />
+			</div>
+		</div>
 	</div>
 	<div
-		class="grid grid-cols-3 gap-8 rounded-2xl border px-8 pt-2 pb-8"
+		class="border-border/50 to-muted/10 after:bg-[radial-gradient(circle_at_center,theme(colors.primary.DEFAULT/3%)_0%,transparent_70%),radial-gradient(circle_at_bottom_right,theme(colors.secondary.DEFAULT/2%)_0%,transparent_60%)] relative grid gap-8 rounded-2xl border bg-gradient-to-br from-white via-white px-8 pt-2 pb-8 shadow-[0_4px_20px_-1px_rgba(0,0,0,0.03),0_1px_6px_-1px_rgba(0,0,0,0.02)] backdrop-blur-[1px] transition-all duration-300 after:absolute after:inset-0 after:-z-10 after:rounded-2xl after:opacity-40 hover:shadow-[0_8px_30px_rgba(0,0,0,0.05)] md:grid-cols-3"
 		use:inView={{}}
 		onenter={() => updateValues()}
 	>
-		<div class="flex flex-col -space-y-4">
-			<div class="flex items-center gap-4">
-				<NumberFlow value={values.yearsOfExperience} class="text-7xl font-bold" />
-				<IconUserStar class="size-16" stroke={2.5} />
+		<div class="flex flex-col items-start gap-2">
+			<div class="-space-y-4">
+				<div class="flex items-center gap-4">
+					<NumberFlow
+						locales={getLocale()}
+						plugins={[continuous]}
+						value={values.yearsOfExperience}
+						class="text-8xl font-bold"
+					/>
+					<IconUserStar class="size-20" stroke={1.5} />
+				</div>
+				<h2 class="text-3xl font-medium">
+					{m.home_about_experience()}
+				</h2>
 			</div>
-			<h2 class="text-3xl font-medium">
-				{m.home_about_experience()}
-			</h2>
+			<p class="text-muted-foreground max-w-prose text-sm">
+				{m.home_about_experience_description()}
+			</p>
 		</div>
-		<div class="flex flex-col -space-y-4">
-			<div class="flex items-center gap-4">
-				<NumberFlow value={values.projects} class="text-7xl font-bold" />
-				<IconClipboardCheck class="size-16" stroke={2.5} />
+		<div class="flex flex-col items-start gap-2">
+			<div class="-space-y-4">
+				<div class="flex items-center gap-4">
+					<NumberFlow
+						locales={getLocale()}
+						plugins={[continuous]}
+						value={values.projects}
+						class="text-8xl font-bold"
+					/>
+					<IconClipboardCheck class="size-20" stroke={1.5} />
+				</div>
+				<h2 class="text-3xl font-medium">
+					{m.home_about_projects()}
+				</h2>
 			</div>
-			<h2 class="text-3xl font-medium">
-				{m.home_about_projects()}
-			</h2>
+			<p class="text-muted-foreground max-w-prose text-sm">
+				{m.home_about_projects_description()}
+			</p>
 		</div>
-		<div class="flex flex-col -space-y-4">
-			<div class="flex items-center gap-4">
-				<NumberFlow value={values.clients} class="text-7xl font-bold" />
-				<IconAward class="size-16" stroke={2.5} />
+		<div class="flex flex-col items-start gap-2">
+			<div class="-space-y-4">
+				<div class="flex items-center gap-4">
+					<NumberFlow
+						locales={getLocale()}
+						plugins={[continuous]}
+						value={values.clients}
+						class="text-8xl font-bold"
+					/>
+					<IconAward class="size-20" stroke={1.5} />
+				</div>
+				<h2 class="text-3xl font-medium">
+					{m.home_about_clients()}
+				</h2>
 			</div>
-			<h2 class="text-3xl font-medium">
-				{m.home_about_clients()}
-			</h2>
+			<p class="text-muted-foreground max-w-prose text-sm">
+				{m.home_about_clients_description()}
+			</p>
 		</div>
 	</div>
 </section>

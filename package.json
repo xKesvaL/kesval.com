@@ -49,6 +49,7 @@
 		"vite": "^6.2.0"
 	},
 	"dependencies": {
+		"@formkit/auto-animate": "^0.8.2",
 		"lucide-svelte": "^0.476.0",
 		"vite-plugin-kit-routes": "^0.8.2"
 	},

@@ -15,9 +15,13 @@
 	"home_hero_subtitle": "Je suis KesvaL, ou Jordan de mon vrai nom, développeur web fullstack français. J'ai fondé {brand} pour accompagner les entrepreneurs dans le développement de leur présence en ligne.",
 
 	"home_about_title": "Qui suis-je ?",
+	"home_about_description": "Je suis un développeur web fullstack passionné par la création de sites internet et d'applications web. J'ai acquis une solide expérience dans le développement front-end et back-end, ainsi que dans le design web. Mon objectif est de vous aider à concrétiser vos idées en ligne.",
 	"home_about_experience": "ans d'expertise",
+	"home_about_experience_description": "Je suis développeur par passion depuis plus de 10 ans, et depuis 2022, je crée des sites internet et des applications web pour mes clients.",
 	"home_about_projects": "projets réalisés",
+	"home_about_projects_description": "J'ai réalisé de nombreux projets, allant de sites vitrines simples à des applications à grande échelle, en passant par des boutiques en ligne.",
 	"home_about_clients": "clients satisfaits",
+	"home_about_clients_description": "Je suis fier d'avoir aidé mes clients à atteindre leurs objectifs, et j'espère les accompagner au mieux dans leurs projets futurs.",
 
 	"hire_me": "Embauchez-moi",
 	"my_resume": "Mon CV",

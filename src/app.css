@@ -68,6 +68,8 @@
 	--animate-shine-pulse: shine-pulse 2s linear infinite;
 	--animate-aurora: aurora 60s linear infinite;
 	--animate-bounce-x: bounce-x 1.2s ease-in-out infinite;
+	--animate-marquee-left: marquee-left var(--marquee-duration, 40s) linear infinite;
+	--animate-marquee-up: marquee-up var(--marquee-duration, 40s) linear infinite;
 
 	--font-sans: "Helvetica Neue", sans-serif;
 
@@ -138,6 +140,24 @@
 		50% {
 			transform: none;
 			animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+		}
+	}
+
+	@keyframes marquee-left {
+		0% {
+			transform: translateX(0);
+		}
+		100% {
+			transform: translateX(calc(-100% - var(--marquee-gap)));
+		}
+	}
+
+	@keyframes marquee-up {
+		0% {
+			transform: translateY(0);
+		}
+		100% {
+			transform: translateY(calc(-100% - var(--marquee-gap)));
 		}
 	}
 
