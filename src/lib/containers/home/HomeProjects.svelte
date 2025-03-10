@@ -3,6 +3,7 @@
 	import { projects } from '$lib/utils/projects';
 	import * as m from '$paraglide/messages';
 	import { localizeHref } from '$paraglide/runtime';
+	import { IconArrowRight } from '@tabler/icons-svelte';
 	import type { Action } from 'svelte/action';
 
 	const PROJECTS_COUNT = 6;
@@ -46,28 +47,30 @@
 	{#if projectsToShow.length}
 		<ul class="vertical-disclosures" use:hoverProject>
 			{#each projectsToShow as project, i (project.name)}
-				<li
-					class="px-4 py-2 data-[active=true]:py-4 md:p-6 data-[active=true]:md:py-6"
-					data-active={i === 0}
-				>
-					<a
-						href={localizeHref(route('/projets'))}
-						class="flex h-full items-center md:flex-col md:items-start md:justify-end"
-					>
-						<img src={project.image} alt={project.name} class="" />
-						<h3
-							class="absolute top-4 left-[37px] w-max origin-[0_50%] rotate-90 text-xl font-medium tracking-wide uppercase"
-						>
+				<li class="" data-active={i === 0}>
+					<article class="flex h-full items-end md:flex-col md:items-start md:justify-end">
+						<img src={project.image} alt={project.name} />
+						<h3 class="text-xl font-medium tracking-wide uppercase">
 							{project.name}
 						</h3>
 						<div class="flex w-full flex-col gap-4 md:gap-6">
-							<p class="absolute bottom-[4.5rem] w-max">{project.description}</p>
-							<div class="flex items-center gap-4 md:gap-6">
+							<p
+								class="text-foreground/90 absolute top-14 right-6 left-6 md:top-auto md:bottom-[4.5rem] md:w-max"
+							>
+								{project.description}
+							</p>
+							<div
+								class="relative z-10 flex flex-row-reverse items-center gap-4 md:h-auto md:flex-row md:gap-6"
+							>
 								<project.icon class="size-6 shrink-0" />
-								<div class="bg-border h-[1px] grow"></div>
+								<div class="bar bg-foreground/50 md:bg-border h-[1px]"></div>
+								<a class="flex items-center gap-2 leading-0" href={localizeHref(route('/projets'))}>
+									{m.see_more()}
+									<IconArrowRight class="size-4" />
+								</a>
 							</div>
 						</div>
-					</a>
+					</article>
 				</li>
 			{/each}
 		</ul>

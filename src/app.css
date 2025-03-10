@@ -193,21 +193,25 @@
 	--speed: 0.6s;
 	--disclosure-cols: 10fr 1fr 1fr 1fr 1fr 1fr;
 
-	@apply m-0 grid h-[30rem] list-none grid-cols-1 grid-rows-[var(--disclosure-cols)] justify-center gap-[var(--gap)] p-0 md:h-80 md:grid-cols-[var(--disclosure-cols)] md:grid-rows-1;
+	@apply m-0 grid h-[36rem] list-none grid-cols-1 grid-rows-[var(--disclosure-cols)] justify-center gap-[var(--gap)] p-0 md:h-80 md:grid-cols-[var(--disclosure-cols)] md:grid-rows-1;
 	container-type: inline-size;
 	transition:
 		grid-template-columns var(--speed) var(--easing),
 		grid-template-rows var(--speed) var(--easing);
 
 	li {
-		@apply bg-card text-muted-foreground/75 relative min-h-12 w-full overflow-hidden rounded-lg border shadow-[0_4px_20px_-1px_rgba(0,0,0,0.03),0_1px_6px_-1px_rgba(0,0,0,0.02)] transition ease-in-out md:w-auto;
+		@apply bg-card text-muted-foreground/75 relative min-h-14 w-full overflow-hidden rounded-lg border px-6 py-4 shadow-[0_4px_20px_-1px_rgba(0,0,0,0.03),0_1px_6px_-1px_rgba(0,0,0,0.02)] transition-all duration-[600ms] ease-in-out md:w-auto md:p-6;
 
 		h3 {
-			@apply text-muted-foreground transition;
+			@apply text-muted-foreground absolute top-3 w-max origin-[0_50%] transition md:top-4 md:left-[37px] md:rotate-90;
+		}
+
+		a {
+			@apply opacity-0 transition duration-[600ms] hover:underline;
 		}
 
 		& p {
-			@apply max-w-prose -translate-x-4 opacity-0 transition duration-[600ms];
+			@apply max-w-prose -translate-y-4 opacity-0 transition duration-[600ms] md:-translate-x-4 md:translate-y-0;
 		}
 
 		img {
@@ -217,23 +221,49 @@
 			transition-duration: calc(var(--speed) * 1.2);
 			transition-timing-function: var(--easing);
 		}
+
+		.bar {
+			@apply basis-12 transition-all duration-[600ms] md:max-w-none;
+		}
 	}
 
 	li[data-active='true'] {
-		@apply text-foreground hover:shadow-[0_8px_30px_rgba(0,0,0,0.05)];
+		@apply text-foreground px-6 py-4 hover:shadow-[0_8px_30px_rgba(0,0,0,0.05)] md:p-6;
 
 		h3 {
-			@apply text-foreground;
+			@apply text-foreground top-4;
+		}
+
+		a {
+			@apply opacity-100;
 		}
 
 		& p {
-			@apply translate-x-0 opacity-100;
+			@apply translate-y-0 opacity-100 md:translate-x-0;
 		}
 
 		img {
 			@apply scale-100 opacity-100 brightness-100 grayscale-0;
 			transition-delay: calc(var(--speed) * 0.25);
-			mask: radial-gradient(100% 100% at 100% 0, #fff, #0000);
+			mask: linear-gradient(
+				to bottom,
+				transparent 0%,
+				transparent 40%,
+				#fff 65%,
+				#fff 75%,
+				transparent 90%,
+				transparent 100%
+			);
+		}
+
+		@media (min-width: 768px) {
+			img {
+				mask: radial-gradient(100% 100% at 100% 0%, #fff, #0000);
+			}
+		}
+
+		.bar {
+			@apply grow;
 		}
 	}
 }
