@@ -23,7 +23,7 @@
 		innerClassName = '',
 		numberOfCopies = 5,
 		duration = 10,
-		gap = 1,
+		gap = 1.25,
 		class: className,
 		children
 	}: Props = $props();

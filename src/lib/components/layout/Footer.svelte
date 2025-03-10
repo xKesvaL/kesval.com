@@ -34,7 +34,7 @@
 	} as const satisfies Record<string, Links>;
 </script>
 
-<footer class="kcontainer flex flex-col gap-12 px-4 py-8 md:gap-20 md:py-12">
+<footer class="kcontainer flex flex-col gap-12 px-4 py-8 md:gap-20 md:pt-20 md:pb-12">
 	<!-- CTA -->
 	<div class="bg-primary text-primary-foreground rounded-2xl px-4 py-20">
 		<div class="mx-auto flex max-w-4xl flex-col items-start gap-4">
@@ -56,7 +56,7 @@
 				</h3>
 				<div class="grid grid-cols-3 gap-16">
 					<div class="flex flex-col">
-						<h4 class="font-bold">
+						<h4 class="font-medium">
 							{m.my_email()}
 						</h4>
 						<Link href={`mailto:${brand.email}`}>
