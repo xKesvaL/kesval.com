@@ -207,7 +207,7 @@
 		}
 
 		a {
-			@apply opacity-0 transition duration-[600ms] hover:underline;
+			@apply opacity-0 transition duration-[600ms] hover:underline pointer-events-none;
 		}
 
 		& p {
@@ -216,10 +216,24 @@
 
 		img {
 			@apply absolute inset-0 h-full w-full scale-125 object-cover opacity-50 brightness-150 grayscale-100;
-			mask: radial-gradient(100% 80% at 100% 0, #fff, #0000);
-			transition-property: filter, scale;
+			mask: linear-gradient(
+				to bottom,
+				transparent 0%,
+				transparent 40%,
+				#fff 65%,
+				#fff 75%,
+				transparent 90%,
+				transparent 100%
+			);
+			transition-property: scale;
 			transition-duration: calc(var(--speed) * 1.2);
 			transition-timing-function: var(--easing);
+		}
+
+		@media (min-width: 768px) {
+			img {
+				mask: radial-gradient(100% 100% at 100% 0%, #fff, #0000);
+			}
 		}
 
 		.bar {
@@ -235,7 +249,7 @@
 		}
 
 		a {
-			@apply opacity-100;
+			@apply opacity-100 pointer-events-auto;
 		}
 
 		& p {
