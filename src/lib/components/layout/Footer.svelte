@@ -36,10 +36,10 @@
 
 <footer class="kcontainer flex flex-col gap-12 px-4 py-8 md:gap-20 md:pt-20 md:pb-12">
 	<!-- CTA -->
-	<div class="bg-primary text-primary-foreground rounded-2xl px-4 py-20">
+	<div class="bg-primary text-primary-foreground rounded-2xl px-4 py-8 md:py-20">
 		<div class="mx-auto flex max-w-4xl flex-col items-start gap-4">
-			<div class="flex flex-col gap-8">
-				<h2 class="text-3xl font-medium">
+			<div class="flex flex-col gap-4 md:gap-8">
+				<h2 class="text-2xl font-medium md:text-3xl">
 					{m.footer_cta()}
 				</h2>
 				<div class="flex gap-2">
@@ -49,12 +49,12 @@
 					</Button>
 				</div>
 			</div>
-			<div class="bg-secondary/50 my-8 h-[1px] w-full"></div>
-			<div class="flex flex-col gap-8">
+			<div class="bg-secondary/50 my-4 h-[1px] w-full md:my-8"></div>
+			<div class="flex flex-col gap-4 md:gap-8">
 				<h3 class="text-xl font-medium">
 					{m.footer_cta_other()}
 				</h3>
-				<div class="grid grid-cols-3 gap-16">
+				<div class="grid gap-16 md:grid-cols-3">
 					<div class="flex flex-col">
 						<h4 class="font-medium">
 							{m.my_email()}

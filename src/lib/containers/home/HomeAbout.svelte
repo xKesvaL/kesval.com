@@ -47,17 +47,17 @@
 		</div>
 		<div class="grid grid-cols-3 gap-2 md:col-span-7 md:gap-6">
 			<div
-				class="bg-muted flex h-full rotate-3 items-center justify-center rounded-lg p-4 transition hover:scale-105"
+				class="bg-muted flex h-full rotate-3 items-center justify-center rounded-lg p-4 transition hover:scale-110"
 			>
 				<IconPhotoOff class="size-16" stroke={1} />
 			</div>
 			<div
-				class="bg-muted flex h-full -rotate-3 items-center justify-center rounded-lg p-4 transition hover:scale-105"
+				class="bg-muted flex h-full -rotate-3 items-center justify-center rounded-lg p-4 transition hover:scale-110"
 			>
 				<IconPhotoOff class="size-16" stroke={1} />
 			</div>
 			<div
-				class="bg-muted flex h-full rotate-3 items-center justify-center rounded-lg p-4 transition hover:scale-105"
+				class="bg-muted flex h-full rotate-3 items-center justify-center rounded-lg p-4 transition hover:scale-110"
 			>
 				<IconPhotoOff class="size-16" stroke={1} />
 			</div>

@@ -13,7 +13,7 @@
 		<h1 class="max-w-[30ch] text-3xl leading-snug font-bold md:text-4xl lg:text-5xl">
 			{m.home_hero_title()}
 		</h1>
-		<p class="text-muted-foreground max-w-prose">
+		<p class="text-muted-foreground max-w-prose text-lg">
 			{m.home_hero_subtitle({ brand: m.brand_name() })}
 		</p>
 		<div class="mt-4 flex gap-2">
