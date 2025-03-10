@@ -59,7 +59,7 @@
 	>
 		<div class="flex h-full w-full items-center justify-between rounded-[15px]">
 			<a href={localizeHref(route('/'))} aria-label="home">
-				<enhanced:img src="$assets/logo.png" alt="An alt text" class="roundeLinkType size-10" />
+				<enhanced:img src="$assets/logo.png" alt="An alt text" class="size-10 rounded-lg" />
 			</a>
 			<div class="flex items-center gap-2">
 				<Button

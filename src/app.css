@@ -3,35 +3,34 @@
 @plugin "tailwindcss-animate";
 
 @font-face {
-  font-family: "Helvetica Neue";
-  src:
-    local("Helvetica Neue"),
-    url("/fonts/HelveticaNeue400.woff2") format("woff2"),
-		url("/fonts/HelveticaNeue400.otf") format("opentype");
+	font-family: 'Helvetica Neue';
+	src:
+		local('Helvetica Neue'),
+		url('/fonts/HelveticaNeue400.woff2') format('woff2'),
+		url('/fonts/HelveticaNeue400.otf') format('opentype');
 	font-weight: 400;
 	font-style: normal;
 }
 
 @font-face {
-	font-family: "Helvetica Neue";
+	font-family: 'Helvetica Neue';
 	src:
-		local("Helvetica Neue"),
-		url("/fonts/HelveticaNeue500.woff2") format("woff2"),
-		url("/fonts/HelveticaNeue500.otf") format("opentype");
+		local('Helvetica Neue'),
+		url('/fonts/HelveticaNeue500.woff2') format('woff2'),
+		url('/fonts/HelveticaNeue500.otf') format('opentype');
 	font-weight: 500;
 	font-style: normal;
 }
 
 @font-face {
-	font-family: "Helvetica Neue";
+	font-family: 'Helvetica Neue';
 	src:
-		local("Helvetica Neue"),
-		url("/fonts/HelveticaNeue700.woff2") format("woff2"),
-		url("/fonts/HelveticaNeue700.ttf") format("truetype");
+		local('Helvetica Neue'),
+		url('/fonts/HelveticaNeue700.woff2') format('woff2'),
+		url('/fonts/HelveticaNeue700.ttf') format('truetype');
 	font-weight: 700;
 	font-style: normal;
 }
-
 
 @theme {
 	--color-background: oklch(99.09% 0.0021 300);
@@ -71,13 +70,11 @@
 	--animate-marquee-left: marquee-left var(--marquee-duration, 60s) linear infinite;
 	--animate-marquee-up: marquee-up var(--marquee-duration, 60s) linear infinite;
 
-	--font-sans: "Helvetica Neue", sans-serif;
+	--font-sans: 'Helvetica Neue', sans-serif;
 
 	--shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05), 0 1px 3px -1px rgba(0, 0, 0, 0.05);
 	--shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05), 0 1px 5px -1px rgba(0, 0, 0, 0.05);
 	--shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.05);
-
-
 
 	@keyframes accordion-down {
 		from {
@@ -123,17 +120,21 @@
 
 	@keyframes aurora {
 		from {
-			background-position: 50% 50%, 50% 50%;
+			background-position:
+				50% 50%,
+				50% 50%;
 		}
-		
+
 		to {
-			background-position: 350% 50%, 350% 50%;
+			background-position:
+				350% 50%,
+				350% 50%;
 		}
 	}
 
-	
 	@keyframes bounce-x {
-		0%, 100% {
+		0%,
+		100% {
 			transform: translateX(25%);
 			animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
 		}
@@ -182,7 +183,58 @@
 	}
 
 	p {
-		@apply leading-relaxed
+		@apply leading-relaxed;
+	}
+}
+
+@utility vertical-disclosures {
+	--gap: 0.5rem;
+	--easing: cubic-bezier(0.25, 0.8, 0.25, 1);
+	--speed: 0.6s;
+	--disclosure-cols: 10fr 1fr 1fr 1fr 1fr 1fr;
+
+	@apply m-0 grid h-[30rem] list-none grid-cols-1 grid-rows-[var(--disclosure-cols)] justify-center gap-[var(--gap)] p-0 md:h-80 md:grid-cols-[var(--disclosure-cols)] md:grid-rows-1;
+	container-type: inline-size;
+	transition:
+		grid-template-columns var(--speed) var(--easing),
+		grid-template-rows var(--speed) var(--easing);
+
+	li {
+		@apply bg-card text-muted-foreground/75 relative min-h-12 w-full overflow-hidden rounded-lg border shadow-[0_4px_20px_-1px_rgba(0,0,0,0.03),0_1px_6px_-1px_rgba(0,0,0,0.02)] transition ease-in-out md:w-auto;
+
+		h3 {
+			@apply text-muted-foreground transition;
+		}
+
+		& p {
+			@apply max-w-prose -translate-x-4 opacity-0 transition duration-[600ms];
+		}
+
+		img {
+			@apply absolute inset-0 h-full w-full scale-125 object-cover opacity-50 brightness-150 grayscale-100;
+			mask: radial-gradient(100% 80% at 100% 0, #fff, #0000);
+			transition-property: filter, scale;
+			transition-duration: calc(var(--speed) * 1.2);
+			transition-timing-function: var(--easing);
+		}
+	}
+
+	li[data-active='true'] {
+		@apply text-foreground hover:shadow-[0_8px_30px_rgba(0,0,0,0.05)];
+
+		h3 {
+			@apply text-foreground;
+		}
+
+		& p {
+			@apply translate-x-0 opacity-100;
+		}
+
+		img {
+			@apply scale-100 opacity-100 brightness-100 grayscale-0;
+			transition-delay: calc(var(--speed) * 0.25);
+			mask: radial-gradient(100% 100% at 100% 0, #fff, #0000);
+		}
 	}
 }
 
@@ -202,7 +254,7 @@
 }
 
 @utility position-nav {
-	@apply right-0 left-0 top-[var(--nav-spacing)] mx-auto;
+	@apply top-[var(--nav-spacing)] right-0 left-0 mx-auto;
 }
 
 @utility kcontainer-nav-padding {
@@ -211,48 +263,4 @@
 
 @utility min-h-screen-wo-nav {
 	@apply min-h-[calc(100vh-var(--nav-height)-var(--nav-spacing))];
-}
-
-/* Special Nav Gradient */
-
-@property --gradient-angle {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
-}
-
-.gradient-border {
-	background: white;
-}
-
-.gradient-border::before,
-.gradient-border::after {
-  content: "";
-  position: absolute;
-  inset: -1px;
-  z-index: -1;
-  background: conic-gradient(
-    from var(--gradient-angle),
-    var(--color-indigo-500),
-    var(--color-violet-500),
-    var(--color-primary),
-    var(--color-violet-500),
-    var(--color-indigo-500)
-  );
-  border-radius: inherit;
-  animation: rotation 20s linear infinite;
-}
-
-.gradient-border::after {
-  filter: blur(0.5rem);
-	opacity: 0.3;
-}
-
-@keyframes rotation {
-  0% {
-    --gradient-angle: 0deg;
-  }
-  100% {
-    --gradient-angle: 360deg;
-  }
 }
