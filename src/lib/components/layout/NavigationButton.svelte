@@ -5,8 +5,6 @@
 	const toggleNavigation = () => {
 		navigation.state = navigation.state === 'open' ? 'closed' : 'open';
 	};
-
-	let { ...props } = $props();
 </script>
 
 <Button
@@ -19,7 +17,6 @@
 		? 'hover:bg-muted/10 ring-primary bg-primary'
 		: 'bg-muted border'}"
 	aria-label={'Toggle navigation'}
-	{...props}
 >
 	<svg
 		stroke="currentColor"

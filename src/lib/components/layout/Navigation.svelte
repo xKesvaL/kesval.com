@@ -70,6 +70,7 @@
 						navigation.state === 'closed' && 'delay-[400ms]'
 					)}
 					href={localizeHref(route('/contact'))}
+					onclick={() => (navigation.state = 'closed')}
 				>
 					{m.contact_me()}
 				</Button>
@@ -85,7 +86,7 @@
 		<div
 			in:fly={baseFlyParams}
 			out:fly={baseFlyOutParams}
-			class="fixed inset-0 z-10 bg-white shadow-sm"
+			class="fixed inset-0 z-30 bg-white shadow-sm"
 		>
 			<div class="kcontainer flex h-full flex-col items-stretch justify-center gap-8 p-4 lg:px-8">
 				<ul class="flex flex-col">
@@ -96,7 +97,7 @@
 							<a
 								onmouseenter={() => (latestHoveredLink = link)}
 								onclick={() => (navigation.state = 'closed')}
-								class=" text-muted-foreground/80 hover:text-primary flex translate-x-0 py-6 text-5xl font-semibold uppercase transition-all duration-300 hover:-translate-x-12 md:text-6xl lg:text-7xl"
+								class="text-muted-foreground/80 hover:text-primary flex translate-x-0 py-6 text-5xl font-semibold uppercase transition-all duration-300 hover:-translate-x-12 md:text-6xl lg:text-7xl"
 								{href}
 							>
 								{translate(label)}
@@ -132,7 +133,7 @@
 				...baseFlyOutParams,
 				delay: 150
 			}}
-			class="bg-primary fixed top-0 right-0 bottom-0 z-10 w-18 shadow-sm transition-all md:w-1/3"
+			class="bg-primary fixed top-0 right-0 bottom-0 z-30 w-18 shadow-sm transition-all md:w-1/3"
 		></div>
 	{/if}
 </div>

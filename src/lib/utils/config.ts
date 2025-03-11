@@ -1,5 +1,6 @@
 import { route } from '$lib/ROUTES';
 import * as m from '$paraglide/messages';
+import dayjs from 'dayjs';
 
 export type LinkType = {
 	label: keyof typeof m;
@@ -40,7 +41,14 @@ export const socialLinks = [
 ] as const satisfies LinkType[];
 
 export const brand = {
-	email: 'xkesval@gmail.com'
+	email: 'xkesval@gmail.com',
+	github: 'https://github.com/xKesvaL',
+	instagram: 'https://instagram.com/xkesval',
+	linkedin: 'https://www.linkedin.com/in/jordan-abeddou/',
+	website: 'https://kesval.com',
+	websiteShort: 'kesval.com',
+	age: dayjs().diff(dayjs('2004-10-14'), 'year'),
+	yearsOfExperience: dayjs().diff(dayjs('2022-01-01'), 'year')
 } as const;
 
 export const GOOGLE_ANALYTICS_ID = 'G-VBZTZPQWJ9';

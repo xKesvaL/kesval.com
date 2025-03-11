@@ -3,7 +3,7 @@
 	import { route } from '$lib/ROUTES';
 	import * as m from '$paraglide/messages';
 	import { localizeHref } from '$paraglide/runtime';
-	import { IconMessageCirclePlus } from '@tabler/icons-svelte';
+	import { IconMessageCirclePlus, IconPhotoOff } from '@tabler/icons-svelte';
 </script>
 
 <section
@@ -26,5 +26,11 @@
 			</Button>
 		</div>
 	</div>
-	<div>img</div>
+	<div class="">
+		<div
+			class="bg-muted shadow-cool flex min-h-80 min-w-80 items-center justify-center rounded-lg border p-4 transition hover:scale-110"
+		>
+			<IconPhotoOff class="size-16" stroke={1} />
+		</div>
+	</div>
 </section>

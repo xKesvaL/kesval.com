@@ -308,3 +308,7 @@
 @utility min-h-screen-wo-nav {
 	@apply min-h-[calc(100vh-var(--nav-height)-var(--nav-spacing))];
 }
+
+@utility shadow-cool {
+	@apply shadow-[0_4px_20px_-1px_rgba(0,0,0,0.03),0_1px_6px_-1px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.05)] transition;
+}

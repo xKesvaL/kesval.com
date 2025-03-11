@@ -47,24 +47,24 @@
 		</div>
 		<div class="grid grid-cols-3 gap-2 md:col-span-7 md:gap-6">
 			<div
-				class="bg-muted flex h-full rotate-3 items-center justify-center rounded-lg p-4 transition hover:scale-110"
+				class="bg-muted shadow-cool flex h-full rotate-3 items-center justify-center rounded-lg border p-4 transition hover:scale-110"
 			>
 				<IconPhotoOff class="size-16" stroke={1} />
 			</div>
 			<div
-				class="bg-muted flex h-full -rotate-3 items-center justify-center rounded-lg p-4 transition hover:scale-110"
+				class="bg-muted shadow-cool flex h-full -rotate-3 items-center justify-center rounded-lg border p-4 transition hover:scale-110"
 			>
 				<IconPhotoOff class="size-16" stroke={1} />
 			</div>
 			<div
-				class="bg-muted flex h-full rotate-3 items-center justify-center rounded-lg p-4 transition hover:scale-110"
+				class="bg-muted shadow-cool flex h-full rotate-3 items-center justify-center rounded-lg border p-4 transition hover:scale-110"
 			>
 				<IconPhotoOff class="size-16" stroke={1} />
 			</div>
 		</div>
 	</div>
 	<div
-		class="border-border/50 to-muted/10 after:bg-[radial-gradient(circle_at_center,theme(colors.primary.DEFAULT/3%)_0%,transparent_70%),radial-gradient(circle_at_bottom_right,theme(colors.secondary.DEFAULT/2%)_0%,transparent_60%)] relative grid gap-4 rounded-2xl border bg-gradient-to-br from-white via-white px-8 pt-2 pb-8 shadow-[0_4px_20px_-1px_rgba(0,0,0,0.03),0_1px_6px_-1px_rgba(0,0,0,0.02)] backdrop-blur-[1px] transition-all duration-300 after:absolute after:inset-0 after:-z-10 after:rounded-2xl after:opacity-40 md:grid-cols-3 md:gap-8"
+		class="border-border/50 to-muted/10 after:bg-[radial-gradient(circle_at_center,theme(colors.primary.DEFAULT/3%)_0%,transparent_70%),radial-gradient(circle_at_bottom_right,theme(colors.secondary.DEFAULT/2%)_0%,transparent_60%)] shadow-cool relative grid gap-4 rounded-2xl border bg-gradient-to-br from-white via-white px-8 pt-2 pb-8 backdrop-blur-[1px] transition-all duration-300 after:absolute after:inset-0 after:-z-10 after:rounded-2xl after:opacity-40 md:grid-cols-3 md:gap-8"
 		use:inView={{}}
 		onenter={() => updateValues()}
 	>
