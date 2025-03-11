@@ -13,7 +13,7 @@
 </script>
 
 <svelte:head>
-	<script async src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_ID}`}>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-VBZTZPQWJ9">
 	</script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
@@ -23,6 +23,6 @@
 		}
 
 		gtag('js', new Date());
-		gtag('config', `${GOOGLE_ANALYTICS_ID}`);
+		gtag('config', 'G-VBZTZPQWJ9');
 	</script>
 </svelte:head>

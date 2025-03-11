@@ -102,9 +102,6 @@ importers:
       svelte-check:
         specifier: ^4.1.5
         version: 4.1.5(picomatch@4.0.2)(svelte@5.22.6)(typescript@5.8.2)
-      svelte-masonry:
-        specifier: ^0.1.5
-        version: 0.1.5(svelte@5.22.6)
       svelte-meta-tags:
         specifier: ^4.2.0
         version: 4.2.0(svelte@5.22.6)
@@ -2186,11 +2183,6 @@ packages:
     peerDependenciesMeta:
       svelte:
         optional: true
-
-  svelte-masonry@0.1.5:
-    resolution: {integrity: sha512-ZMtALHVbvriGcLODSdoeRaI0SvbmNEW6puG/Zs2tUP7hK0e/TLrxGTAAtNDinI/8DJhUJUCnAsP5xsTmebLwbw==}
-    peerDependencies:
-      svelte: ^4.0.0
 
   svelte-meta-tags@4.2.0:
     resolution: {integrity: sha512-VFnbdN4CNLeGaiRK++mhHKm/otgId3qM0hY6fu6vhh+e+jGE9Xr3kSUjgKAEnquktskEjUEo7W0ek7EANsyTHw==}
@@ -4328,10 +4320,6 @@ snapshots:
       postcss-scss: 4.0.9(postcss@8.5.3)
       postcss-selector-parser: 7.1.0
     optionalDependencies:
-      svelte: 5.22.6
-
-  svelte-masonry@0.1.5(svelte@5.22.6):
-    dependencies:
       svelte: 5.22.6
 
   svelte-meta-tags@4.2.0(svelte@5.22.6):
