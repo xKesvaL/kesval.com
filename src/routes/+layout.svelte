@@ -5,6 +5,7 @@
 	import { navigation } from '$lib/stores/common.svelte';
 	import { locales, localizeHref } from '$lib/paraglide/runtime';
 	import { page } from '$app/state';
+	import Analytics from '$lib/components/base/Analytics.svelte';
 	let { children } = $props();
 </script>
 
@@ -14,6 +15,8 @@
 		<a href={localizeHref(page.url.pathname, { locale })}>{locale}</a>
 	{/each}
 </div>
+
+<Analytics />
 
 <Navigation />
 <main class="kcontainer-nav-padding">
