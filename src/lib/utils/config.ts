@@ -37,6 +37,11 @@ export const socialLinks = [
 		label: 'nav_instagram',
 		href: 'https://instagram.com/xkesval',
 		external: true
+	},
+	{
+		label: 'nav_linkedin',
+		href: 'https://www.linkedin.com/in/jordan-abeddou/',
+		external: true
 	}
 ] as const satisfies LinkType[];
 

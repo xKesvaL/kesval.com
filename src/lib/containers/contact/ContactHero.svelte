@@ -101,7 +101,7 @@
 				<p class="text-muted-foreground max-w-prose">
 					{m.contact_hero_availability_description()}
 				</p>
-				<div class="bg-muted flex flex-col items-start gap-4 rounded-lg p-6">
+				<div class="bg-muted shadow-cool flex flex-col items-start gap-4 rounded-lg p-6">
 					<h3 class="text-xl font-medium">
 						{m.contact_hero_looking_for_work()}
 					</h3>

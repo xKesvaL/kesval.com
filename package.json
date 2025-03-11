@@ -36,12 +36,16 @@
 		"eslint-plugin-svelte": "^3.1.0",
 		"formsnap": "^2.0.0",
 		"globals": "^16.0.0",
+		"inline-style-parser": "^0.2.4",
+		"lucide-svelte": "^0.479.0",
 		"mdsvex": "^0.12.3",
 		"prettier": "^3.5.3",
 		"prettier-plugin-svelte": "^3.3.3",
 		"prettier-plugin-tailwindcss": "^0.6.11",
 		"svelte": "^5.22.6",
 		"svelte-check": "^4.1.5",
+		"svelte-masonry": "^0.1.5",
+		"svelte-meta-tags": "^4.2.0",
 		"sveltekit-superforms": "^2.24.0",
 		"tailwind-merge": "^3.0.2",
 		"tailwind-variants": "^1.0.0",
@@ -54,7 +58,6 @@
 	},
 	"dependencies": {
 		"@formkit/auto-animate": "^0.8.2",
-		"lucide-svelte": "^0.479.0",
 		"vite-plugin-kit-routes": "^0.8.3"
 	},
 	"engines": {

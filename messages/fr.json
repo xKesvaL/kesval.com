@@ -10,6 +10,7 @@
 	"nav_privacy_policy": "Politique de confidentialité",
 	"nav_github": "GitHub",
 	"nav_instagram": "Instagram",
+	"nav_linkedin": "LinkedIn",
 
 	"home_hero_title": "Développeur web fullstack, web designer et jeune entrepreneur",
 	"home_hero_subtitle": "Je suis KesvaL, ou Jordan de mon vrai nom, développeur web fullstack français. J'ai fondé {brand} pour accompagner les entrepreneurs dans le développement de leur présence en ligne.",
@@ -69,6 +70,7 @@
 	"years_old": "{years} ans",
 	"years_of_experience": "{years} ans d'expérience",
 	"present": "Présent",
+	"change_language": "Changer de langue",
 
 	"experience_olwe_title": "OLWE Développement",
 	"experience_olwe_description": "Développeur Fullstack, principalement sur des applications web utilisant React avec Next pour le front-end et Express avec MariaDB sur le back-end.",

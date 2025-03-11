@@ -12,6 +12,7 @@
 	import { navigationLinks, type LinkType } from '$lib/utils/config';
 	import { page } from '$app/state';
 	import { deLocalizeHref, localizeHref } from '$paraglide/runtime';
+	import NavigationLangSwitcher from './NavigationLangSwitcher.svelte';
 
 	const baseFlyParams = {
 		y: (innerHeight.current || 0) * -1,
@@ -62,6 +63,7 @@
 				<enhanced:img src="$assets/logo.png" alt="An alt text" class="size-10 rounded-lg" />
 			</a>
 			<div class="flex items-center gap-2">
+				<NavigationLangSwitcher />
 				<Button
 					class={cn(
 						'ring-1 ring-transparent backdrop-blur-xl transition-all duration-300',
