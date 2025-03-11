@@ -7,7 +7,7 @@ const sw = self as unknown as ServiceWorkerGlobalScope;
 
 import { build, files, prerendered, version } from '$service-worker';
 
-import { cacheFiles, deleteOldCaches, getFromCache } from './lib/utils/sw';
+import { cacheFiles, deleteOldCaches, getFromCache } from '$lib/utils/sw';
 
 const CACHE = `cache-${version}`;
 
