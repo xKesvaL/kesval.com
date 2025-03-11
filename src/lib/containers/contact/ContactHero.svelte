@@ -45,7 +45,7 @@
 			{m.contact_hero_subtitle()}
 		</p>
 	</div>
-	<div class="grid grid-cols-2 gap-8">
+	<div class="grid gap-8 md:grid-cols-2">
 		<form class="shadow-cool flex flex-col gap-4 rounded-lg border p-8">
 			<div class="flex items-center gap-4">
 				<MessageSquare class="text-primary size-6" />
