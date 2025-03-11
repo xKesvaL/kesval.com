@@ -27,7 +27,7 @@
 <div class="font-emoji">
 	<Select.Root type="single" bind:value {onValueChange}>
 		<Select.Trigger
-			class="trigger bg-popover hover:bg-background flex aspect-square justify-center rounded-full border-0 p-2 text-lg transition-all"
+			class="bg-muted hover:bg-background flex aspect-square justify-center rounded-lg border p-2 text-lg transition-all [&>svg]:hidden"
 			aria-label={m.change_language()}
 		>
 			{emoji}
