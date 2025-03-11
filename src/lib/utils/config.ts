@@ -42,3 +42,5 @@ export const socialLinks = [
 export const brand = {
 	email: 'xkesval@gmail.com'
 } as const;
+
+export const GOOGLE_ANALYTICS_ID = 'G-VBZTZPQWJ9';
