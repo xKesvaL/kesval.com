@@ -34,9 +34,9 @@
 	} as const satisfies Record<string, Links>;
 </script>
 
-<footer class="kcontainer flex flex-col gap-12 px-4 py-8 md:gap-20 md:pt-20 md:pb-12">
+<footer class="kcontainer section flex flex-col gap-12 px-4 md:gap-20">
 	<!-- CTA -->
-	<div class="bg-primary text-primary-foreground rounded-2xl px-4 py-8 md:py-20">
+	<div class="bg-primary text-primary-foreground section rounded-2xl px-4">
 		<div class="mx-auto flex max-w-4xl flex-col items-start gap-4">
 			<div class="flex flex-col gap-4 md:gap-8">
 				<h2 class="text-2xl font-medium md:text-3xl">

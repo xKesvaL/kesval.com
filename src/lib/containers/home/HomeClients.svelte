@@ -26,7 +26,7 @@
 	let secondPart = reviews.slice(Math.ceil(reviews.length / 2));
 </script>
 
-<section class="flex flex-col gap-4 px-4 pb-8 md:pb-24">
+<section class="section flex flex-col gap-4 px-4">
 	<Marquee fade pauseOnHover>
 		{#each firstPart as review (review)}
 			<ReviewCard {...review} />

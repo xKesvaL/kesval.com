@@ -166,7 +166,7 @@
 	/* Custom keys */
 
 	--nav-height: 4.5rem;
-	--nav-spacing: 0rem;
+	--nav-spacing: 1rem;
 
 	--ct-max-w: 75rem;
 	--ct-max-w-sm: 60rem;
@@ -294,6 +294,14 @@
 	max-width: var(--ct-max-w-sm);
 }
 
+@utility section {
+	@apply py-8 md:py-20 lg:py-28;
+}
+
+@utility section-hero {
+	@apply section min-h-[calc(100vh-var(--nav-height)-var(--nav-spacing)-(var(--spacing)*8))] md:min-h-[calc(100vh-var(--nav-height)-var(--nav-spacing)-(var(--spacing)*20))] lg:min-h-[calc(100vh-var(--nav-height)-var(--nav-spacing)-(var(--spacing)*28))] mt-4 md:mt-10 lg:mt-14;
+}
+
 @utility h-nav {
 	height: var(--nav-height);
 }
@@ -304,10 +312,6 @@
 
 @utility kcontainer-nav-padding {
 	@apply pt-[calc(var(--nav-height)+var(--nav-spacing))];
-}
-
-@utility min-h-screen-wo-nav {
-	@apply min-h-[calc(100vh-var(--nav-height)-var(--nav-spacing))];
 }
 
 @utility shadow-cool {

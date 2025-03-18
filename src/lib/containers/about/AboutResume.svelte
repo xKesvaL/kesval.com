@@ -18,7 +18,7 @@
 	import AboutResumeRightSide from './AboutResumeRightSide.svelte';
 </script>
 
-<section class="kcontainer flex flex-col items-center gap-8 px-4 py-12" id="resume">
+<section class="kcontainer section flex flex-col items-center gap-8 px-4" id="resume">
 	<h2 class="text-2xl font-medium md:text-3xl">{m.about_resume_title()}</h2>
 	<!-- <Card class="mx-auto aspect-[21/29.7] max-h-[29.7cm] w-full max-w-[21cm]">
 		<header></header>

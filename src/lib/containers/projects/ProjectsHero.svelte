@@ -1,6 +1,6 @@
 <script lang="ts">
 </script>
 
-<section class="kcontainer px-4 py-8 md:py-20">
+<section class="kcontainer section px-4">
 	<!-- masonry layout? -->
 </section>

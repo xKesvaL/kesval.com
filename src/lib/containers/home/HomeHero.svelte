@@ -1,13 +1,21 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button';
 	import { route } from '$lib/ROUTES';
+	import { brand } from '$lib/utils/config';
 	import * as m from '$paraglide/messages';
 	import { localizeHref } from '$paraglide/runtime';
-	import { IconBrandGithub, IconMessageCirclePlus, IconPhotoOff } from '@tabler/icons-svelte';
+	import {
+		IconBrandGithub,
+		IconBrandInstagram,
+		IconBrandLinkedin,
+		IconBrandTwitter,
+		IconMessageCirclePlus,
+		IconPhotoOff
+	} from '@tabler/icons-svelte';
 </script>
 
 <section
-	class="kcontainer min-h-screen-wo-nav flex flex-col-reverse items-center justify-between p-4 lg:flex-row"
+	class="kcontainer section-hero flex flex-col-reverse items-center justify-between p-4 lg:flex-row"
 >
 	<div class="flex grow flex-col gap-4">
 		<h1 class="max-w-[30ch] text-3xl leading-snug font-bold md:text-4xl lg:text-5xl">
@@ -28,12 +36,33 @@
 	</div>
 	<div class="">
 		<div
-			class="bg-muted shadow-cool relative flex min-h-80 min-w-80 items-center justify-center rounded-lg border p-4 transition hover:scale-110"
+			class="bg-muted shadow-cool relative flex min-h-80 min-w-80 items-center justify-center rounded-lg border p-4 transition hover:scale-105"
 		>
 			<IconPhotoOff class="size-16" stroke={1} />
-			<div class="absolute bottom-0 translate-y-1/2">
-				<Button size="icon" variant="secondary">
+			<div class="absolute bottom-0 flex translate-y-1/2 gap-4">
+				<Button
+					size="icon"
+					variant="outline"
+					class="size-12 rotate-3 [&_svg]:size-6"
+					href={brand.github}
+				>
 					<IconBrandGithub />
+				</Button>
+				<Button
+					size="icon"
+					variant="outline"
+					class="size-12 -rotate-3 [&_svg]:size-6"
+					href={brand.instagram}
+				>
+					<IconBrandInstagram />
+				</Button>
+				<Button
+					size="icon"
+					variant="outline"
+					class="size-12 rotate-3 [&_svg]:size-6"
+					href={brand.linkedin}
+				>
+					<IconBrandLinkedin />
 				</Button>
 			</div>
 		</div>

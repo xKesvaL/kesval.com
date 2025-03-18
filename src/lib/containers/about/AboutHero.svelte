@@ -13,7 +13,7 @@
 </script>
 
 <section
-	class="min-h-screen-wo-nav kcontainer relative grid gap-8 px-4 py-8 md:py-20 lg:grid-cols-12 lg:items-center lg:justify-between"
+	class="kcontainer section-hero relative grid gap-8 px-4 lg:grid-cols-12 lg:items-center lg:justify-between"
 >
 	<div class="flex grow flex-col gap-2 lg:col-span-7">
 		<span class="text-primary text-xs tracking-widest uppercase">

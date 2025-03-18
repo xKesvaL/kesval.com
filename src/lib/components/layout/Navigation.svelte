@@ -53,7 +53,7 @@
 	<!-- wrapper -->
 	<div
 		class={cn(
-			'flex h-full w-full items-center justify-between transition-all duration-300 lg:rounded-b-2xl',
+			'flex h-full w-full items-center justify-between transition-all duration-300 lg:rounded-2xl',
 			navigation.state === 'open' && 'px-4',
 			navigation.state === 'closed' && 'bg-background px-4 shadow-md delay-[300ms]'
 		)}

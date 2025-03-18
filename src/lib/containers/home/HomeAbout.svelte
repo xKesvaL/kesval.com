@@ -27,7 +27,7 @@
 	};
 </script>
 
-<section class="kcontainer flex flex-col gap-8 px-4 py-8 md:gap-16 md:py-24">
+<section class="kcontainer section flex flex-col gap-8 px-4 md:gap-16">
 	<div class="grid gap-8 md:grid-cols-12 md:gap-16">
 		<div class="flex flex-col items-start gap-4 md:col-span-5">
 			<div class="flex flex-col gap-2">

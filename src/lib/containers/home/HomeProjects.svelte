@@ -35,7 +35,7 @@
 	};
 </script>
 
-<section class="kcontainer flex flex-col gap-8 px-4 py-8 md:py-24">
+<section class="kcontainer section flex flex-col gap-8 px-4">
 	<div class="flex flex-col gap-2">
 		<span class="text-primary text-xs tracking-widest uppercase">
 			{m.home_projects_above_title()}

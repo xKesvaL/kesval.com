@@ -36,7 +36,7 @@
 	];
 </script>
 
-<section class="kcontainer min-h-screen-wo-nav flex flex-col gap-8 px-4 py-8 md:py-20">
+<section class="kcontainer min-h-screen-wo-nav section flex flex-col gap-8 px-4">
 	<div class="flex flex-col gap-4">
 		<h1 class="text-5xl font-bold">
 			{m.contact_hero_title()}
