@@ -34,12 +34,12 @@
 	} as const satisfies Record<string, Links>;
 </script>
 
-<footer class="kcontainer section flex flex-col gap-12 px-4 md:gap-20">
+<footer class="kcontainer section gapc-lg flex flex-col px-4">
 	<!-- CTA -->
-	<div class="bg-primary text-primary-foreground section rounded-2xl px-4">
+	<div class="bg-primary text-primary-foreground section rounded-2xl px-8">
 		<div class="mx-auto flex max-w-4xl flex-col items-start gap-4">
 			<div class="flex flex-col gap-4 md:gap-8">
-				<h2 class="text-2xl font-medium md:text-3xl">
+				<h2 class="h3 md:h2">
 					{m.footer_cta()}
 				</h2>
 				<div class="flex gap-2">
@@ -51,12 +51,12 @@
 			</div>
 			<div class="bg-secondary/50 my-4 h-[1px] w-full md:my-8"></div>
 			<div class="flex flex-col gap-4 md:gap-8">
-				<h3 class="text-xl font-medium">
+				<h3 class="h4 md:h3">
 					{m.footer_cta_other()}
 				</h3>
 				<div class="grid gap-16 md:grid-cols-3">
 					<div class="flex flex-col">
-						<h4 class="font-medium">
+						<h4 class="h5 md:h4">
 							{m.my_email()}
 						</h4>
 						<Link href={`mailto:${brand.email}`}>
@@ -73,7 +73,7 @@
 		{#each Object.entries(footerLinks) as [key, links] (key)}
 			{@const { title, links: sublinks } = links}
 			<div class="flex flex-col gap-4">
-				<h2 class="font-medium">{title}</h2>
+				<h3 class="h4">{title}</h3>
 				<ul class="flex flex-col gap-2">
 					{#each sublinks as link}
 						<li>
@@ -95,9 +95,9 @@
 
 		<!-- Fourth col: CTA -->
 		<div class="col-span-full flex flex-col gap-4 lg:col-span-1">
-			<h2 class="font-medium">
+			<h3 class="h4">
 				{m.footer_cta_secondary()}
-			</h2>
+			</h3>
 			<div class="flex flex-col gap-4">
 				<p class="text-muted-foreground/90">
 					{m.footer_cta_secondary_desc({
@@ -113,9 +113,7 @@
 	</div>
 
 	<!-- Copyright -->
-	<div
-		class="flex flex-col justify-between gap-4 border-t pt-8 md:flex-row md:items-center md:pt-12"
-	>
+	<div class="ptc-lg flex flex-col justify-between gap-4 border-t md:flex-row md:items-center">
 		<a href={route('/')} aria-label="home" class="flex items-center gap-4">
 			<enhanced:img src="$assets/logo.png" alt="An alt text" class="size-10 rounded-lg" />
 			<span class="text-2xl font-medium">{m.brand_name_short()}.</span>

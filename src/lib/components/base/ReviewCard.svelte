@@ -17,7 +17,7 @@
 		'hover:border-muted-foreground relative w-64 cursor-pointer rounded-2xl border p-4 transition hover:scale-105'
 	)}
 >
-	<div class="flex flex-row items-center gap-4">
+	<div class="gapc-sm flex flex-row items-center">
 		<div class="flex size-10 items-center justify-center overflow-hidden rounded-full border">
 			{#if typeof Image === 'string'}
 				<img class="h-full w-full" alt="" src={Image} />

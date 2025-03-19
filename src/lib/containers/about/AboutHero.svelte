@@ -16,10 +16,10 @@
 	class="kcontainer section-hero relative grid gap-8 px-4 lg:grid-cols-12 lg:items-center lg:justify-between"
 >
 	<div class="flex grow flex-col gap-2 lg:col-span-7">
-		<span class="text-primary text-xs tracking-widest uppercase">
+		<span class="suptitle">
 			{m.about_hero_about_me()}
 		</span>
-		<h1 class="max-w-[30ch] text-3xl leading-snug font-bold md:text-4xl lg:text-5xl">
+		<h1 class="max-w-[30ch]">
 			{m.about_hero_title()}
 		</h1>
 		<p class="text-muted-foreground max-w-prose text-lg">
@@ -43,17 +43,17 @@
 	<div class="flex w-full justify-end gap-4 lg:col-span-5">
 		<div class="grid w-full grid-cols-2 gap-x-6 gap-y-4">
 			<div
-				class="bg-muted shadow-cool col-span-full flex h-full min-h-20 items-center justify-center rounded-lg border p-4 transition hover:scale-105 lg:min-h-64"
+				class="bg-muted shadow-cool col-span-full flex h-full min-h-20 items-center justify-center rounded-xl border p-4 transition hover:scale-105 lg:min-h-64"
 			>
 				<IconPhotoOff class="size-16" stroke={1} />
 			</div>
 			<div
-				class="bg-muted shadow-cool flex h-full min-h-20 -rotate-2 items-center justify-center rounded-lg border p-4 transition hover:scale-105 lg:min-h-64"
+				class="bg-muted shadow-cool flex h-full min-h-20 -rotate-2 items-center justify-center rounded-xl border p-4 transition hover:scale-105 lg:min-h-64"
 			>
 				<IconPhotoOff class="size-16" stroke={1} />
 			</div>
 			<div
-				class="bg-muted shadow-cool flex h-full min-h-20 rotate-2 items-center justify-center rounded-lg border p-4 transition hover:scale-105 lg:min-h-64"
+				class="bg-muted shadow-cool flex h-full min-h-20 rotate-2 items-center justify-center rounded-xl border p-4 transition hover:scale-105 lg:min-h-64"
 			>
 				<IconPhotoOff class="size-16" stroke={1} />
 			</div>

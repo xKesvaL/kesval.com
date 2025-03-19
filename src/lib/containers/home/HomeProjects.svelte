@@ -37,10 +37,10 @@
 
 <section class="kcontainer section flex flex-col gap-8 px-4">
 	<div class="flex flex-col gap-2">
-		<span class="text-primary text-xs tracking-widest uppercase">
+		<span class="suptitle">
 			{m.home_projects_above_title()}
 		</span>
-		<h2 class="text-3xl font-medium">
+		<h2>
 			{m.home_projects_title()}
 		</h2>
 	</div>

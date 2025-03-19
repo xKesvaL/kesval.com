@@ -27,14 +27,14 @@
 	};
 </script>
 
-<section class="kcontainer section flex flex-col gap-8 px-4 md:gap-16">
+<section class="kcontainer section px-4">
 	<div class="grid gap-8 md:grid-cols-12 md:gap-16">
 		<div class="flex flex-col items-start gap-4 md:col-span-5">
 			<div class="flex flex-col gap-2">
-				<span class="text-primary text-xs tracking-widest uppercase">
+				<span class="suptitle">
 					{m.brand_name()}
 				</span>
-				<h2 class="text-3xl font-medium">
+				<h2>
 					{m.home_about_title()}
 				</h2>
 				<p class="max-w-prose">
@@ -79,9 +79,9 @@
 					/>
 					<IconUserStar class="size-16 md:size-20" stroke={1.5} />
 				</div>
-				<h2 class="text-3xl font-medium">
+				<h3>
 					{m.home_about_experience()}
-				</h2>
+				</h3>
 			</div>
 			<p class="text-muted-foreground max-w-prose text-sm">
 				{m.home_about_experience_description()}
@@ -98,9 +98,9 @@
 					/>
 					<IconClipboardCheck class="size-16 md:size-20" stroke={1.5} />
 				</div>
-				<h2 class="text-3xl font-medium">
+				<h3>
 					{m.home_about_projects()}
-				</h2>
+				</h3>
 			</div>
 			<p class="text-muted-foreground max-w-prose text-sm">
 				{m.home_about_projects_description()}
@@ -117,9 +117,9 @@
 					/>
 					<IconAward class="size-16 md:size-20" stroke={1.5} />
 				</div>
-				<h2 class="text-3xl font-medium">
+				<h3>
 					{m.home_about_clients()}
-				</h2>
+				</h3>
 			</div>
 			<p class="text-muted-foreground max-w-prose text-sm">
 				{m.home_about_clients_description()}

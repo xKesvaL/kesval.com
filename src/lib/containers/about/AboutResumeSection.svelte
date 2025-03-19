@@ -9,7 +9,7 @@
 </script>
 
 <div class="flex w-full flex-col gap-4">
-	<h3 class="border-primary w-full border-b-2 pb-2 text-2xl font-medium">
+	<h3 class="border-primary w-full border-b-2 pb-2">
 		{title}
 	</h3>
 	{#if children}

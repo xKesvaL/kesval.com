@@ -77,6 +77,12 @@
 	--shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05), 0 1px 5px -1px rgba(0, 0, 0, 0.05);
 	--shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.05);
 
+	--sp-xs: 0.5rem;
+	--sp-sm: 1rem;
+	--sp-md: 2rem;
+	--sp-lg: 4rem;
+	--sp-xl: 6rem;
+
 	@keyframes accordion-down {
 		from {
 			height: 0;
@@ -183,9 +189,49 @@
 		@apply bg-background text-foreground;
 	}
 
+	h1 {
+		@apply h1;
+	}
+
+	h2 {
+		@apply h2;
+	}
+
+	h3 {
+		@apply h3;
+	}
+
+	h4 {
+		@apply h4;
+	}
+
 	p {
 		@apply leading-relaxed;
 	}
+}
+
+@utility suptitle {
+	@apply text-primary text-sm tracking-widest uppercase;
+}
+
+@utility h1 {
+	@apply text-3xl leading-snug font-bold md:text-4xl lg:text-5xl;
+}
+
+@utility h2 {
+	@apply text-3xl font-bold lg:text-4xl;
+}
+
+@utility h3 {
+	@apply text-2xl font-medium lg:text-3xl;
+}
+
+@utility h4 {
+	@apply text-xl font-medium lg:text-2xl;
+}
+
+@utility h5 {
+	@apply text-lg font-medium lg:text-xl;
 }
 
 @utility vertical-disclosures {
@@ -284,6 +330,18 @@
 }
 
 /* Utilities */
+@utility gapc-* {
+	gap: --value(--sp-*);
+}
+
+@utility ptc-* {
+	padding-top: --value(--sp-*);
+}
+
+@utility pyc-* {
+	padding-top: --value(--sp-*);
+	padding-bottom: --value(--sp-*);
+}
 
 @utility kcontainer {
 	margin-inline: auto;
@@ -295,11 +353,11 @@
 }
 
 @utility section {
-	@apply py-8 md:py-20 lg:py-28;
+	@apply pyc-md md:py-20 lg:py-28 flex flex-col gapc-md md:gapc-lg lg:gapc-xl;
 }
 
 @utility section-hero {
-	@apply section min-h-[calc(100vh-var(--nav-height)-var(--nav-spacing)-(var(--spacing)*8))] md:min-h-[calc(100vh-var(--nav-height)-var(--nav-spacing)-(var(--spacing)*20))] lg:min-h-[calc(100vh-var(--nav-height)-var(--nav-spacing)-(var(--spacing)*28))] mt-4 md:mt-10 lg:mt-14;
+	@apply section min-h-[calc(100vh-var(--nav-height)-(var(--spacing)*8))] md:min-h-[calc(100vh-var(--nav-height)-(var(--spacing)*20))] lg:min-h-[calc(100vh-var(--nav-height)-var(--nav-spacing)-(var(--spacing)*28))] mt-4 md:mt-10 lg:mt-14;
 }
 
 @utility h-nav {
@@ -307,11 +365,11 @@
 }
 
 @utility position-nav {
-	@apply top-[var(--nav-spacing)] right-0 left-0 mx-auto;
+	@apply top-0 lg:top-[var(--nav-spacing)] right-0 left-0 mx-auto;
 }
 
 @utility kcontainer-nav-padding {
-	@apply pt-[calc(var(--nav-height)+var(--nav-spacing))];
+	@apply pt-[var(--nav-height)] lg:pt-[calc(var(--nav-height)+var(--nav-spacing))];
 }
 
 @utility shadow-cool {

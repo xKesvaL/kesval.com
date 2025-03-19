@@ -36,86 +36,82 @@
 	];
 </script>
 
-<section class="kcontainer min-h-screen-wo-nav section flex flex-col gap-8 px-4">
-	<div class="flex flex-col gap-4">
-		<h1 class="text-5xl font-bold">
+<section class="kcontainer min-h-screen-wo-nav section flex flex-col gap-8 px-4 md:gap-16">
+	<div class="flex max-w-4xl flex-col gap-6">
+		<h1>
 			{m.contact_hero_title()}
 		</h1>
-		<p class="text-muted-foreground text-lg">
+		<p class="text-muted-foreground text-xl">
 			{m.contact_hero_subtitle()}
 		</p>
 	</div>
-	<div class="grid gap-8 md:grid-cols-2">
-		<form class="shadow-cool flex flex-col gap-4 rounded-lg border p-8">
-			<div class="flex items-center gap-4">
-				<MessageSquare class="text-primary size-6" />
-				<h2 class="text-2xl font-medium">
+
+	<div class="grid gap-12 md:grid-cols-2 lg:gap-16">
+		<!-- Contact Form - Now with more padding and space -->
+		<form class="shadow-cool flex flex-col gap-6 rounded-2xl border p-10">
+			<div class="mb-2 flex items-center gap-4">
+				<MessageSquare class="text-primary size-7" />
+				<h2 class="h3">
 					{m.contact_hero_contact_me()}
 				</h2>
 			</div>
+			<!-- Form content will go here -->
 		</form>
-		<div class="flex flex-col gap-8">
+
+		<!-- Contact Information - Now with better spacing -->
+		<div class="flex flex-col gap-10">
 			<div class="flex flex-col gap-4">
-				<h2 class="text-xl font-medium">
+				<h2 class="h3">
 					{m.contact_hero_get_in_touch()}
 				</h2>
-				<p class="text-muted-foreground max-w-prose">
+				<p class="text-muted-foreground max-w-prose text-lg">
 					{m.contact_hero_get_in_touch_description()}
 				</p>
 			</div>
-			<div class="flex flex-col gap-4">
+
+			<!-- Contact items with better spacing -->
+			<div class="flex flex-col gap-6">
 				{#each contactInfo as item}
 					<svelte:element
 						this={item.href ? 'a' : 'div'}
 						href={item.href}
-						class="group flex items-start gap-4"
+						class="group flex items-start gap-5"
 						rel="noreferrer"
 						target={item.href?.startsWith('mailto:') ? '_self' : '_blank'}
 					>
 						<div
-							class="bg-primary/5 border-primary text-primary flex size-10 shrink-0 items-center justify-center rounded-full border"
+							class="bg-primary/5 border-primary text-primary flex size-12 shrink-0 items-center justify-center rounded-full border"
 						>
-							<item.icon class="size-5" />
+							<item.icon class="size-6" />
 						</div>
 
-						<div class="flex size-10 w-full flex-col justify-between">
-							<h3 class="leading-none font-medium">{item.label}</h3>
-
-							<p
-								class={cn(
-									'text-muted-foreground leading-none',
-									item.href && 'group-hover:text-primary'
-								)}
-							>
+						<div class="flex w-full flex-col justify-between gap-1">
+							<h3 class="text-lg font-medium">{item.label}</h3>
+							<p class={cn('text-muted-foreground', item.href && 'group-hover:text-primary')}>
 								{item.value}
 							</p>
 						</div>
 					</svelte:element>
 				{/each}
 			</div>
-			<hr />
-			<div class="flex flex-col gap-4">
-				<h2 class="text-xl font-medium">
-					{m.contact_hero_availability()}
-				</h2>
-				<p class="text-muted-foreground max-w-prose">
-					{m.contact_hero_availability_description()}
-				</p>
-				<div class="bg-muted shadow-cool flex flex-col items-start gap-4 rounded-lg p-6">
-					<h3 class="text-xl font-medium">
-						{m.contact_hero_looking_for_work()}
-					</h3>
-					<p class="text-muted-foreground max-w-prose">
-						{m.contact_hero_looking_for_work_description()}
-					</p>
-					<Button
-						class="bg-card text-foreground hover:bg-card/90 hover:text-foreground border"
-						href={`${localizeHref(route('/a-propos'))}#resume`}
-					>
-						{m.contact_hero_looking_for_work_cta()}
-					</Button>
-				</div>
-			</div>
+		</div>
+	</div>
+
+	<!-- Moved availability section to a separate row for more space -->
+	<div class="bg-muted/30 mt-8 max-w-4xl rounded-2xl p-8 md:mt-12">
+		<div class="flex flex-col gap-6">
+			<h2>
+				{m.contact_hero_availability()}
+			</h2>
+			<p class="text-muted-foreground max-w-prose text-lg">
+				{m.contact_hero_availability_description()}
+			</p>
+			<Button
+				class="bg-card text-foreground hover:bg-card/90 hover:text-foreground w-fit border"
+				href={`${localizeHref(route('/a-propos'))}#resume`}
+			>
+				{m.contact_hero_looking_for_work_cta()}
+			</Button>
 		</div>
 	</div>
 </section>
