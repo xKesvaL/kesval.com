@@ -1,15 +1,7 @@
 <script lang="ts">
-	import { Button } from '$lib/components/ui/button';
-	import { route } from '$lib/ROUTES';
-	import { localizeHref } from '$paraglide/runtime';
-	import {
-		IconBarbell,
-		IconDevices,
-		IconMessageCirclePlus,
-		IconPhotoOff,
-		IconRocket
-	} from '@tabler/icons-svelte';
+	import { IconBarbell, IconDevices, IconPhotoOff, IconRocket } from '@tabler/icons-svelte';
 	import * as m from '$paraglide/messages';
+	import { translate } from '$lib/utils/i18n';
 </script>
 
 <section
@@ -17,26 +9,26 @@
 >
 	<div class="flex grow flex-col gap-2 lg:col-span-7">
 		<span class="suptitle">
-			{m.about_hero_about_me()}
+			{translate('about.hero.about_me')}
 		</span>
 		<h1 class="max-w-[30ch]">
-			{m.about_hero_title()}
+			{translate('about.hero.title')}
 		</h1>
 		<p class="text-muted-foreground max-w-prose text-lg">
-			{m.about_hero_subtitle()}
+			{translate('home.hero.subtitle', { brand: m.brand_name() })}
 		</p>
 		<div class="mt-4 flex flex-wrap gap-8">
 			<div class="flex items-center gap-2 text-sm">
 				<IconRocket class="size-4" />
-				{m.about_hero_identity_entrepreneur()}
+				{translate('about.hero.identity.entrepreneur')}
 			</div>
 			<div class="flex items-center gap-2 text-sm">
 				<IconDevices class="size-4" />
-				{m.about_hero_identity_developer()}
+				{translate('about.hero.identity.developer')}
 			</div>
 			<div class="flex items-center gap-2 text-sm">
 				<IconBarbell class="size-4" />
-				{m.about_hero_identity_powerlifter()}
+				{translate('about.hero.identity.powerlifter')}
 			</div>
 		</div>
 	</div>

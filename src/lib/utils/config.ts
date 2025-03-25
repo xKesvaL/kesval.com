@@ -2,44 +2,56 @@ import { route } from '$lib/ROUTES';
 import * as m from '$paraglide/messages';
 import dayjs from 'dayjs';
 
+import ImageHome from '$assets/logo.png?enhanced';
+import ImageBlog from '$assets/nav/blog_nav.png?enhanced';
+import type { Picture } from 'vite-imagetools';
+
 export type LinkType = {
 	label: keyof typeof m;
 	href: string;
 	external?: boolean;
 };
 
+export type LinkWithImageType = LinkType & {
+	image: Picture;
+};
+
 export const navigationLinks = [
 	{
-		label: 'nav_home',
-		href: route('/')
+		label: 'nav.home',
+		href: route('/'),
+		image: ImageHome
 	},
 	{
-		label: 'nav_about',
-		href: route('/a-propos')
+		label: 'nav.about',
+		href: route('/a-propos'),
+		image: ImageBlog
 	},
 	{
-		label: 'nav_projects',
-		href: route('/projets')
+		label: 'nav.projects',
+		href: route('/projets'),
+		image: ImageBlog
 	},
 	{
-		label: 'nav_blog',
-		href: route('/blog')
+		label: 'nav.blog',
+		href: route('/blog'),
+		image: ImageBlog
 	}
-] as const satisfies LinkType[];
+] as const satisfies LinkWithImageType[];
 
 export const socialLinks = [
 	{
-		label: 'nav_github',
+		label: 'nav.github',
 		href: 'https://github.com/xKesvaL',
 		external: true
 	},
 	{
-		label: 'nav_instagram',
+		label: 'nav.instagram',
 		href: 'https://instagram.com/xkesval',
 		external: true
 	},
 	{
-		label: 'nav_linkedin',
+		label: 'nav.linkedin',
 		href: 'https://www.linkedin.com/in/jordan-abeddou/',
 		external: true
 	}

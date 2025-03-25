@@ -3,6 +3,8 @@
 	import { getFlagEmoji } from '$lib/utils/functions';
 	import { getLocale, locales, setLocale, type Locale } from '$paraglide/runtime';
 	import * as m from '$paraglide/messages';
+	import { cn } from '$lib/utils/ui';
+	import { navigation } from '$lib/stores/common.svelte';
 
 	const transformLocaleToFlag = (locale?: Locale) => {
 		if (!locale) return 'US';
@@ -27,7 +29,12 @@
 <div class="font-emoji">
 	<Select.Root type="single" bind:value {onValueChange}>
 		<Select.Trigger
-			class="bg-muted hover:bg-background flex aspect-square justify-center rounded-lg border p-2 text-lg transition-all [&>svg]:hidden"
+			class={cn(
+				' flex aspect-square cursor-pointer justify-center rounded-lg border p-2 text-lg ring-1 ring-transparent backdrop-blur-xl transition-all duration-300 [&>svg]:hidden',
+				navigation.state === 'open' &&
+					'bg-background hover:bg-background/90 md:bg-background md:text-primary md:hover:bg-background/90 md:ring-primary delay-50',
+				navigation.state === 'closed' && 'bg-muted hover:bg-muted/90 delay-[400ms]'
+			)}
 			aria-label={m.change_language()}
 		>
 			{emoji}

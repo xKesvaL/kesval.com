@@ -2,15 +2,16 @@
 	import AboutResumeSection from './AboutResumeSection.svelte';
 	import * as m from '$paraglide/messages';
 	import { skillsList } from '$lib/utils/skills';
+	import { translate } from '$lib/utils/i18n';
 </script>
 
 <aside class="grid h-full grid-rows-[min-content_min-content] gap-4">
-	<AboutResumeSection title={m.about_resume_about()}>
+	<AboutResumeSection title={translate('about.resume.about.title')}>
 		<p class="">
-			{m.about_resume_about_description()}
+			{translate('about.resume.about.description')}
 		</p>
 	</AboutResumeSection>
-	<AboutResumeSection title={m.about_resume_skills()}>
+	<AboutResumeSection title={translate('about.resume.skills')}>
 		<div class="flex flex-col gap-1">
 			<p class="text-lg font-medium">Front-End</p>
 			<div class="flex flex-wrap gap-2">

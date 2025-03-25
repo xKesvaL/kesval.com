@@ -3,7 +3,7 @@
 	import NavigationButton from './NavigationButton.svelte';
 	import { navigation } from '$lib/stores/common.svelte';
 	import { innerHeight } from 'svelte/reactivity/window';
-	import { circOut, cubicIn } from 'svelte/easing';
+	import { cubicIn, cubicOut } from 'svelte/easing';
 	import { route } from '$lib/ROUTES';
 	import { translate } from '$lib/utils/i18n';
 	import { Button } from '../ui/button';
@@ -17,27 +17,27 @@
 	const baseFlyParams = {
 		y: (innerHeight.current || 0) * -1,
 		opacity: 1,
-		easing: circOut,
-		duration: 300
+		easing: cubicOut,
+		duration: 500
 	} satisfies FlyParams;
 
 	const baseFlyOutParams = {
 		...baseFlyParams,
 		easing: cubicIn,
-		duration: 300
+		duration: 500
 	} satisfies FlyParams;
 
 	const otherLinks = [
 		{
-			label: 'nav_contact',
+			label: 'nav.contact',
 			href: route('/contact')
 		},
 		{
-			label: 'nav_legal_notice',
+			label: 'nav.legal_notice',
 			href: route('/')
 		},
 		{
-			label: 'nav_privacy_policy',
+			label: 'nav.privacy_policy',
 			href: route('/')
 		}
 	] as const satisfies LinkType[];
@@ -46,7 +46,7 @@
 		navigationLinks.find((link) => link.href === deLocalizeHref(page.url.pathname)) ??
 		navigationLinks[0];
 
-	let latestHoveredLink = $state<LinkType>(currentRoute);
+	let latestHoveredLink = $state(currentRoute);
 </script>
 
 <nav class={cn('position-nav h-nav kcontainer fixed z-50 transition duration-300 lg:px-4')}>
@@ -55,7 +55,7 @@
 		class={cn(
 			'flex h-full w-full items-center justify-between transition-all duration-300 lg:rounded-2xl',
 			navigation.state === 'open' && 'px-4',
-			navigation.state === 'closed' && 'bg-background px-4 shadow-md delay-[300ms]'
+			navigation.state === 'closed' && 'bg-background shadow-cool-lg px-4 delay-[300ms]'
 		)}
 	>
 		<div class="flex h-full w-full items-center justify-between rounded-[15px]">
@@ -135,7 +135,22 @@
 				...baseFlyOutParams,
 				delay: 150
 			}}
-			class="bg-primary fixed top-0 right-0 bottom-0 z-30 w-18 shadow-sm transition-all md:w-1/3"
-		></div>
+			class="bg-primary fixed top-0 right-0 bottom-0 z-30 flex w-18 items-center justify-center shadow-sm transition-all md:w-1/3"
+		>
+			{#each navigationLinks as link}
+				{@const { label, href: absoluteHref, image: src } = link}
+				{@const href = localizeHref(absoluteHref)}
+				<a
+					aria-label={label}
+					{href}
+					class={cn(
+						'absolute inset-0 top-1/2 z-50 flex translate-x-[125%] -translate-y-1/2 items-center transition duration-500',
+						latestHoveredLink.href === link.href && '-translate-x-1/6'
+					)}
+				>
+					<enhanced:img {src} alt={label} class="nav-image-drop" />
+				</a>
+			{/each}
+		</div>
 	{/if}
 </div>

@@ -2,6 +2,7 @@
 	import { Button } from '$lib/components/ui/button';
 	import { route } from '$lib/ROUTES';
 	import { brand } from '$lib/utils/config';
+	import { translate } from '$lib/utils/i18n';
 	import { cn } from '$lib/utils/ui';
 	import * as m from '$paraglide/messages';
 	import { localizeHref } from '$paraglide/runtime';
@@ -39,10 +40,10 @@
 <section class="kcontainer min-h-screen-wo-nav section flex flex-col gap-8 px-4 md:gap-16">
 	<div class="flex max-w-4xl flex-col gap-6">
 		<h1>
-			{m.contact_hero_title()}
+			{translate('contact.hero.title')}
 		</h1>
 		<p class="text-muted-foreground text-xl">
-			{m.contact_hero_subtitle()}
+			{translate('contact.hero.subtitle')}
 		</p>
 	</div>
 
@@ -52,7 +53,7 @@
 			<div class="mb-2 flex items-center gap-4">
 				<MessageSquare class="text-primary size-7" />
 				<h2 class="h3">
-					{m.contact_hero_contact_me()}
+					{translate('contact.hero.contact_me')}
 				</h2>
 			</div>
 			<!-- Form content will go here -->
@@ -62,10 +63,10 @@
 		<div class="flex flex-col gap-10">
 			<div class="flex flex-col gap-4">
 				<h2 class="h3">
-					{m.contact_hero_get_in_touch()}
+					{translate('contact.hero.get_in_touch.title')}
 				</h2>
 				<p class="text-muted-foreground max-w-prose text-lg">
-					{m.contact_hero_get_in_touch_description()}
+					{translate('contact.hero.get_in_touch.description')}
 				</p>
 			</div>
 
@@ -98,19 +99,19 @@
 	</div>
 
 	<!-- Moved availability section to a separate row for more space -->
-	<div class="bg-muted/30 mt-8 max-w-4xl rounded-2xl p-8 md:mt-12">
+	<div class="bg-muted mt-8x rounded-2xl p-8">
 		<div class="flex flex-col gap-6">
 			<h2>
-				{m.contact_hero_availability()}
+				{translate('contact.hero.availability.title')}
 			</h2>
 			<p class="text-muted-foreground max-w-prose text-lg">
-				{m.contact_hero_availability_description()}
+				{translate('contact.hero.availability.description')}
 			</p>
 			<Button
 				class="bg-card text-foreground hover:bg-card/90 hover:text-foreground w-fit border"
 				href={`${localizeHref(route('/a-propos'))}#resume`}
 			>
-				{m.contact_hero_looking_for_work_cta()}
+				{translate('contact.hero.looking_for_work.cta')}
 			</Button>
 		</div>
 	</div>

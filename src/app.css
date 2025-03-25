@@ -71,7 +71,9 @@
 	--animate-marquee-up: marquee-up var(--marquee-duration, 60s) linear infinite;
 
 	--font-sans: 'Helvetica Neue', sans-serif;
-	--font-emoji: 'Twemoji Country Flags', "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Apple Color Emoji", "EmojiSymbols", "Android Emoji";
+	--font-emoji:
+		'Twemoji Country Flags', 'Segoe UI Emoji', 'Noto Color Emoji', 'Segoe UI Symbol',
+		'Apple Color Emoji', 'EmojiSymbols', 'Android Emoji';
 
 	--shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05), 0 1px 3px -1px rgba(0, 0, 0, 0.05);
 	--shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05), 0 1px 5px -1px rgba(0, 0, 0, 0.05);
@@ -181,6 +183,10 @@
 /* Base */
 
 @layer base {
+	::selection {
+		@apply bg-primary text-primary-foreground;
+	}
+
 	* {
 		@apply border-border;
 	}
@@ -254,7 +260,7 @@
 		}
 
 		a {
-			@apply opacity-0 transition duration-[600ms] hover:underline pointer-events-none;
+			@apply pointer-events-none opacity-0 transition duration-[600ms] hover:underline;
 		}
 
 		& p {
@@ -296,7 +302,7 @@
 		}
 
 		a {
-			@apply opacity-100 pointer-events-auto;
+			@apply pointer-events-auto opacity-100;
 		}
 
 		& p {
@@ -331,16 +337,16 @@
 
 /* Utilities */
 @utility gapc-* {
-	gap: --value(--sp-*);
+	gap: --value(--sp- *);
 }
 
 @utility ptc-* {
-	padding-top: --value(--sp-*);
+	padding-top: --value(--sp- *);
 }
 
 @utility pyc-* {
-	padding-top: --value(--sp-*);
-	padding-bottom: --value(--sp-*);
+	padding-top: --value(--sp- *);
+	padding-bottom: --value(--sp- *);
 }
 
 @utility kcontainer {
@@ -353,11 +359,11 @@
 }
 
 @utility section {
-	@apply pyc-md md:py-20 lg:py-28 flex flex-col gapc-md md:gapc-lg lg:gapc-xl;
+	@apply pyc-md gapc-md md:gapc-lg lg:gapc-xl flex flex-col md:py-20 lg:py-28;
 }
 
 @utility section-hero {
-	@apply section min-h-[calc(100vh-var(--nav-height)-(var(--spacing)*8))] md:min-h-[calc(100vh-var(--nav-height)-(var(--spacing)*20))] lg:min-h-[calc(100vh-var(--nav-height)-var(--nav-spacing)-(var(--spacing)*28))] mt-4 md:mt-10 lg:mt-14;
+	@apply section mt-4 min-h-[calc(100vh-var(--nav-height)-(var(--spacing)*8))] md:mt-10 md:min-h-[calc(100vh-var(--nav-height)-(var(--spacing)*20))] lg:mt-14 lg:min-h-[calc(100vh-var(--nav-height)-var(--nav-spacing)-(var(--spacing)*28))];
 }
 
 @utility h-nav {
@@ -365,7 +371,7 @@
 }
 
 @utility position-nav {
-	@apply top-0 lg:top-[var(--nav-spacing)] right-0 left-0 mx-auto;
+	@apply top-0 right-0 left-0 mx-auto lg:top-[var(--nav-spacing)];
 }
 
 @utility kcontainer-nav-padding {
@@ -373,5 +379,22 @@
 }
 
 @utility shadow-cool {
-	@apply shadow-[0_4px_20px_-1px_rgba(0,0,0,0.03),0_1px_6px_-1px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.05)] transition;
+	@apply shadow-[0_4px_20px_-1px_rgba(0,0,0,0.03),0_1px_6px_-1px_rgba(0,0,0,0.02)] transition hover:shadow-[0_8px_30px_rgba(0,0,0,0.05)];
+}
+
+@utility shadow-cool-lg {
+	@apply shadow-[0_4px_20px_-1px_rgba(0,0,0,0.075),0_1px_6px_-1px_rgba(0,0,0,0.075)] transition hover:shadow-[0_8px_30px_rgba(0,0,0,0.075)];
+}
+
+@utility nav-image-drop {
+	filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.25));
+}
+
+@utility no-scrollbar {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+
+	&:-webkit-scrollbar {
+		display: none;
+	}
 }

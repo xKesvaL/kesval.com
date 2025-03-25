@@ -49,18 +49,18 @@
 	</div>
 	<div>
 		<h4 class="mt-5 text-2xl font-medium">
-			{translate(`experience_${experience.name}_title`)}
+			{translate(`experience.${experience.name}.title`)}
 		</h4>
 		<div class="text-muted-foreground flex items-center gap-1 text-xs md:-mt-0.5 md:text-sm">
 			{capitalizeFirstLetter(duration)}
 			<div>|</div>
-			{translate(`experience_job_${experience.role}`)}
+			{translate(`experience.job.${experience.role}`)}
 			<div>|</div>
 			<IconMapPin class="size-4" />
 			{experience.location}
 		</div>
 		<p class="mt-1">
-			{translate(`experience_${experience.name}_description`)}
+			{translate(`experience.${experience.name}.description`)}
 		</p>
 	</div>
 </div>

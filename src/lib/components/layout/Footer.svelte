@@ -15,7 +15,7 @@
 
 	const footerLinks = {
 		work: {
-			title: m.nav_projects(),
+			title: translate('nav.projects'),
 			links: [
 				{
 					label: 'see_all',
@@ -112,8 +112,10 @@
 		</div>
 	</div>
 
+	<hr />
+
 	<!-- Copyright -->
-	<div class="ptc-lg flex flex-col justify-between gap-4 border-t md:flex-row md:items-center">
+	<div class="flex flex-col justify-between gap-4 md:flex-row md:items-center">
 		<a href={route('/')} aria-label="home" class="flex items-center gap-4">
 			<enhanced:img src="$assets/logo.png" alt="An alt text" class="size-10 rounded-lg" />
 			<span class="text-2xl font-medium">{m.brand_name_short()}.</span>

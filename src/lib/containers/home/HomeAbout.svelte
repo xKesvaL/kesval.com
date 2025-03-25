@@ -2,6 +2,7 @@
 	import inView from '$lib/actions/inView';
 	import { Button } from '$lib/components/ui/button';
 	import { route } from '$lib/ROUTES';
+	import { translate } from '$lib/utils/i18n';
 	import * as m from '$paraglide/messages';
 	import { getLocale, localizeHref } from '$paraglide/runtime';
 	import NumberFlow, { continuous } from '@number-flow/svelte';
@@ -32,13 +33,13 @@
 		<div class="flex flex-col items-start gap-4 md:col-span-5">
 			<div class="flex flex-col gap-2">
 				<span class="suptitle">
-					{m.brand_name()}
+					{translate('brand_name')}
 				</span>
 				<h2>
-					{m.home_about_title()}
+					{translate('home.about.title')}
 				</h2>
 				<p class="max-w-prose">
-					{m.home_about_description()}
+					{translate('home.about.description')}
 				</p>
 			</div>
 			<Button href={localizeHref(route('/a-propos'))}>
@@ -80,11 +81,11 @@
 					<IconUserStar class="size-16 md:size-20" stroke={1.5} />
 				</div>
 				<h3>
-					{m.home_about_experience()}
+					{translate('home.about.experience')}
 				</h3>
 			</div>
 			<p class="text-muted-foreground max-w-prose text-sm">
-				{m.home_about_experience_description()}
+				{translate('home.about.experience_description')}
 			</p>
 		</div>
 		<div class="flex flex-col items-start gap-2">
@@ -99,11 +100,11 @@
 					<IconClipboardCheck class="size-16 md:size-20" stroke={1.5} />
 				</div>
 				<h3>
-					{m.home_about_projects()}
+					{translate('home.about.projects')}
 				</h3>
 			</div>
 			<p class="text-muted-foreground max-w-prose text-sm">
-				{m.home_about_projects_description()}
+				{translate('home.about.projects_description')}
 			</p>
 		</div>
 		<div class="flex flex-col items-start gap-2">
@@ -118,11 +119,11 @@
 					<IconAward class="size-16 md:size-20" stroke={1.5} />
 				</div>
 				<h3>
-					{m.home_about_clients()}
+					{translate('home.about.clients')}
 				</h3>
 			</div>
 			<p class="text-muted-foreground max-w-prose text-sm">
-				{m.home_about_clients_description()}
+				{translate('home.about.clients_description')}
 			</p>
 		</div>
 	</div>

@@ -38,14 +38,14 @@
 		fade
 			? `linear-gradient(${
 					direction === 'left' ? 'to right' : 'to bottom'
-				}, transparent 0%, rgba(0, 0, 0, 1.0) 10%, rgba(0, 0, 0, 1.0) 90%, transparent 100%)`
+				}, transparent 1%, rgba(0, 0, 0, 1.0) 10%, rgba(0, 0, 0, 1.0) 90%, transparent 99%)`
 			: 'none'
 	};
 	  -webkit-mask-image: ${
 			fade
 				? `linear-gradient(${
 						direction === 'left' ? 'to right' : 'to bottom'
-					}, transparent 0%, rgba(0, 0, 0, 1.0) 10%, rgba(0, 0, 0, 1.0) 90%, transparent 100%)`
+					}, transparent 1%, rgba(0, 0, 0, 1.0) 10%, rgba(0, 0, 0, 1.0) 90%, transparent 99%)`
 				: 'none'
 		};
     --marquee-duration: ${duration}s;
