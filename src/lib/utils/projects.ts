@@ -27,7 +27,8 @@ export const projects: Project[] = [
 			'https://picsum.photos/720/720?random=1',
 			'https://picsum.photos/720/720?random=2',
 			'https://picsum.photos/720/720?random=3',
-			'https://picsum.photos/720/720?random=4'
+			'https://picsum.photos/720/720?random=4',
+			'https://picsum.photos/720/720?random=5'
 		],
 		startedAt: new Date('2023-02-10'),
 		link: 'https://kesval.com'
@@ -40,6 +41,7 @@ export const projects: Project[] = [
 		description:
 			"Un projet de développement d'une application web. Un projet de développement d'une application web.",
 		images: [
+			'https://picsum.photos/720/720?random=9',
 			'https://picsum.photos/720/720?random=10',
 			'https://picsum.photos/720/720?random=11',
 			'https://picsum.photos/720/720?random=12',
@@ -57,7 +59,8 @@ export const projects: Project[] = [
 			'https://picsum.photos/720/720?random=14',
 			'https://picsum.photos/720/720?random=15',
 			'https://picsum.photos/720/720?random=16',
-			'https://picsum.photos/720/720?random=17'
+			'https://picsum.photos/720/720?random=17',
+			'https://picsum.photos/720/720?random=18'
 		]
 	},
 	{

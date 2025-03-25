@@ -60,13 +60,13 @@
 			</div>
 			<!-- Projects - always stacked -->
 			<div class="flex flex-col space-y-16">
-				{#each highlightedProjects as project, i (project.name)}
+				{#each highlightedProjects as project, index (project.id)}
 					<div class="relative pt-5 pl-16">
 						<!-- Timeline dot -->
 						<div
 							class={cn(
 								'bg-primary/10 absolute top-6 left-4 z-10 flex h-6 w-6 -translate-x-1/2 transform items-center justify-center rounded-lg shadow-md backdrop-blur-2xl transition',
-								progress > 33 * 1.1 * i && 'bg-primary/100'
+								progress > 33 * 1.1 * index && 'bg-primary/100'
 							)}
 						>
 							<div class="bg-background h-4 w-4 rounded"></div>
@@ -80,7 +80,7 @@
 						</div>
 
 						<!-- Project content -->
-						<HomeProjectsContent {project} />
+						<HomeProjectsContent {project} {index} />
 					</div>
 				{/each}
 			</div>

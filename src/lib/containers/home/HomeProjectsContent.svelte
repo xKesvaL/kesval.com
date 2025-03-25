@@ -15,41 +15,46 @@
 	import { Button } from '$lib/components/ui/button';
 	import { translate } from '$lib/utils/i18n';
 	import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures';
-	// import { watch } from 'runed';
+	import Autoplay from 'embla-carousel-autoplay';
+	import { watch } from 'runed';
 
 	type Props = {
 		project: Project;
+		index: number;
 	};
 
-	let { project }: Props = $props();
+	let { project, index }: Props = $props();
 
 	let carouselApi = $state<CarouselAPI>();
-	// let currentSlide = $state(0);
 
-	// watch(
-	// 	() => carouselApi,
-	// 	() => {
-	// 		if (!carouselApi) return;
+	watch(
+		() => carouselApi,
+		() => {
+			if (carouselApi) {
+				const autoplayPlugin = carouselApi.plugins().autoplay;
 
-	// 		carouselApi.on('select', (api) => {
-	// 			currentSlide = api.selectedScrollSnap();
-	// 		});
-	// 	}
-	// );
+				setTimeout(() => {
+					autoplayPlugin.play();
+				}, 1000 * index);
+			}
+		}
+	);
 </script>
 
 <!-- Title and description grouped together -->
 <div class="space-y-6">
 	<div>
-		<div class="mb-3 flex w-full items-center gap-4">
-			<project.icon class="text-primary size-6" />
-			<h3 class="text-2xl">{project.name}</h3>
+		<div class="mb-3 flex w-full flex-col items-start gap-2 md:flex-row md:items-center md:gap-4">
+			<div class="flex items-center gap-4">
+				<project.icon class="text-primary size-6" />
+				<h3 class="text-2xl">{project.name}</h3>
+			</div>
 			{#if project.link}
 				<a
 					href={project.link}
 					target="_blank"
 					rel="noreferrer"
-					class="text-primary ml-auto inline-flex items-center gap-1 text-sm font-medium hover:underline"
+					class="text-primary inline-flex items-center gap-1 text-sm font-medium hover:underline md:ml-auto"
 				>
 					{translate('common.visit_site')}
 					<IconExternalLink class="size-4" />
@@ -65,9 +70,15 @@
 	{#if project.images}
 		<Carousel.Root
 			class="-mr-4 lg:pr-4"
-			bind:api={carouselApi}
+			setApi={(emblaApi) => (carouselApi = emblaApi)}
 			opts={{ loop: true, align: 'start' }}
-			plugins={[WheelGesturesPlugin()]}
+			plugins={[
+				WheelGesturesPlugin(),
+				Autoplay({
+					delay: 5000,
+					playOnInit: false
+				})
+			]}
 		>
 			<Carousel.Content>
 				{#each project.images as image}
@@ -94,7 +105,7 @@
 	{/if}
 
 	<!-- Project links -->
-	<div class="flex items-center gap-4">
+	<div class="flex flex-col items-start gap-4 md:flex-row md:items-center md:gap-4">
 		<div class="text-muted-foreground flex items-center gap-4 text-sm">
 			<div class="flex items-center gap-2">
 				<Button
