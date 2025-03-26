@@ -36,7 +36,7 @@
 		</div>
 	</div>
 	<div
-		class="bg-muted shadow-cool relative flex min-h-80 w-full min-w-80 items-center justify-center rounded-lg border p-4 transition hover:scale-105 md:w-auto"
+		class="bg-muted shadow-cool relative flex min-h-80 w-full min-w-80 items-center justify-center rounded-2xl border p-4 transition hover:scale-105 md:w-auto"
 	>
 		<IconPhotoOff class="size-16" stroke={1} />
 		<div class="absolute bottom-0 flex translate-y-1/2 gap-4">

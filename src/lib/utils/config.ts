@@ -3,7 +3,7 @@ import * as m from '$paraglide/messages';
 import dayjs from 'dayjs';
 
 import ImageHome from '$assets/logo.avif?enhanced';
-import ImageBlog from '$assets/nav/blog_nav.png?enhanced';
+import ImageBlog from '$assets/nav/blog_nav.webp?enhanced';
 import type { Picture } from 'vite-imagetools';
 
 export type LinkType = {

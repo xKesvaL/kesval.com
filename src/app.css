@@ -3,38 +3,14 @@
 @plugin "tailwindcss-animate";
 
 @font-face {
-	font-family: 'Helvetica Neue';
+	font-family: 'Geist';
 	src:
-		local('Helvetica Neue'),
-		url('/fonts/HelveticaNeue400.woff2') format('woff2'),
-		url('/fonts/HelveticaNeue400.otf') format('opentype');
-	font-weight: 400;
+		local('Geist'),
+		url('/fonts/Geist.woff2') format('woff2');
+	font-weight: 100 900;
 	font-style: normal;
 	font-display: fallback;
 }
-
-@font-face {
-	font-family: 'Helvetica Neue';
-	src:
-		local('Helvetica Neue'),
-		url('/fonts/HelveticaNeue500.woff2') format('woff2'),
-		url('/fonts/HelveticaNeue500.otf') format('opentype');
-	font-weight: 500;
-	font-style: normal;
-	font-display: fallback;
-}
-
-@font-face {
-	font-family: 'Helvetica Neue';
-	src:
-		local('Helvetica Neue'),
-		url('/fonts/HelveticaNeue700.woff2') format('woff2'),
-		url('/fonts/HelveticaNeue700.ttf') format('truetype');
-	font-weight: 700;
-	font-style: normal;
-	font-display: fallback;
-}
-
 @theme {
 	--color-background: oklch(99.09% 0.0021 300);
 	--color-foreground: oklch(15.48% 0.0253 267.94);
@@ -73,7 +49,7 @@
 	--animate-marquee-left: marquee-left var(--marquee-duration, 60s) linear infinite;
 	--animate-marquee-up: marquee-up var(--marquee-duration, 60s) linear infinite;
 
-	--font-sans: 'Helvetica Neue', sans-serif;
+	--font-sans: 'Geist', sans-serif;
 	--font-emoji:
 		'Twemoji Country Flags', 'Segoe UI Emoji', 'Noto Color Emoji', 'Segoe UI Symbol',
 		'Apple Color Emoji', 'EmojiSymbols', 'Android Emoji';
