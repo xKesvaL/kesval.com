@@ -57,7 +57,7 @@
 			</div>
 			<div class="flex h-full flex-col items-center justify-between gap-4">
 				<enhanced:img
-					src="$assets/logo.png?w=384;256"
+					src="$assets/logo.avif?w=384;256"
 					alt={m.kesval_logo()}
 					sizes="(min-width: 768px) 256px, (max-width: 768px) 384px"
 					class="max-w-[12rem] overflow-hidden rounded-full"

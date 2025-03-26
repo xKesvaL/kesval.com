@@ -2,7 +2,7 @@ import { route } from '$lib/ROUTES';
 import * as m from '$paraglide/messages';
 import dayjs from 'dayjs';
 
-import ImageHome from '$assets/logo.png?enhanced';
+import ImageHome from '$assets/logo.avif?enhanced';
 import ImageBlog from '$assets/nav/blog_nav.png?enhanced';
 import type { Picture } from 'vite-imagetools';
 
