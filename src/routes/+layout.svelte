@@ -2,14 +2,13 @@
 	import '../app.css';
 	import Navigation from '$lib/components/layout/Navigation.svelte';
 	import Footer from '$lib/components/layout/Footer.svelte';
-	import { navigation } from '$lib/stores/common.svelte';
 	import { locales, localizeHref } from '$lib/paraglide/runtime';
 	import { page } from '$app/state';
 	import Analytics from '$lib/components/base/Analytics.svelte';
-	import { MetaTags } from 'svelte-meta-tags';
-	import * as m from '$paraglide/messages';
+	import { deepMerge, MetaTags } from 'svelte-meta-tags';
 
-	let { children } = $props();
+	let { children, data } = $props();
+	let metaTags = $derived(deepMerge(data.baseMetaTags, page.data.pageMetaTags));
 </script>
 
 <!-- This is a hack so sveltekit pre-renders all locales -->
@@ -19,7 +18,7 @@
 	{/each}
 </div>
 
-<MetaTags titleTemplate={`%s | ${m.brand_name_short()}`} />
+<MetaTags {...metaTags} />
 
 <Analytics />
 

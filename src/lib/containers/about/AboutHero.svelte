@@ -15,7 +15,7 @@
 			{translate('about.hero.title')}
 		</h1>
 		<p class="text-muted-foreground max-w-prose text-lg">
-			{translate('home.hero.subtitle', { brand: m.brand_name() })}
+			{translate('home.hero.subtitle', { brand: translate('brand.name') })}
 		</p>
 		<div class="mt-4 flex flex-wrap gap-8">
 			<div class="flex items-center gap-2 text-sm">

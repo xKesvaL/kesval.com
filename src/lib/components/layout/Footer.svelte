@@ -24,11 +24,11 @@
 			]
 		},
 		brand: {
-			title: m.brand_name_short(),
+			title: translate('brand.name_short'),
 			links: navigationLinks
 		},
 		connect: {
-			title: m.brand_connect(),
+			title: translate('brand.connect'),
 			links: socialLinks
 		}
 	} as const satisfies Record<string, Links>;
@@ -40,7 +40,7 @@
 		<div class="mx-auto flex max-w-4xl flex-col items-start gap-4">
 			<div class="flex flex-col gap-4 md:gap-8">
 				<h2 class="h3 md:h2">
-					{m.footer_cta()}
+					{translate('footer.cta.title')}
 				</h2>
 				<div class="flex gap-2">
 					<Button variant="secondary" href={localizeHref(route('/contact'))}>
@@ -52,7 +52,7 @@
 			<div class="bg-secondary/50 my-4 h-[1px] w-full md:my-8"></div>
 			<div class="flex flex-col gap-4 md:gap-8">
 				<h3 class="h4 md:h3">
-					{m.footer_cta_other()}
+					{translate('footer.cta.other')}
 				</h3>
 				<div class="grid gap-16 md:grid-cols-3">
 					<div class="flex flex-col">
@@ -96,13 +96,11 @@
 		<!-- Fourth col: CTA -->
 		<div class="col-span-full flex flex-col gap-4 lg:col-span-1">
 			<h3 class="h4">
-				{m.footer_cta_secondary()}
+				{translate('footer.cta.secondary.title')}
 			</h3>
 			<div class="flex flex-col gap-4">
 				<p class="text-muted-foreground/90">
-					{m.footer_cta_secondary_desc({
-						brand: m.brand_name_short()
-					})}
+					{translate('footer.cta.secondary.description')}
 				</p>
 				<Button variant="outline" href={route('/')}>
 					{m.contact_me()}
@@ -118,12 +116,12 @@
 	<div class="flex flex-col justify-between gap-4 md:flex-row md:items-center">
 		<a href={route('/')} aria-label="home" class="flex items-center gap-4">
 			<enhanced:img src="$assets/logo.png" alt="An alt text" class="size-10 rounded-lg" />
-			<span class="text-2xl font-medium">{m.brand_name_short()}.</span>
+			<span class="text-2xl font-medium">{translate('brand.name_short')}.</span>
 		</a>
 		<span class="text-muted-foreground text-sm">
-			{m.footer_copyright({
+			{translate('footer.copyright', {
 				year: new Date().getFullYear(),
-				brand: m.brand_name()
+				brand: translate('brand.name_short')
 			})}
 		</span>
 	</div>

@@ -33,7 +33,7 @@
 		<div class="flex flex-col items-start gap-4 md:col-span-5">
 			<div class="flex flex-col gap-2">
 				<span class="suptitle">
-					{translate('brand_name')}
+					{translate('brand.name')}
 				</span>
 				<h2>
 					{translate('home.about.title')}

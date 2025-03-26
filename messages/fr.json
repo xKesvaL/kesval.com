@@ -126,15 +126,25 @@
 			"tech_assistant": "Assistant technique"
 		}
 	},
+	"brand": {
+		"name": "KesvaL Développement",
+		"name_short": "KesvaL",
+		"connect": "Réseaux"
+	},
 	"brand_name": "KesvaL Développement",
 	"brand_name_short": "KesvaL",
 	"brand_connect": "Réseaux",
-	"footer_copyright": "© {year} {brand}. Tous droits réservés.",
-	"footer_cta": "Vous avez un projet en tête ?",
-	"footer_cta_desc": "Vous avez un projet en tête ?",
-	"footer_cta_secondary": "Vous avez une question ?",
-	"footer_cta_secondary_desc": "Je suis là pour vous écouter et vous conseiller, gratuitement !",
-	"footer_cta_other": "Ou alors je reste disponible sur...",
+	"footer": {
+		"copyright": "© {year} {brand}. Tous droits réservés.",
+		"cta": {
+			"title": "Vous avez un projet en tête ?",
+			"secondary": {
+				"title": "Vous avez une question ?",
+				"description": "Je suis là pour vous écouter et vous conseiller, gratuitement !"
+			},
+			"other": "Ou alors je reste disponible sur..."
+		}
+	},
 	"projects": {
 		"portfolio_kesval": {
 			"title": "test"
@@ -144,5 +154,10 @@
 	"common": {
 		"view_case_study": "Voir l'étude de cas",
 		"visit_site": "Visiter le site"
+	},
+	"meta": {
+		"home": {
+			"title": "Accueil"
+		}
 	}
 }

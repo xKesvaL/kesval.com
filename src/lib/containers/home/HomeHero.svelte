@@ -23,7 +23,7 @@
 			{translate('home.hero.title')}
 		</h1>
 		<p class="text-muted-foreground max-w-prose text-lg">
-			{translate('home.hero.subtitle', { brand: m.brand_name() })}
+			{translate('home.hero.subtitle', { brand: translate('brand.name') })}
 		</p>
 		<div class="mt-4 flex gap-2">
 			<Button href={localizeHref(route('/contact'))}>
