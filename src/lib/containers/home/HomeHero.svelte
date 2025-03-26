@@ -9,7 +9,6 @@
 		IconBrandGithub,
 		IconBrandInstagram,
 		IconBrandLinkedin,
-		IconBrandTwitter,
 		IconMessageCirclePlus,
 		IconPhotoOff
 	} from '@tabler/icons-svelte';
@@ -20,10 +19,10 @@
 >
 	<div class="flex grow flex-col gap-4">
 		<h1 class="max-w-[30ch]">
-			{translate('home.hero.title')}
+			{m['home.hero.title']()}
 		</h1>
 		<p class="text-muted-foreground max-w-prose text-lg">
-			{translate('home.hero.subtitle', { brand: translate('brand.name') })}
+			{m['home.hero.subtitle']({ brand: m['brand.name']() })}
 		</p>
 		<div class="mt-4 flex gap-2">
 			<Button href={localizeHref(route('/contact'))}>

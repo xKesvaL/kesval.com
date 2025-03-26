@@ -9,26 +9,26 @@
 >
 	<div class="flex grow flex-col gap-2 lg:col-span-7">
 		<span class="suptitle">
-			{translate('about.hero.about_me')}
+			{m['about.hero.about_me']()}
 		</span>
 		<h1 class="max-w-[30ch]">
-			{translate('about.hero.title')}
+			{m['about.hero.title']()}
 		</h1>
 		<p class="text-muted-foreground max-w-prose text-lg">
-			{translate('home.hero.subtitle', { brand: translate('brand.name') })}
+			{m['home.hero.subtitle']({ brand: m['brand.name']() })}
 		</p>
 		<div class="mt-4 flex flex-wrap gap-8">
 			<div class="flex items-center gap-2 text-sm">
 				<IconRocket class="size-4" />
-				{translate('about.hero.identity.entrepreneur')}
+				{m['about.hero.identity.entrepreneur']()}
 			</div>
 			<div class="flex items-center gap-2 text-sm">
 				<IconDevices class="size-4" />
-				{translate('about.hero.identity.developer')}
+				{m['about.hero.identity.developer']()}
 			</div>
 			<div class="flex items-center gap-2 text-sm">
 				<IconBarbell class="size-4" />
-				{translate('about.hero.identity.powerlifter')}
+				{m['about.hero.identity.powerlifter']()}
 			</div>
 		</div>
 	</div>

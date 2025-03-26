@@ -56,7 +56,7 @@
 					rel="noreferrer"
 					class="text-primary inline-flex items-center gap-1 text-sm font-medium hover:underline md:ml-auto"
 				>
-					{translate('common.visit_site')}
+					{m['common.visit_site']()}
 					<IconExternalLink class="size-4" />
 				</a>
 			{/if}
@@ -146,7 +146,7 @@
 			href={localizeHref(route('/projets'))}
 			class="text-primary hover:border-b-primary mt-[1px] inline-flex items-center gap-1 border-b border-b-transparent text-sm font-medium"
 		>
-			{translate('common.view_case_study')}
+			{m['common.view_case_study']()}
 			<IconArrowRight class="size-4" />
 		</a>
 

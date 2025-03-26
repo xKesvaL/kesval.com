@@ -20,7 +20,7 @@
 </script>
 
 <section class="kcontainer section flex flex-col items-center px-4" id="resume">
-	<h2>{translate('about.resume.title')}</h2>
+	<h2>{m['about.resume.title']()}</h2>
 	<Card
 		class="shadow-cool relative flex w-full max-w-[22cm] flex-col gap-4 rounded-2xl p-4 md:gap-8 md:p-8 lg:aspect-[1/1.414]"
 	>
@@ -28,7 +28,7 @@
 			<div class="">
 				<h3 class="">Jordan Abeddou</h3>
 				<p class="text-muted-foreground h4 mb-4 font-light">
-					{translate('about.resume.header.subtitle')}
+					{m['about.resume.header.subtitle']()}
 				</p>
 				<div class="grid grid-cols-2 gap-2 md:gap-4">
 					<AboutResumeLink icon={IconMapPin}>Mulhouse, France</AboutResumeLink>
@@ -48,7 +48,7 @@
 						{brand.email}
 					</AboutResumeLink>
 					<AboutResumeLink icon={IconLanguage}>
-						{translate('about.resume.header.languages')}
+						{m['about.resume.header.languages']()}
 					</AboutResumeLink>
 					<AboutResumeLink icon={IconWorldWww} href={brand.website}>
 						{brand.websiteShort}

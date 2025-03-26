@@ -39,10 +39,10 @@
 <section class="kcontainer section flex flex-col gap-8 px-4">
 	<div class="flex flex-col gap-2">
 		<span class="suptitle">
-			{translate('home.projects.above_title')}
+			{m['home.projects.above_title']()}
 		</span>
 		<h2>
-			{translate('home.projects.title')}
+			{m['home.projects.title']()}
 		</h2>
 	</div>
 

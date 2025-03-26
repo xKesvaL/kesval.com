@@ -14,7 +14,7 @@ export const load = async ({ params }) => {
 	const project = projects.find((project) => project.id === projectId);
 
 	if (!project) {
-		error(404, translate('projects.not_found', { projectId }));
+		error(404, await translate('projects.not_found', { projectId }));
 	}
 
 	return { project };

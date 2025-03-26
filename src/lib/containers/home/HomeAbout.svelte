@@ -33,13 +33,13 @@
 		<div class="flex flex-col items-start gap-4 md:col-span-5">
 			<div class="flex flex-col gap-2">
 				<span class="suptitle">
-					{translate('brand.name')}
+					{m['brand.name']()}
 				</span>
 				<h2>
-					{translate('home.about.title')}
+					{m['home.about.title']()}
 				</h2>
 				<p class="max-w-prose">
-					{translate('home.about.description')}
+					{m['home.about.description']()}
 				</p>
 			</div>
 			<Button href={localizeHref(route('/a-propos'))}>
@@ -81,11 +81,11 @@
 					<IconUserStar class="size-16 md:size-20" stroke={1.5} />
 				</div>
 				<h3>
-					{translate('home.about.experience')}
+					{m['home.about.experience']()}
 				</h3>
 			</div>
 			<p class="text-muted-foreground max-w-prose text-sm">
-				{translate('home.about.experience_description')}
+				{m['home.about.experience_description']()}
 			</p>
 		</div>
 		<div class="flex flex-col items-start gap-2">
@@ -100,11 +100,11 @@
 					<IconClipboardCheck class="size-16 md:size-20" stroke={1.5} />
 				</div>
 				<h3>
-					{translate('home.about.projects')}
+					{m['home.about.projects']()}
 				</h3>
 			</div>
 			<p class="text-muted-foreground max-w-prose text-sm">
-				{translate('home.about.projects_description')}
+				{m['home.about.projects_description']()}
 			</p>
 		</div>
 		<div class="flex flex-col items-start gap-2">
@@ -119,11 +119,11 @@
 					<IconAward class="size-16 md:size-20" stroke={1.5} />
 				</div>
 				<h3>
-					{translate('home.about.clients')}
+					{m['home.about.clients']()}
 				</h3>
 			</div>
 			<p class="text-muted-foreground max-w-prose text-sm">
-				{translate('home.about.clients_description')}
+				{m['home.about.clients_description']()}
 			</p>
 		</div>
 	</div>

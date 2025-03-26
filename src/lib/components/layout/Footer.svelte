@@ -15,7 +15,7 @@
 
 	const footerLinks = {
 		work: {
-			title: translate('nav.projects'),
+			title: m['nav.projects'](),
 			links: [
 				{
 					label: 'see_all',
@@ -24,11 +24,11 @@
 			]
 		},
 		brand: {
-			title: translate('brand.name_short'),
+			title: m['brand.name_short'](),
 			links: navigationLinks
 		},
 		connect: {
-			title: translate('brand.connect'),
+			title: m['brand.connect'](),
 			links: socialLinks
 		}
 	} as const satisfies Record<string, Links>;
@@ -40,7 +40,7 @@
 		<div class="mx-auto flex max-w-4xl flex-col items-start gap-4">
 			<div class="flex flex-col gap-4 md:gap-8">
 				<h2 class="h3 md:h2">
-					{translate('footer.cta.title')}
+					{m['footer.cta.title']()}
 				</h2>
 				<div class="flex gap-2">
 					<Button variant="secondary" href={localizeHref(route('/contact'))}>
@@ -52,7 +52,7 @@
 			<div class="bg-secondary/50 my-4 h-[1px] w-full md:my-8"></div>
 			<div class="flex flex-col gap-4 md:gap-8">
 				<h3 class="h4 md:h3">
-					{translate('footer.cta.other')}
+					{m['footer.cta.other']()}
 				</h3>
 				<div class="grid gap-16 md:grid-cols-3">
 					<div class="flex flex-col">
@@ -82,7 +82,9 @@
 								class="text-muted-foreground/90 hover:text-primary flex items-center gap-1 transition"
 								target={'external' in link && link.external ? '_blank' : undefined}
 							>
-								{translate(link.label)}
+								{#await translate(link.label) then translation}
+									{translation}
+								{/await}
 								{#if link.label === 'see_all'}
 									<IconArrowRight class="size-4" />
 								{/if}
@@ -96,11 +98,11 @@
 		<!-- Fourth col: CTA -->
 		<div class="col-span-full flex flex-col gap-4 lg:col-span-1">
 			<h3 class="h4">
-				{translate('footer.cta.secondary.title')}
+				{m['footer.cta.secondary.title']()}
 			</h3>
 			<div class="flex flex-col gap-4">
 				<p class="text-muted-foreground/90">
-					{translate('footer.cta.secondary.description')}
+					{m['footer.cta.secondary.description']()}
 				</p>
 				<Button variant="outline" href={route('/')}>
 					{m.contact_me()}
@@ -116,12 +118,12 @@
 	<div class="flex flex-col justify-between gap-4 md:flex-row md:items-center">
 		<a href={route('/')} aria-label="home" class="flex items-center gap-4">
 			<enhanced:img src="$assets/logo.avif" alt="An alt text" class="size-10 rounded-lg" />
-			<span class="text-2xl font-medium">{translate('brand.name_short')}.</span>
+			<span class="text-2xl font-medium">{m['brand.name_short']()}.</span>
 		</a>
 		<span class="text-muted-foreground text-sm">
-			{translate('footer.copyright', {
+			{m['footer.copyright']({
 				year: new Date().getFullYear(),
-				brand: translate('brand.name_short')
+				brand: m['brand.name_short']()
 			})}
 		</span>
 	</div>

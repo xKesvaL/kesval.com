@@ -40,10 +40,10 @@
 <section class="kcontainer min-h-screen-wo-nav section flex flex-col gap-8 px-4 md:gap-16">
 	<div class="flex max-w-4xl flex-col gap-6">
 		<h1>
-			{translate('contact.hero.title')}
+			{m['contact.hero.title']()}
 		</h1>
 		<p class="text-muted-foreground text-xl">
-			{translate('contact.hero.subtitle')}
+			{m['contact.hero.subtitle']()}
 		</p>
 	</div>
 
@@ -53,7 +53,7 @@
 			<div class="mb-2 flex items-center gap-4">
 				<MessageSquare class="text-primary size-7" />
 				<h2 class="h3">
-					{translate('contact.hero.contact_me')}
+					{m['contact.hero.contact_me']()}
 				</h2>
 			</div>
 			<!-- Form content will go here -->
@@ -63,10 +63,10 @@
 		<div class="flex flex-col gap-10">
 			<div class="flex flex-col gap-4">
 				<h2 class="h3">
-					{translate('contact.hero.get_in_touch.title')}
+					{m['contact.hero.get_in_touch.title']()}
 				</h2>
 				<p class="text-muted-foreground max-w-prose text-lg">
-					{translate('contact.hero.get_in_touch.description')}
+					{m['contact.hero.get_in_touch.description']()}
 				</p>
 			</div>
 
@@ -102,16 +102,16 @@
 	<div class="bg-muted mt-8x rounded-2xl p-8">
 		<div class="flex flex-col gap-6">
 			<h2>
-				{translate('contact.hero.availability.title')}
+				{m['contact.hero.availability.title']()}
 			</h2>
 			<p class="text-muted-foreground max-w-prose text-lg">
-				{translate('contact.hero.availability.description')}
+				{m['contact.hero.availability.description']()}
 			</p>
 			<Button
 				class="bg-card text-foreground hover:bg-card/90 hover:text-foreground w-fit border"
 				href={`${localizeHref(route('/a-propos'))}#resume`}
 			>
-				{translate('contact.hero.looking_for_work.cta')}
+				{m['contact.hero.looking_for_work.cta']()}
 			</Button>
 		</div>
 	</div>

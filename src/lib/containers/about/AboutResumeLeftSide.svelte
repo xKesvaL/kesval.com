@@ -15,7 +15,7 @@
 		});
 </script>
 
-<AboutResumeSection title={translate('about.resume.experience')}>
+<AboutResumeSection title={m['about.resume.experience']()}>
 	<div class="flex w-full flex-col gap-6">
 		{#each totalExperiences as experience, i (experience.name)}
 			<AboutResumeExperience {experience} isLast={i === totalExperiences.length - 1} />

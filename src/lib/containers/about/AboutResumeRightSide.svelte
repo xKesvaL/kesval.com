@@ -6,12 +6,12 @@
 </script>
 
 <aside class="grid h-full grid-rows-[min-content_min-content] gap-4">
-	<AboutResumeSection title={translate('about.resume.about.title')}>
+	<AboutResumeSection title={m['about.resume.about.title']()}>
 		<p class="">
-			{translate('about.resume.about.description')}
+			{m['about.resume.about.description']}
 		</p>
 	</AboutResumeSection>
-	<AboutResumeSection title={translate('about.resume.skills')}>
+	<AboutResumeSection title={m['about.resume.skills']()}>
 		<div class="flex flex-col gap-1">
 			<p class="text-lg font-medium">Front-End</p>
 			<div class="flex flex-wrap gap-2">
@@ -43,7 +43,9 @@
 			</div>
 		</div>
 		<div class="flex flex-col gap-1">
-			<p class="text-lg font-medium">{m.others()}</p>
+			<p class="text-lg font-medium">
+				{m['common.others']()}
+			</p>
 			<div class="grid grid-cols-2 gap-2">
 				{#each skillsList.other as skill}
 					<div

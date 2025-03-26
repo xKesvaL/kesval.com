@@ -81,7 +81,6 @@
 			}
 		}
 	},
-	"others": "Autres",
 	"hire_me": "Embauchez-moi",
 	"my_resume": "Mon CV",
 	"contact_me": "Contactez-moi",
@@ -153,7 +152,8 @@
 	},
 	"common": {
 		"view_case_study": "Voir l'étude de cas",
-		"visit_site": "Visiter le site"
+		"visit_site": "Visiter le site",
+		"others": "Autres"
 	},
 	"meta": {
 		"home": {

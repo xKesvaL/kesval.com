@@ -6,7 +6,8 @@
 	font-family: 'Geist';
 	src:
 		local('Geist'),
-		url('/fonts/Geist.woff2') format('woff2');
+		url('/fonts/Geist.woff2') format('woff2'),
+		url('/fonts/Geist.ttf') format('truetype');
 	font-weight: 100 900;
 	font-style: normal;
 	font-display: fallback;
@@ -200,7 +201,7 @@
 }
 
 @utility h1 {
-	@apply text-3xl leading-snug font-bold md:text-4xl lg:text-5xl;
+	@apply text-3xl leading-snug font-bold md:text-4xl lg:text-[44px];
 }
 
 @utility h2 {
@@ -208,7 +209,7 @@
 }
 
 @utility h3 {
-	@apply text-2xl font-medium lg:text-3xl;
+	@apply text-2xl font-semibold lg:text-3xl;
 }
 
 @utility h4 {

@@ -99,10 +99,12 @@
 							<a
 								onmouseenter={() => (latestHoveredLink = link)}
 								onclick={() => (navigation.state = 'closed')}
-								class="text-muted-foreground/80 hover:text-primary flex translate-x-0 py-6 text-5xl font-semibold uppercase transition-all duration-300 hover:-translate-x-12 md:text-6xl lg:text-7xl"
+								class="text-muted-foreground/80 hover:text-primary flex translate-x-0 py-6 text-5xl font-bold uppercase transition-all duration-300 hover:-translate-x-12 md:text-6xl lg:text-7xl"
 								{href}
 							>
-								{translate(label)}
+								{#await translate(label) then translation}
+									{translation}
+								{/await}
 							</a>
 						</li>
 					{/each}
@@ -118,7 +120,9 @@
 									class="text-muted-foreground uppercase"
 									{href}
 								>
-									{translate(label)}
+									{#await translate(label) then translation}
+										{translation}
+									{/await}
 								</a>
 							</li>
 						{/each}
