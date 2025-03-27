@@ -12,7 +12,7 @@ export default defineConfig({
 			project: './project.inlang',
 			outdir: './src/lib/paraglide',
 			strategy: ['cookie', 'url', 'preferredLanguage', 'baseLocale'],
-			
+			outputStructure: 'message-modules'
 		}),
 		kitRoutes<KIT_ROUTES>(),
 		enhancedImages(),

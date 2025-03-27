@@ -130,9 +130,6 @@
 		"name_short": "KesvaL",
 		"connect": "Réseaux"
 	},
-	"brand_name": "KesvaL Développement",
-	"brand_name_short": "KesvaL",
-	"brand_connect": "Réseaux",
 	"footer": {
 		"copyright": "© {year} {brand}. Tous droits réservés.",
 		"cta": {

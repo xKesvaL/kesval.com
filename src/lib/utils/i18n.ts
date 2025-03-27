@@ -1,5 +1,6 @@
 // Import types ONLY - this won't prevent tree-shaking
 import type * as m from '$paraglide/messages';
+import { getLocale } from '$paraglide/runtime';
 
 type MessageFunctions = typeof m;
 type Inputs<K extends keyof MessageFunctions> = Parameters<MessageFunctions[K]>[0];
@@ -28,25 +29,49 @@ export async function translate<K extends KeysWithOptionalArgs<MessageFunctions>
 	options?: Options<K>
 ): Promise<ReturnType<MessageFunctions[K]>>;
 
-// --- Updated Async Implementation with Dynamic Import ---
+// change this internally to use optionsWithDefaults.outputStructure
+const PARAGLIDE_OUTPUT_STRUCTURE: 'message-modules' | 'locale-modules' = 'message-modules';
+
 export async function translate<K extends keyof MessageFunctions>(
 	key: K,
 	args?: Inputs<K>,
 	options?: Options<K>
 ): Promise<string> {
-	try {
-		const module = await import(`../paraglide/messages/${key.replaceAll('.', '_')}.js`);
+	const jsKey = key.replaceAll('.', '_');
 
+	try {
+		// --- Locale modules ---
+		if (PARAGLIDE_OUTPUT_STRUCTURE === 'locale-modules') {
+			const locale = getLocale();
+
+			const module = await import(`$paraglide/messages/${locale}.js`);
+
+			console.log(module);
+
+			if (module && typeof module[jsKey] === 'function') {
+				const messageFn = module[jsKey];
+
+				return messageFn(args, options);
+			}
+
+			console.error(
+				`[translate] Message key "${key}" not found or not a function in locale module "${locale}".`
+			);
+			return key;
+		}
+
+		// --- Messages modules ---
+		const module = await import(`../paraglide/messages/${jsKey}.js`);
+
+		console.log(module);
 		if (module && typeof module[key] === 'function') {
 			const messageFn = module[key];
 
 			return messageFn(args, options);
-		} else {
-			console.error(
-				`[paraglide] Message key "${key}" loaded, but 'module[key]' is not a function.`
-			);
-			return key;
 		}
+
+		console.error(`[paraglide] Message key "${key}" loaded, but 'module[key]' is not a function.`);
+		return key;
 	} catch (error) {
 		console.error(`[paraglide] Failed to load message for key "${key}":`, error);
 		return key;
