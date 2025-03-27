@@ -18,5 +18,9 @@ export default defineConfig({
 		enhancedImages(),
 		sveltekit(),
 		tailwindcss()
-	]
+	],
+
+	build: {
+		target: ['es2022', 'chrome90', 'safari14.1', 'firefox87']
+	}
 });
