@@ -46,8 +46,6 @@ export async function translate<K extends keyof MessageFunctions>(
 
 			const module = await import(`$paraglide/messages/${locale}.js`);
 
-			console.log(module);
-
 			if (module && typeof module[jsKey] === 'function') {
 				const messageFn = module[jsKey];
 
@@ -63,7 +61,6 @@ export async function translate<K extends keyof MessageFunctions>(
 		// --- Messages modules ---
 		const module = await import(`../paraglide/messages/${jsKey}.js`);
 
-		console.log(module);
 		if (module && typeof module[key] === 'function') {
 			const messageFn = module[key];
 
