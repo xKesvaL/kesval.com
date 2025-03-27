@@ -49,18 +49,24 @@
 	</div>
 	<div>
 		<h4 class="mt-5 text-2xl font-medium">
-			{await translate(`experience.${experience.name}.title`)}
+			{#await translate(`experience.${experience.name}.title`) then translation}
+				{translation}
+			{/await}
 		</h4>
 		<div class="text-muted-foreground flex items-center gap-1 text-xs md:-mt-0.5 md:text-sm">
 			{capitalizeFirstLetter(duration)}
 			<div>|</div>
-			{await translate(`experience.job.${experience.role}`)}
+			{#await translate(`experience.job.${experience.role}`) then translation}
+				{translation}
+			{/await}
 			<div>|</div>
 			<IconMapPin class="size-4" />
 			{experience.location}
 		</div>
 		<p class="mt-1">
-			{await translate(`experience.${experience.name}.description`)}
+			{#await translate(`experience.${experience.name}.description`) then translation}
+				{translation}
+			{/await}
 		</p>
 	</div>
 </div>
