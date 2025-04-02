@@ -6,8 +6,13 @@
 	import { cn } from '$lib/utils/ui';
 	import * as m from '$paraglide/messages';
 	import { localizeHref } from '$paraglide/runtime';
-	import { IconBrandGithub, IconBrandLinkedin, IconMail, IconMapPin } from '@tabler/icons-svelte';
-	import { MessageSquare } from 'lucide-svelte';
+	import {
+		IconBrandGithub,
+		IconMessageCircle,
+		IconBrandLinkedin,
+		IconMail,
+		IconMapPin
+	} from '@tabler/icons-svelte';
 
 	const contactInfo = [
 		{
@@ -51,7 +56,7 @@
 		<!-- Contact Form - Now with more padding and space -->
 		<form class="shadow-cool flex flex-col gap-6 rounded-2xl border p-10">
 			<div class="mb-2 flex items-center gap-4">
-				<MessageSquare class="text-primary size-7" />
+				<IconMessageCircle class="text-primary size-7" />
 				<h2 class="h3">
 					{m['contact.hero.contact_me']()}
 				</h2>
