@@ -359,11 +359,11 @@
 }
 
 @utility shadow-cool {
-	@apply shadow-[0_4px_20px_-1px_rgba(0,0,0,0.03),0_1px_6px_-1px_rgba(0,0,0,0.02)] transition hover:shadow-[0_8px_30px_rgba(0,0,0,0.05)];
+	@apply shadow-[0_4px_20px_-1px_rgba(0,0,0,0.03),0_1px_6px_-1px_rgba(0,0,0,0.02)]! transition hover:shadow-[0_8px_30px_rgba(0,0,0,0.05)]!;
 }
 
 @utility shadow-cool-lg {
-	@apply shadow-[0_4px_20px_-1px_rgba(0,0,0,0.075),0_1px_6px_-1px_rgba(0,0,0,0.075)] transition hover:shadow-[0_8px_30px_rgba(0,0,0,0.075)];
+	@apply shadow-[0_4px_20px_-1px_rgba(0,0,0,0.075),0_1px_6px_-1px_rgba(0,0,0,0.075)]! transition hover:shadow-[0_8px_30px_rgba(0,0,0,0.075)]!;
 }
 
 @utility nav-image-drop {

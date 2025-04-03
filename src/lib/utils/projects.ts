@@ -113,3 +113,7 @@ export const projects: Project[] = [
 export const highlightedProjects = projects
 	.filter((project) => ['portfolio_kesval', 'project_2', 'project_3'].includes(project.id))
 	.sort((a, b) => (a.startedAt?.getTime() || 0) - (b.startedAt?.getTime() || 0));
+
+export const filterProjects = (projects: Project[]) => {
+	return projects;
+};

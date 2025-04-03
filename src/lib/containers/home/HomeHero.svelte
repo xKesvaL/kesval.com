@@ -2,7 +2,6 @@
 	import { Button } from '$lib/components/ui/button';
 	import { route } from '$lib/ROUTES';
 	import { brand } from '$lib/utils/config';
-	import { translate } from '$lib/utils/i18n';
 	import * as m from '$paraglide/messages';
 	import { localizeHref } from '$paraglide/runtime';
 	import {

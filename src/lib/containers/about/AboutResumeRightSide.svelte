@@ -8,7 +8,7 @@
 <aside class="grid h-full grid-rows-[min-content_min-content] gap-4">
 	<AboutResumeSection title={m['about.resume.about.title']()}>
 		<p class="">
-			{m['about.resume.about.description']}
+			{m['about.resume.about.description']()}
 		</p>
 	</AboutResumeSection>
 	<AboutResumeSection title={m['about.resume.skills']()}>
