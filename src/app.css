@@ -49,6 +49,7 @@
 	--animate-bounce-x: bounce-x 1.2s ease-in-out infinite;
 	--animate-marquee-left: marquee-left var(--marquee-duration, 60s) linear infinite;
 	--animate-marquee-up: marquee-up var(--marquee-duration, 60s) linear infinite;
+	--animate-gradient: gradient 8s linear infinite;
 
 	--font-sans: 'Geist', sans-serif;
 	--font-emoji:
@@ -148,6 +149,18 @@
 		}
 		100% {
 			transform: translateY(calc(-100% - var(--marquee-gap)));
+		}
+	}
+
+	@keyframes gradient {
+		0% {
+			background-position: 0% 0%;
+		}
+		50% {
+			background-position: 200% center;
+		}
+		100% {
+			background-position: 0% 0%;
 		}
 	}
 
@@ -343,7 +356,7 @@
 }
 
 @utility section-hero {
-	@apply section mt-4 min-h-[calc(100vh-var(--nav-height)-(var(--spacing)*8))] md:mt-10 md:min-h-[calc(100vh-var(--nav-height)-(var(--spacing)*20))] lg:mt-14 lg:min-h-[calc(100vh-var(--nav-height)-var(--nav-spacing)-(var(--spacing)*28))];
+	@apply kcontainer-nav-padding section mt-4 min-h-[calc(100vh-var(--nav-height)-(var(--spacing)*8))] md:mt-10 md:min-h-[calc(100vh-var(--nav-height)-(var(--spacing)*20))] lg:mt-14 lg:min-h-[calc(100vh-var(--nav-height)-var(--nav-spacing)-(var(--spacing)*28))];
 }
 
 @utility h-nav {

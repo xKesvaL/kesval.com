@@ -12,7 +12,7 @@
 
 <div
 	class={cn(
-		'transition-bg relative flex  h-[100vh] flex-col items-center justify-center bg-zinc-50',
+		'transition-bg bg-background relative flex h-[100vh] flex-col items-center justify-center',
 		_class
 	)}
 	{...rest}
@@ -52,20 +52,20 @@
 	.aurora {
 		--aurora: repeating-linear-gradient(
 			100deg,
-			var(--color-indigo-500) 10%,
-			var(--color-purple-300) 15%,
-			var(--color-indigo-300) 20%,
+			var(--color-indigo-400) 10%,
+			var(--color-purple-200) 15%,
+			var(--color-indigo-200) 20%,
 			var(--color-purple-200) 25%,
 			var(--color-indigo-400) 30%
 		);
 
 		--white-gradient: repeating-linear-gradient(
 			100deg,
-			var(--color-white) 0%,
-			var(--color-white) 7%,
+			var(--color-background) 0%,
+			var(--color-background) 7%,
 			transparent 10%,
 			transparent 12%,
-			var(--color-white) 16%
+			var(--color-background) 16%
 		);
 	}
 </style>

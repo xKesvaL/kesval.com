@@ -14,8 +14,12 @@
 	},
 	"home": {
 		"hero": {
-			"title": "Développeur web fullstack, web designer et jeune entrepreneur",
-			"subtitle": "Je suis KesvaL, ou Jordan de mon vrai nom, développeur web fullstack français. J'ai fondé {brand} pour accompagner les entrepreneurs dans le développement de leur présence en ligne."
+			"title": "Création d'expériences gigitales de A à Z",
+			"subtitle": "Une marque de développement spécialisée dans les solutions web et les transformations digitales avec une approche humaine.",
+			"view_projects": "Voir les Projets"
+		},
+		"clients": {
+			"title": "Nous avons travaillé avec des clients exceptionnels"
 		},
 		"about": {
 			"title": "Qui suis-je ?",
@@ -83,7 +87,7 @@
 	},
 	"hire_me": "Embauchez-moi",
 	"my_resume": "Mon CV",
-	"contact_me": "Contactez-moi",
+	"contact_me": "Discutons",
 	"see_all": "Voir tout",
 	"see_more": "Voir plus",
 	"about_me": "À propos de moi",
@@ -126,7 +130,7 @@
 		}
 	},
 	"brand": {
-		"name": "KesvaL Développement",
+		"name": "Kesval",
 		"name_short": "KesvaL",
 		"connect": "Réseaux"
 	},

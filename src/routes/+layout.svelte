@@ -23,7 +23,7 @@
 <Analytics />
 
 <Navigation />
-<main class="kcontainer-nav-padding">
+<main>
 	{@render children()}
 </main>
 <Footer />
