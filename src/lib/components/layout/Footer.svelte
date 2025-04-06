@@ -49,7 +49,7 @@
 					</Button>
 				</div>
 			</div>
-			<div class="bg-secondary/50 my-4 h-[1px] w-full md:my-8"></div>
+			<div class="bg-primary-foreground my-4 h-[1px] w-full md:my-8"></div>
 			<div class="flex flex-col gap-4 md:gap-8">
 				<h3 class="h4 md:h3">
 					{m['footer.cta.other']()}
