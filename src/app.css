@@ -391,3 +391,15 @@
 		display: none;
 	}
 }
+
+@utility bgc-grid {
+	background-image:
+		linear-gradient(to right, #80808012 1px, transparent 1px),
+		linear-gradient(to bottom, #80808012 1px, transparent 1px);
+	background-size: 40px 40px;
+}
+
+@utility bgc-dot {
+	background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+	background-size: 24px 24px;
+}
