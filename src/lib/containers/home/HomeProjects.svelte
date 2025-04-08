@@ -61,12 +61,15 @@
 
 		<!-- View all projects button -->
 		<div class="mt-12 flex justify-center" in:fade={{ duration: 800, delay: 800 }}>
-			<a href={localizeHref(route('/projets'))}>
-				<Button variant="outline" size="lg" class="group gap-2">
-					{m['projects.viewAll']?.() ?? 'View all projects'}
-					<IconArrowRight class="h-4 w-4 transition-transform group-hover:translate-x-1" />
-				</Button>
-			</a>
+			<Button
+				variant="outline"
+				size="lg"
+				class="group gap-2"
+				href={localizeHref(route('/projets'))}
+			>
+				{m['projects.viewAll']?.() ?? 'View all projects'}
+				<IconArrowRight class="h-4 w-4 transition-transform group-hover:translate-x-1" />
+			</Button>
 		</div>
 	</div>
 </section>

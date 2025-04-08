@@ -90,7 +90,7 @@
 			<div class="flex gap-3 pt-2">
 				<Button
 					variant="outline"
-					size="sm"
+					size={type === 'project' ? 'default' : 'sm'}
 					class="group"
 					href={localizeHref(route('/projets/[projectId]', { projectId: project.id }))}
 				>
@@ -100,7 +100,7 @@
 				{#if project.link}
 					<Button
 						variant="ghost"
-						size="sm"
+						size={type === 'project' ? 'default' : 'sm'}
 						class="group"
 						href={project.link}
 						target="_blank"
