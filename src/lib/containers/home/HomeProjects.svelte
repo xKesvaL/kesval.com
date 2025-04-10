@@ -8,6 +8,7 @@
 	import { route } from '$lib/ROUTES';
 	import { localizeHref } from '$paraglide/runtime';
 	import { onMount } from 'svelte';
+	import AnimatedBadge from '$lib/components/animated/AnimatedBadge.svelte';
 
 	let showedProjects = $derived.by(() => highlightedProjects);
 </script>
@@ -29,13 +30,13 @@
 
 	<div class="kcontainer relative flex flex-col gap-24 px-4">
 		<div class="mt-12 space-y-4 text-center" in:fly={{ y: 20, duration: 800 }}>
-			<div
-				class="bg-primary/10 mx-auto mb-2 flex w-fit items-center justify-center rounded-full px-3 py-1"
-			>
-				<span class="text-primary text-xs font-medium tracking-wider"
-					>{m['home.projects.above_title']()}</span
-				>
-			</div>
+			<AnimatedBadge>
+				<span class="flex items-center gap-2">
+					💻
+					<hr class="bg-muted-foreground h-4 w-[1px] shrink-0" />
+					{m['home.projects.above_title']()}
+				</span>
+			</AnimatedBadge>
 			<h2
 				class="from-foreground to-muted-foreground bg-gradient-to-br bg-clip-text text-4xl font-bold text-transparent sm:text-5xl"
 			>

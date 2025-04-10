@@ -73,11 +73,16 @@
 	<!-- Project info -->
 	<div>
 		<div class="space-y-4">
-			<div>
+			<div class="space-y-4">
 				<div class="flex items-center gap-4">
-					{#if project.icon}
-						<div class="bg-muted flex size-10 items-center justify-center rounded-lg">
-							<project.icon class="size-5" />
+					{#if project.logo}
+						<enhanced:img src={project.logo} alt={project.name} class="size-10 rounded-lg" />
+					{:else if project.icon}
+						<div
+							class="bg-muted flex size-10 items-center justify-center rounded-lg"
+							style={`background: ${project.colorBackground}`}
+						>
+							<project.icon class="size-5" style={`color: ${project.colorForeground}`} />
 						</div>
 					{/if}
 					<h3 class="text-2xl font-bold">{project.name}</h3>

@@ -24,6 +24,8 @@
 
 <Navigation />
 <main>
-	{@render children()}
+	{#key page.url.pathname}
+		{@render children()}
+	{/key}
 </main>
 <Footer />

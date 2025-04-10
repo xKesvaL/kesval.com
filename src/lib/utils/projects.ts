@@ -1,5 +1,6 @@
 import { IconBrandBaidu, type Icon } from '@tabler/icons-svelte';
 import type { Picture } from 'vite-imagetools';
+import logoKesval from '$assets/logo.avif?enhanced';
 
 export type Project = {
 	id: string;
@@ -8,8 +9,12 @@ export type Project = {
 	url?: string;
 	description?: string;
 	icon?: Icon;
+	logo?: Picture | string;
 	images?: Array<Picture | string>;
 	link?: string;
+
+	colorBackground?: string;
+	colorForeground?: string;
 
 	startedAt?: Date;
 	endedAt?: Date;
@@ -21,6 +26,7 @@ export const projects: Project[] = [
 		client: 'KesvaL™',
 		name: 'Portfolio KesvaL™',
 		icon: IconBrandBaidu,
+		logo: logoKesval,
 		description:
 			"Un projet de développement d'une application web. Un projet de développement d'une application web.",
 		images: [
@@ -31,7 +37,9 @@ export const projects: Project[] = [
 			'https://picsum.photos/720/720?random=5'
 		],
 		startedAt: new Date('2023-02-10'),
-		link: 'https://kesval.com'
+		link: 'https://kesval.com',
+		colorBackground: '#4d02fd',
+		colorForeground: '#FFFFFF'
 	},
 	{
 		id: 'project_2',
