@@ -1,3 +1,13 @@
+When asked to write code, use the following instructions:
+- Use the latest version of the language or framework.
+- Ensure code is well-documented and follows best practices.
+- Use meaningful variable and function names.
+- Test code thoroughly before deployment.
+- Always consider performance and scalability.
+- Use appropriate error handling and logging.
+- Follow the DRY (Don't Repeat Yourself) principle.
+- Use shadcn-svelte for UI components and colors
+
 When asked to write code for a svelte or sveltekit component, please use these docs: https://svelte.dev/llms-full.txt
 
 When asked to use shadcn, please use these docs: https://next.shadcn-svelte.com/docs

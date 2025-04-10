@@ -27,27 +27,27 @@
 		</div>
 	</div>
 
-	<div class="kcontainer relative px-4">
-		<div class="mb-16 space-y-4 text-center" in:fly={{ y: 20, duration: 800 }}>
+	<div class="kcontainer relative flex flex-col gap-24 px-4">
+		<div class="mt-12 space-y-4 text-center" in:fly={{ y: 20, duration: 800 }}>
 			<div
 				class="bg-primary/10 mx-auto mb-2 flex w-fit items-center justify-center rounded-full px-3 py-1"
 			>
 				<span class="text-primary text-xs font-medium tracking-wider"
-					>{m['projects.label']?.() ?? 'SELECTED WORK'}</span
+					>{m['home.projects.above_title']()}</span
 				>
 			</div>
 			<h2
 				class="from-foreground to-muted-foreground bg-gradient-to-br bg-clip-text text-4xl font-bold text-transparent sm:text-5xl"
 			>
-				{m['projects.title']?.() ?? 'Our Projects'}
+				{m['home.projects.title']()}
 			</h2>
 			<p class="text-muted-foreground mx-auto max-w-[45ch] text-lg">
-				{m['projects.description']?.() ?? 'Discover our latest work and projects'}
+				{m['home.projects.description']()}
 			</p>
 		</div>
 
 		<!-- Projects showcase -->
-		<div class="my-16 flex flex-col gap-24">
+		<div class="flex flex-col gap-24">
 			{#each showedProjects as project, i (project.id)}
 				<div
 					class="group relative"
@@ -60,7 +60,7 @@
 		</div>
 
 		<!-- View all projects button -->
-		<div class="mt-12 flex justify-center" in:fade={{ duration: 800, delay: 800 }}>
+		<div class="flex justify-center" in:fade={{ duration: 800, delay: 800 }}>
 			<Button class="group gap-2" href={localizeHref(route('/projets'))}>
 				{m['projects.view_all']()}
 				<IconArrowRight class="h-4 w-4 transition-transform group-hover:translate-x-1" />

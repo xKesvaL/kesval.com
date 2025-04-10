@@ -32,8 +32,9 @@
 			"clients_description": "Je suis fier d'avoir aidé mes clients à atteindre leurs objectifs, et j'espère les accompagner au mieux dans leurs projets futurs."
 		},
 		"projects": {
-			"title": "Mes derniers projets",
-			"above_title": "Projets"
+			"title": "Nos derniers projets",
+			"above_title": "Projets Sélectionnés",
+			"description": "Découvrez nos derniers projets réalisés pour nos clients"
 		}
 	},
 	"about": {
