@@ -11,7 +11,7 @@ export default defineConfig({
 		paraglideVitePlugin({
 			project: './project.inlang',
 			outdir: './src/lib/paraglide',
-			strategy: ['cookie', 'url', 'preferredLanguage', 'baseLocale'],
+			strategy: ['url', 'cookie', 'preferredLanguage', 'baseLocale'],
 			outputStructure: 'message-modules'
 		}),
 		kitRoutes<KIT_ROUTES>(),

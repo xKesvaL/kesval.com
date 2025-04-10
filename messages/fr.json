@@ -149,7 +149,8 @@
 		"portfolio_kesval": {
 			"title": "test"
 		},
-		"not_found": "Projet {projectId} non trouvé"
+		"not_found": "Projet {projectId} non trouvé",
+		"view_all": "Voir tous les projets"
 	},
 	"common": {
 		"view_case_study": "Voir l'étude de cas",
