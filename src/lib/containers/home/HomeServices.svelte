@@ -8,7 +8,11 @@
 	import { route } from '$lib/ROUTES';
 	import { localizeHref } from '$paraglide/runtime';
 	import { fly } from 'svelte/transition';
+	import { onMount } from 'svelte';
+	import { Spring } from 'svelte/motion';
 	import AnimatedBadge from '$lib/components/animated/AnimatedBadge.svelte';
+	import useInView from '$lib/actions/inView';
+	import { cn } from '$lib/utils/ui';
 	import {
 		IconBulb,
 		IconLayoutDashboard,
@@ -25,6 +29,7 @@
 		IconTargetArrow,
 		IconChevronDown
 	} from '@tabler/icons-svelte';
+	import { SvelteSet } from 'svelte/reactivity';
 
 	/**
 	 * Service step definition
@@ -39,6 +44,7 @@
 		features?: string[];
 		tools?: string[];
 		outcome?: string;
+		visible?: boolean;
 	}
 
 	/**
@@ -156,6 +162,66 @@
 				'A continuously evolving digital presence that remains secure, up-to-date, and aligned with your business growth.'
 		}
 	];
+
+	// Store which steps are visible in the viewport
+	let visibleSteps = new SvelteSet<string>();
+
+	// Calculate progress percentage for timeline animation
+	let timelineProgress = new Spring(0, { stiffness: 0.1, damping: 0.8 });
+
+	// Track when header is visible to animate timeline start
+	let isHeaderVisible = false;
+
+	// Handler for when a step becomes visible
+	function handleStepVisible(stepId: string, entry: IntersectionObserverEntry) {
+		visibleSteps.add(stepId);
+
+		// Calculate progress based on visible steps
+		const lastVisibleIndex = Math.max(
+			...Array.from(visibleSteps).map((id) => serviceSteps.findIndex((step) => step.id === id))
+		);
+
+		const progressPercent = Math.min(
+			100,
+			lastVisibleIndex >= 0 ? ((lastVisibleIndex + 1) / serviceSteps.length) * 100 : 0
+		);
+
+		timelineProgress.set(progressPercent);
+	}
+
+	// Handler for when a step exits the viewport
+	function handleStepExit(stepId: string, entry?: IntersectionObserverEntry) {
+		// if element is exiting from the top, don't update progress
+		// we can know this if the boundingClientRect.top is less than half of the viewport height
+		if (entry && entry.boundingClientRect.top < window.innerHeight / 2) {
+			// Don't update progress when scrolling down (exiting from top)
+			return;
+		}
+
+		// Only handle exits from bottom (user scrolling back up)
+		visibleSteps.delete(stepId);
+
+		const lastVisibleIndex = Math.max(
+			...Array.from(visibleSteps).map((id) => serviceSteps.findIndex((step) => step.id === id))
+		);
+
+		const progressPercent = Math.min(
+			100,
+			lastVisibleIndex >= 0 ? ((lastVisibleIndex + 1) / serviceSteps.length) * 100 : 0
+		);
+
+		timelineProgress.set(progressPercent);
+	}
+
+	// Initial animation on mount
+	onMount(() => {
+		// If the header is already visible, start the timeline
+		if (isHeaderVisible) {
+			setTimeout(() => timelineProgress.set(10), 500);
+		}
+	});
+
+	$inspect(Array.from(visibleSteps.entries()));
 </script>
 
 <section class="section relative overflow-hidden py-24">
@@ -183,54 +249,79 @@
 		<!-- Timeline with collapsible sections -->
 		<div class="relative">
 			<!-- Vertical timeline line (hidden on mobile) -->
-			<div
-				class="from-primary/40 to-primary/5 absolute top-8 left-[22px] hidden h-[calc(100%-3rem)] w-0.5 bg-gradient-to-b md:block"
-			></div>
+			<div class="bg-muted/30 absolute top-8 left-[22px] hidden h-[calc(100%-3rem)] w-0.5 md:block">
+				<!-- Animated progress overlay -->
+				<div
+					class="from-primary/90 to-primary/40 absolute top-0 left-0 w-full bg-gradient-to-b transition-all duration-1000 ease-out"
+					style="height: {timelineProgress.current}%;"
+				></div>
+			</div>
 
 			<div class="space-y-12 md:space-y-16">
 				{#each serviceSteps as step, i (step.id)}
 					<div
 						class="group flex flex-col gap-4 md:grid md:grid-cols-[48px_1fr] md:gap-8"
-						in:fly={{ y: 20, duration: 600, delay: i * 100 }}
+						use:useInView={{
+							threshold: 0.2,
+							rootMargin: '-30% 0px -30% 0px',
+							onEnter: (entry) => handleStepVisible(step.id, entry),
+							onExit: (entry) => handleStepExit(step.id, entry)
+						}}
 					>
-						<!-- Step number -->
-						<div class="relative flex h-12 w-12 shrink-0">
+						<!-- Step number - adjusted to align with content -->
+						<div class="relative md:self-start md:pt-[2.75rem]">
 							<div
-								class="bg-primary text-primary-foreground z-10 flex h-12 w-12 items-center justify-center rounded-full text-lg font-semibold shadow-md"
+								class={cn(
+									'z-10 flex h-12 w-12 items-center justify-center rounded-full text-lg font-semibold shadow-md transition-all duration-500',
+									visibleSteps.has(step.id)
+										? 'bg-primary text-primary-foreground scale-110'
+										: 'bg-muted/50 text-muted-foreground'
+								)}
 							>
 								{step.step}
 							</div>
 							<!-- Connector line (mobile only) -->
 							<div
-								class="from-primary/40 to-primary/5 absolute top-12 left-6 h-[calc(100%+1rem)] w-0.5 bg-gradient-to-b md:hidden"
-								class:hidden={i === serviceSteps.length - 1}
+								class={cn(
+									'absolute top-12 left-6 h-[calc(100%+1rem)] w-0.5 bg-gradient-to-b transition-all duration-700 md:hidden',
+									visibleSteps.has(step.id)
+										? 'from-primary/40 to-primary/5'
+										: 'from-muted/30 to-muted/10',
+									i === serviceSteps.length - 1 && 'hidden'
+								)}
 							></div>
 						</div>
 
 						<!-- Step content card with accordion -->
 						<Card
-							class="border-border/50 bg-card/80 shadow-cool w-full rounded-xl p-0 backdrop-blur-sm transition-all"
+							class={cn(
+								'border-border/50 bg-card/80 shadow-cool group w-full rounded-xl p-0 backdrop-blur-sm transition-all duration-500 hover:shadow-lg',
+								visibleSteps.has(step.id) ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-50'
+							)}
 						>
 							<Accordion.Root type="single" value={i === 0 ? step.id : ''}>
-								<Accordion.Item class="border-none" value={step.id}>
-									<Accordion.Trigger class="flex cursor-pointer items-start gap-4 p-6 pr-4">
+								<Accordion.Item class="rounded-2xl border-none" value={step.id}>
+									<Accordion.Trigger
+										class="group/trigger data-[state=open]:bg-card/90 flex w-full cursor-pointer items-start gap-6 p-6 transition-all duration-200"
+									>
 										<div
-											class="bg-primary/10 text-primary flex h-14 w-14 shrink-0 items-center justify-center rounded-lg shadow-sm"
+											class="bg-primary/10 text-primary flex h-16 w-16 shrink-0 items-center justify-center rounded-lg shadow-sm transition-transform duration-300 group-hover/trigger:shadow-md group-data-[state=open]/trigger:scale-110"
 										>
 											<svelte:component this={step.icon} class="size-7" stroke={1.5} />
 										</div>
 
-										<div class="flex-1 space-y-2 text-left">
-											<Badge variant="outline" class="bg-primary/5 border-primary/20">
+										<div class="flex flex-1 flex-col space-y-3 text-left">
+											<Badge variant="outline" class="bg-primary/5 border-primary/20 w-fit">
 												Step {step.step} of {serviceSteps.length}
 											</Badge>
-											<h3 class="text-xl font-semibold">{step.title}</h3>
+											<h3 class="text-2xl font-semibold tracking-tight">{step.title}</h3>
+
 											<p class="text-muted-foreground">{step.description}</p>
 										</div>
 									</Accordion.Trigger>
 
 									<Accordion.Content>
-										<div class="border-t px-6 pt-4 pb-6">
+										<div class="border-t px-6 pt-6 pb-4">
 											<!-- Detailed description -->
 											<p class="text-muted-foreground">{step.detailedDescription}</p>
 

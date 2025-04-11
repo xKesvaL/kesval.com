@@ -41,8 +41,8 @@
 	--color-sidebar-border: oklch(0.93 0.01 264.53 / 1);
 	--color-sidebar-ring: oklch(0.63 0.19 259.6 / 1);
 
-	--animate-accordion-down: accordion-down 0.2s ease-out;
-	--animate-accordion-up: accordion-up 0.2s ease-out;
+	--animate-accordion-down: accordion-down 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+	--animate-accordion-up: accordion-up 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 	--animate-caret-blink: caret-blink 1.25s ease-out infinite;
 	--animate-shine-pulse: shine-pulse 2s linear infinite;
 	--animate-aurora: aurora 60s linear infinite;
@@ -50,8 +50,6 @@
 	--animate-marquee-left: marquee-left var(--marquee-duration, 60s) linear infinite;
 	--animate-marquee-up: marquee-up var(--marquee-duration, 60s) linear infinite;
 	--animate-gradient: gradient 8s linear infinite;
-	--animate-accordion-down: accordion-down 0.5s ease-in-out;
-	--animate-accordion-up: accordion-up 0.5s ease-in-out;
 
 	--font-sans: 'Geist', sans-serif;
 	--font-emoji:

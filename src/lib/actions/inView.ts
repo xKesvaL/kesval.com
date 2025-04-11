@@ -19,9 +19,12 @@ import type { Action, ActionReturn } from 'svelte/action';
 
 interface Params {
 	root?: HTMLElement;
-	top?: number;
-	bottom?: number;
+	rootMargin?: string;
+	threshold?: number | number[];
 	progress?: boolean;
+	onEnter?: (entry: IntersectionObserverEntry) => void;
+	onExit?: (entry: IntersectionObserverEntry) => void;
+	onProgress?: (ratio: number) => void;
 }
 
 interface Attributes {
@@ -42,24 +45,36 @@ const inView: Action<HTMLElement, Params> = (
 ): ActionReturn<Params, Attributes> => {
 	let observer: IntersectionObserver | null = null;
 
-	const handleIntersect: IntersectionObserverCallback = (e) => {
-		const intersecting = e[0].isIntersecting;
+	const handleIntersect: IntersectionObserverCallback = (entries) => {
+		const entry = entries[0];
+		const intersecting = entry.isIntersecting;
 		const v = intersecting ? 'enter' : 'exit';
 		node.dispatchEvent(new CustomEvent(v));
+
+		// Call the appropriate callback with the entry
+		if (intersecting && params.onEnter) {
+			params.onEnter(entry);
+		} else if (!intersecting && params.onExit) {
+			params.onExit(entry);
+		}
+
 		if (params.progress && intersecting) {
-			const ratio = e[0].intersectionRatio;
+			const ratio = entry.intersectionRatio;
+			if (params.onProgress) {
+				params.onProgress(ratio);
+			}
 			const detail = { ratio };
 			node.dispatchEvent(new CustomEvent('progress', { detail }));
 		}
 	};
 
-	const setObserver = ({ root, top, bottom }: Params) => {
-		const marginTop = top ? top * -1 : 0;
-		const marginBottom = bottom ? bottom * -1 : 0;
-		const rootMargin = `${marginTop}px 0px ${marginBottom}px 0px`;
-		const options = { root, rootMargin };
+	const setObserver = ({ root, rootMargin, threshold }: Params) => {
 		if (observer) observer.disconnect();
-		observer = new IntersectionObserver(handleIntersect, options);
+		observer = new IntersectionObserver(handleIntersect, {
+			root,
+			rootMargin,
+			threshold: threshold ?? 0
+		});
 		observer.observe(node);
 	};
 
