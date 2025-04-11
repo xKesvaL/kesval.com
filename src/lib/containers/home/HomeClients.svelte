@@ -64,7 +64,7 @@
 	</div>
 
 	<!-- Subtle background pattern -->
-	<div class="absolute inset-0 -z-10 opacity-10">
+	<div class="absolute inset-0 -z-10 opacity-15">
 		<div class="bgc-dot h-full w-full"></div>
 	</div>
 </section>

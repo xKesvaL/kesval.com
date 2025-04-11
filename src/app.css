@@ -50,6 +50,8 @@
 	--animate-marquee-left: marquee-left var(--marquee-duration, 60s) linear infinite;
 	--animate-marquee-up: marquee-up var(--marquee-duration, 60s) linear infinite;
 	--animate-gradient: gradient 8s linear infinite;
+	--animate-accordion-down: accordion-down 0.5s ease-in-out;
+	--animate-accordion-up: accordion-up 0.5s ease-in-out;
 
 	--font-sans: 'Geist', sans-serif;
 	--font-emoji:
@@ -71,13 +73,13 @@
 			height: 0;
 		}
 		to {
-			height: var(--radix-accordion-content-height);
+			height: var(--bits-accordion-content-height);
 		}
 	}
 
 	@keyframes accordion-up {
 		from {
-			height: var(--radix-accordion-content-height);
+			height: var(--bits-accordion-content-height);
 		}
 		to {
 			height: 0;
@@ -396,7 +398,8 @@
 	background-image:
 		linear-gradient(to right, #80808012 1px, transparent 1px),
 		linear-gradient(to bottom, #80808012 1px, transparent 1px);
-	background-size: 40px 40px;
+	background-size: 100px 100px;
+	background-position: -25px -25px;
 }
 
 @utility bgc-dot {

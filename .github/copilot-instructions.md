@@ -7,6 +7,8 @@ When asked to write code, use the following instructions:
 - Use appropriate error handling and logging.
 - Follow the DRY (Don't Repeat Yourself) principle.
 - Use shadcn-svelte for UI components and colors
+  - If a shadcn-svelte component is not available in the codebase, ask to install it using shadcn-svelte cli
+- Check for problems in the code and fix them each time you generate code.
 
 When asked to write code for a svelte or sveltekit component, please use these docs: https://svelte.dev/llms-full.txt
 
