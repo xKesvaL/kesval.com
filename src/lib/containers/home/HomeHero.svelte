@@ -8,12 +8,9 @@
 	import { localizeHref } from '$paraglide/runtime';
 	import {
 		IconBrandFigma,
-		IconBrandGithub,
-		IconBrandLinkedin,
 		IconCode,
 		IconMessageCirclePlus,
-		IconRocket,
-		IconSparkles
+		IconRocket
 	} from '@tabler/icons-svelte';
 	import { fly } from 'svelte/transition';
 </script>

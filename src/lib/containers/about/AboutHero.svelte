@@ -27,7 +27,7 @@
 	};
 </script>
 
-<section class="kcontainer section-hero justify-center px-4">
+<section class="kcontainer section-hero min-h-screen justify-center px-4">
 	<div class="grid gap-8 md:grid-cols-12 md:gap-16">
 		<div class="flex flex-col items-start gap-4 md:col-span-5">
 			<div class="flex flex-col gap-2">
