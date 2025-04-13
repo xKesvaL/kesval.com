@@ -21,7 +21,7 @@
 	</div>
 	<div class="kcontainer relative flex flex-col items-center justify-center px-4 text-center">
 		<div class="relative">
-			<div class="mb-6" in:fly={{ y: 20, duration: 800 }}>
+			<div class="animate-appear mb-6">
 				<AnimatedBadge>
 					<span class="flex items-center gap-2">
 						✨
@@ -31,22 +31,15 @@
 				</AnimatedBadge>
 			</div>
 			<h1
-				class="from-foreground to-muted-foreground mb-6 bg-gradient-to-br bg-clip-text text-4xl leading-tight font-bold text-transparent sm:text-5xl md:text-6xl lg:text-7xl"
-				in:fly={{ y: 20, duration: 800, delay: 200 }}
+				class="animate-appear from-foreground to-muted-foreground mb-6 bg-gradient-to-br bg-clip-text text-4xl leading-tight font-bold text-transparent sm:text-5xl md:text-6xl lg:text-7xl"
 			>
 				{m['home.hero.title']()}
 			</h1>
-			<p
-				class="text-muted-foreground mx-auto max-w-[45ch] text-lg md:text-xl"
-				in:fly={{ y: 20, duration: 800, delay: 400 }}
-			>
+			<p class="text-muted-foreground animate-appear mx-auto max-w-[45ch] text-lg md:text-xl">
 				{m['home.hero.subtitle']({ brand: m['brand.name']() })}
 			</p>
 
-			<div
-				class="mt-12 flex flex-wrap items-center justify-center gap-4"
-				in:fly={{ y: 20, duration: 800, delay: 600 }}
-			>
+			<div class="animate-appear mt-12 flex flex-wrap items-center justify-center gap-4">
 				<Button href={localizeHref(route('/contact'))}>
 					<IconMessageCirclePlus />
 					{m.contact_me()}
@@ -58,10 +51,7 @@
 			</div>
 		</div>
 
-		<div
-			class="mt-16 flex flex-wrap items-center justify-center gap-8"
-			in:fly={{ y: 20, duration: 800, delay: 800 }}
-		>
+		<div class="animate-appear mt-16 flex flex-wrap items-center justify-center gap-8">
 			<div
 				class="bg-card/40 hover:bg-card/60 flex items-center gap-4 rounded-full px-6 py-3 backdrop-blur-sm transition-colors"
 			>

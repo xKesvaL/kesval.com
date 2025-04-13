@@ -6,6 +6,7 @@
 	import { page } from '$app/state';
 	import Analytics from '$lib/components/base/Analytics.svelte';
 	import { deepMerge, MetaTags } from 'svelte-meta-tags';
+	import { animateAppear } from '$lib/utils/animation';
 
 	let { children, data } = $props();
 	let metaTags = $derived(deepMerge(data.baseMetaTags, page.data.pageMetaTags));
@@ -23,7 +24,7 @@
 <Analytics />
 
 <Navigation />
-<main>
+<main use:animateAppear>
 	{#key page.url.pathname}
 		{@render children()}
 	{/key}

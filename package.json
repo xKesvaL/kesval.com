@@ -65,7 +65,7 @@
 	},
 	"dependencies": {
 		"@formkit/auto-animate": "^0.8.2",
-		"animejs": "^4.0.1",
+		"motion": "^12.6.5",
 		"vite-plugin-kit-routes": "^0.8.4"
 	},
 	"engines": {

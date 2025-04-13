@@ -41,8 +41,8 @@
 	--color-sidebar-border: oklch(0.93 0.01 264.53 / 1);
 	--color-sidebar-ring: oklch(0.63 0.19 259.6 / 1);
 
-	--animate-accordion-down: accordion-down 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-	--animate-accordion-up: accordion-up 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+	--animate-accordion-down: accordion-down 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+	--animate-accordion-up: accordion-up 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 	--animate-caret-blink: caret-blink 1.25s ease-out infinite;
 	--animate-shine-pulse: shine-pulse 2s linear infinite;
 	--animate-aurora: aurora 60s linear infinite;
@@ -233,101 +233,6 @@
 	@apply text-lg font-medium lg:text-xl;
 }
 
-@utility vertical-disclosures {
-	--gap: 0.5rem;
-	--easing: cubic-bezier(0.25, 0.8, 0.25, 1);
-	--speed: 0.6s;
-	--disclosure-cols: 10fr 1fr 1fr 1fr 1fr 1fr;
-
-	@apply m-0 grid h-[36rem] list-none grid-cols-1 grid-rows-[var(--disclosure-cols)] justify-center gap-[var(--gap)] p-0 md:h-80 md:grid-cols-[var(--disclosure-cols)] md:grid-rows-1;
-	container-type: inline-size;
-	transition:
-		grid-template-columns var(--speed) var(--easing),
-		grid-template-rows var(--speed) var(--easing);
-
-	li {
-		@apply bg-card text-muted-foreground/75 relative min-h-14 w-full overflow-hidden rounded-lg border px-6 py-4 shadow-[0_4px_20px_-1px_rgba(0,0,0,0.03),0_1px_6px_-1px_rgba(0,0,0,0.02)] transition-all duration-[600ms] ease-in-out md:w-auto md:p-6;
-
-		h3 {
-			@apply text-muted-foreground absolute top-3 w-max origin-[0_50%] transition md:top-4 md:left-[37px] md:rotate-90;
-		}
-
-		a {
-			@apply pointer-events-none opacity-0 transition duration-[600ms] hover:underline;
-		}
-
-		& p {
-			@apply max-w-prose -translate-y-4 opacity-0 transition duration-[600ms] md:-translate-x-4 md:translate-y-0;
-		}
-
-		img {
-			@apply absolute inset-0 h-full w-full scale-125 object-cover opacity-50 brightness-150 grayscale-100;
-			mask: linear-gradient(
-				to bottom,
-				transparent 0%,
-				transparent 40%,
-				#fff 65%,
-				#fff 75%,
-				transparent 90%,
-				transparent 100%
-			);
-			transition-property: scale;
-			transition-duration: calc(var(--speed) * 1.2);
-			transition-timing-function: var(--easing);
-		}
-
-		@media (min-width: 768px) {
-			img {
-				mask: radial-gradient(100% 100% at 100% 0%, #fff, #0000);
-			}
-		}
-
-		.bar {
-			@apply basis-12 transition-all duration-[600ms] md:max-w-none;
-		}
-	}
-
-	li[data-active='true'] {
-		@apply text-foreground px-6 py-4 hover:shadow-[0_8px_30px_rgba(0,0,0,0.05)] md:p-6;
-
-		h3 {
-			@apply text-foreground top-4;
-		}
-
-		a {
-			@apply pointer-events-auto opacity-100;
-		}
-
-		& p {
-			@apply translate-y-0 opacity-100 md:translate-x-0;
-		}
-
-		img {
-			@apply scale-100 opacity-100 brightness-100 grayscale-0;
-			transition-delay: calc(var(--speed) * 0.25);
-			mask: linear-gradient(
-				to bottom,
-				transparent 0%,
-				transparent 40%,
-				#fff 65%,
-				#fff 75%,
-				transparent 90%,
-				transparent 100%
-			);
-		}
-
-		@media (min-width: 768px) {
-			img {
-				mask: radial-gradient(100% 100% at 100% 0%, #fff, #0000);
-			}
-		}
-
-		.bar {
-			@apply grow;
-		}
-	}
-}
-
 /* Utilities */
 @utility gapc-* {
 	gap: --value(--sp- *);
@@ -372,11 +277,19 @@
 }
 
 @utility shadow-cool {
-	@apply shadow-[0_4px_20px_-1px_rgba(0,0,0,0.03),0_1px_6px_-1px_rgba(0,0,0,0.02)]! transition hover:shadow-[0_8px_30px_rgba(0,0,0,0.05)]!;
+	filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.03)) drop-shadow(0 1px 6px rgba(0, 0, 0, 0.02));
+
+	&:hover {
+		filter: drop-shadow(0 8px 30px rgba(0, 0, 0, 0.05));
+	}
 }
 
 @utility shadow-cool-lg {
-	@apply shadow-[0_4px_20px_-1px_rgba(0,0,0,0.075),0_1px_6px_-1px_rgba(0,0,0,0.075)]! transition hover:shadow-[0_8px_30px_rgba(0,0,0,0.075)]!;
+	filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.075)) drop-shadow(0 1px 6px rgba(0, 0, 0, 0.075));
+
+	&:hover {
+		filter: drop-shadow(0 8px 30px rgba(0, 0, 0, 0.075));
+	}
 }
 
 @utility nav-image-drop {
@@ -403,4 +316,9 @@
 @utility bgc-dot {
 	background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
 	background-size: 24px 24px;
+}
+
+@utility animate-appear {
+	transform: translateY(50px);
+	opacity: 0;
 }

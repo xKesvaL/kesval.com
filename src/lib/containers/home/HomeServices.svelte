@@ -25,6 +25,7 @@
 		IconChevronDown
 	} from '@tabler/icons-svelte';
 	import { SvelteSet } from 'svelte/reactivity';
+	import { IsMobile } from '$lib/hooks/is-mobile.svelte';
 
 	/**
 	 * Service step definition
@@ -185,7 +186,7 @@
 	function handleStepExit(stepId: string, entry?: IntersectionObserverEntry) {
 		// if element is exiting from the top, don't update progress
 		// we can know this if the boundingClientRect.top is less than half of the viewport height
-		if (entry && entry.boundingClientRect.top < window.innerHeight / 2) {
+		if (entry && entry.boundingClientRect.top < window.innerHeight / 3) {
 			// Don't update progress when scrolling down (exiting from top)
 			return;
 		}
@@ -205,7 +206,7 @@
 		timelineProgress.set(progressPercent);
 	}
 
-	$inspect(Array.from(visibleSteps.entries()));
+	const isMobile = new IsMobile();
 </script>
 
 <section class="section relative overflow-hidden py-24">
@@ -233,7 +234,10 @@
 		<!-- Timeline with collapsible sections -->
 		<div class="relative">
 			<!-- Vertical timeline line (hidden on mobile) -->
-			<div class="bg-primary/10 absolute top-8 left-[22px] hidden h-[calc(100%)] w-0.5 md:block">
+			<div
+				class="bg-primary/10 absolute top-8 left-[22px] hidden w-0.5 md:block"
+				style="height: calc(100% - 2rem);"
+			>
 				<!-- Animated progress overlay -->
 				<div
 					class="from-primary/90 to-primary/80 absolute top-0 left-0 w-full bg-gradient-to-b transition-all duration-1000 ease-out"
@@ -247,7 +251,7 @@
 						class="group flex flex-col gap-4 md:grid md:grid-cols-[48px_1fr] md:gap-8"
 						use:useInView={{
 							threshold: 0,
-							rootMargin: '-10% 0px -50% 0px',
+							rootMargin: isMobile.current ? '-10% 0px -65% 0px' : '-10% 0px -55% 0px',
 							onEnter: (entry) => handleStepVisible(step.id, entry),
 							onExit: (entry) => handleStepExit(step.id, entry)
 						}}
@@ -279,7 +283,7 @@
 						<!-- Step content card with accordion -->
 						<Card
 							class={cn(
-								'border-border/50 bg-card/80 shadow-cool group w-full overflow-hidden rounded-2xl p-0 backdrop-blur-sm transition-all duration-500 hover:shadow-lg',
+								'border-border/50 bg-card/80 shadow-cool group w-full overflow-hidden rounded-2xl p-0 shadow-none backdrop-blur-sm transition-all duration-500',
 								visibleSteps.has(step.id)
 									? 'translate-x-0 opacity-100'
 									: 'opacity-50 md:translate-x-4'
@@ -291,7 +295,7 @@
 										class="group/trigger data-[state=open]:bg-card/90 flex w-full cursor-pointer items-start gap-6 p-6 transition-all duration-200"
 									>
 										<div
-											class="bg-primary/10 text-primary flex h-16 w-16 shrink-0 items-center justify-center rounded-lg shadow-sm transition-transform duration-300 group-hover/trigger:shadow-md group-data-[state=open]/trigger:scale-110"
+											class="bg-primary/10 text-primary float-left flex h-16 w-16 shrink-0 items-center justify-center rounded-lg shadow-sm transition-transform duration-300 group-hover/trigger:shadow-md group-data-[state=open]/trigger:scale-110"
 										>
 											<step.icon class="size-7" stroke={1.5} />
 										</div>

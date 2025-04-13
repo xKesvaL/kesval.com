@@ -22,8 +22,16 @@
 <section class="kcontainer section flex flex-col items-center px-4" id="resume">
 	<h2>{m['about.resume.title']()}</h2>
 	<Card
-		class="shadow-cool relative flex w-full max-w-[22cm] flex-col gap-4 rounded-2xl p-4 md:gap-8 md:p-8 lg:aspect-[1/1.414]"
+		class="shadow-cool relative isolate flex w-full max-w-[22cm] flex-col gap-4 rounded-2xl p-4 md:gap-8 md:p-8 lg:aspect-[1/1.414]"
 	>
+		<!-- Blobs -->
+		<div class="absolute inset-0 -z-10 opacity-10 blur-2xl">
+			<div class="bg-primary absolute top-1/12 right-1/12 h-3/12 w-3/12 blur-3xl"></div>
+			<div class="bg-primary absolute top-5/12 left-1/12 h-3/12 w-5/12 blur-3xl"></div>
+			<div class="bg-primary absolute right-1/12 bottom-1/12 h-3/12 w-4/12 blur-3xl"></div>
+			<div class="bg-primary absolute top-12 left-1/12 h-2/12 w-5/12 blur-3xl"></div>
+		</div>
+
 		<header class="grid w-full gap-4 md:grid-cols-[8fr_5fr] md:gap-8">
 			<div class="">
 				<h3 class="">Jordan Abeddou</h3>

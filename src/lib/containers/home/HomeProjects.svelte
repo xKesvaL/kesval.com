@@ -3,7 +3,6 @@
 	import * as m from '$paraglide/messages';
 	import { Button } from '$lib/components/ui/button';
 	import { IconExternalLink, IconArrowRight } from '@tabler/icons-svelte';
-	import { fly, fade } from 'svelte/transition';
 	import ProjectCard from '$lib/containers/projects/ProjectCard.svelte';
 	import { route } from '$lib/ROUTES';
 	import { localizeHref } from '$paraglide/runtime';
@@ -29,8 +28,8 @@
 	</div>
 
 	<div class="kcontainer relative flex flex-col gap-24 px-4">
-		<div class="mt-12 space-y-4 text-center" in:fly={{ y: 20, duration: 800 }}>
-			<AnimatedBadge>
+		<div class="mt-12 space-y-4 text-center">
+			<AnimatedBadge class="animate-appear">
 				<span class="flex items-center gap-2">
 					💻
 					<hr class="bg-muted-foreground h-4 w-[1px] shrink-0" />
@@ -38,11 +37,11 @@
 				</span>
 			</AnimatedBadge>
 			<h2
-				class="from-foreground to-muted-foreground bg-gradient-to-br bg-clip-text text-4xl font-bold text-transparent sm:text-5xl"
+				class="from-foreground to-muted-foreground animate-appear bg-gradient-to-br bg-clip-text text-4xl font-bold text-transparent sm:text-5xl"
 			>
 				{m['home.projects.title']()}
 			</h2>
-			<p class="text-muted-foreground mx-auto max-w-[45ch] text-lg">
+			<p class="text-muted-foreground animate-appear mx-auto max-w-[45ch] text-lg">
 				{m['home.projects.description']()}
 			</p>
 		</div>
@@ -50,18 +49,14 @@
 		<!-- Projects showcase -->
 		<div class="flex flex-col gap-24">
 			{#each showedProjects as project, i (project.id)}
-				<div
-					class="group relative"
-					class:md:flex-row-reverse={i % 2 === 1}
-					in:fly={{ y: 40, duration: 800, delay: 200 + i * 150 }}
-				>
+				<div class="group animate-appear relative" class:md:flex-row-reverse={i % 2 === 1}>
 					<ProjectCard {project} index={i} type="highlighted" />
 				</div>
 			{/each}
 		</div>
 
 		<!-- View all projects button -->
-		<div class="flex justify-center" in:fade={{ duration: 800, delay: 800 }}>
+		<div class="animate-appear flex justify-center">
 			<Button class="group gap-2" href={localizeHref(route('/projets'))}>
 				{m['projects.view_all']()}
 				<IconArrowRight class="h-4 w-4 transition-transform group-hover:translate-x-1" />

@@ -53,8 +53,7 @@
 				<svelte:element
 					this={client.link ? 'a' : 'div'}
 					href={client.link}
-					class="bg-primary-foreground/5 hover:bg-primary-foreground/10 border-primary-foreground/10 shadow-cool flex items-center justify-center gap-3 rounded-xl border p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1"
-					in:fly={{ y: 20, duration: 400, delay: 200 + i * 50 }}
+					class="animate-appear bg-primary-foreground/5 hover:bg-primary-foreground/10 border-primary-foreground/10 shadow-cool flex items-center justify-center gap-3 rounded-xl border p-6 backdrop-blur-sm duration-300 hover:-translate-y-1"
 				>
 					<client.icon class="size-6 md:size-7" />
 					<span class="text-primary-foreground/90 font-medium">{client.name}</span>
