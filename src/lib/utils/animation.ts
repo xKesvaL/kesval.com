@@ -12,7 +12,9 @@ export const animateAppear: Action<HTMLElement> = () => {
 					duration: 0.5,
 					ease: 'circOut'
 				}
-			);
+			).then(() => {
+				element.classList.add('an');
+			});
 		},
 		{
 			margin: '0px 0px -10% 0px'

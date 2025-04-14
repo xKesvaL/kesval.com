@@ -12,7 +12,7 @@
 
 <div
 	class={cn(
-		'group bg-popover shadow-primary/10 hover:shadow-primary/20 relative mx-auto flex max-w-fit flex-row items-center justify-center rounded-2xl px-4 py-1.5 text-sm font-medium shadow-[inset_0_-5px_5px] drop-shadow-xs backdrop-blur-sm transition-shadow duration-500 ease-out [--bg-size:300%] hover:shadow-[inset_0_-3px_10px]',
+		'group bg-popover shadow-primary/10 hover:shadow-primary/20 relative mx-auto flex max-w-fit flex-row items-center justify-center rounded-2xl px-4 py-1.5 text-sm font-medium shadow-[inset_0_-5px_5px] drop-shadow-xs transition-shadow duration-500 ease-out [--bg-size:300%] hover:shadow-[inset_0_-3px_10px]',
 		className
 	)}
 >

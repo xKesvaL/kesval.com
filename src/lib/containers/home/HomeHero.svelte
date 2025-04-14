@@ -2,7 +2,6 @@
 	import { brand } from '$lib/utils/config';
 	import * as m from '$paraglide/messages';
 	import AnimatedBadge from '$lib/components/animated/AnimatedBadge.svelte';
-	import AuroraBackground from '$lib/components/animated/AuroraBackground.svelte';
 	import Button from '$lib/components/ui/button/button.svelte';
 	import { route } from '$lib/ROUTES';
 	import { localizeHref } from '$paraglide/runtime';
@@ -12,12 +11,19 @@
 		IconMessageCirclePlus,
 		IconRocket
 	} from '@tabler/icons-svelte';
-	import { fly } from 'svelte/transition';
 </script>
 
 <section class="section-hero min-h-screen items-center justify-center">
-	<div class="absolute inset-0">
-		<AuroraBackground />
+	<div class="absolute inset-0 isolate opacity-7 blur-2xl contain-strict">
+		<div
+			class="absolute top-0 left-1/2 h-320 w-140 -translate-x-140 -translate-y-80 -rotate-45 rounded-full bg-[radial-gradient(68.54%_68.72%_at_55.02%_31.46%,var(--color-primary)_0,var(--color-primary)_50%,var(--color-primary)]"
+		></div>
+		<div
+			class="absolute top-0 left-1/2 h-320 w-120 [translate:-35rem_-50%] -rotate-45 rounded-full bg-[radial-gradient(50%_50%_at_50%_50%,var(--color-primary)_0,var(--color-primary)_80%,transparent_100%)]"
+		></div>
+		<div
+			class="absolute top-0 left-1/2 h-320 w-120 -translate-x-140 -translate-y-80 -rotate-45 bg-[radial-gradient(50%_50%_at_50%_50%,var(--color-primary)_0,var(--color-primary)_80%,transparent_100%)]"
+		></div>
 	</div>
 	<div class="kcontainer relative flex flex-col items-center justify-center px-4 text-center">
 		<div class="relative">
@@ -52,15 +58,11 @@
 		</div>
 
 		<div class="animate-appear mt-16 flex flex-wrap items-center justify-center gap-8">
-			<div
-				class="bg-card/40 hover:bg-card/60 flex items-center gap-4 rounded-full px-6 py-3 backdrop-blur-sm transition-colors"
-			>
+			<div class="bg-card flex items-center gap-4 rounded-full px-6 py-3 transition-colors">
 				<IconCode class="text-primary size-5" />
 				<span class="text-sm font-medium">Full-Stack Development</span>
 			</div>
-			<div
-				class="bg-card/40 hover:bg-card/60 flex items-center gap-4 rounded-full px-6 py-3 backdrop-blur-sm transition-colors"
-			>
+			<div class="bg-card flex items-center gap-4 rounded-full px-6 py-3 transition-colors">
 				<IconBrandFigma class="text-primary size-5" />
 				<span class="text-sm font-medium">UI/UX Design</span>
 			</div>

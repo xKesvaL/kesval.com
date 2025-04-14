@@ -55,8 +55,7 @@
 		class={cn(
 			'flex h-full w-full items-center justify-between transition-all duration-300 lg:rounded-2xl',
 			navigation.state === 'open' && 'px-4',
-			navigation.state === 'closed' &&
-				'bg-background/80 shadow-cool-lg px-4 backdrop-blur-lg backdrop-saturate-200 delay-[300ms]'
+			navigation.state === 'closed' && 'bg-background shadow-cool-lg px-4 delay-[300ms]'
 		)}
 	>
 		<div class="flex h-full w-full items-center justify-between rounded-[15px]">
@@ -67,7 +66,7 @@
 				<NavigationLangSwitcher />
 				<Button
 					class={cn(
-						'ring-1 ring-transparent backdrop-blur-xl transition-all duration-300',
+						'ring-1 ring-transparent transition-all duration-300',
 						navigation.state === 'open' &&
 							'md:bg-background md:text-primary md:hover:bg-background/90 md:ring-primary mr-6 delay-50 md:mr-0',
 						navigation.state === 'closed' && 'delay-[400ms]'

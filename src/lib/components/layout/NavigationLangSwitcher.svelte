@@ -30,7 +30,7 @@
 	<Select.Root type="single" bind:value {onValueChange}>
 		<Select.Trigger
 			class={cn(
-				' flex aspect-square cursor-pointer justify-center rounded-lg border p-2 text-lg ring-1 ring-transparent backdrop-blur-xl transition-all duration-300 [&>svg]:hidden',
+				' flex aspect-square cursor-pointer justify-center rounded-lg border p-2 text-lg ring-1 ring-transparent transition-all duration-300 [&>svg]:hidden',
 				navigation.state === 'open' &&
 					'bg-background hover:bg-background/90 md:bg-background md:text-primary md:hover:bg-background/90 md:ring-primary delay-50',
 				navigation.state === 'closed' && 'bg-muted hover:bg-muted/90 delay-[400ms]'

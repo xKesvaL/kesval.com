@@ -4,11 +4,8 @@
 	import { Card } from '$lib/components/ui/card';
 	import { Badge } from '$lib/components/ui/badge';
 	import * as Accordion from '$lib/components/ui/accordion';
-	import { Separator } from '$lib/components/ui/separator';
 	import { route } from '$lib/ROUTES';
 	import { localizeHref } from '$paraglide/runtime';
-	import { fly } from 'svelte/transition';
-	import { onMount } from 'svelte';
 	import { Spring } from 'svelte/motion';
 	import AnimatedBadge from '$lib/components/animated/AnimatedBadge.svelte';
 	import useInView from '$lib/actions/inView';
@@ -212,7 +209,7 @@
 <section class="section relative overflow-hidden py-24">
 	<div class="kcontainer relative flex w-full flex-col gap-16 px-4">
 		<!-- Section header -->
-		<div class="space-y-4 text-center" in:fly={{ y: 20, duration: 800 }}>
+		<div class="space-y-4 text-center">
 			<AnimatedBadge>
 				<span class="flex items-center gap-2">
 					⏳
@@ -283,7 +280,7 @@
 						<!-- Step content card with accordion -->
 						<Card
 							class={cn(
-								'border-border/50 bg-card/80 shadow-cool group w-full overflow-hidden rounded-2xl p-0 shadow-none backdrop-blur-sm transition-all duration-500',
+								'border-border/50 bg-card/80 shadow-cool group w-full overflow-hidden rounded-2xl p-0 shadow-none transition-all duration-500',
 								visibleSteps.has(step.id)
 									? 'translate-x-0 opacity-100'
 									: 'opacity-50 md:translate-x-4'
