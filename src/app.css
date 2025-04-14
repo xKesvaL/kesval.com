@@ -181,7 +181,7 @@
 	}
 
 	* {
-		@apply border-border;
+		@apply border-border text-balance;
 	}
 
 	body {
@@ -319,6 +319,6 @@
 }
 
 @utility animate-appear {
-	transform: translateY(50px);
 	opacity: 0;
+	transform: translateY(100px);
 }
