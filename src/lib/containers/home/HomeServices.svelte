@@ -6,7 +6,7 @@
 	import * as Accordion from '$lib/components/ui/accordion';
 	import { route } from '$lib/ROUTES';
 	import { localizeHref } from '$paraglide/runtime';
-	import { Spring } from 'svelte/motion';
+	import { Tween } from 'svelte/motion';
 	import AnimatedBadge from '$lib/components/animated/AnimatedBadge.svelte';
 	import useInView from '$lib/actions/inView';
 	import { cn } from '$lib/utils/ui';
@@ -160,22 +160,19 @@
 	let visibleSteps = new SvelteSet<string>();
 
 	// Calculate progress percentage for timeline animation
-	let timelineProgress = new Spring(0, { stiffness: 0.1, damping: 0.8 });
+	let timelineProgress = new Tween(0, {});
 
 	// Handler for when a step becomes visible
 	function handleStepVisible(stepId: string, entry: IntersectionObserverEntry) {
 		visibleSteps.add(stepId);
 
 		// Calculate progress based on visible steps
-		const lastVisibleIndex = Math.max(
-			...Array.from(visibleSteps).map((id) => serviceSteps.findIndex((step) => step.id === id))
-		);
+		const lastVisibleIndex = serviceSteps.findIndex((step) => step.id === stepId);
 
 		const progressPercent = Math.min(
 			100,
 			lastVisibleIndex >= 0 ? ((lastVisibleIndex + 1) / serviceSteps.length) * 100 : 0
 		);
-
 		timelineProgress.set(progressPercent);
 	}
 
@@ -191,9 +188,7 @@
 		// Only handle exits from bottom (user scrolling back up)
 		visibleSteps.delete(stepId);
 
-		const lastVisibleIndex = Math.max(
-			...Array.from(visibleSteps).map((id) => serviceSteps.findIndex((step) => step.id === id))
-		);
+		const lastVisibleIndex = serviceSteps.findIndex((step) => step.id === stepId);
 
 		const progressPercent = Math.min(
 			100,
@@ -280,7 +275,7 @@
 						<!-- Step content card with accordion -->
 						<Card
 							class={cn(
-								'border-border/50 bg-card/80 shadow-cool group w-full overflow-hidden rounded-2xl p-0 shadow-none transition-all duration-500',
+								'border-border/50 bg-card/80 group w-full overflow-hidden rounded-2xl p-0 shadow transition-all duration-500',
 								visibleSteps.has(step.id)
 									? 'translate-x-0 opacity-100'
 									: 'opacity-50 md:translate-x-4'

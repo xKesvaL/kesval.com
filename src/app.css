@@ -277,6 +277,14 @@
 }
 
 @utility shadow-cool {
+	@apply shadow-[0_4px_20px_rgba(0,0,0,0.03),_0_1px_6px_rgba(0,0,0,0.02)] transition-all duration-200 hover:shadow-[0_8px_30px_rgba(0,0,0,0.05)];
+}
+
+@utility shadow-cool-lg {
+	@apply shadow-[0_4px_20px_rgba(0,0,0,0.075),_0_1px_6px_rgba(0,0,0,0.075)] transition-all duration-200 hover:shadow-[0_8px_30px_rgba(0,0,0,0.075)];
+}
+
+@utility shadow-cool-filter {
 	filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.03)) drop-shadow(0 1px 6px rgba(0, 0, 0, 0.02));
 
 	&:hover {
@@ -284,7 +292,7 @@
 	}
 }
 
-@utility shadow-cool-lg {
+@utility shadow-cool-filter-lg {
 	filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.075)) drop-shadow(0 1px 6px rgba(0, 0, 0, 0.075));
 
 	&:hover {
