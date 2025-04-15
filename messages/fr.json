@@ -17,13 +17,16 @@
 			"title": "Création d'expériences digitales de A à Z",
 			"subtitle": "Une marque de développement spécialisée dans les solutions web et les transformations digitales avec une approche humaine.",
 			"view_projects": "Voir les Projets",
+			"fullstack": "Développement Full-Stack",
+			"uiux": "Design UI/UX",
 			"see_all": "Voir tout",
 			"years_of_experience": "{years} ans d'expérience",
 			"full_stack_development": "Développement Full-Stack",
 			"ui_ux_design": "Design UI/UX"
 		},
 		"clients": {
-			"title": "Nous avons travaillé avec des clients exceptionnels"
+			"title": "Nous avons travaillé avec des clients exceptionnels",
+			"subtitle": "Ils nous ont fait confiance pour leurs projets digitaux."
 		},
 		"about": {
 			"title": "Qui suis-je ?",
@@ -40,6 +43,38 @@
 			"above_title": "Projets Sélectionnés",
 			"description": "Découvrez nos derniers projets réalisés pour nos clients",
 			"view_details": "Voir les détails"
+		},
+		"services": {
+			"above_title": "Processus de A à Z",
+			"title": "Votre parcours digital",
+			"subtitle": "De la stratégie à la maintenance, nous vous accompagnons à chaque étape.",
+			"steps": {
+				"discovery": {
+					"title": "Découverte & Stratégie",
+					"description": "Comprendre vos besoins, votre audience et vos objectifs pour bâtir une stratégie sur-mesure."
+				},
+				"content": {
+					"title": "Fonctionnalités & Contenus",
+					"description": "Définir les fonctionnalités et contenus qui engageront vos utilisateurs."
+				},
+				"design": {
+					"title": "Design UI/UX",
+					"description": "Créer des interfaces élégantes et intuitives pour une expérience optimale."
+				},
+				"development": {
+					"title": "Développement",
+					"description": "Développer votre projet avec les technologies les plus récentes et les meilleures pratiques."
+				},
+				"deployment": {
+					"title": "Déploiement",
+					"description": "Lancer votre projet avec des tests et optimisations pour une mise en ligne réussie."
+				},
+				"maintenance": {
+					"title": "Support & Maintenance",
+					"description": "Assurer la pérennité et l'évolution de votre solution digitale."
+				}
+			},
+			"cta": "Démarrez votre projet dès aujourd'hui"
 		}
 	},
 	"about": {
