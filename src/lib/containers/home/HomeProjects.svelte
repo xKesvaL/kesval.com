@@ -1,12 +1,11 @@
 <script lang="ts">
-	import { filterProjects, highlightedProjects } from '$lib/utils/projects';
+	import { highlightedProjects } from '$lib/utils/projects';
 	import * as m from '$paraglide/messages';
 	import { Button } from '$lib/components/ui/button';
-	import { IconExternalLink, IconArrowRight } from '@tabler/icons-svelte';
+	import { IconArrowRight } from '@tabler/icons-svelte';
 	import ProjectCard from '$lib/containers/projects/ProjectCard.svelte';
 	import { route } from '$lib/ROUTES';
 	import { localizeHref } from '$paraglide/runtime';
-	import { onMount } from 'svelte';
 	import AnimatedBadge from '$lib/components/animated/AnimatedBadge.svelte';
 
 	let showedProjects = $derived.by(() => highlightedProjects);

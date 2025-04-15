@@ -164,6 +164,11 @@
 
 	// Handler for when a step becomes visible
 	function handleStepVisible(stepId: string, entry: IntersectionObserverEntry) {
+		// if element is entering from the top, don't update progress
+		if (entry && entry.boundingClientRect.top < window.innerHeight / 3) {
+			return;
+		}
+
 		visibleSteps.add(stepId);
 
 		// Calculate progress based on visible steps
@@ -181,20 +186,17 @@
 		// if element is exiting from the top, don't update progress
 		// we can know this if the boundingClientRect.top is less than half of the viewport height
 		if (entry && entry.boundingClientRect.top < window.innerHeight / 3) {
-			// Don't update progress when scrolling down (exiting from top)
 			return;
 		}
 
-		// Only handle exits from bottom (user scrolling back up)
 		visibleSteps.delete(stepId);
 
 		const lastVisibleIndex = serviceSteps.findIndex((step) => step.id === stepId);
 
 		const progressPercent = Math.min(
 			100,
-			lastVisibleIndex >= 0 ? ((lastVisibleIndex + 1) / serviceSteps.length) * 100 : 0
+			lastVisibleIndex >= 0 ? (lastVisibleIndex / serviceSteps.length) * 100 : 0
 		);
-
 		timelineProgress.set(progressPercent);
 	}
 

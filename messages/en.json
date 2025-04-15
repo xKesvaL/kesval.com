@@ -1,9 +1,12 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
-	"brand.name": "Kesval",
-	"home.hero.years_experience": "years of experience",
-	"home.hero.title": "Crafting Digital Experiences with Purpose",
-	"home.hero.subtitle": "A development studio specializing in modern web solutions and digital transformations",
-	"home.hero.view_projects": "View Projects",
+	"home": {
+		"hero": {
+			"years_experience": "years of experience",
+			"title": "Crafting Digital Experiences with Purpose",
+			"subtitle": "A development studio specializing in modern web solutions and digital transformations",
+			"view_projects": "View Projects"
+		}
+	},
 	"contact_me": "Let's Talk"
 }
