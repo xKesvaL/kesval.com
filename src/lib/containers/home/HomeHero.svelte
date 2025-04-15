@@ -60,11 +60,11 @@
 		<div class="animate-appear mt-16 flex flex-wrap items-center justify-center gap-4">
 			<div class="bg-card flex items-center gap-4 rounded-full border px-6 py-3 transition">
 				<IconCode class="text-primary size-5" />
-				<span class="text-sm font-medium">Full-Stack Development</span>
+				<span class="text-sm font-medium">{m['home.hero.full_stack_development']()}</span>
 			</div>
 			<div class="bg-card flex items-center gap-4 rounded-full border px-6 py-3 transition">
 				<IconBrandFigma class="text-primary size-5" />
-				<span class="text-sm font-medium">UI/UX Design</span>
+				<span class="text-sm font-medium">{m['home.hero.ui_ux_design']()}</span>
 			</div>
 		</div>
 	</div>

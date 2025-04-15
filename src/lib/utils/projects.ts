@@ -5,7 +5,6 @@ import logoKesval from '$assets/logo.avif?enhanced';
 export type Project = {
 	id: string;
 	client?: string;
-	name: string;
 	url?: string;
 	description?: string;
 	icon?: Icon;
@@ -23,8 +22,7 @@ export type Project = {
 export const projects: Project[] = [
 	{
 		id: 'portfolio_kesval',
-		client: 'KesvaL™',
-		name: 'Portfolio KesvaL™',
+		client: 'KesvaL Studio™',
 		icon: IconBrandBaidu,
 		logo: logoKesval,
 		description:
@@ -44,7 +42,6 @@ export const projects: Project[] = [
 	{
 		id: 'project_2',
 		client: 'Client',
-		name: 'Projet 2',
 		icon: IconBrandBaidu,
 		description:
 			"Un projet de développement d'une application web. Un projet de développement d'une application web.",
@@ -59,7 +56,6 @@ export const projects: Project[] = [
 	{
 		id: 'project_3',
 		client: 'Client',
-		name: 'Projet 3',
 		icon: IconBrandBaidu,
 		description:
 			"Un projet de développement d'une application web. Un projet de développement d'une application web.",
@@ -74,7 +70,6 @@ export const projects: Project[] = [
 	{
 		id: 'project_4',
 		client: 'Client',
-		name: 'Projet 4',
 		icon: IconBrandBaidu,
 		description:
 			"Un projet de développement d'une application web. Un projet de développement d'une application web.",
@@ -83,7 +78,6 @@ export const projects: Project[] = [
 	{
 		id: 'project_5',
 		client: 'Client',
-		name: 'Projet 5',
 		icon: IconBrandBaidu,
 		description:
 			"Un projet de développement d'une application web. Un projet de développement d'une application web.",
@@ -92,7 +86,6 @@ export const projects: Project[] = [
 	{
 		id: 'project_6',
 		client: 'Client',
-		name: 'Projet 6',
 		icon: IconBrandBaidu,
 		description:
 			"Un projet de développement d'une application web. Un projet de développement d'une application web.",
@@ -101,7 +94,6 @@ export const projects: Project[] = [
 	{
 		id: 'project_7',
 		client: 'Client',
-		name: 'Projet 7',
 		icon: IconBrandBaidu,
 		description:
 			"Un projet de développement d'une application web. Un projet de développement d'une application web.",
@@ -110,7 +102,6 @@ export const projects: Project[] = [
 	{
 		id: 'project_8',
 		client: 'Client',
-		name: 'Projet 8',
 		icon: IconBrandBaidu,
 		description:
 			"Un projet de développement d'une application web. Un projet de développement d'une application web.",
