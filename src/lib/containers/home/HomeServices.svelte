@@ -205,7 +205,7 @@
 	<div class="kcontainer relative flex w-full flex-col gap-16 px-4">
 		<!-- Section header -->
 		<div class="space-y-4 text-center">
-			<AnimatedBadge>
+			<AnimatedBadge class="animate-appear">
 				<span class="flex items-center gap-2">
 					⏳
 					<hr class="bg-muted-foreground h-4 w-[1px] shrink-0" />
@@ -213,11 +213,11 @@
 				</span>
 			</AnimatedBadge>
 			<h2
-				class="from-foreground to-muted-foreground bg-gradient-to-br bg-clip-text text-4xl font-bold text-transparent sm:text-5xl"
+				class="from-foreground to-muted-foreground animate-appear bg-gradient-to-br bg-clip-text text-4xl font-bold text-transparent sm:text-5xl"
 			>
 				Your Project Journey
 			</h2>
-			<p class="text-muted-foreground mx-auto max-w-[50ch] text-lg">
+			<p class="text-muted-foreground animate-appear mx-auto max-w-[50ch] text-lg">
 				From initial concept to ongoing support, I accompany you through each stage of your digital
 				project's lifecycle.
 			</p>
@@ -243,7 +243,7 @@
 						class="group flex flex-col gap-4 md:grid md:grid-cols-[48px_1fr] md:gap-8"
 						use:useInView={{
 							threshold: 0,
-							rootMargin: isMobile.current ? '-10% 0px -65% 0px' : '-10% 0px -55% 0px',
+							rootMargin: isMobile.current ? '-10% 0px -70% 0px' : '-10% 0px -55% 0px',
 							onEnter: (entry) => handleStepVisible(step.id, entry),
 							onExit: (entry) => handleStepExit(step.id, entry)
 						}}

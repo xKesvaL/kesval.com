@@ -10,7 +10,7 @@ export const load = async ({ url }) => {
 
 	const baseMetaTags = Object.freeze({
 		title: await translate(`meta${delocalizedPath !== '.' ? delocalizedPath : '.home'}.title`),
-		titleTemplate: `%s | ${m['brand.name_short']()}`,
+		titleTemplate: `%s | ${m['brand.name']()}`,
 		canonical: new URL(url.pathname, url.origin).href
 	}) satisfies MetaTagsProps;
 

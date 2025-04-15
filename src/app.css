@@ -171,6 +171,9 @@
 
 	--ct-max-w: 75rem;
 	--ct-max-w-sm: 60rem;
+
+	--animate-appear-opacity: 0;
+	--animate-appear-y: 100px;
 }
 
 /* Base */
@@ -261,7 +264,7 @@
 }
 
 @utility section-hero {
-	@apply kcontainer-nav-padding section mt-4 min-h-[calc(100vh-var(--nav-height)-(var(--spacing)*8))] md:mt-10 md:min-h-[calc(100vh-var(--nav-height)-(var(--spacing)*20))] lg:mt-14 lg:min-h-[calc(100vh-var(--nav-height)-var(--nav-spacing)-(var(--spacing)*28))];
+	@apply kcontainer-nav-padding section mt-4 min-h-[calc(100dvh-var(--nav-height)-(var(--spacing)*8))] md:mt-10 md:min-h-[calc(100dvh-var(--nav-height)-(var(--spacing)*20))] lg:mt-14 lg:min-h-[calc(100dvh-var(--nav-height)-var(--nav-spacing)-(var(--spacing)*28))];
 }
 
 @utility h-nav {
@@ -327,6 +330,6 @@
 }
 
 @utility animate-appear {
-	opacity: 0;
-	transform: translateY(100px);
+	opacity: var(--animate-appear-opacity);
+	transform: translateY(var(--animate-appear-y));
 }

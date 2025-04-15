@@ -1,8 +1,14 @@
+import { dev } from '$app/environment';
 import { animate, inView } from 'motion';
 import type { Action } from 'svelte/action';
 
-export const animateAppear: Action<HTMLElement> = () => {
-	inView(
+export const animateAppear: Action<HTMLElement> = (element) => {
+	if (dev) {
+		// avoids breaking the animation on HMR
+		element.style = '--animate-appear-opacity: 1; --animate-appear-y: 0;';
+	}
+
+	const stop = inView(
 		'.animate-appear',
 		(element) => {
 			animate(
@@ -12,12 +18,16 @@ export const animateAppear: Action<HTMLElement> = () => {
 					duration: 0.5,
 					ease: 'circOut'
 				}
-			).then(() => {
-				element.classList.add('an');
-			});
+			);
 		},
 		{
 			margin: '0px 0px -10% 0px'
 		}
 	);
+
+	return {
+		destroy() {
+			stop();
+		}
+	};
 };

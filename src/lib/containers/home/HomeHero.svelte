@@ -14,7 +14,7 @@
 </script>
 
 <section class="section-hero min-h-screen items-center justify-center">
-	<div class="absolute inset-0 isolate opacity-7 blur-2xl contain-strict">
+	<div class="absolute inset-0 isolate opacity-3 blur-2xl contain-strict">
 		<div
 			class="absolute top-0 left-1/2 h-320 w-140 -translate-x-140 -translate-y-80 -rotate-45 rounded-full bg-[radial-gradient(68.54%_68.72%_at_55.02%_31.46%,var(--color-primary)_0,var(--color-primary)_50%,var(--color-primary)]"
 		></div>
@@ -45,24 +45,24 @@
 				{m['home.hero.subtitle']({ brand: m['brand.name']() })}
 			</p>
 
-			<div class="animate-appear mt-12 flex flex-wrap items-center justify-center gap-4">
-				<Button href={localizeHref(route('/contact'))}>
+			<div class="mt-12 flex flex-wrap items-center justify-center gap-4">
+				<Button class="animate-appear" href={localizeHref(route('/contact'))}>
 					<IconMessageCirclePlus />
 					{m.contact_me()}
 				</Button>
-				<Button variant="outline" href={localizeHref(route('/projets'))}>
+				<Button class="animate-appear" variant="outline" href={localizeHref(route('/projets'))}>
 					<IconRocket />
 					{m.see_all()}
 				</Button>
 			</div>
 		</div>
 
-		<div class="animate-appear mt-16 flex flex-wrap items-center justify-center gap-8">
-			<div class="bg-card flex items-center gap-4 rounded-full px-6 py-3 transition-colors">
+		<div class="animate-appear mt-16 flex flex-wrap items-center justify-center gap-4">
+			<div class="bg-card flex items-center gap-4 rounded-full border px-6 py-3 transition">
 				<IconCode class="text-primary size-5" />
 				<span class="text-sm font-medium">Full-Stack Development</span>
 			</div>
-			<div class="bg-card flex items-center gap-4 rounded-full px-6 py-3 transition-colors">
+			<div class="bg-card flex items-center gap-4 rounded-full border px-6 py-3 transition">
 				<IconBrandFigma class="text-primary size-5" />
 				<span class="text-sm font-medium">UI/UX Design</span>
 			</div>
