@@ -172,8 +172,8 @@
 	--ct-max-w: 75rem;
 	--ct-max-w-sm: 60rem;
 
-	--animate-appear-opacity: 0;
-	--animate-appear-y: 100px;
+	--animation-appear-opacity: 0;
+	--animation-appear-y: 100px;
 }
 
 /* Base */
@@ -330,6 +330,6 @@
 }
 
 @utility animate-appear {
-	opacity: var(--animate-appear-opacity);
-	transform: translateY(var(--animate-appear-y));
+	opacity: var(--animation-appear-opacity);
+	transform: translateY(var(--animation-appear-y));
 }

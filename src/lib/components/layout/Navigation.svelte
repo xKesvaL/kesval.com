@@ -74,7 +74,7 @@
 					href={localizeHref(route('/contact'))}
 					onclick={() => (navigation.state = 'closed')}
 				>
-					{m.contact_me()}
+					{m.start_now()}
 				</Button>
 				<NavigationButton />
 			</div>

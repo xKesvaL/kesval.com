@@ -23,6 +23,7 @@
 	} from '@tabler/icons-svelte';
 	import { SvelteSet } from 'svelte/reactivity';
 	import { IsMobile } from '$lib/hooks/is-mobile.svelte';
+	import { tick } from 'svelte';
 
 	/**
 	 * Service step definition
@@ -200,6 +201,30 @@
 		timelineProgress.set(progressPercent);
 	}
 
+	let currentlyOpenStep = $state(serviceSteps[0].id);
+
+	const handleStepOpen = (stepId: string) => {
+		// if mobile AND if the opened step is after the currently visible step, scroll up to the opened step
+		const openedStepIndex = serviceSteps.findIndex((step) => step.id === stepId);
+		const currentlyVisibleIndex = serviceSteps.findIndex((step) => step.id === currentlyOpenStep);
+
+		currentlyOpenStep = stepId;
+
+		if (isMobile.current && openedStepIndex > currentlyVisibleIndex) {
+			tick().then(() => {
+				setTimeout(() => {
+					const element = document.getElementById(stepId);
+					if (element) {
+						window.scrollTo({
+							top: element.getBoundingClientRect().top + window.scrollY - 180,
+							behavior: 'smooth'
+						});
+					}
+				}, 300);
+			});
+		}
+	};
+
 	const isMobile = new IsMobile();
 </script>
 
@@ -242,10 +267,10 @@
 			<div class="space-y-12 md:space-y-16">
 				{#each serviceSteps as step, i (step.id)}
 					<div
-						class="group flex flex-col gap-4 md:grid md:grid-cols-[48px_1fr] md:gap-8"
+						class="group animate-appear flex flex-col gap-4 md:grid md:grid-cols-[48px_1fr] md:gap-8"
 						use:useInView={{
 							threshold: 0,
-							rootMargin: isMobile.current ? '-10% 0px -70% 0px' : '-10% 0px -55% 0px',
+							rootMargin: isMobile.current ? '0px 0px -60% 0px' : '0px 0px -45% 0px',
 							onEnter: (entry) => handleStepVisible(step.id, entry),
 							onExit: (entry) => handleStepExit(step.id, entry)
 						}}
@@ -283,7 +308,12 @@
 									: 'opacity-50 md:translate-x-4'
 							)}
 						>
-							<Accordion.Root type="single" value={visibleSteps.has(step.id) ? step.id : ''}>
+							<Accordion.Root
+								type="single"
+								value={currentlyOpenStep === step.id ? step.id : ''}
+								onValueChange={handleStepOpen}
+								id={step.id}
+							>
 								<Accordion.Item class="rounded-2xl border-none" value={step.id}>
 									<Accordion.Trigger
 										class="group/trigger data-[state=open]:bg-card/90 flex w-full cursor-pointer items-start gap-6 p-6 transition-all duration-200"

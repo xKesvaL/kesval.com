@@ -25,16 +25,6 @@
 		"clients": {
 			"title": "Nous avons travaillé avec des clients exceptionnels"
 		},
-		"about": {
-			"title": "Qui suis-je ?",
-			"description": "Je suis un développeur web fullstack passionné par la création de sites internet et d'applications web. J'ai acquis une solide expérience dans le développement front-end et back-end, ainsi que dans le design web. Mon objectif est de vous aider à concrétiser vos idées en ligne.",
-			"experience": "ans d'expertise",
-			"experience_description": "Je suis développeur par passion depuis plus de 10 ans, et depuis 2022, je crée des sites internet et des applications web pour mes clients.",
-			"projects": "projets réalisés",
-			"projects_description": "J'ai réalisé de nombreux projets, allant de sites vitrines simples à des applications à grande échelle, en passant par des boutiques en ligne.",
-			"clients": "clients satisfaits",
-			"clients_description": "Je suis fier d'avoir aidé mes clients à atteindre leurs objectifs, et j'espère les accompagner au mieux dans leurs projets futurs."
-		},
 		"projects": {
 			"title": "Nos derniers projets",
 			"above_title": "Projets Sélectionnés",
@@ -44,14 +34,14 @@
 	},
 	"about": {
 		"hero": {
-			"title": "À propos de moi",
-			"subtitle": "Jeune entrepreneur passionné par l'informatique et la science, je suis un développeur web fullstack français. Aujourd'hui, je cherche à aggrandir mon expertise afin de pouvoir aider un maximum de personnes dans leurs projets. Quand je ne code pas, vous me trouverez en train de pratiquer la force athlétique - très loin de l'informatique !",
-			"about_me": "À propos de moi",
-			"identity": {
-				"entrepreneur": "Entrepreneur",
-				"developer": "Développeur web & mobile",
-				"powerlifter": "Athlète de force athlétique"
-			}
+			"title": "Qui suis-je ?",
+			"description": "Je suis un développeur web fullstack passionné par la création de sites internet et d'applications web. J'ai acquis une solide expérience dans le développement front-end et back-end, ainsi que dans le design web. Mon objectif est de vous aider à concrétiser vos idées en ligne.",
+			"experience": "ans d'expertise",
+			"experience_description": "Je suis développeur par passion depuis plus de 10 ans, et depuis 2022, je crée des sites internet et des applications web pour mes clients.",
+			"projects": "projets réalisés",
+			"projects_description": "J'ai réalisé de nombreux projets, allant de sites vitrines simples à des applications à grande échelle, en passant par des boutiques en ligne.",
+			"clients": "clients satisfaits",
+			"clients_description": "Je suis fier d'avoir aidé mes clients à atteindre leurs objectifs, et j'espère les accompagner au mieux dans leurs projets futurs."
 		},
 		"resume": {
 			"title": "Mon CV",
@@ -108,14 +98,15 @@
 	"present": "Présent",
 	"soon_tm": "Bientôt™",
 	"change_language": "Changer de langue",
+	"start_now": "Je me lance",
 	"experience": {
 		"olwe": {
 			"title": "OLWE Développement",
 			"description": "Développeur Fullstack, principalement sur des applications web utilisant React avec Next pour le front-end et Express avec MariaDB sur le back-end."
 		},
 		"kesval": {
-			"title": "KesvaL Développement",
-			"description": "Je travaille à mon compte en tant que développeur web fullstack, sur des sites en utilisant des CMS ou sur des applications web en utilisant des technologies modernes."
+			"title": "KesvaL Studio",
+			"description": "Je travaille avec mon associé en tant que développeur web fullstack, sur des sites en utilisant des CMS ou sur des applications web en utilisant des technologies modernes."
 		},
 		"ciotadin_office": {
 			"title": "Le Bureau Ciotaden",

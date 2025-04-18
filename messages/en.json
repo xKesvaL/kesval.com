@@ -1,15 +1,151 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
-	"brand": {
-		"name": "Kesval"
+	"nav": {
+		"home": "Welcome",
+		"about": "About",
+		"projects": "Projects",
+		"blog": "Blog",
+		"contact": "Contact",
+		"legal_notice": "Legal notices",
+		"privacy_policy": "Privacy Policy",
+		"github": "GitHub",
+		"instagram": "Instagram",
+		"linkedin": "LinkedIn"
 	},
 	"home": {
 		"hero": {
-			"years_experience": "years of experience",
-			"title": "Crafting Digital Experiences with Purpose",
-			"subtitle": "A development studio specializing in modern web solutions and digital transformations",
-			"view_projects": "View Projects"
+			"title": "Creation of digital experiences from A to Z",
+			"subtitle": "A development brand specializing in web solutions and digital transformations with a human approach.",
+			"view_projects": "See Projects",
+			"see_all": "See all",
+			"years_of_experience": "{years} years of experience",
+			"full_stack_development": "Full-Stack Development",
+			"ui_ux_design": "UI/UX Design"
+		},
+		"clients": { "title": "We have worked with exceptional clients" },
+		"projects": {
+			"title": "Our latest projects",
+			"above_title": "Selected Projects",
+			"description": "Discover our latest projects carried out for our clients",
+			"view_details": "See details"
 		}
 	},
-	"contact_me": "Let's Talk"
+	"about": {
+		"hero": {
+			"title": "Who am I?",
+			"description": "I'm a full-stack web developer passionate about building websites and web applications. I have extensive experience in front-end and back-end development, as well as web design. My goal is to help you bring your ideas to life online.",
+			"experience": "years of expertise",
+			"experience_description": "I have been a developer by passion for over 10 years, and since 2022, I have been creating websites and web applications for my clients.",
+			"projects": "completed projects",
+			"projects_description": "I have completed numerous projects, ranging from simple showcase sites to large-scale applications and online stores.",
+			"clients": "satisfied customers",
+			"clients_description": "I am proud to have helped my clients achieve their goals, and I hope to support them as best I can in their future projects."
+		},
+		"resume": {
+			"title": "My CV",
+			"experience": "Experience",
+			"header": { "subtitle": "Fullstack web developer", "languages": "English C1, French C2" },
+			"about": {
+				"title": "About",
+				"description": "I'm a passionate full-stack developer. I started when I was 8 years old, writing my first lines of code in Java, creating Minecraft mods. I then moved on to web development and now work with the latest technologies, such as Svelte, Bun, and TypeScript. In the future, I want to create applications for everyone that simplify life."
+			},
+			"education": {
+				"title": "Training",
+				"description": "I hold a Bachelor's degree in Computer Science and Mathematics, and I am currently studying Multimedia and Internet at the University of Mulhouse, where I am learning web development, communication, 3D, video, and audio. I am in my second year and am currently specializing in web development."
+			},
+			"skills": "SKILLS"
+		}
+	},
+	"contact": {
+		"hero": {
+			"title": "Contact",
+			"subtitle": "Do you have a project in mind? I'm here to listen and advise you, free of charge!",
+			"contact_me": "Contact me",
+			"get_in_touch": {
+				"title": "Let's get in touch",
+				"description": "Feel free to contact me through my social media or by email. I'm always open to new opportunities and collaborations."
+			},
+			"availability": {
+				"title": "Availability",
+				"description": "I am available for freelance projects and collaborations. I usually respond within 24 hours."
+			},
+			"looking_for_work": {
+				"title": "Are you looking for a developer?",
+				"description": "I'm always interested in new opportunities. Let me know if you think I can help!",
+				"cta": "See my CV"
+			}
+		}
+	},
+	"hire_me": "Hire me",
+	"my_resume": "My CV",
+	"contact_me": "Let's discuss",
+	"see_all": "See all",
+	"see_more": "See more",
+	"about_me": "About me",
+	"lets_talk_about_it": "Let's discuss it!",
+	"my_email": "My email",
+	"kesval_logo": "KesvaL logo",
+	"github_profile": "GitHub Profile",
+	"instagram_profile": "Instagram profile",
+	"linkedin_profile": "LinkedIn profile",
+	"years_old": "{years} years",
+	"years_of_experience": "{years} years of experience",
+	"present": "Here",
+	"soon_tm": "Coming Soon™",
+	"change_language": "Change language",
+	"start_now": "I'm going for it",
+	"experience": {
+		"olwe": {
+			"title": "OLWE Development",
+			"description": "Fullstack developer, mainly on web applications using React with Next for the front-end and Express with MariaDB on the back-end."
+		},
+		"kesval": {
+			"title": "KesvaL Studio",
+			"description": "I work with my partner as a fullstack web developer, on sites using CMS or on web applications using modern technologies."
+		},
+		"ciotadin_office": {
+			"title": "The Ciotaden Office",
+			"description": "Assistant and receptionist in a general purpose computer repair shop."
+		},
+		"uha": {
+			"title": "University of Upper Alsace",
+			"description": "I am a computer science student at the University of Haute-Alsace, where I am acquiring skills in web and mobile development, as well as project management in BUT MMI."
+		},
+		"theodore_deck": {
+			"title": "Théodore Deck High School",
+			"description": "I obtained my baccalaureate with honors in math and computer science at Lycée Théodore Deck in Guebwiller."
+		},
+		"job": {
+			"fullstack_dev": "Fullstack developer",
+			"student": "Student",
+			"tech_assistant": "Technical Assistant"
+		}
+	},
+	"brand": { "name": "KesvaL Studio", "name_short": "KesvaL", "connect": "Networks" },
+	"footer": {
+		"copyright": "© {year} {brand} . All rights reserved.",
+		"cta": {
+			"title": "Do you have a project in mind?",
+			"secondary": {
+				"title": "Do you have a question?",
+				"description": "I am here to listen to you and advise you, free of charge!"
+			},
+			"other": "Or I remain available on..."
+		}
+	},
+	"projects": {
+		"portfolio_kesval": {
+			"title": "test",
+			"name": "KesvaL™ Portfolio",
+			"description": "Our portfolio"
+		},
+		"not_found": "Project {projectId} not found",
+		"view_all": "See all projects"
+	},
+	"common": {
+		"view_case_study": "See the case study",
+		"visit_site": "Visit the site",
+		"others": "Others"
+	},
+	"meta": { "home": { "title": "Welcome" } }
 }

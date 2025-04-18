@@ -35,10 +35,10 @@
 					{m['brand.name']()}
 				</span>
 				<h2>
-					{m['home.about.title']()}
+					{m['about.hero.title']()}
 				</h2>
 				<p class="max-w-prose">
-					{m['home.about.description']()}
+					{m['about.hero.description']()}
 				</p>
 			</div>
 			<Button href={localizeHref(route('/a-propos'))}>
@@ -80,11 +80,11 @@
 					<IconUserStar class="size-16 md:size-20" stroke={1.5} />
 				</div>
 				<h3>
-					{m['home.about.experience']()}
+					{m['about.hero.experience']()}
 				</h3>
 			</div>
 			<p class="text-muted-foreground max-w-prose text-sm">
-				{m['home.about.experience_description']()}
+				{m['about.hero.experience_description']()}
 			</p>
 		</div>
 		<div class="flex flex-col items-start gap-2">
@@ -99,11 +99,11 @@
 					<IconClipboardCheck class="size-16 md:size-20" stroke={1.5} />
 				</div>
 				<h3>
-					{m['home.about.projects']()}
+					{m['about.hero.projects']()}
 				</h3>
 			</div>
 			<p class="text-muted-foreground max-w-prose text-sm">
-				{m['home.about.projects_description']()}
+				{m['about.hero.projects_description']()}
 			</p>
 		</div>
 		<div class="flex flex-col items-start gap-2">
@@ -118,11 +118,11 @@
 					<IconAward class="size-16 md:size-20" stroke={1.5} />
 				</div>
 				<h3>
-					{m['home.about.clients']()}
+					{m['about.hero.clients']()}
 				</h3>
 			</div>
 			<p class="text-muted-foreground max-w-prose text-sm">
-				{m['home.about.clients_description']()}
+				{m['about.hero.clients_description']()}
 			</p>
 		</div>
 	</div>
