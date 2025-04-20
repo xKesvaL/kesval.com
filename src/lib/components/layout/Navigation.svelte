@@ -90,8 +90,10 @@
 			out:fly={baseFlyOutParams}
 			class="fixed inset-0 z-30 bg-white shadow-sm"
 		>
-			<div class="kcontainer flex h-full flex-col items-stretch justify-center gap-8 p-4 lg:px-8">
-				<ul class="flex flex-col">
+			<div
+				class="kcontainer flex h-full flex-col items-stretch justify-center gap-4 p-4 lg:px-8 xl:gap-8"
+			>
+				<ul class="mt-12 flex flex-col">
 					{#each navigationLinks as link}
 						{@const { label, href: absoluteHref } = link}
 						{@const href = localizeHref(absoluteHref)}
@@ -99,7 +101,7 @@
 							<a
 								onmouseenter={() => (latestHoveredLink = link)}
 								onclick={() => (navigation.state = 'closed')}
-								class="text-muted-foreground/80 hover:text-primary flex translate-x-0 py-6 text-5xl font-bold uppercase transition-all duration-300 hover:-translate-x-12 md:text-6xl lg:text-7xl"
+								class="text-muted-foreground/80 hover:text-primary flex translate-x-0 py-6 text-5xl font-bold uppercase transition-all duration-300 hover:-translate-x-12 xl:text-7xl"
 								{href}
 							>
 								{#await translate(label) then translation}
