@@ -1,4 +1,9 @@
-import { type Locale, baseLocale } from '../paraglide/runtime';
+export const locales = ['fr', 'en'] as const;
+
+export type Locales = (typeof locales)[number];
+export type Locale = Locales;
+
+export const baseLocale = 'fr' satisfies Locale;
 
 type LocalizeOptions = Record<Locale, string>;
 
