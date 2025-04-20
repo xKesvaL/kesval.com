@@ -7,9 +7,19 @@
 	import Analytics from '$lib/components/base/Analytics.svelte';
 	import { deepMerge, MetaTags } from 'svelte-meta-tags';
 	import { animateAppear } from '$lib/utils/animation';
+	import { onNavigate } from '$app/navigation';
+	import { onMount } from 'svelte';
 
 	let { children, data } = $props();
 	let metaTags = $derived(deepMerge(data.baseMetaTags, page.data.pageMetaTags));
+
+	onMount(() => {
+		console.log(getLocale());
+	});
+
+	onNavigate(() => {
+		console.log(getLocale());
+	});
 </script>
 
 {#key getLocale()}
