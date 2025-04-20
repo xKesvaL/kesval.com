@@ -112,10 +112,7 @@
 			<p class="text-muted-foreground max-w-prose text-lg">
 				{m['contact.hero.availability.description']()}
 			</p>
-			<Button
-				class="bg-card text-foreground hover:bg-card/90 hover:text-foreground w-fit border"
-				href={`${localizeHref(route('/a-propos'))}#resume`}
-			>
+			<Button class="bg-card text-foreground hover:bg-card/90 hover:text-foreground w-fit border">
 				{m['contact.hero.looking_for_work.cta']()}
 			</Button>
 		</div>
