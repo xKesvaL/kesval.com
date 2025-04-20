@@ -41,9 +41,6 @@
 					{m['about.hero.description']()}
 				</p>
 			</div>
-			<Button href={localizeHref(route('/a-propos'))}>
-				{m.about_me()}
-			</Button>
 		</div>
 		<div class="grid grid-cols-3 gap-2 md:col-span-7 md:gap-6">
 			<div

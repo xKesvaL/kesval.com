@@ -9,7 +9,7 @@
 >
 	<div class="flex grow flex-col gap-2 lg:col-span-7">
 		<span class="suptitle">
-			{m['about.hero.about_me']()}
+			{m['about.hero.about_us']()}
 		</span>
 		<h1 class="max-w-[30ch]">
 			{m['about.hero.title']()}

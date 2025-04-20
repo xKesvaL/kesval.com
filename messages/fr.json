@@ -28,67 +28,79 @@
 		"projects": {
 			"title": "Nos derniers projets",
 			"above_title": "Projets Sélectionnés",
-			"description": "Découvrez nos derniers projets réalisés pour nos clients",
-			"view_details": "Voir les détails"
+			"description": "Découvrez nos derniers projets réalisés pour nos clients"
+		},
+		"services": {
+			"above_title": "Processus de A à Z",
+			"title": "Votre parcours digital",
+			"subtitle": "De la stratégie à la maintenance, nous vous accompagnons à chaque étape.",
+			"steps": {
+				"discovery": {
+					"title": "Découverte & Stratégie",
+					"description": "Comprendre vos besoins, votre audience et vos objectifs pour bâtir une stratégie sur-mesure."
+				},
+				"content": {
+					"title": "Fonctionnalités & Contenus",
+					"description": "Définir les fonctionnalités et contenus qui engageront vos utilisateurs."
+				},
+				"design": {
+					"title": "Design UI/UX",
+					"description": "Créer des interfaces élégantes et intuitives pour une expérience optimale."
+				},
+				"development": {
+					"title": "Développement",
+					"description": "Développer votre projet avec les technologies les plus récentes et les meilleures pratiques."
+				},
+				"deployment": {
+					"title": "Déploiement",
+					"description": "Lancer votre projet avec des tests et optimisations pour une mise en ligne réussie."
+				},
+				"maintenance": {
+					"title": "Support & Maintenance",
+					"description": "Assurer la pérennité et l'évolution de votre solution digitale."
+				}
+			},
+			"cta": "Démarrez votre projet dès aujourd'hui"
 		}
 	},
 	"about": {
 		"hero": {
-			"title": "Qui suis-je ?",
-			"description": "Je suis un développeur web fullstack passionné par la création de sites internet et d'applications web. J'ai acquis une solide expérience dans le développement front-end et back-end, ainsi que dans le design web. Mon objectif est de vous aider à concrétiser vos idées en ligne.",
+			"title": "Qui sommes-nous ?",
+			"description": "Nous sommes un studio de développement web spécialisé dans la création de sites internet et d'applications web. Notre équipe possède une solide expérience en développement front-end et back-end, ainsi qu'en design web. Nous aidons à concrétiser les idées en ligne.",
 			"experience": "ans d'expertise",
-			"experience_description": "Je suis développeur par passion depuis plus de 10 ans, et depuis 2022, je crée des sites internet et des applications web pour mes clients.",
+			"experience_description": "Notre équipe conçoit des solutions web depuis plus de 3 ans, développant des sites et applications pour une clientèle diversifiée.",
 			"projects": "projets réalisés",
-			"projects_description": "J'ai réalisé de nombreux projets, allant de sites vitrines simples à des applications à grande échelle, en passant par des boutiques en ligne.",
+			"projects_description": "Nous avons réalisé de nombreux projets, des sites vitrines aux applications complexes et plateformes e-commerce.",
 			"clients": "clients satisfaits",
-			"clients_description": "Je suis fier d'avoir aidé mes clients à atteindre leurs objectifs, et j'espère les accompagner au mieux dans leurs projets futurs."
-		},
-		"resume": {
-			"title": "Mon CV",
-			"experience": "Expérience",
-			"header": {
-				"subtitle": "Développeur web fullstack",
-				"languages": "Anglais C1, Français C2"
-			},
-			"about": {
-				"title": "À propos",
-				"description": "Je suis un développeur fullstack passionné. J'ai commencé quand j'avais 8 ans, en écrivant mes premières lignes de code en Java, en créant des mods Minecraft. J'ai ensuite évolué vers le développement web et je travaille désormais avec les dernières technologies, telles que Svelte, Bun et TypeScript. Plus tard, je souhaite créer des applications pour tous qui simplifient la vie."
-			},
-			"education": {
-				"title": "Formation",
-				"description": "Je suis titulaire d'un Baccalauréat en Informatique et Mathématiques, et j'étudie actuellement à l'Université de Mulhouse, en Multimédia et Internet, où j'apprends le développement web, la communication, la 3D, la vidéo et l'audio. Je suis en deuxième année et je me spécialise actuellement en développement web."
-			},
-			"skills": "Compétences"
+			"clients_description": "Nous sommes fiers de permettre à nos clients de réussir dans leur transformation digitale et de soutenir leur croissance."
 		}
 	},
 	"contact": {
 		"hero": {
 			"title": "Contact",
-			"subtitle": "Vous avez un projet en tête ? Je suis là pour vous écouter et vous conseiller, gratuitement !",
-			"contact_me": "Contactez-moi",
+			"subtitle": "Vous avez un projet en tête ? Collaborons pour le concrétiser.",
+			"contact_us": "Contactez-nous",
 			"get_in_touch": {
 				"title": "Entrons en contact",
-				"description": "N'hésitez pas à me contacter au travers de mes réseaux sociaux ou par e-mail. Je suis toujours ouvert à de nouvelles opportunités et collaborations."
+				"description": "Contactez-nous via nos réseaux sociaux ou par e-mail. Nous sommes toujours ouverts à de nouvelles opportunités et collaborations."
 			},
 			"availability": {
 				"title": "Disponibilité",
-				"description": "Je suis disponible pour des projets freelance et des collaborations. Je réponds généralement dans les 24 heures."
+				"description": "Notre équipe est disponible pour vos projets et collaborations, nous répondons généralement sous 24 heures."
 			},
 			"looking_for_work": {
-				"title": "Vous cherchez un développeur ?",
-				"description": "Je suis toujours intéressé par de nouvelles opportunités. Faites le moi savoir si vous pensez que je peux vous aider !",
-				"cta": "Voir mon CV"
+				"title": "Vous cherchez un partenaire de développement ?",
+				"description": "Nous sommes toujours ouverts à de nouveaux défis. Faites-nous savoir comment nous pouvons vous accompagner !",
+				"cta": "Découvrez notre expertise"
 			}
 		}
 	},
-	"hire_me": "Embauchez-moi",
-	"my_resume": "Mon CV",
-	"contact_me": "Discutons",
+	"contact_us": "Discutons",
 	"see_all": "Voir tout",
 	"see_more": "Voir plus",
-	"about_me": "À propos de moi",
+	"about_us": "À propos de nous",
 	"lets_talk_about_it": "Discutons-en !",
-	"my_email": "Mon e-mail",
+	"our_email": "Notre e-mail",
 	"kesval_logo": "Logo de KesvaL",
 	"github_profile": "Profil GitHub",
 	"instagram_profile": "Profil Instagram",
@@ -98,7 +110,6 @@
 	"present": "Présent",
 	"soon_tm": "Bientôt™",
 	"change_language": "Changer de langue",
-	"start_now": "Je me lance",
 	"experience": {
 		"olwe": {
 			"title": "OLWE Développement",
@@ -137,9 +148,9 @@
 			"title": "Vous avez un projet en tête ?",
 			"secondary": {
 				"title": "Vous avez une question ?",
-				"description": "Je suis là pour vous écouter et vous conseiller, gratuitement !"
+				"description": "Nous sommes là pour vous écouter et vous conseiller, gratuitement !"
 			},
-			"other": "Ou alors je reste disponible sur..."
+			"other": "Ou alors nous restons disponibles sur..."
 		}
 	},
 	"projects": {
@@ -149,7 +160,8 @@
 			"description": "Notre portfolio"
 		},
 		"not_found": "Projet {projectId} non trouvé",
-		"view_all": "Voir tous les projets"
+		"view_all": "Voir tous les projets",
+		"view_details": "Voir les détails"
 	},
 	"common": {
 		"view_case_study": "Voir l'étude de cas",
@@ -159,6 +171,19 @@
 	"meta": {
 		"home": {
 			"title": "Accueil"
+		},
+		"a_propos": {
+			"title": "À propos"
+		},
+		"projets": {
+			"title": "Projets"
+		},
+		"blog": {
+			"title": "Blog"
+		},
+		"contact": {
+			"title": "Contact"
 		}
-	}
+	},
+	"start_now": "Je me lance"
 }

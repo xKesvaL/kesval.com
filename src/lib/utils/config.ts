@@ -6,6 +6,17 @@ import ImageHome from '$assets/logo.avif?enhanced';
 import ImageBlog from '$assets/nav/blog_nav.webp?enhanced';
 import type { Picture } from 'vite-imagetools';
 
+export const brand = {
+	email: 'contact@kesval.com',
+	github: 'https://github.com/xKesvaL',
+	instagram: 'https://instagram.com/kesval.studio',
+	linkedin: 'https://linkedin.com/company/kesval-studio/',
+	website: 'https://kesval.com',
+	websiteShort: 'kesval.com',
+	age: dayjs().diff(dayjs('2004-10-14'), 'year'),
+	yearsOfExperience: dayjs().diff(dayjs('2022-01-01'), 'year')
+} as const;
+
 export type LinkType = {
 	label: keyof typeof m;
 	href: string;
@@ -42,30 +53,19 @@ export const navigationLinks = [
 export const socialLinks = [
 	{
 		label: 'nav.github',
-		href: 'https://github.com/xKesvaL',
+		href: brand.github,
 		external: true
 	},
 	{
 		label: 'nav.instagram',
-		href: 'https://instagram.com/xkesval',
+		href: brand.instagram,
 		external: true
 	},
 	{
 		label: 'nav.linkedin',
-		href: 'https://www.linkedin.com/in/jordan-abeddou/',
+		href: brand.linkedin,
 		external: true
 	}
 ] as const satisfies LinkType[];
-
-export const brand = {
-	email: 'xkesval@gmail.com',
-	github: 'https://github.com/xKesvaL',
-	instagram: 'https://instagram.com/xkesval',
-	linkedin: 'https://www.linkedin.com/in/jordan-abeddou/',
-	website: 'https://kesval.com',
-	websiteShort: 'kesval.com',
-	age: dayjs().diff(dayjs('2004-10-14'), 'year'),
-	yearsOfExperience: dayjs().diff(dayjs('2022-01-01'), 'year')
-} as const;
 
 export const GOOGLE_ANALYTICS_ID = 'G-VBZTZPQWJ9';

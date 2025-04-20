@@ -4,22 +4,24 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 import { enhancedImages } from '@sveltejs/enhanced-img';
 import { kitRoutes } from 'vite-plugin-kit-routes';
-import type { KIT_ROUTES } from '$lib/ROUTES';
+import type { KIT_ROUTES } from './src/lib/ROUTES';
+import { urlPatterns } from './src/lib/utils/pathnames';
 
 export default defineConfig({
+	build: {
+		target: ['es2022', 'chrome90', 'safari14.1', 'firefox87']
+	},
 	plugins: [
+		kitRoutes<KIT_ROUTES>(),
+		enhancedImages(),
+		sveltekit(),
+		tailwindcss(),
 		paraglideVitePlugin({
 			project: './project.inlang',
 			outdir: './src/lib/paraglide',
 			strategy: ['url', 'cookie', 'preferredLanguage', 'baseLocale'],
-			outputStructure: 'message-modules'
-		}),
-		kitRoutes<KIT_ROUTES>(),
-		enhancedImages(),
-		sveltekit(),
-		tailwindcss()
-	],
-	build: {
-		target: ['es2022', 'chrome90', 'safari14.1', 'firefox87']
-	}
+			outputStructure: 'message-modules',
+			urlPatterns: urlPatterns
+		})
+	]
 });

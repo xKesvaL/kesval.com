@@ -1,5 +1,4 @@
 <script lang="ts">
-	import * as Card from '$lib/components/ui/card/index.js';
 	import { route } from '$lib/ROUTES';
 	import type { Project } from '$lib/utils/projects';
 	import { localizeHref } from '$paraglide/runtime';
@@ -7,6 +6,7 @@
 	import { IconExternalLink, IconArrowRight } from '@tabler/icons-svelte';
 	import { cn } from '$lib/utils/ui';
 	import { translate } from '$lib/utils/i18n';
+	import * as m from "$paraglide/messages"
 
 	type Props = {
 		project: Project;
@@ -26,7 +26,7 @@
 			name: await translate(`projects.${project.id}.name`),
 			description: await translate(`projects.${project.id}.description`)
 		};
-	};
+	};2
 </script>
 
 <div
@@ -108,7 +108,9 @@
 						class="group"
 						href={localizeHref(route('/projets/[projectId]', { projectId: project.id }))}
 					>
-						<span>View details</span>
+						<span>
+							{m["projects.view_details"]()}
+						</span>
 						<IconArrowRight class=" transition-transform group-hover:translate-x-0.5" />
 					</Button>
 					{#if project.link}

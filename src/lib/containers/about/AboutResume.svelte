@@ -1,4 +1,5 @@
 <script lang="ts">
+	//  I Only keep this as legacy, but we don't need it anymore
 	import { Card } from '$lib/components/ui/card';
 
 	import * as m from '$paraglide/messages';

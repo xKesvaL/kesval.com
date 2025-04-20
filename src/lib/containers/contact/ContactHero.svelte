@@ -58,7 +58,7 @@
 			<div class="mb-2 flex items-center gap-4">
 				<IconMessageCircle class="text-primary size-7" />
 				<h2 class="h3">
-					{m['contact.hero.contact_me']()}
+					{m['contact.hero.contact_us']()}
 				</h2>
 			</div>
 			<!-- Form content will go here -->

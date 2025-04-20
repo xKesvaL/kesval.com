@@ -58,7 +58,7 @@
 					<div class="grid gap-16 md:grid-cols-3">
 						<div class="flex flex-col">
 							<h4 class="h5 md:h4">
-								{m.my_email()}
+								{m.our_email()}
 							</h4>
 							<Link href={`mailto:${brand.email}`}>
 								{brand.email}
@@ -106,7 +106,7 @@
 						{m['footer.cta.secondary.description']()}
 					</p>
 					<Button variant="outline" href={route('/')}>
-						{m.contact_me()}
+						{m.contact_us()}
 						<IconArrowRight class="animate-bounce-x" />
 					</Button>
 				</div>
