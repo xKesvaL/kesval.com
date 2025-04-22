@@ -48,17 +48,3 @@ export const urlPatterns: UrlPatterns = [
 		})
 	}
 ];
-
-console.log(
-	localize({
-		fr: '/',
-		en: '/'
-	})
-);
-
-console.log(
-	localize({
-		fr: '/:path(.*)?',
-		en: '/:path(.*)?'
-	})
-);

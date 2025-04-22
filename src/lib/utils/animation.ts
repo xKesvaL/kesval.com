@@ -1,12 +1,15 @@
 import { dev } from '$app/environment';
 import { animate, inView } from 'motion';
 import type { Action } from 'svelte/action';
+import { debug } from './logger';
 
 export const animateAppear: Action<HTMLElement> = (element) => {
 	if (dev) {
 		// avoids breaking the animation on HMR
 		element.style = '--animate-appear-opacity: 1; --animate-appear-y: 0;';
 	}
+
+	debug('motion', 'animateAppearTriggered');
 
 	const stop = inView(
 		'.animate-appear',
@@ -27,6 +30,7 @@ export const animateAppear: Action<HTMLElement> = (element) => {
 
 	return {
 		destroy() {
+			debug('motion', 'animateAppearTriggered');
 			stop();
 		}
 	};
