@@ -7,6 +7,8 @@
 	import Analytics from '$lib/components/base/Analytics.svelte';
 	import { deepMerge, MetaTags } from 'svelte-meta-tags';
 	import HireCard from '$lib/components/layout/HireCard.svelte';
+	import AnimationDevTool from '$lib/components/dev/AnimationDevTool.svelte';
+	import { building, dev } from '$app/environment';
 
 	let { children, data } = $props();
 	let metaTags = $derived(deepMerge(data.baseMetaTags, page.data.pageMetaTags));
@@ -35,4 +37,8 @@
 	<div class="fixed right-4 bottom-4 z-10 flex">
 		<HireCard />
 	</div>
+
+	{#if !building && dev}
+		<AnimationDevTool />
+	{/if}
 {/key}
