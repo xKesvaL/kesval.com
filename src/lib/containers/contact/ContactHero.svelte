@@ -42,7 +42,7 @@
 	];
 </script>
 
-<section class="kcontainer min-h-screen-wo-nav section flex flex-col gap-8 px-4 md:gap-16">
+<section class="kcontainer section flex flex-col gap-8 px-4 md:gap-16">
 	<div class="flex max-w-4xl flex-col gap-6">
 		<h1>
 			{m['contact.hero.title']()}

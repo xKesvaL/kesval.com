@@ -290,7 +290,7 @@
 }
 
 @utility section-hero {
-	@apply kcontainer-nav-padding section mt-4 min-h-[calc(100dvh-var(--nav-height)-(var(--spacing)*8))] md:mt-10 md:min-h-[calc(100dvh-var(--nav-height)-(var(--spacing)*20))] lg:mt-14 lg:min-h-[calc(100dvh-var(--nav-height)-var(--nav-spacing)-(var(--spacing)*28))];
+	@apply kcontainer-nav-padding section min-h-[calc(100dvh-var(--nav-height))];
 }
 
 @utility h-nav {
@@ -302,7 +302,7 @@
 }
 
 @utility kcontainer-nav-padding {
-	@apply pt-[var(--nav-height)] lg:pt-[calc(var(--nav-height)+var(--nav-spacing))];
+	@apply mt-[var(--nav-height)] lg:mt-[calc(var(--nav-height)+var(--nav-spacing))];
 }
 
 @utility nav-image-drop {

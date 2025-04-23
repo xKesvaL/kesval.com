@@ -18,6 +18,7 @@
 	import * as Select from '$lib/components/ui/select/index.js';
 	import { Slider } from '../ui/slider';
 	import { onMount } from 'svelte';
+	import { IsMobile } from '$lib/hooks/is-mobile.svelte';
 
 	// Animation settings
 	let animDirection = $state('bottom');
@@ -81,14 +82,12 @@
 		});
 	}
 
-	function toggleOpen() {
-		animationControls.isOpen = !animationControls.isOpen;
-	}
-
 	const options = {
 		ease: 'easeInOut',
 		duration: 0.5
 	} as const;
+
+	const isMobile = new IsMobile();
 
 	onMount(() => {
 		press('#open-animation-dev-tool', () => {
@@ -118,8 +117,8 @@
 			animate(
 				'#animation-dev-tool',
 				{
-					width: '3rem',
-					height: '3rem'
+					width: isMobile.current ? '2.5rem' : '3rem',
+					height: isMobile.current ? '2.5rem' : '3rem'
 				},
 				options
 			);
@@ -149,12 +148,12 @@
 </script>
 
 {#if dev}
-	<div id="animation-dev-tool" class={cn('fixed top-4 right-4 z-50 ')}>
-		<Card.Root class={cn('border-primary overflow-hidden rounded-2xl shadow-lg')}>
+	<div id="animation-dev-tool" class={cn('fixed top-16 right-4 z-50 md:top-4 ')}>
+		<Card.Root class={cn('border-primary overflow-hidden rounded-lg shadow-lg')}>
 			<Card.Header
 				class={cn(
 					'flex flex-row items-center justify-between space-y-0 transition-all duration-500',
-					animationControls.isOpen ? 'p-4' : 'p-0'
+					animationControls.isOpen ? 'py-2 pr-2 pl-4' : 'p-0'
 				)}
 			>
 				<Button
@@ -162,12 +161,14 @@
 					size={animationControls.isOpen ? 'default' : 'icon'}
 					class={cn(
 						'flex rounded-none border-none',
-						animationControls.isOpen ? 'bg-transparent' : ' bg-card size-12 shadow-md'
+						animationControls.isOpen
+							? 'bg-transparent px-0 py-0'
+							: ' bg-card size-10 shadow-md md:size-12'
 					)}
 					id="open-animation-dev-tool"
 				>
 					<IconWand class="text-primary size-5" />
-					<h4 class={cn('text-sm font-medium', animationControls.isOpen ? '' : 'hidden')}>
+					<h4 class={cn('w-max text-sm font-medium', animationControls.isOpen ? '' : 'hidden')}>
 						Animation Controls
 					</h4>
 				</Button>

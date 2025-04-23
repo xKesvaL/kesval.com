@@ -13,7 +13,7 @@
 	} from '@tabler/icons-svelte';
 </script>
 
-<section class="section-hero min-h-screen items-center justify-center">
+<section class="section-hero items-center justify-center">
 	<div class="absolute inset-0 isolate opacity-3 blur-2xl contain-strict">
 		<div
 			class="absolute top-0 left-1/2 h-320 w-140 -translate-x-140 -translate-y-80 -rotate-45 rounded-full bg-[radial-gradient(68.54%_68.72%_at_55.02%_31.46%,var(--color-primary)_0,var(--color-primary)_50%,var(--color-primary)]"

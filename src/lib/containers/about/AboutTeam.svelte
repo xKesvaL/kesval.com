@@ -60,12 +60,12 @@
 				},
 				{
 					icon: IconBrandLinkedin,
-					href: brand.linkedin,
+					href: 'https://linkedin.com/in/jordan-abeddou/',
 					label: 'LinkedIn'
 				},
 				{
 					icon: IconMail,
-					href: `mailto:${brand.email}`,
+					href: `mailto:jordan@kesval.com`,
 					label: 'Email'
 				}
 			]
@@ -89,12 +89,12 @@
 				},
 				{
 					icon: IconBrandLinkedin,
-					href: 'https://www.linkedin.com/in/thibaud-reitzer-278005265/',
+					href: 'https://linkedin.com/in/thibaud-reitzer-278005265/',
 					label: 'LinkedIn'
 				},
 				{
 					icon: IconMail,
-					href: '#',
+					href: 'mailto:thibaud@kesval.com',
 					label: 'Email'
 				}
 			]
@@ -146,7 +146,7 @@
 						<div class="relative flex md:items-center md:justify-center md:py-6">
 							<div class="relative gap-4 max-md:flex max-md:w-full">
 								<div
-									class="bg-background border-primary relative flex h-48 w-48 grow overflow-hidden rounded-2xl border-2 transition-all duration-500 ease-out md:h-56 md:w-56 md:rounded-full md:border-4"
+									class="bg-background border-primary relative flex h-48 grow overflow-hidden rounded-2xl border-2 transition-all duration-500 ease-out md:h-56 md:w-56 md:rounded-full md:border-4"
 								>
 									<enhanced:img
 										src={member.image}

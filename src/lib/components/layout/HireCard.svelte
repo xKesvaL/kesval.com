@@ -16,7 +16,7 @@
 				{m['brand.name']()}
 			</h3>
 			<p class="text-sm">
-				{m['home.hero.full_stack_development']()}
+				{m['brand.doing']()}
 			</p>
 		</div>
 		<Button class="button h-12 rounded-3xl">

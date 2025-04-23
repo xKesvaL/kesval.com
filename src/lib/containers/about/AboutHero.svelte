@@ -25,23 +25,18 @@
 	};
 </script>
 
-<section class="kcontainer section-hero min-h-screen justify-center px-4">
+<section class="section-hero kcontainer justify-center px-4 md:pt-12 md:pb-16 lg:pt-12 lg:pb-16">
 	<div class="flex flex-col items-start gap-4 md:col-span-5">
-		<div class="flex flex-col gap-8">
-			<h1 class="animate-appear big">
+		<div class="flex flex-col gap-1">
+			<h1 class="animate-appear md:big">
 				{m['about.hero.title']()}
 			</h1>
-			<span class="animate-appear text-2xl">
+			<span class="animate-appear text-xl md:text-2xl">
 				{m['about.hero.subtitle']()}
 			</span>
-			<div class="flex flex-col gap-4">
-				<p class="text-muted-foreground animate-appear max-w-prose text-lg">
-					{m['about.hero.description']()}
-				</p>
-				<p class="text-muted-foreground animate-appear max-w-prose text-lg">
-					{m['about.hero.additional_description']()}
-				</p>
-			</div>
+			<p class="text-muted-foreground animate-appear mt-3 max-w-prose md:text-lg">
+				{m['about.hero.description']()}
+			</p>
 		</div>
 	</div>
 	<div

@@ -67,8 +67,7 @@
 		"hero": {
 			"title": "Qui sommes-nous ?",
 			"subtitle": "Une équipe de passionnés au service de votre transformation digitale.",
-			"description": "Nous sommes un studio de développement web spécialisé dans la création de sites internet et d'applications web. Notre équipe possède une solide expérience en développement front-end et back-end, ainsi qu'en design web. Nous aidons à concrétiser les idées en ligne.",
-			"additional_description": "Notre mission est de transformer vos idées en solutions digitales innovantes et performantes. Nous croyons en l'importance d'une approche humaine et personnalisée pour chaque projet.",
+			"description": "Nous sommes un studio de développement web spécialisé dans la création de sites internet et d'applications web. Notre équipe possède une solide expérience en développement front-end et back-end, ainsi qu'en design web. Nous croyons en l'importance d'une approche humaine et personnalisée pour chaque projet.",
 			"experience": "ans d'expertise",
 			"experience_description": "Notre équipe conçoit des solutions web depuis plus de 3 ans, développant des sites et applications pour une clientèle diversifiée.",
 			"projects": "projets réalisés",
@@ -160,7 +159,8 @@
 		"name": "KesvaL Studio",
 		"name_short": "KesvaL",
 		"the_studio": "Le Studio",
-		"connect": "Réseaux"
+		"connect": "Réseaux",
+		"doing": "Développement web & mobile"
 	},
 	"footer": {
 		"copyright": "© {year} {brand}. Tous droits réservés.",
