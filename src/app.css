@@ -47,6 +47,7 @@
 	--animate-shine-pulse: shine-pulse 2s linear infinite;
 	--animate-aurora: aurora 60s linear infinite;
 	--animate-bounce-x: bounce-x 1.2s ease-in-out infinite;
+	--animate-bounce-y: bounce-y 0.9s ease-in-out infinite;
 	--animate-marquee-left: marquee-left var(--marquee-duration, 60s) linear infinite;
 	--animate-marquee-up: marquee-up var(--marquee-duration, 60s) linear infinite;
 	--animate-gradient: gradient 8s linear infinite;
@@ -134,6 +135,18 @@
 		}
 	}
 
+	@keyframes bounce-y {
+		0%,
+		100% {
+			transform: translateY(-25%);
+			animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+		}
+		50% {
+			transform: none;
+			animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+		}
+	}
+
 	@keyframes marquee-left {
 		0% {
 			transform: translateX(0);
@@ -174,6 +187,7 @@
 
 	--animation-appear-opacity: 0;
 	--animation-appear-y: 100px;
+	--animation-appear-delay: 0.1;
 }
 
 /* Base */
@@ -193,6 +207,10 @@
 
 	h1 {
 		@apply h1;
+
+		&.big {
+			@apply h1-big;
+		}
 	}
 
 	h2 {
@@ -210,6 +228,10 @@
 	p {
 		@apply leading-relaxed;
 	}
+
+	picture:has(img.parent-contents) {
+		@apply contents;
+	}
 }
 
 @utility suptitle {
@@ -218,6 +240,10 @@
 
 @utility h1 {
 	@apply text-3xl leading-snug font-bold md:text-4xl lg:text-[44px];
+}
+
+@utility h1-big {
+	@apply text-4xl leading-snug font-bold md:text-5xl;
 }
 
 @utility h2 {
@@ -277,30 +303,6 @@
 
 @utility kcontainer-nav-padding {
 	@apply pt-[var(--nav-height)] lg:pt-[calc(var(--nav-height)+var(--nav-spacing))];
-}
-
-@utility shadow-cool {
-	@apply shadow-[0_4px_20px_rgba(0,0,0,0.03),_0_1px_6px_rgba(0,0,0,0.02)] transition-all duration-200 hover:shadow-[0_8px_30px_rgba(0,0,0,0.05)];
-}
-
-@utility shadow-cool-lg {
-	@apply shadow-[0_4px_20px_rgba(0,0,0,0.075),_0_1px_6px_rgba(0,0,0,0.075)] transition-all duration-200 hover:shadow-[0_8px_30px_rgba(0,0,0,0.075)];
-}
-
-@utility shadow-cool-filter {
-	filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.03)) drop-shadow(0 1px 6px rgba(0, 0, 0, 0.02));
-
-	&:hover {
-		filter: drop-shadow(0 8px 30px rgba(0, 0, 0, 0.05));
-	}
-}
-
-@utility shadow-cool-filter-lg {
-	filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.075)) drop-shadow(0 1px 6px rgba(0, 0, 0, 0.075));
-
-	&:hover {
-		filter: drop-shadow(0 8px 30px rgba(0, 0, 0, 0.075));
-	}
 }
 
 @utility nav-image-drop {

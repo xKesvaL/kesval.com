@@ -24,7 +24,7 @@
 			]
 		},
 		brand: {
-			title: m['brand.name_short'](),
+			title: m['brand.the_studio'](),
 			links: navigationLinks
 		},
 		connect: {
@@ -35,9 +35,9 @@
 </script>
 
 <footer class="via-background to-background bg-gradient-to-b from-transparent via-10%">
-	<div class="kcontainer section gapc-lg flex flex-col px-4">
+	<div class="kcontainer section gapc-lg lg:gapc-xl flex flex-col px-4">
 		<!-- CTA -->
-		<div class="bg-primary text-primary-foreground section rounded-2xl px-8">
+		<div class="bg-primary text-primary-foreground section rounded-2xl px-8 max-md:py-16">
 			<div class="mx-auto flex max-w-4xl flex-col items-start gap-4">
 				<div class="flex flex-col gap-4 md:gap-8">
 					<h2 class="h3 md:h2">
@@ -119,12 +119,12 @@
 		<div class="flex flex-col justify-between gap-4 md:flex-row md:items-center">
 			<a href={route('/')} aria-label="home" class="flex items-center gap-4">
 				<enhanced:img src="$assets/logo.avif" alt="An alt text" class="size-10 rounded-lg" />
-				<span class="text-2xl font-medium">{m['brand.name_short']()}.</span>
+				<span class="text-2xl font-medium">{m['brand.name']()}.</span>
 			</a>
 			<span class="text-muted-foreground text-sm">
 				{m['footer.copyright']({
 					year: new Date().getFullYear(),
-					brand: m['brand.name_short']()
+					brand: m['brand.name']()
 				})}
 			</span>
 		</div>

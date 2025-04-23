@@ -55,7 +55,7 @@
 		class={cn(
 			'flex h-full w-full items-center justify-between transition-all duration-300 lg:rounded-2xl',
 			navigation.state === 'open' && 'px-4',
-			navigation.state === 'closed' && 'bg-background shadow-cool-lg px-4 delay-[300ms]'
+			navigation.state === 'closed' && 'bg-background px-4 shadow-lg delay-[300ms]'
 		)}
 	>
 		<div class="flex h-full w-full items-center justify-between rounded-[15px]">

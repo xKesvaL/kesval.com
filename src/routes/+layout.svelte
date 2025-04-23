@@ -6,6 +6,7 @@
 	import { page } from '$app/state';
 	import Analytics from '$lib/components/base/Analytics.svelte';
 	import { deepMerge, MetaTags } from 'svelte-meta-tags';
+	import HireCard from '$lib/components/layout/HireCard.svelte';
 
 	let { children, data } = $props();
 	let metaTags = $derived(deepMerge(data.baseMetaTags, page.data.pageMetaTags));
@@ -30,4 +31,8 @@
 		{/key}
 	</main>
 	<Footer />
+
+	<div class="fixed right-4 bottom-4 z-10 flex">
+		<HireCard />
+	</div>
 {/key}

@@ -66,19 +66,38 @@
 	"about": {
 		"hero": {
 			"title": "Qui sommes-nous ?",
+			"subtitle": "Une équipe de passionnés au service de votre transformation digitale.",
 			"description": "Nous sommes un studio de développement web spécialisé dans la création de sites internet et d'applications web. Notre équipe possède une solide expérience en développement front-end et back-end, ainsi qu'en design web. Nous aidons à concrétiser les idées en ligne.",
+			"additional_description": "Notre mission est de transformer vos idées en solutions digitales innovantes et performantes. Nous croyons en l'importance d'une approche humaine et personnalisée pour chaque projet.",
 			"experience": "ans d'expertise",
 			"experience_description": "Notre équipe conçoit des solutions web depuis plus de 3 ans, développant des sites et applications pour une clientèle diversifiée.",
 			"projects": "projets réalisés",
 			"projects_description": "Nous avons réalisé de nombreux projets, des sites vitrines aux applications complexes et plateformes e-commerce.",
 			"clients": "clients satisfaits",
 			"clients_description": "Nous sommes fiers de permettre à nos clients de réussir dans leur transformation digitale et de soutenir leur croissance."
+		},
+		"team": {
+			"suptitle": "Notre équipe",
+			"title": "Une équipe de passionnés",
+			"description": "Nous sommes une équipe de développeurs et de designers qui travaillent ensemble pour donner vie à vos idées et besoins.",
+			"members": {
+				"jordan": {
+					"level": "Co-Associé",
+					"role": "Développeur Fullstack",
+					"description": "Passionné par la programmiaoution, je souhaite rendre le web miaoueilleur pour tous. J'adore les chats."
+				},
+				"thibaud": {
+					"level": "Co-Associé",
+					"role": "Designer UI/UX",
+					"description": "Je fais en sorte que chaque projet soit plus beau que mon crâne et aussi simple d'utilisation qu'il est lisse."
+				}
+			}
 		}
 	},
 	"contact": {
 		"hero": {
 			"title": "Contact",
-			"subtitle": "Vous avez un projet en tête ? Collaborons pour le concrétiser.",
+			"subtitle": "Vous avez un projet en tête ? Collaborons pour le concrétiser.",
 			"contact_us": "Contactez-nous",
 			"get_in_touch": {
 				"title": "Entrons en contact",
@@ -140,6 +159,7 @@
 	"brand": {
 		"name": "KesvaL Studio",
 		"name_short": "KesvaL",
+		"the_studio": "Le Studio",
 		"connect": "Réseaux"
 	},
 	"footer": {
@@ -185,5 +205,14 @@
 			"title": "Contact"
 		}
 	},
-	"start_now": "Je me lance"
+	"start_now": "Je me lance",
+	"skills": {
+		"front_end": "Front-end",
+		"back_end": "Back-end",
+		"ui_ux": "UI/UX",
+		"devops": "DevOps",
+		"cms": "CMS",
+		"figma": "Figma",
+		"project_management": "Gestion de projet"
+	}
 }

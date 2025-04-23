@@ -1,6 +1,10 @@
 <script lang="ts">
 	import AboutHero from '$lib/containers/about/AboutHero.svelte';
-	import AboutResume from '$lib/containers/about/AboutResume.svelte';
+	import AboutTeam from '$lib/containers/about/AboutTeam.svelte';
+	import { animateAppear } from '$lib/utils/animation';
 </script>
 
-<AboutHero />
+<div use:animateAppear>
+	<AboutHero />
+	<AboutTeam />
+</div>

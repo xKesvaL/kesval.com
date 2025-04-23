@@ -6,7 +6,7 @@ import { debug } from './logger';
 export const animateAppear: Action<HTMLElement> = (element) => {
 	if (dev) {
 		// avoids breaking the animation on HMR
-		element.style = '--animate-appear-opacity: 1; --animate-appear-y: 0;';
+		element.style = '--animation-appear-opacity: 1; --animation-appear-y: 0;';
 	}
 
 	debug('motion', 'animateAppearTriggered');
@@ -18,8 +18,9 @@ export const animateAppear: Action<HTMLElement> = (element) => {
 				element as HTMLElement,
 				{ opacity: [0, 1], y: [100, 0] },
 				{
-					duration: 0.5,
-					ease: 'circOut'
+					duration: 0.75,
+					ease: 'circOut',
+					delay: Number(getComputedStyle(element).getPropertyValue('--animation-appear-delay'))
 				}
 			);
 		},
@@ -30,8 +31,11 @@ export const animateAppear: Action<HTMLElement> = (element) => {
 
 	return {
 		destroy() {
-			debug('motion', 'animateAppearTriggered');
+			debug('motion', 'animateAppearDestroyed');
 			stop();
+		},
+		update() {
+			debug('motion', 'animateAppearUpdated');
 		}
 	};
 };

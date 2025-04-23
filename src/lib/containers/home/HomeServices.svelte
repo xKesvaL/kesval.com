@@ -394,7 +394,7 @@
 		</div>
 
 		<!-- CTA -->
-		<div class="flex justify-center pt-8">
+		<div class="animate-appear flex justify-center pt-8">
 			<Button class="group gap-2" size="lg" href={localizeHref(route('/contact'))}>
 				Start your journey today
 				<IconArrowRight class="h-4 w-4 transition-transform group-hover:translate-x-1" />
