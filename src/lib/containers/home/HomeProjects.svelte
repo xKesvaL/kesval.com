@@ -36,7 +36,7 @@
 				</span>
 			</AnimatedBadge>
 			<h2
-				class="from-foreground to-muted-foreground animate-appear bg-gradient-to-br bg-clip-text text-4xl font-bold text-transparent sm:text-5xl"
+				class="from-foreground to-muted-foreground animate-appear bg-gradient-to-br bg-clip-text font-bold text-transparent"
 			>
 				{m['home.projects.title']()}
 			</h2>

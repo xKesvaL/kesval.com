@@ -240,7 +240,7 @@
 				</span>
 			</AnimatedBadge>
 			<h2
-				class="from-foreground to-muted-foreground animate-appear bg-gradient-to-br bg-clip-text text-4xl font-bold text-transparent sm:text-5xl"
+				class="from-foreground to-muted-foreground animate-appear bg-gradient-to-br bg-clip-text text-transparent"
 			>
 				Your Project Journey
 			</h2>
@@ -328,7 +328,7 @@
 											<Badge variant="outline" class="bg-primary/5 border-primary/20 w-fit">
 												Step {step.step} of {serviceSteps.length}
 											</Badge>
-											<h3 class="text-2xl font-semibold tracking-tight">{step.title}</h3>
+											<h3 class="h4 tracking-tight">{step.title}</h3>
 
 											<p class="text-muted-foreground">{step.description}</p>
 										</div>

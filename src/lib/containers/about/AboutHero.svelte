@@ -35,7 +35,9 @@
 <section class="section-hero kcontainer justify-center px-4 md:pt-12 md:pb-16 lg:pt-12 lg:pb-16">
 	<div class="flex flex-col items-start gap-4 md:col-span-5">
 		<div class="flex flex-col gap-1">
-			<h1 class="animate-appear md:big">
+			<h1
+				class="animate-appear big from-foreground to-muted-foreground bg-gradient-to-b bg-clip-text text-transparent"
+			>
 				{m['about.hero.title']()}
 			</h1>
 			<span class="animate-appear text-xl md:text-2xl">
@@ -47,7 +49,7 @@
 		</div>
 	</div>
 	<div
-		class="border-border/50 to-muted/10 after:bg-[radial-gradient(circle_at_center,theme(colors.primary.DEFAULT/3%)_0%,transparent_70%),radial-gradient(circle_at_bottom_right,theme(colors.secondary.DEFAULT/2%)_0%,transparent_60%)] shadow-cool relative grid gap-4 rounded-2xl border bg-gradient-to-br from-white via-white px-8 pt-2 pb-8 transition-all duration-300 after:absolute after:inset-0 after:-z-10 after:rounded-2xl after:opacity-40 md:grid-cols-3 md:gap-8"
+		class="border-primary to-muted/10 after:bg-[radial-gradient(circle_at_center,theme(colors.primary.DEFAULT/3%)_0%,transparent_70%),radial-gradient(circle_at_bottom_right,theme(colors.secondary.DEFAULT/2%)_0%,transparent_60%)] shadow-cool relative grid gap-4 rounded-2xl border bg-gradient-to-br from-white via-white px-8 pt-2 pb-8 transition-all duration-300 after:absolute after:inset-0 after:-z-10 after:rounded-2xl after:opacity-40 md:grid-cols-3 md:gap-8"
 		style:--animation-appear-delay="0.5"
 	>
 		{#each Object.keys(values) as key (key)}
@@ -63,14 +65,14 @@
 							locales={getLocale()}
 							plugins={[continuous]}
 							value={values[key as keyof Values]}
-							class="text-7xl font-bold md:text-8xl"
+							class="from-primary bg-gradient-to-br to-[color-mix(in_oklch,var(--color-primary),var(--color-foreground)_40%)] bg-clip-text text-7xl font-extrabold text-transparent md:text-8xl"
 						/>
 						{#if key === 'experience'}
-							<IconAward class="size-16 md:size-20" stroke={1.5} />
+							<IconAward class="size-16 md:size-22" stroke={1.5} />
 						{:else if key === 'projects'}
-							<IconClipboardCheck class="size-16 md:size-20" stroke={1.5} />
+							<IconClipboardCheck class="size-16 md:size-22" stroke={1.5} />
 						{:else if key === 'clients'}
-							<IconUserStar class="size-16 md:size-20" stroke={1.5} />
+							<IconUserStar class="size-16 md:size-22" stroke={1.5} />
 						{/if}
 					</div>
 					<h3>

@@ -6,7 +6,7 @@
 	import { IconExternalLink, IconArrowRight } from '@tabler/icons-svelte';
 	import { cn } from '$lib/utils/ui';
 	import { translate } from '$lib/utils/i18n';
-	import * as m from "$paraglide/messages"
+	import * as m from '$paraglide/messages';
 
 	type Props = {
 		project: Project;
@@ -26,7 +26,8 @@
 			name: await translate(`projects.${project.id}.name`),
 			description: await translate(`projects.${project.id}.description`)
 		};
-	};2
+	};
+	2;
 </script>
 
 <div
@@ -94,7 +95,7 @@
 								<project.icon class="size-5" style={`color: ${project.colorForeground}`} />
 							</div>
 						{/if}
-						<h3 class="text-2xl font-bold">{projectI18N.name}</h3>
+						<h3 class="h4">{projectI18N.name}</h3>
 					</div>
 					{#if projectI18N.description}
 						<p class="text-muted-foreground mt-2">{projectI18N.description}</p>
@@ -109,7 +110,7 @@
 						href={localizeHref(route('/projets/[projectId]', { projectId: project.id }))}
 					>
 						<span>
-							{m["projects.view_details"]()}
+							{m['projects.view_details']()}
 						</span>
 						<IconArrowRight class=" transition-transform group-hover:translate-x-0.5" />
 					</Button>

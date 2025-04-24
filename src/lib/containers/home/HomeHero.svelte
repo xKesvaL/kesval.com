@@ -36,7 +36,7 @@
 			</AnimatedBadge>
 		</div>
 		<h1
-			class="animate-appear from-foreground to-muted-foreground bg-gradient-to-br bg-clip-text text-4xl leading-tight font-bold text-transparent sm:text-5xl md:text-6xl lg:text-7xl"
+			class="animate-appear from-foreground to-muted-foreground bg-gradient-to-br bg-clip-text leading-tight font-bold text-transparent"
 		>
 			{m['home.hero.title']()}
 		</h1>

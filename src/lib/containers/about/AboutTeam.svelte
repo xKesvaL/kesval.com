@@ -27,6 +27,7 @@
 		id: string;
 		image: Picture;
 		name: string;
+		level: string;
 		role: string;
 		bio: string;
 		skills: Array<{
@@ -45,6 +46,7 @@
 			id: 'jordan',
 			image: ImageJordan,
 			name: 'Jordan',
+			level: m['about.team.members.jordan.level'](),
 			role: m['about.team.members.jordan.role'](),
 			bio: m['about.team.members.jordan.description'](),
 			skills: [
@@ -74,6 +76,7 @@
 			id: 'thibaud',
 			image: ImageThibaud,
 			name: 'Thibaud',
+			level: m['about.team.members.thibaud.level'](),
 			role: m['about.team.members.thibaud.role'](),
 			bio: m['about.team.members.thibaud.description'](),
 			skills: [
@@ -185,7 +188,7 @@
 									{member.name}
 								</h3>
 								<p class="text-muted-foreground text-lg leading-relaxed tracking-wide">
-									{member.role}
+									{member.level}, {member.role}
 								</p>
 								<div class="from-primary to-primary/80 mt-6 h-[1px] w-32 bg-gradient-to-r"></div>
 							</div>
