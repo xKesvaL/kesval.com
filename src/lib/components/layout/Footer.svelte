@@ -40,7 +40,7 @@
 		<div class="bg-primary text-primary-foreground section rounded-2xl px-8 max-md:py-16">
 			<div class="mx-auto flex max-w-4xl flex-col items-start gap-4">
 				<div class="flex flex-col gap-4 md:gap-8">
-					<h2 class="h3 md:h2">
+					<h2 class="h3">
 						{m['footer.cta.title']()}
 					</h2>
 					<div class="flex gap-2">
@@ -52,12 +52,12 @@
 				</div>
 				<div class="bg-primary-foreground my-4 h-[1px] w-full md:my-8"></div>
 				<div class="flex flex-col gap-4 md:gap-8">
-					<h3 class="h4 md:h3">
+					<h3 class="h4">
 						{m['footer.cta.other']()}
 					</h3>
 					<div class="grid gap-16 md:grid-cols-3">
 						<div class="flex flex-col">
-							<h4 class="h5 md:h4">
+							<h4 class="h5">
 								{m.our_email()}
 							</h4>
 							<Link href={`mailto:${brand.email}`}>

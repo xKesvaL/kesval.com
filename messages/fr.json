@@ -181,12 +181,27 @@
 		},
 		"not_found": "Projet {projectId} non trouvé",
 		"view_all": "Voir tous les projets",
-		"view_details": "Voir les détails"
+		"view_details": "Voir les détails",
+		"title": "Projets",
+		"description": "Découvrez nos projets récents et les solutions que nous avons apportées à nos clients.",
+		"placeholder": {
+			"search": "Rechercher un projet...",
+			"no_results": "Aucun projet trouvé.",
+			"no_results_description": "Essayez d'autres mots-clés ou vérifiez l'orthographe."
+		}
 	},
 	"common": {
 		"view_case_study": "Voir l'étude de cas",
 		"visit_site": "Visiter le site",
-		"others": "Autres"
+		"others": "Autres",
+		"sort_newest": "Trier par plus récent",
+		"sort_oldest": "Trier par plus ancien",
+		"sort_az": "Trier de A à Z",
+		"sort_za": "Trier de Z à A",
+		"sort_by": "Trier par",
+		"filter_tags": "Filtrer par tags",
+		"clear_filters": "Effacer les filtres",
+		"clear_filters_button": "Effacer"
 	},
 	"meta": {
 		"home": {

@@ -1,11 +1,14 @@
 <script lang="ts">
 	import inView from '$lib/actions/inView';
+	import { IsMobile } from '$lib/hooks/is-mobile.svelte';
 	import { translate } from '$lib/utils/i18n';
 	import * as m from '$paraglide/messages';
 	import { getLocale } from '$paraglide/runtime';
 	import NumberFlow, { continuous } from '@number-flow/svelte';
 	import { IconAward, IconClipboardCheck, IconUserStar } from '@tabler/icons-svelte';
 	import dayjs from 'dayjs';
+
+	const isMobile = new IsMobile();
 
 	type Values = {
 		experience: number;
@@ -26,9 +29,12 @@
 	});
 
 	const updateValues = (key: keyof Values) => {
-		setTimeout(() => {
-			values[key] = actualValues[key];
-		}, 500);
+		setTimeout(
+			() => {
+				values[key] = actualValues[key];
+			},
+			isMobile.current ? 1000 : 500
+		);
 	};
 </script>
 
