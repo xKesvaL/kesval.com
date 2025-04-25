@@ -7,7 +7,6 @@
 	import Analytics from '$lib/components/base/Analytics.svelte';
 	import { deepMerge, MetaTags } from 'svelte-meta-tags';
 	import HireCard from '$lib/components/layout/HireCard.svelte';
-	import AnimationDevTool from '$lib/components/dev/AnimationDevTool.svelte';
 	import { building, dev } from '$app/environment';
 
 	let { children, data } = $props();
@@ -39,6 +38,8 @@
 	</div>
 
 	{#if !building && dev}
-		<AnimationDevTool />
+		{#await import('$lib/components/dev/AnimationDevTool.svelte') then Module}
+			<Module.default />
+		{/await}
 	{/if}
 {/key}

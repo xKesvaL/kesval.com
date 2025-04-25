@@ -14,47 +14,24 @@
 	let searchTerm = $state('');
 	let selectedTags = $state<string[]>([]);
 	let sortBy = $state<SortOption>('date-desc');
-	let filteredProjectsPromise = $state(filterProjects(projects, { sortBy })); // Initial load
+	let filteredProjectsPromise = $derived(
+		filterProjects(projects, { sortBy, searchTerm, selectedTags })
+	); // Initial load
 
-	// Debounced search handler
-	const handleSearch = useDebounce(() => {
-		updateFilteredProjects();
-	}, 300); // 300ms debounce
-
-	// Function to update filtered projects based on state
-	const updateFilteredProjects = () => {
-		filteredProjectsPromise = filterProjects(projects, {
-			searchTerm: searchTerm,
-			selectedTags: selectedTags,
-			sortBy: sortBy
-		});
-	};
-
-	// Handle tag selection toggle
 	const toggleTag = (tag: string) => {
 		if (selectedTags.includes(tag)) {
 			selectedTags = selectedTags.filter((t) => t !== tag);
 		} else {
 			selectedTags = [...selectedTags, tag];
 		}
-		updateFilteredProjects();
 	};
 
 	// Handle sort change
 	const handleSortChange = (value: string) => {
 		if (value) {
 			sortBy = value;
-			updateFilteredProjects();
 		}
 	};
-
-	// Reactive statement to update when sortBy changes (needed for Select component binding)
-	$effect(() => {
-		// This effect runs when sortBy changes due to direct state mutation elsewhere if needed,
-		// but handleSortChange covers the Select component interaction.
-		// We might not strictly need this effect if all updates go through handleSortChange.
-		updateFilteredProjects();
-	});
 
 	const sortOptions: { value: SortOption; label: string }[] = [
 		{ value: 'date-desc', label: m['common.sort_newest']() },
@@ -103,7 +80,6 @@
 					placeholder={m['projects.placeholder.search']()}
 					class="pl-10"
 					bind:value={searchTerm}
-					oninput={handleSearch}
 				/>
 				{#if searchTerm}
 					<Button
@@ -112,7 +88,6 @@
 						class="absolute top-1/2 right-1 h-7 w-7 -translate-y-1/2"
 						onclick={() => {
 							searchTerm = '';
-							updateFilteredProjects();
 						}}
 					>
 						<IconX class="h-4 w-4" />
@@ -141,7 +116,7 @@
 		</div>
 
 		<!-- Tag Filters -->
-		<div class="flex flex-wrap items-center gap-2" use:autoAnimate>
+		<div class="flex flex-wrap items-center gap-2">
 			<span class="text-muted-foreground text-sm font-medium">{m['common.filter_tags']()}:</span>
 			{#each allTags as tag (tag)}
 				{@const isSelected = selectedTags.includes(tag)}
@@ -163,7 +138,6 @@
 					class="h-auto px-2 py-0.5 text-xs"
 					onclick={() => {
 						selectedTags = [];
-						updateFilteredProjects();
 					}}
 				>
 					{m['common.clear_filters']()}
@@ -203,7 +177,6 @@
 							onclick={() => {
 								searchTerm = '';
 								selectedTags = [];
-								updateFilteredProjects();
 							}}
 						>
 							{m['common.clear_filters_button']()}
