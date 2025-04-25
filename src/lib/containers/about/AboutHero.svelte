@@ -71,7 +71,7 @@
 							locales={getLocale()}
 							plugins={[continuous]}
 							value={values[key as keyof Values]}
-							class="from-primary bg-gradient-to-br to-[color-mix(in_oklch,var(--color-primary),var(--color-foreground)_40%)] bg-clip-text text-7xl font-extrabold text-transparent md:text-8xl"
+							class="from-primary to-primary-darker bg-gradient-to-br bg-clip-text text-7xl font-extrabold text-transparent md:text-8xl"
 						/>
 						{#if key === 'experience'}
 							<IconAward class="size-16 md:size-22" stroke={1.5} />

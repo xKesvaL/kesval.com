@@ -27,7 +27,7 @@ export const projects: Project[] = [
 		client: 'KesvaL Studio™',
 		icon: IconBrandBaidu,
 		logo: logoKesval,
-		tags: ['SvelteKit', 'TypeScript', 'TailwindCSS', 'Portfolio'],
+		tags: ['Portfolio'],
 		description:
 			"Un projet de développement d'une application web. Un projet de développement d'une application web.",
 		images: [
@@ -46,7 +46,7 @@ export const projects: Project[] = [
 		id: 'project_2',
 		client: 'Client',
 		icon: IconBrandBaidu,
-		tags: ['Web App', 'API', 'Database'],
+		tags: ['Web App'],
 		description:
 			"Un projet de développement d'une application web. Un projet de développement d'une application web.",
 		images: [
@@ -61,7 +61,7 @@ export const projects: Project[] = [
 		id: 'project_3',
 		client: 'Client',
 		icon: IconBrandBaidu,
-		tags: ['Mobile App', 'React Native'],
+		tags: ['Mobile App'],
 		description:
 			"Un projet de développement d'une application web. Un projet de développement d'une application web.",
 		images: [
@@ -76,7 +76,7 @@ export const projects: Project[] = [
 		id: 'project_4',
 		client: 'Client',
 		icon: IconBrandBaidu,
-		tags: ['Web App', 'E-commerce'],
+		tags: ['E-commerce'],
 		description:
 			"Un projet de développement d'une application web. Un projet de développement d'une application web.",
 		images: ['https://picsum.photos/720/720?random=20']
@@ -85,7 +85,7 @@ export const projects: Project[] = [
 		id: 'project_5',
 		client: 'Client',
 		icon: IconBrandBaidu,
-		tags: ['Design System', 'UI/UX'],
+		tags: ['Design System'],
 		description:
 			"Un projet de développement d'une application web. Un projet de développement d'une application web.",
 		images: ['https://picsum.photos/720/720?random=35']
@@ -94,7 +94,7 @@ export const projects: Project[] = [
 		id: 'project_6',
 		client: 'Client',
 		icon: IconBrandBaidu,
-		tags: ['Web App', 'SaaS'],
+		tags: ['SaaS'],
 		description:
 			"Un projet de développement d'une application web. Un projet de développement d'une application web.",
 		images: ['https://picsum.photos/720/720?random=40']
@@ -103,7 +103,7 @@ export const projects: Project[] = [
 		id: 'project_7',
 		client: 'Client',
 		icon: IconBrandBaidu,
-		tags: ['Data Visualization', 'Dashboard'],
+		tags: ['Dashboard'],
 		description:
 			"Un projet de développement d'une application web. Un projet de développement d'une application web.",
 		images: ['https://picsum.photos/720/720?random=42']
@@ -112,7 +112,7 @@ export const projects: Project[] = [
 		id: 'project_8',
 		client: 'Client',
 		icon: IconBrandBaidu,
-		tags: ['Web App', 'Community Platform'],
+		tags: ['Community Platform'],
 		description:
 			"Un projet de développement d'une application web. Un projet de développement d'une application web.",
 		images: ['https://picsum.photos/720/720?random=45']

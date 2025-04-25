@@ -58,7 +58,7 @@
 		<div class="bgc-grid h-full w-full"></div>
 	</div>
 
-	<div class="kcontainer flex flex-col gap-12 px-4">
+	<div class="kcontainer flex w-full flex-col gap-12 px-4">
 		<div class="flex flex-col items-center text-center">
 			<h1 class="mb-4 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
 				{m['projects.title']()}
@@ -71,7 +71,7 @@
 		<!-- Filters and Search -->
 		<div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
 			<!-- Search Input -->
-			<div class="relative w-full md:max-w-sm">
+			<div class="relative md:max-w-sm">
 				<IconSearch
 					class="text-muted-foreground absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2"
 				/>

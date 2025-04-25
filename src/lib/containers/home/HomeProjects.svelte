@@ -46,7 +46,7 @@
 		</div>
 
 		<!-- Projects showcase -->
-		<div class="flex flex-col gap-24">
+		<div class="flex flex-col gap-16 md:gap-24 lg:gap-32">
 			{#each showedProjects as project, i (project.id)}
 				<div class="group animate-appear relative" class:md:flex-row-reverse={i % 2 === 1}>
 					<ProjectCard {project} index={i} type="highlighted" />
