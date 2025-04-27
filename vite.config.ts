@@ -38,7 +38,10 @@ export default defineConfig({
 			'@tabler/icons-svelte/icons': resolve(
 				__dirname,
 				'node_modules/@tabler/icons-svelte/dist/icons'
-			)
+			),
+			$assets: './src/assets',
+			$paraglide: './src/lib/paraglide',
+			'$content/*': '.velite/*'
 		}
 	},
 	server: {
