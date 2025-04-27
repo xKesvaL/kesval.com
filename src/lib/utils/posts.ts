@@ -8,8 +8,15 @@ export const getPostMetadata = (slug: string) => {
 	return posts.find((post) => post.slug?.startsWith(slug));
 };
 
-export const getAllPosts = () => {
-	return posts;
+export const getAllPosts = (locale: string) => {
+	return posts
+		.filter((post) => post.locale === locale)
+		.sort((a, b) => {
+			const dateA = new Date(a.publishedAt).getTime();
+			const dateB = new Date(b.publishedAt).getTime();
+
+			return dateB - dateA;
+		});
 };
 
 export const getPostLocales = (uniqueId: string) => {
@@ -61,3 +68,59 @@ export type TOCEntry = {
 	url: string;
 	items?: TOCEntry[];
 };
+
+export type SortOption =
+	| 'date-desc'
+	| 'date-asc'
+	| 'title-asc'
+	| 'title-desc'
+	| 'readingTime-asc'
+	| 'readingTime-desc';
+
+// Enhance filterPosts to support searchTerm, selectedTags, and sortBy
+export const filterPosts = async (
+	allPosts: Post[],
+	options: { searchTerm?: string; selectedTags?: string[]; sortBy?: SortOption } = {}
+): Promise<Post[]> => {
+	const { searchTerm = '', selectedTags = [], sortBy = 'date-desc' } = options;
+
+	// Prepare case-insensitive search
+	const searchLower = searchTerm.toLowerCase();
+
+	// Filter by search term and tags
+	const filtered = allPosts.filter((post) => {
+		const titleMatch = post.title.toLowerCase().includes(searchLower);
+		const excerptMatch = post.excerpt?.toLowerCase().includes(searchLower) || false;
+		const tagMatch = post.tags?.some((tag) => tag.toLowerCase().includes(searchLower)) || false;
+
+		const searchCondition = !searchTerm || titleMatch || excerptMatch || tagMatch;
+		const tagCondition =
+			selectedTags.length === 0 || selectedTags.every((tag) => post.tags?.includes(tag));
+
+		return searchCondition && tagCondition;
+	});
+
+	// Sort logic
+	filtered.sort((a, b) => {
+		switch (sortBy) {
+			case 'date-asc':
+				return new Date(a.publishedAt).getTime() - new Date(b.publishedAt).getTime();
+			case 'date-desc':
+				return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
+			case 'title-asc':
+				return a.title.localeCompare(b.title);
+			case 'title-desc':
+				return b.title.localeCompare(a.title);
+			case 'readingTime-asc':
+				return (a.metadata.readingTime || 0) - (b.metadata.readingTime || 0);
+			case 'readingTime-desc':
+				return (b.metadata.readingTime || 0) - (a.metadata.readingTime || 0);
+			default:
+				return 0;
+		}
+	});
+
+	return filtered;
+};
+
+export const allPostTags = Array.from(new Set(posts.flatMap((post) => post.tags || [])));

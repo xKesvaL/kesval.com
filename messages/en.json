@@ -230,6 +230,21 @@
 			"title": "Contact"
 		}
 	},
+	"blog": {
+		"title": "Blog",
+		"description": "Explore our latest posts",
+		"placeholder": {
+			"search": "Search posts...",
+			"no_results": "No posts found.",
+			"no_results_description": "Try different keywords or check your spelling."
+		},
+		"sort": {
+			"title_asc": "Title A-Z",
+			"title_desc": "Title Z-A",
+			"readingTime_asc": "Shortest read",
+			"readingTime_desc": "Longest read"
+		}
+	},
 	"see_all": "See all",
 	"see_more": "See more",
 	"about_us": "About Us",

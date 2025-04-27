@@ -7,14 +7,7 @@ tags:
   - Bun
   - JavaScript
   - Runtime
-  - Buntime
-  - TypeScript
-  - Backend
-  - Opinion
-  - Nouvelle Version
   - Annonce
-  - Node.js
-  - Deno
 cover: "./cover.png"
 ---
 
