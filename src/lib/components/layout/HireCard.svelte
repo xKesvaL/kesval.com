@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { brand } from '$lib/utils/config';
 	import * as m from '$paraglide/messages';
 	import Button from '../ui/button/button.svelte';
 </script>
@@ -18,7 +19,7 @@
 		>
 			<div class="flex flex-col justify-between">
 				<h3 class="text-xl leading-tight">
-					{m['brand.name']()}
+					{brand.name}
 				</h3>
 				<p class="text-sm">
 					{m['brand.doing']()}

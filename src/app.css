@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 
 @plugin "tailwindcss-animate";
+@plugin "@tailwindcss/typography";
 
 @font-face {
 	font-family: 'Geist';
@@ -283,7 +284,7 @@
 }
 
 @utility section-hero {
-	@apply kcontainer-nav-padding section min-h-[calc(100dvh-var(--nav-height))];
+	@apply kcontainer-nav-margin section min-h-[calc(100dvh-var(--nav-height))];
 }
 
 @utility h-nav {
@@ -294,7 +295,7 @@
 	@apply top-0 right-0 left-0 mx-auto lg:top-[var(--nav-spacing)];
 }
 
-@utility kcontainer-nav-padding {
+@utility kcontainer-nav-margin {
 	@apply mt-[var(--nav-height)] lg:mt-[calc(var(--nav-height)+var(--nav-spacing))];
 }
 

@@ -14,8 +14,39 @@ export const brand = {
 	website: 'https://kesval.com',
 	websiteShort: 'kesval.com',
 	age: dayjs().diff(dayjs('2004-10-14'), 'year'),
-	yearsOfExperience: dayjs().diff(dayjs('2022-01-01'), 'year')
-} as const;
+	yearsOfExperience: dayjs().diff(dayjs('2022-01-01'), 'year'),
+	name: 'KesvaL Studio',
+	nameShort: 'KesvaL',
+	keywords: [],
+	ogImage: {
+		url: '',
+		width: '1200',
+		height: '1200'
+	}
+} as const satisfies BrandType;
+
+export type BrandType = {
+	email: string;
+	github: string;
+	instagram: string;
+	linkedin: string;
+	website: string;
+	websiteShort: string;
+	age: number;
+	yearsOfExperience: number;
+	name: string;
+	nameShort: string;
+	keywords: string[];
+	ogImage?: OgImage;
+};
+
+export type OgImage =
+	| {
+			url: string;
+			width: string;
+			height: string;
+	  }
+	| undefined;
 
 export type LinkType = {
 	label: keyof typeof m;

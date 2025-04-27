@@ -6,6 +6,10 @@ import { enhancedImages } from '@sveltejs/enhanced-img';
 import { kitRoutes } from 'vite-plugin-kit-routes';
 import type { KIT_ROUTES } from './src/lib/ROUTES';
 import { urlPatterns } from './src/lib/utils/pathnames';
+import { resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
 export default defineConfig({
 	build: {
@@ -23,5 +27,19 @@ export default defineConfig({
 			outputStructure: 'message-modules',
 			urlPatterns: urlPatterns
 		})
-	]
+	],
+	resolve: {
+		alias: {
+			// Map the deep import to the actual folder in the package.
+			'@tabler/icons-svelte/icons': resolve(
+				__dirname,
+				'node_modules/@tabler/icons-svelte/dist/icons'
+			)
+		}
+	},
+	server: {
+		fs: {
+			allow: ['./.velite']
+		}
+	}
 });

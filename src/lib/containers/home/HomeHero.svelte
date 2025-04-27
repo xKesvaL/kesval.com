@@ -41,7 +41,7 @@
 			{m['home.hero.title']()}
 		</h1>
 		<p class="text-muted-foreground animate-appear mx-auto max-w-[45ch] text-lg md:text-xl">
-			{m['home.hero.subtitle']({ brand: m['brand.name']() })}
+			{m['home.hero.subtitle']({ brand: brand.name })}
 		</p>
 
 		<div class="mt-6 flex flex-wrap items-center justify-center gap-4">

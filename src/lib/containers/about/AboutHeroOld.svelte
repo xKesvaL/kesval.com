@@ -2,6 +2,7 @@
 	import { IconBarbell, IconDevices, IconPhotoOff, IconRocket } from '@tabler/icons-svelte';
 	import * as m from '$paraglide/messages';
 	import { translate } from '$lib/utils/i18n';
+	import { brand } from '$lib/utils/config';
 </script>
 
 <section
@@ -15,7 +16,7 @@
 			{m['about.hero.title']()}
 		</h1>
 		<p class="text-muted-foreground max-w-prose text-lg">
-			{m['home.hero.subtitle']({ brand: m['brand.name']() })}
+			{m['home.hero.subtitle']({ brand: brand.name })}
 		</p>
 		<div class="mt-4 flex flex-wrap gap-8">
 			<div class="flex items-center gap-2 text-sm">

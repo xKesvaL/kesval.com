@@ -119,12 +119,12 @@
 		<div class="flex flex-col justify-between gap-4 md:flex-row md:items-center">
 			<a href={route('/')} aria-label="home" class="flex items-center gap-4">
 				<enhanced:img src="$assets/logo.avif" alt="An alt text" class="size-10 rounded-lg" />
-				<span class="text-2xl font-medium">{m['brand.name']()}.</span>
+				<span class="text-2xl font-medium">{brand.name}.</span>
 			</a>
 			<span class="text-muted-foreground text-sm">
 				{m['footer.copyright']({
 					year: new Date().getFullYear(),
-					brand: m['brand.name']()
+					brand: brand.name
 				})}
 			</span>
 		</div>

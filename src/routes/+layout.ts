@@ -2,6 +2,7 @@ import type { MetaTagsProps } from 'svelte-meta-tags';
 import { translate } from '$lib/utils/i18n.js';
 import { deLocalizeHref } from '$paraglide/runtime.js';
 import * as m from '$paraglide/messages';
+import { brand } from '$lib/utils/config';
 
 export const prerender = true;
 
@@ -10,7 +11,7 @@ export const load = async ({ url }) => {
 
 	const baseMetaTags = Object.freeze({
 		title: await translate(`meta${delocalizedPath !== '.' ? delocalizedPath : '.home'}.title`),
-		titleTemplate: `%s | ${m['brand.name']()}`,
+		titleTemplate: `%s | ${brand.name}`,
 		canonical: new URL(url.pathname, url.origin).href
 	}) satisfies MetaTagsProps;
 

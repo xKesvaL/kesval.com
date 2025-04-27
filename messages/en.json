@@ -1,8 +1,6 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 	"brand": {
-		"name": "KesvaL Studio",
-		"name_short": "KesvaL",
 		"connect": "Socials"
 	},
 	"home": {
