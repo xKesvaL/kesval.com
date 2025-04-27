@@ -19,7 +19,6 @@ export default defineConfig({
 	},
 	plugins: [
 		kitRoutes<KIT_ROUTES>(),
-		velite(),
 		enhancedImages(),
 		sveltekit(),
 		tailwindcss(),
@@ -30,7 +29,8 @@ export default defineConfig({
 			outputStructure: 'message-modules',
 			urlPatterns: urlPatterns
 		}),
-		tablerIconsTreeShakePlugin()
+		tablerIconsTreeShakePlugin(),
+		velite()
 	],
 	resolve: {
 		alias: {
