@@ -1,4 +1,4 @@
-import { posts, type Post } from '$content/index.js';
+import { posts, type Post } from '../../../.velite/index.js';
 import { route } from '$lib/ROUTES';
 import { localizeHref, type Locale } from '$paraglide/runtime';
 import { error, redirect } from '@sveltejs/kit';
