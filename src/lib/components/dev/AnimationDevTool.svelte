@@ -228,7 +228,7 @@
 
 						{#if selectedType === 'appear'}
 							<div class="space-y-1.5">
-								<label class="text-muted-foreground text-xs">Direction</label>
+								<span class="text-muted-foreground text-xs">Direction</span>
 								<div class="grid grid-cols-4 gap-1">
 									{#each Object.entries(directionIcons) as [direction, Icon]}
 										<Button
@@ -237,7 +237,7 @@
 											class="h-8"
 											onclick={() => (animDirection = direction)}
 										>
-											<svelte:component this={Icon} class="size-4" />
+											<Icon class="size-4" />
 										</Button>
 									{/each}
 								</div>

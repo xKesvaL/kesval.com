@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { IconSearch, IconX, IconChevronDown } from '@tabler/icons-svelte';
+	import { IconSearch, IconX } from '@tabler/icons-svelte';
 	import { filterProjects, projects, allTags, type SortOption } from '$lib/utils/projects';
 	import * as m from '$paraglide/messages';
 	import ProjectCard from './ProjectCard.svelte';
@@ -7,9 +7,7 @@
 	import { Badge } from '$lib/components/ui/badge';
 	import * as Select from '$lib/components/ui/select';
 	import { Button } from '$lib/components/ui/button';
-	import { useDebounce } from 'runed';
 	import { cn } from '$lib/utils/ui';
-	import autoAnimate from '@formkit/auto-animate';
 
 	let searchTerm = $state('');
 	let selectedTags = $state<string[]>([]);
@@ -159,7 +157,7 @@
 			</div>
 		{:then showedProjects}
 			{#if showedProjects.length > 0}
-				<div class="grid gap-8 md:grid-cols-2 lg:gap-12" use:autoAnimate>
+				<div class="grid gap-8 md:grid-cols-2 lg:gap-12">
 					{#each showedProjects as project, index (project.id)}
 						<ProjectCard {project} {index} type="project" />
 					{/each}
