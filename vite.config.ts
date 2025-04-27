@@ -9,6 +9,7 @@ import { urlPatterns } from './src/lib/utils/pathnames';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { tablerIconsTreeShakePlugin } from './src/lib/utils/vite';
+import velite from '@velite/plugin-vite';
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
@@ -18,6 +19,7 @@ export default defineConfig({
 	},
 	plugins: [
 		kitRoutes<KIT_ROUTES>(),
+		velite(),
 		enhancedImages(),
 		sveltekit(),
 		tailwindcss(),
