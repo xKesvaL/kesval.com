@@ -27,7 +27,8 @@ export default defineConfig({
 			outdir: './src/lib/paraglide',
 			strategy: ['url', 'cookie', 'preferredLanguage', 'baseLocale'],
 			outputStructure: 'message-modules',
-			urlPatterns: urlPatterns
+			urlPatterns: urlPatterns,
+			emitGitIgnore: false
 		}),
 		tablerIconsTreeShakePlugin(),
 		velite()
@@ -38,10 +39,7 @@ export default defineConfig({
 			'@tabler/icons-svelte/icons': resolve(
 				__dirname,
 				'node_modules/@tabler/icons-svelte/dist/icons'
-			),
-			$assets: './src/assets',
-			$paraglide: './src/lib/paraglide',
-			'$content/*': '.velite/*'
+			)
 		}
 	},
 	server: {
