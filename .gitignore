@@ -24,6 +24,3 @@ vite.config.ts.timestamp-*
 
 # Paraglide
 src/lib/paraglide
-
-# Velite
-.velite
