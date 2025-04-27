@@ -232,6 +232,137 @@
 	}
 }
 
+@layer utilities {
+	/* Blog contents */
+
+	article code:not(pre > code):not(.custom) {
+		@apply text-foreground bg-muted relative rounded-[5px] px-[0.375rem] py-[0.1875rem] font-mono text-[0.9em];
+	}
+
+	article pre {
+		@apply my-0! px-0!;
+	}
+
+	a:has(code) {
+		/* Style anchors with code differently */
+		@apply rounded-[5px];
+	}
+
+	a > code {
+		/* Style code inside of links differently */
+		@apply text-primary;
+	}
+
+	a:hover > code {
+		/* Style code inside of links differently */
+		@apply text-primary/90;
+	}
+
+	[data-theme*='github-dark'] {
+		display: flex !important;
+		flex-direction: column;
+	}
+
+	[data-rehype-pretty-code-figure] {
+		@apply bg-primary inset-ring-muted/20 ring-muted inset-shadow-muted/20 relative overflow-hidden rounded-2xl ring inset-shadow-sm inset-ring;
+	}
+
+	[data-rehype-pretty-code-figure] figcaption {
+		@apply text-primary-foreground;
+	}
+
+	[data-rehype-pretty-code-figure] code {
+		@apply grid min-w-0 rounded-none border-0 p-0 text-sm break-words md:text-base;
+		counter-reset: line;
+		box-decoration-break: clone;
+	}
+
+	[data-rehype-pretty-code-figure] [data-line] {
+		@apply mb-0.5 inline-block w-full px-4;
+	}
+
+	[data-rehype-pretty-code-figure] [data-line-numbers] [data-line] {
+		@apply px-2;
+	}
+
+	[data-rehype-pretty-code-figure] [data-line-numbers] > [data-line]::before {
+		@apply text-background/50 mr-5 inline-block min-w-6 text-right text-xs;
+		counter-increment: line;
+		content: counter(line);
+		display: inline-block;
+	}
+
+	[data-pre-copy-btn] {
+		@apply text-primary-foreground absolute top-2 right-2;
+	}
+
+	[data-pre-copy-btn] svg {
+		@apply size-5;
+	}
+
+	[data-rehype-pretty-code-figure]:has([data-language='bash']) [data-pre-copy-btn] {
+		@apply top-[0.688rem];
+	}
+
+	[data-metadata] [data-pre-copy-btn] {
+		@apply top-1.5;
+	}
+
+	[data-metadata] [data-pre-wrapper] {
+		@apply pt-0;
+	}
+
+	[data-rehype-pretty-code-figure] .line--highlighted {
+		@apply bg-neutral-100/7;
+	}
+
+	[data-rehype-pretty-code-figure] .line-highlighted span {
+		@apply relative;
+	}
+
+	[data-rehype-pretty-code-figure] .chars--highlighted {
+		@apply rounded-md border-neutral-700/70 bg-neutral-700/50 p-1;
+	}
+
+	.dark [data-rehype-pretty-code-figure] .chars--highlighted {
+		@apply bg-zinc-900;
+	}
+
+	[data-rehype-pretty-code-title] {
+		@apply text-muted-foreground border-b border-neutral-400/15 px-4 pt-2 pb-4 font-mono text-sm leading-1 dark:border-neutral-700/30;
+	}
+
+	[data-pre-wrapper] {
+		@apply pb-0;
+	}
+
+	[data-rehype-pretty-code-figure]:not(:has([data-language='bash'])) {
+		@apply pt-0;
+
+		[data-pre-wrapper] {
+			@apply pb-0;
+		}
+	}
+
+	code[data-theme*='github-light github-dark'],
+	code[data-theme*='github-light github-dark'] span {
+		color: var(--shiki-dark);
+	}
+
+	::selection {
+		background-color: var(--color-muted); /* Change this to any color you want */
+		/* color: white; Optional: change the text color when selected */
+	}
+
+	input::selection {
+		background-color: var(--color-primary-active);
+	}
+
+	code::selection {
+		background-color: var(--color-primary-active);
+	}
+}
+
 @utility suptitle {
 	@apply text-primary text-sm tracking-widest uppercase;
 }

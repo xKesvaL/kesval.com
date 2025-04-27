@@ -84,7 +84,7 @@ await Bun.write("file.txt", await fetch("https://example.com/"));
 
 You can also serve 4x faster HTTP servers with Bun still using the native APIs: 
 
-```js
+```javascript title="index.js" showLineNumbers {4}
 Bun.serve({
   port: 1234,
   fetch(req) { /* ... */ },

@@ -33,7 +33,7 @@
 <div
 	class={cn(
 		'relative flex flex-col gap-8',
-		type === 'highlighted' && 'md:flex-row md:items-center md:gap-12'
+		type === 'highlighted' && 'xl:flex-row xl:items-center xl:gap-12'
 	)}
 >
 	{#await getProjectI18N() then projectI18N}
@@ -50,7 +50,7 @@
 		<div
 			class={cn(
 				'group relative mb-auto w-full overflow-hidden rounded-2xl',
-				type === 'highlighted' && 'md:w-3/5'
+				type === 'highlighted' && 'xl:w-3/5'
 			)}
 		>
 			<div class="aspect-video w-full overflow-hidden">
