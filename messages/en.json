@@ -1,7 +1,9 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 	"brand": {
-		"connect": "Socials"
+		"connect": "Socials",
+		"the_studio": "The Studio",
+		"doing": "Web & Mobile development"
 	},
 	"home": {
 		"hero": {
@@ -77,7 +79,8 @@
 			"projects": "completed projects",
 			"projects_description": "We've completed numerous projects, from simple showcase sites to large-scale applications and e-commerce platforms.",
 			"clients": "satisfied customers",
-			"clients_description": "We're proud to empower our clients to achieve their digital goals and support their future success."
+			"clients_description": "We're proud to empower our clients to achieve their digital goals and support their future success.",
+			"subtitle": "A team of enthusiasts at the service of your digital transformation."
 		},
 		"resume": {
 			"title": "My CV",
@@ -105,6 +108,21 @@
 			"projects_description": "I have completed numerous projects, ranging from simple showcase sites to large-scale applications and online stores.",
 			"clients": "satisfied customers",
 			"clients_description": "I am proud to have helped my clients achieve their goals, and I hope to support them as best I can in their future projects."
+		},
+		"team": {
+			"suptitle": "Our team",
+			"title": "A team of enthusiasts",
+			"description": "We are a team of developers and designers working together to bring your ideas and needs to life.",
+			"members": {
+				"jordan": {
+					"level": "Founder",
+					"role": "Fullstack Developer"
+				},
+				"thibaud": {
+					"level": "Co-Partner",
+					"role": "UI/UX Designer"
+				}
+			}
 		}
 	},
 	"contact": {
@@ -173,16 +191,43 @@
 		},
 		"not_found": "Project {projectId} not found",
 		"view_all": "See all projects",
-		"view_details": "View details"
+		"view_details": "View details",
+		"title": "Projects",
+		"description": "Discover our recent projects and the solutions we have provided to our clients.",
+		"placeholder": {
+			"search": "Search for a project...",
+			"no_results": "No projects found.",
+			"no_results_description": "Try other keywords or check the spelling."
+		}
 	},
 	"common": {
 		"view_case_study": "See the case study",
 		"visit_site": "Visit the site",
-		"others": "Others"
+		"others": "Others",
+		"sort_newest": "Sort by newest",
+		"sort_oldest": "Sort by oldest",
+		"sort_az": "Sort from A to Z",
+		"sort_za": "Sort from Z to A",
+		"sort_by": "sort by",
+		"filter_tags": "Filter by tags",
+		"clear_filters": "Clear filters",
+		"clear_filters_button": "Clear"
 	},
 	"meta": {
 		"home": {
 			"title": "Home"
+		},
+		"a_propos": {
+			"title": "About"
+		},
+		"projets": {
+			"title": "Projects"
+		},
+		"blog": {
+			"title": "Blog"
+		},
+		"contact": {
+			"title": "Contact"
 		}
 	},
 	"see_all": "See all",
@@ -199,5 +244,14 @@
 	"present": "Now",
 	"soon_tm": "Coming Soon™",
 	"change_language": "Change language",
-	"start_now": "Let's get started"
+	"start_now": "Let's get started",
+	"skills": {
+		"front_end": "Front-end",
+		"back_end": "Back-end",
+		"ui_ux": "UI/UX",
+		"devops": "DevOps",
+		"cms": "CMS",
+		"figma": "Figma",
+		"project_management": "Project management"
+	}
 }
