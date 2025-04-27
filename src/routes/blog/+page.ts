@@ -1,8 +1,8 @@
-import { getAllPosts } from '$lib/utils/posts';
+import { getAllPostsLocale } from '$lib/utils/posts';
 import { getLocale } from '$paraglide/runtime';
 
 export const load = () => {
-	const posts = getAllPosts(getLocale());
+	const posts = getAllPostsLocale(getLocale());
 
 	return {
 		posts

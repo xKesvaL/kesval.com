@@ -8,7 +8,11 @@ export const getPostMetadata = (slug: string) => {
 	return posts.find((post) => post.slug?.startsWith(slug));
 };
 
-export const getAllPosts = (locale: string) => {
+export const getAllPosts = () => {
+	return posts;
+};
+
+export const getAllPostsLocale = (locale: string) => {
 	return posts
 		.filter((post) => post.locale === locale)
 		.sort((a, b) => {
