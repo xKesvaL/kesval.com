@@ -1,28 +1,8 @@
 import { slugFromPath } from '$lib/utils/posts';
-import { defineConfig, defineSchema, s } from 'velite';
-import { exec } from 'child_process';
-import { promisify } from 'util';
+import { defineConfig, s } from 'velite';
 
 // `s` is extended from Zod with some custom schemas,
 // you can also import re-exported `z` from `velite` if you don't need these extension schemas.
-
-const execAsync = promisify(exec);
-
-const timestamp = defineSchema(() =>
-	s
-		.custom<string | undefined>((i) => i === undefined || typeof i === 'string')
-		.transform<string>(async (value, { meta, addIssue }) => {
-			if (value != null) {
-				addIssue({
-					fatal: false,
-					code: 'custom',
-					message: '`s.timestamp()` schema will resolve the value from `git log -1 --format=%cd`'
-				});
-			}
-			const { stdout } = await execAsync(`git log -1 --format=%cd ${meta.path}`);
-			return new Date(stdout || Date.now()).toISOString();
-		})
-);
 
 export default defineConfig({
 	root: './src/content',
@@ -39,7 +19,7 @@ export default defineConfig({
 					path: s.path(), // auto generate path from file name
 					slug: s.slug('posts').optional(),
 					publishedAt: s.isodate(), // input Date-like string, output ISO Date string.
-					updatedAt: timestamp(), // optional field
+					updatedAt: s.isodate().optional(), // optional field
 					tags: s.array(s.string()),
 					cover: s.image(), // input image relative path, output image object with blurImage.
 					video: s.file().optional(), // input file relative path, output file public path.
