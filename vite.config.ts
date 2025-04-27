@@ -8,6 +8,7 @@ import type { KIT_ROUTES } from './src/lib/ROUTES';
 import { urlPatterns } from './src/lib/utils/pathnames';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { tablerIconsTreeShakePlugin } from './src/lib/utils/vite';
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
@@ -26,7 +27,8 @@ export default defineConfig({
 			strategy: ['url', 'cookie', 'preferredLanguage', 'baseLocale'],
 			outputStructure: 'message-modules',
 			urlPatterns: urlPatterns
-		})
+		}),
+		tablerIconsTreeShakePlugin()
 	],
 	resolve: {
 		alias: {
