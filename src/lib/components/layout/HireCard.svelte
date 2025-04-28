@@ -1,16 +1,36 @@
 <script lang="ts">
 	import { brand } from '$lib/utils/config';
 	import * as m from '$paraglide/messages';
+	import { hover } from 'motion';
 	import Button from '../ui/button/button.svelte';
+	import { onMount } from 'svelte';
+	import { cn } from '$lib/utils/ui';
+
+	let root: HTMLDivElement;
+	let hasBeenHovered = $state(false);
+
+	onMount(() => {
+		hover(root, () => {
+			hasBeenHovered = true;
+		});
+	});
 </script>
 
-<div class="relative isolate">
+<div class="group relative isolate" bind:this={root}>
 	<div
-		class="bg-primary absolute top-0.5 right-0.5 z-10 size-3 animate-ping rounded-full duration-1500"
+		class={cn(
+			'bg-primary absolute top-0.5 right-0.5 z-10 size-3 animate-ping rounded-full duration-1500',
+			hasBeenHovered && 'opacity-0 duration-1000'
+		)}
 	></div>
-	<div class="bg-primary absolute top-0.5 right-0.5 z-10 size-3 rounded-full"></div>
 	<div
-		class="bg-secondary border-primary group relative hidden h-16 w-16 items-center justify-between gap-4 overflow-hidden rounded-4xl border p-2 transition-all duration-500 hover:w-104 md:flex"
+		class={cn(
+			'bg-primary absolute top-0.5 right-0.5 z-10 size-3 rounded-full',
+			hasBeenHovered && 'opacity-0 duration-1000'
+		)}
+	></div>
+	<div
+		class="bg-secondary border-primary relative hidden h-16 w-16 items-center justify-between gap-4 overflow-hidden rounded-4xl border p-2 transition-all duration-500 group-hover:w-104 md:flex"
 	>
 		<enhanced:img src="$assets/logo.png" alt={m['kesval_logo']()} class="size-12 rounded-full" />
 

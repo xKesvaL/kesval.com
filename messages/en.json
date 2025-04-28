@@ -134,15 +134,17 @@
 				"title": "Let's get in touch",
 				"description": "Reach out to us through our social media channels or via email. We're always open to new opportunities and partnerships."
 			},
-			"availability": {
-				"title": "Availability",
-				"description": "Our team is available for projects and collaborations, typically responding within 24 hours."
-			},
+			"availability": "Usually available within 24h",
 			"looking_for_work": {
 				"title": "Looking for a development partner?",
 				"description": "We're always open to new opportunities. Let us know how we can support your project!",
 				"cta": "Explore our expertise"
-			}
+			},
+			"email_button": "Send an Email",
+			"learn_more_button": "Learn More About Us",
+			"book_meeting_title": "Book a Meeting",
+			"book_meeting_description": "Choose a time slot that works best for you to discuss your project.",
+			"calendly_placeholder": "Calendly integration loading..."
 		}
 	},
 	"experience": {

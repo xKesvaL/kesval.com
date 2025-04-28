@@ -27,7 +27,7 @@
 		</div>
 	</aside>
 	<div class="section mx-auto">
-		<article class="prose xl:prose-lg mx-auto w-full min-w-0 pb-12" id="main-content">
+		<article class="prose xl:prose-lg mx-auto w-full min-w-0" id="main-content">
 			<PostHeader {title} {excerpt} />
 			<PageComponent />
 		</article>

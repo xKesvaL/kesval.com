@@ -58,16 +58,16 @@
 
 	<div class="kcontainer flex w-full flex-col gap-12 px-4">
 		<div class="flex flex-col items-center text-center">
-			<h1 class="mb-4 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
+			<h1 class="animate-appear mb-4 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
 				{m['projects.title']()}
 			</h1>
-			<p class="text-muted-foreground max-w-[60ch] text-lg">
+			<p class="text-muted-foreground animate-appear max-w-prose text-lg">
 				{m['projects.description']()}
 			</p>
 		</div>
 
 		<!-- Filters and Search -->
-		<div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+		<div class="animate-appear flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
 			<!-- Search Input -->
 			<div class="relative md:max-w-sm">
 				<IconSearch
@@ -114,7 +114,7 @@
 		</div>
 
 		<!-- Tag Filters -->
-		<div class="flex flex-wrap items-center gap-2">
+		<div class="animate-appear flex flex-wrap items-center gap-2">
 			<span class="text-muted-foreground text-sm font-medium">{m['common.filter_tags']()}:</span>
 			{#each allTags as tag (tag)}
 				{@const isSelected = selectedTags.includes(tag)}
@@ -144,9 +144,9 @@
 		</div>
 
 		<!-- Projects Grid -->
-		{#await filteredProjectsPromise}
-			<!-- Loading State (Optional) -->
-			<div class="grid gap-8 md:grid-cols-2 lg:gap-12">
+		<div class="animate-appear grid gap-8 md:grid-cols-2 lg:gap-12">
+			{#await filteredProjectsPromise}
+				<!-- Loading State (Optional) -->
 				{#each Array(4) as _}
 					<div class="bg-muted animate-pulse rounded-lg p-6">
 						<div class="bg-muted-foreground/20 mb-4 h-40 rounded"></div>
@@ -154,39 +154,32 @@
 						<div class="bg-muted-foreground/20 h-4 w-1/2 rounded"></div>
 					</div>
 				{/each}
-			</div>
-		{:then showedProjects}
-			{#if showedProjects.length > 0}
-				<div class="grid gap-8 md:grid-cols-2 lg:gap-12">
+			{:then showedProjects}
+				{#if showedProjects.length > 0}
 					{#each showedProjects as project, index (project.id)}
 						<ProjectCard {project} {index} type="project" />
 					{/each}
-				</div>
-			{:else}
-				<div class="flex flex-col items-center justify-center gap-4 py-16 text-center">
-					<IconSearch class="text-muted-foreground h-12 w-12" />
-					<h3 class="text-xl font-semibold">{m['projects.placeholder.no_results']()}</h3>
-					<p class="text-muted-foreground max-w-sm">
-						{m['projects.placeholder.no_results_description']()}
-					</p>
-					{#if searchTerm || selectedTags.length > 0}
-						<Button
-							variant="outline"
-							onclick={() => {
-								searchTerm = '';
-								selectedTags = [];
-							}}
-						>
-							{m['common.clear_filters_button']()}
-						</Button>
-					{/if}
-				</div>
-			{/if}
-		{:catch error}
-			<!-- Error State -->
-			<div class="text-destructive text-center">
-				<p>Error: {error.message}</p>
-			</div>
-		{/await}
+				{:else}
+					<div class="flex flex-col items-center justify-center gap-4 py-16 text-center">
+						<IconSearch class="text-muted-foreground h-12 w-12" />
+						<h3 class="text-xl font-semibold">{m['projects.placeholder.no_results']()}</h3>
+						<p class="text-muted-foreground max-w-sm">
+							{m['projects.placeholder.no_results_description']()}
+						</p>
+						{#if searchTerm || selectedTags.length > 0}
+							<Button
+								variant="outline"
+								onclick={() => {
+									searchTerm = '';
+									selectedTags = [];
+								}}
+							>
+								{m['common.clear_filters_button']()}
+							</Button>
+						{/if}
+					</div>
+				{/if}
+			{/await}
+		</div>
 	</div>
 </section>

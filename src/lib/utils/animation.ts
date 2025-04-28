@@ -6,19 +6,21 @@ import { animationControls } from '$lib/stores/animation.svelte';
 
 export type AnimateAppearDirection = 'bottom' | 'top' | 'left' | 'right';
 
-type AnimateAppearOptions = {
-	/**
-	 * Direction from which the element appears
-	 * @default 'bottom'
-	 */
-	direction?: AnimateAppearDirection;
+type AnimateAppearOptions =
+	| {
+			/**
+			 * Direction from which the element appears
+			 * @default 'bottom'
+			 */
+			direction?: AnimateAppearDirection;
 
-	/**
-	 * Distance in pixels that the element moves during animation
-	 * @default 30
-	 */
-	distance?: number;
-};
+			/**
+			 * Distance in pixels that the element moves during animation
+			 * @default 30
+			 */
+			distance?: number;
+	  }
+	| undefined;
 
 export const animateAppear: Action<HTMLElement, AnimateAppearOptions> = (element, options = {}) => {
 	const { direction = 'bottom', distance = 30 } = options;

@@ -102,15 +102,17 @@
 				"title": "Entrons en contact",
 				"description": "Contactez-nous via nos réseaux sociaux ou par e-mail. Nous sommes toujours ouverts à de nouvelles opportunités et collaborations."
 			},
-			"availability": {
-				"title": "Disponibilité",
-				"description": "Notre équipe est disponible pour vos projets et collaborations, nous répondons généralement sous 24 heures."
-			},
+			"availability": "Généralement disponible sous 24h",
 			"looking_for_work": {
 				"title": "Vous cherchez un partenaire de développement ?",
 				"description": "Nous sommes toujours ouverts à de nouveaux défis. Faites-nous savoir comment nous pouvons vous accompagner !",
 				"cta": "Découvrez notre expertise"
-			}
+			},
+			"email_button": "Envoyer un Email",
+			"learn_more_button": "En savoir plus sur nous",
+			"book_meeting_title": "Réserver une réunion",
+			"book_meeting_description": "Choisissez un créneau qui vous convient le mieux pour discuter de votre projet.",
+			"calendly_placeholder": "Intégration Calendly en cours de chargement..."
 		}
 	},
 	"contact_us": "Discutons",

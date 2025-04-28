@@ -127,4 +127,12 @@ export const filterPosts = async (
 	return filtered;
 };
 
-export const allPostTags = Array.from(new Set(posts.flatMap((post) => post.tags || [])));
+export const getAllPostTags = (locale: Locale) => {
+	return Array.from(
+		new Set(
+			posts.flatMap((post) => {
+				return post.locale === locale ? post.tags || [] : [];
+			})
+		)
+	);
+};
