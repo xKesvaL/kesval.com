@@ -53,6 +53,7 @@
 	--animate-marquee-left: marquee-left var(--marquee-duration, 60s) linear infinite;
 	--animate-marquee-up: marquee-up var(--marquee-duration, 60s) linear infinite;
 	--animate-gradient: gradient 8s linear infinite;
+	--animate-border-spin: border-spin 7s linear infinite;
 
 	--font-sans: 'Geist', sans-serif;
 	--font-emoji:
@@ -176,6 +177,12 @@
 		}
 		100% {
 			background-position: 0% 0%;
+		}
+	}
+
+	@keyframes border-spin {
+		100% {
+			transform: rotate(-360deg);
 		}
 	}
 
@@ -348,19 +355,6 @@
 	code[data-theme*='github-light github-dark'] span {
 		color: var(--shiki-dark);
 	}
-
-	::selection {
-		background-color: var(--color-muted); /* Change this to any color you want */
-		/* color: white; Optional: change the text color when selected */
-	}
-
-	input::selection {
-		background-color: var(--color-primary-active);
-	}
-
-	code::selection {
-		background-color: var(--color-primary-active);
-	}
 }
 
 @utility suptitle {
@@ -459,4 +453,22 @@
 @utility animate-appear {
 	opacity: var(--animation-appear-opacity);
 	transform: translateY(var(--animation-appear-y));
+}
+
+@utility shine-border-wrapper {
+	@apply relative rounded-2xl bg-gradient-to-b from-neutral-300 to-neutral-200;
+
+	&::before {
+		background: conic-gradient(
+			rgba(244, 114, 182, 0.4) 0deg,
+			rgba(192, 132, 252, 0.4) 0deg,
+			transparent 80deg
+		);
+
+		@apply animate-border-spin absolute top-[50%] left-[-25%] h-[150%] w-[150%] origin-center content-[''];
+	}
+}
+
+@utility shine-border-content {
+	@apply absolute top-[1px] left-[1px] h-[calc(100%-2px)] w-[calc(100%-2px)] rounded-2xl;
 }
