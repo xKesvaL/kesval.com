@@ -5,9 +5,6 @@
 	import { brand } from '$lib/utils/config';
 	import { Button } from '$lib/components/ui/button';
 	import { Badge } from '$lib/components/ui/badge';
-	import { Card } from '$lib/components/ui/card';
-	import { Separator } from '$lib/components/ui/separator';
-	import { cn } from '$lib/utils/ui';
 	import {
 		IconMail,
 		IconArrowRight,
@@ -18,11 +15,30 @@
 		IconMapPin,
 		IconHeartHandshake,
 		IconMessageCircle,
-		IconUserCircle,
-		IconClock
+		IconLoader2
 	} from '@tabler/icons-svelte';
 	import { onMount } from 'svelte';
-	import { hover } from 'motion';
+
+	let calendlyRoot: HTMLDivElement;
+
+	let loading = $state(true);
+
+	onMount(() => {
+		const observer = new MutationObserver((mutations) => {
+			mutations.forEach((mutation) => {
+				loading = (mutation.target as HTMLElement).dataset.processed === 'true' ? false : true;
+			});
+		});
+
+		observer.observe(calendlyRoot, {
+			attributes: true,
+			attributeFilter: ['data-processed']
+		});
+
+		return () => {
+			observer.disconnect();
+		};
+	});
 </script>
 
 <section class="section-hero relative">
@@ -203,7 +219,12 @@
 							class="calendly-inline-widget h-full overflow-hidden rounded-b-[20px] px-[1px] pb-[1px]"
 							data-url="https://calendly.com/kesvalstudio/30min?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=4d01fd"
 							style="min-width:320px;min-height:500px;"
-						></div>
+							bind:this={calendlyRoot}
+						>
+							{#if loading}
+								<IconLoader2 class="mx-auto mt-16" />
+							{/if}
+						</div>
 						<script
 							type="text/javascript"
 							src="https://assets.calendly.com/assets/external/widget.js"
