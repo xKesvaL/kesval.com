@@ -5,16 +5,18 @@
 	type Props = WithChildren<{
 		class?: string;
 		colorClass?: string;
+		style?: string;
 	}>;
 
-	let { class: className, colorClass, children }: Props = $props();
+	let { class: className, colorClass, style, children }: Props = $props();
 </script>
 
 <div
 	class={cn(
-		'bg-popover shadow-primary/10 hover:shadow-primary/20 relative isolate mx-auto max-w-fit rounded-2xl p-0 shadow-[inset_0_-5px_5px] drop-shadow-xs transition-shadow duration-500 ease-out [--bg-size:300%] hover:shadow-[inset_0_-3px_10px]',
+		'bg-popover shadow-primary/10 hover:shadow-primary/20 relative isolate mx-auto rounded-2xl p-0 shadow-[inset_0_-5px_5px] drop-shadow-xs transition-shadow duration-500 ease-out [--bg-size:300%] hover:shadow-[inset_0_-3px_10px]',
 		className
 	)}
+	{style}
 >
 	<div
 		class={cn(
