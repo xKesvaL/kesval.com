@@ -22,7 +22,8 @@ export const brand = {
 		url: '',
 		width: '1200',
 		height: '1200'
-	}
+	},
+	primary: '#4d02fd'
 } as const satisfies BrandType;
 
 export type BrandType = {
@@ -38,6 +39,7 @@ export type BrandType = {
 	nameShort: string;
 	keywords: string[];
 	ogImage?: OgImage;
+	primary: string;
 };
 
 export type OgImage =

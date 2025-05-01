@@ -32,6 +32,7 @@
 		"@tailwindcss/typography": "^0.5.16",
 		"@tailwindcss/vite": "^4.1.4",
 		"@types/gtag.js": "^0.0.20",
+		"@types/web-app-manifest": "^1.0.9",
 		"@velite/plugin-vite": "^0.0.1",
 		"bits-ui": "^1.3.19",
 		"clsx": "^2.1.1",
