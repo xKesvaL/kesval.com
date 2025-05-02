@@ -71,7 +71,7 @@
 							locales={getLocale()}
 							plugins={[continuous]}
 							value={values[key as keyof Values]}
-							class="from-primary to-primary-darker bg-gradient-to-br bg-clip-text text-7xl font-extrabold text-transparent md:text-8xl"
+							class="text-primary-darker text-7xl font-extrabold md:text-8xl"
 						/>
 						{#if key === 'experience'}
 							<IconAward class="size-16 md:size-22" stroke={1.5} />
