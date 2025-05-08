@@ -16,7 +16,7 @@
 	});
 </script>
 
-<div class="group relative isolate" bind:this={root}>
+<div class="group relative isolate hidden md:block" bind:this={root}>
 	<div
 		class={cn(
 			'bg-primary absolute top-0.5 right-0.5 z-10 size-3 animate-ping rounded-full duration-1500',
@@ -30,7 +30,7 @@
 		)}
 	></div>
 	<div
-		class="bg-secondary border-primary relative hidden h-16 w-16 items-center justify-between gap-4 overflow-hidden rounded-4xl border p-2 transition-all duration-500 group-hover:w-104 md:flex"
+		class="bg-secondary border-primary relative flex h-16 w-16 items-center justify-between gap-4 overflow-hidden rounded-4xl border p-2 transition-all duration-500 group-hover:w-104"
 	>
 		<enhanced:img src="$assets/logo.png" alt={m['kesval_logo']()} class="size-12 rounded-full" />
 

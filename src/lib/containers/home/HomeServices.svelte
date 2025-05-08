@@ -35,7 +35,7 @@
 		description: string;
 		icon: typeof IconBulb;
 		detailedDescription?: string;
-		features?: string[];
+		features?: number;
 		tools?: string[];
 		outcome?: string;
 		visible?: boolean;
@@ -44,7 +44,7 @@
 	/**
 	 * Define the services as a step-by-step process
 	 */
-	const serviceSteps: ServiceStep[] = [
+	const serviceSteps = [
 		{
 			id: 'discovery',
 			step: 1,
@@ -54,12 +54,7 @@
 			icon: IconBulb,
 			detailedDescription:
 				'The journey begins with a thorough understanding of your business, goals, and target audience. I collaborate with you to identify key objectives and create a strategic roadmap.',
-			features: [
-				'Comprehensive consultation to understand your business needs',
-				'Audience analysis and user persona development',
-				'Competitive analysis and market research',
-				'Goal setting and success metrics definition'
-			],
+			features: 4,
 			outcome:
 				'A clear project scope, timeline, and strategic roadmap aligned with your business objectives.'
 		},
@@ -72,12 +67,7 @@
 			icon: IconLayoutDashboard,
 			detailedDescription:
 				"Based on our discovery phase, we'll define the specific features and content your project needs to succeed, establishing the foundation for your project's functionality.",
-			features: [
-				'Content strategy and information architecture',
-				'User flow mapping and interaction design',
-				'Feature prioritization and technical requirements',
-				'Content creation guidance and structure planning'
-			],
+			features: 4,
 			tools: ['Figma', 'Miro', 'Notion'],
 			outcome:
 				'A comprehensive project specification with clearly defined features and content structure.'
@@ -91,12 +81,7 @@
 			icon: IconPalette,
 			detailedDescription:
 				'Transform concepts into visually stunning, user-friendly interfaces that not only look professional but also deliver an intuitive and engaging user experience.',
-			features: [
-				'Custom UI design tailored to your brand identity',
-				'Responsive designs optimized for all screen sizes',
-				'Interactive prototypes for user testing',
-				'Comprehensive design system with component library'
-			],
+			features: 4,
 			tools: ['Figma', 'Adobe XD', 'Photoshop'],
 			outcome:
 				'Polished, user-tested design mockups and interactive prototypes ready for development.'
@@ -110,12 +95,7 @@
 			icon: IconCode,
 			detailedDescription:
 				'Bringing designs to life with clean, efficient code using modern frameworks and development practices to ensure your project is fast, secure, and maintainable.',
-			features: [
-				'Clean, semantic code following industry best practices',
-				'Cross-browser compatibility and responsive implementation',
-				'Performance optimization for fast loading speeds',
-				'Version control and collaborative development'
-			],
+			features: 4,
 			tools: ['React/Vue/Svelte', 'Next.js/Nuxt/SvelteKit', 'TypeScript', 'Tailwind CSS'],
 			outcome: 'A fully functional, thoroughly tested application ready for deployment.'
 		},
@@ -128,12 +108,7 @@
 			icon: IconRocket,
 			detailedDescription:
 				'Preparing your project for launch with thorough testing and optimization, handling all technical aspects to ensure a smooth transition to your live environment.',
-			features: [
-				'Server configuration and deployment setup',
-				'Performance testing and optimization',
-				'SEO implementation and verification',
-				'Cross-device and cross-browser testing'
-			],
+			features: 4,
 			tools: ['Vercel', 'Netlify', 'AWS', 'Docker'],
 			outcome: 'A successfully launched project with optimized performance and SEO readiness.'
 		},
@@ -146,16 +121,11 @@
 			icon: IconTool,
 			detailedDescription:
 				'Your digital project is a long-term investment. I provide ongoing maintenance, updates, and support to ensure your project continues to perform optimally.',
-			features: [
-				'Regular updates and security patches',
-				'Performance monitoring and optimization',
-				'Continuous improvements and feature enhancements',
-				'Compatibility updates for new browsers and devices'
-			],
+			features: 4,
 			outcome:
 				'A continuously evolving digital presence that remains secure, up-to-date, and aligned with your business growth.'
 		}
-	];
+	] as const satisfies ServiceStep[];
 
 	// Store which steps are visible in the viewport
 	let visibleSteps = new SvelteSet<string>();
@@ -236,17 +206,16 @@
 				<span class="flex items-center gap-2">
 					⏳
 					<hr class="bg-muted-foreground h-4 w-[1px] shrink-0" />
-					End-to-end process
+					{m['home.services.above_title']()}
 				</span>
 			</AnimatedBadge>
 			<h2
 				class="from-foreground to-muted-foreground animate-appear bg-gradient-to-br bg-clip-text text-transparent"
 			>
-				Your Project Journey
+				{m['home.services.title']()}
 			</h2>
 			<p class="text-muted-foreground animate-appear mx-auto max-w-[50ch] text-lg">
-				From initial concept to ongoing support, I accompany you through each stage of your digital
-				project's lifecycle.
+				{m['home.services.subtitle']()}
 			</p>
 		</div>
 
@@ -326,30 +295,43 @@
 
 										<div class="flex flex-1 flex-col space-y-3 text-left">
 											<Badge variant="outline" class="bg-primary/5 border-primary/20 w-fit">
-												Step {step.step} of {serviceSteps.length}
+												{m['home.services.step_x_of_y']({
+													step: step.step,
+													total: serviceSteps.length
+												})}
 											</Badge>
-											<h3 class="h4 tracking-tight">{step.title}</h3>
+											<h3 class="h4 tracking-tight">
+												{m[`home.services.steps.${step.id}.title`]()}
+											</h3>
 
-											<p class="text-muted-foreground">{step.description}</p>
+											<p class="text-muted-foreground">
+												{m[`home.services.steps.${step.id}.description`]()}
+											</p>
 										</div>
 									</Accordion.Trigger>
 
 									<Accordion.Content>
 										<div class="border-t px-6 pt-6 pb-4">
 											<!-- Detailed description -->
-											<p class="text-muted-foreground">{step.detailedDescription}</p>
+											<p class="text-muted-foreground">
+												{m[`home.services.steps.${step.id}.detailed_description`]()}
+											</p>
 
 											<!-- Features list -->
 											{#if step.features}
 												<div class="mt-6">
-													<h4 class="mb-2 text-sm font-medium">Key activities:</h4>
+													<h4 class="mb-2 text-sm font-medium">
+														{m['home.services.key_activities']()}
+													</h4>
 													<ul class="grid gap-2 md:grid-cols-2">
-														{#each step.features as feature}
+														{#each { length: step.features } as _, i}
 															<li class="flex items-start gap-2">
 																<IconChevronDown
 																	class="text-primary mt-1 size-4 shrink-0 -rotate-90"
 																/>
-																<span class="text-sm">{feature}</span>
+																<span class="text-sm">
+																	{m[`home.services.steps.${step.id}.feature_${i + 1}`]()}
+																</span>
 															</li>
 														{/each}
 													</ul>
@@ -359,7 +341,9 @@
 											<!-- Tools used -->
 											{#if step.tools}
 												<div class="mt-6">
-													<h4 class="mb-2 text-sm font-medium">Tools:</h4>
+													<h4 class="mb-2 text-sm font-medium">
+														{m['home.services.tools']()}
+													</h4>
 													<div class="flex flex-wrap gap-2">
 														{#each step.tools as tool}
 															<Badge variant="secondary" class="text-xs">{tool}</Badge>
@@ -377,8 +361,10 @@
 															stroke={1.5}
 														/>
 														<p class="text-muted-foreground text-sm">
-															<span class="font-semibold">Outcome:</span>
-															{step.outcome}
+															<span class="font-semibold">
+																{m['home.services.outcome']()}
+															</span>
+															{m[`home.services.steps.${step.id}.outcome`]()}
 														</p>
 													</div>
 												</div>

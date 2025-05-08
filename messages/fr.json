@@ -34,30 +34,70 @@
 			"above_title": "Processus de A à Z",
 			"title": "Votre parcours digital",
 			"subtitle": "De la stratégie à la maintenance, nous vous accompagnons à chaque étape.",
+			"step_x_of_y": "Étape {step} sur {total}",
+			"key_activities": "Activités clés :",
+			"tools": "Outils :",
+			"outcome": "Résultat :",
 			"steps": {
 				"discovery": {
 					"title": "Découverte & Stratégie",
-					"description": "Comprendre vos besoins, votre audience et vos objectifs pour bâtir une stratégie sur-mesure."
+					"description": "Comprendre vos besoins, votre audience et vos objectifs pour bâtir une stratégie sur-mesure.",
+					"detailed_description": "Le voyage commence par une compréhension approfondie de votre entreprise, de vos objectifs et de votre audience. Nous vous accompagnons pour identifier les objectifs clés et créer un plan stratégique.",
+					"feature_1": "Consultation complète pour comprendre vos besoins",
+					"feature_2": "Analyse de l'audience et du marché",
+					"feature_3": "Analyse concurrentielle",
+					"feature_4": "Définition des objectifs et des métriques de succès",
+					"outcome": "Un projet clair, une timeline et un plan stratégique aligné avec vos objectifs commerciaux."
 				},
 				"content": {
 					"title": "Fonctionnalités & Contenus",
-					"description": "Définir les fonctionnalités et contenus qui engageront vos utilisateurs."
+					"description": "Définir les fonctionnalités et contenus qui engageront vos utilisateurs.",
+					"detailed_description": "Basé sur la phase de découverte, nous définirons les fonctionnalités et le contenu de votre projet pour réussir, établissant la base de la fonctionnalité de votre projet.",
+					"feature_1": "Stratégie de contenu et architecture d'information",
+					"feature_2": "Cartographie de flux d'utilisateurs et design d'interaction",
+					"feature_3": "Priorité des fonctionnalités et exigences techniques",
+					"feature_4": "Création de contenu et planification de structure",
+					"outcome": "Un cahier des charges clair avec des fonctionnalités et un contenu structuré."
 				},
 				"design": {
 					"title": "Design UI/UX",
-					"description": "Créer des interfaces élégantes et intuitives pour une expérience optimale."
+					"description": "Créer des interfaces élégantes et intuitives pour une expérience optimale.",
+					"detailed_description": "Nous transformons les concepts en interfaces visuellement élégantes et intuitives qui sont professionnelles, mais aussi engagantes pour l'utilisateur.",
+					"feature_1": "Conception UI personnalisée adaptée à votre identité de marque",
+					"feature_2": "Conception responsive optimisée pour tous les appareils",
+					"feature_3": "Prototypes interactifs pour les tests utilisateurs",
+					"feature_4": "Système de conception complet avec bibliothèque de composants",
+					"outcome": "Un design élégant, testé et avec des prototypes interactifs prêts pour le développement."
 				},
 				"development": {
 					"title": "Développement",
-					"description": "Développer votre projet avec les technologies les plus récentes et les meilleures pratiques."
+					"description": "Développer votre projet avec les technologies les plus récentes et les meilleures pratiques.",
+					"detailed_description": "Nous mettons en œuvre votre projet en utilisant les technologies les plus récentes et les meilleures pratiques pour garantir un site web performant, sécurisé et maintenable.",
+					"feature_1": "Code sémantique propre suivant les meilleures pratiques de l'industrie",
+					"feature_2": "Compatibilité multi-navigateurs et implémentation responsive",
+					"feature_3": "Optimisation de la performance pour des vitesses de chargement rapides",
+					"feature_4": "Contrôle de version et développement collaboratif",
+					"outcome": "Un site web performant, sécurisé et maintenable."
 				},
 				"deployment": {
 					"title": "Déploiement",
-					"description": "Lancer votre projet avec des tests et optimisations pour une mise en ligne réussie."
+					"description": "Lancer votre projet avec des tests et optimisations pour une mise en ligne réussie.",
+					"detailed_description": "Nous préparons le lancement de votre projet avec des tests et des optimisations pour garantir une mise en ligne réussie.",
+					"feature_1": "Configuration et déploiement du serveur",
+					"feature_2": "Optimisation de la performance",
+					"feature_3": "Implémentation SEO et tests",
+					"feature_4": "Tests de compatibilité sur tous les appareils / navigateurs",
+					"outcome": "Un projet lancé avec succès et optimisé pour une performance optimale."
 				},
 				"maintenance": {
 					"title": "Support & Maintenance",
-					"description": "Assurer la pérennité et l'évolution de votre solution digitale."
+					"description": "Assurer la pérennité et l'évolution de votre solution digitale.",
+					"detailed_description": "Nous vous accompagnons pour assurer la pérennité et l'évolution de votre solution digitale, en vous offrant un support continu et des mises à jour régulières.",
+					"feature_1": "Mise à jour régulières et correctifs de sécurité",
+					"feature_2": "Surveillance et optimisation de la performance",
+					"feature_3": "Améliorations continues et fonctionnalités",
+					"feature_4": "Mise à jour de compatibilité pour les nouveaux navigateurs et appareils",
+					"outcome": "Une présence digitale en constante évolution qui reste sécurisée, à jour et alignée avec votre croissance commerciale."
 				}
 			},
 			"cta": "Démarrez votre projet dès aujourd'hui"
@@ -229,5 +269,10 @@
 		"cms": "CMS",
 		"figma": "Figma",
 		"project_management": "Gestion de projet"
+	},
+	"blog": {
+		"toc": {
+			"title": "Sommaire"
+		}
 	}
 }

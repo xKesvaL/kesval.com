@@ -148,7 +148,7 @@
 </script>
 
 {#if dev}
-	<div id="animation-dev-tool" class={cn('fixed top-16 right-4 z-50 md:top-4 ')}>
+	<div id="animation-dev-tool" class={cn('fixed right-6 bottom-24 z-50 ')}>
 		<Card.Root class={cn('border-primary overflow-hidden rounded-lg shadow-lg')}>
 			<Card.Header
 				class={cn(
