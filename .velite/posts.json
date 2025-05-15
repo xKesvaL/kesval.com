@@ -7,19 +7,27 @@
       "KesvaL Studio"
     ],
     "cover": {
-      "src": "/static/cover-en-1b7e0d63.png",
-      "height": 630,
-      "width": 1200,
+      "src": "/static/cover-en-97c30a3b.png",
+      "height": 1260,
+      "width": 2400,
       "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAACQAQCdASoIAAQADMDOJQAAU4+8OVgA93UdZq+rUGrxIAAA",
+      "blurWidth": 8,
+      "blurHeight": 4
+    },
+    "coverAvif": {
+      "src": "/static/cover-en-5acd4244.avif",
+      "height": 1260,
+      "width": 2400,
+      "blurDataURL": "data:image/webp;base64,UklGRjAAAABXRUJQVlA4ICQAAACwAQCdASoIAAQADMDOJYwAApx94crAAPd1HWavq1Bq8SAAAAA=",
       "blurWidth": 8,
       "blurHeight": 4
     },
     "metadata": {
       "readingTime": 1,
-      "wordCount": 393
+      "wordCount": 243
     },
     "excerpt": "Get to know KesvaL Studio, your partner for innovative web and mobile development",
-    "content": "<script>\n\timport Tabbed from \"$lib/components/markdown/Tabbed.svelte\";\n  import Sparkles from \"$lib/components/base/Sparkles.svelte\";\n  import { Button } from \"$lib/components/ui/button\";\n\timport { localizeHref } from '$paraglide/runtime';\n</script>\n<h2>👋 Welcome to the KesvaL Studio blog!</h2>\n<p>Hello and welcome! I am <strong>so</strong> glad you're here and I can't wait to write about our news, insights and our journey. My goal is to connect with you, our community, and share our <sparkles size=\"{10}\">experience</sparkles> with you.</p>\n<p>I've learned that the best way to build a successful business is to surround myself with talented people and listen to their ideas. But I've also learned that I need to work with people I trust, deeply.\nThat is why KesvaL Studio has only two people at its core: me and my talented designer friend, <a href=\"#\">@thibaud</a>. (sorry no link for now!) This is what makes KesvaL Studio unique.</p>\n<blockquote>\n<p>It's not just about having a team, it's about assembling the perfect team where each person brings its own expertise. Our flexible approach means your project gets exactly the expertise it needs.</p>\n</blockquote>\n<h2>So, why is this \"we\" thing so important?</h2>\n<h3>1. Smarter decisions &#x26; better results</h3>\n<tabbed>\nHave you ever worked so hard on a project, be so proud of it, only to have it be heavily criticized by others? That's exactly what we are trying to avoid when delivering your project. \n</tabbed>\n<tabbed>\nHaving multiple people working on a project means that we can bring different perspectives to the table. Altough it might slow down the process, we believe that higher quality beats 3 days quicker delivery.\n</tabbed>\n<h3>2. Flexibility for your project</h3>\n<tabbed>\nWe know that your project is important to you, and you will most likely need to change some things. Working as a team also means we're agile, and we can adapt to your needs. For you, this means that we can apply changes to the project even when it's in progress.\n</tabbed>\n<h3>3. It's way more fun!</h3>\n<tabbed>\nYes, we want to have fun while working on your project! This is the best way for us to be creative, get attached to your project, and deliver the best possible results.\n</tabbed>\n<p>At KesvaL Studio, \"teamwork\" and \"agile\" aren´t keywords that we use to get valued by you. They are the way we work, and the way we believe in building successful projects.</p>\n<h2>Ready to see what our approach can do for you?</h2>\n<p>&#x3C;Button href={localizeHref(\"/contact\")}>\nLet's talk about your project\n</p>",
+    "content": "<script>\n\timport Tabbed from \"$lib/components/markdown/Tabbed.svelte\";\n  import Sparkles from \"$lib/components/base/Sparkles.svelte\";\n  import TeamProfileCard from \"$lib/components/base/TeamProfileCard.svelte\";\n  import ServicesGrid from '$lib/components/base/ServicesGrid.svelte';\n  import { team } from '$lib/utils/config';\n  import { Button } from \"$lib/components/ui/button\";\n\timport { localizeHref } from '$paraglide/runtime';\n</script>\n<h2>👋 Welcome to the KesvaL Studio blog!</h2>\n<p>Hello and welcome! I am <strong>so</strong> glad you're here and I can't wait to write about our news, insights and our journey. My goal is to connect with you, our community, and share our <sparkles size=\"{10}\">experience</sparkles> with you.</p>\n<h2>A Little Bit About Me</h2>\n<div class=\"my-8\">\n  <teamprofilecard member=\"{team.jordan}\">\n</teamprofilecard></div>\n<p>My name is <strong>Jordan</strong>, and I am the founder of KesvaL Studio. I have been in the development world for over 10 years (started at 8!) and I've worked on a variety of projects. I have a passion for technology, but when I'm not working, I spend my time at the gym, since I am a powerlifting amateur. Helps me stay focused and energized!</p>\n<h2>Your partner in digital innovation</h2>\n<p>At KesvaL Studio, our mission is twofold:</p>\n<ol>\n<li><strong>To make web and mobile development better for you</strong>: We believe that money is not the only driver of success, we want to build long-lasting relationships with our clients, and give them the best possible experience.</li>\n<li><strong>To collaborate with agencies as a reliable partner</strong>: We understand that agencies often need to outsource development work, and we want to help deliver high-quality work that meets their standards.</li>\n</ol>\n<h2>What we do</h2>\n<servicesgrid></servicesgrid>",
     "toc": [
       {
         "title": "👋 Welcome to the KesvaL Studio blog!",
@@ -27,29 +35,18 @@
         "items": []
       },
       {
-        "title": "So, why is this \"we\" thing so important?",
-        "url": "#so-why-is-this-we-thing-so-important",
-        "items": [
-          {
-            "title": "1. Smarter decisions & better results",
-            "url": "#1-smarter-decisions--better-results",
-            "items": []
-          },
-          {
-            "title": "2. Flexibility for your project",
-            "url": "#2-flexibility-for-your-project",
-            "items": []
-          },
-          {
-            "title": "3. It's way more fun!",
-            "url": "#3-its-way-more-fun",
-            "items": []
-          }
-        ]
+        "title": "A Little Bit About Me",
+        "url": "#a-little-bit-about-me",
+        "items": []
       },
       {
-        "title": "Ready to see what our approach can do for you?",
-        "url": "#ready-to-see-what-our-approach-can-do-for-you",
+        "title": "Your partner in digital innovation",
+        "url": "#your-partner-in-digital-innovation",
+        "items": []
+      },
+      {
+        "title": "What we do",
+        "url": "#what-we-do",
         "items": []
       }
     ],
@@ -67,10 +64,18 @@
       "Management"
     ],
     "cover": {
-      "src": "/static/cover-fr-38c03c12.png",
-      "height": 630,
-      "width": 1200,
-      "blurDataURL": "data:image/webp;base64,UklGRiwAAABXRUJQVlA4ICAAAACQAQCdASoIAAQADMDOJQAAXN9RAIAA93UaMz4MP2oAAA==",
+      "src": "/static/cover-fr-1dcd73fc.png",
+      "height": 1260,
+      "width": 2400,
+      "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAACQAQCdASoIAAQADMDOJQAAXN9SqCwA93UaMz4MP6YAAAAA",
+      "blurWidth": 8,
+      "blurHeight": 4
+    },
+    "coverAvif": {
+      "src": "/static/cover-fr-3e318a15.avif",
+      "height": 1260,
+      "width": 2400,
+      "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAACQAQCdASoIAAQADMDOJQAAXN9SqCwA93UaMz4MP6YAAAAA",
       "blurWidth": 8,
       "blurHeight": 4
     },

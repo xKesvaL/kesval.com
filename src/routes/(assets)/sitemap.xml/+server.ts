@@ -1,18 +1,54 @@
+import { route } from '$lib/ROUTES';
 import { brand } from '$lib/utils/config';
-import { getAllPostsLocale } from '$lib/utils/posts';
+import { getAllPosts } from '$lib/utils/posts';
 import { baseLocale, locales, localizeHref, type Locale } from '$paraglide/runtime';
 
 type SitemapEntry = {
 	changefreq: 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never';
-	links: Array<{ lang: string; url: string }>;
 	loc: string;
 	priority: number;
-	lastmod: `${number}-${number}-${number}`;
+	lastmod?: string;
 	alternate: Array<{ lang: string; url: string }>;
 };
 
-const getBlogSlugs = (locale: Locale) => {
-	return getAllPostsLocale(locale).map((post) => post.slug);
+// replace [slug] with every slug in the slugs array
+const generateBlogSitemapEntries = (url: string) => {
+	const posts = getAllPosts();
+
+	const baseLocalePosts = posts.filter((post) => post.locale === baseLocale);
+
+	return baseLocalePosts
+		.map((post) => {
+			if (!post.slugClean) {
+				return null;
+			}
+
+			const postsInOtherLocales = posts.filter((p) => p.uniqueId === post.uniqueId);
+
+			const alternate = postsInOtherLocales
+				.map((p) => {
+					if (!p.slugClean) {
+						return null;
+					}
+
+					return {
+						lang: p.locale,
+						url: `${brand.website}${localizeHref(route('/blog/[slug]', { slug: p.slugClean }), {
+							locale: p.locale
+						})}`
+					};
+				})
+				.filter((p) => p !== null);
+
+			return {
+				changefreq: 'monthly',
+				alternate: alternate,
+				loc: `${brand.website}${url.replace('[slug]', post.slugClean)}`,
+				priority: 0.5,
+				lastmod: post.updatedAt ? new Date(post.updatedAt).toISOString().split('T')[0] : undefined
+			} satisfies SitemapEntry;
+		})
+		.filter((p) => p !== null);
 };
 
 const localizeUrl = (url: string, locale: Locale) => {
@@ -23,10 +59,17 @@ const generateSitemapEntries = (urls: string[]): SitemapEntry[] => {
 	const sitemapEntries: SitemapEntry[] = [];
 
 	urls.forEach((url) => {
+		const matchesSlug = url.match(/\/blog\/([^/]+)/);
+
+		if (matchesSlug) {
+			const entries = generateBlogSitemapEntries(url);
+			sitemapEntries.push(...entries);
+			return;
+		}
+
 		const entry: SitemapEntry = {
 			changefreq: 'monthly',
-			links: [],
-			loc: url,
+			loc: `${brand.website}${url}`,
 			priority: 0.5,
 			lastmod: '2024-01-01',
 			alternate: []
@@ -35,7 +78,7 @@ const generateSitemapEntries = (urls: string[]): SitemapEntry[] => {
 		locales.forEach((locale) => {
 			entry.alternate.push({
 				lang: locale,
-				url: localizeUrl(url, locale)
+				url: `${brand.website}${localizeUrl(url, locale)}`
 			});
 		});
 
@@ -62,6 +105,10 @@ const generateSitemapString = (sitemapEntries: SitemapEntry[]): string => {
         <loc>${entry.loc}</loc>
         <changefreq>${entry.changefreq}</changefreq>
         <priority>${entry.priority}</priority>`;
+
+		if (entry.lastmod) {
+			sitemapString += `<lastmod>${entry.lastmod}</lastmod>`;
+		}
 
 		entry.alternate.forEach((alternate) => {
 			sitemapString += `
@@ -97,128 +144,10 @@ export async function GET() {
 
 	const uniqueUrls = [...new Set(urls)];
 
-	console.log(uniqueUrls);
+	const sitemapEntries = generateSitemapEntries(uniqueUrls);
+	const sitemapString = generateSitemapString(sitemapEntries);
 
-	return new Response(generateSitemapString(generateSitemapEntries(uniqueUrls)).trim(), {
-		headers: {
-			'Content-Type': 'application/xml'
-		}
-	});
-}
-
-async function GETOLD() {
-	const files = import.meta.glob('$routes/**/*.{svelte,md}');
-	const urls = Object.keys(files)
-		.map((file) => {
-			let url = file
-				.replace('/src/routes', '')
-				.replace('[[lang=locale]]', '')
-				.replace('.svelte', '')
-				.replace('.md', '')
-				.replace('+page', '')
-				.replace('+layout', '')
-				.replace('+error', '')
-				.replace('+server', '')
-				.replace('+404', '')
-				.replace(/\(([^)]+)\)\//g, '')
-				.slice(0, -1);
-
-			if (url.startsWith('//')) {
-				url = url.slice(1);
-			}
-			return `${url}`;
-		})
-		.filter((url) => url !== '');
-
-	const uniqueUrls = [...new Set(urls)];
-
-	// Generate a sitemap for each locale using the LOCALES variable
-	// use the unique urls array to generate the sitemap
-	// the unique urls array looks like this:
-	// [ '/', '/about', '/blog', '/work' ]
-	// the sitemap should include the location, lastmod, changefreq, and priority
-	// also include the link to every other locale for each url
-
-	type SitemapEntryOld = {
-		changefreq: string;
-		links: Array<{ lang: string; url: string }>;
-		location: string;
-		priority: number;
-	};
-
-	const generateSitemap = (): SitemapEntryOld[] => {
-		const sitemap: SitemapEntryOld[] = [];
-
-		uniqueUrls.forEach((url) => {
-			locales.forEach((locale) => {
-				const localeToUse = locale === baseLocale ? '' : '/' + locale;
-				const entry: SitemapEntryOld = {
-					changefreq: 'monthly',
-					links: [],
-					location:
-						url === '/' ? `${brand.website}${localeToUse}` : `${brand.website}${localeToUse}${url}`,
-					priority: 0.5
-				};
-
-				locales.forEach((otherLocale) => {
-					if (otherLocale !== locale) {
-						const otherLocaleToUse = otherLocale === baseLocale ? '' : '/' + otherLocale;
-						entry.links.push({
-							lang: otherLocale,
-							url:
-								url === '/'
-									? `${brand.website}${otherLocaleToUse}`
-									: `${brand.website}${otherLocaleToUse}${url}`
-						});
-					}
-				});
-
-				sitemap.push(entry);
-			});
-		});
-
-		return sitemap;
-	};
-
-	function generateSitemapString(): string {
-		const sitemapEntries = generateSitemap();
-
-		let sitemapString = `
-        <?xml version="1.0" encoding="UTF-8" ?>
-        <urlset
-            xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"
-            xmlns:xhtml="https://www.w3.org/1999/xhtml"
-            xmlns:mobile="https://www.google.com/schemas/sitemap-mobile/1.0"
-            xmlns:news="https://www.google.com/schemas/sitemap-news/0.9"
-            xmlns:image="https://www.google.com/schemas/sitemap-image/1.1"
-            xmlns:video="https://www.google.com/schemas/sitemap-video/1.1">`;
-
-		sitemapEntries.forEach((entry) => {
-			sitemapString += `
-            <url>
-                <loc>${entry.location}</loc>
-                <changefreq>${entry.changefreq}</changefreq>
-                <priority>${entry.priority}</priority>`;
-
-			entry.links.forEach((link) => {
-				sitemapString += `
-                <xhtml:link 
-                    rel="alternate" 
-                    hreflang="${link.lang}" 
-                    href="${link.url}" />`;
-			});
-
-			sitemapString += `
-            </url>`;
-		});
-
-		sitemapString += `
-        </urlset>`;
-
-		return sitemapString;
-	}
-
-	return new Response(generateSitemapString().trim(), {
+	return new Response(sitemapString.trim(), {
 		headers: {
 			'Content-Type': 'application/xml'
 		}

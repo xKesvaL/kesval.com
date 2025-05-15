@@ -5,6 +5,7 @@ publishedAt: 2025-04-28
 tags:
   - KesvaL Studio
 cover: "./cover-en.png"
+coverAvif: "./cover-en.avif"
 author:
   name: Jordan
   email: jordan@kesval.com
@@ -14,6 +15,9 @@ author:
 <script>
 	import Tabbed from "$lib/components/markdown/Tabbed.svelte";
   import Sparkles from "$lib/components/base/Sparkles.svelte";
+  import TeamProfileCard from "$lib/components/base/TeamProfileCard.svelte";
+  import ServicesGrid from '$lib/components/base/ServicesGrid.svelte';
+  import { team } from '$lib/utils/config';
   import { Button } from "$lib/components/ui/button";
 	import { localizeHref } from '$paraglide/runtime';
 </script>
@@ -22,39 +26,21 @@ author:
 
 Hello and welcome! I am **so** glad you're here and I can't wait to write about our news, insights and our journey. My goal is to connect with you, our community, and share our <Sparkles size={10}>experience</Sparkles> with you.
 
-I've learned that the best way to build a successful business is to surround myself with talented people and listen to their ideas. But I've also learned that I need to work with people I trust, deeply.
-That is why KesvaL Studio has only two people at its core: me and my talented designer friend, [@thibaud](#). (sorry no link for now!) This is what makes KesvaL Studio unique.
+## A Little Bit About Me
 
-> It's not just about having a team, it's about assembling the perfect team where each person brings its own expertise. Our flexible approach means your project gets exactly the expertise it needs.
+<div class="my-8">
+  <TeamProfileCard member={team.jordan} />
+</div>
 
-## So, why is this "we" thing so important?
+My name is **Jordan**, and I am the founder of KesvaL Studio. I have been in the development world for over 10 years (started at 8!) and I've worked on a variety of projects. I have a passion for technology, but when I'm not working, I spend my time at the gym, since I am a powerlifting amateur. Helps me stay focused and energized!
 
-### 1. Smarter decisions & better results
+## Your partner in digital innovation
 
-<Tabbed>
-Have you ever worked so hard on a project, be so proud of it, only to have it be heavily criticized by others? That's exactly what we are trying to avoid when delivering your project. 
-</Tabbed>
+At KesvaL Studio, our mission is twofold:
 
-<Tabbed>
-Having multiple people working on a project means that we can bring different perspectives to the table. Altough it might slow down the process, we believe that higher quality beats 3 days quicker delivery.
-</Tabbed>
+1. **To make web and mobile development better for you**: We believe that money is not the only driver of success, we want to build long-lasting relationships with our clients, and give them the best possible experience.
+2. **To collaborate with agencies as a reliable partner**: We understand that agencies often need to outsource development work, and we want to help deliver high-quality work that meets their standards.
 
-### 2. Flexibility for your project
+## What we do
 
-<Tabbed>
-We know that your project is important to you, and you will most likely need to change some things. Working as a team also means we're agile, and we can adapt to your needs. For you, this means that we can apply changes to the project even when it's in progress.
-</Tabbed>
-
-### 3. It's way more fun!
-
-<Tabbed>
-Yes, we want to have fun while working on your project! This is the best way for us to be creative, get attached to your project, and deliver the best possible results.
-</Tabbed>
-
-At KesvaL Studio, "teamwork" and "agile" aren´t keywords that we use to get valued by you. They are the way we work, and the way we believe in building successful projects.
-
-## Ready to see what our approach can do for you?
-
-<Button href={localizeHref("/contact")}>
-  Let's talk about your project
-</Button>
+<ServicesGrid />

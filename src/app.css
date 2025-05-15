@@ -264,7 +264,7 @@
 
 @layer utilities {
 	/* Blog contents */
-	.prose * {
+	.prose:not(.not-prose) * {
 		@apply text-wrap;
 	}
 

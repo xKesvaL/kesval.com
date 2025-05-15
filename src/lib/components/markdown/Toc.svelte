@@ -24,7 +24,6 @@
 	let isMobile = new IsMobile(1024);
 
 	let isOpen = $derived(!isMobile.current || isOpenState);
-	$inspect(isOpen);
 
 	function toggleOpen() {
 		isOpenState = !isOpenState;

@@ -6,6 +6,7 @@ tags:
   - Équipe
   - Management
 cover: "./cover-fr.png"
+coverAvif: "./cover-fr.avif"
 ---
 
 Hey FR

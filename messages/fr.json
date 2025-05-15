@@ -122,8 +122,7 @@
 			"members": {
 				"jordan": {
 					"level": "Fondateur",
-					"role": "Développeur Fullstack",
-					"description": "Passionné par la programmiaoution, je souhaite rendre le web miaoueilleur pour tous. J'adore les chats."
+					"role": "Développeur Fullstack"
 				},
 				"thibaud": {
 					"level": "Co-Associé",
@@ -287,6 +286,37 @@
 		},
 		"toc": {
 			"title": "Sommaire"
+		}
+	},
+	"levels": {
+		"founder": "Fondateur"
+	},
+	"roles": {
+		"fullstack_dev": "Développeur Fullstack",
+		"ui_ux_designer": "Designer UI/UX"
+	},
+	"team": {
+		"jordan": {
+			"description": "Passionné par la programmiaoution, je souhaite rendre le web miaoueilleur pour tous. J'adore les chats."
+		},
+		"expertise": "Expertise"
+	},
+	"services": {
+		"a_z_project_development": {
+			"title": "Votre projet de A à Z",
+			"description": "Votre vision, notre expertise."
+		},
+		"freelance_development": {
+			"title": "Développement freelance",
+			"description": "Un partenaire de confiance."
+		},
+		"custom_web_mobile_app_development": {
+			"title": "Développement d'applications",
+			"description": "Des solutions sur mesure adaptées."
+		},
+		"design_web_or_app": {
+			"title": "Design de sites ou applications",
+			"description": "Des designs qui engagent."
 		}
 	}
 }

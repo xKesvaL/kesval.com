@@ -4,4 +4,4 @@
 	let { data } = $props();
 </script>
 
-<PostPage component={data.component} {...data.metadata} />
+<PostPage component={data.component} metadata={data.metadata} />

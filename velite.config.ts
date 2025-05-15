@@ -22,6 +22,7 @@ export default defineConfig({
 					updatedAt: s.isodate().optional(), // optional field
 					tags: s.array(s.string()),
 					cover: s.image(), // input image relative path, output image object with blurImage.
+					coverAvif: s.image(), // avif image, but we leave normal one for compatibility issues
 					video: s.file().optional(), // input file relative path, output file public path.
 					metadata: s.metadata(), // extract markdown reading-time, word-count, etc.
 					excerpt: s.excerpt(), // excerpt of markdown content

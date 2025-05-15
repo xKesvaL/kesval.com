@@ -108,21 +108,6 @@
 			"projects_description": "I have completed numerous projects, ranging from simple showcase sites to large-scale applications and online stores.",
 			"clients": "satisfied customers",
 			"clients_description": "I am proud to have helped my clients achieve their goals, and I hope to support them as best I can in their future projects."
-		},
-		"team": {
-			"suptitle": "Our team",
-			"title": "A team of enthusiasts",
-			"description": "We are a team of developers and designers working together to bring your ideas and needs to life.",
-			"members": {
-				"jordan": {
-					"level": "Founder",
-					"role": "Fullstack Developer"
-				},
-				"thibaud": {
-					"level": "Co-Partner",
-					"role": "UI/UX Designer"
-				}
-			}
 		}
 	},
 	"contact": {
