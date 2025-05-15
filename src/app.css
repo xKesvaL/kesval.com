@@ -54,6 +54,8 @@
 	--animate-marquee-up: marquee-up var(--marquee-duration, 60s) linear infinite;
 	--animate-gradient: gradient 8s linear infinite;
 	--animate-border-spin: border-spin 7s linear infinite;
+	--animate-grow-and-shrink: grow-and-shrink 1.5s ease-in-out forwards;
+	--animate-spin-sparkle: spin-sparkle 1.5s linear forwards;
 
 	--font-sans: 'Geist', sans-serif;
 	--font-emoji:
@@ -186,6 +188,27 @@
 		}
 	}
 
+	@keyframes grow-and-shrink {
+		0% {
+			transform: scale(0);
+		}
+		50% {
+			transform: scale(1);
+		}
+		100% {
+			transform: scale(0);
+		}
+	}
+
+	@keyframes spin-sparkle {
+		0% {
+			transform: rotate(0deg);
+		}
+		100% {
+			transform: rotate(180deg);
+		}
+	}
+
 	/* Custom keys */
 
 	--nav-height: 4.5rem;
@@ -241,6 +264,9 @@
 
 @layer utilities {
 	/* Blog contents */
+	.prose * {
+		@apply text-wrap;
+	}
 
 	article code:not(pre > code):not(.custom) {
 		@apply text-foreground bg-muted relative rounded-[5px] px-[0.375rem] py-[0.1875rem] font-mono text-[0.9em];

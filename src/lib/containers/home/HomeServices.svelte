@@ -31,14 +31,9 @@
 	interface ServiceStep {
 		id: string;
 		step: number;
-		title: string;
-		description: string;
 		icon: typeof IconBulb;
-		detailedDescription?: string;
 		features?: number;
 		tools?: string[];
-		outcome?: string;
-		visible?: boolean;
 	}
 
 	/**
@@ -48,82 +43,42 @@
 		{
 			id: 'discovery',
 			step: 1,
-			title: 'Discovery & Strategy',
-			description:
-				'Understanding your needs, target audience, and business goals to create a tailored strategy.',
 			icon: IconBulb,
-			detailedDescription:
-				'The journey begins with a thorough understanding of your business, goals, and target audience. I collaborate with you to identify key objectives and create a strategic roadmap.',
-			features: 4,
-			outcome:
-				'A clear project scope, timeline, and strategic roadmap aligned with your business objectives.'
+			features: 4
 		},
 		{
 			id: 'content',
 			step: 2,
-			title: 'Features & Content',
-			description:
-				'Defining the features, functionality, and content that will engage your audience.',
 			icon: IconLayoutDashboard,
-			detailedDescription:
-				"Based on our discovery phase, we'll define the specific features and content your project needs to succeed, establishing the foundation for your project's functionality.",
 			features: 4,
-			tools: ['Figma', 'Miro', 'Notion'],
-			outcome:
-				'A comprehensive project specification with clearly defined features and content structure.'
+			tools: ['Figma', 'Miro', 'Notion']
 		},
 		{
 			id: 'design',
 			step: 3,
-			title: 'UI/UX Design',
-			description:
-				'Creating beautiful, intuitive designs that provide a seamless user experience across all devices.',
 			icon: IconPalette,
-			detailedDescription:
-				'Transform concepts into visually stunning, user-friendly interfaces that not only look professional but also deliver an intuitive and engaging user experience.',
 			features: 4,
-			tools: ['Figma', 'Adobe XD', 'Photoshop'],
-			outcome:
-				'Polished, user-tested design mockups and interactive prototypes ready for development.'
+			tools: ['Figma', 'Adobe XD', 'Photoshop']
 		},
 		{
 			id: 'development',
 			step: 4,
-			title: 'Development',
-			description:
-				'Building your project using modern technologies and best practices for performance and security.',
 			icon: IconCode,
-			detailedDescription:
-				'Bringing designs to life with clean, efficient code using modern frameworks and development practices to ensure your project is fast, secure, and maintainable.',
 			features: 4,
-			tools: ['React/Vue/Svelte', 'Next.js/Nuxt/SvelteKit', 'TypeScript', 'Tailwind CSS'],
-			outcome: 'A fully functional, thoroughly tested application ready for deployment.'
+			tools: ['React/Vue/Svelte', 'Next.js/Nuxt/SvelteKit', 'TypeScript', 'Tailwind CSS']
 		},
 		{
 			id: 'deployment',
 			step: 5,
-			title: 'Deployment',
-			description:
-				'Launching your project with comprehensive testing and optimization for a smooth user experience.',
 			icon: IconRocket,
-			detailedDescription:
-				'Preparing your project for launch with thorough testing and optimization, handling all technical aspects to ensure a smooth transition to your live environment.',
 			features: 4,
-			tools: ['Vercel', 'Netlify', 'AWS', 'Docker'],
-			outcome: 'A successfully launched project with optimized performance and SEO readiness.'
+			tools: ['Vercel', 'Netlify', 'AWS', 'Docker']
 		},
 		{
 			id: 'maintenance',
 			step: 6,
-			title: 'Support & Maintenance',
-			description:
-				'Providing ongoing support, updates, and enhancements to keep your digital presence performing at its best.',
 			icon: IconTool,
-			detailedDescription:
-				'Your digital project is a long-term investment. I provide ongoing maintenance, updates, and support to ensure your project continues to perform optimally.',
-			features: 4,
-			outcome:
-				'A continuously evolving digital presence that remains secure, up-to-date, and aligned with your business growth.'
+			features: 4
 		}
 	] as const satisfies ServiceStep[];
 
@@ -353,22 +308,20 @@
 											{/if}
 
 											<!-- Outcome -->
-											{#if step.outcome}
-												<div class="bg-primary/5 border-primary/10 mt-6 rounded-lg border p-3">
-													<div class="flex items-start gap-2">
-														<IconTargetArrow
-															class="text-primary mt-0.5 size-5 shrink-0"
-															stroke={1.5}
-														/>
-														<p class="text-muted-foreground text-sm">
-															<span class="font-semibold">
-																{m['home.services.outcome']()}
-															</span>
-															{m[`home.services.steps.${step.id}.outcome`]()}
-														</p>
-													</div>
+											<div class="bg-primary/5 border-primary/10 mt-6 rounded-lg border p-3">
+												<div class="flex items-start gap-2">
+													<IconTargetArrow
+														class="text-primary mt-0.5 size-5 shrink-0"
+														stroke={1.5}
+													/>
+													<p class="text-muted-foreground text-sm">
+														<span class="font-semibold">
+															{m['home.services.outcome']()}
+														</span>
+														{m[`home.services.steps.${step.id}.outcome`]()}
+													</p>
 												</div>
-											{/if}
+											</div>
 										</div>
 									</Accordion.Content>
 								</Accordion.Item>

@@ -235,6 +235,7 @@
 	"blog": {
 		"title": "Blog",
 		"description": "Explore our latest posts",
+		"x_min_read": "{readingTime} min read",
 		"placeholder": {
 			"search": "Search posts...",
 			"no_results": "No posts found.",
@@ -243,8 +244,11 @@
 		"sort": {
 			"title_asc": "Title A-Z",
 			"title_desc": "Title Z-A",
-			"readingTime_asc": "Shortest read",
-			"readingTime_desc": "Longest read"
+			"reading_time_asc": "Shortest read",
+			"reading_time_desc": "Longest read"
+		},
+		"toc": {
+			"title": "Table of contents"
 		}
 	},
 	"see_all": "See all",

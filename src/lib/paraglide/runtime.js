@@ -70,6 +70,19 @@ export const urlPatterns = [
     ]
   },
   {
+    "pattern": "/projets/[projectId]",
+    "localized": [
+      [
+        "en",
+        "/en/projects/[projectId]"
+      ],
+      [
+        "fr",
+        "/projets/[projectId]"
+      ]
+    ]
+  },
+  {
     "pattern": "/:path(.*)?",
     "localized": [
       [

@@ -26,7 +26,8 @@ const PAGES = {
  * SERVERS
  */
 const SERVERS = {
-  "GET /manifest.json": `/manifest.json`
+  "GET /manifest.json": `/manifest.json`,
+  "GET /sitemap.xml": `/sitemap.xml`
 }
 
 /**
@@ -149,7 +150,7 @@ export function route<T extends keyof AllTypes>(key: T, ...params: any[]): strin
 */
 export type KIT_ROUTES = {
   PAGES: { '/': never, '/a-propos': never, '/blog': never, '/blog/[slug]': 'slug', '/contact': never, '/projets': never, '/projets/[projectId]': 'projectId' }
-  SERVERS: { 'GET /manifest.json': never }
+  SERVERS: { 'GET /manifest.json': never, 'GET /sitemap.xml': never }
   ACTIONS: Record<string, never>
   LINKS: Record<string, never>
   Params: { 'slug': never, 'projectId': never }

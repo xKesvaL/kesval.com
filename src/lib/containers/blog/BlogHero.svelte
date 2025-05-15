@@ -35,8 +35,8 @@
 		{ value: 'date-asc', label: m['common.sort_oldest']() },
 		{ value: 'title-asc', label: m['blog.sort.title_asc']() },
 		{ value: 'title-desc', label: m['blog.sort.title_desc']() },
-		{ value: 'readingTime-asc', label: m['blog.sort.readingTime_asc']() },
-		{ value: 'readingTime-desc', label: m['blog.sort.readingTime_desc']() }
+		{ value: 'reading-time-asc', label: m['blog.sort.reading_time_asc']() },
+		{ value: 'reading-time-desc', label: m['blog.sort.reading_time_desc']() }
 	];
 
 	let selectedSortLabel = $derived(

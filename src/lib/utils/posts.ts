@@ -78,8 +78,8 @@ export type SortOption =
 	| 'date-asc'
 	| 'title-asc'
 	| 'title-desc'
-	| 'readingTime-asc'
-	| 'readingTime-desc';
+	| 'reading-time-asc'
+	| 'reading-time-desc';
 
 // Enhance filterPosts to support searchTerm, selectedTags, and sortBy
 export const filterPosts = async (
@@ -115,9 +115,9 @@ export const filterPosts = async (
 				return a.title.localeCompare(b.title);
 			case 'title-desc':
 				return b.title.localeCompare(a.title);
-			case 'readingTime-asc':
+			case 'reading-time-asc':
 				return (a.metadata.readingTime || 0) - (b.metadata.readingTime || 0);
-			case 'readingTime-desc':
+			case 'reading-time-desc':
 				return (b.metadata.readingTime || 0) - (a.metadata.readingTime || 0);
 			default:
 				return 0;

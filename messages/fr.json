@@ -271,6 +271,20 @@
 		"project_management": "Gestion de projet"
 	},
 	"blog": {
+		"title": "Blog",
+		"description": "Découvrez nos derniers articles",
+		"x_min_read": "{readingTime} min de lecture",
+		"placeholder": {
+			"search": "Rechercher un article...",
+			"no_results": "Aucun article trouvé.",
+			"no_results_description": "Essayez d'autres mots-clés ou vérifiez l'orthographe."
+		},
+		"sort": {
+			"title_asc": "Titre A-Z",
+			"title_desc": "Titre Z-A",
+			"reading_time_asc": "Lecture la plus courte",
+			"reading_time_desc": "Lecture la plus longue"
+		},
 		"toc": {
 			"title": "Sommaire"
 		}

@@ -15,6 +15,7 @@ const config = {
 		alias: {
 			$assets: './src/assets',
 			$paraglide: './src/lib/paraglide',
+			$routes: './src/routes',
 			'$content/*': '.velite/*'
 		}
 	},

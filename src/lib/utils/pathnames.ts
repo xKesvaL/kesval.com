@@ -41,6 +41,13 @@ export const urlPatterns: UrlPatterns = [
 		})
 	},
 	{
+		pattern: '/projets/[projectId]',
+		localized: localize({
+			fr: '/projets/[projectId]',
+			en: '/projects/[projectId]'
+		})
+	},
+	{
 		pattern: '/:path(.*)?',
 		localized: localize({
 			fr: '/:path(.*)?',
