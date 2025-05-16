@@ -7,6 +7,7 @@
 	import type { PrimitiveAttributes } from '@svecodocs/kit';
 	import { IconCalendar, IconRefresh, IconTag } from '@tabler/icons-svelte';
 	import { Badge } from '../ui/badge';
+	import * as m from '$paraglide/messages';
 
 	let {
 		class: className,
@@ -33,12 +34,20 @@
 		<div class="text-muted-foreground mt-6 mb-6 flex flex-col gap-3 text-sm">
 			<div class="flex items-center gap-1.5">
 				<IconCalendar class="h-4 w-4" />
-				<span>Published on: {formatDate(metadata.publishedAt, getLocale())}</span>
+				<span>
+					{m['common.published_on_date']({
+						date: formatDate(metadata.publishedAt, getLocale())
+					})}
+				</span>
 			</div>
 			{#if metadata.updatedAt}
 				<div class="flex items-center gap-1.5">
 					<IconRefresh class="h-4 w-4" />
-					<span>Last updated: {formatDate(metadata.updatedAt, getLocale())}</span>
+					<span>
+						{m['common.updated_on_date']({
+							date: formatDate(metadata.updatedAt, getLocale())
+						})}
+					</span>
 				</div>
 			{/if}
 			{#if metadata.tags && metadata.tags.length > 0}

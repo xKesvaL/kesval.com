@@ -10,6 +10,7 @@
 	import { IconCalendar, IconTag, IconRefresh } from '@tabler/icons-svelte';
 	import { formatDate } from '$lib/utils/date';
 	import { getLocale } from '$paraglide/runtime';
+	import RelatedPosts from './RelatedPosts.svelte';
 
 	let {
 		component,
@@ -29,7 +30,7 @@
 		imageAvif={metadata.coverAvif}
 		alt={metadata.title}
 		class="mx-auto aspect-[2] w-full max-w-[1168px] object-cover shadow max-lg:mt-18 lg:aspect-auto lg:h-120 lg:rounded-b-2xl lg:border-5 lg:border-t-0"
-		convertStaticPathTo="/blog"
+		convertStaticPathTo="/posts"
 	/>
 	<div class="flex flex-row-reverse py-8">
 		<aside class="fixed bottom-4 left-4 z-10 mr-auto lg:sticky lg:pl-16">
@@ -43,6 +44,8 @@
 				<PostHeader {metadata} />
 
 				<PageComponent />
+
+				<RelatedPosts {metadata} />
 			</article>
 		</div>
 	</div>

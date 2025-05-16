@@ -36,6 +36,8 @@ export type PostResolver = () => Promise<{ default: Component; metadata: Post }>
 export const getPost = async (slug: string, locale: Locale) => {
 	const slugMetadata = getPostMetadata(slug);
 
+	console.log(slugMetadata);
+
 	const availablePosts = getPostLocales(slugMetadata?.uniqueId || '');
 	const metadata = availablePosts.find((post) => post.locale === locale);
 	const hrefSlug = metadata?.slug?.slice(0, -3);
@@ -48,15 +50,17 @@ export const getPost = async (slug: string, locale: Locale) => {
 		return redirect(302, localizeHref(route('/blog/[slug]', { slug: hrefSlug }), { locale }));
 	}
 
-	const postsModules = import.meta.glob('/src/content/**/*.md');
+	const postsModules = import.meta.glob('/src/content/blog/**/*.md');
 
 	const postGlob = Object.entries(postsModules).find(([key]) => {
 		const path = key.split('/').slice(3).join('/').replace('.md', '');
-		return path === `${metadata.uniqueId}/${metadata.slug}`;
+		console.log(path);
+		console.log(`blog/${metadata.uniqueId}/${metadata.slug}`);
+		return path === `blog/${metadata.uniqueId}/${metadata.slug}`;
 	});
 
 	if (!postGlob) {
-		error(404, 'Could not find the post.');
+		error(404, 'Could not find the post markdown.');
 	}
 
 	const post = await (postGlob[1] as PostResolver)();
