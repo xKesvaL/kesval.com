@@ -5,6 +5,11 @@
 	import Toc from './Toc.svelte';
 	import type { Post } from '$content/index';
 	import VeliteImage from '../base/VeliteImage.svelte';
+	import PostShare from './PostShare.svelte';
+	import { Badge } from '$lib/components/ui/badge';
+	import { IconCalendar, IconTag, IconRefresh } from '@tabler/icons-svelte';
+	import { formatDate } from '$lib/utils/date';
+	import { getLocale } from '$paraglide/runtime';
 
 	let {
 		component,
@@ -23,18 +28,20 @@
 		imagePng={metadata.cover}
 		imageAvif={metadata.coverAvif}
 		alt={metadata.title}
-		class="mx-auto h-120 w-full max-w-[1400px] rounded-4xl object-cover"
+		class="mx-auto aspect-[2] w-full max-w-[1168px] object-cover shadow max-lg:mt-18 lg:aspect-auto lg:h-120 lg:rounded-b-2xl lg:border-5 lg:border-t-0"
 		convertStaticPathTo="/blog"
 	/>
 	<div class="flex flex-row-reverse py-8">
 		<aside class="fixed bottom-4 left-4 z-10 mr-auto lg:sticky lg:pl-16">
-			<div class="sticky top-36 w-90">
+			<div class="sticky top-36 flex w-90 flex-col gap-8">
 				<Toc toc={{ items: metadata.toc }} />
+				<PostShare post={metadata} />
 			</div>
 		</aside>
-		<div class="section mr-auto ml-auto w-full max-w-prose px-4 max-md:pt-20 lg:mr-0 lg:text-lg">
+		<div class="mr-auto ml-auto w-full max-w-prose px-4 lg:mr-0 lg:text-lg">
 			<article class="prose xl:prose-lg @container w-full min-w-0" id="main-content">
-				<PostHeader title={metadata.title} excerpt={metadata.excerpt} />
+				<PostHeader {metadata} />
+
 				<PageComponent />
 			</article>
 		</div>

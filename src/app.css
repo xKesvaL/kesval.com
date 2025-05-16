@@ -265,7 +265,7 @@
 @layer utilities {
 	/* Blog contents */
 	.prose:not(.not-prose) * {
-		@apply text-wrap;
+		@apply scroll-m-28 text-wrap;
 	}
 
 	article code:not(pre > code):not(.custom) {
