@@ -240,7 +240,10 @@
 		"sort_by": "Trier par",
 		"filter_tags": "Filtrer par tags",
 		"clear_filters": "Effacer les filtres",
-		"clear_filters_button": "Effacer"
+		"clear_filters_button": "Effacer",
+		"copy_link": "Copier le lien",
+		"published_on_date": "Publié le {date}",
+		"updated_on_date": "Mis à jour le {date}"
 	},
 	"meta": {
 		"home": {
@@ -273,6 +276,9 @@
 		"title": "Blog",
 		"description": "Découvrez nos derniers articles",
 		"x_min_read": "{readingTime} min de lecture",
+		"share_this_post": "Partager cet article",
+		"share_on_x": "Partager sur {x}",
+		"related_posts": "Articles similaires",
 		"placeholder": {
 			"search": "Rechercher un article...",
 			"no_results": "Aucun article trouvé.",

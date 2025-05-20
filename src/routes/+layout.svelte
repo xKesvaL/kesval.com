@@ -8,9 +8,13 @@
 	import { deepMerge, MetaTags } from 'svelte-meta-tags';
 	import HireCard from '$lib/components/layout/HireCard.svelte';
 	import { building, dev } from '$app/environment';
+	import { Toaster } from '$lib/components/ui/sonner';
+	import { IsMobile } from '$lib/hooks/is-mobile.svelte';
 
 	let { children, data } = $props();
 	let metaTags = $derived(deepMerge(data.baseMetaTags, page.data.pageMetaTags));
+
+	const isMobile = new IsMobile();
 </script>
 
 {#key getLocale()}
@@ -24,6 +28,10 @@
 	<MetaTags {...metaTags} />
 
 	<Analytics />
+	<Toaster
+		position="bottom-right"
+		offset={{ right: isMobile.current ? '16px' : '96px', bottom: '16px' }}
+	/>
 
 	<Navigation />
 	<main>

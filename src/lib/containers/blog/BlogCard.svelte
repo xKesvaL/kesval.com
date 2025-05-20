@@ -25,7 +25,7 @@
 			style="background-image: url('{post.cover.blurDataURL}');"
 		>
 			<img
-				src={post.cover.src.replace('/static', '/blog')}
+				src={post.cover.src.replace('/static', '/posts')}
 				alt={post.title}
 				class="absolute inset-0 h-full w-full object-cover opacity-0 transition duration-500 ease-in-out group-hover:scale-105"
 				onload={(e) => {

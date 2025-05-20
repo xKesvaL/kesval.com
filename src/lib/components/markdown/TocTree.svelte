@@ -29,7 +29,7 @@
 				<a
 					href={item.url}
 					class={cn(
-						'hover:text-foreground ml-5 inline-block pb-2 no-underline transition-colors',
+						'hover:text-foreground ml-5 inline-block w-max pb-2 text-nowrap whitespace-nowrap no-underline transition-colors',
 						active ? 'text-foreground' : 'text-muted-foreground',
 						tocState.isLastItem(item) && 'pb-0'
 					)}

@@ -6,6 +6,7 @@
 	"scripts": {
 		"dev": "vite dev --host",
 		"build": "vite build",
+		"build:paraglide": "bunx @inlang/paraglide-js compile --project ./project.inlang --outdir ./src/lib/paraglide",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -32,6 +33,7 @@
 		"@tailwindcss/typography": "^0.5.16",
 		"@tailwindcss/vite": "^4.1.7",
 		"@tanstack/table-core": "^8.20.5",
+		"@types/gsap": "^3.0.0",
 		"@types/gtag.js": "^0.0.20",
 		"@types/web-app-manifest": "^1.0.9",
 		"@velite/plugin-vite": "^0.0.1",
@@ -72,7 +74,8 @@
 	},
 	"dependencies": {
 		"@formkit/auto-animate": "^0.8.2",
-		"motion": "^12.12.1",
+		"gsap": "^3.13.0",
+		"motion": "^12.11.3",
 		"vite-plugin-kit-routes": "^0.8.4"
 	},
 	"engines": {

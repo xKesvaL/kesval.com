@@ -7,12 +7,12 @@ import { defineConfig, s } from 'velite';
 export default defineConfig({
 	root: './src/content',
 	output: {
-		assets: 'static/blog'
+		assets: 'static/posts'
 	},
 	collections: {
 		posts: {
 			name: 'Post', // collection type name
-			pattern: './**/*.md', // content files glob pattern
+			pattern: './blog/**/*.md', // content files glob pattern
 			schema: s
 				.object({
 					title: s.string().max(99), // Zod primitive type
@@ -32,12 +32,44 @@ export default defineConfig({
 				.transform((data) => {
 					return {
 						...data,
-						uniqueId: data.path.split('/').shift(),
+						uniqueId: data.path.split('/')[1],
 						slug: slugFromPath(data.path), // generate slug from path
 						slugClean: slugFromPath(data.path)?.slice(0, -3),
 						locale: data.path.split('.')[1]
 					};
 				})
+		},
+		projects: {
+			name: 'Project',
+			pattern: './projects/**/*.md',
+			schema: s.object({
+				title: s.string().max(99),
+				path: s.path(),
+				slug: s.slug('projects').optional(),
+				publishedAt: s.isodate(),
+				updatedAt: s.isodate().optional(),
+				tags: s.array(s.string()),
+				cover: s.image(),
+				coverAvif: s.image(),
+				video: s.file().optional(),
+				metadata: s.metadata(),
+				excerpt: s.excerpt(),
+				content: s.markdown(),
+				toc: s.toc(),
+
+				client: s.string().optional(),
+				website: s.string().optional(),
+				github: s.string().optional(),
+
+				finishedAt: s.isodate().optional(),
+				technologies: s.array(s.string()).optional(),
+				featured: s.boolean().optional(),
+
+				// array of enum values
+				projectType: s.array(
+					s.enum(['web', 'mobile', 'desktop', 'app', 'showcase', 'e-commerce', 'saas', 'other'])
+				)
+			})
 		}
 	}
 });

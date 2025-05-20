@@ -4,16 +4,15 @@ excerpt: Get to know KesvaL Studio, your partner for innovative web and mobile d
 publishedAt: 2025-04-28
 tags:
   - KesvaL Studio
-cover: "./cover-en.png"
-coverAvif: "./cover-en.avif"
+cover: './cover-en.png'
+coverAvif: './cover-en.avif'
 author:
   name: Jordan
   email: jordan@kesval.com
-  image: "../jordan.png"
+  image: '../jordan.png'
 ---
 
 <script>
-	import Tabbed from "$lib/components/markdown/Tabbed.svelte";
   import Sparkles from "$lib/components/base/Sparkles.svelte";
   import TeamProfileCard from "$lib/components/base/TeamProfileCard.svelte";
   import ServicesGrid from '$lib/components/base/ServicesGrid.svelte';
@@ -44,3 +43,14 @@ At KesvaL Studio, our mission is twofold:
 ## What we do
 
 <ServicesGrid />
+
+## Why partner with Kesval Studio?
+
+We know you have lots of options when it comes to web and mobile development. Here's why KesvaL Studio stands out:
+
+- **Client-centric approach**: We listen and adapt to your needs, tailoring our services to fit your unique requirements.
+- **Transparency**: We think honesty is the best policy. We keep you informed every step of the way.
+- **Flexibility**: We understand that things need to change throughout the project, and we are here to adapt to your needs.
+- **Adaptability**: We tailor everything to you, if you are low on budget, we can still find solutions together.
+
+We're excited about the future and hope we can be a part of your journey! Stay tuned for more!

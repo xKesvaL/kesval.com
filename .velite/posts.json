@@ -1,7 +1,68 @@
 [
   {
+    "title": "Découvrez KesvaL Studio™",
+    "path": "blog/28-04-2025/decouvrez-kesval-studio.fr",
+    "publishedAt": "2025-04-28T00:00:00.000Z",
+    "tags": [
+      "KesvaL Studio"
+    ],
+    "cover": {
+      "src": "/static/cover-fr-1dcd73fc.png",
+      "height": 1260,
+      "width": 2400,
+      "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAACQAQCdASoIAAQADMDOJQAAXN9SqCwA93UaMz4MP6YAAAAA",
+      "blurWidth": 8,
+      "blurHeight": 4
+    },
+    "coverAvif": {
+      "src": "/static/cover-fr-3e318a15.avif",
+      "height": 1260,
+      "width": 2400,
+      "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAACQAQCdASoIAAQADMDOJQAAXN9SqCwA93UaMz4MP6YAAAAA",
+      "blurWidth": 8,
+      "blurHeight": 4
+    },
+    "metadata": {
+      "readingTime": 1,
+      "wordCount": 390
+    },
+    "excerpt": "Apprenez à connaître KesvaL Studio, votre partenaire pour le développement web et mobile innovant.",
+    "content": "<script>\n  import Sparkles from \"$lib/components/base/Sparkles.svelte\";\n  import TeamProfileCard from \"$lib/components/base/TeamProfileCard.svelte\";\n  import ServicesGrid from '$lib/components/base/ServicesGrid.svelte';\n  import { team } from '$lib/utils/config';\n  import { Button } from \"$lib/components/ui/button\";\n  import { localizeHref } from '$paraglide/runtime';\n</script>\n<h2>👋 Bienvenue sur le blog de KesvaL Studio</h2>\n<p>Bonjour et bienvenue ! Je suis <strong>tellement</strong> heureux que vous soyez ici et j'ai hâte d'écrire sur nos actualités, nos perspectives et notre parcours. Mon objectif est de créer un lien avec vous, notre communauté, et de partager notre <sparkles size=\"{10}\">expérience</sparkles> avec vous.</p>\n<h2>Quelques mots sur moi</h2>\n<div class=\"my-8\">\n  <teamprofilecard member=\"{team.jordan}\">\n</teamprofilecard></div>\n<p>Je m'appelle <strong>Jordan</strong>, et je suis le fondateur de KesvaL Studio. Je suis dans le monde du développement depuis plus de 10 ans (j'ai commencé à 8 ans !) et j'ai travaillé sur divers projets. J'ai une passion pour la technologie, mais quand je ne travaille pas, je passe mon temps à la salle de sport, car je suis un amateur de powerlifting. Cela m'aide à rester concentré et plein d'énergie !</p>\n<h2>Votre partenaire en innovation numérique</h2>\n<p>Chez KesvaL Studio, notre mission est double :</p>\n<ol>\n<li><strong>Améliorer le développement web et mobile pour vous</strong> : Nous croyons que l'argent n'est pas le seul moteur du succès, nous voulons construire des relations durables avec nos clients et leur offrir la meilleure expérience possible.</li>\n<li><strong>Collaborer avec les agences en tant que partenaire fiable</strong> : Nous comprenons que les agences ont souvent besoin d'externaliser des travaux de développement, et nous voulons les aider à fournir un travail de haute qualité qui réponde à leurs normes.</li>\n</ol>\n<h2>Ce que nous faisons</h2>\n<servicesgrid>\n<h2>Pourquoi s'associer avec KesvaL Studio ?</h2>\n<p>Nous savons que vous avez de nombreuses options en matière de développement web et mobile. Voici pourquoi KesvaL Studio se démarque :</p>\n<ul>\n<li><strong>Approche centrée sur le client</strong> : Nous écoutons et nous adaptons à vos besoins, en personnalisant nos services pour répondre à vos exigences uniques.</li>\n<li><strong>Transparence</strong> : Nous pensons que l'honnêteté est la meilleure politique. Nous vous tenons informés à chaque étape.</li>\n<li><strong>Flexibilité</strong> : Nous comprenons que les choses peuvent changer tout au long du projet, et nous sommes là pour nous adapter à vos besoins.</li>\n<li><strong>Adaptabilité</strong> : Nous adaptons tout pour vous ; si votre budget est limité, nous pouvons toujours trouver des solutions ensemble.</li>\n</ul>\n<p>Nous sommes enthousiastes quant à l'avenir et espérons pouvoir faire partie de votre parcours ! Restez à l'écoute pour plus d'informations !</p></servicesgrid>",
+    "toc": [
+      {
+        "title": "👋 Bienvenue sur le blog de KesvaL Studio",
+        "url": "#-bienvenue-sur-le-blog-de-kesval-studio",
+        "items": []
+      },
+      {
+        "title": "Quelques mots sur moi",
+        "url": "#quelques-mots-sur-moi",
+        "items": []
+      },
+      {
+        "title": "Votre partenaire en innovation numérique",
+        "url": "#votre-partenaire-en-innovation-numérique",
+        "items": []
+      },
+      {
+        "title": "Ce que nous faisons",
+        "url": "#ce-que-nous-faisons",
+        "items": []
+      },
+      {
+        "title": "Pourquoi s'associer avec KesvaL Studio ?",
+        "url": "#pourquoi-sassocier-avec-kesval-studio-",
+        "items": []
+      }
+    ],
+    "uniqueId": "28-04-2025",
+    "slug": "decouvrez-kesval-studio.fr",
+    "slugClean": "decouvrez-kesval-studio",
+    "locale": "fr"
+  },
+  {
     "title": "Meet KesvaL Studio™",
-    "path": "28-04-2025/meet-kesval-studio.en",
+    "path": "blog/28-04-2025/meet-kesval-studio.en",
     "publishedAt": "2025-04-28T00:00:00.000Z",
     "tags": [
       "KesvaL Studio"
@@ -24,10 +85,10 @@
     },
     "metadata": {
       "readingTime": 1,
-      "wordCount": 243
+      "wordCount": 353
     },
     "excerpt": "Get to know KesvaL Studio, your partner for innovative web and mobile development",
-    "content": "<script>\n\timport Tabbed from \"$lib/components/markdown/Tabbed.svelte\";\n  import Sparkles from \"$lib/components/base/Sparkles.svelte\";\n  import TeamProfileCard from \"$lib/components/base/TeamProfileCard.svelte\";\n  import ServicesGrid from '$lib/components/base/ServicesGrid.svelte';\n  import { team } from '$lib/utils/config';\n  import { Button } from \"$lib/components/ui/button\";\n\timport { localizeHref } from '$paraglide/runtime';\n</script>\n<h2>👋 Welcome to the KesvaL Studio blog!</h2>\n<p>Hello and welcome! I am <strong>so</strong> glad you're here and I can't wait to write about our news, insights and our journey. My goal is to connect with you, our community, and share our <sparkles size=\"{10}\">experience</sparkles> with you.</p>\n<h2>A Little Bit About Me</h2>\n<div class=\"my-8\">\n  <teamprofilecard member=\"{team.jordan}\">\n</teamprofilecard></div>\n<p>My name is <strong>Jordan</strong>, and I am the founder of KesvaL Studio. I have been in the development world for over 10 years (started at 8!) and I've worked on a variety of projects. I have a passion for technology, but when I'm not working, I spend my time at the gym, since I am a powerlifting amateur. Helps me stay focused and energized!</p>\n<h2>Your partner in digital innovation</h2>\n<p>At KesvaL Studio, our mission is twofold:</p>\n<ol>\n<li><strong>To make web and mobile development better for you</strong>: We believe that money is not the only driver of success, we want to build long-lasting relationships with our clients, and give them the best possible experience.</li>\n<li><strong>To collaborate with agencies as a reliable partner</strong>: We understand that agencies often need to outsource development work, and we want to help deliver high-quality work that meets their standards.</li>\n</ol>\n<h2>What we do</h2>\n<servicesgrid></servicesgrid>",
+    "content": "<script>\n  import Sparkles from \"$lib/components/base/Sparkles.svelte\";\n  import TeamProfileCard from \"$lib/components/base/TeamProfileCard.svelte\";\n  import ServicesGrid from '$lib/components/base/ServicesGrid.svelte';\n  import { team } from '$lib/utils/config';\n  import { Button } from \"$lib/components/ui/button\";\n\timport { localizeHref } from '$paraglide/runtime';\n</script>\n<h2>👋 Welcome to the KesvaL Studio blog!</h2>\n<p>Hello and welcome! I am <strong>so</strong> glad you're here and I can't wait to write about our news, insights and our journey. My goal is to connect with you, our community, and share our <sparkles size=\"{10}\">experience</sparkles> with you.</p>\n<h2>A Little Bit About Me</h2>\n<div class=\"my-8\">\n  <teamprofilecard member=\"{team.jordan}\">\n</teamprofilecard></div>\n<p>My name is <strong>Jordan</strong>, and I am the founder of KesvaL Studio. I have been in the development world for over 10 years (started at 8!) and I've worked on a variety of projects. I have a passion for technology, but when I'm not working, I spend my time at the gym, since I am a powerlifting amateur. Helps me stay focused and energized!</p>\n<h2>Your partner in digital innovation</h2>\n<p>At KesvaL Studio, our mission is twofold:</p>\n<ol>\n<li><strong>To make web and mobile development better for you</strong>: We believe that money is not the only driver of success, we want to build long-lasting relationships with our clients, and give them the best possible experience.</li>\n<li><strong>To collaborate with agencies as a reliable partner</strong>: We understand that agencies often need to outsource development work, and we want to help deliver high-quality work that meets their standards.</li>\n</ol>\n<h2>What we do</h2>\n<servicesgrid>\n<h2>Why partner with Kesval Studio?</h2>\n<p>We know you have lots of options when it comes to web and mobile development. Here's why KesvaL Studio stands out:</p>\n<ul>\n<li><strong>Client-centric approach</strong>: We listen and adapt to your needs, tailoring our services to fit your unique requirements.</li>\n<li><strong>Transparency</strong>: We think honesty is the best policy. We keep you informed every step of the way.</li>\n<li><strong>Flexibility</strong>: We understand that things need to change throughout the project, and we are here to adapt to your needs.</li>\n<li><strong>Adaptability</strong>: We tailor everything to you, if you are low on budget, we can still find solutions together.</li>\n</ul>\n<p>We're excited about the future and hope we can be a part of your journey! Stay tuned for more!</p></servicesgrid>",
     "toc": [
       {
         "title": "👋 Welcome to the KesvaL Studio blog!",
@@ -48,47 +109,16 @@
         "title": "What we do",
         "url": "#what-we-do",
         "items": []
+      },
+      {
+        "title": "Why partner with Kesval Studio?",
+        "url": "#why-partner-with-kesval-studio",
+        "items": []
       }
     ],
     "uniqueId": "28-04-2025",
     "slug": "meet-kesval-studio.en",
     "slugClean": "meet-kesval-studio",
     "locale": "en"
-  },
-  {
-    "title": "Pourquoi nous travaillons en équipe",
-    "path": "28-04-2025/pourquoi-nous-travaillons-en-equipe.fr",
-    "publishedAt": "2025-05-08T00:00:00.000Z",
-    "tags": [
-      "Équipe",
-      "Management"
-    ],
-    "cover": {
-      "src": "/static/cover-fr-1dcd73fc.png",
-      "height": 1260,
-      "width": 2400,
-      "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAACQAQCdASoIAAQADMDOJQAAXN9SqCwA93UaMz4MP6YAAAAA",
-      "blurWidth": 8,
-      "blurHeight": 4
-    },
-    "coverAvif": {
-      "src": "/static/cover-fr-3e318a15.avif",
-      "height": 1260,
-      "width": 2400,
-      "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAACQAQCdASoIAAQADMDOJQAAXN9SqCwA93UaMz4MP6YAAAAA",
-      "blurWidth": 8,
-      "blurHeight": 4
-    },
-    "metadata": {
-      "readingTime": 1,
-      "wordCount": 2
-    },
-    "excerpt": "Curieux de savoir comment nous construisons des expériences si impactantes ?",
-    "content": "<p>Hey FR</p>",
-    "toc": [],
-    "uniqueId": "28-04-2025",
-    "slug": "pourquoi-nous-travaillons-en-equipe.fr",
-    "slugClean": "pourquoi-nous-travaillons-en-equipe",
-    "locale": "fr"
   }
 ]
