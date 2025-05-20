@@ -1,6 +1,6 @@
 @import 'tailwindcss';
+@import 'tw-animate-css';
 
-@plugin "tailwindcss-animate";
 @plugin "@tailwindcss/typography";
 
 @font-face {
@@ -43,9 +43,6 @@
 	--color-sidebar-border: oklch(0.93 0.01 264.53 / 1);
 	--color-sidebar-ring: oklch(0.63 0.19 259.6 / 1);
 
-	--animate-accordion-down: accordion-down 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-	--animate-accordion-up: accordion-up 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-	--animate-caret-blink: caret-blink 1.25s ease-out infinite;
 	--animate-shine-pulse: shine-pulse 2s linear infinite;
 	--animate-aurora: aurora 60s linear infinite;
 	--animate-bounce-x: bounce-x 1.2s ease-in-out infinite;
@@ -71,36 +68,6 @@
 	--sp-md: 2rem;
 	--sp-lg: 4rem;
 	--sp-xl: 6rem;
-
-	@keyframes accordion-down {
-		from {
-			height: 0;
-		}
-		to {
-			height: var(--bits-accordion-content-height);
-		}
-	}
-
-	@keyframes accordion-up {
-		from {
-			height: var(--bits-accordion-content-height);
-		}
-		to {
-			height: 0;
-		}
-	}
-
-	@keyframes caret-blink {
-		0%,
-		70%,
-		100% {
-			opacity: 1;
-		}
-		20%,
-		50% {
-			opacity: 0;
-		}
-	}
 
 	@keyframes shine-pulse {
 		0% {

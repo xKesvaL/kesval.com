@@ -82,6 +82,8 @@
 		}
 	] as const satisfies ServiceStep[];
 
+	type ServiceStepId = (typeof serviceSteps)[number]['id'];
+
 	// Store which steps are visible in the viewport
 	let visibleSteps = new SvelteSet<string>();
 
@@ -126,9 +128,9 @@
 		timelineProgress.set(progressPercent);
 	}
 
-	let currentlyOpenStep = $state(serviceSteps[0].id);
+	let currentlyOpenStep = $state<ServiceStepId>(serviceSteps[0].id);
 
-	const handleStepOpen = (stepId: string) => {
+	const handleStepOpen = (stepId: ServiceStepId) => {
 		// if mobile AND if the opened step is after the currently visible step, scroll up to the opened step
 		const openedStepIndex = serviceSteps.findIndex((step) => step.id === stepId);
 		const currentlyVisibleIndex = serviceSteps.findIndex((step) => step.id === currentlyOpenStep);
@@ -235,7 +237,7 @@
 							<Accordion.Root
 								type="single"
 								value={currentlyOpenStep === step.id ? step.id : ''}
-								onValueChange={handleStepOpen}
+								onValueChange={(v) => handleStepOpen(v as ServiceStepId)}
 								id={step.id}
 							>
 								<Accordion.Item class="rounded-2xl border-none" value={step.id}>
@@ -279,7 +281,7 @@
 														{m['home.services.key_activities']()}
 													</h4>
 													<ul class="grid gap-2 md:grid-cols-2">
-														{#each { length: step.features } as _, i}
+														{#each { length: step.features } as _, i (i)}
 															<li class="flex items-start gap-2">
 																<IconChevronDown
 																	class="text-primary mt-1 size-4 shrink-0 -rotate-90"
@@ -294,13 +296,13 @@
 											{/if}
 
 											<!-- Tools used -->
-											{#if step.tools}
+											{#if 'tools' in step}
 												<div class="mt-6">
 													<h4 class="mb-2 text-sm font-medium">
 														{m['home.services.tools']()}
 													</h4>
 													<div class="flex flex-wrap gap-2">
-														{#each step.tools as tool}
+														{#each step.tools as tool (tool)}
 															<Badge variant="secondary" class="text-xs">{tool}</Badge>
 														{/each}
 													</div>
