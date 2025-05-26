@@ -44,7 +44,7 @@ At KesvaL Studio, our mission is twofold:
 
 <ServicesGrid />
 
-## 🤝 Why partner with Kesval Studio?
+## 🤝 Why partner with KesvaL Studio?
 
 We know you have lots of options when it comes to web and mobile development. Here's why KesvaL Studio stands out:
 

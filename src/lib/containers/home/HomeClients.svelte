@@ -1,33 +1,27 @@
 <script lang="ts">
-	import {
-		IconBrandAirbnb,
-		IconBrandGoogle,
-		IconBrandFigma,
-		IconBrandAppstore,
-		IconBrandDribbble,
-		IconBrandWebflow,
-		IconBrandSlack,
-		IconBrandAdobe,
-		type Icon
-	} from '@tabler/icons-svelte';
+	import { type Icon, IconUser } from '@tabler/icons-svelte';
 	import * as m from '$paraglide/messages';
 	import { Separator } from '$lib/components/ui/separator';
+	import type { Picture } from 'vite-imagetools';
+	import OLWE from '$assets/clients/olwe.svg?enhanced';
 
 	type Client = {
-		icon: Icon;
+		icon: Icon | Picture | string;
 		name: string;
 		link?: string;
+		type?: 'image' | 'icon';
+		color?: string;
 	};
 
 	const clients: Client[] = [
-		{ link: '#', icon: IconBrandGoogle, name: 'Client 1' },
-		{ link: '#', icon: IconBrandAirbnb, name: 'Client 2' },
-		{ link: '#', icon: IconBrandFigma, name: 'Client 3' },
-		{ link: '#', icon: IconBrandAppstore, name: 'Client 4' },
-		{ link: '#', icon: IconBrandSlack, name: 'Client 5' },
-		{ link: '#', icon: IconBrandDribbble, name: 'Client 6' },
-		{ link: '#', icon: IconBrandWebflow, name: 'Client 7' },
-		{ link: '#', icon: IconBrandAdobe, name: 'Client 8' }
+		{ link: 'https://olwe.fr', icon: OLWE, name: 'OLWE Groupe', type: 'image', color: '#FFB028' },
+		{ link: '#', icon: IconUser, name: m['common.your_name_here']() },
+		{ link: '#', icon: IconUser, name: m['common.your_name_here']() },
+		{ link: '#', icon: IconUser, name: m['common.your_name_here']() },
+		{ link: '#', icon: IconUser, name: m['common.your_name_here']() },
+		{ link: '#', icon: IconUser, name: m['common.your_name_here']() },
+		{ link: '#', icon: IconUser, name: m['common.your_name_here']() },
+		{ link: '#', icon: IconUser, name: m['common.your_name_here']() }
 	];
 </script>
 
@@ -36,8 +30,8 @@
 >
 	<div class="kcontainer text-primary-foreground flex w-full flex-col gap-8 px-4 md:gap-12">
 		<!-- Header with animated badge -->
-		<div class="animate-appear flex w-full items-center gap-8">
-			<h2 class="h4 text-primary-foreground w-max">
+		<div class="animate-appear flex w-full items-center gap-4 md:gap-8">
+			<h2 class="h4 text-primary-foreground w-3/4 md:w-max">
 				{m['home.clients.title']()}
 			</h2>
 			<Separator class="bg-primary-foreground/50 h-[1px] !w-auto grow" />
@@ -45,15 +39,26 @@
 
 		<!-- Client grid with hover effects -->
 		<div class="animate-appear grid grid-cols-2 gap-6 md:grid-cols-4 lg:gap-8">
-			{#each clients as client, i}
+			{#each clients as client, i (`${client.name}-${i}`)}
 				<a
 					href={client.link}
 					target="_blank"
 					rel="noopener noreferrer"
-					class="bg-primary-foreground/5 hover:bg-primary-foreground/10 border-primary-foreground/10 flex items-center justify-center gap-3 rounded-xl border p-6 transition hover:-translate-y-1"
+					class="bg-primary-foreground/5 hover:bg-primary-foreground/10 border-primary-foreground/10 flex items-center justify-center gap-3 rounded-xl border px-2 py-6 backdrop-blur-lg transition hover:-translate-y-1 hover:border-[var(--client-color)]"
+					style={`--client-color: ${client.color || 'var(--color-primary-foreground)'}`}
 				>
-					<client.icon class="size-6 md:size-7" />
-					<span class="text-primary-foreground/90 font-medium">{client.name}</span>
+					{#if client.type === 'icon' || client.type === undefined}
+						{@const IconComponent = client.icon as Icon}
+						<IconComponent class="size-6 md:size-7" />
+					{:else if client.type === 'image'}
+						{#if typeof client.icon === 'string'}
+							<img src={client.icon} alt={client.name} class="size-6 md:size-7" />
+						{:else}
+							{@const ImageSrc = client.icon as Picture}
+							<enhanced:img src={ImageSrc} alt={client.name} class="size-6 md:size-7" />
+						{/if}
+					{/if}
+					<span class="text-primary-foreground/90 md:font-medium">{client.name}</span>
 				</a>
 			{/each}
 		</div>

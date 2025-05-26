@@ -21,7 +21,9 @@
 			class="absolute top-0 left-1/2 h-320 w-120 -translate-x-140 -translate-y-80 -rotate-45 bg-[radial-gradient(50%_50%_at_50%_50%,var(--color-primary)_0,var(--color-primary)_80%,transparent_100%)]"
 		></div>
 	</div>
-	<div class="kcontainer relative flex flex-col items-center justify-center gap-6 px-4 text-center">
+	<div
+		class="kcontainer relative mb-12 flex flex-col items-center justify-center gap-6 px-4 text-center md:mb-24"
+	>
 		<div class="animate-appear">
 			<AnimatedBadge>
 				<span class="flex items-center gap-2">
@@ -40,7 +42,9 @@
 			{m['home.hero.subtitle']({ brand: brand.name })}
 		</p>
 
-		<div class="animate-appear mt-6 flex flex-wrap items-center justify-center gap-4">
+		<div
+			class="animate-appear mt-6 flex flex-col-reverse flex-wrap items-center justify-center gap-4 sm:flex-row"
+		>
 			<Button
 				class="h-auto gap-3 rounded-full !px-5 py-3 text-sm"
 				variant="outline"
@@ -56,17 +60,6 @@
 				<IconRocket class="size-5!" />
 				{m['common.cta_big']()}
 			</Button>
-		</div>
-
-		<div class="animate-appear mt-6 flex flex-wrap items-center justify-center gap-4">
-			<div class="bg-card flex items-center gap-4 rounded-full border px-6 py-3 transition">
-				<IconCode class="text-primary size-5" />
-				<span class="text-sm font-medium">{m['home.hero.full_stack_development']()}</span>
-			</div>
-			<div class="bg-card flex items-center gap-4 rounded-full border px-6 py-3 transition">
-				<IconBrandFigma class="text-primary size-5" />
-				<span class="text-sm font-medium">{m['home.hero.ui_ux_design']()}</span>
-			</div>
 		</div>
 	</div>
 </section>

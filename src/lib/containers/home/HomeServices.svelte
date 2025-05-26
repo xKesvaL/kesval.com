@@ -38,7 +38,7 @@
 	</div>
 	<div class="grid gap-8 lg:grid-cols-3">
 		{#each Object.values(servicesBenefits) as benefit (benefit.key)}
-			<Card.Root class="gap-4">
+			<Card.Root class="animate-appear gap-4">
 				<Card.Header class="items-center gap-4 sm:flex lg:block lg:space-y-4 ">
 					<div
 						class="text-primary bg-primary/5 flex size-12 items-center justify-center rounded-lg text-3xl"

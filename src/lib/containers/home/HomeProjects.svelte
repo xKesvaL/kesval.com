@@ -11,7 +11,7 @@
 	let showedProjects = $derived.by(() => highlightedProjects);
 </script>
 
-<section class="section relative min-h-[70vh] overflow-hidden py-24">
+<section class="section pyc-md lg:pyc-lg relative min-h-[70vh] overflow-hidden">
 	<!-- Background pattern -->
 	<div class="absolute inset-0 -z-10 opacity-20">
 		<div
@@ -26,7 +26,7 @@
 		</div>
 	</div>
 
-	<div class="kcontainer relative flex flex-col gap-24 px-4">
+	<div class="kcontainer gapc-lg lg:gapc-xl relative flex flex-col px-4">
 		<div class="mt-12 space-y-4 text-center">
 			<AnimatedBadge class="animate-appear">
 				<span class="flex items-center gap-2">
