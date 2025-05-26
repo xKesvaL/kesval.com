@@ -40,7 +40,7 @@
 			>
 				{m['home.projects.title']()}
 			</h2>
-			<p class="text-muted-foreground animate-appear mx-auto max-w-[45ch] text-lg">
+			<p class="text-muted-foreground animate-appear mx-auto max-w-prose text-lg">
 				{m['home.projects.description']()}
 			</p>
 		</div>
@@ -56,7 +56,7 @@
 
 		<!-- View all projects button -->
 		<div class="animate-appear flex justify-center">
-			<Button class="group gap-2" href={localizeHref(route('/projets'))}>
+			<Button class="group gap-2" size="lg" href={localizeHref(route('/projets'))}>
 				{m['projects.view_all']()}
 				<IconArrowRight class="h-4 w-4 transition-transform group-hover:translate-x-1" />
 			</Button>

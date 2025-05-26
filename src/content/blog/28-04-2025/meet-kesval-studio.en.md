@@ -44,13 +44,13 @@ At KesvaL Studio, our mission is twofold:
 
 <ServicesGrid />
 
-## Why partner with Kesval Studio?
+## 🤝 Why partner with Kesval Studio?
 
 We know you have lots of options when it comes to web and mobile development. Here's why KesvaL Studio stands out:
 
 - **Client-centric approach**: We listen and adapt to your needs, tailoring our services to fit your unique requirements.
 - **Transparency**: We think honesty is the best policy. We keep you informed every step of the way.
-- **Flexibility**: We understand that things need to change throughout the project, and we are here to adapt to your needs.
+- **Flexibility**: We understand that things need to change throughout the project, and we are here to adapt to your needs (AGILE).
 - **Adaptability**: We tailor everything to you, if you are low on budget, we can still find solutions together.
 
 We're excited about the future and hope we can be a part of your journey! Stay tuned for more!

@@ -40,17 +40,17 @@
 			<h2 class="h4 text-primary-foreground w-max">
 				{m['home.clients.title']()}
 			</h2>
-			<Separator class="bg-primary-foreground/20 h-[1px] w-auto grow" />
+			<Separator class="bg-primary-foreground/50 h-[1px] !w-auto grow" />
 		</div>
 
 		<!-- Client grid with hover effects -->
-		<div class="grid grid-cols-2 gap-6 md:grid-cols-4 lg:gap-8">
+		<div class="animate-appear grid grid-cols-2 gap-6 md:grid-cols-4 lg:gap-8">
 			{#each clients as client, i}
 				<a
 					href={client.link}
 					target="_blank"
 					rel="noopener noreferrer"
-					class="animate-appear bg-primary-foreground/5 hover:bg-primary-foreground/10 border-primary-foreground/10 flex items-center justify-center gap-3 rounded-xl border p-6 hover:-translate-y-1"
+					class="bg-primary-foreground/5 hover:bg-primary-foreground/10 border-primary-foreground/10 flex items-center justify-center gap-3 rounded-xl border p-6 transition hover:-translate-y-1"
 				>
 					<client.icon class="size-6 md:size-7" />
 					<span class="text-primary-foreground/90 font-medium">{client.name}</span>

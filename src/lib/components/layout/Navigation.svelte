@@ -55,7 +55,8 @@
 		class={cn(
 			'flex h-full w-full items-center justify-between transition-all duration-300 lg:rounded-2xl',
 			navigation.state === 'open' && 'px-4',
-			navigation.state === 'closed' && 'bg-background px-4 shadow-lg delay-[300ms]'
+			navigation.state === 'closed' &&
+				'bg-background shadow-foreground/5 px-4 shadow-lg drop-shadow-sm delay-[300ms]'
 		)}
 	>
 		<div class="flex h-full w-full items-center justify-between rounded-[15px]">
@@ -66,15 +67,16 @@
 				<NavigationLangSwitcher />
 				<Button
 					class={cn(
-						'ring-1 ring-transparent transition-all duration-300',
+						'px-4 ring-1 ring-transparent transition-all duration-300',
 						navigation.state === 'open' &&
 							'md:bg-background md:text-primary md:hover:bg-background/90 md:ring-primary mr-6 delay-50 md:mr-0',
 						navigation.state === 'closed' && 'delay-[400ms]'
 					)}
+					size="lg"
 					href={localizeHref(route('/contact'))}
 					onclick={() => (navigation.state = 'closed')}
 				>
-					{m.start_now()}
+					{m['common.cta_small']()}
 				</Button>
 				<NavigationButton />
 			</div>
@@ -101,7 +103,7 @@
 							<a
 								onmouseenter={() => (latestHoveredLink = link)}
 								onclick={() => (navigation.state = 'closed')}
-								class="text-muted-foreground/80 hover:text-primary flex translate-x-0 py-6 text-5xl font-bold uppercase transition-all duration-300 hover:-translate-x-12 xl:text-7xl"
+								class="text-muted-foreground/80 hover:text-primary flex translate-x-0 py-6 text-5xl font-bold uppercase transition-all duration-300 hover:-translate-x-12 lg:hover:-translate-x-12 xl:text-7xl"
 								{href}
 							>
 								{#await translate(label) then translation}

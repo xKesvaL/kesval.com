@@ -44,7 +44,7 @@
 						{m['footer.cta.title']()}
 					</h2>
 					<div class="flex gap-2">
-						<Button variant="secondary" href={localizeHref(route('/contact'))}>
+						<Button variant="secondary" size="lg" href={localizeHref(route('/contact'))}>
 							<IconMessageCirclePlus />
 							{m.lets_talk_about_it()}
 						</Button>

@@ -6,12 +6,16 @@
 	import { browser } from '$app/environment';
 	import { IconBrandLinkedin, IconBrandX, IconLink } from '@tabler/icons-svelte';
 	import * as m from '$paraglide/messages';
+	import AnimatedCircleCheck from '../base/AnimatedCircleCheck.svelte';
+	import { cn } from '$lib/utils/ui';
 
 	type Props = {
 		post: Post;
 	};
 
 	let { post }: Props = $props();
+
+	let copied = $state(false);
 
 	const getShareUrl = (platform: 'x' | 'linkedin' | 'link' | 'copy') => {
 		if (!browser) return '';
@@ -37,6 +41,10 @@
 		}
 
 		navigator.clipboard.writeText(urlToCopy).then(() => {
+			copied = true;
+			setTimeout(() => {
+				copied = false;
+			}, 4000); // Reset copied state after 4 seconds (default duration for the toast)
 			toast.success('Link copied to clipboard!');
 		});
 	};
@@ -71,8 +79,17 @@
 				{m['blog.share_on_x']({ x: 'LinkedIn' })}
 			</span>
 		</Button>
-		<Button variant="outline" onclick={copyToClipboard} size="icon">
-			<IconLink class="h-4 w-4" />
+		<Button
+			variant="outline"
+			onclick={copyToClipboard}
+			size="icon"
+			class={cn(copied && 'text-primary')}
+		>
+			{#if copied}
+				<AnimatedCircleCheck />
+			{:else}
+				<IconLink class="h-4 w-4" />
+			{/if}
 			<span class="sr-only">
 				{m['common.copy_link']()}
 			</span>

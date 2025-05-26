@@ -8,7 +8,9 @@
 <div class="not-prose grid grid-cols-1 gap-4 @xl:grid-cols-2">
 	{#each services as service (service.id)}
 		<a href={service.href} class="h-full">
-			<Card class="hover:border-primary h-full rounded-2xl transition duration-300 hover:scale-103">
+			<Card
+				class="hover:border-primary h-full rounded-2xl p-0 transition duration-300 hover:scale-103"
+			>
 				<CardHeader
 					class="flex w-full flex-row items-center gap-4 p-4 @2xl:flex-col @2xl:items-start"
 				>

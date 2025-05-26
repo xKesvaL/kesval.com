@@ -537,30 +537,52 @@ export function extractLocaleFromCookie() {
 }
 
 /**
+ * If extractLocaleFromUrl is called many times on the same page and the URL
+ * hasn't changed, we don't need to recompute it every time which can get expensive.
+ * We might use a LRU cache if needed, but for now storing only the last result is enough.
+ * https://github.com/opral/monorepo/pull/3575#discussion_r2066731243
+ */
+/** @type {string|undefined} */
+let cachedUrl;
+/** @type {Locale|undefined} */
+let cachedLocale;
+/**
  * Extracts the locale from a given URL using native URLPattern.
  *
  * @param {URL|string} url - The full URL from which to extract the locale.
  * @returns {Locale|undefined} The extracted locale, or undefined if no locale is found.
  */
 export function extractLocaleFromUrl(url) {
-    if (TREE_SHAKE_DEFAULT_URL_PATTERN_USED) {
-        return defaultUrlPatternExtractLocale(url);
+    const urlString = typeof url === "string" ? url : url.href;
+    if (cachedUrl === urlString) {
+        return cachedLocale;
     }
-    const urlObj = typeof url === "string" ? new URL(url) : url;
-    // Iterate over URL patterns
-    for (const element of urlPatterns) {
-        for (const [locale, localizedPattern] of element.localized) {
-            const match = new URLPattern(localizedPattern, urlObj.href).exec(urlObj.href);
-            if (!match) {
-                continue;
+    let result;
+    if (TREE_SHAKE_DEFAULT_URL_PATTERN_USED) {
+        result = defaultUrlPatternExtractLocale(url);
+    }
+    else {
+        const urlObj = typeof url === "string" ? new URL(url) : url;
+        // Iterate over URL patterns
+        for (const element of urlPatterns) {
+            for (const [locale, localizedPattern] of element.localized) {
+                const match = new URLPattern(localizedPattern, urlObj.href).exec(urlObj.href);
+                if (!match) {
+                    continue;
+                }
+                // Check if the locale is valid
+                if (assertIsLocale(locale)) {
+                    result = locale;
+                    break;
+                }
             }
-            // Check if the locale is valid
-            if (assertIsLocale(locale)) {
-                return locale;
-            }
+            if (result)
+                break;
         }
     }
-    return undefined;
+    cachedUrl = urlString;
+    cachedLocale = result;
+    return result;
 }
 /**
  * https://github.com/opral/inlang-paraglide-js/issues/381
@@ -927,15 +949,18 @@ export function aggregateGroups(match) {
  * @returns {string} The localized href, relative if input was relative
  */
 export function localizeHref(href, options) {
-    const locale = options?.locale ?? getLocale();
+    const currentLocale = getLocale();
+    const locale = options?.locale ?? currentLocale;
     const url = new URL(href, getUrlOrigin());
-    const localized = localizeUrl(url, options);
+    const localized = localizeUrl(url, { locale });
     // if the origin is identical and the href is relative,
     // return the relative path
     if (href.startsWith("/") && url.origin === localized.origin) {
         // check for cross origin localization in which case an absolute URL must be returned.
-        if (locale !== getLocale()) {
-            const localizedCurrentLocale = localizeUrl(url, { locale: getLocale() });
+        if (locale !== currentLocale) {
+            const localizedCurrentLocale = localizeUrl(url, {
+                locale: currentLocale,
+            });
             if (localizedCurrentLocale.origin !== localized.origin) {
                 return localized.href;
             }

@@ -8,7 +8,9 @@
 	"home": {
 		"hero": {
 			"years_experience": "years of experience",
-			"title": "Crafting Digital Experiences with Purpose",
+			"title_before": "Crafting Digital ",
+			"title_highlight": "Experiences",
+			"title_after": " with Purpose",
 			"subtitle": "A development studio specializing in modern web solutions and digital transformations",
 			"view_projects": "View Projects",
 			"see_all": "See all",

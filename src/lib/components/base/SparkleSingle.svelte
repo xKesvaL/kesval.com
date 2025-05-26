@@ -6,10 +6,22 @@
 	};
 
 	let { color, size, style }: Props = $props();
+
+	let sparkleColors = $derived.by(() => {
+		switch (color) {
+			case 'primary':
+				return 'var(--color-primary)';
+			case 'special':
+				return 'var(--color-special)';
+
+			default:
+				return 'var(--color-primary)';
+		}
+	});
 </script>
 
 <div
-	class="animate-grow-and-shrink pointer-events-none absolute -z-50 flex"
+	class="animate-grow-and-shrink pointer-events-none absolute z-50 flex origin-center"
 	style="top: {style.top}; left: {style.left}"
 >
 	<svg
@@ -22,7 +34,10 @@
 	>
 		<path
 			d="M80 0C80 0 84.2846 41.2925 101.496 58.504C118.707 75.7154 160 80 160 80C160 80 118.707 84.2846 101.496 101.496C84.2846 118.707 80 160 80 160C80 160 75.7154 118.707 58.504 101.496C41.2925 84.2846 0 80 0 80C0 80 41.2925 75.7154 58.504 58.504C75.7154 41.2925 80 0 80 0Z"
-			fill={color}
+			fill={sparkleColors}
+			stroke="var(--color-special-bis)"
+			stroke-width="5"
+			stroke-linecap="round"
 		/>
 	</svg>
 </div>

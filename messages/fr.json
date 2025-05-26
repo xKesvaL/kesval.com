@@ -6,6 +6,7 @@
 		"projects": "Projets",
 		"blog": "Blog",
 		"contact": "Contact",
+		"services": "Services",
 		"legal_notice": "Mentions légales",
 		"privacy_policy": "Politique de confidentialité",
 		"github": "GitHub",
@@ -14,7 +15,9 @@
 	},
 	"home": {
 		"hero": {
-			"title": "Création d'expériences digitales de A à Z",
+			"title_before": "Création d'",
+			"title_highlight": "expériences",
+			"title_after": " digitales de A à Z",
 			"subtitle": "Une marque de développement spécialisée dans les solutions web et les transformations digitales avec une approche humaine.",
 			"view_projects": "Voir les Projets",
 			"see_all": "Voir tout",
@@ -243,7 +246,11 @@
 		"clear_filters_button": "Effacer",
 		"copy_link": "Copier le lien",
 		"published_on_date": "Publié le {date}",
-		"updated_on_date": "Mis à jour le {date}"
+		"updated_on_date": "Mis à jour le {date}",
+		"see_our_projects": "Voir nos projets",
+		"cta_small": "Lancez votre projet",
+		"cta_self": "Je lance mon projet",
+		"cta_big": "Lancez votre projet dès aujourd'hui"
 	},
 	"meta": {
 		"home": {
@@ -279,6 +286,7 @@
 		"share_this_post": "Partager cet article",
 		"share_on_x": "Partager sur {x}",
 		"related_posts": "Articles similaires",
+		"read_more": "Lire la suite",
 		"placeholder": {
 			"search": "Rechercher un article...",
 			"no_results": "Aucun article trouvé.",
@@ -323,6 +331,25 @@
 		"design_web_or_app": {
 			"title": "Design de sites ou applications",
 			"description": "Des designs qui engagent."
+		},
+		"our_services": {
+			"suptitle": "Nos services",
+			"title": "Optimisez vos opérations digitales",
+			"description": "Nous proposons une gamme complète de services pour répondre à vos besoins digitaux et commerciaux."
+		},
+		"benefits": {
+			"time_gain": {
+				"title": "Automatisation des tâches",
+				"description": "Réduisez les tâches manuelles de 75% avec nos outils d'automatisation, vous permettant de vous concentrer sur l'essentiel."
+			},
+			"measurable_results": {
+				"title": "Résultats mesurables",
+				"description": "Mesurez l'impact de nos solutions sur votre présence digitale, l'engagement client et votre rentabilité."
+			},
+			"tailor_made_solutions": {
+				"title": "Solutions sur mesure",
+				"description": "Des solutions personnalisées pour répondre à vos besoins spécifiques, quelles que soient vos exigences."
+			}
 		}
 	}
 }

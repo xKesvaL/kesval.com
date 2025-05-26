@@ -7,7 +7,7 @@
 	import Analytics from '$lib/components/base/Analytics.svelte';
 	import { deepMerge, MetaTags } from 'svelte-meta-tags';
 	import HireCard from '$lib/components/layout/HireCard.svelte';
-	import { building, dev } from '$app/environment';
+	// import { building, dev } from '$app/environment';
 	import { Toaster } from '$lib/components/ui/sonner';
 	import { IsMobile } from '$lib/hooks/is-mobile.svelte';
 
@@ -45,9 +45,9 @@
 		<HireCard />
 	</div>
 
-	{#if !building && dev}
+	<!-- {#if !building && dev}
 		{#await import('$lib/components/dev/AnimationDevTool.svelte') then Module}
 			<Module.default />
 		{/await}
-	{/if}
+	{/if} -->
 {/key}

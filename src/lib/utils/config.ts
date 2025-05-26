@@ -80,8 +80,8 @@ export const navigationLinks = [
 		image: ImageHome
 	},
 	{
-		label: 'nav.about',
-		href: route('/a-propos'),
+		label: 'nav.services',
+		href: route('/services'),
 		image: ImageBlog
 	},
 	{

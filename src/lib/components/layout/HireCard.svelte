@@ -5,6 +5,8 @@
 	import Button from '../ui/button/button.svelte';
 	import { onMount } from 'svelte';
 	import { cn } from '$lib/utils/ui';
+	import { localizeHref } from '$paraglide/runtime';
+	import { route } from '$lib/ROUTES';
 
 	let root: HTMLDivElement;
 	let hasBeenHovered = $state(false);
@@ -30,12 +32,12 @@
 		)}
 	></div>
 	<div
-		class="bg-secondary border-primary relative flex h-16 w-16 items-center justify-between gap-4 overflow-hidden rounded-4xl border p-2 transition-all duration-500 group-hover:w-104"
+		class="bg-secondary border-primary relative flex h-16 w-16 items-center justify-between gap-4 overflow-hidden rounded-4xl border p-2 transition-all duration-500 group-hover:w-112"
 	>
 		<enhanced:img src="$assets/logo.png" alt={m['kesval_logo']()} class="size-12 rounded-full" />
 
 		<div
-			class="absolute right-2 flex h-12 w-84 origin-right translate-x-full justify-between gap-4 opacity-0 transition duration-500 group-hover:translate-x-0 group-hover:scale-x-100 group-hover:opacity-100"
+			class="absolute right-2 flex h-12 w-92 origin-right translate-x-full justify-between gap-4 opacity-0 transition duration-500 group-hover:translate-x-0 group-hover:scale-x-100 group-hover:opacity-100"
 		>
 			<div class="flex flex-col justify-between">
 				<h3 class="text-xl leading-tight">
@@ -45,8 +47,8 @@
 					{m['brand.doing']()}
 				</p>
 			</div>
-			<Button class="button h-12 rounded-3xl">
-				{m['start_now']()}
+			<Button class="button h-12 rounded-3xl" href={localizeHref(route('/contact'))}>
+				{m['common.cta_self']()}
 			</Button>
 		</div>
 	</div>

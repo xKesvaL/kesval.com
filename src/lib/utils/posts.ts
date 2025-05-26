@@ -36,8 +36,6 @@ export type PostResolver = () => Promise<{ default: Component; metadata: Post }>
 export const getPost = async (slug: string, locale: Locale) => {
 	const slugMetadata = getPostMetadata(slug);
 
-	console.log(slugMetadata);
-
 	const availablePosts = getPostLocales(slugMetadata?.uniqueId || '');
 	const metadata = availablePosts.find((post) => post.locale === locale);
 	const hrefSlug = metadata?.slug?.slice(0, -3);
@@ -54,8 +52,6 @@ export const getPost = async (slug: string, locale: Locale) => {
 
 	const postGlob = Object.entries(postsModules).find(([key]) => {
 		const path = key.split('/').slice(3).join('/').replace('.md', '');
-		console.log(path);
-		console.log(`blog/${metadata.uniqueId}/${metadata.slug}`);
 		return path === `blog/${metadata.uniqueId}/${metadata.slug}`;
 	});
 

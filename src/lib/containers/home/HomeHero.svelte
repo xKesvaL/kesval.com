@@ -5,12 +5,8 @@
 	import Button from '$lib/components/ui/button/button.svelte';
 	import { route } from '$lib/ROUTES';
 	import { localizeHref } from '$paraglide/runtime';
-	import {
-		IconBrandFigma,
-		IconCode,
-		IconMessageCirclePlus,
-		IconRocket
-	} from '@tabler/icons-svelte';
+	import { IconBrandFigma, IconCode, IconPlus, IconRocket } from '@tabler/icons-svelte';
+	import Sparkles from '$lib/components/base/Sparkles.svelte';
 </script>
 
 <section class="section-hero items-center justify-center">
@@ -35,23 +31,30 @@
 				</span>
 			</AnimatedBadge>
 		</div>
-		<h1
-			class="animate-appear from-foreground to-muted-foreground bg-gradient-to-br bg-clip-text leading-tight font-bold text-transparent"
-		>
-			{m['home.hero.title']()}
+		<h1 class="animate-appear leading-tight font-bold">
+			{m['home.hero.title_before']()}<Sparkles color="special" highlight="primary">
+				{m['home.hero.title_highlight']()}
+			</Sparkles>{m['home.hero.title_after']()}
 		</h1>
 		<p class="text-muted-foreground animate-appear mx-auto max-w-[45ch] text-lg md:text-xl">
 			{m['home.hero.subtitle']({ brand: brand.name })}
 		</p>
 
-		<div class="mt-6 flex flex-wrap items-center justify-center gap-4">
-			<Button class="animate-appear" href={localizeHref(route('/contact'))}>
-				<IconMessageCirclePlus />
-				{m.start_now()}
+		<div class="animate-appear mt-6 flex flex-wrap items-center justify-center gap-4">
+			<Button
+				class="h-auto gap-3 rounded-full !px-5 py-3 text-sm"
+				variant="outline"
+				href={localizeHref(route('/projets'))}
+			>
+				<IconPlus class="size-5!" />
+				{m['common.see_our_projects']()}
 			</Button>
-			<Button class="animate-appear" variant="outline" href={localizeHref(route('/projets'))}>
-				<IconRocket />
-				{m.see_all()}
+			<Button
+				class="h-auto gap-3 rounded-full !px-5 py-3 text-sm"
+				href={localizeHref(route('/contact'))}
+			>
+				<IconRocket class="size-5!" />
+				{m['common.cta_big']()}
 			</Button>
 		</div>
 
