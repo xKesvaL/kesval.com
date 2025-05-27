@@ -25,92 +25,7 @@
 			"full_stack_development": "Développement Full-Stack",
 			"ui_ux_design": "Design UI/UX"
 		},
-		"clients": {
-			"title": "Nous avons travaillé avec des clients exceptionnels"
-		},
-		"projects": {
-			"title": "Nos derniers projets",
-			"above_title": "Projets Sélectionnés",
-			"description": "Découvrez nos derniers projets réalisés pour nos clients"
-		},
-		"services": {
-			"above_title": "Processus de A à Z",
-			"title": "Votre parcours digital",
-			"subtitle": "De la stratégie à la maintenance, nous vous accompagnons à chaque étape.",
-			"step_x_of_y": "Étape {step} sur {total}",
-			"key_activities": "Activités clés :",
-			"tools": "Outils :",
-			"outcome": "Résultat :",
-			"steps": {
-				"discovery": {
-					"title": "Découverte & Stratégie",
-					"description": "Comprendre vos besoins, votre audience et vos objectifs pour bâtir une stratégie sur-mesure.",
-					"detailed_description": "Le voyage commence par une compréhension approfondie de votre entreprise, de vos objectifs et de votre audience. Nous vous accompagnons pour identifier les objectifs clés et créer un plan stratégique.",
-					"feature_1": "Consultation complète pour comprendre vos besoins",
-					"feature_2": "Analyse de l'audience et du marché",
-					"feature_3": "Analyse concurrentielle",
-					"feature_4": "Définition des objectifs et des métriques de succès",
-					"outcome": "Un projet clair, une timeline et un plan stratégique aligné avec vos objectifs commerciaux."
-				},
-				"content": {
-					"title": "Fonctionnalités & Contenus",
-					"description": "Définir les fonctionnalités et contenus qui engageront vos utilisateurs.",
-					"detailed_description": "Basé sur la phase de découverte, nous définirons les fonctionnalités et le contenu de votre projet pour réussir, établissant la base de la fonctionnalité de votre projet.",
-					"feature_1": "Stratégie de contenu et architecture d'information",
-					"feature_2": "Cartographie de flux d'utilisateurs et design d'interaction",
-					"feature_3": "Priorité des fonctionnalités et exigences techniques",
-					"feature_4": "Création de contenu et planification de structure",
-					"outcome": "Un cahier des charges clair avec des fonctionnalités et un contenu structuré."
-				},
-				"design": {
-					"title": "Design UI/UX",
-					"description": "Créer des interfaces élégantes et intuitives pour une expérience optimale.",
-					"detailed_description": "Nous transformons les concepts en interfaces visuellement élégantes et intuitives qui sont professionnelles, mais aussi engagantes pour l'utilisateur.",
-					"feature_1": "Conception UI personnalisée adaptée à votre identité de marque",
-					"feature_2": "Conception responsive optimisée pour tous les appareils",
-					"feature_3": "Prototypes interactifs pour les tests utilisateurs",
-					"feature_4": "Système de conception complet avec bibliothèque de composants",
-					"outcome": "Un design élégant, testé et avec des prototypes interactifs prêts pour le développement."
-				},
-				"development": {
-					"title": "Développement",
-					"description": "Développer votre projet avec les technologies les plus récentes et les meilleures pratiques.",
-					"detailed_description": "Nous mettons en œuvre votre projet en utilisant les technologies les plus récentes et les meilleures pratiques pour garantir un site web performant, sécurisé et maintenable.",
-					"feature_1": "Code sémantique propre suivant les meilleures pratiques de l'industrie",
-					"feature_2": "Compatibilité multi-navigateurs et implémentation responsive",
-					"feature_3": "Optimisation de la performance pour des vitesses de chargement rapides",
-					"feature_4": "Contrôle de version et développement collaboratif",
-					"outcome": "Un site web performant, sécurisé et maintenable."
-				},
-				"deployment": {
-					"title": "Déploiement",
-					"description": "Lancer votre projet avec des tests et optimisations pour une mise en ligne réussie.",
-					"detailed_description": "Nous préparons le lancement de votre projet avec des tests et des optimisations pour garantir une mise en ligne réussie.",
-					"feature_1": "Configuration et déploiement du serveur",
-					"feature_2": "Optimisation de la performance",
-					"feature_3": "Implémentation SEO et tests",
-					"feature_4": "Tests de compatibilité sur tous les appareils / navigateurs",
-					"outcome": "Un projet lancé avec succès et optimisé pour une performance optimale."
-				},
-				"maintenance": {
-					"title": "Support & Maintenance",
-					"description": "Assurer la pérennité et l'évolution de votre solution digitale.",
-					"detailed_description": "Nous vous accompagnons pour assurer la pérennité et l'évolution de votre solution digitale, en vous offrant un support continu et des mises à jour régulières.",
-					"feature_1": "Mise à jour régulières et correctifs de sécurité",
-					"feature_2": "Surveillance et optimisation de la performance",
-					"feature_3": "Améliorations continues et fonctionnalités",
-					"feature_4": "Mise à jour de compatibilité pour les nouveaux navigateurs et appareils",
-					"outcome": "Une présence digitale en constante évolution qui reste sécurisée, à jour et alignée avec votre croissance commerciale."
-				}
-			},
-			"cta": "Démarrez votre projet dès aujourd'hui"
-		}
-	},
-	"about": {
-		"hero": {
-			"title": "Qui sommes-nous ?",
-			"subtitle": "Une équipe de passionnés au service de votre transformation digitale.",
-			"description": "Nous sommes un studio de développement web spécialisé dans la création de sites internet et d'applications web. Notre équipe possède une solide expérience en développement front-end et back-end, ainsi qu'en design web. Nous croyons en l'importance d'une approche humaine et personnalisée pour chaque projet.",
+		"about": {
 			"experience": "ans d'expertise",
 			"experience_description": "Notre équipe conçoit des solutions web depuis plus de 3 ans, développant des sites et applications pour une clientèle diversifiée.",
 			"projects": "projets réalisés",
@@ -118,43 +33,29 @@
 			"clients": "clients satisfaits",
 			"clients_description": "Nous sommes fiers de permettre à nos clients de réussir dans leur transformation digitale et de soutenir leur croissance."
 		},
-		"team": {
-			"suptitle": "Notre équipe",
-			"title": "Une équipe de passionnés",
-			"description": "Nous sommes une équipe de développeurs et de designers qui travaillent ensemble pour donner vie à vos idées et besoins.",
-			"members": {
-				"jordan": {
-					"level": "Fondateur",
-					"role": "Développeur Fullstack"
-				},
-				"thibaud": {
-					"level": "Co-Associé",
-					"role": "Designer UI/UX",
-					"description": "Je fais en sorte que chaque projet soit plus beau que mon crâne et aussi simple d'utilisation qu'il est lisse."
-				}
-			}
+		"clients": {
+			"title": "Nous avons travaillé avec des clients exceptionnels"
+		},
+		"projects": {
+			"title": "Nos derniers projets",
+			"above_title": "Projets Sélectionnés",
+			"description": "Découvrez nos derniers projets réalisés pour nos clients"
 		}
 	},
 	"contact": {
 		"hero": {
-			"title": "Contact",
-			"subtitle": "Vous avez un projet en tête ? Collaborons pour le concrétiser.",
-			"contact_us": "Contactez-nous",
-			"get_in_touch": {
-				"title": "Entrons en contact",
-				"description": "Contactez-nous via nos réseaux sociaux ou par e-mail. Nous sommes toujours ouverts à de nouvelles opportunités et collaborations."
-			},
-			"availability": "Généralement disponible sous 24h",
-			"looking_for_work": {
-				"title": "Vous cherchez un partenaire de développement ?",
-				"description": "Nous sommes toujours ouverts à de nouveaux défis. Faites-nous savoir comment nous pouvons vous accompagner !",
-				"cta": "Découvrez notre expertise"
-			},
-			"email_button": "Envoyer un Email",
-			"learn_more_button": "En savoir plus sur nous",
-			"book_meeting_title": "Réserver une réunion",
-			"book_meeting_description": "Choisissez un créneau qui vous convient le mieux pour discuter de votre projet.",
-			"calendly_placeholder": "Intégration Calendly en cours de chargement..."
+			"get_your_free_quote": "Obtenez votre devis gratuit",
+			"description": "Parlez nous de votre projet, et nous reviendrons vers vous dans les 24 heures avec un devis personnalisé.",
+			"name": "Nom",
+			"name_placeholder": "Votre nom complet",
+			"email": "E-mail",
+			"email_placeholder": "votre@email.com",
+			"company": "Entreprise",
+			"company_placeholder": "Nom de votre entreprise (optionnel)",
+			"your_project": "Votre projet",
+			"your_project_placeholder": "Décrivez votre projet, vos buts, besoins et attentes...",
+			"get_my_free_quote": "Obtenir mon devis gratuit",
+			"quick_response": "Réponse rapide dans les 24 heures"
 		}
 	},
 	"contact_us": "Discutons",
@@ -172,33 +73,7 @@
 	"present": "Présent",
 	"soon_tm": "Bientôt™",
 	"change_language": "Changer de langue",
-	"experience": {
-		"olwe": {
-			"title": "OLWE Développement",
-			"description": "Développeur Fullstack, principalement sur des applications web utilisant React avec Next pour le front-end et Express avec MariaDB sur le back-end."
-		},
-		"kesval": {
-			"title": "KesvaL Studio",
-			"description": "Je travaille avec mon associé en tant que développeur web fullstack, sur des sites en utilisant des CMS ou sur des applications web en utilisant des technologies modernes."
-		},
-		"ciotadin_office": {
-			"title": "Le Bureau Ciotaden",
-			"description": "Assistant et réceptionniste dans un atelier de réparation informatique à usage général."
-		},
-		"uha": {
-			"title": "Université de Haute-Alsace",
-			"description": "Je suis étudiant en informatique à l'Université de Haute-Alsace, où j'acquiers des compétences en développement web et mobile, ainsi qu'en gestion de projets en BUT MMI."
-		},
-		"theodore_deck": {
-			"title": "Lycée Théodore Deck",
-			"description": "J'ai obtenu mon baccalauréat spécialisé en maths et en informatique avec mention au Lycée Théodore Deck à Guebwiller."
-		},
-		"job": {
-			"fullstack_dev": "Développeur fullstack",
-			"student": "Étudiant",
-			"tech_assistant": "Assistant technique"
-		}
-	},
+
 	"brand": {
 		"the_studio": "Le Studio",
 		"connect": "Réseaux",

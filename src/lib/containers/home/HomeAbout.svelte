@@ -69,12 +69,12 @@
 
 					<div class="-mt-2 space-y-2">
 						<h3 class="text-primary-foreground text-3xl font-semibold">
-							{#await translate(`about.hero.${key as keyof Values}`) then translation}
+							{#await translate(`home.about.${key as keyof Values}`) then translation}
 								{translation}
 							{/await}
 						</h3>
 						<p class="text-primary-foreground text-sm leading-relaxed">
-							{#await translate(`about.hero.${key as keyof Values}_description`) then translation}
+							{#await translate(`home.about.${key as keyof Values}_description`) then translation}
 								{translation}
 							{/await}
 						</p>

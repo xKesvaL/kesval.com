@@ -25,38 +25,6 @@
 			"title": "Our latest projects",
 			"above_title": "Selected Projects",
 			"description": "Discover our latest projects carried out for our clients"
-		},
-		"services": {
-			"above_title": "Process from A to Z",
-			"title": "Your digital journey",
-			"subtitle": "From strategy to maintenance, we support you every step of the way.",
-			"steps": {
-				"discovery": {
-					"title": "Discovery &amp; Strategy",
-					"description": "Understanding your needs, your audience and your objectives to build a tailor-made strategy."
-				},
-				"content": {
-					"title": "Features &amp; Contents",
-					"description": "Define the features and content that will engage your users."
-				},
-				"design": {
-					"title": "UI/UX Design",
-					"description": "Create elegant and intuitive interfaces for an optimal experience."
-				},
-				"development": {
-					"title": "Development",
-					"description": "Develop your project with the latest technologies and best practices."
-				},
-				"deployment": {
-					"title": "Deployment",
-					"description": "Launch your project with testing and optimizations for a successful launch."
-				},
-				"maintenance": {
-					"title": "Support &amp; Maintenance",
-					"description": "Ensure the sustainability and evolution of your digital solution."
-				}
-			},
-			"cta": "Start your project today"
 		}
 	},
 	"contact_us": "Let's Talk",
@@ -70,97 +38,15 @@
 		"privacy_policy": "Privacy Policy",
 		"github": "GitHub",
 		"instagram": "Instagram",
-		"linkedin": "LinkedIn"
-	},
-	"about": {
-		"hero": {
-			"title": "Who are we?",
-			"description": "We are a full-service web development studio specializing in crafting websites and web applications. Our team has extensive experience in both front-end and back-end development, as well as in web design. We help bring ideas to life online.",
-			"experience": "years of expertise",
-			"experience_description": "Our team has been building web solutions for over 3 years, creating websites and web applications for a diverse range of clients.",
-			"projects": "completed projects",
-			"projects_description": "We've completed numerous projects, from simple showcase sites to large-scale applications and e-commerce platforms.",
-			"clients": "satisfied customers",
-			"clients_description": "We're proud to empower our clients to achieve their digital goals and support their future success.",
-			"subtitle": "A team of enthusiasts at the service of your digital transformation."
-		},
-		"resume": {
-			"title": "My CV",
-			"experience": "Experience",
-			"header": {
-				"subtitle": "Fullstack web developer",
-				"languages": "English C1, French C2"
-			},
-			"about": {
-				"title": "About",
-				"description": "I'm a passionate full-stack developer. I started when I was 8 years old, writing my first lines of code in Java, creating Minecraft mods. I then moved on to web development and now work with the latest technologies, such as Svelte, Bun, and TypeScript. In the future, I want to create applications for everyone that simplify life."
-			},
-			"education": {
-				"title": "Training",
-				"description": "I hold a Bachelor's degree in Computer Science and Mathematics, and I am currently studying Multimedia and Internet at the University of Mulhouse, where I am learning web development, communication, 3D, video, and audio. I am in my second year and am currently specializing in web development."
-			},
-			"skills": "SKILLS"
-		},
-		"about": {
-			"title": "Who are we?",
-			"description": "I'm a full-stack web developer passionate about building websites and web applications. I have extensive experience in front-end and back-end development, as well as web design. My goal is to help you bring your ideas to life online.",
-			"experience": "years of expertise",
-			"experience_description": "I have been a developer by passion for over 10 years, and since 2022, I have been creating websites and web applications for my clients.",
-			"projects": "completed projects",
-			"projects_description": "I have completed numerous projects, ranging from simple showcase sites to large-scale applications and online stores.",
-			"clients": "satisfied customers",
-			"clients_description": "I am proud to have helped my clients achieve their goals, and I hope to support them as best I can in their future projects."
-		}
+		"linkedin": "LinkedIn",
+		"services": "Services"
 	},
 	"contact": {
 		"hero": {
-			"title": "Contact",
-			"subtitle": "Have a project in mind? Let's collaborate and bring it to life.",
-			"contact_us": "Contact us",
-			"get_in_touch": {
-				"title": "Let's get in touch",
-				"description": "Reach out to us through our social media channels or via email. We're always open to new opportunities and partnerships."
-			},
-			"availability": "Usually available within 24h",
-			"looking_for_work": {
-				"title": "Looking for a development partner?",
-				"description": "We're always open to new opportunities. Let us know how we can support your project!",
-				"cta": "Explore our expertise"
-			},
-			"email_button": "Send an Email",
-			"learn_more_button": "Learn More About Us",
-			"book_meeting_title": "Book a Meeting",
-			"book_meeting_description": "Choose a time slot that works best for you to discuss your project.",
-			"calendly_placeholder": "Calendly integration loading..."
+			"get_your_free_quote": "Get your free quote"
 		}
 	},
-	"experience": {
-		"olwe": {
-			"title": "OLWE Development",
-			"description": "Fullstack developer, mainly on web applications using React with Next for the front-end and Express with MariaDB on the back-end."
-		},
-		"kesval": {
-			"title": "KesvaL Studio",
-			"description": "I work with my partner as a fullstack web developer, on sites using CMS or on web applications using modern technologies."
-		},
-		"ciotadin_office": {
-			"title": "The Ciotaden Office",
-			"description": "Assistant and receptionist in a general purpose computer repair shop."
-		},
-		"uha": {
-			"title": "University of Upper Alsace",
-			"description": "I am a computer science student at the University of Haute-Alsace, where I am acquiring skills in web and mobile development, as well as project management in BUT MMI."
-		},
-		"theodore_deck": {
-			"title": "Théodore Deck High School",
-			"description": "I obtained my baccalaureate with honors in math and computer science at Lycée Théodore Deck in Guebwiller."
-		},
-		"job": {
-			"fullstack_dev": "Fullstack developer",
-			"student": "Student",
-			"tech_assistant": "Technical Assistant"
-		}
-	},
+
 	"footer": {
 		"copyright": "© {year} {brand} . All rights reserved.",
 		"cta": {
@@ -200,7 +86,15 @@
 		"sort_by": "sort by",
 		"filter_tags": "Filter by tags",
 		"clear_filters": "Clear filters",
-		"clear_filters_button": "Clear"
+		"clear_filters_button": "Clear",
+		"copy_link": "Copy link",
+		"published_on_date": "Published on {date}",
+		"updated_on_date": "Updated on {date}",
+		"see_our_projects": "See our projects",
+		"cta_small": "Launch your project",
+		"cta_self": "I am launching my project",
+		"cta_big": "Start your project today",
+		"your_name_here": "Your name here"
 	},
 	"meta": {
 		"home": {
@@ -236,7 +130,11 @@
 		},
 		"toc": {
 			"title": "Table of contents"
-		}
+		},
+		"share_this_post": "Share this article",
+		"share_on_x": "Share on {x}",
+		"related_posts": "Similar articles",
+		"read_more": "Read more"
 	},
 	"see_all": "See all",
 	"see_more": "See more",
@@ -261,5 +159,55 @@
 		"cms": "CMS",
 		"figma": "Figma",
 		"project_management": "Project management"
+	},
+	"levels": {
+		"founder": "Founder"
+	},
+	"roles": {
+		"fullstack_dev": "Fullstack Developer",
+		"ui_ux_designer": "UI/UX Designer"
+	},
+	"team": {
+		"jordan": {
+			"description": "Passionate about programming, I want to make the web meowy for everyone. I love cats."
+		},
+		"expertise": "Expertise"
+	},
+	"services": {
+		"a_z_project_development": {
+			"title": "Your project from A to Z",
+			"description": "Your vision, our expertise."
+		},
+		"freelance_development": {
+			"title": "Freelance development",
+			"description": "A trusted partner."
+		},
+		"custom_web_mobile_app_development": {
+			"title": "Application development",
+			"description": "Tailor-made solutions tailored to your needs."
+		},
+		"design_web_or_app": {
+			"title": "Website or application design",
+			"description": "Designs that engage."
+		},
+		"our_services": {
+			"suptitle": "Our services",
+			"title": "Optimize your digital operations",
+			"description": "We offer a full range of services to meet your digital and business needs."
+		},
+		"benefits": {
+			"time_gain": {
+				"title": "Task automation",
+				"description": "Reduce manual tasks by 75% with our automation tools, allowing you to focus on what matters most."
+			},
+			"measurable_results": {
+				"title": "Measurable results",
+				"description": "Measure the impact of our solutions on your digital presence, customer engagement and profitability."
+			},
+			"tailor_made_solutions": {
+				"title": "Tailor-made solutions",
+				"description": "Customized solutions to meet your specific needs, whatever your requirements."
+			}
+		}
 	}
 }

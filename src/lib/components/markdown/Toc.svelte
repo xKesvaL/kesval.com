@@ -6,8 +6,8 @@
 	import * as m from '$paraglide/messages';
 	import { IsMobile } from '$lib/hooks/is-mobile.svelte';
 	import { tick } from 'svelte';
-	import { gsap } from 'gsap/dist/gsap';
-	import { Flip } from 'gsap/dist/Flip';
+	import { gsap } from 'gsap';
+	import { Flip } from 'gsap/Flip';
 
 	gsap.registerPlugin(Flip);
 
