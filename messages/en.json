@@ -43,7 +43,18 @@
 	},
 	"contact": {
 		"hero": {
-			"get_your_free_quote": "Get your free quote"
+			"get_your_free_quote": "Get your free quote",
+			"description": "Tell us about your project and get a personalized quote",
+			"name": "Name",
+			"name_placeholder": "Your full name",
+			"email": "Email",
+			"email_placeholder": "your@email.com",
+			"company": "Company",
+			"company_placeholder": "Your company name (optional)",
+			"your_project": "Your project",
+			"your_project_placeholder": "Describe your project, goals, and requirements...",
+			"get_my_free_quote": "Get my free quote",
+			"quick_response": "Quick response guaranteed"
 		}
 	},
 
