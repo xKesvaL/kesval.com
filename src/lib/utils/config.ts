@@ -3,8 +3,10 @@ import * as m from '$paraglide/messages';
 import dayjs from 'dayjs';
 
 import ImageHome from '$assets/logo.avif?enhanced';
-import ImageBlog from '$assets/nav/blog_nav.webp?enhanced';
+import ImageBlog from '$assets/nav/nav_blog.webp?enhanced';
+import ImageProjects from '$assets/nav/nav_projects.webp?enhanced';
 import ImageJordan from '$assets/team/jordan.jpg?enhanced';
+import { cn } from '$lib/utils/ui';
 import type { Picture } from 'vite-imagetools';
 import {
 	IconAppWindow,
@@ -71,13 +73,15 @@ export type LinkType = {
 
 export type LinkWithImageType = LinkType & {
 	image: Picture;
+	imageClass?: string;
 };
 
 export const navigationLinks = [
 	{
 		label: 'nav.home',
 		href: route('/'),
-		image: ImageHome
+		image: ImageHome,
+		imageClass: cn('rounded-full border-4 border-primary-foreground')
 	},
 	{
 		label: 'nav.services',
@@ -87,7 +91,7 @@ export const navigationLinks = [
 	{
 		label: 'nav.projects',
 		href: route('/projets'),
-		image: ImageBlog
+		image: ImageProjects
 	},
 	{
 		label: 'nav.blog',
