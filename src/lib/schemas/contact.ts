@@ -1,4 +1,4 @@
-import { z } from 'zod';
+import { z } from 'zod/v4';
 
 // Define the Zod schema for form validation
 export const contactFormSchema = z.object({
