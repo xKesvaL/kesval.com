@@ -17,7 +17,7 @@
 	},
 	"devDependencies": {
 		"@eslint/compat": "^1.2.9",
-		"@eslint/js": "^9.27.0",
+		"@eslint/js": "^9.28.0",
 		"@inlang/cli": "^3.0.11",
 		"@inlang/paraglide-js": "^2.0.13",
 		"@internationalized/date": "^3.8.1",
@@ -28,8 +28,8 @@
 		"@sveltejs/adapter-vercel": "^5.7.2",
 		"@sveltejs/enhanced-img": "^0.6.0",
 		"@sveltejs/kit": "^2.21.1",
-		"@sveltejs/vite-plugin-svelte": "^5.0.3",
-		"@tabler/icons-svelte": "^3.33.0",
+		"@sveltejs/vite-plugin-svelte": "^5.1.0",
+		"@tabler/icons-svelte": "^3.34.0",
 		"@tailwindcss/typography": "^0.5.16",
 		"@tailwindcss/vite": "^4.1.8",
 		"@tanstack/table-core": "^8.21.3",
@@ -37,15 +37,15 @@
 		"@types/gtag.js": "^0.0.20",
 		"@types/web-app-manifest": "^1.0.9",
 		"@velite/plugin-vite": "^0.0.1",
-		"bits-ui": "^2.3.0",
+		"bits-ui": "^2.4.1",
 		"clsx": "^2.1.1",
 		"dayjs": "^1.11.13",
 		"embla-carousel-autoplay": "^8.6.0",
 		"embla-carousel-svelte": "^8.6.0",
 		"embla-carousel-wheel-gestures": "^8.0.2",
-		"eslint": "^9.27.0",
+		"eslint": "^9.28.0",
 		"eslint-config-prettier": "^10.1.5",
-		"eslint-plugin-svelte": "^3.9.0",
+		"eslint-plugin-svelte": "^3.9.1",
 		"formsnap": "^2.0.1",
 		"globals": "^16.2.0",
 		"layerchart": "2.0.0-next.10",
@@ -56,27 +56,28 @@
 		"prettier-plugin-svelte": "^3.4.0",
 		"prettier-plugin-tailwindcss": "^0.6.12",
 		"runed": "^0.28.0",
-		"svelte": "^5.33.10",
+		"svelte": "^5.33.14",
 		"svelte-check": "^4.2.1",
-		"svelte-meta-tags": "^4.3.0",
-		"svelte-sonner": "^1.0.3",
+		"svelte-meta-tags": "^4.4.0",
+		"svelte-sonner": "^1.0.4",
 		"sveltekit-superforms": "^2.25.0",
 		"tailwind-merge": "^3.3.0",
 		"tailwind-variants": "^1.0.0",
 		"tailwindcss": "^4.1.8",
-		"tw-animate-css": "^1.3.2",
+		"tw-animate-css": "^1.3.3",
 		"typescript": "^5.8.3",
-		"typescript-eslint": "^8.33.0",
+		"typescript-eslint": "^8.33.1",
 		"vaul-svelte": "^1.0.0-next.7",
 		"velite": "^0.2.4",
-		"vite": "npm:rolldown-vite@latest",
-		"zod": "^3.25.42"
+		"vite": "^6.3.5",
+		"vite-plugin-devtools-json": "^0.1.0",
+		"zod": "^3.25.49"
 	},
 	"dependencies": {
 		"@formkit/auto-animate": "^0.8.2",
 		"gsap": "^3.13.0",
-		"motion": "^12.15.0",
-		"vite-plugin-kit-routes": "^0.8.4"
+		"motion": "^12.16.0",
+		"vite-plugin-kit-routes": "^0.8.5"
 	},
 	"engines": {
 		"node": ">=20.0.0"
@@ -90,8 +91,5 @@
 	"packageManager": "bun@1.2.10",
 	"trustedDependencies": [
 		"@tailwindcss/oxide"
-	],
-	"overrides": {
-		"vite": "npm:rolldown-vite@latest"
-	}
+	]
 }

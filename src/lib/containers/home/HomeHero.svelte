@@ -9,21 +9,19 @@
 	import Sparkles from '$lib/components/base/Sparkles.svelte';
 </script>
 
-<section class="section-hero items-center justify-center">
-	<div class="absolute inset-0 isolate opacity-3 blur-2xl contain-strict">
-		<div
-			class="absolute top-0 left-1/2 h-320 w-140 -translate-x-140 -translate-y-80 -rotate-45 rounded-full bg-[radial-gradient(68.54%_68.72%_at_55.02%_31.46%,var(--color-primary)_0,var(--color-primary)_50%,var(--color-primary)]"
-		></div>
-		<div
-			class="absolute top-0 left-1/2 h-320 w-120 [translate:-35rem_-50%] -rotate-45 rounded-full bg-[radial-gradient(50%_50%_at_50%_50%,var(--color-primary)_0,var(--color-primary)_80%,transparent_100%)]"
-		></div>
-		<div
-			class="absolute top-0 left-1/2 h-320 w-120 -translate-x-140 -translate-y-80 -rotate-45 bg-[radial-gradient(50%_50%_at_50%_50%,var(--color-primary)_0,var(--color-primary)_80%,transparent_100%)]"
-		></div>
+<section class="section-hero items-center justify-center overflow-hidden">
+	<!-- grid borders bg -->
+	<div class="absolute inset-0">
+		<div class="kcontainer relative mb-12 h-full w-full px-3 sm:px-4" style="--ct-max-w: 1280px">
+			<div class="h-full w-full border-x-2 border-dashed"></div>
+		</div>
 	</div>
 	<div
 		class="kcontainer relative mb-12 flex flex-col items-center justify-center gap-6 px-4 text-center md:mb-24"
 	>
+		<div
+			class="absolute h-[calc(100%+6rem)] w-screen border-y-2 border-dashed md:h-[calc(100%+12rem)]"
+		></div>
 		<div class="animate-appear">
 			<AnimatedBadge>
 				<span class="flex items-center gap-2">

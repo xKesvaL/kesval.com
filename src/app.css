@@ -378,7 +378,7 @@
 }
 
 @utility h1 {
-	@apply text-4xl leading-snug font-bold sm:text-5xl md:text-6xl lg:text-7xl;
+	@apply text-5xl leading-snug font-bold md:text-6xl lg:text-7xl;
 }
 
 @utility h2 {

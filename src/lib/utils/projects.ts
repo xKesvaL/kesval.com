@@ -120,12 +120,10 @@ export const projects: Project[] = [
 ] as const satisfies Project[];
 
 // Extract all unique tags from projects
-export const allTags = [
-	...new Set(projects.flatMap((project) => project.tags || []))
-];
+export const allTags = [...new Set(projects.flatMap((project) => project.tags || []))];
 
 export const highlightedProjects = projects
-	.filter((project) => ['portfolio_kesval', 'project_2', 'project_3'].includes(project.id))
+	.filter((project) => ['portfolio_kesval'].includes(project.id))
 	// Sort highlighted projects by start date (newest first)
 	.sort((a, b) => (b.startedAt?.getTime() || 0) - (a.startedAt?.getTime() || 0));
 
@@ -162,8 +160,7 @@ export const filterProjects = async (
 		const searchCondition = nameMatch || descriptionMatch || tagMatch || clientMatch;
 
 		const tagCondition =
-			selectedTags.length === 0 ||
-			selectedTags.every((tag) => project.tags?.includes(tag));
+			selectedTags.length === 0 || selectedTags.every((tag) => project.tags?.includes(tag));
 
 		return searchCondition && tagCondition;
 	});
