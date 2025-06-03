@@ -156,7 +156,11 @@
 						latestHoveredLink.href === link.href && '-translate-x-1/6'
 					)}
 				>
-					<enhanced:img {src} alt={label} class="nav-image-drop hidden md:block" />
+					<enhanced:img
+						{src}
+						alt={label}
+						class={cn('nav-image-drop hidden md:block', 'imageClass' in link && link.imageClass)}
+					/>
 				</a>
 			{/each}
 		</div>

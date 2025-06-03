@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { IsMobile } from '$lib/hooks/is-mobile.svelte';
-	import type { TeamMember } from '$lib/utils/config';
+	import { brand, type TeamMember } from '$lib/utils/config';
 	import { translate } from '$lib/utils/i18n';
 	import { Badge } from '../ui/badge';
 	import { Button } from '../ui/button';
@@ -28,7 +28,7 @@
 			alt={`${member.name} - ${member.role} at KesvaL Studio`}
 			class="h-full max-h-64 w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105 @md:max-h-88"
 		/>
-		<Badge class="absolute top-4 left-4 z-30">KesvaL Studio</Badge>
+		<Badge class="absolute top-4 left-4 z-30">{brand.name}</Badge>
 	</div>
 	<div class="flex flex-col justify-between p-6 md:col-span-4">
 		<div>

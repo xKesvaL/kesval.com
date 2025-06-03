@@ -152,7 +152,12 @@
 										{...props}
 										bind:value={$formData.message}
 										placeholder={m['contact.hero.your_project_placeholder']()}
-										class="min-h-32 resize-none"
+										class=""
+										oninput={(e) => {
+											const target = e.target as HTMLTextAreaElement;
+											target.style.height = '0px';
+											target.style.height = `${Math.min(target.scrollHeight + 2, 200)}px`;
+										}}
 									/>
 								{/snippet}
 							</Form.Control>

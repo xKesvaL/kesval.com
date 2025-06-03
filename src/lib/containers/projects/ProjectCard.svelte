@@ -123,7 +123,7 @@
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							<span>Visit</span>
+							<span>{m['common.visit']()}</span>
 							<IconExternalLink class="" />
 						</Button>
 					{/if}

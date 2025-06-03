@@ -12,6 +12,10 @@ const config = {
 	kit: {
 		adapter: adapter(),
 
+		prerender: {
+			handleHttpError: 'warn'
+		},
+
 		alias: {
 			$assets: './src/assets',
 			$paraglide: './src/lib/paraglide',

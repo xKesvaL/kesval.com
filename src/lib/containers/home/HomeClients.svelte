@@ -3,7 +3,7 @@
 	import * as m from '$paraglide/messages';
 	import { Separator } from '$lib/components/ui/separator';
 	import type { Picture } from 'vite-imagetools';
-	import OLWE from '$assets/clients/olwe.svg?enhanced';
+	import OLWE from '$assets/clients/olwe.svg';
 
 	type Client = {
 		icon: Icon | Picture | string;
