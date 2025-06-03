@@ -32,8 +32,9 @@ export const load = async ({ url }) => {
 	const baseMetaTags = Object.freeze({
 		title: title,
 		titleTemplate: `%s | ${brand.name}`,
-		canonical: new URL(url.pathname, url.origin).href
-	}) satisfies MetaTagsProps;
+		canonical: new URL(url.pathname, url.origin).href,
+		robots: url.host !== 'kesval.com' ? 'noindex' : 'index, follow'
+	} satisfies MetaTagsProps);
 
 	return {
 		baseMetaTags
