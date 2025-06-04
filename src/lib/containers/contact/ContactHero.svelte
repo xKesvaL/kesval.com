@@ -4,7 +4,7 @@
 	import { superForm, type Infer, type SuperValidated } from 'sveltekit-superforms';
 	import { Input } from '$lib/components/ui/input';
 	import { Textarea } from '$lib/components/ui/textarea';
-	import { zodClient } from 'sveltekit-superforms/adapters';
+	import { zod4Client } from 'sveltekit-superforms/adapters';
 	import * as m from '$paraglide/messages';
 	import { contactFormSchema, type ContactFormSchema } from '$lib/schemas/contact';
 	import {
@@ -18,6 +18,7 @@
 	import { gsap } from 'gsap';
 	import { hover } from 'motion';
 	import { onMount } from 'svelte';
+	import { route } from '$lib/ROUTES';
 
 	type Props = {
 		form: SuperValidated<Infer<ContactFormSchema>>;
@@ -25,11 +26,14 @@
 
 	let { form: formServer }: Props = $props();
 
+	let success = $state(false);
+
 	// Initialize the superForm instance
 	const form = superForm(formServer, {
-		validators: zodClient(contactFormSchema),
-		onSubmit: async () => {
-			console.log('Form submitted:', $formData);
+		validators: zod4Client(contactFormSchema),
+		// This runs only if the form is valid
+		onUpdated: async ({ form }) => {
+			success = true;
 		}
 	});
 
@@ -79,7 +83,7 @@
 				</div>
 
 				<!-- Form -->
-				<form use:enhance method="POST" class="space-y-6">
+				<form use:enhance method="POST" class="space-y-6" action={route('send /contact')}>
 					<!-- Personal Information Section -->
 					<div class="space-y-4">
 						<div class="grid grid-cols-1 gap-4 md:grid-cols-2">

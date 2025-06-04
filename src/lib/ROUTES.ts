@@ -34,7 +34,7 @@ const SERVERS = {
  * ACTIONS
  */
 const ACTIONS = {
-  
+  "send /contact": `/contact?/send`
 }
 
 /**
@@ -151,7 +151,7 @@ export function route<T extends keyof AllTypes>(key: T, ...params: any[]): strin
 export type KIT_ROUTES = {
   PAGES: { '/': never, '/blog': never, '/blog/[slug]': 'slug', '/contact': never, '/projets': never, '/projets/[projectId]': 'projectId', '/services': never }
   SERVERS: { 'GET /manifest.json': never, 'GET /sitemap.xml': never }
-  ACTIONS: Record<string, never>
+  ACTIONS: { 'send /contact': never }
   LINKS: Record<string, never>
   Params: { 'slug': never, 'projectId': never }
 }
