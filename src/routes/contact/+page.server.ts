@@ -21,7 +21,7 @@ export const actions = {
 
 		const { error } = await resend.emails.send({
 			from: 'Prospets KesvaL Studio <prospects@kesval.com>',
-			to: ['jabeddou@gmail.com'],
+			to: ['contact@kesval.com'],
 			subject: 'New contact form submission!',
 			text: `We got a new contact form submission:
 			
