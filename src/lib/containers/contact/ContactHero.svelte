@@ -27,6 +27,10 @@
 		validators: zod4Client(contactFormSchema),
 		// This runs only if the form is valid
 		onUpdated: async ({ form: superformData }) => {
+			if (!superformData.valid) {
+				return;
+			}
+
 			const formEl = document.getElementById('contact-form-element');
 			if (formEl) {
 				gsap.to(formEl, {
@@ -65,7 +69,7 @@
 		}
 	});
 
-	const { form: formData, enhance } = form;
+	const { form: formData, enhance, submitting } = form;
 
 	let timeline: gsap.core.Tween | gsap.core.Timeline; // Declare timeline, allow for Tween or Timeline type
 
@@ -239,9 +243,14 @@
 								<Form.Button
 									size="lg"
 									class="icon-send-button h-12 w-full gap-4 text-base font-semibold shadow-lg transition-all hover:shadow-xl"
+									disabled={$submitting}
 								>
-									<IconSend class="icon-send-to-animate h-5 w-5" />
-									{m['contact.hero.get_my_free_quote']()}
+									{#if $submitting}
+										{m['contact.hero.submitting']()}
+									{:else}
+										<IconSend class="icon-send-to-animate h-5 w-5" />
+										{m['contact.hero.get_my_free_quote']()}
+									{/if}
 								</Form.Button>
 							</div>
 

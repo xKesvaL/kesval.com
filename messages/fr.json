@@ -58,7 +58,8 @@
 			"quick_response": "Réponse rapide dans les 24 heures",
 			"success_title": "Message envoyé avec succès !",
 			"success_message": "Merci de nous avoir contactés. Nous reviendrons vers vous dès que possible.",
-			"send_another_message": "Envoyer un autre message"
+			"send_another_message": "Envoyer un autre message",
+			"submitting": "Envoi en cours..."
 		}
 	},
 	"contact_us": "Discutons",
