@@ -19,6 +19,10 @@ export const actions = {
 	send: async (request) => {
 		const contactForm = await superValidate(request, zod4(contactFormSchema));
 
+		if (!contactForm.valid) {
+			return fail(401, contactForm);
+		}
+
 		const { error } = await resend.emails.send({
 			from: 'Prospets KesvaL Studio <prospects@kesval.com>',
 			to: ['contact@kesval.com'],

@@ -7,18 +7,12 @@
 	import { zod4Client } from 'sveltekit-superforms/adapters';
 	import * as m from '$paraglide/messages';
 	import { contactFormSchema, type ContactFormSchema } from '$lib/schemas/contact';
-	import {
-		IconUser,
-		IconMail,
-		IconBuilding,
-		IconMessage,
-		IconSend,
-		IconSparkles
-	} from '@tabler/icons-svelte';
+	import { IconUser, IconMail, IconBuilding, IconMessage, IconSend } from '@tabler/icons-svelte';
 	import { gsap } from 'gsap';
 	import { hover } from 'motion';
-	import { onMount } from 'svelte';
+	import { onMount, tick } from 'svelte';
 	import { route } from '$lib/ROUTES';
+	import { Button } from '$lib/components/ui/button';
 
 	type Props = {
 		form: SuperValidated<Infer<ContactFormSchema>>;
@@ -32,14 +26,47 @@
 	const form = superForm(formServer, {
 		validators: zod4Client(contactFormSchema),
 		// This runs only if the form is valid
-		onUpdated: async ({ form }) => {
-			success = true;
+		onUpdated: async ({ form: superformData }) => {
+			const formEl = document.getElementById('contact-form-element');
+			if (formEl) {
+				gsap.to(formEl, {
+					autoAlpha: 0,
+					y: -30,
+					duration: 0.3,
+					ease: 'power2.in',
+					onComplete: () => {
+						void (async () => {
+							success = true;
+							await tick(); // Wait for Svelte to update the DOM
+							const successEl = document.getElementById('success-message-element');
+							if (successEl) {
+								gsap.fromTo(
+									successEl,
+									{ autoAlpha: 0, y: 30 },
+									{ autoAlpha: 1, y: 0, duration: 0.3, ease: 'power2.out' }
+								);
+							}
+						})();
+					}
+				});
+			} else {
+				// Fallback
+				success = true;
+				await tick();
+				const successEl = document.getElementById('success-message-element');
+				if (successEl) {
+					gsap.fromTo(
+						successEl,
+						{ autoAlpha: 0, y: 30 },
+						{ autoAlpha: 1, y: 0, duration: 0.3, ease: 'power2.out' }
+					);
+				}
+			}
 		}
 	});
 
 	const { form: formData, enhance } = form;
 
-	// let timeline = gsap.timeline({ defaults: { duration: 0.3 }, paused: true }); // Old timeline definition
 	let timeline: gsap.core.Tween | gsap.core.Timeline; // Declare timeline, allow for Tween or Timeline type
 
 	onMount(() => {
@@ -64,6 +91,35 @@
 			};
 		});
 	});
+
+	async function showFormAgain() {
+		const successEl = document.getElementById('success-message-element');
+		if (successEl) {
+			gsap.to(successEl, {
+				autoAlpha: 0,
+				y: -30,
+				duration: 0.3,
+				ease: 'power2.in',
+				onComplete: () => {
+					void (async () => {
+						success = false;
+						await tick();
+						const formEl = document.getElementById('contact-form-element');
+						if (formEl) {
+							gsap.fromTo(
+								formEl,
+								{ autoAlpha: 0, y: 30 },
+								{ autoAlpha: 1, y: 0, duration: 0.3, ease: 'power2.out' }
+							);
+						}
+					})();
+				}
+			});
+		} else {
+			// Fallback
+			success = false;
+		}
+	}
 </script>
 
 <section class="kcontainer section-hero px-4">
@@ -82,109 +138,146 @@
 					</p>
 				</div>
 
-				<!-- Form -->
-				<form use:enhance method="POST" class="space-y-6" action={route('send /contact')}>
-					<!-- Personal Information Section -->
-					<div class="space-y-4">
-						<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-							<Form.Field {form} name="name" class="space-y-3">
-								<Form.Control>
-									{#snippet children({ props })}
-										<Form.Label class="flex items-center gap-2 text-sm font-medium">
-											<IconUser class="text-muted-foreground h-4 w-4" />
-											{m['contact.hero.name']()} *
-										</Form.Label>
-										<Input
-											{...props}
-											bind:value={$formData.name}
-											placeholder={m['contact.hero.name_placeholder']()}
-											class="h-11"
-										/>
-									{/snippet}
-								</Form.Control>
-								<Form.FieldErrors />
-							</Form.Field>
-
-							<Form.Field {form} name="email" class="space-y-3">
-								<Form.Control>
-									{#snippet children({ props })}
-										<Form.Label class="flex items-center gap-2 text-sm font-medium">
-											<IconMail class="text-muted-foreground h-4 w-4" />
-											{m['contact.hero.email']()} *
-										</Form.Label>
-										<Input
-											{...props}
-											bind:value={$formData.email}
-											placeholder={m['contact.hero.email_placeholder']()}
-											class="h-11"
-										/>
-									{/snippet}
-								</Form.Control>
-								<Form.FieldErrors />
-							</Form.Field>
-						</div>
-
-						<Form.Field {form} name="company" class="space-y-3">
-							<Form.Control>
-								{#snippet children({ props })}
-									<Form.Label class="flex items-center gap-2 text-sm font-medium">
-										<IconBuilding class="text-muted-foreground h-4 w-4" />
-										{m['contact.hero.company']()}
-									</Form.Label>
-									<Input
-										{...props}
-										bind:value={$formData.company}
-										placeholder={m['contact.hero.company_placeholder']()}
-										class="h-11"
-									/>
-								{/snippet}
-							</Form.Control>
-							<Form.FieldErrors />
-						</Form.Field>
-					</div>
-
-					<!-- Project Details Section -->
-					<div class="space-y-4">
-						<Form.Field {form} name="message" class="space-y-3">
-							<Form.Control>
-								{#snippet children({ props })}
-									<Form.Label class="flex items-center gap-2 text-sm font-medium">
-										<IconMessage class="text-muted-foreground h-4 w-4" />
-										{m['contact.hero.your_project']()} *
-									</Form.Label>
-									<Textarea
-										{...props}
-										bind:value={$formData.message}
-										placeholder={m['contact.hero.your_project_placeholder']()}
-										class=""
-										oninput={(e) => {
-											const target = e.target as HTMLTextAreaElement;
-											target.style.height = '0px';
-											target.style.height = `${Math.min(target.scrollHeight + 2, 200)}px`;
-										}}
-									/>
-								{/snippet}
-							</Form.Control>
-							<Form.FieldErrors />
-						</Form.Field>
-					</div>
-
-					<!-- Submit Button -->
-					<div class="pt-4">
-						<Form.Button
-							size="lg"
-							class="icon-send-button h-12 w-full gap-4 text-base font-semibold shadow-lg transition-all hover:shadow-xl"
+				<div class="form-wrapper">
+					<!-- Form -->
+					{#if !success}
+						<form
+							id="contact-form-element"
+							use:enhance
+							method="POST"
+							class="space-y-6"
+							action={route('send /contact')}
 						>
-							<IconSend class="icon-send-to-animate h-5 w-5" />
-							{m['contact.hero.get_my_free_quote']()}
-						</Form.Button>
-					</div>
+							<!-- Personal Information Section -->
+							<div class="space-y-4">
+								<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+									<Form.Field {form} name="name" class="space-y-3">
+										<Form.Control>
+											{#snippet children({ props })}
+												<Form.Label class="flex items-center gap-2 text-sm font-medium">
+													<IconUser class="text-muted-foreground h-4 w-4" />
+													{m['contact.hero.name']()} *
+												</Form.Label>
+												<Input
+													{...props}
+													bind:value={$formData.name}
+													placeholder={m['contact.hero.name_placeholder']()}
+													class="h-11"
+												/>
+											{/snippet}
+										</Form.Control>
+										<Form.FieldErrors />
+									</Form.Field>
 
-					<!-- Trust indicators -->
-					<div class="text-muted-foreground space-y-2 text-center text-sm">
-						<p>⚡ {m['contact.hero.quick_response']()}</p>
-					</div>
-				</form>
+									<Form.Field {form} name="email" class="space-y-3">
+										<Form.Control>
+											{#snippet children({ props })}
+												<Form.Label class="flex items-center gap-2 text-sm font-medium">
+													<IconMail class="text-muted-foreground h-4 w-4" />
+													{m['contact.hero.email']()} *
+												</Form.Label>
+												<Input
+													{...props}
+													bind:value={$formData.email}
+													placeholder={m['contact.hero.email_placeholder']()}
+													class="h-11"
+												/>
+											{/snippet}
+										</Form.Control>
+										<Form.FieldErrors />
+									</Form.Field>
+								</div>
+
+								<Form.Field {form} name="company" class="space-y-3">
+									<Form.Control>
+										{#snippet children({ props })}
+											<Form.Label class="flex items-center gap-2 text-sm font-medium">
+												<IconBuilding class="text-muted-foreground h-4 w-4" />
+												{m['contact.hero.company']()}
+											</Form.Label>
+											<Input
+												{...props}
+												bind:value={$formData.company}
+												placeholder={m['contact.hero.company_placeholder']()}
+												class="h-11"
+											/>
+										{/snippet}
+									</Form.Control>
+									<Form.FieldErrors />
+								</Form.Field>
+							</div>
+
+							<!-- Project Details Section -->
+							<div class="space-y-4">
+								<Form.Field {form} name="message" class="space-y-3">
+									<Form.Control>
+										{#snippet children({ props })}
+											<Form.Label class="flex items-center gap-2 text-sm font-medium">
+												<IconMessage class="text-muted-foreground h-4 w-4" />
+												{m['contact.hero.your_project']()} *
+											</Form.Label>
+											<Textarea
+												{...props}
+												bind:value={$formData.message}
+												placeholder={m['contact.hero.your_project_placeholder']()}
+												class=""
+												oninput={(e) => {
+													const target = e.target as HTMLTextAreaElement;
+													target.style.height = '0px';
+													target.style.height =
+														String(Math.min(target.scrollHeight + 2, 200)) + 'px';
+												}}
+											/>
+										{/snippet}
+									</Form.Control>
+									<Form.FieldErrors />
+								</Form.Field>
+							</div>
+
+							<!-- Submit Button -->
+							<div class="pt-4">
+								<Form.Button
+									size="lg"
+									class="icon-send-button h-12 w-full gap-4 text-base font-semibold shadow-lg transition-all hover:shadow-xl"
+								>
+									<IconSend class="icon-send-to-animate h-5 w-5" />
+									{m['contact.hero.get_my_free_quote']()}
+								</Form.Button>
+							</div>
+
+							<!-- Trust indicators -->
+							<div class="text-muted-foreground space-y-2 text-center text-sm">
+								<p>⚡ {m['contact.hero.quick_response']()}</p>
+							</div>
+						</form>
+					{:else}
+						<!-- Success Message -->
+						<div
+							id="success-message-element"
+							class="flex flex-col items-center justify-center space-y-4 text-center"
+						>
+							<svg
+								class="h-16 w-16 text-green-500"
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke="currentColor"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M5 13l4 4L19 7"
+								/>
+							</svg>
+							<h3 class="text-2xl font-semibold">{m['contact.hero.success_title']()}</h3>
+							<p class="text-muted-foreground">{m['contact.hero.success_message']()}</p>
+							<Button class="mt-4" variant="default" onclick={showFormAgain}>
+								{m['contact.hero.send_another_message']()}
+							</Button>
+						</div>
+					{/if}
+				</div>
 			</div>
 		</ShineBorder>
 		<ShineBorder class="animate-appear col-span-full w-full p-6 md:col-span-4"></ShineBorder>
