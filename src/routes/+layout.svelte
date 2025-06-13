@@ -10,11 +10,17 @@
 	// import { building, dev } from '$app/environment';
 	import { Toaster } from '$lib/components/ui/sonner';
 	import { IsMobile } from '$lib/hooks/is-mobile.svelte';
+	import { polyfillCountryFlagEmojis } from '$lib/utils/functions';
+	import { onMount } from 'svelte';
 
 	let { children, data } = $props();
 	let metaTags = $derived(deepMerge(data.baseMetaTags, page.data.pageMetaTags));
 
 	const isMobile = new IsMobile();
+
+	onMount(() => {
+		polyfillCountryFlagEmojis();
+	});
 </script>
 
 {#key getLocale()}
