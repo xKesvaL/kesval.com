@@ -204,21 +204,41 @@
 		"expertise": "Expertise"
 	},
 	"services": {
-		"a_z_project_development": {
-			"title": "Votre projet de A à Z",
-			"description": "Votre vision, notre expertise."
+		"web_on_premise": {
+			"title": "Développement Web Sur Mesure",
+			"description": "Sites vitrine et e-commerce performants avec les dernières technologies",
+			"feature_1": "Maquette personnalisée",
+			"feature_2": "Site vitrine moderne et optimisé mobile",
+			"feature_3": "Mise en ligne",
+			"feature_4": "Performance et sécurité garanties",
+			"bonus_1": "Hébergement 1 an",
+			"bonus_2": "Support post-mise en ligne 1 mois"
 		},
-		"freelance_development": {
-			"title": "Développement freelance",
-			"description": "Un partenaire de confiance."
+		"web_apps": {
+			"title": "Applications Web Complexes",
+			"description": "Outils métier et apps sur mesure pour optimiser vos processus business",
+			"feature_1": "Maquette personnalisée",
+			"feature_2": "Appplication 100% personnalisée",
+			"feature_3": "Méthodologie agile et expertise",
+			"feature_4": "Intégration tierces & sécurité",
+			"bonus_1": "Hébergement 1 an",
+			"bonus_2": "Support post-mise en ligne 1 mois"
 		},
-		"custom_web_mobile_app_development": {
-			"title": "Développement d'applications",
-			"description": "Des solutions sur mesure adaptées."
+		"design": {
+			"title": "Design UX/UI",
+			"description": "Interfaces utilisateur intuitives centrées sur l'expérience"
 		},
-		"design_web_or_app": {
-			"title": "Design de sites ou applications",
-			"description": "Des designs qui engagent."
+		"automation": {
+			"title": "Automatisation des Processus",
+			"description": "Solutions sur mesure pour automatiser vos tâches répétitives"
+		},
+		"maintenance": {
+			"title": "Maintenance & Support",
+			"description": "Suivi et optimisation continue de vos solutions digitales"
+		},
+		"agencies": {
+			"title": "Services pour Agences",
+			"description": "Renfort d'équipe et développement en marque blanche"
 		},
 		"our_services": {
 			"suptitle": "Nos services",
@@ -238,6 +258,20 @@
 				"title": "Solutions sur mesure",
 				"description": "Des solutions personnalisées pour répondre à vos besoins spécifiques, quelles que soient vos exigences."
 			}
+		},
+		"hero": {
+			"suptitle": "Développement web & mobile",
+			"title": "Nos services",
+			"description": "Découvrez nos services de développement web et mobile, conçus pour répondre à vos besoins spécifiques.",
+			"service_highlight": "Service Phare",
+			"from_x_euros": "À partir de {price}€",
+			"from_x_euros_per_month": "À partir de {price}€/mois",
+			"adr_x_euros": "TJM {price}€",
+			"x_days_plus": "{days}+ jours",
+			"variable": "Variable",
+			"flexible": "Flexible",
+			"continous": "Continu",
+			"on_quote": "Sur devis"
 		}
 	}
 }

@@ -9,15 +9,17 @@ import ImageJordan from '$assets/team/jordan.jpg?enhanced';
 import { cn } from '$lib/utils/ui';
 import type { Picture } from 'vite-imagetools';
 import {
-	IconAppWindow,
 	IconBrandGithub,
 	IconBrandLinkedin,
 	IconCode,
 	IconDatabase,
-	IconLayoutDistributeHorizontal,
 	IconMail,
 	IconServer,
-	IconUsersGroup,
+	IconPalette,
+	IconRocket,
+	IconBolt,
+	IconShield,
+	IconBuilding,
 	type Icon
 } from '@tabler/icons-svelte';
 
@@ -181,16 +183,87 @@ export const team = {
 export type ServiceType = {
 	id: string;
 	icon: Icon;
+	price: {
+		adr?: boolean;
+		recurring?: boolean;
+		amount: 'quote' | number;
+	};
+	duration: {
+		from: 'variable' | 'continous' | 'flexible' | number;
+		to?: string | number;
+	};
+	highlight?: boolean;
 	href: string;
 };
 
 export const services = [
 	{
-		id: 'a_z_project_development',
-		icon: IconAppWindow,
+		id: 'web_on_premise',
+		icon: IconCode,
+		price: {
+			amount: 1000
+		},
+		duration: {
+			from: 5
+		},
 		href: route('/')
 	},
-	{ id: 'freelance_development', icon: IconUsersGroup, href: route('/') },
-	{ id: 'custom_web_mobile_app_development', icon: IconCode, href: route('/') },
-	{ id: 'design_web_or_app', icon: IconLayoutDistributeHorizontal, href: route('/') }
+	{
+		id: 'web_apps',
+		icon: IconRocket,
+		price: {
+			amount: 3000
+		},
+		duration: {
+			from: 20
+		},
+		href: route('/'),
+		highlight: true
+	},
+	{
+		id: 'design',
+		icon: IconPalette,
+		price: {
+			amount: 'quote'
+		},
+		duration: {
+			from: 'variable'
+		},
+		href: route('/')
+	},
+	{
+		id: 'automation',
+		icon: IconBolt,
+		price: {
+			amount: 'quote'
+		},
+		duration: {
+			from: 'variable'
+		},
+		href: route('/')
+	},
+	{
+		id: 'maintenance',
+		icon: IconShield,
+		price: {
+			recurring: true,
+			amount: 80
+		},
+		duration: {
+			from: 'continous'
+		},
+		href: route('/')
+	},
+	{
+		id: 'agencies',
+		icon: IconBuilding,
+		price: {
+			adr: true,
+			amount: 300
+		},
+		duration: {
+			from: 'flexible'
+		},
+		href: route('/')
+	}
 ] as const satisfies ServiceType[];
