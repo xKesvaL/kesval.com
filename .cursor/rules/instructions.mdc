@@ -1,3 +1,8 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
 When asked to write code, use the following instructions:
 
 - Use the latest version of the language or framework.
@@ -85,4 +90,4 @@ Nous ciblons deux segments principaux :
    pour son expertise et la qualité de son accompagnement. Nous sommes ouverts aux
    collaborations et partenariats qui permettront d'accélérer notre développement et de
    servir au mieux les ambitions digitales de nos clients.
-   </context>
+</context>
