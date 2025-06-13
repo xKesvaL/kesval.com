@@ -1,14 +1,16 @@
 <script lang="ts">
 	import { cn } from '$lib/utils/ui';
 	import type { WithChildren } from 'bits-ui';
+	import type { HTMLAttributes } from 'svelte/elements';
 
 	type Props = WithChildren<{
 		class?: string;
 		colorClass?: string;
 		style?: string;
-	}>;
+	}> &
+		HTMLAttributes<HTMLDivElement>;
 
-	let { class: className, colorClass, style, children }: Props = $props();
+	let { class: className, colorClass, style, children, ...props }: Props = $props();
 </script>
 
 <div
@@ -17,6 +19,7 @@
 		className
 	)}
 	{style}
+	{...props}
 >
 	<div
 		class={cn(

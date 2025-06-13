@@ -44,7 +44,7 @@
 	"contact": {
 		"hero": {
 			"get_your_free_quote": "Get your free quote",
-			"description": "Tell us about your project and get a personalized quote",
+			"description": "Tell us about your project and get a personalized quote within 24 hours",
 			"name": "Name",
 			"name_placeholder": "Your full name",
 			"email": "Email",
@@ -54,7 +54,7 @@
 			"your_project": "Your project",
 			"your_project_placeholder": "Describe your project, goals, and requirements...",
 			"get_my_free_quote": "Get my free quote",
-			"quick_response": "Quick response guaranteed"
+			"quick_response": "Quick response within 24 hours guaranteed"
 		}
 	},
 

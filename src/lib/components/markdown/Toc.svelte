@@ -4,10 +4,10 @@
 	import { cn } from '$lib/utils/ui';
 	import { useToc, type TableOfContents } from '$lib/hooks/use-toc.svelte';
 	import * as m from '$paraglide/messages';
-	import { IsMobile } from '$lib/hooks/is-mobile.svelte';
+	import { IsMobileCustom } from '$lib/hooks/is-mobile-custom.svelte';
 	import { tick } from 'svelte';
 	import { gsap } from 'gsap';
-	import { Flip } from 'gsap/Flip';
+	import { Flip } from 'gsap/dist/Flip';
 
 	gsap.registerPlugin(Flip);
 
@@ -26,12 +26,18 @@
 	const tocState = useToc(() => itemIds as string[]);
 
 	let isOpenState = $state(false);
-	let isMobile = new IsMobile(1024);
+	let isMobile = new IsMobileCustom(1024);
 
 	let isOpen = $derived(!isMobile.current || isOpenState);
 
-	async function toggleOpen() {
+	async function toggleOpen(event: MouseEvent) {
 		if (!isMobile.current) {
+			return;
+		}
+
+		// TODO: make sure we are not clicking on a link inside the toc
+		const target = event.target as HTMLElement;
+		if (target.closest('.toc-root')) {
 			return;
 		}
 

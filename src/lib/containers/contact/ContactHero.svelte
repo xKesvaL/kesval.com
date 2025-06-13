@@ -7,12 +7,27 @@
 	import { zod4Client } from 'sveltekit-superforms/adapters';
 	import * as m from '$paraglide/messages';
 	import { contactFormSchema, type ContactFormSchema } from '$lib/schemas/contact';
-	import { IconUser, IconMail, IconBuilding, IconMessage, IconSend } from '@tabler/icons-svelte';
+	import {
+		IconUser,
+		IconMail,
+		IconBuilding,
+		IconMessage,
+		IconSend,
+		IconBrandInstagram,
+		IconBrandLinkedin,
+		IconBrandGithub,
+		IconBolt,
+		IconHeart,
+		IconStar
+	} from '@tabler/icons-svelte';
 	import { gsap } from 'gsap';
 	import { hover } from 'motion';
 	import { onMount, tick } from 'svelte';
 	import { route } from '$lib/ROUTES';
 	import { Button } from '$lib/components/ui/button';
+	import type { Attachment } from 'svelte/attachments';
+	import { cn } from '$lib/utils/ui';
+	import { brand } from '$lib/utils/config';
 
 	type Props = {
 		form: SuperValidated<Infer<ContactFormSchema>>;
@@ -21,6 +36,7 @@
 	let { form: formServer }: Props = $props();
 
 	let success = $state(false);
+	let hoveredPanel: 'form' | 'calendar' | null = $state(null);
 
 	// Initialize the superForm instance
 	const form = superForm(formServer, {
@@ -73,8 +89,7 @@
 
 	let timeline: gsap.core.Tween | gsap.core.Timeline; // Declare timeline, allow for Tween or Timeline type
 
-	onMount(() => {
-		// New single tween for the animation
+	const attachHover: Attachment = (element) => {
 		timeline = gsap.to('.icon-send-to-animate', {
 			keyframes: [
 				{ translateX: 6, translateY: -6, rotate: 15, marginRight: 6 },
@@ -82,19 +97,19 @@
 				{ translateX: 18, translateY: -6, rotate: 70, marginRight: 18 },
 				{ translateX: 24, translateY: -1, rotate: 45, marginRight: 24 }
 			],
-			duration: 0.8, // Total duration: 0.3s per segment * 4 segments
+			duration: 0.6, // Total duration: 0.3s per segment * 4 segments
 			ease: 'power2.inOut', // Let keyframes handle their own easing for segments
 			paused: true
 		});
 
-		hover('.icon-send-button', () => {
+		hover(element, () => {
 			timeline.play();
 
 			return () => {
 				timeline.reverse();
 			};
 		});
-	});
+	};
 
 	async function showFormAgain() {
 		const successEl = document.getElementById('success-message-element');
@@ -127,8 +142,8 @@
 </script>
 
 <section class="kcontainer section-hero px-4">
-	<div class="grid grid-cols-12 gap-8">
-		<ShineBorder class="animate-appear col-span-full w-full p-8 md:col-span-8">
+	<div class="grid grid-cols-12 gap-8 transition-all duration-500 ease-out">
+		<ShineBorder class={cn('left animate-appear col-span-full h-full w-full p-8 md:col-span-7')}>
 			<div class="space-y-8">
 				<!-- Form Header -->
 				<div class="space-y-2">
@@ -242,8 +257,9 @@
 							<div class="pt-4">
 								<Form.Button
 									size="lg"
-									class="icon-send-button h-12 w-full gap-4 text-base font-semibold shadow-lg transition-all hover:shadow-xl"
+									class="h-12 w-full gap-4 text-base font-semibold shadow-lg transition-all hover:shadow-xl"
 									disabled={$submitting}
+									{@attach attachHover}
 								>
 									{#if $submitting}
 										{m['contact.hero.submitting']()}
@@ -289,7 +305,89 @@
 				</div>
 			</div>
 		</ShineBorder>
-		<ShineBorder class="animate-appear col-span-full w-full p-6 md:col-span-4"></ShineBorder>
+
+		<ShineBorder class={cn('right animate-appear col-span-full h-full w-full p-8 md:col-span-5')}>
+			<div class="flex h-full flex-col gap-8">
+				<!-- Form Header -->
+				<div class="space-y-2">
+					<div class="flex items-center gap-2">
+						<h2 class="title-gradient-muted-foreground text-3xl font-bold">
+							{m['contact.hero.contact_us_title']()}
+						</h2>
+					</div>
+					<p class="text-muted-foreground">
+						{m['contact.hero.contact_us_description']()}
+					</p>
+				</div>
+				<div class="flex items-center gap-4">
+					<div class="bg-primary/5 text-primary rounded-lg p-3">
+						<IconMail />
+					</div>
+					<div class="flex flex-col justify-between">
+						<p class="text-lg font-semibold">
+							{m['common.email']()}
+						</p>
+						<a
+							href={`mailto:${brand.email}`}
+							class="text-muted-foreground hover:text-primary hover:underline"
+						>
+							{brand.email}
+						</a>
+					</div>
+				</div>
+				<div class="flex items-center gap-4">
+					<Button
+						href={brand.instagram}
+						variant="outline"
+						size="icon"
+						class="size-12 rounded-full [&>svg]:size-6!"
+					>
+						<IconBrandInstagram />
+						<span class="sr-only">Instagram</span>
+					</Button>
+					<Button
+						href={brand.linkedin}
+						variant="outline"
+						size="icon"
+						class="size-12 rounded-full [&>svg]:size-6!"
+					>
+						<IconBrandLinkedin />
+						<span class="sr-only">LinkedIn</span>
+					</Button>
+					<Button
+						href={brand.github}
+						variant="outline"
+						size="icon"
+						class="size-12 rounded-full [&>svg]:size-6!"
+					>
+						<IconBrandGithub />
+						<span class="sr-only">GitHub</span>
+					</Button>
+				</div>
+				<div
+					class="border-primary/25 bg-primary/1 mt-auto flex flex-col gap-4 rounded-xl border p-4"
+				>
+					<h3 class="text-lg font-semibold">
+						{m['contact.hero.our_advantages']()}
+					</h3>
+					<div class="flex flex-col gap-2">
+						<div class="flex items-center gap-2 text-[0.95rem]">
+							<IconBolt class="text-primary size-4" />
+							{m['contact.hero.our_advantages_fast']()}
+						</div>
+						<div class="flex items-center gap-2 text-[0.95rem]">
+							<IconHeart class="text-primary size-4" />
+							{m['contact.hero.our_advantages_client']()}
+						</div>
+						<div class="flex items-center gap-2 text-[0.95rem]">
+							<IconStar class="text-primary size-4" />
+							{m['contact.hero.our_advantages_expert']()}
+						</div>
+					</div>
+				</div>
+			</div>
+		</ShineBorder>
+
 		<ShineBorder
 			class="animate-appear col-span-full w-full overflow-hidden md:pt-20 [&>div]:!border-none"
 		>
@@ -354,9 +452,3 @@
 		</ShineBorder>
 	</div>
 </section>
-
-<style>
-	:global(.cal-embed) {
-		border: none !important;
-	}
-</style>

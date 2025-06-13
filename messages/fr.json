@@ -59,7 +59,13 @@
 			"success_title": "Message envoyé avec succès !",
 			"success_message": "Merci de nous avoir contactés. Nous reviendrons vers vous dès que possible.",
 			"send_another_message": "Envoyer un autre message",
-			"submitting": "Envoi en cours..."
+			"submitting": "Envoi en cours...",
+			"contact_us_title": "Contactez-nous",
+			"contact_us_description": "Plusieurs façons de nous joindre pour discuter de votre projet web ou mobile",
+			"our_advantages": "Nos avantages",
+			"our_advantages_fast": "Réponse rapide dans les 24 heures",
+			"our_advantages_client": "Relation client personnalisée",
+			"our_advantages_expert": "Expertise sans rival"
 		}
 	},
 	"contact_us": "Discutons",
@@ -131,14 +137,15 @@
 		"cta_small": "Lancez votre projet",
 		"cta_self": "Je lance mon projet",
 		"cta_big": "Lancez votre projet dès aujourd'hui",
-		"your_name_here": "Votre nom ici"
+		"your_name_here": "Votre nom ici",
+		"email": "Email"
 	},
 	"meta": {
 		"home": {
 			"title": "Accueil"
 		},
-		"a_propos": {
-			"title": "À propos"
+		"services": {
+			"title": "Nos services"
 		},
 		"projets": {
 			"title": "Projets"

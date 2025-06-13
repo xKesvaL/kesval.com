@@ -1,6 +1,6 @@
 <script lang="ts">
 	import * as Select from '$lib/components/ui/select';
-	import { getFlagEmoji } from '$lib/utils/functions';
+	import { capitalizeFirstLetter, getFlagEmoji } from '$lib/utils/functions';
 	import { getLocale, locales, setLocale, type Locale } from '$paraglide/runtime';
 	import * as m from '$paraglide/messages';
 	import { cn } from '$lib/utils/ui';
@@ -24,6 +24,8 @@
 	const onValueChange = (value: string) => {
 		setLocale(value as Locale);
 	};
+
+	let languageNames = new Intl.DisplayNames(getLocale(), { type: 'language' });
 </script>
 
 <div class="font-emoji">
@@ -43,7 +45,7 @@
 				{m.change_language()}
 			</div>
 		</Select.Trigger>
-		<Select.Content class="!w-[4.5rem]">
+		<Select.Content class="!w-[4.5rem]" align="start" alignOffset={-2}>
 			{#each locales as lang}
 				<Select.Item
 					class="font-emoji text-lg"
@@ -57,6 +59,9 @@
 						{/if}
 					</span> -->
 					{getFlagEmoji(transformLocaleToFlag(lang))}
+					<span class="text-muted-foreground text-sm">
+						{capitalizeFirstLetter(languageNames.of(lang) ?? lang)}
+					</span>
 				</Select.Item>
 			{/each}
 		</Select.Content>
