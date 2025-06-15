@@ -56,7 +56,7 @@
 			'flex h-full w-full items-center justify-between transition-all duration-300 lg:rounded-2xl',
 			navigation.state === 'open' && 'px-4',
 			navigation.state === 'closed' &&
-				'bg-background shadow-foreground/5 px-4 shadow-lg drop-shadow-sm delay-[300ms]'
+				'bg-popover shadow-foreground/5 px-4 shadow-lg drop-shadow-sm delay-[300ms]'
 		)}
 	>
 		<div class="flex h-full w-full items-center justify-between rounded-[15px]">

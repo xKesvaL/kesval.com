@@ -209,36 +209,60 @@
 			"description": "Sites vitrine et e-commerce performants avec les dernières technologies",
 			"feature_1": "Maquette personnalisée",
 			"feature_2": "Site vitrine moderne et optimisé mobile",
-			"feature_3": "Mise en ligne",
+			"feature_3": "Déploiement et mise en ligne",
 			"feature_4": "Performance et sécurité garanties",
-			"bonus_1": "Hébergement 1 an",
-			"bonus_2": "Support post-mise en ligne 1 mois"
+			"bonus_1": "Hébergement 1 an offert",
+			"bonus_2": "Support 1 mois inclus"
 		},
 		"web_apps": {
 			"title": "Applications Web Complexes",
 			"description": "Outils métier et apps sur mesure pour optimiser vos processus business",
 			"feature_1": "Maquette personnalisée",
 			"feature_2": "Appplication 100% personnalisée",
-			"feature_3": "Méthodologie agile et expertise",
+			"feature_3": "Gestion de projet agile",
 			"feature_4": "Intégration tierces & sécurité",
-			"bonus_1": "Hébergement 1 an",
-			"bonus_2": "Support post-mise en ligne 1 mois"
+			"bonus_1": "Hébergement 1 an offert",
+			"bonus_2": "Support 1 mois inclus"
 		},
 		"design": {
 			"title": "Design UX/UI",
-			"description": "Interfaces utilisateur intuitives centrées sur l'expérience"
+			"description": "Interfaces utilisateur intuitives centrées sur l'expérience",
+			"feature_1": "Recherche UX approfondie",
+			"feature_2": "Maquette 100% prototypée",
+			"feature_3": "Design system complet",
+			"feature_4": "Design desktop & mobile",
+			"bonus_1": "Ateliers de co-conception",
+			"bonus_2": "Tests utilisateurs inclus"
 		},
 		"automation": {
 			"title": "Automatisation des Processus",
-			"description": "Solutions sur mesure pour automatiser vos tâches répétitives"
+			"description": "Solutions sur mesure pour automatiser vos tâches répétitives",
+			"feature_1": "Analyse de vos processus",
+			"feature_2": "Développement de scripts sur-mesure",
+			"feature_3": "Intégration avec vos outils",
+			"feature_4": "Tableau de bord de suivi",
+			"bonus_1": "Formation de vos équipes",
+			"bonus_2": "Support & maintenance 1 mois"
 		},
 		"maintenance": {
 			"title": "Maintenance & Support",
-			"description": "Suivi et optimisation continue de vos solutions digitales"
+			"description": "Suivi et optimisation continue de vos solutions digitales",
+			"feature_1": "Mises à jour de sécurité",
+			"feature_2": "Sauvegardes automatiques",
+			"feature_3": "Optimisation des performances",
+			"feature_4": "Support technique réactif",
+			"bonus_1": "Rapport mensuel d'activité",
+			"bonus_2": "Monitoring 24/7"
 		},
 		"agencies": {
 			"title": "Services pour Agences",
-			"description": "Renfort d'équipe et développement en marque blanche"
+			"description": "Renfort d'équipe et développement en marque blanche",
+			"feature_1": "Intervention en marque blanche",
+			"feature_2": "Expertise technique ponctuelle",
+			"feature_3": "Respect de vos processus",
+			"feature_4": "Communication transparente",
+			"bonus_1": "Flexibilité et réactivité",
+			"bonus_2": "Confidentialité garantie"
 		},
 		"our_services": {
 			"suptitle": "Nos services",
@@ -264,9 +288,9 @@
 			"title": "Nos services",
 			"description": "Découvrez nos services de développement web et mobile, conçus pour répondre à vos besoins spécifiques.",
 			"service_highlight": "Service Phare",
-			"from_x_euros": "À partir de {price}€",
-			"from_x_euros_per_month": "À partir de {price}€/mois",
-			"adr_x_euros": "TJM {price}€",
+			"from_x_euros": "À partir de {price}",
+			"from_x_euros_per_month": "À partir de {price}/mois",
+			"adr_x_euros": "TJM {price}",
 			"x_days_plus": "{days}+ jours",
 			"variable": "Variable",
 			"flexible": "Flexible",
