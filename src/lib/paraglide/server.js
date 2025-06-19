@@ -79,19 +79,7 @@ export async function paraglideMiddleware(request, resolve, callbacks) {
         runtime.strategy.includes("url")) {
         const localizedUrl = runtime.localizeUrl(request.url, { locale });
         if (normalizeURL(localizedUrl.href) !== normalizeURL(request.url)) {
-            // Create headers object with Vary header if preferredLanguage strategy is used
-            /** @type {Record<string, string>} */
-            const headers = {};
-            if (runtime.strategy.includes("preferredLanguage")) {
-                headers["Vary"] = "Accept-Language";
-            }
-            const response = new Response(null, {
-                status: 307,
-                headers: {
-                    Location: localizedUrl.href,
-                    ...headers,
-                },
-            });
+            const response = Response.redirect(localizedUrl, 307);
             callbacks?.onRedirect(response);
             return response;
         }

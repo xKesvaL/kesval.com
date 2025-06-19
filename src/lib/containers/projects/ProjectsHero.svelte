@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { IconSearch, IconX } from '@tabler/icons-svelte';
-	import { filterProjects, projects, allTags, type SortOption } from '$lib/utils/projects';
+	import { filterProjects, type SortOption } from '$lib/utils/projects';
 	import * as m from '$paraglide/messages';
 	import ProjectCard from './ProjectCard.svelte';
 	import { Input } from '$lib/components/ui/input';
@@ -8,6 +8,7 @@
 	import * as Select from '$lib/components/ui/select';
 	import { Button } from '$lib/components/ui/button';
 	import { cn } from '$lib/utils/ui';
+	import { projects } from '$content/index';
 
 	let searchTerm = $state('');
 	let selectedTags = $state<string[]>([]);
@@ -15,6 +16,7 @@
 	let filteredProjectsPromise = $derived(
 		filterProjects(projects, { sortBy, searchTerm, selectedTags })
 	); // Initial load
+	let allTags = $derived(projects.flatMap((project) => project.tags));
 
 	const toggleTag = (tag: string) => {
 		if (selectedTags.includes(tag)) {
@@ -27,7 +29,7 @@
 	// Handle sort change
 	const handleSortChange = (value: string) => {
 		if (value) {
-			sortBy = value;
+			sortBy = value as SortOption;
 		}
 	};
 
@@ -156,7 +158,7 @@
 				{/each}
 			{:then showedProjects}
 				{#if showedProjects.length > 0}
-					{#each showedProjects as project, index (project.id)}
+					{#each showedProjects as project, index (project.uniqueId)}
 						<ProjectCard {project} {index} type="project" />
 					{/each}
 				{:else}

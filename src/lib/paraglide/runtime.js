@@ -29,7 +29,7 @@ export const cookieDomain = "";
 /** @type {string} */
 export const localStorageKey = "PARAGLIDE_LOCALE";
 /**
- * @type {Array<"cookie" | "baseLocale" | "globalVariable" | "url" | "preferredLanguage" | "localStorage" | `custom-${string}`>}
+ * @type {Array<"cookie" | "baseLocale" | "globalVariable" | "url" | "preferredLanguage" | "localStorage">}
  */
 export const strategy = [
   "url",
@@ -196,16 +196,12 @@ export let getLocale = () => {
         else if (TREE_SHAKE_PREFERRED_LANGUAGE_STRATEGY_USED &&
             strat === "preferredLanguage" &&
             !isServer) {
-            locale = extractLocaleFromNavigator();
+            locale = negotiatePreferredLanguageFromNavigator();
         }
         else if (TREE_SHAKE_LOCAL_STORAGE_STRATEGY_USED &&
             strat === "localStorage" &&
             !isServer) {
             locale = localStorage.getItem(localStorageKey) ?? undefined;
-        }
-        else if (isCustomStrategy(strat) && customClientStrategies.has(strat)) {
-            const handler = customClientStrategies.get(strat);
-            locale = handler.getLocale();
         }
         // check if match, else continue loop
         if (locale !== undefined) {
@@ -221,6 +217,29 @@ export let getLocale = () => {
     }
     throw new Error("No locale found. Read the docs https://inlang.com/m/gerre34r/library-inlang-paraglideJs/errors#no-locale-found");
 };
+/**
+ * Negotiates a preferred language from navigator.languages.
+ *
+ * @returns {string|undefined} The negotiated preferred language.
+ */
+function negotiatePreferredLanguageFromNavigator() {
+    if (!navigator?.languages?.length) {
+        return undefined;
+    }
+    const languages = navigator.languages.map((lang) => ({
+        fullTag: lang.toLowerCase(),
+        baseTag: lang.split("-")[0]?.toLowerCase(),
+    }));
+    for (const lang of languages) {
+        if (isLocale(lang.fullTag)) {
+            return lang.fullTag;
+        }
+        else if (isLocale(lang.baseTag)) {
+            return lang.baseTag;
+        }
+    }
+    return undefined;
+}
 /**
  * Overwrite the \`getLocale()\` function.
  *
@@ -313,10 +332,6 @@ export let setLocale = (newLocale, options) => {
             typeof window !== "undefined") {
             // set the localStorage
             localStorage.setItem(localStorageKey, newLocale);
-        }
-        else if (isCustomStrategy(strat) && customClientStrategies.has(strat)) {
-            const handler = customClientStrategies.get(strat);
-            handler.setLocale(newLocale);
         }
     }
     if (!isServer &&
@@ -444,7 +459,10 @@ export const extractLocaleFromRequest = (request) => {
         }
         else if (TREE_SHAKE_PREFERRED_LANGUAGE_STRATEGY_USED &&
             strat === "preferredLanguage") {
-            locale = extractLocaleFromHeader(request);
+            const acceptLanguageHeader = request.headers.get("accept-language");
+            if (acceptLanguageHeader) {
+                locale = negotiatePreferredLanguageFromHeader(acceptLanguageHeader);
+            }
         }
         else if (strat === "globalVariable") {
             locale = _locale;
@@ -454,10 +472,6 @@ export const extractLocaleFromRequest = (request) => {
         }
         else if (strat === "localStorage") {
             continue;
-        }
-        else if (isCustomStrategy(strat) && customServerStrategies.has(strat)) {
-            const handler = customServerStrategies.get(strat);
-            locale = handler.getLocale(request);
         }
         if (locale !== undefined) {
             if (!isLocale(locale)) {
@@ -470,11 +484,42 @@ export const extractLocaleFromRequest = (request) => {
     }
     throw new Error("No locale found. There is an error in your strategy. Try adding 'baseLocale' as the very last strategy. Read more here https://inlang.com/m/gerre34r/library-inlang-paraglideJs/errors#no-locale-found");
 };
+/**
+ * Negotiates a preferred language from a header.
+ *
+ * @param {string} header - The header to negotiate from.
+ * @returns {string|undefined} The negotiated preferred language.
+ */
+function negotiatePreferredLanguageFromHeader(header) {
+    // Parse language preferences with their q-values and base language codes
+    const languages = header
+        .split(",")
+        .map((lang) => {
+        const [tag, q = "1"] = lang.trim().split(";q=");
+        // Get both the full tag and base language code
+        const baseTag = tag?.split("-")[0]?.toLowerCase();
+        return {
+            fullTag: tag?.toLowerCase(),
+            baseTag,
+            q: Number(q),
+        };
+    })
+        .sort((a, b) => b.q - a.q);
+    for (const lang of languages) {
+        if (isLocale(lang.fullTag)) {
+            return lang.fullTag;
+        }
+        else if (isLocale(lang.baseTag)) {
+            return lang.baseTag;
+        }
+    }
+    return undefined;
+}
 
 /**
  * Extracts a cookie from the document.
  *
- * Will return undefined if the document is not available or if the cookie is not set.
+ * Will return undefined if the docuement is not available or if the cookie is not set.
  * The `document` object is not available in server-side rendering, so this function should not be called in that context.
  *
  * @returns {string | undefined}
@@ -487,80 +532,6 @@ export function extractLocaleFromCookie() {
     const locale = match?.[2];
     if (isLocale(locale)) {
         return locale;
-    }
-    return undefined;
-}
-
-/**
- * Extracts a locale from the accept-language header.
- *
- * Use the function on the server to extract the locale
- * from the accept-language header that is sent by the client.
- *
- * @example
- *   const locale = extractLocaleFromHeader(request);
- *
- * @type {(request: Request) => Locale}
- * @param {Request} request - The request object to extract the locale from.
- * @returns {string|undefined} The negotiated preferred language.
- */
-export function extractLocaleFromHeader(request) {
-    const acceptLanguageHeader = request.headers.get("accept-language");
-    if (acceptLanguageHeader) {
-        // Parse language preferences with their q-values and base language codes
-        const languages = acceptLanguageHeader
-            .split(",")
-            .map((lang) => {
-            const [tag, q = "1"] = lang.trim().split(";q=");
-            // Get both the full tag and base language code
-            const baseTag = tag?.split("-")[0]?.toLowerCase();
-            return {
-                fullTag: tag?.toLowerCase(),
-                baseTag,
-                q: Number(q),
-            };
-        })
-            .sort((a, b) => b.q - a.q);
-        for (const lang of languages) {
-            if (isLocale(lang.fullTag)) {
-                return lang.fullTag;
-            }
-            else if (isLocale(lang.baseTag)) {
-                return lang.baseTag;
-            }
-        }
-        return undefined;
-    }
-    return undefined;
-}
-
-/**
- * Negotiates a preferred language from navigator.languages.
- *
- * Use the function on the client to extract the locale
- * from the navigator.languages array.
- *
- * @example
- *   const locale = extractLocaleFromNavigator();
- *
- * @type {() => Locale | undefined}
- * @returns {string | undefined}
- */
-export function extractLocaleFromNavigator() {
-    if (!navigator?.languages?.length) {
-        return undefined;
-    }
-    const languages = navigator.languages.map((lang) => ({
-        fullTag: lang.toLowerCase(),
-        baseTag: lang.split("-")[0]?.toLowerCase(),
-    }));
-    for (const lang of languages) {
-        if (isLocale(lang.fullTag)) {
-            return lang.fullTag;
-        }
-        else if (isLocale(lang.baseTag)) {
-            return lang.baseTag;
-        }
     }
     return undefined;
 }
@@ -1149,69 +1120,6 @@ export function generateStaticLocalizedUrls(urls) {
         }
     }
     return Array.from(localizedUrls);
-}
-
-/**
- * @typedef {"cookie" | "baseLocale" | "globalVariable" | "url" | "preferredLanguage" | "localStorage"} BuiltInStrategy
- */
-/**
- * @typedef {`custom_${string}`} CustomStrategy
- */
-/**
- * @typedef {BuiltInStrategy | CustomStrategy} Strategy
- */
-/**
- * @typedef {Array<Strategy>} Strategies
- */
-/**
- * @typedef {{ getLocale: (request?: Request) => string | undefined }} CustomServerStrategyHandler
- */
-/**
- * @typedef {{ getLocale: () => string | undefined, setLocale: (locale: string) => void }} CustomClientStrategyHandler
- */
-export const customServerStrategies = new Map();
-export const customClientStrategies = new Map();
-/**
- * Checks if the given strategy is a custom strategy.
- *
- * @param {any} strategy The name of the custom strategy to validate.
- * Must be a string that starts with "custom-" followed by alphanumeric characters.
- * @returns {boolean} Returns true if it is a custom strategy, false otherwise.
- */
-export function isCustomStrategy(strategy) {
-    return typeof strategy === "string" && /^custom-[A-Za-z0-9]+$/.test(strategy);
-}
-/**
- * Defines a custom strategy that is executed on the server.
- *
- * @param {any} strategy The name of the custom strategy to define. Must follow the pattern `custom-<name>` where
- * `<name>` contains only alphanumeric characters.
- * @param {CustomServerStrategyHandler} handler The handler for the custom strategy, which should implement
- * the method `getLocale`.
- * @returns {void}
- */
-export function defineCustomServerStrategy(strategy, handler) {
-    if (!isCustomStrategy(strategy)) {
-        throw new Error(`Invalid custom strategy: "${strategy}". Must be a custom strategy following the pattern custom-<name>` +
-            " where <name> contains only alphanumeric characters.");
-    }
-    customServerStrategies.set(strategy, handler);
-}
-/**
- * Defines a custom strategy that is executed on the client.
- *
- * @param {any} strategy The name of the custom strategy to define. Must follow the pattern `custom-<name>` where
- * `<name>` contains only alphanumeric characters.
- * @param {CustomClientStrategyHandler} handler The handler for the custom strategy, which should implement the
- * methods `getLocale` and `setLocale`.
- * @returns {void}
- */
-export function defineCustomClientStrategy(strategy, handler) {
-    if (!isCustomStrategy(strategy)) {
-        throw new Error(`Invalid custom strategy: "${strategy}". Must be a custom strategy following the pattern custom-<name>` +
-            " where <name> contains only alphanumeric characters.");
-    }
-    customClientStrategies.set(strategy, handler);
 }
 
 // ------ TYPES ------

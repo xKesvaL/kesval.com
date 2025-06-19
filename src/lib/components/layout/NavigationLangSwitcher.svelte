@@ -59,7 +59,7 @@
 						{/if}
 					</span> -->
 					{getFlagEmoji(transformLocaleToFlag(lang))}
-					<span class="text-muted-foreground text-sm">
+					<span class="text-muted-foreground font-sans text-sm">
 						{capitalizeFirstLetter(languageNames.of(lang) ?? lang)}
 					</span>
 				</Select.Item>

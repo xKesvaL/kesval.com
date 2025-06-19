@@ -1,13 +1,23 @@
-import { slugFromPath } from '$lib/utils/posts';
+import { slugFromPath } from '$lib/utils/content';
 import { defineConfig, s } from 'velite';
 
 // `s` is extended from Zod with some custom schemas,
 // you can also import re-exported `z` from `velite` if you don't need these extension schemas.
 
+const transform = <T extends { path: string }>(data: T) => {
+	return {
+		...data,
+		uniqueId: data.path.split('/')[1],
+		slug: slugFromPath(data.path), // generate slug from path
+		slugClean: slugFromPath(data.path)?.slice(0, -3),
+		locale: data.path.split('.')[1]
+	};
+};
+
 export default defineConfig({
 	root: './src/content',
 	output: {
-		assets: 'static/posts'
+		assets: 'static/content'
 	},
 	collections: {
 		posts: {
@@ -29,47 +39,46 @@ export default defineConfig({
 					content: s.markdown(), // transform markdown to html
 					toc: s.toc()
 				})
-				.transform((data) => {
-					return {
-						...data,
-						uniqueId: data.path.split('/')[1],
-						slug: slugFromPath(data.path), // generate slug from path
-						slugClean: slugFromPath(data.path)?.slice(0, -3),
-						locale: data.path.split('.')[1]
-					};
-				})
+				.transform(transform)
 		},
 		projects: {
 			name: 'Project',
 			pattern: './projects/**/*.md',
-			schema: s.object({
-				title: s.string().max(99),
-				path: s.path(),
-				slug: s.slug('projects').optional(),
-				publishedAt: s.isodate(),
-				updatedAt: s.isodate().optional(),
-				tags: s.array(s.string()),
-				cover: s.image(),
-				coverAvif: s.image(),
-				video: s.file().optional(),
-				metadata: s.metadata(),
-				excerpt: s.excerpt(),
-				content: s.markdown(),
-				toc: s.toc(),
+			schema: s
+				.object({
+					title: s.string().max(99),
+					path: s.path(),
+					slug: s.slug('projects').optional(),
+					publishedAt: s.isodate(),
+					updatedAt: s.isodate().optional(),
+					tags: s.array(s.string()),
+					cover: s.image(),
+					coverAvif: s.image(),
+					images: s.array(s.image()),
+					video: s.file().optional(),
+					metadata: s.metadata(),
+					excerpt: s.excerpt(),
+					content: s.markdown(),
+					toc: s.toc(),
 
-				client: s.string().optional(),
-				website: s.string().optional(),
-				github: s.string().optional(),
+					icon: s.image(),
+					iconAvif: s.image(),
 
-				finishedAt: s.isodate().optional(),
-				technologies: s.array(s.string()).optional(),
-				featured: s.boolean().optional(),
+					client: s.string().optional(),
+					website: s.string().optional(),
+					github: s.string().optional(),
 
-				// array of enum values
-				projectType: s.array(
-					s.enum(['web', 'mobile', 'desktop', 'app', 'showcase', 'e-commerce', 'saas', 'other'])
-				)
-			})
+					startedAt: s.isodate().optional(),
+					finishedAt: s.isodate().optional(),
+					technologies: s.array(s.string()).optional(),
+					featured: s.boolean().optional(),
+
+					// array of enum values
+					projectType: s.array(
+						s.enum(['web', 'mobile', 'desktop', 'app', 'showcase', 'e-commerce', 'saas', 'other'])
+					)
+				})
+				.transform(transform)
 		}
 	}
 });

@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { route } from '$lib/ROUTES';
-	import type { Project } from '$lib/utils/projects';
 	import { localizeHref } from '$paraglide/runtime';
 	import { Button } from '$lib/components/ui/button';
 	import { IconExternalLink, IconArrowRight } from '@tabler/icons-svelte';
 	import { cn } from '$lib/utils/ui';
-	import { translate } from '$lib/utils/i18n';
 	import * as m from '$paraglide/messages';
+	import type { Project } from '$content/index';
+	import VeliteImage from '$lib/components/base/VeliteImage.svelte';
 
 	type Props = {
 		project: Project;
@@ -15,19 +15,6 @@
 	};
 
 	let { project, index, type = 'project' }: Props = $props();
-
-	// Get the first image or use a placeholder
-	let feature = $derived(
-		project.images && project.images.length > 0 ? project.images[0] : 'https://placehold.co/720x480'
-	);
-
-	const getProjectI18N = async () => {
-		return {
-			name: await translate(`projects.${project.id}.name`),
-			description: await translate(`projects.${project.id}.description`)
-		};
-	};
-	2;
 </script>
 
 <div
@@ -36,99 +23,91 @@
 		type === 'highlighted' && 'xl:flex-row xl:items-center xl:gap-12'
 	)}
 >
-	{#await getProjectI18N() then projectI18N}
-		{#if type === 'highlighted'}
-			<!-- Project number -->
+	{#if type === 'highlighted'}
+		<!-- Project number -->
+		<div
+			class=" from-muted-foreground/50 to-muted-foreground/30 absolute -top-16 -left-8 mb-6 hidden bg-gradient-to-br bg-clip-text text-8xl font-black text-transparent md:block"
+		>
+			{(index + 1).toString().padStart(2, '0')}
+		</div>
+	{/if}
+
+	<!-- Project image -->
+	<div
+		class={cn(
+			'group relative mb-auto w-full overflow-hidden rounded-2xl border',
+			type === 'highlighted' && 'xl:w-3/5'
+		)}
+	>
+		<div class="aspect-video w-full overflow-hidden">
+			<VeliteImage
+				imagePng={project.cover}
+				imageAvif={project.coverAvif}
+				alt={project.title}
+				class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+			/>
+		</div>
+		<div
+			class="absolute inset-0 bg-black/15 transition-opacity duration-500 group-hover:opacity-0"
+		></div>
+		<div class="absolute top-2 left-2 h-10 w-40 bg-black/40 blur-xl"></div>
+
+		<!-- Client tag -->
+		{#if project.client}
 			<div
-				class=" from-muted-foreground/50 to-muted-foreground/30 absolute -top-16 -left-8 mb-6 hidden bg-gradient-to-br bg-clip-text text-8xl font-black text-transparent md:block"
+				class="bg-popover absolute top-4 left-4 rounded-lg px-3 py-1 text-xs font-medium drop-shadow-lg"
 			>
-				{(index + 1).toString().padStart(2, '0')}
+				{project.client}
 			</div>
 		{/if}
+	</div>
 
-		<!-- Project image -->
-		<div
-			class={cn(
-				'group relative mb-auto w-full overflow-hidden rounded-2xl',
-				type === 'highlighted' && 'xl:w-3/5'
-			)}
-		>
-			<div class="aspect-video w-full overflow-hidden">
-				{#if typeof feature === 'string'}
-					<img
-						src={feature}
-						alt={projectI18N.name}
-						class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-					/>
-				{:else}
-					<enhanced:img
-						src={feature}
-						alt={projectI18N.name}
-						class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-					/>
+	<!-- Project info -->
+	<div>
+		<div class="space-y-4">
+			<div class="space-y-4">
+				<div class="flex items-center gap-4">
+					{#if project.icon}
+						<VeliteImage
+							imagePng={project.icon}
+							imageAvif={project.iconAvif}
+							alt={project.title}
+							class="size-10 rounded-lg"
+						/>
+					{/if}
+					<h3 class="h4">{project.title}</h3>
+				</div>
+				{#if project.excerpt}
+					<p class="text-muted-foreground mt-2">{project.excerpt}</p>
 				{/if}
 			</div>
-			<div
-				class="absolute inset-0 bg-black/15 transition-opacity duration-500 group-hover:opacity-0"
-			></div>
 
-			<!-- Client tag -->
-			{#if project.client}
-				<div class="bg-background absolute top-4 left-4 rounded-lg px-3 py-1 text-xs font-medium">
-					{project.client}
-				</div>
-			{/if}
-		</div>
-
-		<!-- Project info -->
-		<div>
-			<div class="space-y-4">
-				<div class="space-y-4">
-					<div class="flex items-center gap-4">
-						{#if project.logo}
-							<enhanced:img src={project.logo} alt={projectI18N.name} class="size-10 rounded-lg" />
-						{:else if project.icon}
-							<div
-								class="bg-muted flex size-10 items-center justify-center rounded-lg"
-								style={`background: ${project.colorBackground}`}
-							>
-								<project.icon class="size-5" style={`color: ${project.colorForeground}`} />
-							</div>
-						{/if}
-						<h3 class="h4">{projectI18N.name}</h3>
-					</div>
-					{#if projectI18N.description}
-						<p class="text-muted-foreground mt-2">{projectI18N.description}</p>
-					{/if}
-				</div>
-
-				<div class="flex gap-3 pt-2">
+			<div class="flex gap-3 pt-2">
+				<Button
+					variant="outline"
+					size={type === 'project' ? 'default' : 'sm'}
+					class="group"
+					href={localizeHref(route('/projets/[slug]', { slug: project.uniqueId }))}
+				>
+					<span>
+						{m['projects.view_details']()}
+					</span>
+					<IconArrowRight class=" transition-transform group-hover:translate-x-0.5" />
+				</Button>
+				{#if project.website}
 					<Button
-						variant="outline"
+						variant="ghost"
 						size={type === 'project' ? 'default' : 'sm'}
 						class="group"
-						href={localizeHref(route('/projets/[projectId]', { projectId: project.id }))}
+						href={project.website}
+						target="_blank"
+						rel="noopener noreferrer"
 					>
-						<span>
-							{m['projects.view_details']()}
-						</span>
-						<IconArrowRight class=" transition-transform group-hover:translate-x-0.5" />
+						<span>{m['common.visit']()}</span>
+						<IconExternalLink class="" />
 					</Button>
-					{#if project.link}
-						<Button
-							variant="ghost"
-							size={type === 'project' ? 'default' : 'sm'}
-							class="group"
-							href={project.link}
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<span>{m['common.visit']()}</span>
-							<IconExternalLink class="" />
-						</Button>
-					{/if}
-				</div>
+				{/if}
 			</div>
 		</div>
-	{/await}
+	</div>
 </div>

@@ -1,14 +1,14 @@
 <script lang="ts">
-	import { highlightedProjects } from '$lib/utils/projects';
+	import { getHighlightedProjects } from '$lib/utils/projects';
 	import * as m from '$paraglide/messages';
 	import { Button } from '$lib/components/ui/button';
 	import { IconArrowRight } from '@tabler/icons-svelte';
 	import ProjectCard from '$lib/containers/projects/ProjectCard.svelte';
 	import { route } from '$lib/ROUTES';
-	import { localizeHref } from '$paraglide/runtime';
+	import { getLocale, localizeHref } from '$paraglide/runtime';
 	import AnimatedBadge from '$lib/components/animated/AnimatedBadge.svelte';
 
-	let showedProjects = $derived.by(() => highlightedProjects);
+	let showedProjects = $derived(getHighlightedProjects(getLocale()));
 </script>
 
 <section class="section pyc-md lg:pyc-lg relative min-h-[70vh] overflow-hidden">
@@ -47,7 +47,7 @@
 
 		<!-- Projects showcase -->
 		<div class="flex flex-col gap-16 md:gap-24 lg:gap-32">
-			{#each showedProjects as project, i (project.id)}
+			{#each showedProjects as project, i (project.uniqueId)}
 				<div class="group animate-appear relative" class:md:flex-row-reverse={i % 2 === 1}>
 					<ProjectCard {project} index={i} type="highlighted" />
 				</div>

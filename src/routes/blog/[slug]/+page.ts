@@ -1,4 +1,5 @@
-import { getAllPosts, getPost } from '$lib/utils/posts';
+import { getAllContent } from '$lib/utils/content.js';
+import { getPost } from '$lib/utils/posts.js';
 import { getLocale } from '$paraglide/runtime.js';
 import type { EntryGenerator } from './$types.js';
 
@@ -7,7 +8,7 @@ export const load = ({ params }) => {
 };
 
 export const entries: EntryGenerator = () => {
-	const allPosts = getAllPosts();
+	const allPosts = getAllContent('posts');
 	return allPosts.map((post) => {
 		const slug = post.slug?.slice(0, -3);
 

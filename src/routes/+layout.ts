@@ -6,7 +6,7 @@ import { debug } from '$lib/utils/logger.js';
 
 export const prerender = true;
 
-const dynamicPaths = ['/blog/[slug]', '/projets/[projectId]'];
+const dynamicPaths = ['/blog/[slug]', '/projets/[slug]'];
 
 export const load = async ({ url }) => {
 	const delocalizedPath = deLocalizeHref(url.pathname).replaceAll(/\//g, '.').replaceAll('-', '_');

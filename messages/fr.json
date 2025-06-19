@@ -296,6 +296,20 @@
 			"flexible": "Flexible",
 			"continous": "Continu",
 			"on_quote": "Sur devis"
+		},
+		"work": {
+			"why_kesval_studio": "Pourquoi choisir KesvaL Studio ?",
+			"why_kesval_studio_description": "Une approche unique qui combine expertise technique et accompagnement personnalisé pour réussir votre projet.",
+			"why": {
+				"accompagnement": "Accompagnement",
+				"accompagnement_description": "De l'idée à la mise en ligne, je vous accompagne à chaque étape de votre projet digital.",
+				"reactivity": "Réactivité & Flexibilité",
+				"reactivity_description": "L'agilité d'un freelance avec la rigueur d'une agence pour des délais optimisés.",
+				"expertise": "Expertise technique",
+				"expertise_description": "Maîtrise des technologies modernes et veille constante pour des solutions performantes.",
+				"relation": "Relation de confiance",
+				"relation_description": "Communication transparente et engagement personnel dans chaque projet."
+			}
 		}
 	}
 }

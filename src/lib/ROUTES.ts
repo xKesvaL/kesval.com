@@ -16,8 +16,8 @@ const PAGES = {
   },
   "/contact": `/contact`,
   "/projets": `/projets`,
-  "/projets/[projectId]": (params: { projectId: (string | number) }) => {
-    return `/projets/${params['projectId']}`
+  "/projets/[slug]": (params: { slug: (string | number) }) => {
+    return `/projets/${params['slug']}`
   },
   "/services": `/services`
 }
@@ -44,7 +44,7 @@ const LINKS = {
   
 }
 
-type ParamValue = string | number | boolean | null | undefined
+type ParamValue = string | number | undefined
 
 /**
  * Append search params to a string
@@ -149,9 +149,9 @@ export function route<T extends keyof AllTypes>(key: T, ...params: any[]): strin
 * ```
 */
 export type KIT_ROUTES = {
-  PAGES: { '/': never, '/blog': never, '/blog/[slug]': 'slug', '/contact': never, '/projets': never, '/projets/[projectId]': 'projectId', '/services': never }
+  PAGES: { '/': never, '/blog': never, '/blog/[slug]': 'slug', '/contact': never, '/projets': never, '/projets/[slug]': 'slug', '/services': never }
   SERVERS: { 'GET /manifest.json': never, 'GET /sitemap.xml': never }
   ACTIONS: { 'send /contact': never }
   LINKS: Record<string, never>
-  Params: { 'slug': never, 'projectId': never }
+  Params: { 'slug': never }
 }

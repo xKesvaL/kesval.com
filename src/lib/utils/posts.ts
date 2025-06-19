@@ -1,42 +1,13 @@
-import { posts, type Post } from '../../../.velite/index.js';
+import { type Post } from '../../../.velite/index.js';
 import { route } from '$lib/ROUTES';
 import { localizeHref, type Locale } from '$paraglide/runtime';
 import { error, redirect } from '@sveltejs/kit';
-import type { Component } from 'svelte';
-
-export const getPostMetadata = (slug: string) => {
-	return posts.find((post) => post.slug?.startsWith(slug));
-};
-
-export const getAllPosts = () => {
-	return posts;
-};
-
-export const getAllPostsLocale = (locale: string) => {
-	return posts
-		.filter((post) => post.locale === locale)
-		.sort((a, b) => {
-			const dateA = new Date(a.publishedAt).getTime();
-			const dateB = new Date(b.publishedAt).getTime();
-
-			return dateB - dateA;
-		});
-};
-
-export const getPostLocales = (uniqueId: string) => {
-	return posts.filter((post) => post.uniqueId === uniqueId);
-};
-
-export const slugFromPath = (path: string) => {
-	return path.split('/').pop()?.replace('.md', '');
-};
-
-export type PostResolver = () => Promise<{ default: Component; metadata: Post }>;
+import { getContentLocales, getContentMetadata, type ContentResolver } from './content.js';
 
 export const getPost = async (slug: string, locale: Locale) => {
-	const slugMetadata = getPostMetadata(slug);
+	const slugMetadata = getContentMetadata(slug, 'posts');
 
-	const availablePosts = getPostLocales(slugMetadata?.uniqueId || '');
+	const availablePosts = getContentLocales(slugMetadata?.uniqueId || '', 'posts');
 	const metadata = availablePosts.find((post) => post.locale === locale);
 	const hrefSlug = metadata?.slug?.slice(0, -3);
 
@@ -59,7 +30,7 @@ export const getPost = async (slug: string, locale: Locale) => {
 		error(404, 'Could not find the post markdown.');
 	}
 
-	const post = await (postGlob[1] as PostResolver)();
+	const post = await (postGlob[1] as ContentResolver<'posts'>)();
 
 	return {
 		component: post.default,
@@ -125,14 +96,4 @@ export const filterPosts = async (
 	});
 
 	return filtered;
-};
-
-export const getAllPostTags = (locale: Locale) => {
-	return Array.from(
-		new Set(
-			posts.flatMap((post) => {
-				return post.locale === locale ? post.tags || [] : [];
-			})
-		)
-	);
 };

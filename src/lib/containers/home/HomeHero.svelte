@@ -11,7 +11,7 @@
 
 <section class="section-hero items-center justify-center overflow-hidden">
 	<!-- grid borders bg -->
-	<div class="absolute inset-0">
+	<div class="pointer-events-none absolute inset-0">
 		<div class="kcontainer relative mb-12 h-full w-full px-3 sm:px-4" style="--ct-max-w: 1280px">
 			<div class="h-full w-full border-x-2 border-dashed"></div>
 		</div>
@@ -20,7 +20,7 @@
 		class="kcontainer relative mb-12 flex flex-col items-center justify-center gap-6 px-4 text-center md:mb-24"
 	>
 		<div
-			class="absolute h-[calc(100%+6rem)] w-screen border-y-2 border-dashed md:h-[calc(100%+12rem)]"
+			class="pointer-events-none absolute h-[calc(100%+6rem)] w-screen border-y-2 border-dashed md:h-[calc(100%+12rem)]"
 		></div>
 		<div class="animate-appear">
 			<AnimatedBadge>

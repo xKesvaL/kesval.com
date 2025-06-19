@@ -194,6 +194,7 @@ export type ServiceType = {
 	};
 	highlight?: boolean;
 	href: string;
+	// color: string;
 };
 
 export const services = [

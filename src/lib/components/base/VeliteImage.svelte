@@ -8,23 +8,15 @@
 		imagePng: Image;
 		imageAvif: Image;
 		alt: string;
-		convertStaticPathTo: `/${string}`;
 	};
 
-	let {
-		class: _class,
-		classPicture,
-		imagePng,
-		imageAvif,
-		alt,
-		convertStaticPathTo
-	}: Props = $props();
+	let { class: _class, classPicture, imagePng, imageAvif, alt }: Props = $props();
 </script>
 
 <picture class={classPicture}>
-	<source srcset={imageAvif.src.replace('/static', convertStaticPathTo)} type="image/avif" />
+	<source srcset={imageAvif.src.replace('/static', '/content')} type="image/avif" />
 	<img
-		src={imagePng.src.replace('/static', convertStaticPathTo)}
+		src={imagePng.src.replace('/static', '/content')}
 		{alt}
 		loading="lazy"
 		decoding="async"

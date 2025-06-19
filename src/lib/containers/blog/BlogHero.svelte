@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { SortOption } from '$lib/utils/posts';
-	import { filterPosts, getAllPostTags } from '$lib/utils/posts';
+	import { filterPosts } from '$lib/utils/posts';
 	import * as m from '$paraglide/messages';
 	import BlogCard from './BlogCard.svelte';
 	import { IconSearch, IconX } from '@tabler/icons-svelte';
@@ -10,6 +10,7 @@
 	import { Button } from '$lib/components/ui/button';
 	import { cn } from '$lib/utils/ui';
 	import { getLocale } from '$paraglide/runtime';
+	import { getAllContentTags } from '$lib/utils/content';
 
 	let { posts } = $props();
 
@@ -43,7 +44,7 @@
 		sortOptions.find((opt) => opt.value === sortBy)?.label ?? m['common.sort_newest']()
 	);
 
-	let allPostTags = $derived(getAllPostTags(getLocale()));
+	let allPostTags = $derived(getAllContentTags(getLocale(), 'posts'));
 </script>
 
 <section class="section-hero relative">

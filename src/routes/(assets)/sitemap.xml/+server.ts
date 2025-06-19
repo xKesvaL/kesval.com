@@ -1,6 +1,6 @@
 import { route } from '$lib/ROUTES';
 import { brand } from '$lib/utils/config';
-import { getAllPosts } from '$lib/utils/posts';
+import { getAllContent } from '$lib/utils/content';
 import { baseLocale, locales, localizeHref, type Locale } from '$paraglide/runtime';
 
 type SitemapEntry = {
@@ -13,7 +13,7 @@ type SitemapEntry = {
 
 // replace [slug] with every slug in the slugs array
 const generateBlogSitemapEntries = (url: string) => {
-	const posts = getAllPosts();
+	const posts = getAllContent('posts');
 
 	const baseLocalePosts = posts.filter((post) => post.locale === baseLocale);
 
