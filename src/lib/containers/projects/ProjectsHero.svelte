@@ -8,7 +8,9 @@
 	import * as Select from '$lib/components/ui/select';
 	import { Button } from '$lib/components/ui/button';
 	import { cn } from '$lib/utils/ui';
-	import { projects } from '$content/index';
+	import { type Project } from '$content/index';
+
+	let { projects }: { projects: Project[] } = $props();
 
 	let searchTerm = $state('');
 	let selectedTags = $state<string[]>([]);

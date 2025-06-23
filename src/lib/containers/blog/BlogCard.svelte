@@ -6,6 +6,7 @@
 	import { IconArrowRight, IconClock, IconTags } from '@tabler/icons-svelte';
 	import type { Post } from '$content/index';
 	import * as m from '$paraglide/messages';
+	import VeliteImage from '$lib/components/base/VeliteImage.svelte';
 
 	type Props = {
 		post: Post;
@@ -20,19 +21,13 @@
 	class="group gap-0 overflow-hidden rounded-xl border p-0 transition-all duration-500 ease-in-out hover:shadow-md"
 >
 	<CardHeader class="h-[calc(18rem+1px)] border-b p-0">
-		<div
-			class="relative h-[18rem] w-full overflow-hidden bg-cover bg-center"
-			style="background-image: url('{post.cover.blurDataURL}');"
-		>
-			<img
-				src={post.cover.src.replace('/static', '/posts')}
-				alt={post.title}
-				class="absolute inset-0 h-full w-full object-cover opacity-0 transition duration-500 ease-in-out group-hover:scale-102"
-				onload={(e) => {
-					(e.target as HTMLImageElement).style.opacity = '1';
-				}}
-			/>
-		</div>
+		<VeliteImage
+			class="absolute inset-0 h-full w-full object-cover opacity-0 transition duration-500 ease-in-out group-hover:scale-102"
+			classWrapper="h-[18rem] w-full"
+			imagePng={post.cover}
+			imageAvif={post.coverAvif}
+			alt={post.title}
+		/>
 	</CardHeader>
 	<CardContent class="p-4">
 		<h3 class="mb-2 text-xl leading-tight font-semibold">{post.title}</h3>

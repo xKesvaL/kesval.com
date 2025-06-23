@@ -26,13 +26,15 @@ export type UrlPatterns = Array<{
 }>;
 
 export const urlPatterns: UrlPatterns = [
+	// SERVICES
 	{
-		pattern: '/a-propos',
+		pattern: '/services',
 		localized: localize({
-			fr: '/a-propos',
-			en: '/about'
+			fr: '/services',
+			en: '/services'
 		})
 	},
+	// PROJECTS
 	{
 		pattern: '/projets',
 		localized: localize({
@@ -41,12 +43,36 @@ export const urlPatterns: UrlPatterns = [
 		})
 	},
 	{
-		pattern: '/projets/[projectId]',
+		pattern: '/projets/[slug]',
 		localized: localize({
-			fr: '/projets/[projectId]',
-			en: '/projects/[projectId]'
+			fr: '/projets/[slug]',
+			en: '/projects/[slug]'
 		})
 	},
+	// BLOG
+	{
+		pattern: '/blog',
+		localized: localize({
+			fr: '/blog',
+			en: '/blog'
+		})
+	},
+	{
+		pattern: '/blog/[slug]',
+		localized: localize({
+			fr: '/blog/[slug]',
+			en: '/blog/[slug]'
+		})
+	},
+	// CONTACT
+	{
+		pattern: '/contact',
+		localized: localize({
+			fr: '/contact',
+			en: '/contact'
+		})
+	},
+	// EVERY OTHER
 	{
 		pattern: '/:path(.*)?',
 		localized: localize({

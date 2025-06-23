@@ -5,21 +5,30 @@
 	type Props = {
 		class: string;
 		classPicture?: string;
+		classWrapper?: string;
 		imagePng: Image;
 		imageAvif: Image;
 		alt: string;
 	};
 
-	let { class: _class, classPicture, imagePng, imageAvif, alt }: Props = $props();
+	let { class: _class, classPicture, classWrapper, imagePng, imageAvif, alt }: Props = $props();
 </script>
 
-<picture class={classPicture}>
-	<source srcset={imageAvif.src.replace('/static', '/content')} type="image/avif" />
-	<img
-		src={imagePng.src.replace('/static', '/content')}
-		{alt}
-		loading="lazy"
-		decoding="async"
-		class={cn('object-cover', _class)}
-	/>
-</picture>
+<div
+	class={cn('relative overflow-hidden bg-cover bg-center', classWrapper)}
+	style="background-image: url('{imagePng.blurDataURL}');"
+>
+	<picture class={classPicture}>
+		<source srcset={imageAvif.src.replace('/static', '/content')} type="image/avif" />
+		<img
+			src={imagePng.src.replace('/static', '/content')}
+			{alt}
+			loading="lazy"
+			decoding="async"
+			class={cn('object-cover', _class)}
+			onload={(e) => {
+				(e.target as HTMLImageElement).style.opacity = '1';
+			}}
+		/>
+	</picture>
+</div>
