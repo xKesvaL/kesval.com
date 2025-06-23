@@ -10,7 +10,10 @@ export const getAllContent = (type: keyof Collections) => {
 	return content[type];
 };
 
-export const getAllContentLocale = (locale: string, type: keyof Collections) => {
+export const getAllContentLocale = <T extends keyof Collections>(
+	locale: string,
+	type: T
+): Collections[T]['schema']['_output'][] => {
 	return content[type]
 		.filter((item) => item.locale === locale)
 		.sort((a, b) => {
