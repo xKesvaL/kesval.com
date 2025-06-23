@@ -65,7 +65,8 @@ export const animateAppear: Action<HTMLElement, AnimateAppearOptions> = (element
 			});
 		},
 		{
-			margin: '0px 0px -10% 0px'
+			margin: '0px 0px -10% 0px',
+			amount: 0.1
 		}
 	);
 
