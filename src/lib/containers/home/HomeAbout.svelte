@@ -38,15 +38,12 @@
 	};
 </script>
 
-<section
-	class="section bg-primary pyc-lg lg:pyc-xl relative z-10 overflow-hidden"
-	style:--animation-appear-delay="0.5"
->
+<section class="section bg-primary pyc-lg lg:pyc-xl relative z-10 overflow-hidden">
 	<div class="kcontainer text-primary-foreground flex w-full flex-col gap-8 px-4 md:gap-12">
 		<div class="grid gap-6 md:grid-cols-3 md:gap-8">
 			{#each Object.keys(values) as key (key)}
 				<div
-					class="animate-appear bg-primary-foreground/5 hover:bg-primary-foreground/10 border-primary-foreground/10 flex flex-col rounded-xl border p-6 pt-2 backdrop-blur-lg"
+					class=" bg-primary-foreground/5 hover:bg-primary-foreground/10 border-primary-foreground/10 flex flex-col rounded-xl border p-6 pt-2 backdrop-blur-lg"
 					use:inView={{
 						onEnter: (entry) => updateValues(key as keyof Values)
 					}}

@@ -30,7 +30,7 @@
 >
 	<div class="kcontainer text-primary-foreground flex w-full flex-col gap-8 px-4 md:gap-12">
 		<!-- Header with animated badge -->
-		<div class="animate-appear flex w-full items-center gap-4 md:gap-8">
+		<div class=" flex w-full items-center gap-4 md:gap-8">
 			<h2 class="h4 text-primary-foreground w-3/4 md:w-max">
 				{m['home.clients.title']()}
 			</h2>
@@ -38,7 +38,7 @@
 		</div>
 
 		<!-- Client grid with hover effects -->
-		<div class="animate-appear grid grid-cols-2 gap-6 md:grid-cols-4 lg:gap-8">
+		<div class=" grid grid-cols-2 gap-6 md:grid-cols-4 lg:gap-8">
 			{#each clients as client, i (`${client.name}-${i}`)}
 				<a
 					href={client.link}

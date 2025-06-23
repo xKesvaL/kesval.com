@@ -13,7 +13,7 @@
 	<div class="kcontainer relative flex flex-col gap-20 px-4">
 		<!-- Section header -->
 		<div class="space-y-6 text-center">
-			<AnimatedBadge class="animate-appear inline-flex">
+			<AnimatedBadge class=" inline-flex">
 				<span class="flex items-center gap-2">
 					👥
 					<hr class="bg-muted-foreground h-4 w-[1px] shrink-0" />
@@ -21,11 +21,11 @@
 				</span>
 			</AnimatedBadge>
 			<h2
-				class="from-foreground to-muted-foreground animate-appear bg-gradient-to-br bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-5xl md:text-6xl"
+				class="from-foreground to-muted-foreground bg-gradient-to-br bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-5xl md:text-6xl"
 			>
 				{m['about.team.title']()}
 			</h2>
-			<p class="text-muted-foreground animate-appear mx-auto max-w-[50ch] text-lg leading-relaxed">
+			<p class="text-muted-foreground mx-auto max-w-[50ch] text-lg leading-relaxed">
 				{m['about.team.description']()}
 			</p>
 		</div>
@@ -36,7 +36,7 @@
 		</div>
 
 		<!-- CTA with refined styling -->
-		<div class="animate-appear flex justify-center pt-8">
+		<div class=" flex justify-center pt-8">
 			<Button size="lg" href={localizeHref(route('/contact'))}>
 				{m['contact_us']()}
 				<IconMail class="animate-bounce-y h-4 w-4 " stroke={2} />

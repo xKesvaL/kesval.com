@@ -159,7 +159,7 @@
 	<div class="kcontainer relative flex w-full flex-col gap-16 px-4">
 		<!-- Section header -->
 		<div class="space-y-4 text-center">
-			<AnimatedBadge class="animate-appear">
+			<AnimatedBadge class="">
 				<span class="flex items-center gap-2">
 					⏳
 					<hr class="bg-muted-foreground h-4 w-[1px] shrink-0" />
@@ -167,11 +167,11 @@
 				</span>
 			</AnimatedBadge>
 			<h2
-				class="from-foreground to-muted-foreground animate-appear bg-gradient-to-br bg-clip-text text-transparent"
+				class="from-foreground to-muted-foreground bg-gradient-to-br bg-clip-text text-transparent"
 			>
 				{m['home.services.title']()}
 			</h2>
-			<p class="text-muted-foreground animate-appear mx-auto max-w-[50ch] text-lg">
+			<p class="text-muted-foreground mx-auto max-w-[50ch] text-lg">
 				{m['home.services.subtitle']()}
 			</p>
 		</div>
@@ -193,7 +193,7 @@
 			<div class="space-y-12 md:space-y-16">
 				{#each serviceSteps as step, i (step.id)}
 					<div
-						class="group animate-appear flex flex-col gap-4 md:grid md:grid-cols-[48px_1fr] md:gap-8"
+						class="group flex flex-col gap-4 md:grid md:grid-cols-[48px_1fr] md:gap-8"
 						use:useInView={{
 							threshold: 0,
 							rootMargin: isMobile.current ? '0px 0px -60% 0px' : '0px 0px -45% 0px',
@@ -335,7 +335,7 @@
 		</div>
 
 		<!-- CTA -->
-		<div class="animate-appear flex justify-center pt-8">
+		<div class=" flex justify-center pt-8">
 			<Button class="group gap-2" size="lg" href={localizeHref(route('/contact'))}>
 				Start your journey today
 				<IconArrowRight class="h-4 w-4 transition-transform group-hover:translate-x-1" />

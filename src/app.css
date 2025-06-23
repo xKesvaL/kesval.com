@@ -198,10 +198,6 @@
 
 	--ct-max-w: 75rem;
 	--ct-max-w-sm: 60rem;
-
-	--animation-appear-opacity: 0;
-	--animation-appear-y: 100px;
-	--animation-appear-delay: 0.1;
 }
 
 /* Base */
@@ -399,16 +395,16 @@
 
 /* Utilities */
 @utility gapc-* {
-	gap: --value(--sp- *);
+	gap: --value(--sp-*);
 }
 
 @utility ptc-* {
-	padding-top: --value(--sp- *);
+	padding-top: --value(--sp-*);
 }
 
 @utility pyc-* {
-	padding-top: --value(--sp- *);
-	padding-bottom: --value(--sp- *);
+	padding-top: --value(--sp-*);
+	padding-bottom: --value(--sp-*);
 }
 
 @utility kcontainer {
@@ -464,11 +460,6 @@
 @utility bgc-dot {
 	background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
 	background-size: 24px 24px;
-}
-
-@utility animate-appear {
-	opacity: var(--animation-appear-opacity);
-	transform: translateY(var(--animation-appear-y));
 }
 
 @utility shine-border-wrapper {

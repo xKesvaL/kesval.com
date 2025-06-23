@@ -39,7 +39,7 @@
 
 		<Card.Root
 			class={cn(
-				'animate-appear',
+				'',
 				isHighlighted &&
 					'ring-primary from-primary/5 scale-105 bg-gradient-to-br to-purple-50 shadow-xl ring-2'
 			)}

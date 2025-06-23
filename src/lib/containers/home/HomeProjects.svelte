@@ -28,7 +28,7 @@
 
 	<div class="kcontainer gapc-lg lg:gapc-xl relative flex flex-col px-4">
 		<div class="mt-12 space-y-4 text-center">
-			<AnimatedBadge class="animate-appear">
+			<AnimatedBadge class="">
 				<span class="flex items-center gap-2">
 					💻
 					<hr class="bg-muted-foreground h-4 w-[1px] shrink-0" />
@@ -36,11 +36,11 @@
 				</span>
 			</AnimatedBadge>
 			<h2
-				class="from-foreground to-muted-foreground animate-appear bg-gradient-to-br bg-clip-text font-bold text-transparent"
+				class="from-foreground to-muted-foreground bg-gradient-to-br bg-clip-text font-bold text-transparent"
 			>
 				{m['home.projects.title']()}
 			</h2>
-			<p class="text-muted-foreground animate-appear mx-auto max-w-prose text-lg">
+			<p class="text-muted-foreground mx-auto max-w-prose text-lg">
 				{m['home.projects.description']()}
 			</p>
 		</div>
@@ -48,14 +48,14 @@
 		<!-- Projects showcase -->
 		<div class="flex flex-col gap-16 md:gap-24 lg:gap-32">
 			{#each showedProjects as project, i (project.uniqueId)}
-				<div class="group animate-appear relative" class:md:flex-row-reverse={i % 2 === 1}>
+				<div class="group relative" class:md:flex-row-reverse={i % 2 === 1}>
 					<ProjectCard {project} index={i} type="highlighted" />
 				</div>
 			{/each}
 		</div>
 
 		<!-- View all projects button -->
-		<div class="animate-appear flex justify-center">
+		<div class=" flex justify-center">
 			<Button class="group gap-2" size="lg" href={localizeHref(route('/projets'))}>
 				{m['projects.view_all']()}
 				<IconArrowRight class="h-4 w-4 transition-transform group-hover:translate-x-1" />

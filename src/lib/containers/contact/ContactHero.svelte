@@ -143,7 +143,7 @@
 
 <section class="kcontainer section-hero px-4">
 	<div class="grid grid-cols-12 gap-8 transition-all duration-500 ease-out">
-		<ShineBorder class={cn('left animate-appear col-span-full h-full w-full p-8 md:col-span-7')}>
+		<ShineBorder class={cn('left  col-span-full h-full w-full p-8 md:col-span-7')}>
 			<div class="space-y-8">
 				<!-- Form Header -->
 				<div class="space-y-2">
@@ -306,7 +306,7 @@
 			</div>
 		</ShineBorder>
 
-		<ShineBorder class={cn('right animate-appear col-span-full h-full w-full p-8 md:col-span-5')}>
+		<ShineBorder class={cn('right  col-span-full h-full w-full p-8 md:col-span-5')}>
 			<div class="flex h-full flex-col gap-8">
 				<!-- Form Header -->
 				<div class="space-y-2">
@@ -388,9 +388,7 @@
 			</div>
 		</ShineBorder>
 
-		<ShineBorder
-			class="animate-appear col-span-full w-full overflow-hidden md:pt-20 [&>div]:!border-none"
-		>
+		<ShineBorder class=" col-span-full w-full overflow-hidden md:pt-20 [&>div]:!border-none">
 			<!-- Cal inline embed code begins -->
 			<div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline"></div>
 			<script type="text/javascript">

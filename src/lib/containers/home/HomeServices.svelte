@@ -22,23 +22,23 @@
 
 <section class="section kcontainer px-4">
 	<div class="flex flex-col gap-4 text-center">
-		<AnimatedBadge class="animate-appear flex items-center gap-2">
+		<AnimatedBadge class=" flex items-center gap-2">
 			🤝
 			<hr class="bg-muted-foreground h-4 w-[1px] shrink-0" />
 			{m['services.our_services.suptitle']()}
 		</AnimatedBadge>
 		<h2
-			class="from-foreground to-muted-foreground animate-appear bg-gradient-to-br bg-clip-text font-bold text-transparent"
+			class="from-foreground to-muted-foreground bg-gradient-to-br bg-clip-text font-bold text-transparent"
 		>
 			{m['services.our_services.title']()}
 		</h2>
-		<p class="text-muted-foreground animate-appear mx-auto max-w-prose text-lg">
+		<p class="text-muted-foreground mx-auto max-w-prose text-lg">
 			{m['services.our_services.description']()}
 		</p>
 	</div>
 	<div class="grid gap-8 lg:grid-cols-3">
 		{#each Object.values(servicesBenefits) as benefit (benefit.key)}
-			<Card.Root class="animate-appear gap-4">
+			<Card.Root class=" gap-4">
 				<Card.Header class="items-center gap-4 sm:flex lg:block lg:space-y-4 ">
 					<div
 						class="text-primary bg-primary/5 flex size-12 items-center justify-center rounded-lg text-3xl"

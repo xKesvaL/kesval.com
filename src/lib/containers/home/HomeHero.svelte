@@ -22,7 +22,7 @@
 		<div
 			class="pointer-events-none absolute h-[calc(100%+6rem)] w-screen border-y-2 border-dashed md:h-[calc(100%+12rem)]"
 		></div>
-		<div class="animate-appear">
+		<div class="">
 			<AnimatedBadge>
 				<span class="flex items-center gap-2">
 					✨
@@ -31,17 +31,17 @@
 				</span>
 			</AnimatedBadge>
 		</div>
-		<h1 class="animate-appear leading-tight font-bold">
+		<h1 class=" leading-tight font-bold">
 			{m['home.hero.title_before']()}<Sparkles color="special" highlight="primary">
 				{m['home.hero.title_highlight']()}
 			</Sparkles>{m['home.hero.title_after']()}
 		</h1>
-		<p class="text-muted-foreground animate-appear mx-auto max-w-[45ch] text-lg md:text-xl">
+		<p class="text-muted-foreground mx-auto max-w-[45ch] text-lg md:text-xl">
 			{m['home.hero.subtitle']({ brand: brand.name })}
 		</p>
 
 		<div
-			class="animate-appear mt-6 flex flex-col-reverse flex-wrap items-center justify-center gap-4 sm:flex-row"
+			class=" mt-6 flex flex-col-reverse flex-wrap items-center justify-center gap-4 sm:flex-row"
 		>
 			<Button
 				class="h-auto gap-3 rounded-full !px-5 py-3 text-sm"
