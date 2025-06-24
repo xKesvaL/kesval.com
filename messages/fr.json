@@ -138,7 +138,8 @@
 		"cta_self": "Je lance mon projet",
 		"cta_big": "Lancez votre projet dès aujourd'hui",
 		"your_name_here": "Votre nom ici",
-		"email": "Email"
+		"email": "Email",
+		"back": "Retour"
 	},
 	"meta": {
 		"home": {
@@ -205,7 +206,7 @@
 	},
 	"services": {
 		"web_on_premise": {
-			"title": "Développement Web Sur Mesure",
+			"title": "Site vitrine",
 			"description": "Sites vitrine et e-commerce performants avec les dernières technologies",
 			"feature_1": "Maquette personnalisée",
 			"feature_2": "Site vitrine moderne et optimisé mobile",
@@ -215,7 +216,7 @@
 			"bonus_2": "Support 1 mois inclus"
 		},
 		"web_apps": {
-			"title": "Applications Web Complexes",
+			"title": "Applications Web & Mobile",
 			"description": "Outils métier et apps sur mesure pour optimiser vos processus business",
 			"feature_1": "Maquette personnalisée",
 			"feature_2": "Appplication 100% personnalisée",

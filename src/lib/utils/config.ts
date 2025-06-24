@@ -182,7 +182,7 @@ export const team = {
 
 export type TeamMember = (typeof team)[keyof typeof team];
 
-export type ServiceType = {
+export type ServiceTypeSchema = {
 	id: string;
 	icon: Icon;
 	price: {
@@ -196,7 +196,7 @@ export type ServiceType = {
 	};
 	highlight?: boolean;
 	href: string;
-	// color: string;
+	color: string;
 };
 
 export const services = [
@@ -207,9 +207,10 @@ export const services = [
 			amount: 1000
 		},
 		duration: {
-			from: 5
+			from: 7
 		},
-		href: route('/')
+		href: route('/services/site-vitrine'),
+		color: '#059669'
 	},
 	{
 		id: 'web_apps',
@@ -218,44 +219,11 @@ export const services = [
 			amount: 3000
 		},
 		duration: {
-			from: 20
+			from: 30
 		},
 		href: route('/'),
+		color: brand.primary,
 		highlight: true
-	},
-	{
-		id: 'design',
-		icon: IconPalette,
-		price: {
-			amount: 'quote'
-		},
-		duration: {
-			from: 'variable'
-		},
-		href: route('/')
-	},
-	{
-		id: 'automation',
-		icon: IconBolt,
-		price: {
-			amount: 'quote'
-		},
-		duration: {
-			from: 'variable'
-		},
-		href: route('/')
-	},
-	{
-		id: 'maintenance',
-		icon: IconShield,
-		price: {
-			recurring: true,
-			amount: 80
-		},
-		duration: {
-			from: 'continous'
-		},
-		href: route('/')
 	},
 	{
 		id: 'agencies',
@@ -267,6 +235,47 @@ export const services = [
 		duration: {
 			from: 'flexible'
 		},
-		href: route('/')
+		href: route('/'),
+		color: brand.primary
+	},
+	{
+		id: 'design',
+		icon: IconPalette,
+		price: {
+			amount: 'quote'
+		},
+		duration: {
+			from: 'variable'
+		},
+		href: route('/'),
+		color: brand.primary
+	},
+	{
+		id: 'automation',
+		icon: IconBolt,
+		price: {
+			amount: 'quote'
+		},
+		duration: {
+			from: 'variable'
+		},
+		href: route('/'),
+		color: brand.primary
+	},
+
+	{
+		id: 'maintenance',
+		icon: IconShield,
+		price: {
+			recurring: true,
+			amount: 80
+		},
+		duration: {
+			from: 'continous'
+		},
+		href: route('/'),
+		color: brand.primary
 	}
-] as const satisfies ServiceType[];
+] as const satisfies ServiceTypeSchema[];
+
+export type ServiceType = (typeof services)[number];

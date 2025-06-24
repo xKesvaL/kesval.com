@@ -30,10 +30,10 @@
 		/>
 		<Badge class="absolute top-4 left-4 z-30">{brand.name}</Badge>
 	</div>
-	<div class="flex flex-col justify-between p-6 md:col-span-4">
+	<div class="flex flex-col justify-between px-2 py-6 md:col-span-4">
 		<div>
-			<h3 class="mb-1 text-2xl font-bold">{member.name}</h3>
-			<p class="text-primary mb-4 font-medium">
+			<h3 class="h4 font-semibold">{member.name}</h3>
+			<p class="text-primary mb-4">
 				{#await translate(`roles.${member.role}`) then translation}
 					{translation}
 				{/await}

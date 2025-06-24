@@ -6,11 +6,12 @@
 	import type { Post } from '$content/index';
 	import VeliteImage from '../base/VeliteImage.svelte';
 	import PostShare from './PostShare.svelte';
-	import { Badge } from '$lib/components/ui/badge';
-	import { IconCalendar, IconTag, IconRefresh } from '@tabler/icons-svelte';
-	import { formatDate } from '$lib/utils/date';
-	import { getLocale } from '$paraglide/runtime';
+	import { IconArrowLeft } from '@tabler/icons-svelte';
 	import RelatedPosts from './RelatedPosts.svelte';
+	import { Button } from '../ui/button';
+	import * as m from '$paraglide/messages';
+	import { localizeHref } from '$paraglide/runtime';
+	import { route } from '$lib/ROUTES';
 
 	let {
 		component,
@@ -31,7 +32,13 @@
 		alt={metadata.title}
 		class="w-full object-cover"
 		classWrapper="mx-auto max-w-[1168px] lg:rounded-b-2xl lg:border-5 shadow lg:border-t-0 w-full max-lg:mt-18 aspect-[2] lg:h-120 lg:aspect-auto"
-	/>
+	>
+		<Button class="absolute bottom-4 left-4" href={localizeHref(route('/blog'))} variant="outline">
+			<IconArrowLeft />
+			{m['common.back']()}
+		</Button>
+	</VeliteImage>
+
 	<div class="flex flex-row-reverse py-8">
 		<aside class="fixed bottom-4 left-4 z-10 mr-auto lg:sticky lg:pl-16">
 			<div class="sticky top-36 flex w-90 flex-col gap-8">

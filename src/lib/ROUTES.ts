@@ -19,7 +19,8 @@ const PAGES = {
   "/projets/[slug]": (params: { slug: (string | number) }) => {
     return `/projets/${params['slug']}`
   },
-  "/services": `/services`
+  "/services": `/services`,
+  "/services/site-vitrine": `/services/site-vitrine`
 }
 
 /**
@@ -149,7 +150,7 @@ export function route<T extends keyof AllTypes>(key: T, ...params: any[]): strin
 * ```
 */
 export type KIT_ROUTES = {
-  PAGES: { '/': never, '/blog': never, '/blog/[slug]': 'slug', '/contact': never, '/projets': never, '/projets/[slug]': 'slug', '/services': never }
+  PAGES: { '/': never, '/blog': never, '/blog/[slug]': 'slug', '/contact': never, '/projets': never, '/projets/[slug]': 'slug', '/services': never, '/services/site-vitrine': never }
   SERVERS: { 'GET /manifest.json': never, 'GET /sitemap.xml': never }
   ACTIONS: { 'send /contact': never }
   LINKS: Record<string, never>

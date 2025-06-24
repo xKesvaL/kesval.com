@@ -1,17 +1,26 @@
 <script lang="ts">
 	import { cn } from '$lib/utils/ui';
+	import type { WithChildren } from 'bits-ui';
 	import type { Image } from 'velite';
 
-	type Props = {
+	type Props = WithChildren<{
 		class: string;
 		classPicture?: string;
 		classWrapper?: string;
 		imagePng: Image;
 		imageAvif: Image;
 		alt: string;
-	};
+	}>;
 
-	let { class: _class, classPicture, classWrapper, imagePng, imageAvif, alt }: Props = $props();
+	let {
+		class: _class,
+		classPicture,
+		classWrapper,
+		imagePng,
+		imageAvif,
+		alt,
+		children
+	}: Props = $props();
 </script>
 
 <div
@@ -31,4 +40,8 @@
 			}}
 		/>
 	</picture>
+
+	{#if children}
+		{@render children()}
+	{/if}
 </div>

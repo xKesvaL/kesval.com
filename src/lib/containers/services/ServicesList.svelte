@@ -6,7 +6,7 @@
 	import { cn } from '$lib/utils/ui';
 	import { IconArrowRight, IconCirclePlus, IconRosetteDiscountCheck } from '@tabler/icons-svelte';
 	import * as m from '$paraglide/messages';
-	import { getLocale } from '$paraglide/runtime';
+	import { getLocale, localizeHref } from '$paraglide/runtime';
 	import { Button } from '$lib/components/ui/button';
 
 	type Props = {
@@ -133,7 +133,11 @@
 						</div>
 					{/each}
 				</div>
-				<Button variant={isHighlighted ? 'default' : 'outline'} class={cn('w-full')}>
+				<Button
+					variant={isHighlighted ? 'default' : 'outline'}
+					class={cn('w-full')}
+					href={localizeHref(service.href)}
+				>
 					{isHighlighted ? 'Découvrir ce service' : 'En savoir plus'}
 					<IconArrowRight class={cn('h-4 w-4', isHighlighted && 'animate-bounce-x')} />
 				</Button>
