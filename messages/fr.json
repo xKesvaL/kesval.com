@@ -18,7 +18,7 @@
 			"title_before": "Création d'",
 			"title_highlight": "expériences",
 			"title_after": " digitales de A à Z",
-			"subtitle": "Plus qu'un développeur, un partenaire de confiance qui s'engage à vos côtés pour créer des solutions web performantes et vous simplifier le digital.",
+			"subtitle": "Plus qu'un développeur, votre partenaire de confiance. Je m'engage à vos côtés pour créer des solutions web performantes et vous simplifier le digital.",
 			"view_projects": "Voir les Projets",
 			"see_all": "Voir tout",
 			"years_of_experience": "{years} ans d'expérience",
@@ -27,25 +27,25 @@
 		},
 		"about": {
 			"experience": "ans d'expertise",
-			"experience_description": "Notre équipe conçoit des solutions web depuis plus de 3 ans, développant des sites et applications pour une clientèle diversifiée.",
+			"experience_description": "Avec plus de 3 ans d'expérience, nous concevons des solutions web sur-mesure, des sites vitrines aux applications complexes, pour une clientèle variée.",
 			"projects": "projets réalisés",
-			"projects_description": "Nous avons réalisé de nombreux projets, des sites vitrines aux applications complexes et plateformes e-commerce.",
+			"projects_description": "Nous avons eu le plaisir de travailler sur de nombreux projets, allant de sites vitrines élégants à des applications web complexes.",
 			"clients": "clients satisfaits",
-			"clients_description": "Nous sommes fiers de permettre à nos clients de réussir dans leur transformation digitale et de soutenir leur croissance."
+			"clients_description": "Notre plus grande fierté est d'accompagner nos clients dans leur transformation digitale et de contribuer activement à leur croissance."
 		},
 		"clients": {
-			"title": "Nous avons travaillé avec des clients exceptionnels"
+			"title": "Nous avons collaboré avec des clients exceptionnels"
 		},
 		"projects": {
 			"title": "Nos derniers projets",
 			"above_title": "Projets Sélectionnés",
-			"description": "Découvrez nos derniers projets réalisés pour nos clients"
+			"description": "Découvrez les derniers projets que nous avons eu le plaisir de réaliser"
 		}
 	},
 	"contact": {
 		"hero": {
 			"get_your_free_quote": "Obtenez votre devis gratuit",
-			"description": "Parlez nous de votre projet, et nous reviendrons vers vous dans les 24 heures avec un devis personnalisé.",
+			"description": "Parlez-nous de votre projet, et nous reviendrons vers vous dans les 24 heures avec une proposition sur-mesure.",
 			"name": "Nom",
 			"name_placeholder": "Votre nom complet",
 			"email": "E-mail",
@@ -55,17 +55,17 @@
 			"your_project": "Votre projet",
 			"your_project_placeholder": "Décrivez votre projet, vos buts, besoins et attentes...",
 			"get_my_free_quote": "Obtenir mon devis gratuit",
-			"quick_response": "Réponse rapide dans les 24 heures",
+			"quick_response": "Réponse rapide garantie sous 24 heures",
 			"success_title": "Message envoyé avec succès !",
-			"success_message": "Merci de nous avoir contactés. Nous reviendrons vers vous dès que possible.",
+			"success_message": "Merci de nous avoir contactés ! Nous reviendrons vers vous dès que possible.",
 			"send_another_message": "Envoyer un autre message",
 			"submitting": "Envoi en cours...",
 			"contact_us_title": "Contactez-nous",
-			"contact_us_description": "Plusieurs façons de nous joindre pour discuter de votre projet web ou mobile",
+			"contact_us_description": "Discutons de votre projet. Voici les différentes façons de nous joindre.",
 			"our_advantages": "Nos avantages",
-			"our_advantages_fast": "Réponse rapide dans les 24 heures",
-			"our_advantages_client": "Relation client personnalisée",
-			"our_advantages_expert": "Expertise sans rival"
+			"our_advantages_fast": "Réponse rapide sous 24h",
+			"our_advantages_client": "Une relation de confiance",
+			"our_advantages_expert": "Une expertise à votre service"
 		}
 	},
 	"contact_us": "Discutons",
@@ -94,10 +94,10 @@
 		"cta": {
 			"title": "Vous avez un projet en tête ?",
 			"secondary": {
-				"title": "Vous avez une question ?",
-				"description": "Nous sommes là pour vous écouter et vous conseiller, gratuitement !"
+				"title": "Une question, un conseil ?",
+				"description": "Nous sommes là pour vous écouter et vous conseiller, sans engagement !"
 			},
-			"other": "Ou alors nous restons disponibles sur..."
+			"other": "Ou alors, restons connectés sur..."
 		}
 	},
 	"projects": {
@@ -206,18 +206,18 @@
 	},
 	"services": {
 		"web_on_premise": {
-			"title": "Site vitrine",
-			"description": "Sites vitrine et e-commerce performants avec les dernières technologies",
+			"title": "Site vitrine sur-mesure",
+			"description": "Nous créons votre site vitrine ou e-commerce performant avec les dernières technologies.",
 			"feature_1": "Maquette personnalisée",
 			"feature_2": "Site vitrine moderne et optimisé mobile",
-			"feature_3": "Déploiement et mise en ligne",
+			"feature_3": "Site optimisé pour les moteurs de recherche",
 			"feature_4": "Performance et sécurité garanties",
 			"bonus_1": "Hébergement 1 an offert",
 			"bonus_2": "Support 1 mois inclus"
 		},
 		"web_apps": {
-			"title": "Applications Web & Mobile",
-			"description": "Outils métier et apps sur mesure pour optimiser vos processus business",
+			"title": "Applications web & mobile",
+			"description": "Outils métier et applications sur mesure pour optimiser vos processus.",
 			"feature_1": "Maquette personnalisée",
 			"feature_2": "Appplication 100% personnalisée",
 			"feature_3": "Gestion de projet agile",
@@ -227,7 +227,7 @@
 		},
 		"design": {
 			"title": "Design UX/UI",
-			"description": "Interfaces utilisateur intuitives centrées sur l'expérience",
+			"description": "Nous concevons des interfaces utilisateur intuitives, centrées sur vos utilisateurs.",
 			"feature_1": "Recherche UX approfondie",
 			"feature_2": "Maquette 100% prototypée",
 			"feature_3": "Design system complet",
@@ -236,8 +236,8 @@
 			"bonus_2": "Tests utilisateurs inclus"
 		},
 		"automation": {
-			"title": "Automatisation des Processus",
-			"description": "Solutions sur mesure pour automatiser vos tâches répétitives",
+			"title": "Automatisation des processus",
+			"description": "Nous imaginons et créons des solutions sur mesure pour automatiser vos tâches répétitives.",
 			"feature_1": "Analyse de vos processus",
 			"feature_2": "Développement de scripts sur-mesure",
 			"feature_3": "Intégration avec vos outils",
@@ -246,8 +246,8 @@
 			"bonus_2": "Support & maintenance 1 mois"
 		},
 		"maintenance": {
-			"title": "Maintenance & Support",
-			"description": "Suivi et optimisation continue de vos solutions digitales",
+			"title": "Maintenance & support",
+			"description": "Nous assurons le suivi et l'optimisation continue de vos solutions digitales.",
 			"feature_1": "Mises à jour de sécurité",
 			"feature_2": "Sauvegardes automatiques",
 			"feature_3": "Optimisation des performances",
@@ -257,7 +257,7 @@
 		},
 		"agencies": {
 			"title": "Services pour Agences",
-			"description": "Renfort d'équipe et développement en marque blanche",
+			"description": "Nous rejoignons votre équipe en renfort ou développons vos projets en marque blanche.",
 			"feature_1": "Intervention en marque blanche",
 			"feature_2": "Expertise technique ponctuelle",
 			"feature_3": "Respect de vos processus",
@@ -268,20 +268,20 @@
 		"our_services": {
 			"suptitle": "Nos services",
 			"title": "Nos expertises à votre service",
-			"description": "Nous proposons une gamme complète de services pour répondre à vos besoins digitaux et commerciaux."
+			"description": "Nous vous proposons une gamme complète de services pour répondre à tous vos besoins digitaux."
 		},
 		"benefits": {
 			"time_gain": {
 				"title": "Automatisation des tâches",
-				"description": "Réduisez les tâches manuelles de 75% avec nos outils d'automatisation, vous permettant de vous concentrer sur l'essentiel."
+				"description": "Réduisez les tâches manuelles de 75% avec nos outils d'automatisation, et concentrez-vous sur ce qui compte vraiment."
 			},
 			"measurable_results": {
 				"title": "Résultats mesurables",
-				"description": "Mesurez l'impact de nos solutions sur votre présence digitale, l'engagement client et votre rentabilité."
+				"description": "Mesurez concrètement l'impact de nos solutions sur votre présence digitale, l'engagement de vos clients et votre rentabilité."
 			},
 			"tailor_made_solutions": {
 				"title": "Solutions sur mesure",
-				"description": "Des solutions personnalisées pour répondre à vos besoins spécifiques, quelles que soient vos exigences."
+				"description": "Nous concevons des solutions personnalisées qui répondent précisément à vos besoins, quelles que soient vos exigences."
 			}
 		},
 		"hero": {
@@ -300,10 +300,10 @@
 		},
 		"work": {
 			"why_kesval_studio": "Pourquoi choisir KesvaL Studio ?",
-			"why_kesval_studio_description": "Une approche unique qui combine expertise technique et accompagnement personnalisé pour réussir votre projet.",
+			"why_kesval_studio_description": "Notre approche unique combine expertise technique et accompagnement personnalisé pour garantir la réussite de votre projet.",
 			"why": {
 				"accompagnement": "Accompagnement",
-				"accompagnement_description": "De l'idée à la mise en ligne, je vous accompagne à chaque étape de votre projet digital.",
+				"accompagnement_description": "De l'idée à la mise en ligne, nous vous accompagnons à chaque étape de votre projet digital.",
 				"reactivity": "Réactivité & Flexibilité",
 				"reactivity_description": "L'agilité d'un freelance avec la rigueur d'une agence pour des délais optimisés.",
 				"expertise": "Expertise technique",
