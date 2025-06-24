@@ -19,7 +19,7 @@
 
 <div
 	class={cn(
-		'relative flex flex-col gap-8',
+		'group relative flex flex-col gap-8',
 		type === 'highlighted' && 'xl:flex-row xl:items-center xl:gap-12'
 	)}
 >
@@ -35,7 +35,7 @@
 	<!-- Project image -->
 	<div
 		class={cn(
-			'group relative mb-auto w-full overflow-hidden rounded-2xl border',
+			'bg-muted relative mb-auto w-full overflow-hidden rounded-2xl border transition-all duration-500 group-hover:shadow-2xl',
 			type === 'highlighted' && 'xl:w-3/5'
 		)}
 	>
@@ -44,7 +44,8 @@
 				imagePng={project.cover}
 				imageAvif={project.coverAvif}
 				alt={project.title}
-				class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+				class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+				classWrapper="h-full"
 			/>
 		</div>
 		<div
@@ -72,7 +73,8 @@
 							imagePng={project.icon}
 							imageAvif={project.iconAvif}
 							alt={project.title}
-							class="size-10 rounded-lg"
+							classWrapper="overflow-hidden rounded-lg"
+							class="size-10"
 						/>
 					{/if}
 					<h3 class="h4">{project.title}</h3>

@@ -122,7 +122,7 @@ export const socialLinks = [
 
 export const GOOGLE_ANALYTICS_ID = 'G-VBZTZPQWJ9';
 
-export type TeamMember = {
+export type TeamMemberSchema = {
 	id: string;
 	image: Picture;
 	name: string;
@@ -178,7 +178,9 @@ export const team = {
 			}
 		]
 	}
-} as const satisfies Record<string, TeamMember>;
+} as const satisfies Record<string, TeamMemberSchema>;
+
+export type TeamMember = (typeof team)[keyof typeof team];
 
 export type ServiceType = {
 	id: string;

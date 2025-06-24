@@ -29,7 +29,8 @@
 		imagePng={metadata.cover}
 		imageAvif={metadata.coverAvif}
 		alt={metadata.title}
-		class="mx-auto aspect-[2] w-full max-w-[1168px] object-cover shadow max-lg:mt-18 lg:aspect-auto lg:h-120 lg:rounded-b-2xl lg:border-5 lg:border-t-0"
+		class="w-full object-cover"
+		classWrapper="mx-auto max-w-[1168px] lg:rounded-b-2xl lg:border-5 shadow lg:border-t-0 w-full max-lg:mt-18 aspect-[2] lg:h-120 lg:aspect-auto"
 	/>
 	<div class="flex flex-row-reverse py-8">
 		<aside class="fixed bottom-4 left-4 z-10 mr-auto lg:sticky lg:pl-16">
