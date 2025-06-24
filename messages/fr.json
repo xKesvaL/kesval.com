@@ -268,7 +268,8 @@
 		"our_services": {
 			"suptitle": "Nos services",
 			"title": "Nos expertises à votre service",
-			"description": "Nous vous proposons une gamme complète de services pour répondre à tous vos besoins digitaux."
+			"description": "Nous vous proposons une gamme complète de services pour répondre à tous vos besoins digitaux.",
+			"button": "Découvrir nos services"
 		},
 		"benefits": {
 			"time_gain": {

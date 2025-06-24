@@ -1,8 +1,11 @@
 <script lang="ts">
 	import AnimatedBadge from '$lib/components/animated/AnimatedBadge.svelte';
 	import * as m from '$paraglide/messages';
-	import { IconBolt, IconChartBarPopular, IconClock } from '@tabler/icons-svelte';
+	import { IconArrowRight, IconBolt, IconChartBarPopular, IconClock } from '@tabler/icons-svelte';
 	import * as Card from '$lib/components/ui/card/index.js';
+	import { Button } from '$lib/components/ui/button';
+	import { localizeHref } from '$paraglide/runtime';
+	import { route } from '$lib/ROUTES';
 
 	const servicesBenefits = {
 		timegain: {
@@ -55,4 +58,8 @@
 			</Card.Root>
 		{/each}
 	</div>
+	<Button href={localizeHref(route('/services'))} class="mx-auto" size="lg">
+		{m['services.our_services.button']()}
+		<IconArrowRight class="animate-bounce-x size-4" />
+	</Button>
 </section>

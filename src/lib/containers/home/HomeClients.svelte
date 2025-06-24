@@ -4,6 +4,7 @@
 	import { Separator } from '$lib/components/ui/separator';
 	import type { Picture } from 'vite-imagetools';
 	import OLWE from '$assets/clients/olwe.svg';
+	import MVP from '$assets/clients/mvp.png';
 
 	type Client = {
 		icon: Icon | Picture | string;
@@ -15,7 +16,13 @@
 
 	const clients: Client[] = [
 		{ link: 'https://olwe.fr', icon: OLWE, name: 'OLWE Groupe', type: 'image', color: '#FFB028' },
-		{ link: '#', icon: IconUser, name: m['common.your_name_here']() },
+		{
+			link: 'https://mavoitureparfaite.fr',
+			icon: MVP,
+			name: 'Ma Voiture Parfaite',
+			type: 'image',
+			color: '#245685'
+		},
 		{ link: '#', icon: IconUser, name: m['common.your_name_here']() },
 		{ link: '#', icon: IconUser, name: m['common.your_name_here']() },
 		{ link: '#', icon: IconUser, name: m['common.your_name_here']() },
@@ -52,7 +59,7 @@
 						<IconComponent class="size-6 md:size-7" />
 					{:else if client.type === 'image'}
 						{#if typeof client.icon === 'string'}
-							<img src={client.icon} alt={client.name} class="size-6 md:size-7" />
+							<img src={client.icon} alt={client.name} class="size-6 object-contain md:size-7" />
 						{:else}
 							{@const ImageSrc = client.icon as Picture}
 							<enhanced:img src={ImageSrc} alt={client.name} class="size-6 md:size-7" />
