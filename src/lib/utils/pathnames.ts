@@ -1,9 +1,9 @@
 export const locales = ['fr', 'en'] as const;
 
+export const baseLocale = 'fr' satisfies Locale;
+
 export type Locales = (typeof locales)[number];
 export type Locale = Locales;
-
-export const baseLocale = 'fr' satisfies Locale;
 
 type LocalizeOptions = Record<Locale, string>;
 
@@ -32,6 +32,48 @@ export const urlPatterns: UrlPatterns = [
 		localized: localize({
 			fr: '/services',
 			en: '/services'
+		})
+	},
+	{
+		pattern: '/services/agences',
+		localized: localize({
+			fr: '/services/agences',
+			en: '/services/agencies'
+		})
+	},
+	{
+		pattern: '/services/applications-web',
+		localized: localize({
+			fr: '/services/applications-web',
+			en: '/services/web-applications'
+		})
+	},
+	{
+		pattern: '/services/automatisation',
+		localized: localize({
+			fr: '/services/automatisation',
+			en: '/services/automation'
+		})
+	},
+	{
+		pattern: '/services/design',
+		localized: localize({
+			fr: '/services/design',
+			en: '/services/design'
+		})
+	},
+	{
+		pattern: '/services/maintenance',
+		localized: localize({
+			fr: '/services/maintenance',
+			en: '/services/maintenance'
+		})
+	},
+	{
+		pattern: '/services/site-vitrine',
+		localized: localize({
+			fr: '/services/site-vitrine',
+			en: '/services/website'
 		})
 	},
 	// PROJECTS

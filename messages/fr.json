@@ -426,44 +426,93 @@
 				"relation": "Relation de confiance",
 				"relation_description": "Communication transparente et engagement personnel dans chaque projet."
 			}
+		},
+		"web_on_premise": {
+			"title": "Services pour Freelances & Agences",
+			"description": "Nous offrons des services de développement en marque blanche pour les agences et les freelances."
 		}
 	},
 	"legal": {
 		"seo_title": "Mentions Légales - KesvaL Studio",
 		"seo_meta_description": "Consultez les mentions légales de KesvaL Studio. Informations sur l'éditeur du site, l'hébergement, la propriété intellectuelle et la collecte de données.",
 		"title": "Mentions Légales",
-		"last_updated": "Dernière mise à jour le",
-		"section_1_title": "1. Éditeur du site",
-		"section_1_content_1_part_1": "Conformément aux dispositions de l'article 6-I 1° de la loi n°2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique, l'éditeur du site web",
-		"section_1_content_1_part_2": "est :",
-		"owner_name": "Nom de l'entreprise",
-		"owner_status": "Statut juridique",
-		"owner_siret": "Numéro de SIRET",
-		"owner_address": "Adresse du siège social",
-		"owner_email": "Adresse e-mail",
-		"section_2_title": "2. Directeur de la publication",
-		"section_2_content_1": "Le directeur de la publication est Jordan ABEDDOU, en sa qualité de fondateur de KesvaL Studio.",
-		"publication_director": "Directeur de la publication",
-		"section_3_title": "3. Hébergement",
-		"section_3_content_1": "Le site est hébergé par :",
-		"host_name": "Nom de l'hébergeur",
-		"host_address": "Adresse de l'hébergeur",
-		"host_contact": "Contact de l'hébergeur",
-		"section_3_content_2": "Le site est auto-hébergé sur un serveur dédié fourni par Hetzner, géré via la plateforme Coolify.",
-		"section_4_title": "4. Propriété intellectuelle",
-		"section_4_content_1": "L'ensemble de ce site (contenu, textes, images, vidéos et tout autre média) est la propriété de KesvaL Studio, sauf mention contraire. Toute reproduction, même partielle, est strictement interdite sans autorisation écrite préalable.",
-		"section_5_title": "5. Collecte de données personnelles",
-		"section_5_content_1": "Nous collectons des données personnelles via notre formulaire de contact. Les informations recueillies (nom, email, entreprise, message) sont utilisées uniquement pour répondre à votre demande.",
-		"section_5_content_2": "Ces données sont traitées par le service suivant :",
-		"section_5_content_3": "Resend : pour l'envoi des e-mails transactionnels et le stockage des contacts. Voir leur politique de confidentialité.",
-		"section_5_content_4": "Conformément à la loi \"Informatique et Libertés\" et au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression des données vous concernant.",
-		"section_5_content_5": "Pour exercer ce droit, veuillez nous contacter à l'adresse suivante :",
-		"section_6_title": "6. Cookies",
-		"section_6_content_1": "Le site kesval.com utilise des cookies pour améliorer l'expérience utilisateur et réaliser des statistiques de visites.",
-		"section_6_content_2": "Nous utilisons les services suivants :",
-		"section_6_content_3_part_1": "Google Analytics :",
-		"section_6_content_3_part_2": "utilisé pour analyser le trafic du site. Les données collectées sont anonymisées. Pour plus d'informations, consultez les",
-		"section_6_content_3_part_3": "règles de confidentialité de Google.",
-		"section_6_content_4": "Vous pouvez configurer votre navigateur pour refuser les cookies. Cependant, cela pourrait affecter votre expérience de navigation sur le site."
+		"last_updated": "Dernière mise à jour",
+		"section_1": {
+			"title": "1. Informations légales",
+			"owner_name_title": "Raison sociale",
+			"owner_name_value": "Jordan ABEDDOU - Entrepreneur Individuel",
+			"owner_address_title": "Adresse du siège social",
+			"owner_address_value": "18 rue de Feldkirch, 68190 Ungersheim, France",
+			"owner_email_title": "Adresse e-mail",
+			"owner_phone_title": "Téléphone",
+			"owner_phone_value": "[VOTRE NUMERO DE TELEPHONE]",
+			"owner_siret_title": "N° SIRET",
+			"owner_siret_value": "929 685 188 00013",
+			"publication_director_title": "Directeur de la publication",
+			"publication_director_value": "Jordan ABEDDOU"
+		},
+		"section_2": {
+			"title": "2. Hébergement",
+			"host_name_title": "Hébergeur",
+			"host_name_value": "Hetzner Online GmbH",
+			"host_address_title": "Adresse de l'hébergeur",
+			"host_address_value": "Industriestr. 25, 91710 Gunzenhausen, Allemagne",
+			"host_phone_title": "Téléphone de l'hébergeur",
+			"host_phone_value": "+49 (0)9831 505-0",
+			"host_website_title": "Site web de l'hébergeur",
+			"host_website_value": "www.hetzner.com"
+		},
+		"section_3": {
+			"title": "3. Propriété intellectuelle",
+			"content": "L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés, y compris pour les documents téléchargeables et les représentations iconographiques et photographiques. La reproduction de tout ou partie de ce site sur un support électronique quel qu'il soit est formellement interdite sauf autorisation expresse du directeur de la publication."
+		},
+		"section_4": {
+			"title": "4. Protection des données personnelles (RGPD)",
+			"intro": "Nous nous engageons à ce que la collecte et le traitement de vos données, effectués à partir du site kesval.com, soient conformes au règlement général sur la protection des données (RGPD) et à la loi Informatique et Libertés.",
+			"data_controller": "Le responsable du traitement des données personnelles est Jordan ABEDDOU.",
+			"subsection_1": {
+				"title": "Collecte des données",
+				"content_1": "Les données personnelles collectées dans le cadre des services proposés sur kesval.com sont les suivantes :",
+				"content_2": "Via le formulaire de contact : nom, adresse e-mail, nom de l'entreprise (facultatif) et le contenu de votre message.",
+				"content_3": "Via les cookies de mesure d'audience : données de navigation (voir section 'Cookies' ci-dessous)."
+			},
+			"subsection_2": {
+				"title": "Finalités du traitement",
+				"content_1": "La collecte de ces données a pour but de :",
+				"content_2": "Répondre à vos demandes exprimées via le formulaire de contact (base légale : votre consentement).",
+				"content_3": "Réaliser des statistiques anonymes de visites de notre site pour en améliorer le contenu et la navigation (base légale : votre consentement)."
+			},
+			"subsection_3": {
+				"title": "Durée de conservation",
+				"content": "Les données collectées via le formulaire de contact sont conservées pour une durée maximale de 3 ans après le dernier contact. Les données de mesure d'audience sont conservées pour une durée de 13 mois."
+			},
+			"subsection_4": {
+				"title": "Destinataires des données",
+				"content_1": "Les données collectées sont destinées aux services internes de KesvaL Studio. Elles peuvent être transmises aux prestataires (sous-traitants) auxquels KesvaL Studio fait appel pour la réalisation de ses services dans le cadre des finalités mentionnées ci-dessus, notamment :",
+				"content_2": "Hetzner Online GmbH (hébergeur du site), situé en Union Européenne.",
+				"content_3": "Google LLC (pour l'analyse d'audience via Google Analytics)."
+			},
+			"subsection_5": {
+				"title": "Transfert de données hors Union Européenne",
+				"content": "L'utilisation de Google Analytics peut entraîner un transfert de vos données de navigation vers les États-Unis. Google LLC est certifié dans le cadre du 'Data Privacy Framework' UE-États-Unis, assurant un niveau de protection adéquat de vos données."
+			},
+			"subsection_6": {
+				"title": "Vos droits",
+				"content_1": "Conformément à la loi « Informatique et Libertés » et au RGPD, vous disposez des droits suivants :",
+				"content_2": "Droit d'accès, de rectification, de suppression et de portabilité de vos données.",
+				"content_3": "Droit de limitation et d'opposition au traitement de vos données.",
+				"content_4": "Droit de retirer votre consentement à tout moment.",
+				"content_5": "Vous pouvez exercer ces droits en contactant le responsable du traitement à l'adresse suivante :",
+				"content_6": "Par e-mail : contact@kesval.com",
+				"content_7": "En cas de non-réponse ou de réponse non satisfaisante, vous avez le droit d'introduire une réclamation auprès de l'autorité de contrôle (la CNIL en France)."
+			}
+		},
+		"section_5": {
+			"title": "5. Cookies",
+			"content_1": "Lors de la consultation de notre site kesval.com, des cookies sont déposés sur votre ordinateur, votre mobile ou votre tablette. Un cookie est un petit fichier texte stocké sur votre terminal. Il permet de conserver des données utilisateur afin de faciliter la navigation et de permettre certaines fonctionnalités.",
+			"content_2": "Ce site utilise des cookies de mesure d'audience (Google Analytics) qui nous permettent d'établir des statistiques anonymes de fréquentation et d'utilisation des divers éléments composant notre site (rubriques et contenus visités, parcours), nous permettant d'améliorer l'intérêt et l'ergonomie de nos services.",
+			"content_3": "Le dépôt de ces cookies est soumis à votre consentement préalable. Lors de votre première visite, un bandeau d'information vous permet d'accepter ou de refuser le dépôt de ces cookies. Vous pouvez à tout moment modifier votre choix via le gestionnaire de cookies accessible sur le site.",
+			"content_4": "La durée de validité du consentement au dépôt des cookies est de 6 mois. La durée de vie des cookies de Google Analytics est de 13 mois."
+		}
 	}
 }

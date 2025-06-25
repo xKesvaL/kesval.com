@@ -57,6 +57,84 @@ export const urlPatterns = [
     ]
   },
   {
+    "pattern": "/services/agences",
+    "localized": [
+      [
+        "en",
+        "/en/services/agencies"
+      ],
+      [
+        "fr",
+        "/services/agences"
+      ]
+    ]
+  },
+  {
+    "pattern": "/services/applications-web",
+    "localized": [
+      [
+        "en",
+        "/en/services/web-applications"
+      ],
+      [
+        "fr",
+        "/services/applications-web"
+      ]
+    ]
+  },
+  {
+    "pattern": "/services/automatisation",
+    "localized": [
+      [
+        "en",
+        "/en/services/automation"
+      ],
+      [
+        "fr",
+        "/services/automatisation"
+      ]
+    ]
+  },
+  {
+    "pattern": "/services/design",
+    "localized": [
+      [
+        "en",
+        "/en/services/design"
+      ],
+      [
+        "fr",
+        "/services/design"
+      ]
+    ]
+  },
+  {
+    "pattern": "/services/maintenance",
+    "localized": [
+      [
+        "en",
+        "/en/services/maintenance"
+      ],
+      [
+        "fr",
+        "/services/maintenance"
+      ]
+    ]
+  },
+  {
+    "pattern": "/services/site-vitrine",
+    "localized": [
+      [
+        "en",
+        "/en/services/website"
+      ],
+      [
+        "fr",
+        "/services/site-vitrine"
+      ]
+    ]
+  },
+  {
     "pattern": "/projets",
     "localized": [
       [
