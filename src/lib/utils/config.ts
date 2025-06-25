@@ -68,7 +68,8 @@ export type OgImage =
 	| undefined;
 
 export type LinkType = {
-	label: keyof typeof m;
+	label: keyof typeof m | (string & {});
+	labelIsI18n?: boolean;
 	href: string;
 	external?: boolean;
 };

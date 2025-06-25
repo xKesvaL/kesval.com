@@ -2,21 +2,29 @@
 	import { route } from '$lib/ROUTES';
 	import { brand, navigationLinks, socialLinks, type LinkType } from '$lib/utils/config';
 	import { translate } from '$lib/utils/i18n';
+	import { getHighlightedProjects } from '$lib/utils/projects';
 	import * as m from '$paraglide/messages';
-	import { localizeHref } from '$paraglide/runtime';
+	import { getLocale, localizeHref } from '$paraglide/runtime';
 	import Link from '../base/Link.svelte';
 	import Button from '../ui/button/button.svelte';
 	import { IconArrowRight, IconMessageCirclePlus } from '@tabler/icons-svelte';
+
+	let showedProjects = $derived(getHighlightedProjects(getLocale()));
 
 	type Links = {
 		title: string;
 		links: LinkType[];
 	};
 
-	const footerLinks = {
+	const footerLinks = $derived({
 		work: {
 			title: m['nav.projects'](),
 			links: [
+				...showedProjects.map((project) => ({
+					label: project.title,
+					labelIsI18n: false,
+					href: route('/projets/[slug]', { slug: project.slug as string })
+				})),
 				{
 					label: 'see_all',
 					href: route('/projets')
@@ -31,7 +39,7 @@
 			title: m['brand.connect'](),
 			links: socialLinks
 		}
-	} as const satisfies Record<string, Links>;
+	} as const satisfies Record<string, Links>);
 </script>
 
 <footer class="via-background to-background bg-gradient-to-b from-transparent via-10%">
@@ -83,9 +91,13 @@
 									class="text-muted-foreground/90 hover:text-primary flex items-center gap-1 transition"
 									target={'external' in link && link.external ? '_blank' : undefined}
 								>
-									{#await translate(link.label) then translation}
-										{translation}
-									{/await}
+									{#if 'labelIsI18n' in link && !link.labelIsI18n}
+										{link.label}
+									{:else}
+										{#await translate(link.label as keyof typeof m) then translation}
+											{translation}
+										{/await}
+									{/if}
 									{#if link.label === 'see_all'}
 										<IconArrowRight class="size-4" />
 									{/if}
