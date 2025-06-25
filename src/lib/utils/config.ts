@@ -222,7 +222,7 @@ export const services = [
 		duration: {
 			from: 30
 		},
-		href: route('/'),
+		href: route('/services/applications-web'),
 		color: brand.primary,
 		highlight: true
 	},
@@ -236,8 +236,8 @@ export const services = [
 		duration: {
 			from: 'flexible'
 		},
-		href: route('/'),
-		color: brand.primary
+		href: route('/services/agences'),
+		color: '#7C3AED'
 	},
 	{
 		id: 'design',
@@ -248,8 +248,8 @@ export const services = [
 		duration: {
 			from: 'variable'
 		},
-		href: route('/'),
-		color: brand.primary
+		href: route('/services/design'),
+		color: '#DB2777'
 	},
 	{
 		id: 'automation',
@@ -260,8 +260,8 @@ export const services = [
 		duration: {
 			from: 'variable'
 		},
-		href: route('/'),
-		color: brand.primary
+		href: route('/services/automatisation'),
+		color: '#EA580C'
 	},
 
 	{
@@ -274,8 +274,8 @@ export const services = [
 		duration: {
 			from: 'continous'
 		},
-		href: route('/'),
-		color: brand.primary
+		href: route('/services/maintenance'),
+		color: '#2563EB'
 	}
 ] as const satisfies ServiceTypeSchema[];
 

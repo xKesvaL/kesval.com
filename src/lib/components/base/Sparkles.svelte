@@ -14,7 +14,7 @@
 
 	type Props = WithChildren<{
 		color?: 'primary' | 'special';
-		highlight?: 'off' | 'primary';
+		highlight?: 'off' | 'primary' | (string & {});
 		size?: 10 | 20 | 30;
 		class?: string;
 	}>;
@@ -69,6 +69,9 @@
 				return '';
 			case 'primary':
 				return 'from-primary bg-gradient-to-br to-purple-600 bg-clip-text text-transparent';
+
+			default:
+				return `text-[var(--${highlight})]`;
 		}
 	});
 </script>

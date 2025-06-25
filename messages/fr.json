@@ -139,14 +139,33 @@
 		"cta_big": "Lancez votre projet dès aujourd'hui",
 		"your_name_here": "Votre nom ici",
 		"email": "Email",
-		"back": "Retour"
+		"back": "Retour",
+		"free_quote": "Devis gratuit"
 	},
 	"meta": {
 		"home": {
 			"title": "Accueil"
 		},
 		"services": {
-			"title": "Nos services"
+			"title": "Nos services",
+			"site_vitrine": {
+				"title": "Site vitrine"
+			},
+			"applications_web": {
+				"title": "Applications web & mobile"
+			},
+			"design": {
+				"title": "Design UX/UI"
+			},
+			"automatisation": {
+				"title": "Automatisation des processus"
+			},
+			"maintenance": {
+				"title": "Maintenance & support"
+			},
+			"agences": {
+				"title": "Services pour Agences"
+			}
 		},
 		"projets": {
 			"title": "Projets"
@@ -156,6 +175,9 @@
 		},
 		"contact": {
 			"title": "Contact"
+		},
+		"mentions_legales": {
+			"title": "Mentions légales"
 		}
 	},
 	"start_now": "Je me lance",
@@ -213,7 +235,23 @@
 			"feature_3": "Site optimisé pour les moteurs de recherche",
 			"feature_4": "Performance et sécurité garanties",
 			"bonus_1": "Hébergement 1 an offert",
-			"bonus_2": "Support 1 mois inclus"
+			"bonus_2": "Support 1 mois inclus",
+			"details": {
+				"title_before": "Sites web qui",
+				"title_highlight": "convertissent",
+				"title_after": "vos visiteurs",
+				"description": "Votre site web est la face de votre entreprise. Nous créons des sites web modernes et performants, optimisés pour les moteurs de recherche et conçus pour répondre à vos besoins spécifiques.",
+				"result_1": {
+					"amount": "+200%",
+					"short_description": "Plus de visibilité"
+				},
+				"result_2": {
+					"amount": "100%",
+					"short_description": "Référencement optimisé"
+				},
+				"cta": "Créer mon site",
+				"see_more": "Voir des exemples"
+			}
 		},
 		"web_apps": {
 			"title": "Applications web & mobile",
@@ -223,7 +261,23 @@
 			"feature_3": "Gestion de projet agile",
 			"feature_4": "Intégration tierces & sécurité",
 			"bonus_1": "Hébergement 1 an offert",
-			"bonus_2": "Support 1 mois inclus"
+			"bonus_2": "Support 1 mois inclus",
+			"details": {
+				"title_before": "Applications web & mobile qui",
+				"title_highlight": "transforment",
+				"title_after": "votre business",
+				"description": "Nous créons des applications sur-mesure pour vous faire gagner du temps et de l'argent, en automatisant vos processus et en vous permettant de vous concentrer sur ce qui compte vraiment.",
+				"result_1": {
+					"amount": "50%",
+					"short_description": "Gain de productivité"
+				},
+				"result_2": {
+					"amount": "15h/sem",
+					"short_description": "Gain de temps"
+				},
+				"cta": "Démarrer mon projet",
+				"see_more": "Voir une démo"
+			}
 		},
 		"design": {
 			"title": "Design UX/UI",
@@ -233,7 +287,23 @@
 			"feature_3": "Design system complet",
 			"feature_4": "Design desktop & mobile",
 			"bonus_1": "Ateliers de co-conception",
-			"bonus_2": "Tests utilisateurs inclus"
+			"bonus_2": "Tests utilisateurs inclus",
+			"details": {
+				"title_before": "Designs qui",
+				"title_highlight": "séduisent",
+				"title_after": "et convertissent",
+				"description": "Nous créons des interfaces utilisateur intuitives, qui transforment vos utilisateurs en clients fidèles et ambassadeurs de votre marque.",
+				"result_1": {
+					"amount": "+180%",
+					"short_description": "Plus d'engagement"
+				},
+				"result_2": {
+					"amount": "95%",
+					"short_description": "Satisfaction client"
+				},
+				"cta": "Créer mon design",
+				"see_more": "Voir notre portfolio"
+			}
 		},
 		"automation": {
 			"title": "Automatisation des processus",
@@ -243,7 +313,23 @@
 			"feature_3": "Intégration avec vos outils",
 			"feature_4": "Tableau de bord de suivi",
 			"bonus_1": "Formation de vos équipes",
-			"bonus_2": "Support & maintenance 1 mois"
+			"bonus_2": "Support & maintenance 1 mois",
+			"details": {
+				"title_before": "Automatisation qui",
+				"title_highlight": "libèrent",
+				"title_after": "votre potentiel",
+				"description": "Nous créons des solutions sur mesure pour automatiser vos tâches répétitives, et vous faire gagner du temps et de l'argent.",
+				"result_1": {
+					"amount": "+250%",
+					"short_description": "Gain de productivité"
+				},
+				"result_2": {
+					"amount": "15h/sem",
+					"short_description": "Gain de temps"
+				},
+				"cta": "Automatiser mes tâches",
+				"see_more": "Voir des exemples"
+			}
 		},
 		"maintenance": {
 			"title": "Maintenance & support",
@@ -253,7 +339,21 @@
 			"feature_3": "Optimisation des performances",
 			"feature_4": "Support technique réactif",
 			"bonus_1": "Rapport mensuel d'activité",
-			"bonus_2": "Monitoring 24/7"
+			"bonus_2": "Monitoring 24/7",
+			"details": {
+				"title_before": "Maintenance qui",
+				"title_highlight": "protège",
+				"title_after": "votre investissement",
+				"description": "Votre site web est un actif précieux qui nécessite un entretien régulier. Notre service de maintenance garantit sa sécurité, ses performances et sa disponibilité pour que vous puissiez vous concentrer sur votre business.",
+				"result_1": {
+					"amount": "24/7",
+					"short_description": "Monitoring"
+				},
+				"result_2": {
+					"amount": "95%",
+					"short_description": "Satisfaction client"
+				}
+			}
 		},
 		"agencies": {
 			"title": "Services pour Agences",
@@ -263,7 +363,21 @@
 			"feature_3": "Respect de vos processus",
 			"feature_4": "Communication transparente",
 			"bonus_1": "Flexibilité et réactivité",
-			"bonus_2": "Confidentialité garantie"
+			"bonus_2": "Confidentialité garantie",
+			"details": {
+				"title_before": "Le partenaire qui",
+				"title_highlight": "booste",
+				"title_after": "votre agence",
+				"description": "Développez votre activité sans les contraintes du recrutement. Notre expertise technique devient votre force pour accepter plus de projets et satisfaire vos clients les plus exigeants.",
+				"result_1": {
+					"amount": "100%",
+					"short_description": "Projets livrés à temps"
+				},
+				"result_2": {
+					"amount": "98%",
+					"short_description": "Satisfaction client"
+				}
+			}
 		},
 		"our_services": {
 			"suptitle": "Nos services",
@@ -313,5 +427,43 @@
 				"relation_description": "Communication transparente et engagement personnel dans chaque projet."
 			}
 		}
+	},
+	"legal": {
+		"seo_title": "Mentions Légales - KesvaL Studio",
+		"seo_meta_description": "Consultez les mentions légales de KesvaL Studio. Informations sur l'éditeur du site, l'hébergement, la propriété intellectuelle et la collecte de données.",
+		"title": "Mentions Légales",
+		"last_updated": "Dernière mise à jour le",
+		"section_1_title": "1. Éditeur du site",
+		"section_1_content_1_part_1": "Conformément aux dispositions de l'article 6-I 1° de la loi n°2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique, l'éditeur du site web",
+		"section_1_content_1_part_2": "est :",
+		"owner_name": "Nom de l'entreprise",
+		"owner_status": "Statut juridique",
+		"owner_siret": "Numéro de SIRET",
+		"owner_address": "Adresse du siège social",
+		"owner_email": "Adresse e-mail",
+		"section_2_title": "2. Directeur de la publication",
+		"section_2_content_1": "Le directeur de la publication est Jordan ABEDDOU, en sa qualité de fondateur de KesvaL Studio.",
+		"publication_director": "Directeur de la publication",
+		"section_3_title": "3. Hébergement",
+		"section_3_content_1": "Le site est hébergé par :",
+		"host_name": "Nom de l'hébergeur",
+		"host_address": "Adresse de l'hébergeur",
+		"host_contact": "Contact de l'hébergeur",
+		"section_3_content_2": "Le site est auto-hébergé sur un serveur dédié fourni par Hetzner, géré via la plateforme Coolify.",
+		"section_4_title": "4. Propriété intellectuelle",
+		"section_4_content_1": "L'ensemble de ce site (contenu, textes, images, vidéos et tout autre média) est la propriété de KesvaL Studio, sauf mention contraire. Toute reproduction, même partielle, est strictement interdite sans autorisation écrite préalable.",
+		"section_5_title": "5. Collecte de données personnelles",
+		"section_5_content_1": "Nous collectons des données personnelles via notre formulaire de contact. Les informations recueillies (nom, email, entreprise, message) sont utilisées uniquement pour répondre à votre demande.",
+		"section_5_content_2": "Ces données sont traitées par le service suivant :",
+		"section_5_content_3": "Resend : pour l'envoi des e-mails transactionnels et le stockage des contacts. Voir leur politique de confidentialité.",
+		"section_5_content_4": "Conformément à la loi \"Informatique et Libertés\" et au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression des données vous concernant.",
+		"section_5_content_5": "Pour exercer ce droit, veuillez nous contacter à l'adresse suivante :",
+		"section_6_title": "6. Cookies",
+		"section_6_content_1": "Le site kesval.com utilise des cookies pour améliorer l'expérience utilisateur et réaliser des statistiques de visites.",
+		"section_6_content_2": "Nous utilisons les services suivants :",
+		"section_6_content_3_part_1": "Google Analytics :",
+		"section_6_content_3_part_2": "utilisé pour analyser le trafic du site. Les données collectées sont anonymisées. Pour plus d'informations, consultez les",
+		"section_6_content_3_part_3": "règles de confidentialité de Google.",
+		"section_6_content_4": "Vous pouvez configurer votre navigateur pour refuser les cookies. Cependant, cela pourrait affecter votre expérience de navigation sur le site."
 	}
 }
