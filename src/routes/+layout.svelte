@@ -4,14 +4,13 @@
 	import Footer from '$lib/components/layout/Footer.svelte';
 	import { getLocale, locales, localizeHref } from '$lib/paraglide/runtime';
 	import { page } from '$app/state';
-	import Analytics from '$lib/components/base/Analytics.svelte';
 	import { deepMerge, MetaTags } from 'svelte-meta-tags';
 	import HireCard from '$lib/components/layout/HireCard.svelte';
-	// import { building, dev } from '$app/environment';
 	import { Toaster } from '$lib/components/ui/sonner';
 	import { IsMobile } from '$lib/hooks/is-mobile.svelte';
 	import { polyfillCountryFlagEmojis } from '$lib/utils/functions';
 	import { onMount } from 'svelte';
+	import CookieConsent from '$lib/components/base/CookieConsent.svelte';
 
 	let { children, data } = $props();
 	let metaTags = $derived(deepMerge(data.baseMetaTags, page.data.pageMetaTags));
@@ -33,7 +32,8 @@
 
 	<MetaTags {...metaTags} />
 
-	<Analytics />
+	<CookieConsent />
+
 	<Toaster
 		position="bottom-right"
 		offset={{ right: isMobile.current ? '16px' : '96px', bottom: '16px' }}
