@@ -22,6 +22,7 @@ import {
 	IconBuilding,
 	type Icon
 } from '@tabler/icons-svelte';
+import * as CookieConsent from 'vanilla-cookieconsent';
 
 export const brand = {
 	email: 'contact@kesval.com',
@@ -70,8 +71,9 @@ export type OgImage =
 export type LinkType = {
 	label: keyof typeof m | (string & {});
 	labelIsI18n?: boolean;
-	href: string;
+	href?: string;
 	external?: boolean;
+	onclick?: () => void;
 };
 
 export type LinkWithImageType = LinkType & {
@@ -118,6 +120,19 @@ export const socialLinks = [
 		label: 'nav.linkedin',
 		href: brand.linkedin,
 		external: true
+	}
+] as const satisfies LinkType[];
+
+export const legalLinks = [
+	{
+		label: 'nav.privacy_policy',
+		href: route('/mentions-legales')
+	},
+	{
+		label: 'nav.cookies_preferences',
+		onclick: () => {
+			CookieConsent.showPreferences();
+		}
 	}
 ] as const satisfies LinkType[];
 

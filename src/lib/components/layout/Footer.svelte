@@ -1,6 +1,12 @@
 <script lang="ts">
 	import { route } from '$lib/ROUTES';
-	import { brand, navigationLinks, socialLinks, type LinkType } from '$lib/utils/config';
+	import {
+		brand,
+		legalLinks,
+		navigationLinks,
+		socialLinks,
+		type LinkType
+	} from '$lib/utils/config';
 	import { translate } from '$lib/utils/i18n';
 	import { getHighlightedProjects } from '$lib/utils/projects';
 	import * as m from '$paraglide/messages';
@@ -38,6 +44,10 @@
 		connect: {
 			title: m['brand.connect'](),
 			links: socialLinks
+		},
+		legal: {
+			title: m['footer.others'](),
+			links: legalLinks
 		}
 	} as const satisfies Record<string, Links>);
 </script>
@@ -78,7 +88,7 @@
 		</div>
 
 		<!-- Links -->
-		<div class="grid grid-cols-2 gap-y-8 md:grid-cols-3 lg:grid-cols-4">
+		<div class="grid grid-cols-1 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
 			{#each Object.entries(footerLinks) as [key, links] (key)}
 				{@const { title, links: sublinks } = links}
 				<div class="flex flex-col gap-4">
@@ -86,22 +96,37 @@
 					<ul class="flex flex-col gap-2">
 						{#each sublinks as link}
 							<li>
-								<a
-									href={localizeHref(link.href)}
-									class="text-muted-foreground/90 hover:text-primary flex items-center gap-1 transition"
-									target={'external' in link && link.external ? '_blank' : undefined}
-								>
-									{#if 'labelIsI18n' in link && !link.labelIsI18n}
-										{link.label}
-									{:else}
-										{#await translate(link.label as keyof typeof m) then translation}
-											{translation}
-										{/await}
-									{/if}
-									{#if link.label === 'see_all'}
-										<IconArrowRight class="size-4" />
-									{/if}
-								</a>
+								{#if 'href' in link}
+									<a
+										href={localizeHref(link.href)}
+										class="text-muted-foreground/90 hover:text-primary flex items-center gap-1 transition"
+										target={'external' in link && link.external ? '_blank' : undefined}
+									>
+										{#if 'labelIsI18n' in link && !link.labelIsI18n}
+											{link.label}
+										{:else}
+											{#await translate(link.label as keyof typeof m) then translation}
+												{translation}
+											{/await}
+										{/if}
+										{#if link.label === 'see_all'}
+											<IconArrowRight class="size-4" />
+										{/if}
+									</a>
+								{:else if 'onclick' in link}
+									<button
+										onclick={link.onclick}
+										class="text-muted-foreground/90 hover:text-primary flex items-center gap-1 transition"
+									>
+										{#if 'labelIsI18n' in link && !link.labelIsI18n}
+											{link.label}
+										{:else}
+											{#await translate(link.label as keyof typeof m) then translation}
+												{translation}
+											{/await}
+										{/if}
+									</button>
+								{/if}
 							</li>
 						{/each}
 					</ul>
@@ -109,7 +134,7 @@
 			{/each}
 
 			<!-- Fourth col: CTA -->
-			<div class="col-span-full flex flex-col gap-4 lg:col-span-1">
+			<!-- <div class="col-span-full flex flex-col gap-4 lg:col-span-1">
 				<h3 class="h4">
 					{m['footer.cta.secondary.title']()}
 				</h3>
@@ -122,7 +147,7 @@
 						<IconArrowRight class="animate-bounce-x" />
 					</Button>
 				</div>
-			</div>
+			</div> -->
 		</div>
 
 		<hr />

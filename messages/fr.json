@@ -11,7 +11,8 @@
 		"privacy_policy": "Politique de confidentialité",
 		"github": "GitHub",
 		"instagram": "Instagram",
-		"linkedin": "LinkedIn"
+		"linkedin": "LinkedIn",
+		"cookies_preferences": "Préférences des cookies"
 	},
 	"home": {
 		"hero": {
@@ -98,7 +99,8 @@
 				"description": "Nous sommes là pour vous écouter et vous conseiller, sans engagement !"
 			},
 			"other": "Ou alors, restons connectés sur..."
-		}
+		},
+		"others": "Autres"
 	},
 	"projects": {
 		"portfolio_kesval": {
