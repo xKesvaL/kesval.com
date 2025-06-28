@@ -1,63 +1,56 @@
 {
 	"consentModal": {
-		"title": "We use cookies",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-		"acceptAllBtn": "Accept all",
-		"acceptNecessaryBtn": "Reject all",
-		"showPreferencesBtn": "Manage Individual preferences",
-		"footer": "<a href=\"#path-to-impressum.html\" target=\"_blank\">Impressum</a> <a href=\"#path-to-privacy-policy.html\" target=\"_blank\">Privacy Policy</a>"
+		"title": "Nous utilisons des cookies",
+		"description": "Nous utilisons des cookies pour améliorer votre expérience et nos services. Vous pouvez modifier vos paramètres de cookies à tout moment en bas de page.",
+		"acceptAllBtn": "Accepter tout",
+		"acceptNecessaryBtn": "Rejeter tout",
+		"showPreferencesBtn": "Personnaliser mes préférences"
 	},
 	"preferencesModal": {
-		"title": "Manage cookie preferences",
-		"acceptAllBtn": "Accept all",
-		"acceptNecessaryBtn": "Reject all",
-		"savePreferencesBtn": "Accept current selection",
-		"closeIconLabel": "Close modal",
+		"title": "Personnaliser vos préférences de cookies",
+		"acceptAllBtn": "Accepter tout",
+		"acceptNecessaryBtn": "Rejeter tout",
+		"savePreferencesBtn": "Enregistrer mes choix",
+		"closeIconLabel": "Fermer",
 		"serviceCounterLabel": "Service|Services",
 		"sections": [
 			{
-				"title": "Your Privacy Choices",
-				"description": "In this panel you can express some preferences related to the processing of your personal information. You may review and change expressed choices at any time by resurfacing this panel via the provided link. To deny your consent to the specific processing activities described below, switch the toggles to off or use the “Reject all” button and confirm you want to save your choices."
+				"title": "Vos choix de confidentialité",
+				"description": "Dans ce panneau, vous pouvez choisir comment nous traitons vos informations personnelles. Vous pouvez modifier vos choix à tout moment en revenant sur cette page via le lien en bas de page. Pour refuser certains types de cookies, désactivez simplement les boutons correspondants ou cliquez sur \"Rejeter tout\" puis confirmez vos choix."
 			},
 			{
-				"title": "Strictly Necessary",
-				"description": "These cookies are essential for the proper functioning of the website and cannot be disabled.",
-
+				"title": "Cookies essentiels",
+				"description": "Ces cookies sont indispensables au bon fonctionnement de notre site web. Sans eux, certaines fonctionnalités ne pourraient pas marcher correctement.",
 				"linkedCategory": "necessary"
 			},
 			{
-				"title": "Performance and Analytics",
-				"description": "These cookies collect information about how you use our website. All of the data is anonymized and cannot be used to identify you.",
+				"title": "Performance et analyses",
+				"description": "Ces cookies nous aident à comprendre comment vous utilisez notre site web pour l'améliorer. Toutes les données sont anonymisées et ne permettent pas de vous identifier personnellement.",
 				"linkedCategory": "analytics",
 				"cookieTable": {
-					"caption": "Cookie table",
+					"caption": "Détail des cookies",
 					"headers": {
-						"name": "Cookie",
-						"domain": "Domain",
+						"name": "Nom du cookie",
+						"domain": "Domaine",
 						"desc": "Description"
 					},
 					"body": [
 						{
 							"name": "_ga",
-							"domain": "yourdomain.com",
-							"desc": "Description 1"
+							"domain": "kesval.com",
+							"desc": "Google Analytics"
 						},
 						{
 							"name": "_gid",
-							"domain": "yourdomain.com",
-							"desc": "Description 2"
+							"domain": "kesval.com",
+							"desc": "Google Analytics"
 						}
 					]
 				}
 			},
 			{
-				"title": "Targeting and Advertising",
-				"description": "These cookies are used to make advertising messages more relevant to you and your interests. The intention is to display ads that are relevant and engaging for the individual user and thereby more valuable for publishers and third party advertisers.",
-				"linkedCategory": "ads"
-			},
-			{
-				"title": "More information",
-				"description": "For any queries in relation to my policy on cookies and your choices, please <a href=\"#contact-page\">contact us</a>"
+				"title": "Besoin d'aide ?",
+				"description": "Si vous avez des questions sur notre politique de cookies ou vos choix, n'hésitez pas à <a href=\"mailto:contact@kesval.com\">nous contacter</a>"
 			}
 		]
 	}

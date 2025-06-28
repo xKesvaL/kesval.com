@@ -238,6 +238,37 @@
 	picture:has(img.parent-contents) {
 		@apply contents;
 	}
+
+	#cc-main {
+		--cc-font-family: var(--font-sans);
+
+		/* primary buttons */
+		--cc-btn-primary-bg: var(--color-primary);
+		--cc-btn-primary-border-color: transparent;
+		--cc-btn-primary-hover-bg: var(--color-primary-darker);
+		--cc-btn-primary-hover-border-color: transparent;
+
+		/* secondary button */
+		--cc-btn-secondary-bg: var(--color-muted);
+		--cc-btn-secondary-color: var(--color-muted-foreground);
+		--cc-btn-secondary-border-color: var(--color-border);
+		--cc-btn-secondary-hover-bg: oklch(94.007% 0.00011 271.152);
+		--cc-btn-secondary-hover-color: var(--color-foreground);
+		--cc-btn-secondary-hover-border-color: var(--color-border);
+
+		--cc-separator-border-color: var(--color-border);
+
+		/* categories */
+		--cc-cookie-category-block-bg: var(--color-muted);
+		--cc-cookie-category-block-border: var(--color-muted);
+		--cc-cookie-category-block-hover-bg: var(--color-muted);
+		--cc-cookie-category-block-hover-border: var(--color-muted);
+		--cc-cookie-category-expanded-block-bg: transparent;
+		--cc-cookie-category-expanded-block-hover-bg: var(--color-muted);
+
+		/* toggles */
+		--cc-toggle-on-bg: var(--cc-btn-primary-bg);
+	}
 }
 
 @layer utilities {

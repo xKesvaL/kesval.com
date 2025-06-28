@@ -51,8 +51,7 @@ export const getCookiesConfig = (locale: Locale) => {
 						onReject: disableGoogleAnalytics
 					}
 				}
-			},
-			ads: {}
+			}
 		},
 
 		onConsent: () => {
@@ -84,6 +83,8 @@ export const getCookiesConfig = (locale: Locale) => {
 				flipButtons: false
 			}
 		},
+
+		revision: 0, // this is the "version" of the cookie consent
 
 		language: {
 			default: locale,
