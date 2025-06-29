@@ -20,10 +20,10 @@ Here is a comprehensive checklist to ensure your website is ready for launch.
 
 ## 2. Content & SEO
 
-- [ ] **Internationalization (i18n)**:
+- [x] **Internationalization (i18n)**:
   - [x] The `git status` shows `messages/en.json` is modified. Ensure both `en.json` and `fr.json` have identical key structures. Use a JSON diff tool to compare them and prevent missing translations on any page.
   - [x] Run `bun run build:paraglide` to compile the latest messages. Consider adding this to your main `build` script in `package.json` if it's not already, e.g., `"build": "bun run build:paraglide && vite build"`.
-  - [ ] Check all pages in both French and English to ensure all text is translated correctly.
+  - [x] Check all pages in both French and English to ensure all text is translated correctly.
 - [ ] **Metadata and SEO**:
   - [ ] Your `+layout.svelte` uses `svelte-meta-tags`. Verify that every page has unique and descriptive `title` and `description` meta tags. This is handled via `data.pageMetaTags` in your layout, so check the `+page.ts` or `+layout.ts` for each route.
   - [ ] Define Open Graph and Twitter card metadata for rich sharing on social media. `svelte-meta-tags` supports this out of the box. Ensure you have default tags and that they can be overridden per page.

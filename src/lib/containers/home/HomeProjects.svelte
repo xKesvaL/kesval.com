@@ -20,7 +20,7 @@
 		<div
 			class="grid h-full w-full grid-cols-4 gap-px opacity-100 md:grid-cols-6 xl:grid-cols-8 2xl:grid-cols-[repeat(auto-fit,minmax(10vw,1fr))]"
 		>
-			{#each Array(100) as _ (_)}
+			{#each Array(100) as _, i (i)}
 				<div class="border-foreground aspect-square border-t border-l"></div>
 			{/each}
 		</div>

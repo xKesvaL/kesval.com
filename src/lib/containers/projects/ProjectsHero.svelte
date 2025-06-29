@@ -151,7 +151,7 @@
 		<div class=" grid gap-8 md:grid-cols-2 lg:gap-12">
 			{#await filteredProjectsPromise}
 				<!-- Loading State (Optional) -->
-				{#each Array(4) as _ (_)}
+				{#each Array(4) as _, i (i)}
 					<div class="bg-muted animate-pulse rounded-lg p-6">
 						<div class="bg-muted-foreground/20 mb-4 h-40 rounded"></div>
 						<div class="bg-muted-foreground/20 mb-2 h-6 w-3/4 rounded"></div>

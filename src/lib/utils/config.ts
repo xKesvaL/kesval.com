@@ -41,7 +41,9 @@ export const brand = {
 		width: '1200',
 		height: '1200'
 	},
-	primary: '#4d02fd'
+	primary: '#4d02fd',
+	url: 'https://kesval.com',
+	urlShort: 'kesval.com'
 } as const satisfies BrandType;
 
 export type BrandType = {
@@ -58,6 +60,8 @@ export type BrandType = {
 	keywords: string[];
 	ogImage?: OgImage;
 	primary: string;
+	url: string;
+	urlShort: string;
 };
 
 export type OgImage =
