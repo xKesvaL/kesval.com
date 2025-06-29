@@ -117,6 +117,11 @@
 			"search": "Search for a project...",
 			"no_results": "No projects found.",
 			"no_results_description": "Try other keywords or check the spelling."
+		},
+		"wip": {
+			"title": "This page is a work in progress!",
+			"description": "Sorry for the inconvenience. Go back to the",
+			"projects_page": "projects page"
 		}
 	},
 	"common": {
@@ -142,7 +147,9 @@
 		"your_name_here": "Your name here",
 		"email": "Email",
 		"back": "Back",
-		"free_quote": "Free quote"
+		"free_quote": "Free quote",
+		"kesval_logo": "KesvaL's logo",
+		"link_copied_to_clipboard": "Link copied to clipboard!"
 	},
 	"meta": {
 		"home": {
@@ -467,7 +474,9 @@
 			"variable": "Variable",
 			"flexible": "Flexible",
 			"continous": "Continuous",
-			"on_quote": "On quote"
+			"on_quote": "On quote",
+			"discover_this_service": "Discover this service",
+			"learn_more": "Learn more"
 		},
 		"work": {
 			"why_kesval_studio": "Why choose KesvaL Studio?",
@@ -566,5 +575,9 @@
 			"content_3": "The deposit of these cookies is subject to your prior consent. During your first visit, an information banner allows you to accept or refuse the deposit of these cookies. You can change your choice at any time via the cookie manager accessible on the site.",
 			"content_4": "The validity period of the consent to the deposit of cookies is 6 months. The lifespan of Google Analytics cookies is 13 months."
 		}
+	},
+	"error": {
+		"title": "Oops! Il semble que vous avez trouvé une page qui n'existe pas ou qu'une erreur est survenue.",
+		"back_to_home": "Retour à l'accueil"
 	}
 }
