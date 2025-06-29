@@ -16,7 +16,7 @@
 	<div class="space-y-4">
 		<h1 class="h1">{m['legal.title']()}</h1>
 		<p class="text-muted-foreground">
-			{m['legal.last_updated']()} : {dateFormatter.format(new Date('25/06/2025'))}
+			{m['legal.last_updated']()} : {dateFormatter.format(new Date('2025-06-25'))}
 		</p>
 	</div>
 	<Separator class="my-4" />

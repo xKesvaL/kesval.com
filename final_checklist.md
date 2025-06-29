@@ -28,9 +28,9 @@ Here is a comprehensive checklist to ensure your website is ready for launch.
   - [x] Your `+layout.svelte` uses `svelte-meta-tags`. Verify that every page has unique and descriptive `title` and `description` meta tags. This is handled via `data.pageMetaTags` in your layout, so check the `+page.ts` or `+layout.ts` for each route.
   - [x] Define Open Graph and Twitter card metadata for rich sharing on social media. `svelte-meta-tags` supports this out of the box. Ensure you have default tags and that they can be overridden per page.
   - [x] Check that `manifest.json` at `(assets)/manifest.json/+server.ts` is fully configured with your app icons, theme color, etc.
-- [ ] **Content Validation**:
+- [x] **Content Validation**:
   - [x] Your `velite.config.ts` provides strong schemas for posts and projects. This is great. Do a final check on all markdown files in `src/content/` to ensure the frontmatter is accurate (e.g., dates, tags, titles).
-  - [ ] Check for broken links or missing images in your markdown content.
+  - [x] Check for broken links or missing images in your markdown content.
 - [x] **Robots.txt & Sitemap**:
   - [x] You have a `sitemap.xml` endpoint, which is excellent. Make sure it's linked in a `robots.txt` file.
   - [x] Create a `static/robots.txt` file. A good starting point would be:
@@ -46,14 +46,14 @@ Here is a comprehensive checklist to ensure your website is ready for launch.
 
 ## 3. Functionality & UX
 
-- [ ] **Contact Form**: This is a critical piece of functionality.
-  - [ ] You are using `sveltekit-superforms` and `resend`. Test the form submission thoroughly in a production-like environment.
-  - [ ] Ensure the Resend DNS records (e.g., SPF, DKIM) are correctly configured for your sending domain to avoid emails landing in spam.
-  - [ ] Check form validation (`zod` schema in `src/lib/schemas/contact.ts`). Test all validation rules: required fields, email format, etc.
-  - [ ] Confirm the success and error messages (`Toaster`) are user-friendly.
-- [ ] **Links and Navigation**:
-  - [ ] Click through every link in the navigation, footer, and within page content to ensure there are no broken links (404s).
-  - [ ] Check that all external links (e.g., to GitHub, LinkedIn) open in a new tab (`target="_blank" rel="noopener noreferrer"`).
+- [x] **Contact Form**: This is a critical piece of functionality.
+  - [x] You are using `sveltekit-superforms` and `resend`. Test the form submission thoroughly in a production-like environment.
+  - [x] Ensure the Resend DNS records (e.g., SPF, DKIM) are correctly configured for your sending domain to avoid emails landing in spam.
+  - [x] Check form validation (`zod` schema in `src/lib/schemas/contact.ts`). Test all validation rules: required fields, email format, etc.
+  - [x] Confirm the success and error messages (`Toaster`) are user-friendly.
+- [x] **Links and Navigation**:
+  - [x] Click through every link in the navigation, footer, and within page content to ensure there are no broken links (404s).
+  - [x] Check that all external links (e.g., to GitHub, LinkedIn) open in a new tab (`target="_blank" rel="noopener noreferrer"`).
 - [ ] **Responsive Design**:
   - [ ] Test the website on various screen sizes: mobile, tablet, and desktop. Use browser developer tools and test on real devices if possible.
   - [ ] Pay close attention to navigation menus, images, and complex layouts on small screens.

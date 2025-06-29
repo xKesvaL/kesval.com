@@ -129,7 +129,7 @@ export const socialLinks = [
 
 export const legalLinks = [
 	{
-		label: 'nav.privacy_policy',
+		label: 'nav.legal_notice',
 		href: route('/mentions-legales')
 	},
 	{

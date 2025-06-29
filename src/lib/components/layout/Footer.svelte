@@ -101,6 +101,7 @@
 										href={localizeHref(link.href)}
 										class="text-muted-foreground/90 hover:text-primary flex items-center gap-1 transition"
 										target={'external' in link && link.external ? '_blank' : undefined}
+										rel={'external' in link && link.external ? 'noopener noreferrer' : undefined}
 									>
 										{#if 'labelIsI18n' in link && !link.labelIsI18n}
 											{link.label}

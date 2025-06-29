@@ -34,11 +34,11 @@
 		},
 		{
 			label: 'nav.legal_notice',
-			href: route('/')
+			href: route('/mentions-legales')
 		},
 		{
-			label: 'nav.privacy_policy',
-			href: route('/')
+			label: 'nav.cgv',
+			href: route('/conditions-generales-de-vente')
 		}
 	] as const satisfies LinkType[];
 

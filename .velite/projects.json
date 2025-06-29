@@ -15,12 +15,12 @@
       "blurHeight": 5
     },
     "coverAvif": {
-      "src": "/static/cover-3e318a15.avif",
-      "height": 1260,
-      "width": 2400,
-      "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAACQAQCdASoIAAQADMDOJQAAXN9SqCwA93UaMz4MP6YAAAAA",
+      "src": "/static/cover-1d5d9d10.avif",
+      "height": 1800,
+      "width": 3200,
+      "blurDataURL": "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoIAAUADMDOJZwAA3AA/ur8AAA=",
       "blurWidth": 8,
-      "blurHeight": 4
+      "blurHeight": 5
     },
     "images": [
       {
@@ -69,6 +69,11 @@
       "wordCount": 3
     },
     "excerpt": "KesvaL Studio, your partner for innovative web and mobile development",
+    "author": {
+      "name": "Jordan",
+      "email": "jordan@kesval.com",
+      "image": "../../jordan.jpg"
+    },
     "content": "<p>hello test en</p>",
     "toc": [],
     "icon": {
@@ -121,12 +126,12 @@
       "blurHeight": 5
     },
     "coverAvif": {
-      "src": "/static/cover-3e318a15.avif",
-      "height": 1260,
-      "width": 2400,
-      "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAACQAQCdASoIAAQADMDOJQAAXN9SqCwA93UaMz4MP6YAAAAA",
+      "src": "/static/cover-1d5d9d10.avif",
+      "height": 1800,
+      "width": 3200,
+      "blurDataURL": "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoIAAUADMDOJZwAA3AA/ur8AAA=",
       "blurWidth": 8,
-      "blurHeight": 4
+      "blurHeight": 5
     },
     "images": [
       {
@@ -175,6 +180,11 @@
       "wordCount": 3
     },
     "excerpt": "KesvaL Studio, votre partenaire pour le développement web et mobile innovant",
+    "author": {
+      "name": "Jordan",
+      "email": "jordan@kesval.com",
+      "image": "../../jordan.jpg"
+    },
     "content": "<p>hello test fr</p>",
     "toc": [],
     "icon": {
