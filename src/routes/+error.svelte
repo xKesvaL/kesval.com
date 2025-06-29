@@ -3,6 +3,7 @@
 	import { Button } from '$lib/components/ui/button';
 	import { localizeHref } from '$lib/paraglide/runtime';
 	import { IconBulb } from '@tabler/icons-svelte';
+	import * as m from '$paraglide/messages';
 </script>
 
 <svelte:head>
@@ -18,10 +19,9 @@
 		</div>
 	</div>
 	<p class="text-muted-foreground mt-6 max-w-md">
-		Oops! It seems you've stumbled upon a page that doesn't exist or an error occurred. Let's get
-		you back on track.
+		{m['error.title']}
 	</p>
 	<div class="mt-8">
-		<Button href={localizeHref('/')} size="lg">Go back to Homepage</Button>
+		<Button href={localizeHref('/')} size="lg">{m['error.back_to_home']}</Button>
 	</div>
 </div>

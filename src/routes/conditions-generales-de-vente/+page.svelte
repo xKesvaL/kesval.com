@@ -1,12 +1,21 @@
 <script lang="ts">
 	import { Separator } from '$lib/components/ui/separator';
 	import * as m from '$lib/paraglide/messages';
+	import { getLocale } from '$paraglide/runtime';
+
+	const dateFormatter = new Intl.DateTimeFormat(getLocale(), {
+		day: '2-digit',
+		month: '2-digit',
+		year: 'numeric'
+	});
 </script>
 
 <section class="section-hero kcontainer gap-8 px-4">
 	<div class="space-y-4">
 		<h1 class="h1">{m['cgv.title']()}</h1>
-		<p class="text-muted-foreground">{m['cgv.last_updated']()} : 29/06/2025</p>
+		<p class="text-muted-foreground">
+			{m['cgv.last_updated']()} : {dateFormatter.format(new Date('29/06/2025'))}
+		</p>
 	</div>
 	<Separator class="my-4" />
 	<div class="space-y-16">

@@ -2,12 +2,22 @@
 	import Link from '$lib/components/base/Link.svelte';
 	import { Separator } from '$lib/components/ui/separator';
 	import * as m from '$lib/paraglide/messages';
+	import { brand } from '$lib/utils/config';
+	import { getLocale } from '$paraglide/runtime';
+
+	const dateFormatter = new Intl.DateTimeFormat(getLocale(), {
+		day: '2-digit',
+		month: '2-digit',
+		year: 'numeric'
+	});
 </script>
 
 <section class="section-hero kcontainer gap-8 px-4">
 	<div class="space-y-4">
 		<h1 class="h1">{m['legal.title']()}</h1>
-		<p class="text-muted-foreground">{m['legal.last_updated']()} : 25/06/2025</p>
+		<p class="text-muted-foreground">
+			{m['legal.last_updated']()} : {dateFormatter.format(new Date('25/06/2025'))}
+		</p>
 	</div>
 	<Separator class="my-4" />
 	<div class="space-y-16">
@@ -148,7 +158,7 @@
 				</ul>
 				<p>
 					{m['legal.section_4.subsection_6.content_5']()}
-					<a href="mailto:contact@kesval.com" class="underline">contact@kesval.com</a>.
+					<a href="mailto:contact@kesval.com" class="underline">{brand.email}</a>.
 				</p>
 				<p>
 					{m['legal.section_4.subsection_6.content_7']()}

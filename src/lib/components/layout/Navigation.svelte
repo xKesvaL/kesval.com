@@ -60,8 +60,12 @@
 		)}
 	>
 		<div class="flex h-full w-full items-center justify-between rounded-[15px]">
-			<a href={localizeHref(route('/'))} aria-label="home">
-				<enhanced:img src="$assets/logo.avif" alt="An alt text" class="size-10 rounded-lg" />
+			<a href={localizeHref(route('/'))} aria-label={m['nav.home']()}>
+				<enhanced:img
+					src="$assets/logo.avif"
+					alt={m['common.kesval_logo']()}
+					class="size-10 rounded-lg"
+				/>
 			</a>
 			<div class="flex items-center gap-2">
 				<NavigationLangSwitcher />
@@ -148,20 +152,22 @@
 			{#each navigationLinks as link (link.label)}
 				{@const { label, href: absoluteHref, image: src } = link}
 				{@const href = localizeHref(absoluteHref)}
-				<a
-					aria-label={label}
-					{href}
-					class={cn(
-						'absolute inset-0 top-1/2 z-50 flex translate-x-[125%] -translate-y-1/2 items-center transition duration-500',
-						latestHoveredLink.href === link.href && '-translate-x-1/6'
-					)}
-				>
-					<enhanced:img
-						{src}
-						alt={label}
-						class={cn('nav-image-drop hidden md:block', 'imageClass' in link && link.imageClass)}
-					/>
-				</a>
+				{#await translate(label) then translation}
+					<a
+						aria-label={translation}
+						{href}
+						class={cn(
+							'absolute inset-0 top-1/2 z-50 flex translate-x-[125%] -translate-y-1/2 items-center transition duration-500',
+							latestHoveredLink.href === link.href && '-translate-x-1/6'
+						)}
+					>
+						<enhanced:img
+							{src}
+							alt={translation}
+							class={cn('nav-image-drop hidden md:block', 'imageClass' in link && link.imageClass)}
+						/>
+					</a>
+				{/await}
 			{/each}
 		</div>
 	{/if}

@@ -138,7 +138,9 @@
 					class={cn('w-full')}
 					href={localizeHref(service.href)}
 				>
-					{isHighlighted ? 'Découvrir ce service' : 'En savoir plus'}
+					{isHighlighted
+						? m['services.hero.discover_this_service']()
+						: m['services.hero.learn_more']()}
 					<IconArrowRight class={cn('h-4 w-4', isHighlighted && 'animate-bounce-x')} />
 				</Button>
 			</Card.Content>

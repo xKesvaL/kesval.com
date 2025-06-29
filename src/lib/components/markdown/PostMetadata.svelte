@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import type { Post } from '$content/index';
-	import { brand, type OgImage } from '$lib/utils/config';
+	import { brand, team, type OgImage } from '$lib/utils/config';
 	import { extractLocaleFromUrl } from '$paraglide/runtime';
 
 	let {
@@ -23,14 +23,14 @@
 	<title>{trueTitle}</title>
 	<meta name="description" content={metadata.excerpt} />
 	<meta name="keywords" content={keywords?.join(',')} />
-	<meta name="author" content="huntabyte" />
+	<meta name="author" content={`${team.jordan.name} "${brand.nameShort}"`} />
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:site" content={brand.website} />
 	<meta name="twitter:title" content={trueTitle} />
 	<meta name="twitter:description" content={metadata.excerpt} />
 	<meta name="twitter:image" content={ogImage?.url} />
 	<meta name="twitter:image:alt" content={trueTitle} />
-	<meta name="twitter:creator" content="huntabyte" />
+	<meta name="twitter:creator" content={`${team.jordan.name} "${brand.nameShort}"`} />
 	<meta property="og:title" content={trueTitle} />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content={brand.website + page.url.pathname} />

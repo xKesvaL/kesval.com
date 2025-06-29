@@ -45,7 +45,7 @@
 			setTimeout(() => {
 				copied = false;
 			}, 4000); // Reset copied state after 4 seconds (default duration for the toast)
-			toast.success('Link copied to clipboard!');
+			toast.success(m['common.link_copied_to_clipboard']());
 		});
 	};
 </script>

@@ -85,7 +85,6 @@
 	"present": "Présent",
 	"soon_tm": "Bientôt™",
 	"change_language": "Changer de langue",
-
 	"brand": {
 		"the_studio": "Le Studio",
 		"connect": "Réseaux",
@@ -118,6 +117,11 @@
 			"search": "Rechercher un projet...",
 			"no_results": "Aucun projet trouvé.",
 			"no_results_description": "Essayez d'autres mots-clés ou vérifiez l'orthographe."
+		},
+		"wip": {
+			"title": "Cette page est en cours de développement !",
+			"description": "Désolé pour le dérangement. Retournez à la",
+			"projects_page": "page des projets"
 		}
 	},
 	"common": {
@@ -143,7 +147,9 @@
 		"your_name_here": "Votre nom ici",
 		"email": "Email",
 		"back": "Retour",
-		"free_quote": "Devis gratuit"
+		"free_quote": "Devis gratuit",
+		"kesval_logo": "Logo de KesvaL",
+		"link_copied_to_clipboard": "Lien copié dans le presse-papiers !"
 	},
 	"meta": {
 		"home": {
@@ -468,7 +474,9 @@
 			"variable": "Variable",
 			"flexible": "Flexible",
 			"continous": "Continu",
-			"on_quote": "Sur devis"
+			"on_quote": "Sur devis",
+			"discover_this_service": "Découvrir ce service",
+			"learn_more": "En savoir plus"
 		},
 		"work": {
 			"why_kesval_studio": "Pourquoi choisir KesvaL Studio ?",
@@ -567,5 +575,9 @@
 			"content_3": "Le dépôt de ces cookies est soumis à votre consentement préalable. Lors de votre première visite, un bandeau d'information vous permet d'accepter ou de refuser le dépôt de ces cookies. Vous pouvez à tout moment modifier votre choix via le gestionnaire de cookies accessible sur le site.",
 			"content_4": "La durée de validité du consentement au dépôt des cookies est de 6 mois. La durée de vie des cookies de Google Analytics est de 13 mois."
 		}
+	},
+	"error": {
+		"title": "Oops! Il semble que vous avez trouvé une page qui n'existe pas ou qu'une erreur est survenue.",
+		"back_to_home": "Retour à l'accueil"
 	}
 }

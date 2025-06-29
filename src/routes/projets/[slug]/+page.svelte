@@ -1,14 +1,15 @@
 <script lang="ts">
 	import { route } from '$lib/ROUTES';
 	import { localizeHref } from '$paraglide/runtime';
+	import * as m from '$paraglide/messages';
 </script>
 
 <section class="section-hero flex-col items-center justify-center gap-4 text-center">
-	<h1>This page is a work in progress!</h1>
+	<h1>{m['projects.wip.title']}</h1>
 	<p class="text-lg lg:text-xl">
-		Sorry for the inconvenience. Go back to the <a
-			class="text-primary underline"
-			href={localizeHref(route('/projets'))}>projects page</a
+		{m['projects.wip.description']}
+		<a class="text-primary underline" href={localizeHref(route('/projets'))}
+			>{m['projects.wip.projects_page']}</a
 		>
 	</p>
 </section>
