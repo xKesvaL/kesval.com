@@ -1,214 +1,196 @@
 [
-  {
-    "title": "KesvaL Studio™",
-    "path": "projects/kesval-studio/kesval-studio.en",
-    "publishedAt": "2025-06-18T00:00:00.000Z",
-    "tags": [
-      "KesvaL Studio"
-    ],
-    "cover": {
-      "src": "/static/cover-9628baad.png",
-      "height": 1800,
-      "width": 3200,
-      "blurDataURL": "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoIAAUADMDOJZwAA3AA/ur8AAA=",
-      "blurWidth": 8,
-      "blurHeight": 5
-    },
-    "coverAvif": {
-      "src": "/static/cover-3e318a15.avif",
-      "height": 1260,
-      "width": 2400,
-      "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAACQAQCdASoIAAQADMDOJQAAXN9SqCwA93UaMz4MP6YAAAAA",
-      "blurWidth": 8,
-      "blurHeight": 4
-    },
-    "images": [
-      {
-        "src": "/static/1-9628baad.png",
-        "height": 1800,
-        "width": 3200,
-        "blurDataURL": "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoIAAUADMDOJZwAA3AA/ur8AAA=",
-        "blurWidth": 8,
-        "blurHeight": 5
-      },
-      {
-        "src": "/static/2-9628baad.png",
-        "height": 1800,
-        "width": 3200,
-        "blurDataURL": "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoIAAUADMDOJZwAA3AA/ur8AAA=",
-        "blurWidth": 8,
-        "blurHeight": 5
-      },
-      {
-        "src": "/static/3-9628baad.png",
-        "height": 1800,
-        "width": 3200,
-        "blurDataURL": "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoIAAUADMDOJZwAA3AA/ur8AAA=",
-        "blurWidth": 8,
-        "blurHeight": 5
-      },
-      {
-        "src": "/static/4-9628baad.png",
-        "height": 1800,
-        "width": 3200,
-        "blurDataURL": "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoIAAUADMDOJZwAA3AA/ur8AAA=",
-        "blurWidth": 8,
-        "blurHeight": 5
-      },
-      {
-        "src": "/static/5-9628baad.png",
-        "height": 1800,
-        "width": 3200,
-        "blurDataURL": "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoIAAUADMDOJZwAA3AA/ur8AAA=",
-        "blurWidth": 8,
-        "blurHeight": 5
-      }
-    ],
-    "metadata": {
-      "readingTime": 1,
-      "wordCount": 3
-    },
-    "excerpt": "KesvaL Studio, your partner for innovative web and mobile development",
-    "content": "<p>hello test en</p>",
-    "toc": [],
-    "icon": {
-      "src": "/static/icon-596056c9.png",
-      "height": 1000,
-      "width": 1000,
-      "blurDataURL": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACwAQCdASoIAAgADMDOJbACdADca5gAAP2Y27gzhKQoPa62fbb6k/KvMlFFcwAA",
-      "blurWidth": 8,
-      "blurHeight": 8
-    },
-    "iconAvif": {
-      "src": "/static/icon-81212e8b.avif",
-      "height": 1000,
-      "width": 1000,
-      "blurDataURL": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACwAQCdASoIAAgADMDOJbACdADca5gAAP2Y27gzhKQoPa62fbb6k/KvMlFFcwAA",
-      "blurWidth": 8,
-      "blurHeight": 8
-    },
-    "client": "KesvaL Studio",
-    "website": "https://kesval.com",
-    "github": "https://github.com/xKesvaL/kesval.com",
-    "technologies": [
-      "Svelte",
-      "Tailwind CSS",
-      "TypeScript"
-    ],
-    "featured": true,
-    "projectType": [
-      "showcase",
-      "web"
-    ],
-    "uniqueId": "kesval-studio",
-    "slug": "kesval-studio.en",
-    "slugClean": "kesval-studio",
-    "locale": "en"
-  },
-  {
-    "title": "KesvaL Studio™",
-    "path": "projects/kesval-studio/kesval-studio.fr",
-    "publishedAt": "2025-06-18T00:00:00.000Z",
-    "tags": [
-      "KesvaL Studio"
-    ],
-    "cover": {
-      "src": "/static/cover-9628baad.png",
-      "height": 1800,
-      "width": 3200,
-      "blurDataURL": "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoIAAUADMDOJZwAA3AA/ur8AAA=",
-      "blurWidth": 8,
-      "blurHeight": 5
-    },
-    "coverAvif": {
-      "src": "/static/cover-3e318a15.avif",
-      "height": 1260,
-      "width": 2400,
-      "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAACQAQCdASoIAAQADMDOJQAAXN9SqCwA93UaMz4MP6YAAAAA",
-      "blurWidth": 8,
-      "blurHeight": 4
-    },
-    "images": [
-      {
-        "src": "/static/1-9628baad.png",
-        "height": 1800,
-        "width": 3200,
-        "blurDataURL": "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoIAAUADMDOJZwAA3AA/ur8AAA=",
-        "blurWidth": 8,
-        "blurHeight": 5
-      },
-      {
-        "src": "/static/2-9628baad.png",
-        "height": 1800,
-        "width": 3200,
-        "blurDataURL": "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoIAAUADMDOJZwAA3AA/ur8AAA=",
-        "blurWidth": 8,
-        "blurHeight": 5
-      },
-      {
-        "src": "/static/3-9628baad.png",
-        "height": 1800,
-        "width": 3200,
-        "blurDataURL": "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoIAAUADMDOJZwAA3AA/ur8AAA=",
-        "blurWidth": 8,
-        "blurHeight": 5
-      },
-      {
-        "src": "/static/4-9628baad.png",
-        "height": 1800,
-        "width": 3200,
-        "blurDataURL": "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoIAAUADMDOJZwAA3AA/ur8AAA=",
-        "blurWidth": 8,
-        "blurHeight": 5
-      },
-      {
-        "src": "/static/5-9628baad.png",
-        "height": 1800,
-        "width": 3200,
-        "blurDataURL": "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoIAAUADMDOJZwAA3AA/ur8AAA=",
-        "blurWidth": 8,
-        "blurHeight": 5
-      }
-    ],
-    "metadata": {
-      "readingTime": 1,
-      "wordCount": 3
-    },
-    "excerpt": "KesvaL Studio, votre partenaire pour le développement web et mobile innovant",
-    "content": "<p>hello test fr</p>",
-    "toc": [],
-    "icon": {
-      "src": "/static/icon-596056c9.png",
-      "height": 1000,
-      "width": 1000,
-      "blurDataURL": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACwAQCdASoIAAgADMDOJbACdADca5gAAP2Y27gzhKQoPa62fbb6k/KvMlFFcwAA",
-      "blurWidth": 8,
-      "blurHeight": 8
-    },
-    "iconAvif": {
-      "src": "/static/icon-81212e8b.avif",
-      "height": 1000,
-      "width": 1000,
-      "blurDataURL": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACwAQCdASoIAAgADMDOJbACdADca5gAAP2Y27gzhKQoPa62fbb6k/KvMlFFcwAA",
-      "blurWidth": 8,
-      "blurHeight": 8
-    },
-    "client": "KesvaL Studio",
-    "website": "https://kesval.com",
-    "github": "https://github.com/xKesvaL/kesval.com",
-    "technologies": [
-      "Svelte",
-      "Tailwind CSS",
-      "TypeScript"
-    ],
-    "featured": true,
-    "projectType": [
-      "showcase",
-      "web"
-    ],
-    "uniqueId": "kesval-studio",
-    "slug": "kesval-studio.fr",
-    "slugClean": "kesval-studio",
-    "locale": "fr"
-  }
+	{
+		"title": "KesvaL Studio™",
+		"path": "projects/kesval-studio/kesval-studio.en",
+		"publishedAt": "2025-06-18T00:00:00.000Z",
+		"tags": ["KesvaL Studio"],
+		"cover": {
+			"src": "/static/cover-9628baad.png",
+			"height": 1800,
+			"width": 3200,
+			"blurDataURL": "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoIAAUADMDOJZwAA3AA/ur8AAA=",
+			"blurWidth": 8,
+			"blurHeight": 5
+		},
+		"coverAvif": {
+			"src": "/static/cover-3e318a15.avif",
+			"height": 1260,
+			"width": 2400,
+			"blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAACQAQCdASoIAAQADMDOJQAAXN9SqCwA93UaMz4MP6YAAAAA",
+			"blurWidth": 8,
+			"blurHeight": 4
+		},
+		"images": [
+			{
+				"src": "/static/1-9628baad.png",
+				"height": 1800,
+				"width": 3200,
+				"blurDataURL": "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoIAAUADMDOJZwAA3AA/ur8AAA=",
+				"blurWidth": 8,
+				"blurHeight": 5
+			},
+			{
+				"src": "/static/2-9628baad.png",
+				"height": 1800,
+				"width": 3200,
+				"blurDataURL": "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoIAAUADMDOJZwAA3AA/ur8AAA=",
+				"blurWidth": 8,
+				"blurHeight": 5
+			},
+			{
+				"src": "/static/3-9628baad.png",
+				"height": 1800,
+				"width": 3200,
+				"blurDataURL": "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoIAAUADMDOJZwAA3AA/ur8AAA=",
+				"blurWidth": 8,
+				"blurHeight": 5
+			},
+			{
+				"src": "/static/4-9628baad.png",
+				"height": 1800,
+				"width": 3200,
+				"blurDataURL": "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoIAAUADMDOJZwAA3AA/ur8AAA=",
+				"blurWidth": 8,
+				"blurHeight": 5
+			},
+			{
+				"src": "/static/5-9628baad.png",
+				"height": 1800,
+				"width": 3200,
+				"blurDataURL": "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoIAAUADMDOJZwAA3AA/ur8AAA=",
+				"blurWidth": 8,
+				"blurHeight": 5
+			}
+		],
+		"metadata": {
+			"readingTime": 1,
+			"wordCount": 3
+		},
+		"excerpt": "KesvaL Studio, your partner for innovative web and mobile development",
+		"content": "<p>hello test en</p>",
+		"toc": [],
+		"icon": {
+			"src": "/static/icon-596056c9.png",
+			"height": 1000,
+			"width": 1000,
+			"blurDataURL": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACwAQCdASoIAAgADMDOJbACdADca5gAAP2Y27gzhKQoPa62fbb6k/KvMlFFcwAA",
+			"blurWidth": 8,
+			"blurHeight": 8
+		},
+		"iconAvif": {
+			"src": "/static/icon-81212e8b.avif",
+			"height": 1000,
+			"width": 1000,
+			"blurDataURL": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACwAQCdASoIAAgADMDOJbACdADca5gAAP2Y27gzhKQoPa62fbb6k/KvMlFFcwAA",
+			"blurWidth": 8,
+			"blurHeight": 8
+		},
+		"client": "KesvaL Studio",
+		"website": "https://kesval.com",
+		"github": "https://github.com/xKesvaL/kesval.com",
+		"technologies": ["Svelte", "Tailwind CSS", "TypeScript"],
+		"featured": true,
+		"projectType": ["showcase", "web"],
+		"uniqueId": "kesval-studio",
+		"slug": "kesval-studio.en",
+		"slugClean": "kesval-studio",
+		"locale": "en"
+	},
+	{
+		"title": "KesvaL Studio™",
+		"path": "projects/kesval-studio/kesval-studio.fr",
+		"publishedAt": "2025-06-18T00:00:00.000Z",
+		"tags": ["KesvaL Studio"],
+		"cover": {
+			"src": "/static/cover-9628baad.png",
+			"height": 1800,
+			"width": 3200,
+			"blurDataURL": "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoIAAUADMDOJZwAA3AA/ur8AAA=",
+			"blurWidth": 8,
+			"blurHeight": 5
+		},
+		"coverAvif": {
+			"src": "/static/cover-3e318a15.avif",
+			"height": 1260,
+			"width": 2400,
+			"blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAACQAQCdASoIAAQADMDOJQAAXN9SqCwA93UaMz4MP6YAAAAA",
+			"blurWidth": 8,
+			"blurHeight": 4
+		},
+		"images": [
+			{
+				"src": "/static/1-9628baad.png",
+				"height": 1800,
+				"width": 3200,
+				"blurDataURL": "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoIAAUADMDOJZwAA3AA/ur8AAA=",
+				"blurWidth": 8,
+				"blurHeight": 5
+			},
+			{
+				"src": "/static/2-9628baad.png",
+				"height": 1800,
+				"width": 3200,
+				"blurDataURL": "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoIAAUADMDOJZwAA3AA/ur8AAA=",
+				"blurWidth": 8,
+				"blurHeight": 5
+			},
+			{
+				"src": "/static/3-9628baad.png",
+				"height": 1800,
+				"width": 3200,
+				"blurDataURL": "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoIAAUADMDOJZwAA3AA/ur8AAA=",
+				"blurWidth": 8,
+				"blurHeight": 5
+			},
+			{
+				"src": "/static/4-9628baad.png",
+				"height": 1800,
+				"width": 3200,
+				"blurDataURL": "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoIAAUADMDOJZwAA3AA/ur8AAA=",
+				"blurWidth": 8,
+				"blurHeight": 5
+			},
+			{
+				"src": "/static/5-9628baad.png",
+				"height": 1800,
+				"width": 3200,
+				"blurDataURL": "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoIAAUADMDOJZwAA3AA/ur8AAA=",
+				"blurWidth": 8,
+				"blurHeight": 5
+			}
+		],
+		"metadata": {
+			"readingTime": 1,
+			"wordCount": 3
+		},
+		"excerpt": "KesvaL Studio, votre partenaire pour le développement web et mobile innovant",
+		"content": "<p>hello test fr</p>",
+		"toc": [],
+		"icon": {
+			"src": "/static/icon-596056c9.png",
+			"height": 1000,
+			"width": 1000,
+			"blurDataURL": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACwAQCdASoIAAgADMDOJbACdADca5gAAP2Y27gzhKQoPa62fbb6k/KvMlFFcwAA",
+			"blurWidth": 8,
+			"blurHeight": 8
+		},
+		"iconAvif": {
+			"src": "/static/icon-81212e8b.avif",
+			"height": 1000,
+			"width": 1000,
+			"blurDataURL": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACwAQCdASoIAAgADMDOJbACdADca5gAAP2Y27gzhKQoPa62fbb6k/KvMlFFcwAA",
+			"blurWidth": 8,
+			"blurHeight": 8
+		},
+		"client": "KesvaL Studio",
+		"website": "https://kesval.com",
+		"github": "https://github.com/xKesvaL/kesval.com",
+		"technologies": ["Svelte", "Tailwind CSS", "TypeScript"],
+		"featured": true,
+		"projectType": ["showcase", "web"],
+		"uniqueId": "kesval-studio",
+		"slug": "kesval-studio.fr",
+		"slugClean": "kesval-studio",
+		"locale": "fr"
+	}
 ]
