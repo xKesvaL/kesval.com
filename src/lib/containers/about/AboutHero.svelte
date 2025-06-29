@@ -61,7 +61,7 @@
 			<div
 				class=" flex flex-col items-start gap-2"
 				use:inView={{
-					onEnter: (entry) => updateValues(key as keyof Values)
+					onEnter: () => updateValues(key as keyof Values)
 				}}
 			>
 				<div class="-space-y-4">

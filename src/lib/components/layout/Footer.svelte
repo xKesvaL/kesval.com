@@ -94,7 +94,7 @@
 				<div class="flex flex-col gap-4">
 					<h3 class="h4">{title}</h3>
 					<ul class="flex flex-col gap-2">
-						{#each sublinks as link}
+						{#each sublinks as link (link.label)}
 							<li>
 								{#if 'href' in link}
 									<a

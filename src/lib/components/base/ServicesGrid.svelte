@@ -1,8 +1,7 @@
 <script lang="ts">
 	import { services } from '$lib/utils/config';
 	import { translate } from '$lib/utils/i18n';
-	import { Card, CardContent, CardHeader } from '../ui/card';
-	import * as m from '$paraglide/messages';
+	import { Card, CardHeader } from '../ui/card';
 </script>
 
 <div class="not-prose grid grid-cols-1 gap-4 @xl:grid-cols-2">

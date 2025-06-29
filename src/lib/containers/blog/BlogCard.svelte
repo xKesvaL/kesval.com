@@ -42,7 +42,7 @@
 						<div class="flex items-center gap-1.5">
 							<IconTags class="h-4 w-4" />
 							<div class="flex flex-wrap gap-1">
-								{#each post.tags as tag}
+								{#each post.tags as tag (tag)}
 									<Badge variant="secondary" class="text-xs">{tag}</Badge>
 								{/each}
 							</div>

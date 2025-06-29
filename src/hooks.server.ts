@@ -14,7 +14,7 @@ const paraglideHandle: Handle = ({ event, resolve }) =>
 
 export const handle: Handle = paraglideHandle;
 
-export const handleError: HandleServerError = async ({ error, status, message }) => {
+export const handleError: HandleServerError = async ({ error, message }) => {
 	console.error('Server error:', error);
 
 	return {

@@ -16,7 +16,7 @@
 	class="size-10 cursor-pointer ring-1 ring-transparent {navigation.state === 'open'
 		? 'hover:bg-muted/10 ring-primary bg-primary'
 		: 'bg-muted border'}"
-	aria-label={'Toggle navigation'}
+	aria-label="Toggle navigation"
 >
 	<svg
 		stroke="currentColor"

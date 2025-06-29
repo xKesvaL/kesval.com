@@ -17,7 +17,6 @@
 	} from '@tabler/icons-svelte';
 	import AboutResumeLeftSide from './AboutResumeLeftSide.svelte';
 	import AboutResumeRightSide from './AboutResumeRightSide.svelte';
-	import { translate } from '$lib/utils/i18n';
 </script>
 
 <section class="kcontainer section flex flex-col items-center px-4" id="resume">

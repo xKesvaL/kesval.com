@@ -46,7 +46,7 @@
 			</div>
 		</Select.Trigger>
 		<Select.Content class="!w-[4.5rem]" align="start" alignOffset={-2}>
-			{#each locales as lang}
+			{#each locales as lang (lang)}
 				<Select.Item
 					class="font-emoji text-lg"
 					value={lang}

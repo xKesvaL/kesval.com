@@ -52,7 +52,7 @@
 					{m['team.expertise']()}
 				</h4>
 				<div class="flex flex-wrap gap-2">
-					{#each member.skills as skill, skillIndex}
+					{#each member.skills as skill (skill.name)}
 						<Badge variant="outline">
 							{#await translate(`skills.${skill.name}`) then translation}
 								{translation}
@@ -64,7 +64,7 @@
 		</div>
 
 		<div class="flex space-x-2">
-			{#each member.socials as social, socialIndex}
+			{#each member.socials as social (social.href)}
 				<Button
 					href={social.href}
 					size="icon"

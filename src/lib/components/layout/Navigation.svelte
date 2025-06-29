@@ -96,7 +96,7 @@
 				class="kcontainer flex h-full flex-col items-stretch justify-center gap-4 p-4 lg:px-8 xl:gap-8"
 			>
 				<ul class="mt-12 flex flex-col">
-					{#each navigationLinks as link}
+					{#each navigationLinks as link (link.label)}
 						{@const { label, href: absoluteHref } = link}
 						{@const href = localizeHref(absoluteHref)}
 						<li class="border-b-border border-b-[1px] last:border-b-0">
@@ -115,7 +115,7 @@
 				</ul>
 				<div>
 					<ul>
-						{#each otherLinks as link}
+						{#each otherLinks as link (link.label)}
 							{@const { label, href: absoluteHref } = link}
 							{@const href = localizeHref(absoluteHref)}
 							<li>
@@ -145,7 +145,7 @@
 			}}
 			class="bg-primary fixed top-0 right-0 bottom-0 z-30 flex w-18 items-center justify-center shadow-sm transition-all md:w-1/3"
 		>
-			{#each navigationLinks as link}
+			{#each navigationLinks as link (link.label)}
 				{@const { label, href: absoluteHref, image: src } = link}
 				{@const href = localizeHref(absoluteHref)}
 				<a

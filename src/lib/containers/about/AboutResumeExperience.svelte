@@ -44,7 +44,7 @@
 			{experience.startDate.getFullYear()}
 		</span>
 		{#if !isLast}
-			<div class={`border-primary absolute -bottom-4 h-[calc(100%-4rem)] border`}></div>
+			<div class="border-primary absolute -bottom-4 h-[calc(100%-4rem)] border"></div>
 		{/if}
 	</div>
 	<div>

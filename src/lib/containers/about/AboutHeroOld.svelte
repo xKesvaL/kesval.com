@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { IconBarbell, IconDevices, IconPhotoOff, IconRocket } from '@tabler/icons-svelte';
 	import * as m from '$paraglide/messages';
-	import { translate } from '$lib/utils/i18n';
 	import { brand } from '$lib/utils/config';
 </script>
 

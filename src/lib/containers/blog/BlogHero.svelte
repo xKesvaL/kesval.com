@@ -93,7 +93,7 @@
 						{selectedSortLabel}
 					</Select.Trigger>
 					<Select.Content>
-						{#each sortOptions as option}
+						{#each sortOptions as option (option.value)}
 							<Select.Item value={option.value} label={option.label}>
 								{option.label}
 							</Select.Item>
@@ -106,7 +106,7 @@
 		<!-- Tag Filters -->
 		<div class="flex flex-wrap items-center gap-2">
 			<span class="text-muted-foreground text-sm font-medium">{m['common.filter_tags']()}:</span>
-			{#each allPostTags as tag}
+			{#each allPostTags as tag (tag)}
 				{@const isSelected = selectedTags.includes(tag)}
 				<Badge
 					variant={isSelected ? 'default' : 'outline'}
@@ -134,7 +134,7 @@
 		<!-- Posts Grid -->
 		{#await filteredPostsPromise}
 			<div class="grid gap-8 md:grid-cols-2 lg:gap-12">
-				{#each Array(4) as _}
+				{#each Array(4) as _ (_)}
 					<div class="bg-muted animate-pulse rounded-lg p-6">
 						<div class="bg-muted-foreground/20 mb-4 h-40 rounded"></div>
 						<div class="bg-muted-foreground/20 mb-2 h-6 w-3/4 rounded"></div>

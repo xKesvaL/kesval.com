@@ -2,7 +2,6 @@
 	import inView from '$lib/actions/inView';
 	import { IsMobile } from '$lib/hooks/is-mobile.svelte';
 	import { translate } from '$lib/utils/i18n';
-	import * as m from '$paraglide/messages';
 	import { getLocale } from '$paraglide/runtime';
 	import NumberFlow, { continuous } from '@number-flow/svelte';
 	import { IconAward, IconClipboardCheck, IconUserStar } from '@tabler/icons-svelte';
@@ -45,7 +44,7 @@
 				<div
 					class=" bg-primary-foreground/5 hover:bg-primary-foreground/10 border-primary-foreground/10 flex flex-col rounded-xl border p-6 pt-2 backdrop-blur-lg transition"
 					use:inView={{
-						onEnter: (entry) => updateValues(key as keyof Values)
+						onEnter: () => updateValues(key as keyof Values)
 					}}
 				>
 					<div class="flex items-center gap-4">

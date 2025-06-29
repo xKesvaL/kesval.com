@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { educationExperience, professionalExperience } from '$lib/utils/experience';
-	import { translate } from '$lib/utils/i18n';
 	import * as m from '$paraglide/messages';
 	import AboutResumeExperience from './AboutResumeExperience.svelte';
 	import AboutResumeSection from './AboutResumeSection.svelte';

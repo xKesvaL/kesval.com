@@ -35,6 +35,7 @@
 		"@tanstack/table-core": "^8.21.3",
 		"@types/gsap": "^3.0.0",
 		"@types/gtag.js": "^0.0.20",
+		"@types/node": "^24.0.7",
 		"@types/web-app-manifest": "^1.0.9",
 		"@velite/plugin-vite": "^0.0.1",
 		"bits-ui": "^2.8.8",

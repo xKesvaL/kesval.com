@@ -53,7 +53,7 @@
 			{m['blog.related_posts']()}
 		</h3>
 		<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-			{#each relatedPosts as post}
+			{#each relatedPosts as post (post.slug)}
 				<Card class="overflow-hidden transition-shadow hover:shadow-lg">
 					<a href={localizeHref(`/blog/${post.slugClean}`)} data-sveltekit-preload-data="hover">
 						{#if post.cover}

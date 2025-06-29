@@ -5,7 +5,7 @@
 	import Button from '$lib/components/ui/button/button.svelte';
 	import { route } from '$lib/ROUTES';
 	import { localizeHref } from '$paraglide/runtime';
-	import { IconBrandFigma, IconCode, IconPlus, IconRocket } from '@tabler/icons-svelte';
+	import { IconPlus, IconRocket } from '@tabler/icons-svelte';
 	import Sparkles from '$lib/components/base/Sparkles.svelte';
 </script>
 

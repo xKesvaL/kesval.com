@@ -2,7 +2,7 @@
 	import { page } from '$app/state';
 	import type { Post } from '$content/index';
 	import { brand, type OgImage } from '$lib/utils/config';
-	import { extractLocaleFromUrl, getLocale } from '$paraglide/runtime';
+	import { extractLocaleFromUrl } from '$paraglide/runtime';
 
 	let {
 		metadata,

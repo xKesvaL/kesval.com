@@ -22,7 +22,7 @@
 	} from '@tabler/icons-svelte';
 	import { gsap } from 'gsap';
 	import { hover } from 'motion';
-	import { onMount, tick } from 'svelte';
+	import { tick } from 'svelte';
 	import { route } from '$lib/ROUTES';
 	import { Button } from '$lib/components/ui/button';
 	import type { Attachment } from 'svelte/attachments';
@@ -36,7 +36,6 @@
 	let { form: formServer }: Props = $props();
 
 	let success = $state(false);
-	let hoveredPanel: 'form' | 'calendar' | null = $state(null);
 
 	// Initialize the superForm instance
 	const form = superForm(formServer, {

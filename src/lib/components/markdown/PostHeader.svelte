@@ -54,7 +54,7 @@
 				<div class="flex items-center gap-1.5">
 					<IconTag class="h-4 w-4" />
 					<div class="flex flex-wrap gap-1">
-						{#each metadata.tags as tag}
+						{#each metadata.tags as tag (tag)}
 							<Badge variant="secondary" class="text-xs">{tag}</Badge>
 						{/each}
 					</div>
