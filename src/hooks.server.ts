@@ -1,5 +1,23 @@
-import { i18n } from "$lib/utils/i18n";
+import type { Handle, HandleServerError } from '@sveltejs/kit';
+import { paraglideMiddleware } from '$lib/paraglide/server';
 
-import { sequence } from "@sveltejs/kit/hooks";
+// creating a handle to use the paraglide middleware
+const paraglideHandle: Handle = ({ event, resolve }) =>
+	paraglideMiddleware(event.request, ({ request: localizedRequest, locale }) => {
+		event.request = localizedRequest;
+		return resolve(event, {
+			transformPageChunk: ({ html }) => {
+				return html.replace('%lang%', locale);
+			}
+		});
+	});
 
-export const handle = sequence(i18n.handle());
+export const handle: Handle = paraglideHandle;
+
+export const handleError: HandleServerError = async ({ error, message }) => {
+	console.error('Server error:', error);
+
+	return {
+		message: `Error: ${message}`
+	};
+};

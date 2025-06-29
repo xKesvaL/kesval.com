@@ -1,6 +1,8 @@
 <script lang="ts">
-	import SparklesSingle from '$lib/components/base/SparklesSingle.svelte';
 	import { onDestroy, onMount } from 'svelte';
+	import SparkleSingle from './SparkleSingle.svelte';
+	import type { WithChildren } from 'bits-ui';
+	import { cn } from '$lib/utils/ui';
 
 	interface SparkleType {
 		id: string;
@@ -10,28 +12,39 @@
 		style: { top: string; left: string };
 	}
 
-	export let color: 'primary' | 'secondary' | 'tertiary' = 'tertiary';
-	export let highlight: 'off' | 'primary' | 'secondary' | 'tertiary' = 'off';
-	export let size: 10 | 20 | 30 = 20;
+	type Props = WithChildren<{
+		color?: 'primary' | 'special';
+		highlight?: 'off' | 'primary' | (string & {});
+		size?: 10 | 20 | 30;
+		class?: string;
+	}>;
+
+	let {
+		color = 'primary',
+		highlight = 'off',
+		size = 20,
+		children,
+		class: _class
+	}: Props = $props();
+
 	const random = (min: number, max: number) => Math.floor(Math.random() * (max - min)) + min;
 
 	const generateSparkle = (): SparkleType => {
 		return {
 			id: String(random(10000, 99999)),
 			createdAt: Date.now(),
-			color: `hsl(var(--${color}))`,
+			color: color,
 			size: random(size, size * 2).toString(),
 			style: {
 				// Pick a random spot in the available space
-				top: random(-10, 100) + '%',
-				left: random(-10, 110) + '%'
+				top: random(-30, 100) + '%',
+				left: random(-10, 100) + '%'
 			}
 		};
 	};
 
-	let sparkles: SparkleType[] = [];
-	// eslint-disable-next-line no-undef
-	let sparklesInterval: NodeJS.Timeout;
+	let sparkles = $state<SparkleType[]>([]);
+	let sparklesInterval = $state<NodeJS.Timeout>();
 
 	onMount(() => {
 		sparklesInterval = setInterval(() => {
@@ -49,27 +62,27 @@
 	onDestroy(() => {
 		clearInterval(sparklesInterval);
 	});
+
+	let highlightClass = $derived.by(() => {
+		switch (highlight) {
+			case 'off':
+				return '';
+			case 'primary':
+				return 'from-primary bg-gradient-to-br to-purple-600 bg-clip-text text-transparent';
+
+			default:
+				return `text-[var(--${highlight})]`;
+		}
+	});
 </script>
 
-<span class="sparkle-wrapper -z-50">
+<span class={cn('relative isolate inline-block', _class)}>
 	{#each sparkles as sparkle (sparkle.id)}
-		<SparklesSingle color={sparkle.color} size={sparkle.size} style={sparkle.style} />
+		<SparkleSingle color={sparkle.color} size={sparkle.size} style={sparkle.style} />
 	{/each}
-	<span
-		class="slot-wrapper relative"
-		style={highlight !== 'off' ? `color: hsl(var(--${highlight})); font-weight: 700;` : ''}
-	>
-		<slot />
+	<span class={cn('relative z-0', highlightClass)}>
+		{#if children}
+			{@render children()}
+		{/if}
 	</span>
 </span>
-
-<style lang="scss">
-	.sparkle-wrapper {
-		position: relative;
-		display: inline-block;
-
-		.slot-wrapper {
-			position: relative;
-		}
-	}
-</style>

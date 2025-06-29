@@ -1,45 +1,52 @@
-import { sveltekit } from "@sveltejs/kit/vite";
-import { defineConfig } from "vite";
-import { kitRoutes } from "vite-plugin-kit-routes";
-import { resolve } from "node:path";
-import { enhancedImages } from "@sveltejs/enhanced-img";
-import type { KIT_ROUTES } from "$lib/ROUTES";
-import { PERSONAL } from "./src/lib/data/personal";
-import { paraglide } from "@inlang/paraglide-sveltekit/vite";
-import { nodePolyfills } from 'vite-plugin-node-polyfills';
+import { paraglideVitePlugin } from '@inlang/paraglide-js';
+import tailwindcss from '@tailwindcss/vite';
+import { sveltekit } from '@sveltejs/kit/vite';
+import { defineConfig } from 'vite';
+import { enhancedImages } from '@sveltejs/enhanced-img';
+import { kitRoutes } from 'vite-plugin-kit-routes';
+import type { KIT_ROUTES } from './src/lib/ROUTES';
+import { urlPatterns } from './src/lib/utils/pathnames';
+import { resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { tablerIconsTreeShakePlugin } from './src/lib/utils/vite';
+import velite from '@velite/plugin-vite';
+import devtoolsJson from 'vite-plugin-devtools-json';
+
+const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
 export default defineConfig({
-	plugins: [
-		paraglide({
-			outdir: "./src/paraglide",
-			project: "./project.inlang",
-		}),
-		kitRoutes<KIT_ROUTES>({
-			format: "route(path)",
-			LINKS: {
-				linkedin: {
-					href: "https://www.linkedin.com/in/jordan-abeddou/",
-				},
-				email: {
-					href: `mailto:${PERSONAL.email}`,
-				},
-				github: {
-					href: "https://github.com/xKesvaL",
-				},
-				instagram: {
-					href: "https://www.instagram.com/xKesvaL/",
-				},
-			},
-		}),
-		enhancedImages(),
-		nodePolyfills(),
-		sveltekit(),
-	],
-	define: {
-		alias: {
-			$assets: resolve("/src/assets"),
-			$routes: resolve("./src/routes"),
-			$paraglide: resolve("./src/paraglide"),
-		},
+	build: {
+		target: ['es2022', 'chrome90', 'safari14.1', 'firefox87']
 	},
+	plugins: [
+		kitRoutes<KIT_ROUTES>(),
+		enhancedImages(),
+		sveltekit(),
+		tailwindcss(),
+		paraglideVitePlugin({
+			project: './project.inlang',
+			outdir: './src/lib/paraglide',
+			strategy: ['url', 'cookie', 'preferredLanguage', 'baseLocale'],
+			outputStructure: 'message-modules',
+			urlPatterns: urlPatterns,
+			emitGitIgnore: false
+		}),
+		tablerIconsTreeShakePlugin(),
+		velite(),
+		devtoolsJson()
+	],
+	resolve: {
+		alias: {
+			// Map the deep import to the actual folder in the package.
+			'@tabler/icons-svelte/icons': resolve(
+				__dirname,
+				'node_modules/@tabler/icons-svelte/dist/icons'
+			)
+		}
+	},
+	server: {
+		fs: {
+			allow: ['./.velite']
+		}
+	}
 });

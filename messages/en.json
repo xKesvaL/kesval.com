@@ -1,194 +1,581 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
-	"about_hero_title": "I aim to be versatile.",
-	"about_name": "About",
-	"about_socials_title": "Socials",
-	"about_languages": "English, French",
-	"about_languages_title": "Languages",
-	"about_language_french": "Native (C2)",
-	"about_language_english": "Close to native (C1)",
-	"about_language_german": "Elementary (A2)",
-	"about_experience": "Experience",
-	"about_education": "Education",
-	"about_skills": "Skills",
-	"about_tools": "Tools",
-	"common_brand_profile": "{brand} profile",
-	"common_now": "Now",
-	"language_english": "English",
-	"language_french": "French",
-	"language_german": "German",
-	"experience_job_fullstack_dev": "Fullstack Developer",
-	"experience_job_tech_assistant": "Tech Assistant",
-	"experience_olwe_title": "OLWE Development",
-	"experience_olwe_description": "Fullstack Developer, mostly on web apps using React with Next for the front-end and Express with MariaDB on the back-end.",
-	"experience_kesval_title": "Freelance Developer",
-	"experience_kesval_description": "Working for myself as a fullstack web developer. I'm open to small work! I also create my own little things and open source them.",
-	"experience_ciotadin_office_title": "The Ciotadin Office",
-	"experience_ciotadin_office_description": "Assistant and receptionist for a general purpose computer science repair shop.",
-	"common_present": "Present",
-	"experience_uha_title": "UHA (University)",
-	"experience_uha_description": "Student in Multimedia and Internet at the University of Mulhouse. This is a 3-year degree, and is linked to my job at OLWE Development. (apprenticeship)",
-	"experience_theodore_deck_title": "Théodore Deck HS",
-	"experience_theodore_deck_description": "Student in computer science and mathematics, I got my high school degree.",
-	"experience_job_mmi": "Multimedia & Internet",
-	"experience_job_student": "Student",
-	"experience_job_hs_degree": "HS Degree (Maths & IT)",
-	"blog_name": "Blog",
-	"bot_answers_confirmHire_0": "Great, you can contact me here:",
-	"bot_answers_confirmHire_1": "e-mail: <a href='mailto:{email}' class='special-link'>{email}</a>",
-	"bot_answers_confirmHire_2": "Can I help you with anything else?",
-	"bot_answers_first_0": "Hello! 👋",
-	"bot_answers_first_1": "I'm KesvaL Bot. I'm here to help you with your questions about KesvaL (Jordan).",
-	"bot_answers_first_2": "What would you like to know?",
-	"bot_answers_hire_0": "Wonderful!",
-	"bot_answers_hire_1": "Send me a message and let's chat about it!",
-	"bot_answers_hire_2": "Oh, and, I'm looking for little personal side jobs, not full-time jobs.",
-	"bot_answers_looking_0": "Nice!",
-	"bot_answers_looking_1": "I'm glad you're interested in myself.",
-	"bot_answers_looking_2": "I hope you're enjoying my work.",
-	"bot_answers_looking_3": "Can I help you with anything else?",
-	"bot_answers_other_0": "Okay, no problem.",
-	"bot_answers_other_1": "Can I help you with anything else?",
-	"bot_answers_teachHTMLCSS_0": "Well, I strongly suggest <a target=\"_blank\" href=\"https://www.freecodecamp.org/learn/2022/responsive-web-design/\" class=\"special-link\" rel=\"external\">this course</a> from freeCodeCamp.",
-	"bot_answers_teachHTMLCSS_1": "It's free, interactive and you will learn everything from basics to advanced stuff.",
-	"bot_answers_teachHTMLCSS_2": "You can still contact me on my <a href=\"/about?scroll=socials\" class=\"special-link\">socials</a> if you have any questions.",
-	"bot_answers_teachJS_0": "Well, I strongly suggest <a target=\"_blank\" href=\"https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/\" class=\"special-link\" rel=\"external\">this course</a> from freeCodeCamp.",
-	"bot_answers_teachJS_1": "It's free, interactive and you will learn everything from basics to advanced stuff.",
-	"bot_answers_teachJS_2": "You can still contact me on my <a href=\"/about?scroll=socials\" class=\"special-link\">socials</a> if you have any questions.",
-	"bot_answers_teachMe_0": "Hum, sure, I'm not a teacher but I can give you resources or help you.",
-	"bot_answers_teachMe_1": "What do you want to learn?",
-	"bot_answers_teachSvelte_0": "Svelte is a great framework, and I would say it is as simple as any other framework.",
-	"bot_answers_teachSvelte_1": "You can check out this <a target=\"_blank\" href=\"https://www.youtube.com/@WebDevSimplified\" class=\"special-link\" rel=\"external\">channel</a> to learn more about React, and then implement it in Svelte.",
-	"bot_answers_teachSvelte_2": "Or, simply try to make a Svelte project and you'll learn a lot by doing it. A simple thing like a ToDo app is a good start.",
-	"bot_answers_teachSvelte_3": "You can still contact me on my <a href='/about?scroll=socials' class='special-link'>socials</a> if you have any questions.",
-	"bot_askMeAnything": "Ask me anything!",
-	"bot_defaultQuestions_0_text": "Just looking!",
-	"bot_defaultQuestions_0_to": "looking",
-	"bot_defaultQuestions_1_text": "I want to hire you!",
-	"bot_defaultQuestions_1_to": "hire",
-	"bot_defaultQuestions_2_text": "Can you teach me?",
-	"bot_defaultQuestions_2_to": "teachMe",
-	"bot_questions_hire_0_text": "Yes I'm interested!",
-	"bot_questions_hire_0_to": "confirmHire",
-	"bot_questions_hire_1_text": "No, thanks.",
-	"bot_questions_hire_1_to": "other",
-	"bot_questions_teachMe_0_text": "HTML/CSS",
-	"bot_questions_teachMe_0_to": "teachHTMLCSS",
-	"bot_questions_teachMe_1_text": "JavaScript",
-	"bot_questions_teachMe_1_to": "teachJS",
-	"bot_questions_teachMe_2_text": "Svelte",
-	"bot_questions_teachMe_2_to": "teachSvelte",
-	"bot_title": "KesvaL Bot",
-	"bot_subtitle": "Ask me anything!",
-	"common_auto": "Auto",
-	"common_changeLanguage": "Change language",
-	"common_dark": "Dark",
-	"common_light": "Light",
-	"common_photoOfMe": "A photo of me! (KesvaL)",
-	"common_kesval_logo": "KesvaL logo",
-	"common_reset": "Reset",
-	"common_settings": "Settings",
-	"common_toggleMenu": "Toggle navigation",
-	"common_years_of_experience": "{years} years of experience",
-	"common_years_of_experience_slf": "Years of experience",
-	"common_years_of_coding": "{years} years of coding",
-	"common_years_of_coding_slf": "Years of coding",
-	"common_years_old": "{years} years old",
-	"common_years_old_slf": "years old",
-	"common_fullstack_developer": "Fullstack Developer",
-	"common_email": "Email",
-	"common_phone": "Phone",
-	"common_location": "Location",
-	"common_socials": "Socials",
-	"common_education": "Education",
-	"common_experience": "Experience",
-	"common_languages": "Languages",
-	"common_website": "Website",
-	"common_profile_picture": "Profile Picture",
-	"contact_name": "Contact",
-	"home_about_title": "Me, Myself & I",
-	"home_about_ambitious": "Ambitious",
-	"home_about_button": "Learn more about me",
-	"home_about_descriptions_0": "Interested in development since I was a child, I began coding at the age of 8 with the creation of minecraft plugins and mods.",
-	"home_about_descriptions_1": "Then, as discord rose in popularity, I moved on to making discord bots. As of today, I'm a fullstack web developer as you can see!",
-	"home_about_openSourceContributions": "Open Source Contributions",
-	"home_about_passionate": "Passionate",
-	"home_about_professionalExperiences": "Professional experiences",
-	"home_about_projectsDelivered": "Projects delivered",
-	"home_hero_contactMe": "Contact Me",
-	"home_hero_description": "I am a full-stack developer with a passion for building performant, beautiful and accessible websites and applications.",
-	"home_hero_subtitle": "Fullstack Developer",
-	"home_hero_title": "Hi. I'm KesvaL.",
-	"home_hero_workWithMe": "Work With Me",
-	"home_work_discoverMore": "See more projects",
-	"home_work_discoverProject": "Discover {project}",
-	"home_work_title": "A glimpse of my projects",
-	"home_name": "Home",
-	"projects_supapower_name": "SupaPower",
-	"projects_supapower_description": "I love going to the gym, but finding a good program can be hard or expensive. So I made SupaPower, an open-source app made to to help you track your workouts and create a program suited to your needs.",
-	"projects_supapower_excerpt": "Track your workouts and find a program suited to your needs.",
-	"projects_portfolio_name": "Portfolio",
-	"projects_portfolio_description": "Web identity is important, and I think it's very cool to share things with the world. So I made this website to share my work and my thoughts.",
-	"projects_portfolio_excerpt": "My own website to share my work and my thoughts made with TypeScript, SvelteKit, TailwindCSS and Shadcn/ui.",
-	"projects_kesval_name": "KesvaL Identity",
-	"projects_kesval_description": "KesvaL is my personal brand, but a brand is nothing without a visual identity. So I made this this identity to represent myself.",
-	"projects_kesval_excerpt": "My personal brand identity made with Figma. It includes brand guidelines, adaptations for digital medias and print medias.",
-	"settings_chooseATheme": "Choose a theme",
-	"settings_dyslexia": "Dyslexic font",
-	"settings_label": "Settings",
-	"settings_readingHeight": "Blog line height",
-	"settings_readingLength": "Blog reading length",
-	"settings_readingSize": "Blog font size",
-	"skills_back_end": "Back-end",
-	"skills_front_end": "Front-end",
-	"skills_other": "Other",
-	"std_bottom": "bottom",
-	"std_scrollTo": "scroll to",
-	"std_top": "top",
-	"title": "test",
-	"work_name": "Work",
-	"tools_vscode": "Code Editor",
-	"tools_figma": "UI Design, Prototyping",
-	"tools_notion": "Project Management",
-	"tools_vercel": "Serverless Deployment",
-	"tools_github": "Version Control",
-	"tools_webstorm": "Code Editor",
-	"tools_dribbble": "Design Inspiration",
-	"about_path": "/about",
-	"work_path": "/work",
-	"blog_path": "/blog",
-	"seo_home_title": "Home",
-	"seo_home_description": "KesvaL's personal website. Fullstack developer, passionate about building performant, beautiful and accessible websites and applications.",
-	"seo_about_title": "About",
-	"seo_about_description": "Discover KesvaL's credentials, skills, tools and experiences.",
-	"seo_work_title": "Work",
-	"seo_work_description": "Discover KesvaL's projects and work, and get a glimpse of his skills and experiences.",
-	"seo_blog_title": "Blog",
-	"seo_blog_description": "Discover KesvaL's blog, where he shares his thoughts and experiences.",
-	"category_branding": "Branding",
-	"category_web_app": "Web App",
-	"category_mobile_app": "Mobile App",
-	"category_game": "Game",
-	"category_api": "API",
-	"category_library": "Library",
-	"category_tool": "Tool",
-	"category_other": "Other",
-	"category_website": "Website",
-	"common_logo_of": "Logo of {brand}",
-	"home_hero_my_resume": "My resume",
-	"common_github_profile": "GitHub Profile",
-	"common_linkedin_profile": "LinkedIn Profile",
-	"common_current": "Current",
-	"common_skills": "Skills",
-	"common_about": "About",
-	"resume_about": "I'm a passioned fullstack developer. I started when I was 8, writing my first lines of code in Java, creating minecraft mods. I then moved to web development, and I'm now working with the latest technologies, such as Svelte, Bun and TypeScript. Later, I want to create apps for everyone that simplify life.",
-	"resume_education": "I have a High School Diploma in Computer Science and Mathematics, and I'm currently studying at the University of Mulhouse, in Multimedia and Internet, where I'm learning about web development, communication, 3D, video, and audio. I'm in my second year and currently majoring in web development.",
-	"lolfunxd": "I might have no idea what to put here",
-	"lolfunxdreal": "Okay I actually have no idea what to put here",
-	"copy_link": "Copy link",
-	"by_author": "By {author}",
-	"cancel": "Cancel",
-	"share_to_platform": "Share to {platform}",
-	"share_post": "Share this post",
-	"share_post_content": "Check out this post, \"{title}\" on KesvaL's blog! {url}"
+	"nav": {
+		"home": "Home",
+		"about": "About",
+		"projects": "Projects",
+		"blog": "Blog",
+		"contact": "Contact",
+		"services": "Services",
+		"legal_notice": "Legal Notice",
+		"privacy_policy": "Privacy Policy",
+		"github": "GitHub",
+		"instagram": "Instagram",
+		"linkedin": "LinkedIn",
+		"cookies_preferences": "Cookie Preferences",
+		"cgv": "Terms of Service"
+	},
+	"home": {
+		"hero": {
+			"title_before": "Crafting Digital ",
+			"title_highlight": "Experiences",
+			"title_after": " from A to Z",
+			"subtitle": "More than a developer, your trusted partner. I am committed to working alongside you to create high-performance web solutions and simplify the digital world for you.",
+			"view_projects": "View Projects",
+			"see_all": "See all",
+			"years_of_experience": "{years} years of experience",
+			"full_stack_development": "Full-Stack Development",
+			"ui_ux_design": "UI/UX Design"
+		},
+		"about": {
+			"experience": "years of expertise",
+			"experience_description": "With over 3 years of experience, we design custom web solutions, from showcase sites to complex applications, for a diverse clientele.",
+			"projects": "completed projects",
+			"projects_description": "We have had the pleasure of working on numerous projects, ranging from elegant showcase sites to complex web applications.",
+			"clients": "satisfied clients",
+			"clients_description": "Our greatest pride is supporting our clients in their digital transformation and actively contributing to their growth."
+		},
+		"clients": {
+			"title": "We have collaborated with exceptional clients"
+		},
+		"projects": {
+			"title": "Our latest projects",
+			"above_title": "Selected Projects",
+			"description": "Discover the latest projects we have had the pleasure of completing."
+		}
+	},
+	"contact": {
+		"hero": {
+			"get_your_free_quote": "Get your free quote",
+			"description": "Tell us about your project, and we will get back to you within 24 hours with a custom proposal.",
+			"name": "Name",
+			"name_placeholder": "Your full name",
+			"email": "Email",
+			"email_placeholder": "your@email.com",
+			"company": "Company",
+			"company_placeholder": "Your company name (optional)",
+			"your_project": "Your project",
+			"your_project_placeholder": "Describe your project, goals, needs, and expectations...",
+			"get_my_free_quote": "Get my free quote",
+			"quick_response": "Quick response guaranteed within 24 hours",
+			"success_title": "Message sent successfully!",
+			"success_message": "Thank you for contacting us! We will get back to you as soon as possible.",
+			"send_another_message": "Send another message",
+			"submitting": "Submitting...",
+			"contact_us_title": "Contact us",
+			"contact_us_description": "Let's discuss your project. Here are the different ways to reach us.",
+			"our_advantages": "Our advantages",
+			"our_advantages_fast": "Quick response within 24h",
+			"our_advantages_client": "A relationship of trust",
+			"our_advantages_expert": "Expertise at your service"
+		}
+	},
+	"contact_us": "Let's talk",
+	"see_all": "See all",
+	"see_more": "See more",
+	"about_us": "About us",
+	"lets_talk_about_it": "Let's talk about it!",
+	"our_email": "Our email",
+	"kesval_logo": "KesvaL Logo",
+	"github_profile": "GitHub Profile",
+	"instagram_profile": "Instagram Profile",
+	"linkedin_profile": "LinkedIn Profile",
+	"years_old": "{years} years old",
+	"years_of_experience": "{years} years of experience",
+	"present": "Present",
+	"soon_tm": "Soon™",
+	"change_language": "Change language",
+	"brand": {
+		"the_studio": "The Studio",
+		"connect": "Networks",
+		"doing": "Web & mobile development"
+	},
+	"footer": {
+		"copyright": "© {year} {brand}. All rights reserved.",
+		"cta": {
+			"title": "Have a project in mind?",
+			"secondary": {
+				"title": "A question, some advice?",
+				"description": "We are here to listen and advise you, with no obligation!"
+			},
+			"other": "Or, let's stay connected on..."
+		},
+		"others": "Others"
+	},
+	"projects": {
+		"portfolio_kesval": {
+			"title": "test",
+			"name": "KesvaL™ Portfolio",
+			"description": "Our portfolio"
+		},
+		"not_found": "Project {projectId} not found",
+		"view_all": "View all projects",
+		"view_details": "View details",
+		"title": "Projects",
+		"description": "Discover our recent projects and the solutions we have provided to our clients.",
+		"placeholder": {
+			"search": "Search for a project...",
+			"no_results": "No projects found.",
+			"no_results_description": "Try other keywords or check the spelling."
+		},
+		"wip": {
+			"title": "This page is a work in progress!",
+			"description": "Sorry for the inconvenience. Go back to the",
+			"projects_page": "projects page"
+		}
+	},
+	"common": {
+		"view_case_study": "View case study",
+		"visit_site": "Visit site",
+		"visit": "Visit",
+		"others": "Others",
+		"sort_newest": "Sort by newest",
+		"sort_oldest": "Sort by oldest",
+		"sort_az": "Sort A to Z",
+		"sort_za": "Sort Z to A",
+		"sort_by": "Sort by",
+		"filter_tags": "Filter by tags",
+		"clear_filters": "Clear filters",
+		"clear_filters_button": "Clear",
+		"copy_link": "Copy link",
+		"published_on_date": "Published on {date}",
+		"updated_on_date": "Updated on {date}",
+		"see_our_projects": "See our projects",
+		"cta_small": "Launch your project",
+		"cta_self": "I'm launching my project",
+		"cta_big": "Launch your project today",
+		"your_name_here": "Your name here",
+		"email": "Email",
+		"back": "Back",
+		"free_quote": "Free quote",
+		"kesval_logo": "KesvaL's logo",
+		"link_copied_to_clipboard": "Link copied to clipboard!"
+	},
+	"meta": {
+		"home": {
+			"title": "Home"
+		},
+		"services": {
+			"title": "Our Services",
+			"site_vitrine": {
+				"title": "Showcase Site"
+			},
+			"applications_web": {
+				"title": "Web & Mobile Applications"
+			},
+			"design": {
+				"title": "UX/UI Design"
+			},
+			"automatisation": {
+				"title": "Process Automation"
+			},
+			"maintenance": {
+				"title": "Maintenance & Support"
+			},
+			"agences": {
+				"title": "Services for Agencies"
+			}
+		},
+		"projets": {
+			"title": "Projects"
+		},
+		"blog": {
+			"title": "Blog"
+		},
+		"contact": {
+			"title": "Contact"
+		},
+		"mentions_legales": {
+			"title": "Legal Notice"
+		},
+		"conditions_generales_de_vente": {
+			"title": "Terms of Service"
+		}
+	},
+	"cgv": {
+		"title": "Terms of Service",
+		"last_updated": "Last updated",
+		"preamble": "These general terms and conditions of sale (hereinafter 'TOS') govern the contractual relations between KesvaL Studio, a sole proprietorship managed by Jordan ABEDDOU, and its clients. Any order implies unreserved acceptance of these TOS.",
+		"section_1": {
+			"title": "Article 1: Purpose",
+			"content": "KesvaL Studio offers service provisions in the field of web development, including the creation of websites, web application development, maintenance, technical audits, and process automation, in accordance with the quote accepted by the client."
+		},
+		"section_2": {
+			"title": "Article 2: Quote and Order",
+			"content_1": "All services are subject to a prior quote, valid for one month. The order is confirmed by signing the quote with the mention 'Bon pour accord' (Approved) and the payment of a 30% deposit of the total amount, unless otherwise specified.",
+			"content_2": "Signing the quote implies full and complete acceptance of these TOS."
+		},
+		"section_3": {
+			"title": "Article 3: Rates and Payment",
+			"content_1": "The prices of the services are indicated in euros (€) and are not subject to VAT (VAT not applicable, art. 293 B of the CGI).",
+			"content_2": "The balance is due upon delivery of the service. In case of late payment, late payment penalties will be applied, in accordance with current legislation.",
+			"content_3": "For long-term projects, staggered payments may be defined in the quote."
+		},
+		"section_4": {
+			"title": "Article 4: Realization and Delivery",
+			"content_1": "KesvaL Studio undertakes to use all necessary means to perform the service within the agreed deadlines. Deadlines are given for information only and any delay shall not give rise to damages.",
+			"content_2": "Delivery is made by putting the site online or providing the defined deliverables. The client has 15 days to express any reservations (acceptance testing)."
+		},
+		"section_5": {
+			"title": "Article 5: Client's Obligations",
+			"content_1": "The client undertakes to provide KesvaL Studio with all the elements (texts, images, etc.) necessary for the realization of the service. Any delay in providing these elements may impact the delivery time.",
+			"content_2": "The client guarantees that they hold the intellectual property rights to the elements provided."
+		},
+		"section_6": {
+			"title": "Article 6: Intellectual Property",
+			"content_1": "Unless otherwise specified, KesvaL Studio transfers to the client the rights of reproduction and representation on the created works, after full payment of the project. KesvaL Studio reserves the right to mention its creation for the promotion of its activity."
+		},
+		"section_7": {
+			"title": "Article 7: Liability",
+			"content_1": "KesvaL Studio is subject to an obligation of means. Its liability cannot be engaged for indirect damages or for problems related to the client's server or hosting.",
+			"content_2": "The liability of KesvaL Studio is limited to the amount of the service."
+		},
+		"section_8": {
+			"title": "Article 8: Confidentiality",
+			"content": "Each party undertakes not to disclose the confidential information of the other party, during and after the term of the contract."
+		},
+		"section_9": {
+			"title": "Article 9: Force Majeure",
+			"content": "The occurrence of a case of force majeure has the effect of suspending the performance of KesvaL Studio's contractual obligations."
+		},
+		"section_10": {
+			"title": "Article 10: Applicable Law and Jurisdiction",
+			"content": "This contract is subject to French law. In the event of a dispute, and after an attempt at amicable resolution, jurisdiction is attributed to the competent courts."
+		}
+	},
+	"start_now": "I'm starting",
+	"skills": {
+		"front_end": "Front-end",
+		"back_end": "Back-end",
+		"ui_ux": "UI/UX",
+		"devops": "DevOps",
+		"cms": "CMS",
+		"figma": "Figma",
+		"project_management": "Project Management"
+	},
+	"blog": {
+		"title": "Blog",
+		"description": "Discover our latest articles",
+		"x_min_read": "{readingTime} min read",
+		"share_this_post": "Share this article",
+		"share_on_x": "Share on {x}",
+		"related_posts": "Related articles",
+		"read_more": "Read more",
+		"placeholder": {
+			"search": "Search for an article...",
+			"no_results": "No articles found.",
+			"no_results_description": "Try other keywords or check the spelling."
+		},
+		"sort": {
+			"title_asc": "Title A-Z",
+			"title_desc": "Title Z-A",
+			"reading_time_asc": "Shortest read",
+			"reading_time_desc": "Longest read"
+		},
+		"toc": {
+			"title": "Table of Contents"
+		}
+	},
+	"levels": {
+		"founder": "Founder"
+	},
+	"roles": {
+		"fullstack_dev": "Fullstack Developer",
+		"ui_ux_designer": "UI/UX Designer"
+	},
+	"team": {
+		"jordan": {
+			"description": "Passionate about programming, I want to make the web better for everyone. I love cats."
+		},
+		"expertise": "Expertise"
+	},
+	"services": {
+		"web_on_premise": {
+			"title": "Custom showcase site",
+			"description": "We create your high-performance showcase or e-commerce site with the latest technologies.",
+			"feature_1": "Custom design",
+			"feature_2": "Modern and mobile-optimized showcase site",
+			"feature_3": "SEO-optimized site",
+			"feature_4": "Performance and security guaranteed",
+			"bonus_1": "3 months of hosting free",
+			"bonus_2": "1 month of support included",
+			"details": {
+				"title_before": "Websites that ",
+				"title_highlight": "convert",
+				"title_after": " your visitors",
+				"description": "Your website is the face of your business. We create modern, high-performance websites, optimized for search engines and designed to meet your specific needs.",
+				"result_1": {
+					"amount": "+200%",
+					"short_description": "More visibility"
+				},
+				"result_2": {
+					"amount": "100%",
+					"short_description": "Optimized SEO"
+				},
+				"cta": "Create my site",
+				"see_more": "See examples"
+			}
+		},
+		"web_apps": {
+			"title": "Web & mobile applications",
+			"description": "Business tools and custom applications to optimize your processes.",
+			"feature_1": "Custom design",
+			"feature_2": "100% custom application",
+			"feature_3": "Agile project management",
+			"feature_4": "Third-party integration & security",
+			"bonus_1": "3 months of hosting free",
+			"bonus_2": "1 month of support included",
+			"details": {
+				"title_before": "Web & mobile applications that ",
+				"title_highlight": "transform",
+				"title_after": " your business",
+				"description": "We create custom applications to save you time and money by automating your processes and allowing you to focus on what really matters.",
+				"result_1": {
+					"amount": "50%",
+					"short_description": "Productivity gain"
+				},
+				"result_2": {
+					"amount": "15h/week",
+					"short_description": "Time savings"
+				},
+				"cta": "Start my project",
+				"see_more": "See a demo"
+			}
+		},
+		"design": {
+			"title": "UX/UI Design",
+			"description": "We design intuitive user interfaces, centered on your users.",
+			"feature_1": "In-depth UX research",
+			"feature_2": "100% prototyped design",
+			"feature_3": "Complete design system",
+			"feature_4": "Desktop & mobile design",
+			"bonus_1": "Co-design workshops",
+			"bonus_2": "User testing included",
+			"details": {
+				"title_before": "Designs that ",
+				"title_highlight": "seduce",
+				"title_after": " and convert",
+				"description": "We create intuitive user interfaces that turn your users into loyal customers and brand ambassadors.",
+				"result_1": {
+					"amount": "+180%",
+					"short_description": "More engagement"
+				},
+				"result_2": {
+					"amount": "95%",
+					"short_description": "Customer satisfaction"
+				},
+				"cta": "Create my design",
+				"see_more": "See our portfolio"
+			}
+		},
+		"automation": {
+			"title": "Process Automation",
+			"description": "We imagine and create custom solutions to automate your repetitive tasks.",
+			"feature_1": "Analysis of your processes",
+			"feature_2": "Development of custom scripts",
+			"feature_3": "Integration with your tools",
+			"feature_4": "Monitoring dashboard",
+			"bonus_1": "Training for your teams",
+			"bonus_2": "1 month of support & maintenance",
+			"details": {
+				"title_before": "Automation that ",
+				"title_highlight": "unleashes",
+				"title_after": " your potential",
+				"description": "We create custom solutions to automate your repetitive tasks, and save you time and money.",
+				"result_1": {
+					"amount": "+250%",
+					"short_description": "Productivity gain"
+				},
+				"result_2": {
+					"amount": "15h/week",
+					"short_description": "Time savings"
+				},
+				"cta": "Automate my tasks",
+				"see_more": "See examples"
+			}
+		},
+		"maintenance": {
+			"title": "Maintenance & support",
+			"description": "We provide ongoing monitoring and optimization of your digital solutions.",
+			"feature_1": "Security updates",
+			"feature_2": "Automatic backups",
+			"feature_3": "Performance optimization",
+			"feature_4": "Responsive technical support",
+			"bonus_1": "Monthly activity report",
+			"bonus_2": "24/7 monitoring",
+			"details": {
+				"title_before": "Maintenance that ",
+				"title_highlight": "protects",
+				"title_after": " your investment",
+				"description": "Your website is a valuable asset that requires regular maintenance. Our maintenance service guarantees its security, performance, and availability so you can focus on your business.",
+				"result_1": {
+					"amount": "24/7",
+					"short_description": "Monitoring"
+				},
+				"result_2": {
+					"amount": "95%",
+					"short_description": "Customer satisfaction"
+				}
+			}
+		},
+		"agencies": {
+			"title": "Services for Agencies",
+			"description": "We join your team as reinforcement or develop your projects under a white label.",
+			"feature_1": "White label intervention",
+			"feature_2": "Ad-hoc technical expertise",
+			"feature_3": "Respect for your processes",
+			"feature_4": "Transparent communication",
+			"bonus_1": "Flexibility and responsiveness",
+			"bonus_2": "Confidentiality guaranteed",
+			"details": {
+				"title_before": "The partner that ",
+				"title_highlight": "boosts",
+				"title_after": " your agency",
+				"description": "Grow your business without the constraints of recruitment. Our technical expertise becomes your strength to take on more projects and satisfy your most demanding clients.",
+				"result_1": {
+					"amount": "100%",
+					"short_description": "Projects delivered on time"
+				},
+				"result_2": {
+					"amount": "98%",
+					"short_description": "Customer satisfaction"
+				}
+			}
+		},
+		"our_services": {
+			"suptitle": "Our services",
+			"title": "Our expertise at your service",
+			"description": "We offer a full range of services to meet all your digital needs.",
+			"button": "Discover our services"
+		},
+		"benefits": {
+			"time_gain": {
+				"title": "Task automation",
+				"description": "Reduce manual tasks by 75% with our automation tools, and focus on what really matters."
+			},
+			"measurable_results": {
+				"title": "Measurable results",
+				"description": "Concretely measure the impact of our solutions on your digital presence, customer engagement, and profitability."
+			},
+			"tailor_made_solutions": {
+				"title": "Custom solutions",
+				"description": "We design custom solutions that precisely meet your needs, whatever your requirements."
+			}
+		},
+		"hero": {
+			"suptitle": "Web & mobile development",
+			"title": "Our services",
+			"description": "Discover our web and mobile development services, designed to meet your specific needs.",
+			"service_highlight": "Featured Service",
+			"from_x_euros": "From {price}€",
+			"from_x_euros_per_month": "From {price}€/month",
+			"adr_x_euros": "Daily rate {price}€",
+			"x_days_plus": "{days}+ days",
+			"variable": "Variable",
+			"flexible": "Flexible",
+			"continous": "Continuous",
+			"on_quote": "On quote",
+			"discover_this_service": "Discover this service",
+			"learn_more": "Learn more"
+		},
+		"work": {
+			"why_kesval_studio": "Why choose KesvaL Studio?",
+			"why_kesval_studio_description": "Our unique approach combines technical expertise and personalized support to ensure the success of your project.",
+			"why": {
+				"accompagnement": "Support",
+				"accompagnement_description": "From idea to launch, we support you at every stage of your digital project.",
+				"reactivity": "Reactivity & Flexibility",
+				"reactivity_description": "The agility of a freelancer with the rigor of an agency for optimized deadlines.",
+				"expertise": "Technical expertise",
+				"expertise_description": "Mastery of modern technologies and constant monitoring for high-performance solutions.",
+				"relation": "Relationship of trust",
+				"relation_description": "Transparent communication and personal commitment in each project."
+			}
+		}
+	},
+	"legal": {
+		"seo_title": "Legal Notice - KesvaL Studio",
+		"seo_meta_description": "Consult the legal notice of KesvaL Studio. Information about the site editor, hosting, intellectual property, and data collection.",
+		"title": "Legal Notice",
+		"last_updated": "Last updated",
+		"section_1": {
+			"title": "1. Legal information",
+			"owner_name_title": "Company name",
+			"owner_name_value": "Jordan ABEDDOU - Sole Proprietorship",
+			"owner_address_title": "Head office address",
+			"owner_address_value": "18 rue de Feldkirch, 68190 Ungersheim, France",
+			"owner_email_title": "Email address",
+			"owner_siret_title": "SIRET number",
+			"owner_siret_value": "929 685 188 00013",
+			"publication_director_title": "Publication director",
+			"publication_director_value": "Jordan ABEDDOU"
+		},
+		"section_2": {
+			"title": "2. Hosting",
+			"host_name_title": "Host",
+			"host_name_value": "Hetzner Online GmbH",
+			"host_address_title": "Host address",
+			"host_address_value": "Industriestr. 25, 91710 Gunzenhausen, Germany",
+			"host_phone_title": "Host phone",
+			"host_phone_value": "+49 (0)9831 505-0",
+			"host_website_title": "Host website",
+			"host_website_value": "www.hetzner.com"
+		},
+		"section_3": {
+			"title": "3. Intellectual property",
+			"content": "This entire site is subject to French and international legislation on copyright and intellectual property. All reproduction rights are reserved, including for downloadable documents and iconographic and photographic representations. The reproduction of all or part of this site on any electronic medium whatsoever is formally prohibited without the express authorization of the publication director."
+		},
+		"section_4": {
+			"title": "4. Personal data protection (GDPR)",
+			"intro": "We are committed to ensuring that the collection and processing of your data, carried out from the kesval.com site, comply with the General Data Protection Regulation (GDPR) and the French Data Protection Act.",
+			"data_controller": "The person responsible for processing personal data is Jordan ABEDDOU.",
+			"subsection_1": {
+				"title": "Data collection",
+				"content_1": "The personal data collected as part of the services offered on kesval.com are as follows:",
+				"content_2": "Via the contact form: name, email address, company name (optional), and the content of your message.",
+				"content_3": "Via audience measurement cookies: browsing data (see 'Cookies' section below)."
+			},
+			"subsection_2": {
+				"title": "Purposes of processing",
+				"content_1": "The purpose of collecting this data is to:",
+				"content_2": "Respond to your requests expressed via the contact form (legal basis: your consent).",
+				"content_3": "Produce anonymous statistics on visits to our site to improve its content and navigation (legal basis: your consent)."
+			},
+			"subsection_3": {
+				"title": "Retention period",
+				"content": "The data collected via the contact form is kept for a maximum of 3 years after the last contact. Audience measurement data is kept for a period of 13 months."
+			},
+			"subsection_4": {
+				"title": "Data recipients",
+				"content_1": "The collected data is intended for the internal services of KesvaL Studio. It may be transmitted to service providers (subcontractors) that KesvaL Studio uses for the performance of its services within the framework of the purposes mentioned above, in particular:",
+				"content_2": "Hetzner Online GmbH (site host), located in the European Union.",
+				"content_3": "Google LLC (for audience analysis via Google Analytics)."
+			},
+			"subsection_5": {
+				"title": "Data transfer outside the European Union",
+				"content": "The use of Google Analytics may result in the transfer of your browsing data to the United States. Google LLC is certified under the EU-US Data Privacy Framework, ensuring an adequate level of protection for your data."
+			},
+			"subsection_6": {
+				"title": "Your rights",
+				"content_1": "In accordance with the 'Informatique et Libertés' law and the GDPR, you have the following rights:",
+				"content_2": "Right of access, rectification, deletion, and portability of your data.",
+				"content_3": "Right to limit and object to the processing of your data.",
+				"content_4": "Right to withdraw your consent at any time.",
+				"content_5": "You can exercise these rights by contacting the data controller at the following address:",
+				"content_6": "By email: contact@kesval.com",
+				"content_7": "In the event of no response or an unsatisfactory response, you have the right to lodge a complaint with the supervisory authority (the CNIL in France)."
+			}
+		},
+		"section_5": {
+			"title": "5. Cookies",
+			"content_1": "When you visit our site kesval.com, cookies are placed on your computer, mobile, or tablet. A cookie is a small text file stored on your device. It allows user data to be stored to facilitate navigation and enable certain features.",
+			"content_2": "This site uses audience measurement cookies (Google Analytics) which allow us to establish anonymous statistics on the frequency and use of the various elements making up our site (sections and content visited, routes), allowing us to improve the interest and ergonomics of our services.",
+			"content_3": "The deposit of these cookies is subject to your prior consent. During your first visit, an information banner allows you to accept or refuse the deposit of these cookies. You can change your choice at any time via the cookie manager accessible on the site.",
+			"content_4": "The validity period of the consent to the deposit of cookies is 6 months. The lifespan of Google Analytics cookies is 13 months."
+		}
+	},
+	"error": {
+		"title": "Oops! Il semble que vous avez trouvé une page qui n'existe pas ou qu'une erreur est survenue.",
+		"back_to_home": "Retour à l'accueil"
+	}
 }

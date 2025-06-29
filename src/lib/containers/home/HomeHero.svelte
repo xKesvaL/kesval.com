@@ -1,49 +1,63 @@
-<script>
-	import Socials from '$lib/components/base/Socials.svelte';
-	import Sparkles from '$lib/components/base/Sparkles.svelte';
-	import { Button } from '$lib/components/ui/button';
-	import { bot } from '$lib/stores/bot';
-
+<script lang="ts">
+	import { brand } from '$lib/utils/config';
 	import * as m from '$paraglide/messages';
+	import AnimatedBadge from '$lib/components/animated/AnimatedBadge.svelte';
+	import Button from '$lib/components/ui/button/button.svelte';
+	import { route } from '$lib/ROUTES';
+	import { localizeHref } from '$paraglide/runtime';
+	import { IconPlus, IconRocket } from '@tabler/icons-svelte';
+	import Sparkles from '$lib/components/base/Sparkles.svelte';
 </script>
 
-<section
-	class="container grid grid-cols-[0.5fr,3fr] items-center justify-items-center py-4 gap-4 lg:grid-cols-[max-content,2fr,1fr]"
->
-	<div class="">
-		<Socials vertical={true} />
-	</div>
-	<div class="image max-w-sm overflow-hidden border-4 border-primary shadow-2xl shadow-primary/40">
-		<enhanced:img src="$assets/me/hero.jpg" alt={m.common_profile_picture()} />
+<section class="section-hero items-center justify-center overflow-hidden">
+	<!-- grid borders bg -->
+	<div class="pointer-events-none absolute inset-0">
+		<div class="kcontainer relative mb-12 h-full w-full px-3 sm:px-4" style="--ct-max-w: 1280px">
+			<div class="h-full w-full border-x-2 border-dashed"></div>
+		</div>
 	</div>
 	<div
-		class="col-span-full flex flex-col gap-4 lg:col-start-2 lg:col-end-3 lg:row-start-1 lg:row-end-2"
+		class="kcontainer relative mb-12 flex flex-col items-center justify-center gap-6 px-4 text-center md:mb-24"
 	>
-		<Sparkles>
-			<h1 class="max-w-[15ch] text-6xl">
-				{m.home_hero_title()}
-			</h1>
-		</Sparkles>
-		<p class="max-w-[45ch] text-lg">
-			{m.home_hero_description()}
+		<div
+			class="pointer-events-none absolute h-[calc(100%+6rem)] w-screen border-y-2 border-dashed md:h-[calc(100%+12rem)]"
+		></div>
+		<div class="">
+			<AnimatedBadge>
+				<span class="flex items-center gap-2">
+					✨
+					<hr class="bg-muted-foreground h-4 w-[1px] shrink-0" />
+					{m.years_of_experience({ years: brand.yearsOfExperience })}
+				</span>
+			</AnimatedBadge>
+		</div>
+		<h1 class=" leading-tight font-bold">
+			{m['home.hero.title_before']()}<Sparkles color="special" highlight="primary">
+				{m['home.hero.title_highlight']()}
+			</Sparkles>{m['home.hero.title_after']()}
+		</h1>
+		<p class="text-muted-foreground mx-auto max-w-[45ch] text-lg md:text-xl">
+			{m['home.hero.subtitle']({ brand: brand.name })}
 		</p>
-		<div class="flex gap-4">
-			<Button href="/about#resume">
-				<!-- {m.home_hero_workWithMe()} -->
-				{m.home_hero_my_resume()}
+
+		<div
+			class=" mt-6 flex flex-col-reverse flex-wrap items-center justify-center gap-4 sm:flex-row"
+		>
+			<Button
+				class="h-auto gap-3 rounded-full !px-5 py-3 text-sm"
+				variant="outline"
+				href={localizeHref(route('/projets'))}
+			>
+				<IconPlus class="size-5!" />
+				{m['common.see_our_projects']()}
 			</Button>
-			<Button variant="secondary" on:click={bot.toggle}>
-				{m.home_hero_contactMe()}
+			<Button
+				class="h-auto gap-3 rounded-full !px-5 py-3 text-sm"
+				href={localizeHref(route('/contact'))}
+			>
+				<IconRocket class="size-5!" />
+				{m['common.cta_big']()}
 			</Button>
 		</div>
 	</div>
 </section>
-
-<style lang="scss">
-	section.container {
-		min-height: calc(100vh - 8rem);
-		.image {
-			border-radius: 63% 37% 37% 63%/43% 37% 63% 57%;
-		}
-	}
-</style>

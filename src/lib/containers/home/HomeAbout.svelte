@@ -1,59 +1,87 @@
-<script>
-	import { route } from '$lib/ROUTES';
-	import CardGlass from '$lib/components/cards/CardGlass.svelte';
-	import { Button } from '$lib/components/ui/button';
-	import { PERSONAL } from '$lib/data/personal';
+<script lang="ts">
+	import inView from '$lib/actions/inView';
+	import { IsMobile } from '$lib/hooks/is-mobile.svelte';
+	import { translate } from '$lib/utils/i18n';
+	import { getLocale } from '$paraglide/runtime';
+	import NumberFlow, { continuous } from '@number-flow/svelte';
+	import { IconAward, IconClipboardCheck, IconUserStar } from '@tabler/icons-svelte';
+	import dayjs from 'dayjs';
 
-	import * as m from '$paraglide/messages';
-	import { languageTag } from '$paraglide/runtime';
+	const isMobile = new IsMobile();
+
+	type Values = {
+		experience: number;
+		projects: number;
+		clients: number;
+	};
+
+	let actualValues = {
+		experience: dayjs().diff(dayjs('2022-01-01'), 'year'),
+		projects: 11,
+		clients: 4
+	} satisfies Values;
+
+	let values = $state<Values>({
+		experience: 0,
+		projects: 0,
+		clients: 0
+	});
+
+	const updateValues = (key: keyof Values) => {
+		setTimeout(
+			() => {
+				values[key] = actualValues[key];
+			},
+			isMobile.current ? 500 : 0
+		);
+	};
 </script>
 
-<section class="container-sm section flex flex-col justify-center">
-	<h2 class="text-center text-4xl lg:text-5xl">
-		{m.home_about_title()}
-	</h2>
-	<div class="flex flex-col gap-12">
-		<div class="grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-16">
-			<div class="flex flex-col gap-4">
-				<h3 class="mb-2 hidden font-sans text-4xl font-bold lg:flex">
-					{m.home_about_passionate()}
-				</h3>
-				<p class="text-lg lg:text-xl">
-					{m.home_about_descriptions_0()}
-				</p>
-				<p class="text-lg lg:text-xl">
-					{m.home_about_descriptions_1()}
-				</p>
-			</div>
-			<div class="grid grid-cols-2 grid-rows-2 gap-4">
-				<CardGlass>
-					<span class="font-sans font-bold text-6xl"> {PERSONAL.yearsOfExperience} </span>
-					<p class="lg:text-xl">
-						{m.common_years_of_experience_slf()}
-					</p>
-				</CardGlass>
-				<CardGlass>
-					<span class="font-sans font-bold text-6xl"> 05 </span>
-					<p class="lg:text-xl">
-						{m.home_about_projectsDelivered()}
-					</p></CardGlass
+<section class="section bg-primary pyc-lg lg:pyc-xl relative z-10 overflow-hidden">
+	<div class="kcontainer text-primary-foreground flex w-full flex-col gap-8 px-4 md:gap-12">
+		<div class="grid gap-6 md:grid-cols-3 md:gap-8">
+			{#each Object.keys(values) as key (key)}
+				<div
+					class=" bg-primary-foreground/5 hover:bg-primary-foreground/10 border-primary-foreground/10 flex flex-col rounded-xl border p-6 pt-2 backdrop-blur-lg transition"
+					use:inView={{
+						onEnter: () => updateValues(key as keyof Values)
+					}}
 				>
-				<CardGlass>
-					<span class="font-sans font-bold text-6xl"> 02 </span>
-					<p class="lg:text-xl">
-						{m.home_about_professionalExperiences()}
-					</p></CardGlass
-				>
-				<CardGlass>
-					<span class="font-sans font-bold text-6xl"> 08 </span>
-					<p class="lg:text-xl">
-						{m.home_about_openSourceContributions()}
-					</p></CardGlass
-				>
-			</div>
+					<div class="flex items-center gap-4">
+						<NumberFlow
+							locales={getLocale()}
+							plugins={[continuous]}
+							value={values[key as keyof Values]}
+							class="text-primary-foreground text-7xl font-extrabold md:text-8xl"
+						/>
+						{#if key === 'experience'}
+							<IconAward class="text-primary-foreground size-18 md:size-20" stroke={1.5} />
+						{:else if key === 'projects'}
+							<IconClipboardCheck class="text-primary-foreground size-18 md:size-20" stroke={1.5} />
+						{:else if key === 'clients'}
+							<IconUserStar class="text-primary-foreground size-18 md:size-20" stroke={1.5} />
+						{/if}
+					</div>
+
+					<div class="-mt-2 space-y-2">
+						<h3 class="text-primary-foreground text-3xl font-semibold">
+							{#await translate(`home.about.${key as keyof Values}`) then translation}
+								{translation}
+							{/await}
+						</h3>
+						<p class="text-primary-foreground text-sm leading-relaxed">
+							{#await translate(`home.about.${key as keyof Values}_description`) then translation}
+								{translation}
+							{/await}
+						</p>
+					</div>
+				</div>
+			{/each}
 		</div>
-		<Button class="mx-auto lg:ml-auto lg:mr-0" href={route('/about')}>
-			{m.home_about_button()}
-		</Button>
+
+		<!-- Subtle background pattern -->
+		<div class="absolute inset-0 -z-10 opacity-15">
+			<div class="bgc-dot h-full w-full"></div>
+		</div>
 	</div>
 </section>

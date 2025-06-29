@@ -10,21 +10,31 @@
  */
 const PAGES = {
   "/": `/`,
-  "/about": `/about`,
   "/blog": `/blog`,
   "/blog/[slug]": (params: { slug: (string | number) }) => {
-    return `/blog/${params.slug}`
+    return `/blog/${params['slug']}`
   },
-  "/work": `/work`,
-  "/work/kesval": `/work/kesval`,
-  "/work/portfolio": `/work/portfolio`
+  "/conditions-generales-de-vente": `/conditions-generales-de-vente`,
+  "/contact": `/contact`,
+  "/mentions-legales": `/mentions-legales`,
+  "/projets": `/projets`,
+  "/projets/[slug]": (params: { slug: (string | number) }) => {
+    return `/projets/${params['slug']}`
+  },
+  "/services": `/services`,
+  "/services/agences": `/services/agences`,
+  "/services/applications-web": `/services/applications-web`,
+  "/services/automatisation": `/services/automatisation`,
+  "/services/design": `/services/design`,
+  "/services/maintenance": `/services/maintenance`,
+  "/services/site-vitrine": `/services/site-vitrine`
 }
 
 /**
  * SERVERS
  */
 const SERVERS = {
-  "GET /site.webmanifest": `/site.webmanifest`,
+  "GET /manifest.json": `/manifest.json`,
   "GET /sitemap.xml": `/sitemap.xml`
 }
 
@@ -32,25 +42,25 @@ const SERVERS = {
  * ACTIONS
  */
 const ACTIONS = {
-  
+  "send /contact": `/contact?/send`
 }
 
 /**
  * LINKS
  */
 const LINKS = {
-  "linkedin": `https://www.linkedin.com/in/jordan-abeddou/`,
-  "email": `mailto:jabeddou@gmail.com`,
-  "github": `https://github.com/xKesvaL`,
-  "instagram": `https://www.instagram.com/xKesvaL/`
+  
 }
 
-type ParamValue = string | number | undefined
+type ParamValue = string | number | boolean | null | undefined
 
 /**
  * Append search params to a string
  */
-export const appendSp = (sp?: Record<string, ParamValue | ParamValue[]>, prefix: '?' | '&' = '?') => {
+export const appendSp = (
+  sp?: Record<string, ParamValue | ParamValue[]>,
+  prefix: '?' | '&' = '?',
+) => {
   if (sp === undefined) return ''
 
   const params = new URLSearchParams()
@@ -60,7 +70,12 @@ export const appendSp = (sp?: Record<string, ParamValue | ParamValue[]>, prefix:
     }
   }
 
+  let anchor = ''
   for (const [name, val] of Object.entries(sp)) {
+    if (name === '__KIT_ROUTES_ANCHOR__' && val !== undefined) {
+      anchor = `#${val}`
+      continue
+    }
     if (Array.isArray(val)) {
       for (const v of val) {
         append(name, v)
@@ -71,8 +86,8 @@ export const appendSp = (sp?: Record<string, ParamValue | ParamValue[]>, prefix:
   }
 
   const formatted = params.toString()
-  if (formatted) {
-    return `${prefix}${formatted}`
+  if (formatted || anchor) {
+    return `${prefix}${formatted}${anchor}`.replace('?#', '#')
   }
   return ''
 }
@@ -94,21 +109,18 @@ export const currentSp = () => {
   return record
 }
 
-function StringOrUndefined(val: any) {
-  if (val === undefined) {
-    return undefined
-  }
-
-  return String(val)
-}
-
-// route function helpers
+/* type helpers for route function */
 type NonFunctionKeys<T> = { [K in keyof T]: T[K] extends Function ? never : K }[keyof T]
 type FunctionKeys<T> = { [K in keyof T]: T[K] extends Function ? K : never }[keyof T]
 type FunctionParams<T> = T extends (...args: infer P) => any ? P : never
 
 const AllObjs = { ...PAGES, ...ACTIONS, ...SERVERS, ...LINKS }
 type AllTypes = typeof AllObjs
+
+export type Routes = keyof AllTypes extends `${string}/${infer Route}` ? `/${Route}` : keyof AllTypes
+export const routes = [
+	...new Set(Object.keys(AllObjs).map((route) => /^\/.*|[^ ]?\/.*$/.exec(route)?.[0] ?? route)),
+] as Routes[]
 
 /**
  * To be used like this: 
@@ -134,7 +146,7 @@ export function route<T extends keyof AllTypes>(key: T, ...params: any[]): strin
 *
 * Full example:
 * ```ts
-* import type { KIT_ROUTES } from './ROUTES'
+* import type { KIT_ROUTES } from '$lib/ROUTES'
 * import { kitRoutes } from 'vite-plugin-kit-routes'
 *
 * kitRoutes<KIT_ROUTES>({
@@ -145,9 +157,9 @@ export function route<T extends keyof AllTypes>(key: T, ...params: any[]): strin
 * ```
 */
 export type KIT_ROUTES = {
-  PAGES: { '/': never, '/about': never, '/blog': never, '/blog/[slug]': 'slug', '/work': never, '/work/kesval': never, '/work/portfolio': never }
-  SERVERS: { 'GET /site.webmanifest': never, 'GET /sitemap.xml': never }
-  ACTIONS: Record<string, never>
-  LINKS: { 'linkedin': never, 'email': never, 'github': never, 'instagram': never }
-  Params: { slug: never }
+  PAGES: { '/': never, '/blog': never, '/blog/[slug]': 'slug', '/conditions-generales-de-vente': never, '/contact': never, '/mentions-legales': never, '/projets': never, '/projets/[slug]': 'slug', '/services': never, '/services/agences': never, '/services/applications-web': never, '/services/automatisation': never, '/services/design': never, '/services/maintenance': never, '/services/site-vitrine': never }
+  SERVERS: { 'GET /manifest.json': never, 'GET /sitemap.xml': never }
+  ACTIONS: { 'send /contact': never }
+  LINKS: Record<string, never>
+  Params: { 'slug': never }
 }

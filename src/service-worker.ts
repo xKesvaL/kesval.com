@@ -5,7 +5,7 @@
 
 const sw = self as unknown as ServiceWorkerGlobalScope;
 
-import { build, files, prerendered, version } from '$service-worker';
+import { build, files, version } from '$service-worker';
 
 import { cacheFiles, deleteOldCaches, getFromCache } from './lib/utils/sw';
 
@@ -13,8 +13,7 @@ const CACHE = `cache-${version}`;
 
 const ASSETS = [
 	...build, // the app itself
-	...files, // everything in `static`
-	...prerendered // prerendered pages
+	...files // everything in `static`
 ];
 
 sw.addEventListener('install', (event) => {
@@ -26,7 +25,11 @@ sw.addEventListener('activate', (event) => {
 });
 
 sw.addEventListener('fetch', async (event) => {
-	if (event.request.method !== 'GET' || event.request.url.startsWith('chrome-extension://') || event.request.url.includes('extension')) {
+	if (
+		event.request.method !== 'GET' ||
+		event.request.url.startsWith('chrome-extension://') ||
+		event.request.url.includes('extension')
+	) {
 		return;
 	}
 

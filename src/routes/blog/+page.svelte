@@ -1,9 +1,7 @@
 <script lang="ts">
-	import BlogList from '$lib/containers/blog/BlogList.svelte';
-	import { languageTag } from '$paraglide/runtime';
-	import type { PageData } from './$types';
+	import BlogHero from '$lib/containers/blog/BlogHero.svelte';
 
-	export let data: PageData;
+	let { data } = $props();
 </script>
 
-<BlogList posts={data.posts[languageTag()]} />
+<BlogHero posts={data.posts} />

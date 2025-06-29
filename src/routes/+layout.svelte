@@ -1,79 +1,59 @@
 <script lang="ts">
-	import { navigating, page } from '$app/stores';
-	import '$lib/styles/fonts.scss';
-	import '$lib/styles/main.scss';
-	import '$lib/styles/nprogress.scss';
-	import nprogress from 'nprogress';
-	import { setupViewTransition } from 'sveltekit-view-transition';
-
-	import BackToTopButton from '$lib/components/layout/BackToTopButton.svelte';
-	import ContactBot from '$lib/containers/layout/ContactBot.svelte';
+	import '../app.css';
+	import Navigation from '$lib/components/layout/Navigation.svelte';
 	import Footer from '$lib/components/layout/Footer.svelte';
-	import Navigation from '$lib/containers/layout/Navigation.svelte';
-
-	import '../app.postcss';
+	import { getLocale, locales, localizeHref } from '$lib/paraglide/runtime';
+	import { page } from '$app/state';
+	import { deepMerge, MetaTags } from 'svelte-meta-tags';
+	import HireCard from '$lib/components/layout/HireCard.svelte';
+	import { Toaster } from '$lib/components/ui/sonner';
+	import { IsMobile } from '$lib/hooks/is-mobile.svelte';
 	import { polyfillCountryFlagEmojis } from '$lib/utils/functions';
 	import { onMount } from 'svelte';
-	import { browser } from '$app/environment';
-	import { ParaglideJS } from '@inlang/paraglide-sveltekit';
-	import { i18n } from '$lib/utils/i18n';
+	import CookieConsent from '$lib/components/base/CookieConsent.svelte';
 
-	import { activeLayout, scrollLocked } from '$lib/stores/common';
-	import { settings } from '$lib/stores/settings';
-	import Seo from '$lib/components/base/SEO.svelte';
-	import { injectSpeedInsights } from '@vercel/speed-insights';
+	let { children, data } = $props();
+	let metaTags = $derived(deepMerge(data.baseMetaTags, page.data.pageMetaTags));
 
-	$: if (browser) {
-		document.body.setAttribute('data-scroll-locked', $scrollLocked ? 'true' : 'false');
-		document.documentElement.setAttribute('data-dyslexic', $settings.dyslexia ? 'true' : 'false');
-	}
-
-	nprogress.configure({ easing: 'ease', minimum: 0.2, speed: 600 });
-	$: $navigating && browser ? nprogress.start() : nprogress.done();
-
-	setupViewTransition();
+	const isMobile = new IsMobile();
 
 	onMount(() => {
 		polyfillCountryFlagEmojis();
 	});
-
-	$: pathname = $page.url.pathname;
-	$: activeLayout.handle($page.url);
-
-	injectSpeedInsights();
 </script>
 
-{#if $activeLayout === 'base'}
-	<Seo {pathname} />
-{/if}
+{#key getLocale()}
+	<!-- This is a hack so sveltekit pre-renders all locales -->
+	<div style="display:none">
+		{#each locales as locale}
+			<a href={localizeHref(page.url.pathname, { locale })}>{locale}</a>
+		{/each}
+	</div>
 
-<ParaglideJS {i18n}>
+	<MetaTags {...metaTags} />
+
+	<CookieConsent />
+
+	<Toaster
+		position="bottom-right"
+		offset={{ right: isMobile.current ? '16px' : '96px', bottom: '16px' }}
+	/>
+
 	<Navigation />
-
 	<main>
-		<slot />
+		{#key page.url.pathname}
+			{@render children()}
+		{/key}
 	</main>
-
-	<ContactBot />
-	<BackToTopButton />
 	<Footer />
-</ParaglideJS>
 
-<style lang="scss">
-	main {
-		background: radial-gradient(circle at 78% 11%, hsl(var(--tertiary) / 0.075), transparent 40%),
-			radial-gradient(circle at 28% 37%, hsl(var(--primary) / 0.1), transparent 40%),
-			radial-gradient(circle at 70% 66%, hsl(var(--tertiary) / 0.075), transparent 40%),
-			radial-gradient(circle at 17% 87%, hsl(var(--primary) / 0.1), transparent 40%);
+	<div class="fixed right-4 bottom-4 z-10 flex">
+		<HireCard />
+	</div>
 
-		margin-top: -4rem;
-		padding-top: 4rem;
-		padding-bottom: 4rem;
-
-		min-height: 100vh;
-
-		@media (min-width: 1024px) {
-			padding-top: 6rem;
-		}
-	}
-</style>
+	<!-- {#if !building && dev}
+		{#await import('$lib/components/dev/AnimationDevTool.svelte') then Module}
+			<Module.default />
+		{/await}
+	{/if} -->
+{/key}

@@ -1,0 +1,57 @@
+{
+	"consentModal": {
+		"title": "Nous utilisons des cookies",
+		"description": "Nous utilisons des cookies pour améliorer votre expérience et nos services. Vous pouvez modifier vos paramètres de cookies à tout moment en bas de page.",
+		"acceptAllBtn": "Accepter tout",
+		"acceptNecessaryBtn": "Rejeter tout",
+		"showPreferencesBtn": "Personnaliser mes préférences"
+	},
+	"preferencesModal": {
+		"title": "Personnaliser vos préférences de cookies",
+		"acceptAllBtn": "Accepter tout",
+		"acceptNecessaryBtn": "Rejeter tout",
+		"savePreferencesBtn": "Enregistrer mes choix",
+		"closeIconLabel": "Fermer",
+		"serviceCounterLabel": "Service|Services",
+		"sections": [
+			{
+				"title": "Vos choix de confidentialité",
+				"description": "Dans ce panneau, vous pouvez choisir comment nous traitons vos informations personnelles. Vous pouvez modifier vos choix à tout moment en revenant sur cette page via le lien en bas de page. Pour refuser certains types de cookies, désactivez simplement les boutons correspondants ou cliquez sur \"Rejeter tout\" puis confirmez vos choix."
+			},
+			{
+				"title": "Cookies essentiels",
+				"description": "Ces cookies sont indispensables au bon fonctionnement de notre site web. Sans eux, certaines fonctionnalités ne pourraient pas marcher correctement.",
+				"linkedCategory": "necessary"
+			},
+			{
+				"title": "Performance et analyses",
+				"description": "Ces cookies nous aident à comprendre comment vous utilisez notre site web pour l'améliorer. Toutes les données sont anonymisées et ne permettent pas de vous identifier personnellement.",
+				"linkedCategory": "analytics",
+				"cookieTable": {
+					"caption": "Détail des cookies",
+					"headers": {
+						"name": "Nom du cookie",
+						"domain": "Domaine",
+						"desc": "Description"
+					},
+					"body": [
+						{
+							"name": "_ga",
+							"domain": "kesval.com",
+							"desc": "Google Analytics"
+						},
+						{
+							"name": "_gid",
+							"domain": "kesval.com",
+							"desc": "Google Analytics"
+						}
+					]
+				}
+			},
+			{
+				"title": "Besoin d'aide ?",
+				"description": "Si vous avez des questions sur notre politique de cookies ou vos choix, n'hésitez pas à <a href=\"mailto:contact@kesval.com\">nous contacter</a>"
+			}
+		]
+	}
+}

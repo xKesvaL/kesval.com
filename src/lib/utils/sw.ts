@@ -33,27 +33,11 @@ export const getFromCache = async (
 		if (cachedResponse) {
 			return cachedResponse;
 		}
-		
+
 		const response = await fetch(request);
 		cache.put(url.pathname, response.clone());
 		return response;
 	}
 
-	try {
-		const response = await fetch(request);
-
-		if (response.status === 200) {
-			cache.put(request, response.clone());
-		}
-
-		return response;
-	} catch (e) {
-		const cachedResponse = await cache.match(url.pathname);
-
-		if (cachedResponse) {
-			return cachedResponse;
-		}
-
-		throw e;
-	}
+	return await fetch(request);
 };
