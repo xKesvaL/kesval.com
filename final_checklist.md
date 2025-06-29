@@ -4,25 +4,25 @@ Here is a comprehensive checklist to ensure your website is ready for launch.
 
 ## 1. Code & Configuration
 
-- [ ] **Run Linter and Formatter**: Ensure the code is clean and consistent.
+- [x] **Run Linter and Formatter**: Ensure the code is clean and consistent.
   - `bun run lint`
   - `bun run format`
-- [ ] **Check for Unused Code**: Remove any dead code, unused dependencies, or commented-out blocks that are not necessary for production.
-- [ ] **Environment Variables**: You are using `resend` which requires an API key.
-  - [ ] Create a `.env.production.local` or `.env` file in the root for production.
-  - [ ] Ensure `RESEND_API_KEY` is set in your production environment. **Do not commit this file to Git.**
-  - [ ] Verify that your code correctly loads this variable for production builds (`$env/static/private` in SvelteKit).
-- [ ] **Finalize Dependencies**:
-  - [ ] You have both `@sveltejs/adapter-node` and `@sveltejs/adapter-vercel` as dev dependencies. Your `svelte.config.js` is configured to use `adapter-node`. Ensure this is the intended deployment target. If deploying to Vercel, switch the adapter.
-  - [ ] Review `package.json` for any unnecessary dependencies that can be removed.
-- [ ] **Command Checks**:
-  - [ ] Run `bun run check` one last time to catch any type errors.
+- [x] **Check for Unused Code**: Remove any dead code, unused dependencies, or commented-out blocks that are not necessary for production.
+- [x] **Environment Variables**: You are using `resend` which requires an API key.
+  - [x] Create a `.env.production.local` or `.env` file in the root for production.
+  - [x] Ensure `RESEND_API_KEY` is set in your production environment. **Do not commit this file to Git.**
+  - [x] Verify that your code correctly loads this variable for production builds (`$env/static/private` in SvelteKit).
+- [x] **Finalize Dependencies**:
+  - [x] You have both `@sveltejs/adapter-node` and `@sveltejs/adapter-vercel` as dev dependencies. Your `svelte.config.js` is configured to use `adapter-node`. Ensure this is the intended deployment target. If deploying to Vercel, switch the adapter.
+  - [x] Review `package.json` for any unnecessary dependencies that can be removed.
+- [x] **Command Checks**:
+  - [x] Run `bun run check` one last time to catch any type errors.
 
 ## 2. Content & SEO
 
 - [ ] **Internationalization (i18n)**:
-  - [ ] The `git status` shows `messages/en.json` is modified. Ensure both `en.json` and `fr.json` have identical key structures. Use a JSON diff tool to compare them and prevent missing translations on any page.
-  - [ ] Run `bun run build:paraglide` to compile the latest messages. Consider adding this to your main `build` script in `package.json` if it's not already, e.g., `"build": "bun run build:paraglide && vite build"`.
+  - [x] The `git status` shows `messages/en.json` is modified. Ensure both `en.json` and `fr.json` have identical key structures. Use a JSON diff tool to compare them and prevent missing translations on any page.
+  - [x] Run `bun run build:paraglide` to compile the latest messages. Consider adding this to your main `build` script in `package.json` if it's not already, e.g., `"build": "bun run build:paraglide && vite build"`.
   - [ ] Check all pages in both French and English to ensure all text is translated correctly.
 - [ ] **Metadata and SEO**:
   - [ ] Your `+layout.svelte` uses `svelte-meta-tags`. Verify that every page has unique and descriptive `title` and `description` meta tags. This is handled via `data.pageMetaTags` in your layout, so check the `+page.ts` or `+layout.ts` for each route.
@@ -31,9 +31,9 @@ Here is a comprehensive checklist to ensure your website is ready for launch.
 - [ ] **Content Validation**:
   - [ ] Your `velite.config.ts` provides strong schemas for posts and projects. This is great. Do a final check on all markdown files in `src/content/` to ensure the frontmatter is accurate (e.g., dates, tags, titles).
   - [ ] Check for broken links or missing images in your markdown content.
-- [ ] **Robots.txt & Sitemap**:
-  - [ ] You have a `sitemap.xml` endpoint, which is excellent. Make sure it's linked in a `robots.txt` file.
-  - [ ] Create a `static/robots.txt` file. A good starting point would be:
+- [x] **Robots.txt & Sitemap**:
+  - [x] You have a `sitemap.xml` endpoint, which is excellent. Make sure it's linked in a `robots.txt` file.
+  - [x] Create a `static/robots.txt` file. A good starting point would be:
 
     ```
     User-agent: *
