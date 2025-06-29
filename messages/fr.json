@@ -12,7 +12,8 @@
 		"github": "GitHub",
 		"instagram": "Instagram",
 		"linkedin": "LinkedIn",
-		"cookies_preferences": "Préférences des cookies"
+		"cookies_preferences": "Préférences des cookies",
+		"cgv": "Conditions Générales de Vente"
 	},
 	"home": {
 		"hero": {
@@ -180,6 +181,60 @@
 		},
 		"mentions_legales": {
 			"title": "Mentions légales"
+		},
+		"conditions_generales_de_vente": {
+			"title": "Conditions Générales de Vente"
+		}
+	},
+	"cgv": {
+		"title": "Conditions Générales de Vente",
+		"last_updated": "Dernière mise à jour",
+		"preamble": "Les présentes conditions générales de vente (ci-après 'CGV') régissent les relations contractuelles entre KesvaL Studio, entreprise individuelle dirigée par Jordan ABEDDOU, et ses clients. Toute commande implique l'acceptation sans réserve des présentes CGV.",
+		"section_1": {
+			"title": "Article 1 : Objet",
+			"content": "KesvaL Studio propose des prestations de services dans le domaine du développement web, notamment la création de sites internet, le développement d'applications web, la maintenance, l'audit technique et l'automatisation de processus, conformément au devis accepté par le client."
+		},
+		"section_2": {
+			"title": "Article 2 : Devis et Commande",
+			"content_1": "Toute prestation fait l'objet d'un devis préalable, valable un mois. La commande est validée par la signature du devis avec la mention 'Bon pour accord' et le versement d'un acompte de 30% du montant total, sauf mention contraire.",
+			"content_2": "La signature du devis vaut acceptation pleine et entière des présentes CGV."
+		},
+		"section_3": {
+			"title": "Article 3 : Tarifs et Paiement",
+			"content_1": "Les prix des prestations sont indiqués en euros (€) et ne sont pas soumis à la TVA (TVA non applicable, art. 293 B du CGI).",
+			"content_2": "Le solde est dû à la livraison de la prestation. En cas de retard de paiement, des pénalités de retard seront appliquées, conformément à la législation en vigueur.",
+			"content_3": "Pour les projets longs, des paiements échelonnés pourront être définis dans le devis."
+		},
+		"section_4": {
+			"title": "Article 4 : Réalisation et Livraison",
+			"content_1": "KesvaL Studio s'engage à mettre en œuvre tous les moyens nécessaires pour réaliser la prestation dans les délais convenus. Les délais sont donnés à titre indicatif et tout retard ne pourra donner lieu à des dommages et intérêts.",
+			"content_2": "La livraison est effectuée par la mise en ligne du site ou la fourniture des livrables définis. Le client dispose de 15 jours pour faire part de ses éventuelles réserves (recettage)."
+		},
+		"section_5": {
+			"title": "Article 5 : Obligations du Client",
+			"content_1": "Le client s'engage à fournir à KesvaL Studio tous les éléments (textes, images, etc.) nécessaires à la réalisation de la prestation. Tout retard dans la fourniture de ces éléments pourra impacter le délai de livraison.",
+			"content_2": "Le client garantit être titulaire des droits de propriété intellectuelle sur les éléments fournis."
+		},
+		"section_6": {
+			"title": "Article 6 : Propriété Intellectuelle",
+			"content_1": "Sauf mention contraire, KesvaL Studio cède au client les droits de reproduction et de représentation sur les œuvres créées, après paiement intégral du projet. KesvaL Studio se réserve le droit de mentionner sa réalisation pour la promotion de son activité."
+		},
+		"section_7": {
+			"title": "Article 7 : Responsabilité",
+			"content_1": "KesvaL Studio est soumis à une obligation de moyens. Sa responsabilité ne pourra être engagée pour des dommages indirects ou pour des problèmes liés au serveur ou à l'hébergement du client.",
+			"content_2": "La responsabilité de KesvaL Studio est limitée au montant de la prestation."
+		},
+		"section_8": {
+			"title": "Article 8 : Confidentialité",
+			"content": "Chaque partie s'engage à ne pas divulguer les informations confidentielles de l'autre partie, pendant et après la durée du contrat."
+		},
+		"section_9": {
+			"title": "Article 9 : Force Majeure",
+			"content": "La survenance d'un cas de force majeure a pour effet de suspendre l'exécution des obligations contractuelles de KesvaL Studio."
+		},
+		"section_10": {
+			"title": "Article 10 : Droit Applicable et Juridiction",
+			"content": "Le présent contrat est soumis au droit français. En cas de litige, et après une tentative de résolution amiable, compétence est attribuée aux tribunaux compétents."
 		}
 	},
 	"start_now": "Je me lance",
@@ -236,7 +291,7 @@
 			"feature_2": "Site vitrine moderne et optimisé mobile",
 			"feature_3": "Site optimisé pour les moteurs de recherche",
 			"feature_4": "Performance et sécurité garanties",
-			"bonus_1": "Hébergement 1 an offert",
+			"bonus_1": "Hébergement 3 mois offert",
 			"bonus_2": "Support 1 mois inclus",
 			"details": {
 				"title_before": "Sites web qui",
@@ -262,7 +317,7 @@
 			"feature_2": "Appplication 100% personnalisée",
 			"feature_3": "Gestion de projet agile",
 			"feature_4": "Intégration tierces & sécurité",
-			"bonus_1": "Hébergement 1 an offert",
+			"bonus_1": "Hébergement 3 mois offert",
 			"bonus_2": "Support 1 mois inclus",
 			"details": {
 				"title_before": "Applications web & mobile qui",
@@ -428,10 +483,6 @@
 				"relation": "Relation de confiance",
 				"relation_description": "Communication transparente et engagement personnel dans chaque projet."
 			}
-		},
-		"web_on_premise": {
-			"title": "Services pour Freelances & Agences",
-			"description": "Nous offrons des services de développement en marque blanche pour les agences et les freelances."
 		}
 	},
 	"legal": {

@@ -133,6 +133,10 @@ export const legalLinks = [
 		onclick: () => {
 			CookieConsent.showPreferences();
 		}
+	},
+	{
+		label: 'nav.cgv',
+		href: route('/conditions-generales-de-vente')
 	}
 ] as const satisfies LinkType[];
 
