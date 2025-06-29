@@ -36,6 +36,11 @@ export default defineConfig({
 					video: s.file().optional(), // input file relative path, output file public path.
 					metadata: s.metadata(), // extract markdown reading-time, word-count, etc.
 					excerpt: s.excerpt(), // excerpt of markdown content
+					author: s.object({
+						name: s.string(),
+						email: s.string().email(),
+						image: s.string()
+					}),
 					content: s.markdown(), // transform markdown to html
 					toc: s.toc()
 				})
@@ -58,6 +63,11 @@ export default defineConfig({
 					video: s.file().optional(),
 					metadata: s.metadata(),
 					excerpt: s.excerpt(),
+					author: s.object({
+						name: s.string(),
+						email: s.string().email(),
+						image: s.string()
+					}),
 					content: s.markdown(),
 					toc: s.toc(),
 

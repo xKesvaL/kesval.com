@@ -9,7 +9,7 @@ coverAvif: './cover-en.avif'
 author:
   name: Jordan
   email: jordan@kesval.com
-  image: '../../jordan.png'
+  image: '../../jordan.jpg'
 ---
 
 <script>

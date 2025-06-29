@@ -14,7 +14,7 @@ iconAvif: './icon.avif'
 author:
   name: Jordan
   email: jordan@kesval.com
-  image: '../../jordan.png'
+  image: '../../jordan.jpg'
 
 images:
   - './images/1.png'

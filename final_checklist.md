@@ -25,11 +25,11 @@ Here is a comprehensive checklist to ensure your website is ready for launch.
   - [x] Run `bun run build:paraglide` to compile the latest messages. Consider adding this to your main `build` script in `package.json` if it's not already, e.g., `"build": "bun run build:paraglide && vite build"`.
   - [x] Check all pages in both French and English to ensure all text is translated correctly.
 - [ ] **Metadata and SEO**:
-  - [ ] Your `+layout.svelte` uses `svelte-meta-tags`. Verify that every page has unique and descriptive `title` and `description` meta tags. This is handled via `data.pageMetaTags` in your layout, so check the `+page.ts` or `+layout.ts` for each route.
-  - [ ] Define Open Graph and Twitter card metadata for rich sharing on social media. `svelte-meta-tags` supports this out of the box. Ensure you have default tags and that they can be overridden per page.
-  - [ ] Check that `manifest.json` at `(assets)/manifest.json/+server.ts` is fully configured with your app icons, theme color, etc.
+  - [x] Your `+layout.svelte` uses `svelte-meta-tags`. Verify that every page has unique and descriptive `title` and `description` meta tags. This is handled via `data.pageMetaTags` in your layout, so check the `+page.ts` or `+layout.ts` for each route.
+  - [x] Define Open Graph and Twitter card metadata for rich sharing on social media. `svelte-meta-tags` supports this out of the box. Ensure you have default tags and that they can be overridden per page.
+  - [x] Check that `manifest.json` at `(assets)/manifest.json/+server.ts` is fully configured with your app icons, theme color, etc.
 - [ ] **Content Validation**:
-  - [ ] Your `velite.config.ts` provides strong schemas for posts and projects. This is great. Do a final check on all markdown files in `src/content/` to ensure the frontmatter is accurate (e.g., dates, tags, titles).
+  - [x] Your `velite.config.ts` provides strong schemas for posts and projects. This is great. Do a final check on all markdown files in `src/content/` to ensure the frontmatter is accurate (e.g., dates, tags, titles).
   - [ ] Check for broken links or missing images in your markdown content.
 - [x] **Robots.txt & Sitemap**:
   - [x] You have a `sitemap.xml` endpoint, which is excellent. Make sure it's linked in a `robots.txt` file.
