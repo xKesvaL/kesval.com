@@ -153,43 +153,56 @@
 	},
 	"meta": {
 		"home": {
-			"title": "Accueil"
+			"title": "Accueil",
+			"description": "KesvaL Studio, votre partenaire de confiance pour la création de sites web, applications web et mobile. Nous vous accompagnons dans votre transformation digitale."
 		},
 		"services": {
 			"title": "Nos services",
+			"description": "Découvrez nos services! Création de sites web, applications web et mobile, design UX/UI, automatisation des processus, maintenance et support.",
 			"site_vitrine": {
-				"title": "Site vitrine"
+				"title": "Site vitrine",
+				"description": "Créez votre site vitrine avec KesvaL Studio. Nous vous accompagnons dans la création de votre site web, de la maquette à la mise en ligne."
 			},
 			"applications_web": {
-				"title": "Applications web & mobile"
+				"title": "Applications web & mobile",
+				"description": "Créez votre application web ou mobile avec KesvaL Studio. Nous optimisons vos processus pour gagner du temps et de l'argent."
 			},
 			"design": {
-				"title": "Design UX/UI"
+				"title": "Design UX/UI",
+				"description": "Créez votre design UX/UI avec KesvaL Studio. Nous créeons des interfaces utilisateur intuitives, centrées sur vos utilisateurs."
 			},
 			"automatisation": {
-				"title": "Automatisation des processus"
+				"title": "Automatisation des processus",
+				"description": "Automatisez vos processus avec KesvaL Studio. Nous trouvons des solutions sur mesure pour automatiser vos tâches répétitives."
 			},
 			"maintenance": {
-				"title": "Maintenance & support"
+				"title": "Maintenance & support",
+				"description": "Assurez-vous que votre site web ou application fonctionne sans interruption. Nous vous accompagnons dans la maintenance et le support de vos solutions digitales."
 			},
 			"agences": {
-				"title": "Services pour Agences"
+				"title": "Services pour Agences",
+				"description": "Nous accompagnons les agences de création de sites web et d'applications web. Nous apportons notre expertise pour vous et vos clients."
 			}
 		},
 		"projets": {
-			"title": "Projets"
+			"title": "Projets",
+			"description": "Découvrez nos projets récents et les solutions que nous avons apportées à nos clients."
 		},
 		"blog": {
-			"title": "Blog"
+			"title": "Blog",
+			"description": "Découvrez nos derniers articles et les dernières actualités du monde du développement web."
 		},
 		"contact": {
-			"title": "Contact"
+			"title": "Contact",
+			"description": "Contactez-nous pour discuter de votre projet. Nous vous répondrons dans les 24 heures."
 		},
 		"mentions_legales": {
-			"title": "Mentions légales"
+			"title": "Mentions légales",
+			"description": "Découvrez les mentions légales de KesvaL Studio."
 		},
 		"conditions_generales_de_vente": {
-			"title": "Conditions Générales de Vente"
+			"title": "Conditions Générales de Vente",
+			"description": "Découvrez les conditions générales de vente de KesvaL Studio."
 		}
 	},
 	"cgv": {

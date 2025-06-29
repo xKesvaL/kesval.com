@@ -11,8 +11,10 @@ const dynamicPaths = ['/blog/[slug]', '/projets/[slug]'];
 export const load = async ({ url }) => {
 	const delocalizedPath = deLocalizeHref(url.pathname).replaceAll(/\//g, '.').replaceAll('-', '_');
 
-	let title: string | undefined;
-	let description: string | undefined;
+	// let isDynamicPath = false;
+
+	let title: string | undefined = undefined;
+	let description: string | undefined = undefined;
 	// if delocalizedPath has the form of any dynamic path, we need to set title as undefined
 	if (
 		dynamicPaths.some((path) =>
@@ -24,8 +26,7 @@ export const load = async ({ url }) => {
 			)
 		)
 	) {
-		title = undefined;
-		description = undefined;
+		// isDynamicPath = true;
 		debug('default', 'Dynamic path detected, title set to undefined');
 	} else {
 		title = await translate(`meta${delocalizedPath !== '.' ? delocalizedPath : '.home'}.title`);
