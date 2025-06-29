@@ -54,12 +54,12 @@ Here is a comprehensive checklist to ensure your website is ready for launch.
 - [x] **Links and Navigation**:
   - [x] Click through every link in the navigation, footer, and within page content to ensure there are no broken links (404s).
   - [x] Check that all external links (e.g., to GitHub, LinkedIn) open in a new tab (`target="_blank" rel="noopener noreferrer"`).
-- [ ] **Responsive Design**:
-  - [ ] Test the website on various screen sizes: mobile, tablet, and desktop. Use browser developer tools and test on real devices if possible.
-  - [ ] Pay close attention to navigation menus, images, and complex layouts on small screens.
-- [ ] **Error Handling**:
-  - [ ] Your `src/routes/+error.svelte` page is very basic. I strongly recommend creating a more user-friendly error page that includes a link to the homepage, a friendly message, and maintains the site's branding.
-- [ ] **Favicon**: Ensure the favicon is present and displays correctly in browser tabs. You have one at `static/favicon.ico` and `static/favicon.png`.
+- [x] **Responsive Design**:
+  - [x] Test the website on various screen sizes: mobile, tablet, and desktop. Use browser developer tools and test on real devices if possible.
+  - [x] Pay close attention to navigation menus, images, and complex layouts on small screens.
+- [x] **Error Handling**:
+  - [x] Your `src/routes/+error.svelte` page is very basic. I strongly recommend creating a more user-friendly error page that includes a link to the homepage, a friendly message, and maintains the site's branding.
+- [x] **Favicon**: Ensure the favicon is present and displays correctly in browser tabs. You have one at `static/favicon.ico` and `static/favicon.png`.
 
 ## 4. Performance & Optimization
 
