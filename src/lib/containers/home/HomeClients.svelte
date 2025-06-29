@@ -9,26 +9,65 @@
 	type Client = {
 		icon: Icon | Picture | string;
 		name: string;
+		nameShort?: string; // In case the name is too long
 		link?: string;
 		type?: 'image' | 'icon';
 		color?: string;
 	};
 
 	const clients: Client[] = [
-		{ link: 'https://olwe.fr', icon: OLWE, name: 'OLWE Groupe', type: 'image', color: '#FFB028' },
+		{
+			link: 'https://olwe.fr',
+			icon: OLWE,
+			name: 'OLWE Groupe',
+			nameShort: 'OLWE',
+			type: 'image',
+			color: '#FFB028'
+		},
 		{
 			link: 'https://mavoitureparfaite.fr',
 			icon: MVP,
 			name: 'Ma Voiture Parfaite',
+			nameShort: 'MVP',
 			type: 'image',
 			color: '#245685'
 		},
-		{ link: '#', icon: IconUser, name: m['common.your_name_here']() },
-		{ link: '#', icon: IconUser, name: m['common.your_name_here']() },
-		{ link: '#', icon: IconUser, name: m['common.your_name_here']() },
-		{ link: '#', icon: IconUser, name: m['common.your_name_here']() },
-		{ link: '#', icon: IconUser, name: m['common.your_name_here']() },
-		{ link: '#', icon: IconUser, name: m['common.your_name_here']() }
+		{
+			link: '#',
+			icon: IconUser,
+			name: m['common.your_name_here'](),
+			nameShort: m['common.your_name_here_short']()
+		},
+		{
+			link: '#',
+			icon: IconUser,
+			name: m['common.your_name_here'](),
+			nameShort: m['common.your_name_here_short']()
+		},
+		{
+			link: '#',
+			icon: IconUser,
+			name: m['common.your_name_here'](),
+			nameShort: m['common.your_name_here_short']()
+		},
+		{
+			link: '#',
+			icon: IconUser,
+			name: m['common.your_name_here'](),
+			nameShort: m['common.your_name_here_short']()
+		},
+		{
+			link: '#',
+			icon: IconUser,
+			name: m['common.your_name_here'](),
+			nameShort: m['common.your_name_here_short']()
+		},
+		{
+			link: '#',
+			icon: IconUser,
+			name: m['common.your_name_here'](),
+			nameShort: m['common.your_name_here_short']()
+		}
 	];
 </script>
 
@@ -65,7 +104,10 @@
 							<enhanced:img src={ImageSrc} alt={client.name} class="size-6 md:size-7" />
 						{/if}
 					{/if}
-					<span class="text-primary-foreground/90 md:font-medium">{client.name}</span>
+					<span class="text-primary-foreground/90 md:font-medium">
+						<span class="hidden md:block">{client.name}</span>
+						<span class="block md:hidden">{client.nameShort || client.name}</span>
+					</span>
 				</a>
 			{/each}
 		</div>

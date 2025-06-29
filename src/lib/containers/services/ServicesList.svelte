@@ -29,7 +29,7 @@
 	);
 </script>
 
-<div class="grid w-full gap-8 sm:grid-cols-2 lg:grid-cols-3">
+<div class="grid w-full grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
 	{#each servicesToShow as service (service.id)}
 		{@const isHighlighted = 'highlight' in service && service.highlight}
 		{@const amount =
@@ -110,7 +110,9 @@
 									isHighlighted ? 'text-primary' : 'text-green-500'
 								)}
 							/>
-							<span class="text-muted-foreground text-[0.9rem] leading-relaxed text-nowrap">
+							<span
+								class="text-muted-foreground text-left text-[0.9rem] leading-relaxed text-nowrap"
+							>
 								{#await translate(`services.${service.id}.feature_${(index + 1) as FeatureCount}`) then feature}
 									{feature}
 								{/await}
@@ -125,7 +127,9 @@
 									isHighlighted ? 'text-green-500' : 'text-primary'
 								)}
 							/>
-							<span class="text-muted-foreground text-[0.9rem] leading-relaxed text-nowrap">
+							<span
+								class="text-muted-foreground text-left text-[0.9rem] leading-relaxed text-nowrap"
+							>
 								{#await translate(`services.${service.id}.bonus_${(index + 1) as BonusCount}`) then bonus}
 									{bonus}
 								{/await}

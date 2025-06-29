@@ -88,6 +88,7 @@
 				<Button
 					size="lg"
 					class="relative h-11 w-fit gap-3 bg-[var(--color-spe)] pr-5! hover:bg-[var(--color-spe)]/90"
+					href={localizeHref(route('/contact'))}
 				>
 					<service.icon class="size-5!" />
 					{#await translate(`${tDetails}.cta`) then cta}
@@ -99,7 +100,12 @@
 						{m['common.free_quote']()}
 					</div>
 				</Button>
-				<Button size="lg" class="h-11 w-fit gap-3 pr-5!" variant="outline">
+				<Button
+					size="lg"
+					class="h-11 w-fit gap-3 pr-5!"
+					variant="outline"
+					href={localizeHref(route('/projets'))}
+				>
 					<IconPlayerPlay class="size-5!" />
 					{#await translate(`${tDetails}.see_more`) then seeMore}
 						{seeMore}

@@ -37,10 +37,7 @@
 					<strong>{m['legal.section_1.owner_email_title']()} :</strong>
 					<a href="mailto:contact@kesval.com" class="underline">contact@kesval.com</a>
 				</li>
-				<li>
-					<strong>{m['legal.section_1.owner_phone_title']()} :</strong>
-					{m['legal.section_1.owner_phone_value']()}
-				</li>
+
 				<li>
 					<strong>{m['legal.section_1.owner_siret_title']()} :</strong>
 					{m['legal.section_1.owner_siret_value']()}

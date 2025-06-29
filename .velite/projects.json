@@ -7,17 +7,17 @@
       "KesvaL Studio"
     ],
     "cover": {
-      "src": "/static/cover-9628baad.png",
-      "height": 1800,
-      "width": 3200,
+      "src": "/static/cover-254cf999.png",
+      "height": 450,
+      "width": 800,
       "blurDataURL": "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoIAAUADMDOJZwAA3AA/ur8AAA=",
       "blurWidth": 8,
       "blurHeight": 5
     },
     "coverAvif": {
-      "src": "/static/cover-1d5d9d10.avif",
-      "height": 1800,
-      "width": 3200,
+      "src": "/static/cover-998f5e79.avif",
+      "height": 450,
+      "width": 800,
       "blurDataURL": "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoIAAUADMDOJZwAA3AA/ur8AAA=",
       "blurWidth": 8,
       "blurHeight": 5
@@ -118,17 +118,17 @@
       "KesvaL Studio"
     ],
     "cover": {
-      "src": "/static/cover-9628baad.png",
-      "height": 1800,
-      "width": 3200,
+      "src": "/static/cover-254cf999.png",
+      "height": 450,
+      "width": 800,
       "blurDataURL": "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoIAAUADMDOJZwAA3AA/ur8AAA=",
       "blurWidth": 8,
       "blurHeight": 5
     },
     "coverAvif": {
-      "src": "/static/cover-1d5d9d10.avif",
-      "height": 1800,
-      "width": 3200,
+      "src": "/static/cover-998f5e79.avif",
+      "height": 450,
+      "width": 800,
       "blurDataURL": "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoIAAUADMDOJZwAA3AA/ur8AAA=",
       "blurWidth": 8,
       "blurHeight": 5

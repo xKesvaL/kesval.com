@@ -145,6 +145,7 @@
 		"cta_self": "Je lance mon projet",
 		"cta_big": "Lancez votre projet dès aujourd'hui",
 		"your_name_here": "Votre nom ici",
+		"your_name_here_short": "Vous ici ?",
 		"email": "Email",
 		"back": "Retour",
 		"free_quote": "Devis gratuit",
@@ -428,7 +429,9 @@
 				"result_2": {
 					"amount": "95%",
 					"short_description": "Satisfaction client"
-				}
+				},
+				"cta": "Protéger mon investissement",
+				"see_more": "En voir plus"
 			}
 		},
 		"agencies": {
@@ -452,7 +455,9 @@
 				"result_2": {
 					"amount": "98%",
 					"short_description": "Satisfaction client"
-				}
+				},
+				"cta": "J'ai besoin de vous",
+				"see_more": "Voir des exemples"
 			}
 		},
 		"our_services": {
@@ -518,8 +523,6 @@
 			"owner_address_title": "Adresse du siège social",
 			"owner_address_value": "18 rue de Feldkirch, 68190 Ungersheim, France",
 			"owner_email_title": "Adresse e-mail",
-			"owner_phone_title": "Téléphone",
-			"owner_phone_value": "[VOTRE NUMERO DE TELEPHONE]",
 			"owner_siret_title": "N° SIRET",
 			"owner_siret_value": "929 685 188 00013",
 			"publication_director_title": "Directeur de la publication",

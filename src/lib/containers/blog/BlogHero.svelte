@@ -67,7 +67,7 @@
 				<Input
 					type="search"
 					placeholder={m['blog.placeholder.search']()}
-					class="pl-10"
+					class="bg-popover pl-10"
 					bind:value={searchTerm}
 				/>
 				{#if searchTerm}
@@ -89,7 +89,7 @@
 					value={sortBy}
 					onValueChange={handleSortChange}
 				>
-					<Select.Trigger class="w-auto min-w-[150px] justify-between gap-4">
+					<Select.Trigger class="bg-popover w-auto min-w-[150px] justify-between gap-4">
 						{selectedSortLabel}
 					</Select.Trigger>
 					<Select.Content>
@@ -110,7 +110,7 @@
 				{@const isSelected = selectedTags.includes(tag)}
 				<Badge
 					variant={isSelected ? 'default' : 'outline'}
-					class={cn('cursor-pointer transition-colors')}
+					class={cn('cursor-pointer transition-colors', isSelected && 'bg-popover')}
 					onclick={() => toggleTag(tag)}
 				>
 					{tag}

@@ -4,12 +4,14 @@
 	import * as m from '$paraglide/messages';
 </script>
 
-<section class="section-hero flex-col items-center justify-center gap-4 text-center">
-	<h1>{m['projects.wip.title']}</h1>
+<section
+	class="section-hero kcontainer flex-col items-center justify-center gap-4 px-4 text-center"
+>
+	<h1 class="h2">{m['projects.wip.title']()}</h1>
 	<p class="text-lg lg:text-xl">
-		{m['projects.wip.description']}
+		{m['projects.wip.description']()}
 		<a class="text-primary underline" href={localizeHref(route('/projets'))}
-			>{m['projects.wip.projects_page']}</a
+			>{m['projects.wip.projects_page']()}</a
 		>
 	</p>
 </section>

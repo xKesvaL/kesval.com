@@ -7,18 +7,18 @@
       "KesvaL Studio"
     ],
     "cover": {
-      "src": "/static/cover-fr-1dcd73fc.png",
-      "height": 1260,
-      "width": 2400,
-      "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAACQAQCdASoIAAQADMDOJQAAXN9SqCwA93UaMz4MP6YAAAAA",
+      "src": "/static/cover-fr-0551ab66.png",
+      "height": 630,
+      "width": 1200,
+      "blurDataURL": "data:image/webp;base64,UklGRiwAAABXRUJQVlA4ICAAAACQAQCdASoIAAQADMDOJQAAXN9RAIAA93UaMz4MP2oAAA==",
       "blurWidth": 8,
       "blurHeight": 4
     },
     "coverAvif": {
-      "src": "/static/cover-fr-3e318a15.avif",
-      "height": 1260,
-      "width": 2400,
-      "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAACQAQCdASoIAAQADMDOJQAAXN9SqCwA93UaMz4MP6YAAAAA",
+      "src": "/static/cover-fr-2f930332.avif",
+      "height": 630,
+      "width": 1200,
+      "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAACwAQCdASoIAAQADMDOJQAAXN9Ra3gAAPd1GjM+DD9qAAAA",
       "blurWidth": 8,
       "blurHeight": 4
     },
@@ -73,18 +73,18 @@
       "KesvaL Studio"
     ],
     "cover": {
-      "src": "/static/cover-en-97c30a3b.png",
-      "height": 1260,
-      "width": 2400,
+      "src": "/static/cover-en-3883e3de.png",
+      "height": 630,
+      "width": 1200,
       "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAACQAQCdASoIAAQADMDOJQAAU4+8OVgA93UdZq+rUGrxIAAA",
       "blurWidth": 8,
       "blurHeight": 4
     },
     "coverAvif": {
-      "src": "/static/cover-en-5acd4244.avif",
-      "height": 1260,
-      "width": 2400,
-      "blurDataURL": "data:image/webp;base64,UklGRjAAAABXRUJQVlA4ICQAAACwAQCdASoIAAQADMDOJYwAApx94crAAPd1HWavq1Bq8SAAAAA=",
+      "src": "/static/cover-en-ac35160b.avif",
+      "height": 630,
+      "width": 1200,
+      "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAACQAQCdASoIAAQADMDOJQAAU4+8OVgA93UdZq+rUGrxIAAA",
       "blurWidth": 8,
       "blurHeight": 4
     },

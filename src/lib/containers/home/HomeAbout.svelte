@@ -32,7 +32,7 @@
 			() => {
 				values[key] = actualValues[key];
 			},
-			isMobile.current ? 1000 : 500
+			isMobile.current ? 500 : 0
 		);
 	};
 </script>

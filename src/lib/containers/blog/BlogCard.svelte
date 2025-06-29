@@ -22,16 +22,16 @@
 		<Card
 			class="group gap-0 overflow-hidden rounded-xl border p-0 transition-all duration-500 ease-in-out hover:shadow-md"
 		>
-			<CardHeader class="h-[calc(18rem+1px)] border-b p-0">
+			<CardHeader class="aspect-[2] p-0!">
 				<VeliteImage
 					class="absolute inset-0 h-full w-full object-cover opacity-0 transition duration-500 ease-in-out group-hover:scale-102"
-					classWrapper="h-[18rem] w-full"
+					classWrapper="aspect-[2] w-full"
 					imagePng={post.cover}
 					imageAvif={post.coverAvif}
 					alt={post.title}
 				/>
 			</CardHeader>
-			<CardContent class="p-4">
+			<CardContent class="border-t p-4">
 				<h3 class="mb-2 text-xl leading-tight font-semibold">{post.title}</h3>
 				<div class="text-muted-foreground mb-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm">
 					<div class="flex items-center gap-1.5">
