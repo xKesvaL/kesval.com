@@ -30,7 +30,7 @@
 		/>
 		<Badge class="absolute top-4 left-4 z-30">{brand.name}</Badge>
 	</div>
-	<div class="flex flex-col justify-between px-2 py-6 md:col-span-4">
+	<div class="flex flex-col justify-between px-6 pb-6 md:col-span-4 md:px-2 md:py-6">
 		<div>
 			<h3 class="h4 font-semibold">{member.name}</h3>
 			<p class="text-primary mb-4">
