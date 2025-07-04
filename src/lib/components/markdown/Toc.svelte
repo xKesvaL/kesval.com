@@ -5,11 +5,6 @@
 	import { useToc, type TableOfContents } from '$lib/hooks/use-toc.svelte';
 	import * as m from '$paraglide/messages';
 	import { IsMobileCustom } from '$lib/hooks/is-mobile-custom.svelte';
-	import { tick } from 'svelte';
-	import { gsap } from 'gsap';
-	import { Flip } from 'gsap/dist/Flip';
-
-	gsap.registerPlugin(Flip);
 
 	let { toc }: { toc: TableOfContents } = $props();
 
@@ -35,28 +30,18 @@
 			return;
 		}
 
-		// TODO: make sure we are not clicking on a link inside the toc
 		const target = event.target as HTMLElement;
-		if (target.closest('.toc-root')) {
+		if (target.tagName === 'A') {
 			return;
 		}
 
-		const rootState = Flip.getState('.toc-root');
-
 		isOpenState = !isOpenState;
-
-		await tick();
-
-		Flip.from(rootState, {
-			duration: 0.5,
-			absolute: true
-		});
 	}
 </script>
 
 <button
 	class={cn(
-		'toc-root max-lg:bg-popover w-fit max-w-[min(400px,90vw)] space-y-0 overflow-hidden text-sm max-lg:rounded-xl max-lg:border max-lg:py-1 max-lg:pr-4 max-lg:pl-3 max-lg:shadow-lg',
+		'toc-root max-lg:bg-popover w-fit max-w-[min(400px,90vw)] space-y-0 overflow-hidden text-sm transition-all duration-300 max-lg:rounded-xl max-lg:border max-lg:py-1 max-lg:pr-4 max-lg:pl-3 max-lg:shadow-lg',
 		isOpen && 'space-y-2 max-lg:pt-2 max-lg:pb-4'
 	)}
 	onclick={toggleOpen}
