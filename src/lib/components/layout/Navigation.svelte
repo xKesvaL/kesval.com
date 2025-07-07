@@ -42,9 +42,10 @@
 		}
 	] as const satisfies LinkType[];
 
-	const currentRoute =
+	const currentRoute = $derived(
 		navigationLinks.find((link) => link.href === deLocalizeHref(page.url.pathname)) ??
-		navigationLinks[0];
+			navigationLinks[0]
+	);
 
 	let latestHoveredLink = $state(currentRoute);
 </script>
@@ -106,8 +107,14 @@
 						<li class="border-b-border border-b-[1px] last:border-b-0">
 							<a
 								onmouseenter={() => (latestHoveredLink = link)}
+								onmouseleave={() => (latestHoveredLink = currentRoute)}
 								onclick={() => (navigation.state = 'closed')}
-								class="text-muted-foreground/80 hover:text-primary flex translate-x-0 py-6 text-5xl font-bold uppercase transition-all duration-300 hover:-translate-x-12 lg:hover:-translate-x-12 xl:text-7xl"
+								class={cn(
+									'text-muted-foreground/80 hover:text-primary flex translate-x-0 py-6 text-5xl font-bold uppercase transition-all duration-300 xl:text-7xl xl:hover:-translate-x-12',
+									currentRoute.href === link.href &&
+										latestHoveredLink.href === link.href &&
+										'text-primary xl:-translate-x-12'
+								)}
 								{href}
 							>
 								{#await translate(label) then translation}
