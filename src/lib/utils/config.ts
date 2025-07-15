@@ -228,7 +228,7 @@ export const services = [
 		id: 'web_on_premise',
 		icon: IconCode,
 		price: {
-			amount: 1000
+			amount: 500
 		},
 		duration: {
 			from: 7
@@ -240,7 +240,7 @@ export const services = [
 		id: 'web_apps',
 		icon: IconRocket,
 		price: {
-			amount: 3000
+			amount: 1250
 		},
 		duration: {
 			from: 30
