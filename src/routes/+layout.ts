@@ -40,7 +40,7 @@ export const load = async ({ url }) => {
 		titleTemplate: `%s | ${brand.name}`,
 		description: description,
 		canonical: new URL(url.pathname, url.origin).href,
-		robots: url.host !== 'kesval.com' ? 'noindex' : 'index, follow',
+		robots: url.host === 'dev.kesval.com' ? 'noindex' : 'index, follow',
 		openGraph: {
 			title: title,
 			description: description,
