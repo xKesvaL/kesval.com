@@ -1,6 +1,7 @@
 // eslint-disable
 
-import "@inlang/paraglide-js/urlpattern-polyfill";
+/** @type {any} */
+const URLPattern = {}
 
 /**
  * The project's base locale.
@@ -32,9 +33,8 @@ export const localStorageKey = "PARAGLIDE_LOCALE";
  * @type {Array<"cookie" | "baseLocale" | "globalVariable" | "url" | "preferredLanguage" | "localStorage" | `custom-${string}`>}
  */
 export const strategy = [
-  "url",
   "cookie",
-  "preferredLanguage",
+  "globalVariable",
   "baseLocale"
 ];
 /**
@@ -44,171 +44,15 @@ export const strategy = [
  */
 export const urlPatterns = [
   {
-    "pattern": "/services",
+    "pattern": ":protocol://:domain(.*)::port?/:path(.*)?",
     "localized": [
       [
         "en",
-        "/en/services"
+        ":protocol://:domain(.*)::port?/en/:path(.*)?"
       ],
       [
         "fr",
-        "/services"
-      ]
-    ]
-  },
-  {
-    "pattern": "/services/agences",
-    "localized": [
-      [
-        "en",
-        "/en/services/agencies"
-      ],
-      [
-        "fr",
-        "/services/agences"
-      ]
-    ]
-  },
-  {
-    "pattern": "/services/applications-web",
-    "localized": [
-      [
-        "en",
-        "/en/services/web-applications"
-      ],
-      [
-        "fr",
-        "/services/applications-web"
-      ]
-    ]
-  },
-  {
-    "pattern": "/services/automatisation",
-    "localized": [
-      [
-        "en",
-        "/en/services/automation"
-      ],
-      [
-        "fr",
-        "/services/automatisation"
-      ]
-    ]
-  },
-  {
-    "pattern": "/services/design",
-    "localized": [
-      [
-        "en",
-        "/en/services/design"
-      ],
-      [
-        "fr",
-        "/services/design"
-      ]
-    ]
-  },
-  {
-    "pattern": "/services/maintenance",
-    "localized": [
-      [
-        "en",
-        "/en/services/maintenance"
-      ],
-      [
-        "fr",
-        "/services/maintenance"
-      ]
-    ]
-  },
-  {
-    "pattern": "/services/site-vitrine",
-    "localized": [
-      [
-        "en",
-        "/en/services/website"
-      ],
-      [
-        "fr",
-        "/services/site-vitrine"
-      ]
-    ]
-  },
-  {
-    "pattern": "/projets",
-    "localized": [
-      [
-        "en",
-        "/en/projects"
-      ],
-      [
-        "fr",
-        "/projets"
-      ]
-    ]
-  },
-  {
-    "pattern": "/projets/[slug]",
-    "localized": [
-      [
-        "en",
-        "/en/projects/[slug]"
-      ],
-      [
-        "fr",
-        "/projets/[slug]"
-      ]
-    ]
-  },
-  {
-    "pattern": "/blog",
-    "localized": [
-      [
-        "en",
-        "/en/blog"
-      ],
-      [
-        "fr",
-        "/blog"
-      ]
-    ]
-  },
-  {
-    "pattern": "/blog/[slug]",
-    "localized": [
-      [
-        "en",
-        "/en/blog/[slug]"
-      ],
-      [
-        "fr",
-        "/blog/[slug]"
-      ]
-    ]
-  },
-  {
-    "pattern": "/contact",
-    "localized": [
-      [
-        "en",
-        "/en/contact"
-      ],
-      [
-        "fr",
-        "/contact"
-      ]
-    ]
-  },
-  {
-    "pattern": "/:path(.*)?",
-    "localized": [
-      [
-        "en",
-        "/en/:path(.*)?"
-      ],
-      [
-        "fr",
-        "/:path(.*)?"
+        ":protocol://:domain(.*)::port?/:path(.*)?"
       ]
     ]
   }
@@ -235,7 +79,7 @@ export const urlPatterns = [
 export let serverAsyncLocalStorage = undefined;
 export const disableAsyncLocalStorage = false;
 export const experimentalMiddlewareLocaleSplitting = false;
-export const isServer = import.meta.env?.SSR ?? typeof window === 'undefined';
+export const isServer = typeof window === 'undefined';
 /**
  * Sets the server side async local storage.
  *
@@ -250,10 +94,10 @@ export function overwriteServerAsyncLocalStorage(value) {
     serverAsyncLocalStorage = value;
 }
 const TREE_SHAKE_COOKIE_STRATEGY_USED = true;
-const TREE_SHAKE_URL_STRATEGY_USED = true;
-const TREE_SHAKE_GLOBAL_VARIABLE_STRATEGY_USED = false;
-const TREE_SHAKE_PREFERRED_LANGUAGE_STRATEGY_USED = true;
-const TREE_SHAKE_DEFAULT_URL_PATTERN_USED = false;
+const TREE_SHAKE_URL_STRATEGY_USED = false;
+const TREE_SHAKE_GLOBAL_VARIABLE_STRATEGY_USED = true;
+const TREE_SHAKE_PREFERRED_LANGUAGE_STRATEGY_USED = false;
+const TREE_SHAKE_DEFAULT_URL_PATTERN_USED = true;
 const TREE_SHAKE_LOCAL_STORAGE_STRATEGY_USED = false;
 
 globalThis.__paraglide = {}
@@ -322,7 +166,15 @@ export let getLocale = () => {
         }
         else if (isCustomStrategy(strat) && customClientStrategies.has(strat)) {
             const handler = customClientStrategies.get(strat);
-            locale = handler.getLocale();
+            if (handler) {
+                const result = handler.getLocale();
+                // Handle both sync and async results - skip async in sync getLocale
+                if (result instanceof Promise) {
+                    // Can't await in sync function, skip async strategies
+                    continue;
+                }
+                locale = result;
+            }
         }
         // check if match, else continue loop
         if (locale !== undefined) {
@@ -402,9 +254,11 @@ export let setLocale = (newLocale, options) => {
                 typeof window === "undefined") {
                 continue;
             }
-            const domain = cookieDomain || window.location.hostname;
             // set the cookie
-            document.cookie = `${cookieName}=${newLocale}; path=/; max-age=${cookieMaxAge}; domain=${domain}`;
+            const cookieString = `${cookieName}=${newLocale}; path=/; max-age=${cookieMaxAge}`;
+            document.cookie = cookieDomain
+                ? `${cookieString}; domain=${cookieDomain}`
+                : cookieString;
         }
         else if (strat === "baseLocale") {
             // nothing to be set here. baseLocale is only a fallback
@@ -433,7 +287,15 @@ export let setLocale = (newLocale, options) => {
         }
         else if (isCustomStrategy(strat) && customClientStrategies.has(strat)) {
             const handler = customClientStrategies.get(strat);
-            handler.setLocale(newLocale);
+            if (handler) {
+                const result = handler.setLocale(newLocale);
+                // Handle async setLocale - fire and forget
+                if (result instanceof Promise) {
+                    result.catch((error) => {
+                        console.warn(`Custom strategy "${strat}" setLocale failed:`, error);
+                    });
+                }
+            }
         }
     }
     if (!isServer &&
@@ -540,6 +402,9 @@ export function assertIsLocale(input) {
  * they are defined. If a strategy returns an invalid locale,
  * it will fall back to the next strategy.
  *
+ * Note: Custom server strategies are not supported in this synchronous version.
+ * Use `extractLocaleFromRequestAsync` if you need custom server strategies with async getLocale methods.
+ *
  * @example
  *   const locale = extractLocaleFromRequest(request);
  *
@@ -572,9 +437,10 @@ export const extractLocaleFromRequest = (request) => {
         else if (strat === "localStorage") {
             continue;
         }
-        else if (isCustomStrategy(strat) && customServerStrategies.has(strat)) {
-            const handler = customServerStrategies.get(strat);
-            locale = handler.getLocale(request);
+        else if (isCustomStrategy(strat)) {
+            // Custom strategies are not supported in sync version
+            // Use extractLocaleFromRequestAsync for custom server strategies
+            continue;
         }
         if (locale !== undefined) {
             if (!isLocale(locale)) {
@@ -586,6 +452,57 @@ export const extractLocaleFromRequest = (request) => {
         }
     }
     throw new Error("No locale found. There is an error in your strategy. Try adding 'baseLocale' as the very last strategy. Read more here https://inlang.com/m/gerre34r/library-inlang-paraglideJs/errors#no-locale-found");
+};
+
+/**
+ * Asynchronously extracts a locale from a request.
+ *
+ * This function supports async custom server strategies, unlike the synchronous
+ * `extractLocaleFromRequest`. Use this function when you have custom server strategies
+ * that need to perform asynchronous operations (like database calls) in their getLocale method.
+ *
+ * The function first processes any custom server strategies asynchronously, then falls back
+ * to the synchronous `extractLocaleFromRequest` for all other strategies.
+ *
+ * @see {@link https://github.com/opral/inlang-paraglide-js/issues/527#issuecomment-2978151022}
+ *
+ * @example
+ *   // Basic usage
+ *   const locale = await extractLocaleFromRequestAsync(request);
+ *
+ * @example
+ *   // With custom async server strategy
+ *   defineCustomServerStrategy("custom-database", {
+ *     getLocale: async (request) => {
+ *       const userId = extractUserIdFromRequest(request);
+ *       return await getUserLocaleFromDatabase(userId);
+ *     }
+ *   });
+ *
+ *   const locale = await extractLocaleFromRequestAsync(request);
+ *
+ * @type {(request: Request) => Promise<Locale>}
+ */
+export const extractLocaleFromRequestAsync = async (request) => {
+    /** @type {string|undefined} */
+    let locale;
+    // Process custom strategies first, in order
+    for (const strat of strategy) {
+        if (isCustomStrategy(strat) && customServerStrategies.has(strat)) {
+            const handler = customServerStrategies.get(strat);
+            if (handler) {
+                /** @type {string|undefined} */
+                locale = await handler.getLocale(request);
+            }
+            // If we got a valid locale from this custom strategy, use it
+            if (locale !== undefined && isLocale(locale)) {
+                return assertIsLocale(locale);
+            }
+        }
+    }
+    // If no custom strategy provided a valid locale, fall back to sync version
+    locale = extractLocaleFromRequest(request);
+    return assertIsLocale(locale);
 };
 
 /**
@@ -1281,52 +1198,50 @@ export function generateStaticLocalizedUrls(urls) {
  * @typedef {Array<Strategy>} Strategies
  */
 /**
- * @typedef {{ getLocale: (request?: Request) => string | undefined }} CustomServerStrategyHandler
+ * @typedef {{ getLocale: (request?: Request) => Promise<string | undefined> | (string | undefined) }} CustomServerStrategyHandler
  */
 /**
- * @typedef {{ getLocale: () => string | undefined, setLocale: (locale: string) => void }} CustomClientStrategyHandler
+ * @typedef {{ getLocale: () => Promise<string|undefined> | (string | undefined), setLocale: (locale: string) => Promise<void> | void }} CustomClientStrategyHandler
  */
+/** @type {Map<string, CustomServerStrategyHandler>} */
 export const customServerStrategies = new Map();
+/** @type {Map<string, CustomClientStrategyHandler>} */
 export const customClientStrategies = new Map();
 /**
  * Checks if the given strategy is a custom strategy.
  *
  * @param {any} strategy The name of the custom strategy to validate.
- * Must be a string that starts with "custom-" followed by alphanumeric characters.
+ * Must be a string that starts with "custom-" followed by alphanumeric characters, hyphens, or underscores.
  * @returns {boolean} Returns true if it is a custom strategy, false otherwise.
  */
 export function isCustomStrategy(strategy) {
-    return typeof strategy === "string" && /^custom-[A-Za-z0-9]+$/.test(strategy);
+    return (typeof strategy === "string" && /^custom-[A-Za-z0-9_-]+$/.test(strategy));
 }
 /**
  * Defines a custom strategy that is executed on the server.
  *
- * @param {any} strategy The name of the custom strategy to define. Must follow the pattern `custom-<name>` where
- * `<name>` contains only alphanumeric characters.
+ * @param {any} strategy The name of the custom strategy to define. Must follow the pattern custom-name with alphanumeric characters, hyphens, or underscores.
  * @param {CustomServerStrategyHandler} handler The handler for the custom strategy, which should implement
- * the method `getLocale`.
+ * the method getLocale.
  * @returns {void}
  */
 export function defineCustomServerStrategy(strategy, handler) {
     if (!isCustomStrategy(strategy)) {
-        throw new Error(`Invalid custom strategy: "${strategy}". Must be a custom strategy following the pattern custom-<name>` +
-            " where <name> contains only alphanumeric characters.");
+        throw new Error(`Invalid custom strategy: "${strategy}". Must be a custom strategy following the pattern custom-name.`);
     }
     customServerStrategies.set(strategy, handler);
 }
 /**
  * Defines a custom strategy that is executed on the client.
  *
- * @param {any} strategy The name of the custom strategy to define. Must follow the pattern `custom-<name>` where
- * `<name>` contains only alphanumeric characters.
+ * @param {any} strategy The name of the custom strategy to define. Must follow the pattern custom-name with alphanumeric characters, hyphens, or underscores.
  * @param {CustomClientStrategyHandler} handler The handler for the custom strategy, which should implement the
- * methods `getLocale` and `setLocale`.
+ * methods getLocale and setLocale.
  * @returns {void}
  */
 export function defineCustomClientStrategy(strategy, handler) {
     if (!isCustomStrategy(strategy)) {
-        throw new Error(`Invalid custom strategy: "${strategy}". Must be a custom strategy following the pattern custom-<name>` +
-            " where <name> contains only alphanumeric characters.");
+        throw new Error(`Invalid custom strategy: "${strategy}". Must be a custom strategy following the pattern custom-name.`);
     }
     customClientStrategies.set(strategy, handler);
 }
