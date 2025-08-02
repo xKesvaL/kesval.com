@@ -1,9 +1,12 @@
 <script lang="ts">
-	import { educationExperience, professionalExperience } from '$lib/utils/experience';
+	import { getEducationExperience, getProfessionalExperience } from '$lib/utils/experience';
 	import * as m from '$paraglide/messages';
 	import AboutResumeExperience from './AboutResumeExperience.svelte';
 	import AboutResumeSection from './AboutResumeSection.svelte';
 
+	const professionalExperience = getProfessionalExperience(m);
+	const educationExperience = getEducationExperience(m);
+	
 	const totalExperiences = [...professionalExperience, ...educationExperience]
 		.sort((a, b) => b.startDate.valueOf() - a.startDate.valueOf())
 		.filter((experience) => {

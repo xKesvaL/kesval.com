@@ -342,7 +342,7 @@
 						class="size-12 rounded-full [&>svg]:size-6!"
 					>
 						<IconBrandInstagram />
-						<span class="sr-only">Instagram</span>
+						<span class="sr-only">{m['nav.instagram']()}</span>
 					</Button>
 					<Button
 						href={brand.linkedin}
@@ -351,7 +351,7 @@
 						class="size-12 rounded-full [&>svg]:size-6!"
 					>
 						<IconBrandLinkedin />
-						<span class="sr-only">LinkedIn</span>
+						<span class="sr-only">{m['nav.linkedin']()}</span>
 					</Button>
 					<Button
 						href={brand.github}
@@ -360,7 +360,7 @@
 						class="size-12 rounded-full [&>svg]:size-6!"
 					>
 						<IconBrandGithub />
-						<span class="sr-only">GitHub</span>
+						<span class="sr-only">{m['nav.github']()}</span>
 					</Button>
 				</div>
 				<div

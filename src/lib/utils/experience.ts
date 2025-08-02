@@ -1,11 +1,13 @@
-export const professionalExperience = [
+import type * as m from '$paraglide/messages';
+
+export const getProfessionalExperience = (messages: typeof m) => [
 	{
 		name: 'kesval',
 		role: 'fullstack_dev',
 		startDate: new Date('2024-08-01'),
 		endDate: null,
 		imageUrl: '/experiences/kesval.png',
-		location: 'Ungersheim, France'
+		location: messages['locations.ungersheim_france']()
 	},
 	{
 		name: 'olwe',
@@ -13,7 +15,7 @@ export const professionalExperience = [
 		startDate: new Date('2023-07-31'),
 		endDate: new Date('2024-07-31'),
 		imageUrl: '/experiences/olwe.jpg',
-		location: 'Mulhouse, France'
+		location: messages['locations.mulhouse_france']()
 	},
 	{
 		name: 'ciotadin_office',
@@ -21,12 +23,12 @@ export const professionalExperience = [
 		startDate: new Date('2019-04-01'),
 		endDate: new Date('2019-04-08'),
 		imageUrl: '/experiences/ciotadin_office.jpeg',
-		location: 'La Ciotat, France',
+		location: messages['locations.la_ciotat_france'](),
 		hideInResume: true
 	}
 ] as const;
 
-export const educationExperience = [
+export const getEducationExperience = (messages: typeof m) => [
 	{
 		role: 'student',
 		name: 'uha',
@@ -34,7 +36,7 @@ export const educationExperience = [
 		// endDate: new Date("2025-06-31"),
 		endDate: null,
 		imageUrl: '/experiences/uha.png',
-		location: 'Mulhouse, France'
+		location: messages['locations.mulhouse_france']()
 	},
 	{
 		role: 'student',
@@ -42,10 +44,10 @@ export const educationExperience = [
 		startDate: new Date('2019-09-01'),
 		endDate: new Date('2022-06-31'),
 		imageUrl: '/experiences/theodore_deck.jpeg',
-		location: 'Guebwiller, France'
+		location: messages['locations.guebwiller_france']()
 	}
 ] as const;
 
 export type Experience =
-	| (typeof professionalExperience)[number]
-	| (typeof educationExperience)[number];
+	| ReturnType<typeof getProfessionalExperience>[number]
+	| ReturnType<typeof getEducationExperience>[number];

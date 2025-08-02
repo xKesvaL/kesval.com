@@ -145,51 +145,75 @@
 		"cta_self": "I'm launching my project",
 		"cta_big": "Launch your project today",
 		"your_name_here": "Your name here",
+		"your_name_here_short": "You here?",
 		"email": "Email",
 		"back": "Back",
 		"free_quote": "Free quote",
 		"kesval_logo": "KesvaL's logo",
-		"link_copied_to_clipboard": "Link copied to clipboard!"
+		"link_copied_to_clipboard": "Link copied to clipboard!",
+		"next": "Next",
+		"previous": "Previous",
+		"close": "Close",
+		"more": "More",
+		"more_pages": "More pages",
+		"toggle_sidebar": "Toggle Sidebar",
+		"sidebar": "Sidebar",
+		"sidebar_description": "Displays the mobile sidebar.",
+		"next_slide": "Next slide",
+		"previous_slide": "Previous slide"
 	},
 	"meta": {
 		"home": {
-			"title": "Home"
+			"title": "Home",
+			"description": "KesvaL Studio, your trusted partner for creating websites, web and mobile applications. We support you in your digital transformation."
 		},
 		"services": {
 			"title": "Our Services",
+			"description": "Discover our services! Website creation, web and mobile applications, UX/UI design, process automation, maintenance and support.",
 			"site_vitrine": {
-				"title": "Showcase Site"
+				"title": "Showcase Site",
+				"description": "Create your showcase website with KesvaL Studio. We support you in creating your website, from mockup to launch."
 			},
 			"applications_web": {
-				"title": "Web & Mobile Applications"
+				"title": "Web & Mobile Applications",
+				"description": "Create your web or mobile application with KesvaL Studio. We optimize your processes to save time and money."
 			},
 			"design": {
-				"title": "UX/UI Design"
+				"title": "UX/UI Design",
+				"description": "Create your UX/UI design with KesvaL Studio. We create intuitive user interfaces, centered on your users."
 			},
 			"automatisation": {
-				"title": "Process Automation"
+				"title": "Process Automation",
+				"description": "Automate your processes with KesvaL Studio. We find custom solutions to automate your repetitive tasks."
 			},
 			"maintenance": {
-				"title": "Maintenance & Support"
+				"title": "Maintenance & Support",
+				"description": "Ensure your website or application runs without interruption. We support you in maintaining and supporting your digital solutions."
 			},
 			"agences": {
-				"title": "Services for Agencies"
+				"title": "Services for Agencies",
+				"description": "We support agencies in creating websites and web applications. We bring our expertise for you and your clients."
 			}
 		},
 		"projets": {
-			"title": "Projects"
+			"title": "Projects",
+			"description": "Discover our recent projects and the solutions we have provided to our clients."
 		},
 		"blog": {
-			"title": "Blog"
+			"title": "Blog",
+			"description": "Discover our latest articles and the latest news from the web development world."
 		},
 		"contact": {
-			"title": "Contact"
+			"title": "Contact",
+			"description": "Contact us to discuss your project. We will respond within 24 hours."
 		},
 		"mentions_legales": {
-			"title": "Legal Notice"
+			"title": "Legal Notice",
+			"description": "Discover the legal notice of KesvaL Studio."
 		},
 		"conditions_generales_de_vente": {
-			"title": "Terms of Service"
+			"title": "Terms of Service",
+			"description": "Discover the terms of service of KesvaL Studio."
 		}
 	},
 	"cgv": {
@@ -251,7 +275,18 @@
 		"devops": "DevOps",
 		"cms": "CMS",
 		"figma": "Figma",
-		"project_management": "Project Management"
+		"project_management": "Project Management",
+		"react": "React",
+		"svelte": "Svelte",
+		"typescript": "TypeScript",
+		"pwas": "PWAs",
+		"express": "Express",
+		"mariadb": "MariaDB",
+		"firebase": "Firebase",
+		"photoshop": "Photoshop",
+		"premiere_pro": "Premiere Pro",
+		"after_effects": "After Effects",
+		"notion": "Notion"
 	},
 	"blog": {
 		"title": "Blog",
@@ -415,7 +450,9 @@
 				"result_2": {
 					"amount": "95%",
 					"short_description": "Customer satisfaction"
-				}
+				},
+				"cta": "Protect my investment",
+				"see_more": "Learn more"
 			}
 		},
 		"agencies": {
@@ -439,7 +476,9 @@
 				"result_2": {
 					"amount": "98%",
 					"short_description": "Customer satisfaction"
-				}
+				},
+				"cta": "I need you",
+				"see_more": "See examples"
 			}
 		},
 		"our_services": {
@@ -575,7 +614,19 @@
 		}
 	},
 	"error": {
-		"title": "Oops! Il semble que vous avez trouvé une page qui n'existe pas ou qu'une erreur est survenue.",
-		"back_to_home": "Retour à l'accueil"
+		"title": "Oops! It seems you've found a page that doesn't exist or an error has occurred.",
+		"back_to_home": "Back to home",
+		"post_not_found": "Could not find the post.",
+		"post_markdown_not_found": "Could not find the post markdown.",
+		"generic_error": "Error: {message}"
+	},
+	"locations": {
+		"ungersheim_france": "Ungersheim, France",
+		"mulhouse_france": "Mulhouse, France",
+		"la_ciotat_france": "La Ciotat, France",
+		"guebwiller_france": "Guebwiller, France"
+	},
+	"person": {
+		"jordan_abeddou": "Jordan Abeddou"
 	}
 }
