@@ -13,6 +13,7 @@ import {
 	IconDevices,
 	type Icon
 } from '@tabler/icons-svelte';
+import type * as m from '$paraglide/messages';
 
 export type SkillType = 'back_end' | 'front_end' | 'other';
 
@@ -25,59 +26,59 @@ export type Skills = {
 	[key in SkillType]: Skill[];
 };
 
-export const skillsList: Skills = {
+export const getSkillsList = (messages: typeof m): Skills => ({
 	front_end: [
 		{
-			name: 'React',
+			name: messages['skills.react'](),
 			icon: IconBrandReact
 		},
 		{
-			name: 'Svelte',
+			name: messages['skills.svelte'](),
 			icon: IconBrandSvelte
 		},
 		{
-			name: 'PWAs',
+			name: messages['skills.pwas'](),
 			icon: IconDevices
 		},
 		{
-			name: 'TypeScript',
+			name: messages['skills.typescript'](),
 			icon: IconBrandTypescript
 		},
 		{
-			name: 'Figma',
+			name: messages['skills.figma'](),
 			icon: IconBrandFigma
 		}
 	],
 	back_end: [
 		{
-			name: 'Express',
+			name: messages['skills.express'](),
 			icon: IconBrandNodejs
 		},
 		{
-			name: 'MariaDB',
+			name: messages['skills.mariadb'](),
 			icon: IconBrandMysql
 		},
 		{
-			name: 'Firebase',
+			name: messages['skills.firebase'](),
 			icon: IconBrandFirebase
 		}
 	],
 	other: [
 		{
-			name: 'Photoshop',
+			name: messages['skills.photoshop'](),
 			icon: IconBrandAdobePhotoshop
 		},
 		{
-			name: 'Premiere Pro',
+			name: messages['skills.premiere_pro'](),
 			icon: IconBrandAdobePremier
 		},
 		{
-			name: 'After Effects',
+			name: messages['skills.after_effects'](),
 			icon: IconBrandAdobeAfterEffect
 		},
 		{
-			name: 'Notion',
+			name: messages['skills.notion'](),
 			icon: IconBrandNotion
 		}
 	]
-} as const;
+});

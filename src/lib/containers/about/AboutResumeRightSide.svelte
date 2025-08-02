@@ -1,7 +1,9 @@
 <script lang="ts">
 	import AboutResumeSection from './AboutResumeSection.svelte';
 	import * as m from '$paraglide/messages';
-	import { skillsList } from '$lib/utils/skills';
+	import { getSkillsList } from '$lib/utils/skills';
+
+	const skillsList = getSkillsList(m);
 </script>
 
 <aside class="grid h-full grid-rows-[min-content_min-content] gap-4">
@@ -12,7 +14,7 @@
 	</AboutResumeSection>
 	<AboutResumeSection title={m['about.resume.skills']()}>
 		<div class="flex flex-col gap-1">
-			<p class="text-lg font-medium">Front-End</p>
+			<p class="text-lg font-medium">{m['skills.front_end']()}</p>
 			<div class="flex flex-wrap gap-2">
 				{#each skillsList.front_end as skill (skill.name)}
 					<div
@@ -27,7 +29,7 @@
 			</div>
 		</div>
 		<div class="flex flex-col gap-1">
-			<p class="text-lg font-medium">Back-End</p>
+			<p class="text-lg font-medium">{m['skills.back_end']()}</p>
 			<div class="grid grid-cols-3 gap-2">
 				{#each skillsList.back_end as skill (skill.name)}
 					<div

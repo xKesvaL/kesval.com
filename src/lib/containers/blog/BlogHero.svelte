@@ -169,7 +169,7 @@
 			{/if}
 		{:catch error}
 			<div class="text-destructive text-center">
-				<p>Error: {error.message}</p>
+				<p>{m['error.generic_error']({ message: error.message })}</p>
 			</div>
 		{/await}
 	</div>

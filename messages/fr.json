@@ -150,7 +150,17 @@
 		"back": "Retour",
 		"free_quote": "Devis gratuit",
 		"kesval_logo": "Logo de KesvaL",
-		"link_copied_to_clipboard": "Lien copié dans le presse-papiers !"
+		"link_copied_to_clipboard": "Lien copié dans le presse-papiers !",
+		"next": "Suivant",
+		"previous": "Précédent",
+		"close": "Fermer",
+		"more": "Plus",
+		"more_pages": "Plus de pages",
+		"toggle_sidebar": "Basculer la barre latérale",
+		"sidebar": "Barre latérale",
+		"sidebar_description": "Affiche la barre latérale mobile.",
+		"next_slide": "Diapositive suivante",
+		"previous_slide": "Diapositive précédente"
 	},
 	"meta": {
 		"home": {
@@ -265,7 +275,18 @@
 		"devops": "DevOps",
 		"cms": "CMS",
 		"figma": "Figma",
-		"project_management": "Gestion de projet"
+		"project_management": "Gestion de projet",
+		"react": "React",
+		"svelte": "Svelte",
+		"typescript": "TypeScript",
+		"pwas": "PWAs",
+		"express": "Express",
+		"mariadb": "MariaDB",
+		"firebase": "Firebase",
+		"photoshop": "Photoshop",
+		"premiere_pro": "Premiere Pro",
+		"after_effects": "After Effects",
+		"notion": "Notion"
 	},
 	"blog": {
 		"title": "Blog",
@@ -594,6 +615,18 @@
 	},
 	"error": {
 		"title": "Oops! Il semble que vous avez trouvé une page qui n'existe pas ou qu'une erreur est survenue.",
-		"back_to_home": "Retour à l'accueil"
+		"back_to_home": "Retour à l'accueil",
+		"post_not_found": "Impossible de trouver l'article.",
+		"post_markdown_not_found": "Impossible de trouver le markdown de l'article.",
+		"generic_error": "Erreur : {message}"
+	},
+	"locations": {
+		"ungersheim_france": "Ungersheim, France",
+		"mulhouse_france": "Mulhouse, France",
+		"la_ciotat_france": "La Ciotat, France",
+		"guebwiller_france": "Guebwiller, France"
+	},
+	"person": {
+		"jordan_abeddou": "Jordan Abeddou"
 	}
 }
