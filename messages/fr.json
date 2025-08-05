@@ -17,10 +17,10 @@
 	},
 	"home": {
 		"hero": {
-			"title_before": "Création d'",
-			"title_highlight": "expériences",
-			"title_after": " digitales de A à Z",
-			"subtitle": "Plus qu'un développeur, votre partenaire de confiance. Je m'engage à vos côtés pour créer des solutions web performantes et vous simplifier le digital.",
+			"title_before": "Créons votre ",
+			"title_highlight": "site web",
+			"title_after": " qui attire plus de clients",
+			"subtitle": "Je crée des sites web modernes et efficaces pour faire grandir votre business. Simple, rapide et sans prise de tête.",
 			"view_projects": "Voir les Projets",
 			"see_all": "Voir tout",
 			"years_of_experience": "{years} ans d'expérience",
@@ -28,15 +28,15 @@
 			"ui_ux_design": "Design UI/UX"
 		},
 		"about": {
-			"experience": "ans d'expertise",
-			"experience_description": "Avec plus de 3 ans d'expérience, nous concevons des solutions web sur-mesure, des sites vitrines aux applications complexes, pour une clientèle variée.",
+			"experience": "ans d'expérience",
+			"experience_description": "3 ans à créer des sites web qui font grandir les entreprises. Du simple site vitrine à l'application complexe.",
 			"projects": "projets réalisés",
-			"projects_description": "Nous avons eu le plaisir de travailler sur de nombreux projets, allant de sites vitrines élégants à des applications web complexes.",
+			"projects_description": "Chaque projet est unique. Sites vitrines, boutiques en ligne, applications web - je m'adapte à vos besoins.",
 			"clients": "clients satisfaits",
-			"clients_description": "Notre plus grande fierté est d'accompagner nos clients dans leur transformation digitale et de contribuer activement à leur croissance."
+			"clients_description": "Ma plus grande satisfaction : voir mes clients développer leur business grâce à leur nouveau site web."
 		},
 		"clients": {
-			"title": "Nous avons collaboré avec des clients exceptionnels"
+			"title": "Ils me font confiance"
 		},
 		"projects": {
 			"title": "Nos derniers projets",
@@ -155,7 +155,7 @@
 	"meta": {
 		"home": {
 			"title": "Accueil",
-			"description": "KesvaL Studio, votre partenaire de confiance pour la création de sites web, applications web et mobile. Nous vous accompagnons dans votre transformation digitale."
+			"description": "KesvaL Studio - Je crée des sites web modernes qui attirent plus de clients pour votre business. Simple, rapide et efficace."
 		},
 		"services": {
 			"title": "Nos services",
@@ -462,22 +462,22 @@
 		},
 		"our_services": {
 			"suptitle": "Nos services",
-			"title": "Nos expertises à votre service",
-			"description": "Nous vous proposons une gamme complète de services pour répondre à tous vos besoins digitaux.",
-			"button": "Découvrir nos services"
+			"title": "Ce que je peux faire pour vous",
+			"description": "Des solutions simples et efficaces pour développer votre business en ligne.",
+			"button": "Voir nos services"
 		},
 		"benefits": {
 			"time_gain": {
-				"title": "Automatisation des tâches",
-				"description": "Réduisez les tâches manuelles de 75% avec nos outils d'automatisation, et concentrez-vous sur ce qui compte vraiment."
+				"title": "Vous faites gagner du temps",
+				"description": "Automatisez vos tâches répétitives et concentrez-vous sur votre business. Plus de temps perdu sur la technique."
 			},
 			"measurable_results": {
-				"title": "Résultats mesurables",
-				"description": "Mesurez concrètement l'impact de nos solutions sur votre présence digitale, l'engagement de vos clients et votre rentabilité."
+				"title": "Des résultats visibles",
+				"description": "Suivez facilement l'impact de votre site web sur votre business : plus de visiteurs, plus de clients."
 			},
 			"tailor_made_solutions": {
-				"title": "Solutions sur mesure",
-				"description": "Nous concevons des solutions personnalisées qui répondent précisément à vos besoins, quelles que soient vos exigences."
+				"title": "Fait sur mesure pour vous",
+				"description": "Votre site web est unique, comme votre business. Solution personnalisée qui correspond exactement à vos besoins."
 			}
 		},
 		"hero": {

@@ -29,10 +29,13 @@ export const load = async ({ url }) => {
 		// isDynamicPath = true;
 		debug('default', 'Dynamic path detected, title set to undefined');
 	} else {
-		title = await translate(`meta${delocalizedPath !== '.' ? delocalizedPath : '.home'}.title`);
-		description = await translate(
-			`meta${delocalizedPath !== '.' ? delocalizedPath : '.home'}.description`
-		);
+		// title = await translate(`meta${delocalizedPath !== '.' ? delocalizedPath : '.home'}.title`);
+		// description = await translate(
+		// 	`meta${delocalizedPath !== '.' ? delocalizedPath : '.home'}.description`
+		// );
+		// Simplified static meta data for now
+		title = "Accueil";
+		description = "KesvaL Studio - Je crée des sites web modernes qui attirent plus de clients pour votre business. Simple, rapide et efficace.";
 	}
 
 	const baseMetaTags = Object.freeze({
