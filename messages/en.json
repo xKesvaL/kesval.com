@@ -17,10 +17,10 @@
 	},
 	"home": {
 		"hero": {
-			"title_before": "Crafting Digital ",
-			"title_highlight": "Experiences",
-			"title_after": " from A to Z",
-			"subtitle": "More than a developer, your trusted partner. I am committed to working alongside you to create high-performance web solutions and simplify the digital world for you.",
+			"title_before": "Let's build your ",
+			"title_highlight": "website",
+			"title_after": " that attracts more customers",
+			"subtitle": "I create modern and effective websites to grow your business. Simple, fast and hassle-free.",
 			"view_projects": "View Projects",
 			"see_all": "See all",
 			"years_of_experience": "{years} years of experience",
@@ -28,15 +28,15 @@
 			"ui_ux_design": "UI/UX Design"
 		},
 		"about": {
-			"experience": "years of expertise",
-			"experience_description": "With over 3 years of experience, we design custom web solutions, from showcase sites to complex applications, for a diverse clientele.",
+			"experience": "years of experience",
+			"experience_description": "3 years creating websites that grow businesses. From simple showcase sites to complex applications.",
 			"projects": "completed projects",
-			"projects_description": "We have had the pleasure of working on numerous projects, ranging from elegant showcase sites to complex web applications.",
+			"projects_description": "Each project is unique. Showcase sites, online stores, web applications - I adapt to your needs.",
 			"clients": "satisfied clients",
-			"clients_description": "Our greatest pride is supporting our clients in their digital transformation and actively contributing to their growth."
+			"clients_description": "My greatest satisfaction: seeing my clients grow their business thanks to their new website."
 		},
 		"clients": {
-			"title": "We have collaborated with exceptional clients"
+			"title": "They trust me"
 		},
 		"projects": {
 			"title": "Our latest projects",
@@ -153,7 +153,8 @@
 	},
 	"meta": {
 		"home": {
-			"title": "Home"
+			"title": "Home",
+			"description": "KesvaL Studio - I create modern websites that attract more customers for your business. Simple, fast and effective."
 		},
 		"services": {
 			"title": "Our Services",
@@ -444,22 +445,22 @@
 		},
 		"our_services": {
 			"suptitle": "Our services",
-			"title": "Our expertise at your service",
-			"description": "We offer a full range of services to meet all your digital needs.",
-			"button": "Discover our services"
+			"title": "What I can do for you",
+			"description": "Simple and effective solutions to grow your business online.",
+			"button": "See our services"
 		},
 		"benefits": {
 			"time_gain": {
-				"title": "Task automation",
-				"description": "Reduce manual tasks by 75% with our automation tools, and focus on what really matters."
+				"title": "Save you time",
+				"description": "Automate your repetitive tasks and focus on your business. No more time wasted on technical stuff."
 			},
 			"measurable_results": {
-				"title": "Measurable results",
-				"description": "Concretely measure the impact of our solutions on your digital presence, customer engagement, and profitability."
+				"title": "Visible results",
+				"description": "Easily track the impact of your website on your business: more visitors, more customers."
 			},
 			"tailor_made_solutions": {
-				"title": "Custom solutions",
-				"description": "We design custom solutions that precisely meet your needs, whatever your requirements."
+				"title": "Made just for you",
+				"description": "Your website is unique, just like your business. Custom solution that fits exactly your needs."
 			}
 		},
 		"hero": {
