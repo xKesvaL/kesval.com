@@ -11,6 +11,7 @@
 	import { polyfillCountryFlagEmojis } from '$lib/utils/functions';
 	import { onMount } from 'svelte';
 	import CookieConsent from '$lib/components/base/CookieConsent.svelte';
+	import EasterEggs from '$lib/components/base/EasterEggs.svelte';
 
 	let { children, data } = $props();
 	let metaTags = $derived(deepMerge(data.baseMetaTags, page.data.pageMetaTags));
@@ -33,6 +34,7 @@
 	<MetaTags {...metaTags} />
 
 	<CookieConsent />
+	<EasterEggs />
 
 	<Toaster
 		position="bottom-right"
