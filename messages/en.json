@@ -176,6 +176,7 @@
 		"cta_self": "I'm launching my project",
 		"cta_big": "Launch your project today",
 		"your_name_here": "Your name here",
+		"your_name_here_short": "You here?",
 		"email": "Email",
 		"back": "Back",
 		"free_quote": "Free quote",
@@ -189,39 +190,51 @@
 		},
 		"services": {
 			"title": "Our Services",
+			"description": "Discover our services: website creation, web and mobile apps, UX/UI design, process automation, maintenance and support.",
 			"site_vitrine": {
-				"title": "Showcase Site"
+				"title": "Showcase Site",
+				"description": "Create your showcase website with KesvaL Studio. We support you from design to launch."
 			},
 			"applications_web": {
-				"title": "Web & Mobile Applications"
+				"title": "Web & Mobile Applications",
+				"description": "Build your web or mobile application with KesvaL Studio. We optimize your processes to save time and money."
 			},
 			"design": {
-				"title": "UX/UI Design"
+				"title": "UX/UI Design",
+				"description": "Create your UX/UI design with KesvaL Studio. We craft intuitive user interfaces centered on your users."
 			},
 			"automatisation": {
-				"title": "Process Automation"
+				"title": "Process Automation",
+				"description": "Automate your processes with KesvaL Studio. We design tailored solutions to streamline your repetitive tasks."
 			},
 			"maintenance": {
-				"title": "Maintenance & Support"
+				"title": "Maintenance & Support",
+				"description": "Ensure your website or application runs without interruption. We provide ongoing maintenance and support for your digital solutions."
 			},
 			"agences": {
-				"title": "Services for Agencies"
+				"title": "Services for Agencies",
+				"description": "We support agencies building websites and web apps. We bring our technical expertise to you and your clients."
 			}
 		},
 		"projets": {
-			"title": "Projects"
+			"title": "Projects",
+			"description": "Discover our recent projects and the solutions we delivered to our clients."
 		},
 		"blog": {
-			"title": "Blog"
+			"title": "Blog",
+			"description": "Discover our latest articles and news from the world of web development."
 		},
 		"contact": {
-			"title": "Contact"
+			"title": "Contact",
+			"description": "Contact us to discuss your project. We will get back to you within 24 hours."
 		},
 		"mentions_legales": {
-			"title": "Legal Notice"
+			"title": "Legal Notice",
+			"description": "Consult KesvaL Studio's legal notice."
 		},
 		"conditions_generales_de_vente": {
-			"title": "Terms of Service"
+			"title": "Terms of Service",
+			"description": "Read KesvaL Studio’s Terms of Service."
 		}
 	},
 	"cgv": {
@@ -447,7 +460,9 @@
 				"result_2": {
 					"amount": "95%",
 					"short_description": "Customer satisfaction"
-				}
+				},
+				"cta": "Protect my investment",
+				"see_more": "See more"
 			}
 		},
 		"agencies": {
@@ -471,7 +486,9 @@
 				"result_2": {
 					"amount": "98%",
 					"short_description": "Customer satisfaction"
-				}
+				},
+				"cta": "I need your help",
+				"see_more": "See examples"
 			}
 		},
 		"our_services": {
