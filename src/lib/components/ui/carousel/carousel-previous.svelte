@@ -4,6 +4,7 @@
 	import { getEmblaContext } from './context.js';
 	import { cn } from '$lib/utils/ui.js';
 	import { Button, type Props } from '$lib/components/ui/button/index.js';
+	import * as m from '$paraglide/messages';
 
 	let {
 		ref = $bindable(null),
@@ -34,5 +35,5 @@
 	bind:ref
 >
 	<ArrowLeftIcon class="size-4" />
-	<span class="sr-only">Previous slide</span>
+	<span class="sr-only">{m['a11y.previous_slide']()}</span>
 </Button>

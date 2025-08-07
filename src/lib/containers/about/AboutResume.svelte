@@ -34,12 +34,12 @@
 
 		<header class="grid w-full gap-4 md:grid-cols-[8fr_5fr] md:gap-8">
 			<div class="">
-				<h3 class="">Jordan Abeddou</h3>
+				<h3 class="">{m['about.resume.header.name']()}</h3>
 				<p class="text-muted-foreground h4 mb-4 font-light">
 					{m['about.resume.header.subtitle']()}
 				</p>
 				<div class="grid grid-cols-2 gap-2 md:gap-4">
-					<AboutResumeLink icon={IconMapPin}>Mulhouse, France</AboutResumeLink>
+					<AboutResumeLink icon={IconMapPin}>{m['about.resume.header.location']()}</AboutResumeLink>
 					<AboutResumeLink icon={IconBrandGithub} href={brand.github}>
 						{m.github_profile()}
 					</AboutResumeLink>
@@ -70,7 +70,7 @@
 					sizes="(min-width: 768px) 256px, (max-width: 768px) 384px"
 					class="max-w-[12rem] overflow-hidden rounded-full"
 				/>
-				<p class="text-center text-xl">“It's not a bug; it's an undocumented feature.”</p>
+				<p class="text-center text-xl">“{m['about.resume.header.quote']()}”</p>
 			</div>
 		</header>
 		<div class="grid h-full w-full gap-4 md:grid-cols-[8fr_5fr] md:gap-8">

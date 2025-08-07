@@ -1,5 +1,19 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"a11y": {
+		"close": "Fermer",
+		"next": "Suivant",
+		"previous": "Précédent",
+		"more": "Plus",
+		"more_pages": "Plus de pages",
+		"go_to_next_page": "Aller à la page suivante",
+		"go_to_previous_page": "Aller à la page précédente",
+		"previous_slide": "Diapositive précédente",
+		"next_slide": "Diapositive suivante",
+		"toggle_sidebar": "Basculer la barre latérale",
+		"sidebar_title": "Barre latérale",
+		"sidebar_description": "Affiche la barre latérale mobile."
+	},
 	"nav": {
 		"home": "Accueil",
 		"about": "À propos",
@@ -14,6 +28,23 @@
 		"linkedin": "LinkedIn",
 		"cookies_preferences": "Préférences des cookies",
 		"cgv": "Conditions générales de vente"
+	},
+	"about": {
+		"resume": {
+			"title": "CV",
+			"header": {
+				"name": "Jordan Abeddou",
+				"subtitle": "Développeur Fullstack — Web & Mobile",
+				"languages": "Français (natif), Anglais (professionnel)",
+				"location": "Mulhouse, France",
+				"quote": "Ce n'est pas un bug ; c'est une fonctionnalité non documentée."
+			},
+			"about": {
+				"title": "À propos de moi",
+				"description": "Développeur fullstack passionné, j'aide les TPE/PME et agences à créer des solutions web rapides, fiables et maintenables. J'accorde une attention particulière à la performance, à l'UX et à la qualité sur le long terme."
+			},
+			"skills": "Compétences"
+		}
 	},
 	"home": {
 		"hero": {

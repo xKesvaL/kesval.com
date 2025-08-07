@@ -1,5 +1,19 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"a11y": {
+		"close": "Close",
+		"next": "Next",
+		"previous": "Previous",
+		"more": "More",
+		"more_pages": "More pages",
+		"go_to_next_page": "Go to next page",
+		"go_to_previous_page": "Go to previous page",
+		"previous_slide": "Previous slide",
+		"next_slide": "Next slide",
+		"toggle_sidebar": "Toggle sidebar",
+		"sidebar_title": "Sidebar",
+		"sidebar_description": "Displays the mobile sidebar."
+	},
 	"nav": {
 		"home": "Home",
 		"about": "About",
@@ -14,6 +28,23 @@
 		"linkedin": "LinkedIn",
 		"cookies_preferences": "Cookie Preferences",
 		"cgv": "Terms of Service"
+	},
+	"about": {
+		"resume": {
+			"title": "Resume",
+			"header": {
+				"name": "Jordan Abeddou",
+				"subtitle": "Fullstack Developer — Web & Mobile",
+				"languages": "French (native), English (professional)",
+				"location": "Mulhouse, France",
+				"quote": "It's not a bug; it's an undocumented feature."
+			},
+			"about": {
+				"title": "About me",
+				"description": "Passionate fullstack developer helping SMEs and agencies build fast, reliable, and maintainable web solutions. I care about performance, UX, and long-term quality."
+			},
+			"skills": "Skills"
+		}
 	},
 	"home": {
 		"hero": {
@@ -576,7 +607,7 @@
 		}
 	},
 	"error": {
-		"title": "Oops! Il semble que vous avez trouvé une page qui n'existe pas ou qu'une erreur est survenue.",
-		"back_to_home": "Retour à l'accueil"
+		"title": "Oops! It looks like you've found a page that doesn't exist or an error has occurred.",
+		"back_to_home": "Back to home"
 	}
 }
