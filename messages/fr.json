@@ -17,10 +17,10 @@
 	},
 	"home": {
 		"hero": {
-			"title_before": "Créons votre ",
-			"title_highlight": "site web",
+			"title_before": "Créons ",
+			"title_highlight": "votre site web",
 			"title_after": " qui attire plus de clients",
-			"subtitle": "Je crée des sites web modernes et efficaces pour faire grandir votre business. Simple, rapide et sans prise de tête.",
+			"subtitle": "Nous créons des sites web modernes et efficaces pour faire grandir votre business. Simple, rapide et sans prise de tête.",
 			"view_projects": "Voir les Projets",
 			"see_all": "Voir tout",
 			"years_of_experience": "{years} ans d'expérience",
@@ -31,12 +31,12 @@
 			"experience": "ans d'expérience",
 			"experience_description": "3 ans à créer des sites web qui font grandir les entreprises. Du simple site vitrine à l'application complexe.",
 			"projects": "projets réalisés",
-			"projects_description": "Chaque projet est unique. Sites vitrines, boutiques en ligne, applications web - je m'adapte à vos besoins.",
+			"projects_description": "Chaque projet est unique. Sites vitrines, boutiques en ligne, applications web - nous nous adaptons à vos besoins.",
 			"clients": "clients satisfaits",
-			"clients_description": "Ma plus grande satisfaction : voir mes clients développer leur business grâce à leur nouveau site web."
+			"clients_description": "Notre plus grande satisfaction : voir nos clients développer leur business grâce à leur nouveau site web."
 		},
 		"clients": {
-			"title": "Ils me font confiance"
+			"title": "Ils nous font confiance"
 		},
 		"projects": {
 			"title": "Nos derniers projets",
@@ -155,7 +155,7 @@
 	"meta": {
 		"home": {
 			"title": "Accueil",
-			"description": "KesvaL Studio - Je crée des sites web modernes qui attirent plus de clients pour votre business. Simple, rapide et efficace."
+			"description": "KesvaL Studio - Nous créons des sites web modernes qui attirent plus de clients pour votre business. Simple, rapide et efficace."
 		},
 		"services": {
 			"title": "Nos services",
@@ -462,13 +462,13 @@
 		},
 		"our_services": {
 			"suptitle": "Nos services",
-			"title": "Ce que je peux faire pour vous",
+			"title": "Ces services qui font la différence",
 			"description": "Des solutions simples et efficaces pour développer votre business en ligne.",
 			"button": "Voir nos services"
 		},
 		"benefits": {
 			"time_gain": {
-				"title": "Vous faites gagner du temps",
+				"title": "Gagnez du temps",
 				"description": "Automatisez vos tâches répétitives et concentrez-vous sur votre business. Plus de temps perdu sur la technique."
 			},
 			"measurable_results": {
@@ -476,7 +476,7 @@
 				"description": "Suivez facilement l'impact de votre site web sur votre business : plus de visiteurs, plus de clients."
 			},
 			"tailor_made_solutions": {
-				"title": "Fait sur mesure pour vous",
+				"title": "Sur mesure pour vous",
 				"description": "Votre site web est unique, comme votre business. Solution personnalisée qui correspond exactement à vos besoins."
 			}
 		},
