@@ -17,10 +17,10 @@
 	},
 	"home": {
 		"hero": {
-			"title_before": "Let's build your ",
-			"title_highlight": "website",
+			"title_before": "Let's build ",
+			"title_highlight": "your website",
 			"title_after": " that attracts more customers",
-			"subtitle": "I create modern and effective websites to grow your business. Simple, fast and hassle-free.",
+			"subtitle": "We create modern and effective websites to grow your business. Simple, fast and hassle-free.",
 			"view_projects": "View Projects",
 			"see_all": "See all",
 			"years_of_experience": "{years} years of experience",
@@ -31,12 +31,12 @@
 			"experience": "years of experience",
 			"experience_description": "3 years creating websites that grow businesses. From simple showcase sites to complex applications.",
 			"projects": "completed projects",
-			"projects_description": "Each project is unique. Showcase sites, online stores, web applications - I adapt to your needs.",
+			"projects_description": "Each project is unique. Showcase sites, online stores, web applications - We adapt to your needs.",
 			"clients": "satisfied clients",
-			"clients_description": "My greatest satisfaction: seeing my clients grow their business thanks to their new website."
+			"clients_description": "Our greatest satisfaction: seeing our clients grow their business thanks to their new website."
 		},
 		"clients": {
-			"title": "They trust me"
+			"title": "They trust us"
 		},
 		"projects": {
 			"title": "Our latest projects",
@@ -154,7 +154,7 @@
 	"meta": {
 		"home": {
 			"title": "Home",
-			"description": "KesvaL Studio - I create modern websites that attract more customers for your business. Simple, fast and effective."
+			"description": "KesvaL Studio - We create modern websites that attract more customers for your business. Simple, fast and effective."
 		},
 		"services": {
 			"title": "Our Services",
@@ -445,13 +445,13 @@
 		},
 		"our_services": {
 			"suptitle": "Our services",
-			"title": "What I can do for you",
+			"title": "Services that make the difference",
 			"description": "Simple and effective solutions to grow your business online.",
 			"button": "See our services"
 		},
 		"benefits": {
 			"time_gain": {
-				"title": "Save you time",
+				"title": "Save time",
 				"description": "Automate your repetitive tasks and focus on your business. No more time wasted on technical stuff."
 			},
 			"measurable_results": {
