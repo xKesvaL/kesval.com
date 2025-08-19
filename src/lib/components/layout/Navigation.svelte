@@ -13,6 +13,7 @@
 	import { page } from '$app/state';
 	import { deLocalizeHref, localizeHref } from '$paraglide/runtime';
 	import NavigationLangSwitcher from './NavigationLangSwitcher.svelte';
+	import EasterEggLogo from '$lib/components/base/EasterEggLogo.svelte';
 
 	const baseFlyParams = {
 		y: (innerHeight.current || 0) * -1,
@@ -62,11 +63,7 @@
 	>
 		<div class="flex h-full w-full items-center justify-between rounded-[15px]">
 			<a href={localizeHref(route('/'))} aria-label={m['nav.home']()}>
-				<enhanced:img
-					src="$assets/logo.avif"
-					alt={m['common.kesval_logo']()}
-					class="size-10 rounded-lg"
-				/>
+				<EasterEggLogo />
 			</a>
 			<div class="flex items-center gap-2">
 				<NavigationLangSwitcher />
