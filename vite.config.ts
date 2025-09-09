@@ -16,7 +16,12 @@ const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
 export default defineConfig({
 	build: {
-		target: ['es2022', 'chrome90', 'safari14.1', 'firefox87']
+		target: ['es2022', 'chrome90', 'safari14.1', 'firefox87'],
+		rollupOptions: {
+			output: {
+				experimentalMinChunkSize: 10000
+			}
+		}
 	},
 	plugins: [
 		kitRoutes<KIT_ROUTES>(),

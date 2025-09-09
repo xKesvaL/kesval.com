@@ -1,5 +1,19 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"a11y": {
+		"close": "Close",
+		"next": "Next",
+		"previous": "Previous",
+		"more": "More",
+		"more_pages": "More pages",
+		"go_to_next_page": "Go to next page",
+		"go_to_previous_page": "Go to previous page",
+		"previous_slide": "Previous slide",
+		"next_slide": "Next slide",
+		"toggle_sidebar": "Toggle sidebar",
+		"sidebar_title": "Sidebar",
+		"sidebar_description": "Displays the mobile sidebar."
+	},
 	"nav": {
 		"home": "Home",
 		"about": "About",
@@ -15,12 +29,29 @@
 		"cookies_preferences": "Cookie Preferences",
 		"cgv": "Terms of Service"
 	},
+	"about": {
+		"resume": {
+			"title": "Resume",
+			"header": {
+				"name": "Jordan Abeddou",
+				"subtitle": "Fullstack Developer — Web & Mobile",
+				"languages": "French (native), English (professional)",
+				"location": "Mulhouse, France",
+				"quote": "It's not a bug; it's an undocumented feature."
+			},
+			"about": {
+				"title": "About me",
+				"description": "Passionate fullstack developer helping SMEs and agencies build fast, reliable, and maintainable web solutions. I care about performance, UX, and long-term quality."
+			},
+			"skills": "Skills"
+		}
+	},
 	"home": {
 		"hero": {
-			"title_before": "Crafting Digital ",
-			"title_highlight": "Experiences",
-			"title_after": " from A to Z",
-			"subtitle": "More than a developer, your trusted partner. I am committed to working alongside you to create high-performance web solutions and simplify the digital world for you.",
+			"title_before": "Let's build ",
+			"title_highlight": "your website",
+			"title_after": " that attracts more customers",
+			"subtitle": "We create modern and effective websites to grow your business. Simple, fast and hassle-free.",
 			"view_projects": "View Projects",
 			"see_all": "See all",
 			"years_of_experience": "{years} years of experience",
@@ -28,15 +59,15 @@
 			"ui_ux_design": "UI/UX Design"
 		},
 		"about": {
-			"experience": "years of expertise",
-			"experience_description": "With over 3 years of experience, we design custom web solutions, from showcase sites to complex applications, for a diverse clientele.",
+			"experience": "years of experience",
+			"experience_description": "3 years creating websites that grow businesses. From simple showcase sites to complex applications.",
 			"projects": "completed projects",
-			"projects_description": "We have had the pleasure of working on numerous projects, ranging from elegant showcase sites to complex web applications.",
+			"projects_description": "Each project is unique. Showcase sites, online stores, web applications - We adapt to your needs.",
 			"clients": "satisfied clients",
-			"clients_description": "Our greatest pride is supporting our clients in their digital transformation and actively contributing to their growth."
+			"clients_description": "Our greatest satisfaction: seeing our clients grow their business thanks to their new website."
 		},
 		"clients": {
-			"title": "We have collaborated with exceptional clients"
+			"title": "They trust us"
 		},
 		"projects": {
 			"title": "Our latest projects",
@@ -145,6 +176,7 @@
 		"cta_self": "I'm launching my project",
 		"cta_big": "Launch your project today",
 		"your_name_here": "Your name here",
+		"your_name_here_short": "You here?",
 		"email": "Email",
 		"back": "Back",
 		"free_quote": "Free quote",
@@ -153,43 +185,56 @@
 	},
 	"meta": {
 		"home": {
-			"title": "Home"
+			"title": "Home",
+			"description": "KesvaL Studio - We create modern websites that attract more customers for your business. Simple, fast and effective."
 		},
 		"services": {
 			"title": "Our Services",
+			"description": "Discover our services: website creation, web and mobile apps, UX/UI design, process automation, maintenance and support.",
 			"site_vitrine": {
-				"title": "Showcase Site"
+				"title": "Showcase Site",
+				"description": "Create your showcase website with KesvaL Studio. We support you from design to launch."
 			},
 			"applications_web": {
-				"title": "Web & Mobile Applications"
+				"title": "Web & Mobile Applications",
+				"description": "Build your web or mobile application with KesvaL Studio. We optimize your processes to save time and money."
 			},
 			"design": {
-				"title": "UX/UI Design"
+				"title": "UX/UI Design",
+				"description": "Create your UX/UI design with KesvaL Studio. We craft intuitive user interfaces centered on your users."
 			},
 			"automatisation": {
-				"title": "Process Automation"
+				"title": "Process Automation",
+				"description": "Automate your processes with KesvaL Studio. We design tailored solutions to streamline your repetitive tasks."
 			},
 			"maintenance": {
-				"title": "Maintenance & Support"
+				"title": "Maintenance & Support",
+				"description": "Ensure your website or application runs without interruption. We provide ongoing maintenance and support for your digital solutions."
 			},
 			"agences": {
-				"title": "Services for Agencies"
+				"title": "Services for Agencies",
+				"description": "We support agencies building websites and web apps. We bring our technical expertise to you and your clients."
 			}
 		},
 		"projets": {
-			"title": "Projects"
+			"title": "Projects",
+			"description": "Discover our recent projects and the solutions we delivered to our clients."
 		},
 		"blog": {
-			"title": "Blog"
+			"title": "Blog",
+			"description": "Discover our latest articles and news from the world of web development."
 		},
 		"contact": {
-			"title": "Contact"
+			"title": "Contact",
+			"description": "Contact us to discuss your project. We will get back to you within 24 hours."
 		},
 		"mentions_legales": {
-			"title": "Legal Notice"
+			"title": "Legal Notice",
+			"description": "Consult KesvaL Studio's legal notice."
 		},
 		"conditions_generales_de_vente": {
-			"title": "Terms of Service"
+			"title": "Terms of Service",
+			"description": "Read KesvaL Studio’s Terms of Service."
 		}
 	},
 	"cgv": {
@@ -415,7 +460,9 @@
 				"result_2": {
 					"amount": "95%",
 					"short_description": "Customer satisfaction"
-				}
+				},
+				"cta": "Protect my investment",
+				"see_more": "See more"
 			}
 		},
 		"agencies": {
@@ -439,27 +486,29 @@
 				"result_2": {
 					"amount": "98%",
 					"short_description": "Customer satisfaction"
-				}
+				},
+				"cta": "I need your help",
+				"see_more": "See examples"
 			}
 		},
 		"our_services": {
 			"suptitle": "Our services",
-			"title": "Our expertise at your service",
-			"description": "We offer a full range of services to meet all your digital needs.",
-			"button": "Discover our services"
+			"title": "Services that make the difference",
+			"description": "Simple and effective solutions to grow your business online.",
+			"button": "See our services"
 		},
 		"benefits": {
 			"time_gain": {
-				"title": "Task automation",
-				"description": "Reduce manual tasks by 75% with our automation tools, and focus on what really matters."
+				"title": "Save time",
+				"description": "Automate your repetitive tasks and focus on your business. No more time wasted on technical stuff."
 			},
 			"measurable_results": {
-				"title": "Measurable results",
-				"description": "Concretely measure the impact of our solutions on your digital presence, customer engagement, and profitability."
+				"title": "Visible results",
+				"description": "Easily track the impact of your website on your business: more visitors, more customers."
 			},
 			"tailor_made_solutions": {
-				"title": "Custom solutions",
-				"description": "We design custom solutions that precisely meet your needs, whatever your requirements."
+				"title": "Made just for you",
+				"description": "Your website is unique, just like your business. Custom solution that fits exactly your needs."
 			}
 		},
 		"hero": {
@@ -575,7 +624,7 @@
 		}
 	},
 	"error": {
-		"title": "Oops! Il semble que vous avez trouvé une page qui n'existe pas ou qu'une erreur est survenue.",
-		"back_to_home": "Retour à l'accueil"
+		"title": "Oops! It looks like you've found a page that doesn't exist or an error has occurred.",
+		"back_to_home": "Back to home"
 	}
 }

@@ -35,7 +35,7 @@
 				</li>
 				<li>
 					<strong>{m['legal.section_1.owner_email_title']()} :</strong>
-					<a href="mailto:contact@kesval.com" class="underline">contact@kesval.com</a>
+					<a href={`mailto:${brand.email}`} class="underline">{brand.email}</a>
 				</li>
 
 				<li>

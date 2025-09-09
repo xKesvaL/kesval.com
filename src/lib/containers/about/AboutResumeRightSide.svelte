@@ -12,7 +12,7 @@
 	</AboutResumeSection>
 	<AboutResumeSection title={m['about.resume.skills']()}>
 		<div class="flex flex-col gap-1">
-			<p class="text-lg font-medium">Front-End</p>
+			<p class="text-lg font-medium">{m['skills.front_end']()}</p>
 			<div class="flex flex-wrap gap-2">
 				{#each skillsList.front_end as skill (skill.name)}
 					<div
@@ -27,7 +27,7 @@
 			</div>
 		</div>
 		<div class="flex flex-col gap-1">
-			<p class="text-lg font-medium">Back-End</p>
+			<p class="text-lg font-medium">{m['skills.back_end']()}</p>
 			<div class="grid grid-cols-3 gap-2">
 				{#each skillsList.back_end as skill (skill.name)}
 					<div
@@ -42,9 +42,7 @@
 			</div>
 		</div>
 		<div class="flex flex-col gap-1">
-			<p class="text-lg font-medium">
-				{m['common.others']()}
-			</p>
+			<p class="text-lg font-medium">{m['common.others']()}</p>
 			<div class="grid grid-cols-2 gap-2">
 				{#each skillsList.other as skill (skill.name)}
 					<div
