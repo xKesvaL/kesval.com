@@ -22,6 +22,7 @@ export const load = async ({ url }) => {
 			ui_host: "https://eu.posthog.com",
 			defaults: "2025-05-24",
 			person_profiles: "always",
+			// TODO: MAKE COOKIE BANNER WORK WITH THIS
 			cookieless_mode: "on_reject",
 		});
 	}
