@@ -1,12 +1,12 @@
 <script lang="ts">
 	import AnimatedBadge from '$lib/components/animated/AnimatedBadge.svelte';
-
 	import * as m from '$paraglide/messages';
-	import ServicesList from './ServicesList.svelte';
 </script>
 
-<section class="section-hero items-center justify-center">
-	<div class="kcontainer flex w-full flex-col items-center justify-center gap-16 px-4 text-center">
+<section class="section-hero min-h-0 items-center justify-center">
+	<div
+		class="kcontainer flex w-full flex-col items-center justify-center gap-12 px-4 text-center lg:gap-24"
+	>
 		<div class="flex flex-col gap-2">
 			<AnimatedBadge class=" flex items-center gap-2">
 				💻
@@ -23,7 +23,5 @@
 				{m['services.hero.description']()}
 			</p>
 		</div>
-
-		<ServicesList />
 	</div>
 </section>

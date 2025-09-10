@@ -540,6 +540,60 @@
 				"relation": "Relationship of trust",
 				"relation_description": "Transparent communication and personal commitment in each project."
 			}
+		},
+		"sections": {
+			"common": {
+				"cta_secondary": "See our projects"
+			},
+			"sites": {
+				"suptitle": "Custom Websites",
+				"title": "Websites that convert and inspire trust",
+				"description": "Your storefront, designed for your goals: fast, clear, SEO-optimized and conversion-oriented.",
+				"pill_1": "SEO & Performance",
+				"pill_2": "Ultra-fast loading",
+				"pill_3": "Refined design",
+				"feature_1": "Structure, content and messaging that speak to your customers",
+				"feature_2": "Conversion-oriented key pages (landing, services, contact)",
+				"feature_3": "Go-live and technical best practices (analytics, markup…)",
+				"cta_primary": "Launch my site"
+			},
+			"apps": {
+				"suptitle": "Apps & Automations",
+				"title": "Tools that save time and money",
+				"description": "Custom business apps and automations. Fewer repetitive tasks, more impact.",
+				"pill_1": "Smart automation",
+				"pill_2": "Third‑party integrations",
+				"pill_3": "Streamlined processes",
+				"feature_1": "Process analysis and clear functional scoping",
+				"feature_2": "Robust, secure and maintainable development",
+				"feature_3": "Dashboards and KPI tracking",
+				"cta_primary": "Start my tool"
+			},
+			"design": {
+				"suptitle": "UX/UI Design",
+				"title": "Interfaces that are clear, effective and desirable",
+				"description": "User‑centered design: clean journeys, modern aesthetics, multi‑screen consistency.",
+				"pill_1": "Design system",
+				"pill_2": "Business‑oriented flows",
+				"pill_3": "Interactive prototype",
+				"feature_1": "UX audit with actionable recommendations",
+				"feature_2": "Wireframes, hi‑fi mockups, motion",
+				"feature_3": "Clean handoff for fast dev",
+				"cta_primary": "Improve my UX/UI"
+			},
+			"agencies": {
+				"suptitle": "For Agencies",
+				"title": "Your trusted technical partner",
+				"description": "Reinforcement, white‑label, targeted expertise: we plug into your processes and deliver on time.",
+				"pill_1": "White label",
+				"pill_2": "On‑demand expertise",
+				"pill_3": "Quality assured",
+				"feature_1": "Clear and responsive communication",
+				"feature_2": "On‑schedule delivery and client requirements met",
+				"feature_3": "Modern stack and best practices",
+				"cta_primary": "Augment my team"
+			},
+			"addon_maintenance": "Add‑on: Maintenance & support for complete peace of mind"
 		}
 	},
 	"legal": {

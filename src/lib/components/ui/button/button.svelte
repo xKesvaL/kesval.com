@@ -7,7 +7,8 @@
 		base: "focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive inline-flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium outline-none transition-all focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0",
 		variants: {
 			variant: {
-				default: 'bg-primary text-primary-foreground shadow-xs hover:bg-primary/90',
+				default:
+					'bg-primary text-primary-foreground shadow-xs hover:bg-primary/90 relative isolate ring ring-primary overflow-hidden before:pointer-events-none before:absolute before:inset-0 before:-z-10 before:bg-gradient-to-b before:opacity-80 before:transition-opacity before:duration-300 before:ease-[cubic-bezier(0.4,0.36,0,1)] before:from-primary-foreground/20 after:pointer-events-none after:absolute after:inset-0 after:-z-10 after:bg-gradient-to-b after:to-transparent after:mix-blend-overlay after:from-primary-foreground/20',
 				destructive:
 					'bg-destructive shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60 text-white',
 				outline:
