@@ -1,7 +1,7 @@
-import { error } from '@sveltejs/kit';
-import type { EntryGenerator } from './$types';
-import { translate } from '$lib/utils/i18n';
-import { projects } from '$content/index';
+import type { EntryGenerator } from "./$types";
+import { projects } from "$content/index";
+import { getLocale } from "$paraglide/runtime";
+import { getProject } from "$lib/utils/projects";
 
 export const entries: EntryGenerator = () => {
 	return projects.map((project) => {
@@ -9,13 +9,6 @@ export const entries: EntryGenerator = () => {
 	});
 };
 
-export const load = async ({ params }) => {
-	const slug = params.slug;
-	const project = projects.find((project) => project.uniqueId === slug);
-
-	if (!project) {
-		error(404, await translate('projects.not_found', { projectId: slug }));
-	}
-
-	return { project };
+export const load = ({ params }) => {
+	return getProject(params.slug, getLocale());
 };

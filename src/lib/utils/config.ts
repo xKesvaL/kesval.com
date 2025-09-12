@@ -27,6 +27,7 @@ import {
 } from "@tabler/icons-svelte";
 import type { Icon } from "@tabler/icons-svelte";
 import * as CookieConsent from "vanilla-cookieconsent";
+import { projects } from "$content/index";
 
 export const brand = {
 	email: "contact@kesval.com",
@@ -215,7 +216,6 @@ export type ServiceTypeSchema = {
 	labelKey: string;
 	icon: Icon;
 	icons?: Icon[];
-	href: string;
 	hasMaintenanceAddon?: boolean;
 	visual: {
 		bg: string;
@@ -232,7 +232,6 @@ export const services = [
 		labelKey: "services.sections.sites",
 		icon: IconCode,
 		icons: [IconCode, IconDeviceDesktop, IconServer],
-		href: route("/services/site-vitrine"),
 		hasMaintenanceAddon: true,
 		visual: {
 			bg: "bg-[linear-gradient(140deg,rgba(16,185,129,0.06),transparent_60%)]",
@@ -248,7 +247,6 @@ export const services = [
 		labelKey: "services.sections.apps",
 		icon: IconRocket,
 		icons: [IconBolt, IconDatabase, IconRocket],
-		href: route("/services/applications-web"),
 		hasMaintenanceAddon: true,
 		visual: {
 			bg: "bg-[linear-gradient(140deg,rgba(99,102,241,0.06),transparent_60%)]",
@@ -264,7 +262,6 @@ export const services = [
 		labelKey: "services.sections.design",
 		icon: IconPalette,
 		icons: [IconPalette, IconBrush, IconStars],
-		href: route("/services/design"),
 		visual: {
 			bg: "bg-[linear-gradient(140deg,rgba(244,114,182,0.06),transparent_60%)]",
 			border: "border-rose-100",
@@ -279,7 +276,6 @@ export const services = [
 		labelKey: "services.sections.agencies",
 		icon: IconBuilding,
 		icons: [IconBuilding, IconUsers, IconBriefcase],
-		href: route("/services/agences"),
 		visual: {
 			bg: "bg-white",
 			border: "border-purple-100",
@@ -290,6 +286,10 @@ export const services = [
 		},
 	},
 ] as const satisfies ServiceTypeSchema[];
+
+export const getServiceRoute = (service: ServiceType) => {
+	return `${route("/services")}#${service.id}`;
+};
 
 export type ServiceType = (typeof services)[number];
 

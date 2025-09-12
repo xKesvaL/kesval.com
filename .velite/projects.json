@@ -3,8 +3,14 @@
     "title": "KesvaL Studio™",
     "path": "projects/kesval-studio/kesval-studio.en",
     "publishedAt": "2025-06-18T00:00:00.000Z",
+    "updatedAt": "2025-09-12T00:00:00.000Z",
     "tags": [
-      "KesvaL Studio"
+      "KesvaL Studio",
+      "Showcase website",
+      "SEO",
+      "Performance",
+      "Accessibility",
+      "Multilingual"
     ],
     "cover": {
       "src": "/static/cover-254cf999.png",
@@ -66,16 +72,57 @@
     ],
     "metadata": {
       "readingTime": 1,
-      "wordCount": 3
+      "wordCount": 318
     },
-    "excerpt": "KesvaL Studio, your partner for innovative web and mobile development",
+    "excerpt": "A clear, fast website built to convert.",
     "author": {
       "name": "Jordan",
       "email": "jordan@kesval.com",
       "image": "../../jordan.jpg"
     },
-    "content": "<p>hello test en</p>",
-    "toc": [],
+    "content": "<h3>At a glance</h3>\n<ul>\n<li>Clear message that builds trust fast</li>\n<li>Fast, accessible, bilingual (EN/FR)</li>\n<li>Built to convert and easy to grow</li>\n</ul>\n<p>Want the same effectiveness for your business? Reach out at <a href=\"mailto:contact@kesval.com\">contact@kesval.com</a>.</p>\n<h3>The need</h3>\n<p>Our website had to do what we promise to our clients: inspire trust, explain the value simply, and guide people to get in touch without friction. No jargon, no fluff. Just a pleasant, effective experience that reflects our standards.</p>\n<h3>Our approach</h3>\n<p>We started by aligning on the essentials: what we do, for whom, and why it matters. Once the message was clear, we designed an interface that reassures at first glance: meaningful headings, comfortable reading, visible calls‑to‑action, and lightweight visuals that support the story.</p>\n<p>On the build, we favored simplicity and performance. A handful of essential pages that load quickly, sound SEO foundations, accessibility in mind, and straightforward cookie handling. The goal: simple, reliable and enjoyable—both for visitors and for us when we update the site.</p>\n<h3>What changes for users</h3>\n<p>On arrival, the offer is understood in seconds. Navigation feels natural, projects are easy to browse, and the path to contact is obvious. The site works just as well on mobile as it does on desktop, and switches between English and French seamlessly.</p>\n<h3>Results</h3>\n<p>Launch was smooth, and updates are even smoother: adding a case study, a post, or a section takes minutes. Feedback has been consistent: clearer messaging, greater trust, and more direct paths to contact. It’s a solid base for growing our SEO and publishing regularly.</p>\n<h3>Scope</h3>\n<p>Pages: Home, Services, Projects (list + detail), Blog (ready), Legal, Terms. Components: project cards, mobile/desktop navigation, CTAs, forms.</p>\n<h3>What’s next</h3>\n<p>We’re enriching the blog (case studies, practical advice), detailing service pages further, and strengthening conversion tracking to keep improving what matters: real results.</p>\n<h3>Let’s work together</h3>\n<p>Want a website that speaks clearly and delivers results? Let’s talk: <code>contact@kesval.com</code>.</p>",
+    "toc": [
+      {
+        "title": "At a glance",
+        "url": "#at-a-glance",
+        "items": []
+      },
+      {
+        "title": "The need",
+        "url": "#the-need",
+        "items": []
+      },
+      {
+        "title": "Our approach",
+        "url": "#our-approach",
+        "items": []
+      },
+      {
+        "title": "What changes for users",
+        "url": "#what-changes-for-users",
+        "items": []
+      },
+      {
+        "title": "Results",
+        "url": "#results",
+        "items": []
+      },
+      {
+        "title": "Scope",
+        "url": "#scope",
+        "items": []
+      },
+      {
+        "title": "What’s next",
+        "url": "#whats-next",
+        "items": []
+      },
+      {
+        "title": "Let’s work together",
+        "url": "#lets-work-together",
+        "items": []
+      }
+    ],
     "icon": {
       "src": "/static/icon-596056c9.png",
       "height": 1000,
@@ -95,10 +142,13 @@
     "client": "KesvaL Studio",
     "website": "https://kesval.com",
     "github": "https://github.com/xKesvaL/kesval.com",
+    "previewUrl": "https://kesval.com/en",
+    "startedAt": "2025-06-18T00:00:00.000Z",
     "technologies": [
-      "Svelte",
-      "Tailwind CSS",
-      "TypeScript"
+      "Svelte 5",
+      "SvelteKit",
+      "TypeScript",
+      "Tailwind CSS"
     ],
     "featured": true,
     "projectType": [
@@ -114,8 +164,14 @@
     "title": "KesvaL Studio™",
     "path": "projects/kesval-studio/kesval-studio.fr",
     "publishedAt": "2025-06-18T00:00:00.000Z",
+    "updatedAt": "2025-09-12T00:00:00.000Z",
     "tags": [
-      "KesvaL Studio"
+      "KesvaL Studio",
+      "Site vitrine",
+      "SEO",
+      "Performance",
+      "Accessibilité",
+      "Multilingue"
     ],
     "cover": {
       "src": "/static/cover-254cf999.png",
@@ -177,16 +233,57 @@
     ],
     "metadata": {
       "readingTime": 1,
-      "wordCount": 3
+      "wordCount": 395
     },
-    "excerpt": "KesvaL Studio, votre partenaire pour le développement web et mobile innovant",
+    "excerpt": "Un site vitrine clair, rapide et pensé pour convertir.",
     "author": {
       "name": "Jordan",
       "email": "jordan@kesval.com",
       "image": "../../jordan.jpg"
     },
-    "content": "<p>hello test fr</p>",
-    "toc": [],
+    "content": "<h3>En bref</h3>\n<ul>\n<li>Un message clair qui donne envie en quelques secondes</li>\n<li>Un site rapide, fluide, accessible et bilingue (FR/EN)</li>\n<li>Conçu pour convertir et évoluer facilement</li>\n</ul>\n<p>Vous voulez la même efficacité pour votre entreprise ? Écrivez‑nous à <a href=\"mailto:contact@kesval.com\">contact@kesval.com</a>.</p>\n<h3>Le besoin</h3>\n<p>Notre site devait faire ce qu’on promet à nos clients : inspirer confiance, expliquer simplement la valeur que l’on apporte et guider vers la prise de contact sans friction. Pas de jargon, pas de superflu. Juste une expérience agréable, efficace et cohérente avec notre niveau d’exigence.</p>\n<h3>Notre approche</h3>\n<p>Nous avons commencé par mettre d’accord tout le monde sur l’essentiel : ce qu’on fait, pour qui, et pourquoi c’est utile. Une fois le message clarifié, nous avons conçu une interface qui rassure au premier regard : titres parlants, lecture confortable, appels à l’action bien visibles et visuels légers qui servent le propos.</p>\n<p>Côté réalisation, nous avons privilégié la sobriété et la performance. Des pages essentielles, qui se chargent vite, avec un référencement correctement posé, le respect de l’accessibilité et une gestion des cookies transparente. Le but : faire simple, fiable et agréable, pour les visiteurs comme pour nous qui faisons vivre le site.</p>\n<h3>Ce qui change pour l'utilisateur</h3>\n<p>En arrivant, on comprend l’offre en quelques secondes. La navigation est intuitive, les projets se parcourent sans se perdre, et le chemin vers le contact est évident. Le site fonctionne aussi bien sur mobile que sur ordinateur, et passe sans effort du français à l’anglais.</p>\n<h3>Résultats</h3>\n<p>La mise en ligne a été fluide et la suite l’est tout autant : on ajoute une étude de cas, un article ou une section en quelques minutes. Les retours sont clairs : des messages plus lisibles, plus de confiance et des parcours plus directs vers la prise de contact. C’est une base saine pour renforcer notre présence SEO et publier régulièrement.</p>\n<h3>Périmètre</h3>\n<p>Pages : Accueil, Services, Projets (liste + détail), Blog (prêt), Mentions légales, CGV. Composants : cartes projets, navigation mobile/desktop, CTA, formulaires.</p>\n<h3>Et la suite</h3>\n<p>Nous enrichissons le blog (études de cas, conseils concrets), détaillons davantage les pages services et renforçons le suivi des conversions pour continuer d’optimiser ce qui compte : des résultats concrets.</p>\n<h3>Travaillons ensemble</h3>\n<p>Envie d’un site qui parle vrai et apporte des résultats ? On en discute : <code>contact@kesval.com</code>.</p>",
+    "toc": [
+      {
+        "title": "En bref",
+        "url": "#en-bref",
+        "items": []
+      },
+      {
+        "title": "Le besoin",
+        "url": "#le-besoin",
+        "items": []
+      },
+      {
+        "title": "Notre approche",
+        "url": "#notre-approche",
+        "items": []
+      },
+      {
+        "title": "Ce qui change pour l'utilisateur",
+        "url": "#ce-qui-change-pour-lutilisateur",
+        "items": []
+      },
+      {
+        "title": "Résultats",
+        "url": "#résultats",
+        "items": []
+      },
+      {
+        "title": "Périmètre",
+        "url": "#périmètre",
+        "items": []
+      },
+      {
+        "title": "Et la suite",
+        "url": "#et-la-suite",
+        "items": []
+      },
+      {
+        "title": "Travaillons ensemble",
+        "url": "#travaillons-ensemble",
+        "items": []
+      }
+    ],
     "icon": {
       "src": "/static/icon-596056c9.png",
       "height": 1000,
@@ -206,10 +303,13 @@
     "client": "KesvaL Studio",
     "website": "https://kesval.com",
     "github": "https://github.com/xKesvaL/kesval.com",
+    "previewUrl": "https://kesval.com",
+    "startedAt": "2025-06-18T00:00:00.000Z",
     "technologies": [
-      "Svelte",
-      "Tailwind CSS",
-      "TypeScript"
+      "Svelte 5",
+      "TypeScript",
+      "SvelteKit",
+      "Tailwind CSS"
     ],
     "featured": true,
     "projectType": [

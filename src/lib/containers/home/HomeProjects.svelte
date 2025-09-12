@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { getHighlightedProjects } from '$lib/utils/projects';
 	import * as m from '$paraglide/messages';
 	import { Button } from '$lib/components/ui/button';
 	import { IconArrowRight } from '@tabler/icons-svelte';
@@ -7,8 +6,9 @@
 	import { route } from '$lib/ROUTES';
 	import { getLocale, localizeHref } from '$paraglide/runtime';
 	import AnimatedBadge from '$lib/components/animated/AnimatedBadge.svelte';
+	import { getFeaturedProjects } from '$lib/utils/projects';
 
-	let showedProjects = $derived(getHighlightedProjects(getLocale()));
+	let showedProjects = $derived(getFeaturedProjects(getLocale()));
 </script>
 
 <section class="section pyc-md lg:pyc-lg relative min-h-[70vh] overflow-hidden">

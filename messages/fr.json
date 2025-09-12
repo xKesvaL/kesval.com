@@ -153,6 +153,27 @@
 			"title": "Cette page est en cours de développement !",
 			"description": "Désolé pour le dérangement. Retournez à la",
 			"projects_page": "page des projets"
+		},
+		"case": {
+			"panel_title": "Aperçu",
+			"tabs": {
+				"cover": "Visuel",
+				"website": "Site",
+				"prototype": "Prototype"
+			},
+			"buttons": {
+				"open_figma": "Ouvrir dans Figma"
+			},
+			"meta_title": "Informations",
+			"meta": {
+				"client": "Client",
+				"type": "Type",
+				"technologies": "Technologies",
+				"tags": "Tags",
+				"started": "Début",
+				"finished": "Fin",
+				"price": "Prix"
+			}
 		}
 	},
 	"common": {

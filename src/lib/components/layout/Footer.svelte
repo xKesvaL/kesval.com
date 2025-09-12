@@ -8,14 +8,14 @@
 		type LinkType
 	} from '$lib/utils/config';
 	import { translate } from '$lib/utils/i18n';
-	import { getHighlightedProjects } from '$lib/utils/projects';
+	import { getFeaturedProjects } from '$lib/utils/projects';
 	import * as m from '$paraglide/messages';
 	import { getLocale, localizeHref } from '$paraglide/runtime';
 	import Link from '../base/Link.svelte';
 	import Button from '../ui/button/button.svelte';
 	import { IconArrowRight, IconMessageCirclePlus } from '@tabler/icons-svelte';
 
-	let showedProjects = $derived(getHighlightedProjects(getLocale()));
+	let showedProjects = $derived(getFeaturedProjects(getLocale()));
 
 	type Links = {
 		title: string;

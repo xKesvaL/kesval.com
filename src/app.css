@@ -211,6 +211,10 @@
 		@apply border-border text-balance;
 	}
 
+	html {
+		@apply scroll-smooth;
+	}
+
 	body {
 		@apply bg-background text-foreground;
 	}

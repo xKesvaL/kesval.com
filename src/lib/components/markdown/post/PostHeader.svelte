@@ -6,7 +6,7 @@
 	import { getLocale } from '$paraglide/runtime';
 	import type { PrimitiveAttributes } from '@svecodocs/kit';
 	import { IconCalendar, IconRefresh, IconTag } from '@tabler/icons-svelte';
-	import { Badge } from '../ui/badge';
+	import { Badge } from '$lib/components/ui/badge';
 	import * as m from '$paraglide/messages';
 
 	let {

@@ -2,13 +2,13 @@
 	import type { Component } from 'svelte';
 	import PostMetadata from './PostMetadata.svelte';
 	import PostHeader from './PostHeader.svelte';
-	import Toc from './Toc.svelte';
+	import Toc from '../Toc.svelte';
 	import type { Post } from '$content/index';
-	import VeliteImage from '../base/VeliteImage.svelte';
+	import VeliteImage from '../../base/VeliteImage.svelte';
 	import PostShare from './PostShare.svelte';
 	import { IconArrowLeft } from '@tabler/icons-svelte';
 	import RelatedPosts from './RelatedPosts.svelte';
-	import { Button } from '../ui/button';
+	import { Button } from '../../ui/button';
 	import * as m from '$paraglide/messages';
 	import { localizeHref } from '$paraglide/runtime';
 	import { route } from '$lib/ROUTES';

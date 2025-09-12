@@ -9,12 +9,14 @@
 	import { Button } from '../ui/button';
 	import * as m from '$paraglide/messages';
 	import { cn } from '$lib/utils/ui';
-	import { navigationLinks, services, type LinkType } from '$lib/utils/config';
+	import { getServiceRoute, navigationLinks, services, type LinkType } from '$lib/utils/config';
 	import { page } from '$app/state';
-	import { deLocalizeHref, localizeHref } from '$paraglide/runtime';
+	import { deLocalizeHref, getLocale, localizeHref } from '$paraglide/runtime';
 	import NavigationLangSwitcher from './NavigationLangSwitcher.svelte';
 	import * as NavigationMenu from '$lib/components/ui/navigation-menu';
 	import { navigationMenuTriggerStyle } from '../ui/navigation-menu/navigation-menu-trigger.svelte';
+	import VeliteImage from '../base/VeliteImage.svelte';
+	import { getAllContentLocale } from '$lib/utils/content';
 
 	const baseFlyParams = {
 		y: (innerHeight.current || 0) * -1,
@@ -50,6 +52,8 @@
 	);
 
 	let latestHoveredLink = $state(currentRoute);
+
+	const projects = getAllContentLocale(getLocale(), 'projects');
 </script>
 
 <nav class={cn('position-nav h-nav kcontainer fixed z-50 transition duration-300 lg:px-4')}>
@@ -59,7 +63,7 @@
 			'flex h-full w-full items-center justify-between drop-shadow-xs transition-all duration-300 lg:rounded-2xl',
 			navigation.state === 'open' && 'px-4',
 			navigation.state === 'closed' &&
-				'bg-popover shadow-primary/5 border px-4 shadow-[inset_0_-4px_8px_0px] delay-[300ms]'
+				'bg-popover shadow-primary/5 ring-border px-4 shadow-[inset_0_-4px_8px_0px] ring delay-[300ms]'
 		)}
 	>
 		<div class="flex h-full w-full items-center justify-between rounded-[15px]">
@@ -72,7 +76,6 @@
 					/>
 				</a>
 				<NavigationMenu.Root
-					viewport={false}
 					class={cn(
 						'hidden transition-opacity duration-300 lg:flex',
 						navigation.state === 'open' && 'opacity-0',
@@ -93,11 +96,14 @@
 							<NavigationMenu.Trigger>
 								{m['nav.services']()}
 							</NavigationMenu.Trigger>
-							<NavigationMenu.Content class="rounded-xl! shadow-xs!">
-								<ul class="grid w-150 grid-cols-2 gap-2 p-2">
+							<NavigationMenu.Content class="w-150!">
+								<ul class="grid grid-cols-2 gap-2 p-2">
 									{#each services as service (service.id)}
 										<li>
-											<NavigationMenu.Link href={localizeHref(service.href)} class="rounded-lg">
+											<NavigationMenu.Link
+												href={localizeHref(getServiceRoute(service))}
+												class="rounded-lg"
+											>
 												{@const ServiceIcon = service.icons[0] ?? service.icon}
 												<div class="flex items-start gap-3">
 													<ServiceIcon
@@ -122,6 +128,51 @@
 									{/each}
 								</ul>
 							</NavigationMenu.Content>
+						</NavigationMenu.Item>
+						<NavigationMenu.Item>
+							<NavigationMenu.Trigger>
+								{m['nav.projects']()}
+							</NavigationMenu.Trigger>
+							<NavigationMenu.Content class="w-202!">
+								<ul class="grid grid-cols-2 gap-2 p-2">
+									{#each projects as project (project.slug)}
+										<li>
+											<NavigationMenu.Link
+												href={localizeHref(route('/projets/[slug]', { slug: project.uniqueId }))}
+												class="rounded-lg"
+											>
+												<div class="flex items-start gap-3">
+													<VeliteImage
+														imagePng={project.cover}
+														imageAvif={project.coverAvif}
+														alt={project.title}
+														class="aspect-video w-40"
+														classPicture=""
+														classWrapper="rounded border"
+													/>
+													<div class="flex flex-col gap-0.5">
+														<span class="mt-px font-semibold">
+															{project.title}
+														</span>
+														<span class="text-muted-foreground text-pretty-fallback">
+															{project.excerpt}
+														</span>
+													</div>
+												</div>
+											</NavigationMenu.Link>
+										</li>
+									{/each}
+								</ul>
+							</NavigationMenu.Content>
+						</NavigationMenu.Item>
+						<NavigationMenu.Item>
+							<NavigationMenu.Link>
+								{#snippet child()}
+									<a href={localizeHref(route('/blog'))} class={navigationMenuTriggerStyle()}
+										>{m['nav.blog']()}</a
+									>
+								{/snippet}
+							</NavigationMenu.Link>
 						</NavigationMenu.Item>
 					</NavigationMenu.List>
 				</NavigationMenu.Root>

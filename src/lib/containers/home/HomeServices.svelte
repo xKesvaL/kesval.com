@@ -1,26 +1,21 @@
 <script lang="ts">
 	import AnimatedBadge from '$lib/components/animated/AnimatedBadge.svelte';
 	import * as m from '$paraglide/messages';
-	import { IconArrowRight, IconBolt, IconChartBarPopular, IconClock } from '@tabler/icons-svelte';
+	import {
+		IconArrowRight,
+		IconArrowUpRight,
+		IconBolt,
+		IconChartBarPopular,
+		IconClock
+	} from '@tabler/icons-svelte';
 	import * as Card from '$lib/components/ui/card/index.js';
 	import { Button } from '$lib/components/ui/button';
 	import { localizeHref } from '$paraglide/runtime';
 	import { route } from '$lib/ROUTES';
+	import { getServiceRoute, services as importedServices } from '$lib/utils/config';
+	import { translate } from '$lib/utils/i18n';
 
-	const servicesBenefits = {
-		timegain: {
-			key: 'services.benefits.time_gain',
-			icon: IconClock
-		},
-		measurableResults: {
-			key: 'services.benefits.measurable_results',
-			icon: IconChartBarPopular
-		},
-		tailorMadeSolutions: {
-			key: 'services.benefits.tailor_made_solutions',
-			icon: IconBolt
-		}
-	} as const;
+	let services = $derived(importedServices.filter((service) => service.id !== 'agencies'));
 </script>
 
 <section class="section kcontainer px-4">
@@ -40,22 +35,35 @@
 		</p>
 	</div>
 	<div class="grid gap-8 lg:grid-cols-3">
-		{#each Object.values(servicesBenefits) as benefit (benefit.key)}
-			<Card.Root class=" gap-4">
-				<Card.Header class="items-center gap-4 sm:flex lg:block lg:space-y-4 ">
-					<div
-						class="text-primary bg-primary/5 flex size-12 items-center justify-center rounded-lg text-3xl"
-					>
-						<benefit.icon class="size-6" />
-					</div>
-					<h3 class="text-2xl font-semibold">{m[`${benefit.key}.title`]()}</h3>
-				</Card.Header>
-				<Card.Content class="pt-0">
-					<p class="text-muted-foreground text-pretty-fallback">
-						{m[`${benefit.key}.description`]()}
-					</p>
-				</Card.Content>
-			</Card.Root>
+		{#each services as service (service.id)}
+			<a href={localizeHref(getServiceRoute(service))} class="h-full">
+				<Card.Root
+					class="hover:border-primary gap-0 shadow-xs transition duration-300 hover:duration-150"
+				>
+					<Card.Header>
+						<div class="items-center gap-4 sm:flex lg:block lg:space-y-4">
+							<div
+								class="text-primary from-primary/10 border-primary/20 flex size-10 items-center justify-center rounded-lg border bg-gradient-to-tr to-transparent text-3xl"
+							>
+								<service.icon class="size-5" />
+							</div>
+							<h3 class="text-2xl font-semibold">
+								{#await translate(`${service.labelKey}.suptitle`) then translation}
+									{translation}
+								{/await}
+							</h3>
+							<Card.Description class="-mt-2 text-base">
+								{#await translate(`${service.labelKey}.description`) then translation}
+									{translation}
+								{/await}
+							</Card.Description>
+						</div>
+						<Card.Action>
+							<IconArrowUpRight />
+						</Card.Action>
+					</Card.Header>
+				</Card.Root>
+			</a>
 		{/each}
 	</div>
 	<Button href={localizeHref(route('/services'))} class="mx-auto" size="lg">

@@ -1,5 +1,5 @@
-import { slugFromPath } from '$lib/utils/content';
-import { defineConfig, s } from 'velite';
+import { slugFromPath } from "$lib/utils/content";
+import { defineConfig, s } from "velite";
 
 // `s` is extended from Zod with some custom schemas,
 // you can also import re-exported `z` from `velite` if you don't need these extension schemas.
@@ -7,27 +7,27 @@ import { defineConfig, s } from 'velite';
 const transform = <T extends { path: string }>(data: T) => {
 	return {
 		...data,
-		uniqueId: data.path.split('/')[1],
+		uniqueId: data.path.split("/")[1],
 		slug: slugFromPath(data.path), // generate slug from path
 		slugClean: slugFromPath(data.path)?.slice(0, -3),
-		locale: data.path.split('.')[1]
+		locale: data.path.split(".")[1],
 	};
 };
 
 export default defineConfig({
-	root: './src/content',
+	root: "./src/content",
 	output: {
-		assets: 'static/content'
+		assets: "static/content",
 	},
 	collections: {
 		posts: {
-			name: 'Post', // collection type name
-			pattern: './blog/**/*.md', // content files glob pattern
+			name: "Post", // collection type name
+			pattern: "./blog/**/*.md", // content files glob pattern
 			schema: s
 				.object({
 					title: s.string().max(99), // Zod primitive type
 					path: s.path(), // auto generate path from file name
-					slug: s.slug('posts').optional(),
+					slug: s.slug("posts").optional(),
 					publishedAt: s.isodate(), // input Date-like string, output ISO Date string.
 					updatedAt: s.isodate().optional(), // optional field
 					tags: s.array(s.string()),
@@ -39,21 +39,21 @@ export default defineConfig({
 					author: s.object({
 						name: s.string(),
 						email: s.string().email(),
-						image: s.string()
+						image: s.string(),
 					}),
 					content: s.markdown(), // transform markdown to html
-					toc: s.toc()
+					toc: s.toc(),
 				})
-				.transform(transform)
+				.transform(transform),
 		},
 		projects: {
-			name: 'Project',
-			pattern: './projects/**/*.md',
+			name: "Project",
+			pattern: "./projects/**/*.md",
 			schema: s
 				.object({
 					title: s.string().max(99),
 					path: s.path(),
-					slug: s.slug('projects').optional(),
+					slug: s.slug("projects").optional(),
 					publishedAt: s.isodate(),
 					updatedAt: s.isodate().optional(),
 					tags: s.array(s.string()),
@@ -66,7 +66,7 @@ export default defineConfig({
 					author: s.object({
 						name: s.string(),
 						email: s.string().email(),
-						image: s.string()
+						image: s.string(),
 					}),
 					content: s.markdown(),
 					toc: s.toc(),
@@ -78,17 +78,32 @@ export default defineConfig({
 					website: s.string().optional(),
 					github: s.string().optional(),
 
+					// Preview fields for case study sidebar
+					figma: s.string().optional(), // Figma prototype URL
+					previewUrl: s.string().optional(), // Live site or sandbox URL for iframe preview
+
 					startedAt: s.isodate().optional(),
 					finishedAt: s.isodate().optional(),
-					technologies: s.array(s.string()).optional(),
+					technologies: s.array(s.string()),
 					featured: s.boolean().optional(),
+
+					price: s.number().optional(),
 
 					// array of enum values
 					projectType: s.array(
-						s.enum(['web', 'mobile', 'desktop', 'app', 'showcase', 'e-commerce', 'saas', 'other'])
-					)
+						s.enum([
+							"web",
+							"mobile",
+							"desktop",
+							"app",
+							"showcase",
+							"e-commerce",
+							"saas",
+							"other",
+						]),
+					),
 				})
-				.transform(transform)
-		}
-	}
+				.transform(transform),
+		},
+	},
 });

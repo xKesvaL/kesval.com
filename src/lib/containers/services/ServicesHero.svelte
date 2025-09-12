@@ -3,7 +3,7 @@
 	import * as m from '$paraglide/messages';
 </script>
 
-<section class="section-hero min-h-0 items-center justify-center">
+<section class="section-hero min-h-0 items-center justify-center pb-0">
 	<div
 		class="kcontainer flex w-full flex-col items-center justify-center gap-12 px-4 text-center lg:gap-24"
 	>

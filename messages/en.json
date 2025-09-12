@@ -153,6 +153,26 @@
 			"title": "This page is a work in progress!",
 			"description": "Sorry for the inconvenience. Go back to the",
 			"projects_page": "projects page"
+		},
+		"case": {
+			"panel_title": "Preview",
+			"tabs": {
+				"cover": "Visual",
+				"website": "Website",
+				"prototype": "Prototype"
+			},
+			"buttons": {
+				"open_figma": "Open in Figma"
+			},
+			"meta_title": "Information",
+			"meta": {
+				"client": "Client",
+				"type": "Type",
+				"technologies": "Technologies",
+				"tags": "Tags",
+				"started": "Start",
+				"finished": "End"
+			}
 		}
 	},
 	"common": {
