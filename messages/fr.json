@@ -173,6 +173,17 @@
 				"started": "Début",
 				"finished": "Fin",
 				"price": "Prix"
+			},
+			"type": {
+				"web-showcase": "Site vitrine",
+				"web-ecommerce": "E-commerce",
+				"web-saas": "SaaS",
+				"design-showcase": "Design Site vitrine",
+				"design-ecommerce": "Design E-commerce",
+				"app-mobile": "App Mobile",
+				"app-desktop": "App Bureau",
+				"app-saas": "App SaaS",
+				"other": "Autre"
 			}
 		}
 	},

@@ -39,10 +39,7 @@ technologies:
   - SvelteKit
   - TypeScript
   - Tailwind CSS
-featured: true
-projectType:
-  - showcase
-  - web
+projectType: web-showcase
 previewUrl: https://kesval.com/en
 previewHeight: 700
 ---

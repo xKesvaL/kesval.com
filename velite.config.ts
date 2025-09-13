@@ -59,7 +59,7 @@ export default defineConfig({
 					tags: s.array(s.string()),
 					cover: s.image(),
 					coverAvif: s.image(),
-					images: s.array(s.image()),
+					// images: s.array(s.image()),
 					video: s.file().optional(),
 					metadata: s.metadata(),
 					excerpt: s.excerpt(),
@@ -90,18 +90,19 @@ export default defineConfig({
 					price: s.number().optional(),
 
 					// array of enum values
-					projectType: s.array(
+					projectType: 
 						s.enum([
-							"web",
-							"mobile",
-							"desktop",
-							"app",
-							"showcase",
-							"e-commerce",
-							"saas",
+							"web-showcase",
+							"web-ecommerce",
+							"web-saas",
+							"design-showcase",
+							"design-ecommerce",
+							"app-mobile",
+							"app-desktop",
+							"app-saas",
 							"other",
 						]),
-					),
+				
 				})
 				.transform(transform),
 		},

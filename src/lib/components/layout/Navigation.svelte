@@ -133,7 +133,7 @@
 							<NavigationMenu.Trigger>
 								{m['nav.projects']()}
 							</NavigationMenu.Trigger>
-							<NavigationMenu.Content class="w-202!">
+							<NavigationMenu.Content class="w-240!">
 								<ul class="grid grid-cols-2 gap-2 p-2">
 									{#each projects as project (project.slug)}
 										<li>
@@ -146,15 +146,20 @@
 														imagePng={project.cover}
 														imageAvif={project.coverAvif}
 														alt={project.title}
-														class="aspect-video w-40"
+														class="h-24 w-48"
 														classPicture=""
 														classWrapper="rounded border"
 													/>
-													<div class="flex flex-col gap-0.5">
-														<span class="mt-px font-semibold">
+													<div class="flex flex-col gap-1.5">
+														<span class="mt-px text-lg font-semibold">
 															{project.title}
 														</span>
-														<span class="text-muted-foreground text-pretty-fallback">
+														<span class="text-muted-foreground -mt-2.5 text-sm">
+															{#await translate(`projects.case.type.${project.projectType}`) then translation}
+																{translation}
+															{/await}
+														</span>
+														<span class="text-muted-foreground text-wrap">
 															{project.excerpt}
 														</span>
 													</div>

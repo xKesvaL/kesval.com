@@ -27,7 +27,6 @@ import {
 } from "@tabler/icons-svelte";
 import type { Icon } from "@tabler/icons-svelte";
 import * as CookieConsent from "vanilla-cookieconsent";
-import { projects } from "$content/index";
 
 export const brand = {
 	email: "contact@kesval.com",

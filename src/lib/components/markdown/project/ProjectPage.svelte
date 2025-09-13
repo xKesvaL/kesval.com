@@ -49,8 +49,8 @@
 
 	// Consistent preview shape to avoid layout shifts (keeps current visual size)
 	const previewRatio = isMobile.current ? 9 / 16 : 16 / 10;
-	const FRAME_W = 1280;
-	const FRAME_H = 800;
+	const FRAME_W = 1400;
+	const FRAME_H = 875;
 
 	const ACTUAL_W = 368;
 
@@ -203,7 +203,7 @@
 						</div>
 						<div class="flex flex-col gap-1">
 							<dt class="text-muted-foreground">{m['projects.case.meta.type']()}</dt>
-							<dd class="font-medium">{metadata.projectType.join(', ')}</dd>
+							<dd class="font-medium">{metadata.projectType}</dd>
 						</div>
 						<div class="flex flex-col gap-1">
 							<dt class="text-muted-foreground">
@@ -251,8 +251,8 @@
 									target="_blank"
 									rel="noopener noreferrer"
 								>
-								{m['common.visit_site']()}
-								<IconArrowUpRight class="mr-1 size-4" />
+									{m['common.visit_site']()}
+									<IconArrowUpRight class="mr-1 size-4" />
 								</Button>
 							{/if}
 							{#if metadata.github}

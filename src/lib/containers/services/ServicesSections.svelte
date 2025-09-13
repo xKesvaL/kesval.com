@@ -49,7 +49,7 @@
 	{@const SecondaryIcon = service.icons?.[1] ?? IconRocket}
 	{@const TertiaryIcon = service.icons?.[2] ?? IconCode}
 	{@const accent = accentColors[service.id] ?? '#8b8b8b'}
-	<section class="section relative" id={service.id}>
+	<section class="section relative overflow-hidden" id={service.id}>
 		<!-- Subtle, refined background: a soft tinted glow plus a neutral radial on the right -->
 		<div class="pointer-events-none absolute inset-0 -z-10">
 			<!-- Noise texture overlay (very subtle) -->
