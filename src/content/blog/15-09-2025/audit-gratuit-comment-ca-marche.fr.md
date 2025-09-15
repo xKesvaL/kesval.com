@@ -14,6 +14,11 @@ author:
   image: '../../jordan.jpg'
 ---
 
+<script lang="ts">
+  import { localizeHref } from '$paraglide/runtime';
+  import { Button } from "$lib/components/ui/button";
+</script>
+
 ## Pourquoi demander un audit (gratuit) ?
 
 Si votre site est lent, génère peu d’appels ou n’apparaît pas localement, ce n’est pas forcément un problème de marketing. Souvent, c’est la base : clarté du message, performance, SEO et parcours.
@@ -24,7 +29,9 @@ Un audit gratuit vous donne une vision honnête et un plan d’action priorisé.
 - Vous repartez avec des améliorations simples à mettre en place tout de suite.
 - Vous décidez ensuite : faire en interne, avec nous, ou plus tard.
 
-[Demander mon audit gratuit](/contact?audit=1&utm_source=blog&utm_medium=article&utm_campaign=audit_gratuit)
+<Button href={localizeHref('/audit-gratuit')}>
+Demander mon audit gratuit
+</Button>
 
 **_Note : audits gratuits, en nombre limité chaque mois pour garder un haut niveau de valeur._**
 
@@ -66,8 +73,6 @@ Un audit gratuit vous donne une vision honnête et un plan d’action priorisé.
 3. On vous restitue un plan clair : priorités A/B/C, actions simples à lancer, et ordre d’action + mini vidéo.
 4. Vous choisissez la suite : un devis offert de notre part, ou appliquer vous‑même.
 
-[Je lance mon audit](/contact?audit=1&utm_source=blog&utm_medium=article&utm_campaign=audit_gratuit)
-
 ## Pourquoi c’est gratuit (et limité)
 
 C’est notre meilleure façon de vous montrer notre approche : pragmatique, orientée résultats, facile pour vous.  
@@ -93,6 +98,10 @@ Oui, l’objectif est aussi de créer des relations de confiance. Mais la décis
 
 ### Prêt à identifier ce qui débloque vos résultats ?
 
-[Demander mon audit gratuit](/contact?audit=1&utm_source=blog&utm_medium=article&utm_campaign=audit_gratuit)
+<Button href={localizeHref('/audit-gratuit')}>
+Je lance mon audit
+</Button>
+<br />
+<br />
 
-Découvrez nos [services](/services) ou parcourez nos [projets](/projets).
+Découvrez nos <a href={localizeHref('/services')}>services</a> ou parcourez nos <a href={localizeHref('/projets')}>projets</a>.

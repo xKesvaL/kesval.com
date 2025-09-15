@@ -6,7 +6,7 @@
 	import { Textarea } from '$lib/components/ui/textarea';
 	import { zod4Client } from 'sveltekit-superforms/adapters';
 	import * as m from '$paraglide/messages';
-	import { contactFormSchema, type ContactFormSchema } from '$lib/schemas/contact';
+	import { contactFormSchemaAudit, type ContactFormSchemaAudit } from '$lib/schemas/contact';
 	import {
 		IconUser,
 		IconMail,
@@ -32,7 +32,7 @@
 	import { translate } from '$lib/utils/i18n';
 
 	type Props = {
-		form: SuperValidated<Infer<ContactFormSchema>>;
+		form: SuperValidated<Infer<ContactFormSchemaAudit>>;
 	};
 
 	let { form: formServer }: Props = $props();
@@ -41,7 +41,7 @@
 
 	// Initialize the superForm instance
 	const form = superForm(formServer, {
-		validators: zod4Client(contactFormSchema),
+		validators: zod4Client(contactFormSchemaAudit),
 		// This runs only if the form is valid
 		onUpdated: async ({ form: superformData }) => {
 			if (!superformData.valid) {
@@ -94,7 +94,9 @@
 		return Promise.all(
 			actualErrors.map(async ([name, error]) => {
 				const field =
-					contactFormSchema._zod.def.shape[name as keyof typeof contactFormSchema._zod.def.shape];
+					contactFormSchemaAudit._zod.def.shape[
+						name as keyof typeof contactFormSchemaAudit._zod.def.shape
+					];
 
 				const checks = getAllChecks(field);
 
@@ -184,11 +186,11 @@
 				<div class="space-y-2">
 					<div class="flex items-center gap-2">
 						<h2 class="title-gradient-muted-foreground text-3xl font-bold">
-							{m['contact.hero.get_your_free_quote']()}
+							{m['contact.hero.get_your_free_audit']()}
 						</h2>
 					</div>
 					<p class="text-muted-foreground">
-						{m['contact.hero.description']()}
+						{m['contact.hero.description_audit']()}
 					</p>
 				</div>
 
@@ -200,7 +202,7 @@
 							use:enhance
 							method="POST"
 							class="space-y-6"
-							action={route('send /contact')}
+							action={route('send /audit-gratuit')}
 						>
 							<!-- Personal Information Section -->
 							<div class="space-y-4">
@@ -275,18 +277,18 @@
 
 							<!-- Project Details Section -->
 							<div class="space-y-4">
-								<Form.Field {form} name="message" class="space-y-3">
+								<Form.Field {form} name="website" class="space-y-3">
 									<Form.Control>
 										{#snippet children({ props })}
 											<Form.Label class="flex items-center gap-2 text-sm font-medium">
 												<IconMessage class="text-muted-foreground h-4 w-4" />
-												{m['contact.hero.message']()} *
+												{m['contact.hero.website']()} *
 											</Form.Label>
-											<Textarea
+											<Input
 												{...props}
-												bind:value={$formData.message}
-												placeholder={m['contact.hero.message_placeholder']()}
-												class=""
+												bind:value={$formData.website}
+												placeholder={m['contact.hero.website_placeholder']()}
+												class="h-11"
 												oninput={(e) => {
 													const target = e.target as HTMLTextAreaElement;
 													target.style.height = '0px';
@@ -298,7 +300,7 @@
 									</Form.Control>
 									<span class="text-destructive text-sm font-medium">
 										{#await errors then errorList}
-											{errorList.find((error) => error.name === 'message')?.error}
+											{errorList.find((error) => error.name === 'website')?.error}
 										{/await}
 									</span>
 								</Form.Field>
@@ -316,14 +318,14 @@
 										{m['contact.hero.submitting']()}
 									{:else}
 										<IconSend class="icon-send-to-animate h-5 w-5" />
-										{m['contact.hero.get_my_free_quote']()}
+										{m['contact.hero.get_my_free_audit']()}
 									{/if}
 								</Form.Button>
 							</div>
 
 							<!-- Trust indicators -->
 							<div class="text-muted-foreground space-y-2 text-center text-sm">
-								<p>⚡ {m['contact.hero.quick_response']()}</p>
+								<p>⚡ {m['contact.hero.quick_response_audit']()}</p>
 							</div>
 						</form>
 					{:else}
@@ -439,67 +441,6 @@
 					</div>
 				</div>
 			</div>
-		</ShineBorder>
-
-		<ShineBorder class=" col-span-full w-full overflow-hidden md:pt-20 [&>div]:!border-none">
-			<!-- Cal inline embed code begins -->
-			<div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline"></div>
-			<script type="text/javascript">
-				(function (C, A, L) {
-					let p = function (a, ar) {
-						a.q.push(ar);
-					};
-					let d = C.document;
-					C.Cal =
-						C.Cal ||
-						function () {
-							let cal = C.Cal;
-							let ar = arguments;
-							if (!cal.loaded) {
-								cal.ns = {};
-								cal.q = cal.q || [];
-								d.head.appendChild(d.createElement('script')).src = A;
-								cal.loaded = true;
-							}
-							if (ar[0] === L) {
-								const api = function () {
-									p(api, arguments);
-								};
-								const namespace = ar[1];
-								api.q = api.q || [];
-								if (typeof namespace === 'string') {
-									cal.ns[namespace] = cal.ns[namespace] || api;
-									p(cal.ns[namespace], ar);
-									p(cal, ['initNamespace', namespace]);
-								} else p(cal, ar);
-								return;
-							}
-							p(cal, ar);
-						};
-				})(window, 'https://app.cal.com/embed/embed.js', 'init');
-				Cal('init', 'devis-gratuit', { origin: 'https://cal.com' });
-
-				Cal.ns['devis-gratuit']('inline', {
-					elementOrSelector: '#my-cal-inline',
-					config: { layout: 'month_view', theme: 'light' },
-					calLink: 'kesval-studio/devis-gratuit'
-				});
-
-				Cal.ns['devis-gratuit']('ui', {
-					theme: 'light',
-					cssVarsPerTheme: {
-						light: {
-							'cal-brand': '#4D01FD',
-							'cal-bg': 'transparent',
-							'cal-border-booker-width': '0px'
-						},
-						dark: { 'cal-brand': '#4D01FD' }
-					},
-					hideEventTypeDetails: false,
-					layout: 'month_view'
-				});
-			</script>
-			<!-- Cal inline embed code ends -->
 		</ShineBorder>
 	</div>
 </section>

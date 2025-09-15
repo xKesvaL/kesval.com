@@ -77,8 +77,10 @@
 	},
 	"contact": {
 		"hero": {
-			"get_your_free_quote": "Get your free audit",
-			"description": "Tell us about your project, and we will get back to you within 48 to 72 hours with a custom audit. (Within our montly limit)",
+			"get_your_free_quote": "Get your free quote",
+			"get_your_free_audit": "Get your free audit",
+			"description": "Tell us about your project, and we will get back to you within 48 hours with a custom quote.",
+			"description_audit": "Send us your website, and we will get back to you within 48 to 72 hours with a free audit. (Within our monthly limit)",
 			"name": "Name",
 			"name_placeholder": "Your full name",
 			"email": "Email",
@@ -87,8 +89,12 @@
 			"company_placeholder": "Your company name (optional)",
 			"message": "Your project",
 			"message_placeholder": "Describe your project, goals, needs, and expectations...",
-			"get_my_free_quote": "Get my free audit",
-			"quick_response": "Quick response guaranteed within 24 hours",
+			"website": "URL de votre site",
+			"website_placeholder": "https://yourwebsite.com",
+			"get_my_free_quote": "Get my free quote",
+			"get_my_free_audit": "Get my free audit",
+			"quick_response": "Quick response guaranteed within 48 hours",
+			"quick_response_audit": "Quick response guaranteed within 48 to 72 hours",
 			"success_title": "Message sent successfully!",
 			"success_message": "Thank you for contacting us! We will get back to you as soon as possible.",
 			"send_another_message": "Send another message",
@@ -96,7 +102,7 @@
 			"contact_us_title": "Contact us",
 			"contact_us_description": "Let's discuss your project. Here are the different ways to reach us.",
 			"our_advantages": "Our advantages",
-			"our_advantages_fast": "Quick response within 24h",
+			"our_advantages_fast": "Quick response within 48h",
 			"our_advantages_client": "A relationship of trust",
 			"our_advantages_expert": "Expertise at your service"
 		}
@@ -171,7 +177,19 @@
 				"technologies": "Technologies",
 				"tags": "Tags",
 				"started": "Start",
-				"finished": "End"
+				"finished": "End",
+				"price": "Price"
+			},
+			"type": {
+				"web_showcase": "Showcase site",
+				"web_ecommerce": "E-commerce",
+				"web_saas": "SaaS",
+				"design_showcase": "Showcase design",
+				"design_ecommerce": "E-commerce design",
+				"app_mobile": "Mobile app",
+				"app_desktop": "Desktop app",
+				"app_saas": "SaaS app",
+				"other": "Other"
 			}
 		}
 	},
@@ -247,6 +265,10 @@
 		"contact": {
 			"title": "Contact",
 			"description": "Contact us to discuss your project. We will get back to you within 24 hours."
+		},
+		"audit_gratuit": {
+			"title": "Free audit",
+			"description": "Discover our free audit. We will get back to you within 48 to 72 hours."
 		},
 		"mentions_legales": {
 			"title": "Legal Notice",
@@ -700,5 +722,9 @@
 	"error": {
 		"title": "Oops! It looks like you've found a page that doesn't exist or an error has occurred.",
 		"back_to_home": "Back to home"
+	},
+	"errors": {
+		"min_length": "{field} must contain at least {check} characters.",
+		"invalid": "{field} is required."
 	}
 }

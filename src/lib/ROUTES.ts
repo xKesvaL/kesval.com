@@ -10,6 +10,7 @@
  */
 const PAGES = {
   "/": `/`,
+  "/audit-gratuit": `/audit-gratuit`,
   "/blog": `/blog`,
   "/blog/[slug]": (params: { slug: (string | number) }) => {
     return `/blog/${params['slug']}`
@@ -42,6 +43,7 @@ const SERVERS = {
  * ACTIONS
  */
 const ACTIONS = {
+  "send /audit-gratuit": `/audit-gratuit?/send`,
   "send /contact": `/contact?/send`
 }
 
@@ -157,9 +159,9 @@ export function route<T extends keyof AllTypes>(key: T, ...params: any[]): strin
 * ```
 */
 export type KIT_ROUTES = {
-  PAGES: { '/': never, '/blog': never, '/blog/[slug]': 'slug', '/conditions-generales-de-vente': never, '/contact': never, '/mentions-legales': never, '/projets': never, '/projets/[slug]': 'slug', '/services': never, '/services/agences': never, '/services/applications-web': never, '/services/automatisation': never, '/services/design': never, '/services/maintenance': never, '/services/site-vitrine': never }
+  PAGES: { '/': never, '/audit-gratuit': never, '/blog': never, '/blog/[slug]': 'slug', '/conditions-generales-de-vente': never, '/contact': never, '/mentions-legales': never, '/projets': never, '/projets/[slug]': 'slug', '/services': never, '/services/agences': never, '/services/applications-web': never, '/services/automatisation': never, '/services/design': never, '/services/maintenance': never, '/services/site-vitrine': never }
   SERVERS: { 'GET /manifest.json': never, 'GET /sitemap.xml': never }
-  ACTIONS: { 'send /contact': never }
+  ACTIONS: { 'send /audit-gratuit': never, 'send /contact': never }
   LINKS: Record<string, never>
   Params: { 'slug': never }
 }

@@ -77,8 +77,10 @@
 	},
 	"contact": {
 		"hero": {
-			"get_your_free_quote": "Obtenez votre audit gratuit",
-			"description": "Parlez-nous de votre projet, et nous reviendrons vers vous dans les 48 à 72 heures avec un audit sur-mesure. (Dans notre limite mensuelle)",
+			"get_your_free_quote": "Obtenez votre devis gratuit",
+			"get_your_free_audit": "Obtenez votre audit gratuit",
+			"description": "Parlez-nous de votre projet, et nous reviendrons vers vous dans les 48 heures avec un devis sur-mesure.",
+			"description_audit": "Envoyez nous votre site web, et nous reviendrons vers vous dans les 48 à 72 heures avec un audit gratuit. (Dans notre limite mensuelle)",
 			"name": "Nom",
 			"name_placeholder": "Votre nom complet",
 			"email": "E-mail",
@@ -87,8 +89,12 @@
 			"company_placeholder": "Nom de votre entreprise (optionnel)",
 			"message": "Votre projet",
 			"message_placeholder": "Décrivez votre projet, vos buts, besoins et attentes...",
-			"get_my_free_quote": "Obtenir mon audit gratuit",
-			"quick_response": "Réponse rapide garantie sous 24 heures",
+			"website": "URL de votre site",
+			"website_placeholder": "https://votresite.com",
+			"get_my_free_quote": "Obtenir mon devis gratuit",
+			"get_my_free_audit": "Obtenir mon audit gratuit",
+			"quick_response": "Réponse rapide garantie sous 48 heures",
+			"quick_response_audit": "Réponse rapide garantie sous 48 à 72 heures",
 			"success_title": "Message envoyé avec succès !",
 			"success_message": "Merci de nous avoir contactés ! Nous reviendrons vers vous dès que possible.",
 			"send_another_message": "Envoyer un autre message",
@@ -96,7 +102,7 @@
 			"contact_us_title": "Contactez-nous",
 			"contact_us_description": "Discutons de votre projet. Voici les différentes façons de nous joindre.",
 			"our_advantages": "Nos avantages",
-			"our_advantages_fast": "Réponse rapide sous 24h",
+			"our_advantages_fast": "Réponse rapide sous 48h",
 			"our_advantages_client": "Une relation de confiance",
 			"our_advantages_expert": "Une expertise à votre service"
 		}
@@ -259,6 +265,10 @@
 		"contact": {
 			"title": "Contact",
 			"description": "Contactez-nous pour discuter de votre projet. Nous vous répondrons dans les 24 heures."
+		},
+		"audit_gratuit": {
+			"title": "Audit gratuit",
+			"description": "Découvrez notre audit gratuit. Nous vous reviendrons dans les 48 à 72 heures."
 		},
 		"mentions_legales": {
 			"title": "Mentions légales",

@@ -14,6 +14,11 @@ author:
   image: '../../jordan.jpg'
 ---
 
+<script lang="ts">
+  import { localizeHref } from '$paraglide/runtime';
+  import { Button } from "$lib/components/ui/button";
+</script>
+
 ## Why request a (free) audit?
 
 If your site is slow, generates few calls, or doesn’t show up locally, it’s not necessarily a “marketing problem”. Often, it’s about the basics: message clarity, performance, SEO, and the user path.
@@ -24,7 +29,9 @@ A free audit gives you an honest view and a prioritized action plan. **<u>Straig
 - You leave with simple improvements you can apply right away.
 - You decide what’s next: do it in‑house, with us, or later.
 
-[Request my free audit](/contact?audit=1&utm_source=blog&utm_medium=article&utm_campaign=audit_gratuit)
+<Button href={localizeHref('/audit-gratuit')}>
+Get my free audit
+</Button>
 
 **_Note: free audits are limited each month to keep a high level of value._**
 
@@ -66,8 +73,6 @@ A free audit gives you an honest view and a prioritized action plan. **<u>Straig
 3. You get a clear plan: A/B/C priorities, simple actions to start with, and order of execution + short video.
 4. You choose what’s next: get a free quote from us, or apply it yourself.
 
-[Start my audit](/contact?audit=1&utm_source=blog&utm_medium=article&utm_campaign=audit_gratuit)
-
 ## Why it’s free (and limited)
 
 It’s our best way to show our approach: pragmatic, results‑oriented, easy for you.  
@@ -93,6 +98,10 @@ Yes, the goal is also to build trusted relationships. But it’s your decision: 
 
 ### Ready to identify what will unlock results?
 
-[Request my free audit](/contact?audit=1&utm_source=blog&utm_medium=article&utm_campaign=audit_gratuit)
+<Button href={localizeHref('/audit-gratuit')}>
+Start my audit
+</Button>
+<br />
+<br />
 
-Explore our [services](/services) or browse our [projets](/projets).
+Discover our <a href={localizeHref('/services')}>services</a> or browse our <a href={localizeHref('/projets')}>projects</a>.
