@@ -39,7 +39,7 @@ technologies:
   - TypeScript
   - SvelteKit
   - Tailwind CSS
-projectType: web-showcase
+projectType: web_showcase
 previewUrl: https://kesval.com
 ---
 

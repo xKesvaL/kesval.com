@@ -7,7 +7,7 @@ import { route } from "$lib/ROUTES";
 // Define sorting options type
 export type SortOption = "date-desc" | "date-asc" | "name-asc" | "name-desc";
 
-const featuredProjectsIds = ["kesval-studio"];
+const featuredProjectsIds = ["ma-voiture-parfaite", "kesval-studio"];
 
 export const getFeaturedProjects = (locale: Locale) => {
 	return projects.filter((project) => {
@@ -15,6 +15,8 @@ export const getFeaturedProjects = (locale: Locale) => {
 			featuredProjectsIds.includes(project.uniqueId as string) &&
 			project.locale === locale
 		);
+	}).sort((a, b) => {
+		return featuredProjectsIds.indexOf(a.uniqueId as string) - featuredProjectsIds.indexOf(b.uniqueId as string);
 	});
 };
 

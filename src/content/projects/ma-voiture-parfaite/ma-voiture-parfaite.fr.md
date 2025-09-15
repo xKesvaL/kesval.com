@@ -32,7 +32,7 @@ technologies:
   - Strapi
   - PostHog
   - Motion One
-projectType: web-showcase
+projectType: web_showcase
 previewUrl: https://site-mvp.dev.kesval.com
 figma: https://www.figma.com/proto/O8AsUXyh08LS7muEnihStt/app.mavoitureparfaite.fr?page-id=355%3A1968&node-id=355-1969&starting-point-node-id=501%3A665&scaling=min-zoom&content-scaling=fixed&t=om6EA4pgb66WTyvY-1
 ---
@@ -50,6 +50,8 @@ MaVoitureParfaite avait besoin d’un site clair et vivant : présenter l’off
 ### Notre approche
 
 On a commencé par clarifier les messages et les parcours. Puis nous avons construit une base moderne, découpée et solide : des pages composées de “blocs” (Hero, Avantages, Offres, Comparatif, FAQ, Contact, Blog…), un blog facile à parcourir, et un formulaire piloté par le CMS. Résultat : l’équipe peut publier et réorganiser en autonomie, tout en gardant une expérience fluide et cohérente.
+
+Comme vous pouvez le voir, la maquette est loin de ressembler à ce que vous voyez maintenant sur le site. Grâce à nos méthodes de travail agiles, nous avons pu rapidement adapter le site aux besoins de notre client.
 
 ### Ce qui change pour l’utilisateur
 

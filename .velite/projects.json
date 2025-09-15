@@ -30,7 +30,7 @@
     },
     "metadata": {
       "readingTime": 1,
-      "wordCount": 318
+      "wordCount": 354
     },
     "excerpt": "A clear, fast website built to convert.",
     "author": {
@@ -38,7 +38,7 @@
       "email": "jordan@kesval.com",
       "image": "../../jordan.jpg"
     },
-    "content": "<h3>At a glance</h3>\n<ul>\n<li>Clear message that builds trust fast</li>\n<li>Fast, accessible, bilingual (EN/FR)</li>\n<li>Built to convert and easy to grow</li>\n</ul>\n<p>Want the same effectiveness for your business? Reach out at <a href=\"mailto:contact@kesval.com\">contact@kesval.com</a>.</p>\n<h3>The need</h3>\n<p>Our website had to do what we promise to our clients: inspire trust, explain the value simply, and guide people to get in touch without friction. No jargon, no fluff. Just a pleasant, effective experience that reflects our standards.</p>\n<h3>Our approach</h3>\n<p>We started by aligning on the essentials: what we do, for whom, and why it matters. Once the message was clear, we designed an interface that reassures at first glance: meaningful headings, comfortable reading, visible calls‑to‑action, and lightweight visuals that support the story.</p>\n<p>On the build, we favored simplicity and performance. A handful of essential pages that load quickly, sound SEO foundations, accessibility in mind, and straightforward cookie handling. The goal: simple, reliable and enjoyable—both for visitors and for us when we update the site.</p>\n<h3>What changes for users</h3>\n<p>On arrival, the offer is understood in seconds. Navigation feels natural, projects are easy to browse, and the path to contact is obvious. The site works just as well on mobile as it does on desktop, and switches between English and French seamlessly.</p>\n<h3>Results</h3>\n<p>Launch was smooth, and updates are even smoother: adding a case study, a post, or a section takes minutes. Feedback has been consistent: clearer messaging, greater trust, and more direct paths to contact. It’s a solid base for growing our SEO and publishing regularly.</p>\n<h3>Scope</h3>\n<p>Pages: Home, Services, Projects (list + detail), Blog (ready), Legal, Terms. Components: project cards, mobile/desktop navigation, CTAs, forms.</p>\n<h3>What’s next</h3>\n<p>We’re enriching the blog (case studies, practical advice), detailing service pages further, and strengthening conversion tracking to keep improving what matters: real results.</p>\n<h3>Let’s work together</h3>\n<p>Want a website that speaks clearly and delivers results? Let’s talk: <code>contact@kesval.com</code>.</p>",
+    "content": "<h3>At a glance</h3>\n<ul>\n<li>Clear message that builds trust fast</li>\n<li>Fast, accessible, bilingual (EN/FR)</li>\n<li>Built to convert and easy to grow</li>\n</ul>\n<p>Want the same effectiveness for your business? Reach out at <a href=\"mailto:contact@kesval.com\">contact@kesval.com</a>.</p>\n<h3>The need</h3>\n<p>Our website had to do what we promise to our clients: inspire trust, explain the value simply, and guide people to get in touch without friction. No jargon, no fluff. Just a pleasant, effective experience that reflects our standards.</p>\n<h3>Our approach</h3>\n<p>We started by aligning on the essentials: what we do, for whom, and why it matters. Once the message was clear, we designed an interface that reassures at first glance: meaningful headings, comfortable reading, visible calls‑to‑action, and lightweight visuals that support the story.</p>\n<p>On the build, we favored simplicity and performance. A handful of essential pages that load quickly, sound SEO foundations, accessibility in mind, and straightforward cookie handling. The goal: simple, reliable and enjoyable—both for visitors and for us when we update the site.</p>\n<p>As you can see, the figma is far from what you see now on the site. Thanks to our agile working methods, we were able to quickly adapt the site to the needs of our client.</p>\n<h3>What changes for users</h3>\n<p>On arrival, the offer is understood in seconds. Navigation feels natural, projects are easy to browse, and the path to contact is obvious. The site works just as well on mobile as it does on desktop, and switches between English and French seamlessly.</p>\n<h3>Results</h3>\n<p>Launch was smooth, and updates are even smoother: adding a case study, a post, or a section takes minutes. Feedback has been consistent: clearer messaging, greater trust, and more direct paths to contact. It’s a solid base for growing our SEO and publishing regularly.</p>\n<h3>Scope</h3>\n<p>Pages: Home, Services, Projects (list + detail), Blog (ready), Legal, Terms. Components: project cards, mobile/desktop navigation, CTAs, forms.</p>\n<h3>What’s next</h3>\n<p>We’re enriching the blog (case studies, practical advice), detailing service pages further, and strengthening conversion tracking to keep improving what matters: real results.</p>\n<h3>Let’s work together</h3>\n<p>Want a website that speaks clearly and delivers results? Let’s talk: <code>contact@kesval.com</code>.</p>",
     "toc": [
       {
         "title": "At a glance",
@@ -108,7 +108,7 @@
       "TypeScript",
       "Tailwind CSS"
     ],
-    "projectType": "web-showcase",
+    "projectType": "web_showcase",
     "uniqueId": "kesval-studio",
     "slug": "kesval-studio.en",
     "slugClean": "kesval-studio",
@@ -223,7 +223,7 @@
       "SvelteKit",
       "Tailwind CSS"
     ],
-    "projectType": "web-showcase",
+    "projectType": "web_showcase",
     "uniqueId": "kesval-studio",
     "slug": "kesval-studio.fr",
     "slugClean": "kesval-studio",
@@ -334,7 +334,7 @@
       "PostHog",
       "Motion One"
     ],
-    "projectType": "web-showcase",
+    "projectType": "web_showcase",
     "uniqueId": "ma-voiture-parfaite",
     "slug": "ma-voiture-parfaite.en",
     "slugClean": "ma-voiture-parfaite",
@@ -370,7 +370,7 @@
     },
     "metadata": {
       "readingTime": 1,
-      "wordCount": 281
+      "wordCount": 320
     },
     "excerpt": "Un site vitrine + blog, rapide, modulaire et simple à faire vivre.",
     "author": {
@@ -378,7 +378,7 @@
       "email": "jordan@kesval.com",
       "image": "../../jordan.jpg"
     },
-    "content": "<h3>En bref</h3>\n<ul>\n<li>Pages modulaires (blocs) éditables sans dev</li>\n<li>Blog simple à chercher/filtrer, formulaire fiable</li>\n<li>Rapide, SEO‑ready, agréable sur mobile et desktop</li>\n</ul>\n<h3>Le besoin</h3>\n<p>MaVoitureParfaite avait besoin d’un site clair et vivant : présenter l’offre, partager des articles utiles, et convertir les visiteurs en prises de contact. Le tout sans dépendre d’un développeur pour chaque mise à jour.</p>\n<h3>Notre approche</h3>\n<p>On a commencé par clarifier les messages et les parcours. Puis nous avons construit une base moderne, découpée et solide : des pages composées de “blocs” (Hero, Avantages, Offres, Comparatif, FAQ, Contact, Blog…), un blog facile à parcourir, et un formulaire piloté par le CMS. Résultat : l’équipe peut publier et réorganiser en autonomie, tout en gardant une expérience fluide et cohérente.</p>\n<h3>Ce qui change pour l’utilisateur</h3>\n<p>La proposition de valeur est comprise en quelques secondes. La lecture est confortable, la navigation est évidente, et le blog se parcourt facilement (recherche, filtres, tri). Sur mobile, tout reste simple et efficace.</p>\n<h3>Tech en bref (pour les curieux)</h3>\n<p>Architecture headless : front et CMS sont découplés (Next.js × Strapi) pour la performance, la sécurité et l’évolution. Blocs dynamiques : chaque “bloc” du CMS correspond à un composant côté front, que l’on assemble librement. Proxy sécurisé : les requêtes sensibles passent par le serveur (clés protégées), pratique pour la recherche et le formulaire. Prévisualisation : relire les brouillons avant publication.</p>\n<h3>Et la suite</h3>\n<p>Poursuivre la publication d’articles (études de cas, conseils concrets), enrichir la page Offres et suivre les conversions pour optimiser continuellement.</p>\n<h3>Travaillons ensemble</h3>\n<p>Envie d’un site qui parle vrai et se met à jour facilement ? Écrivez‑nous : <code>contact@kesval.com</code>.</p>",
+    "content": "<h3>En bref</h3>\n<ul>\n<li>Pages modulaires (blocs) éditables sans dev</li>\n<li>Blog simple à chercher/filtrer, formulaire fiable</li>\n<li>Rapide, SEO‑ready, agréable sur mobile et desktop</li>\n</ul>\n<h3>Le besoin</h3>\n<p>MaVoitureParfaite avait besoin d’un site clair et vivant : présenter l’offre, partager des articles utiles, et convertir les visiteurs en prises de contact. Le tout sans dépendre d’un développeur pour chaque mise à jour.</p>\n<h3>Notre approche</h3>\n<p>On a commencé par clarifier les messages et les parcours. Puis nous avons construit une base moderne, découpée et solide : des pages composées de “blocs” (Hero, Avantages, Offres, Comparatif, FAQ, Contact, Blog…), un blog facile à parcourir, et un formulaire piloté par le CMS. Résultat : l’équipe peut publier et réorganiser en autonomie, tout en gardant une expérience fluide et cohérente.</p>\n<p>Comme vous pouvez le voir, la maquette est loin de ressembler à ce que vous voyez maintenant sur le site. Grâce à nos méthodes de travail agiles, nous avons pu rapidement adapter le site aux besoins de notre client.</p>\n<h3>Ce qui change pour l’utilisateur</h3>\n<p>La proposition de valeur est comprise en quelques secondes. La lecture est confortable, la navigation est évidente, et le blog se parcourt facilement (recherche, filtres, tri). Sur mobile, tout reste simple et efficace.</p>\n<h3>Tech en bref (pour les curieux)</h3>\n<p>Architecture headless : front et CMS sont découplés (Next.js × Strapi) pour la performance, la sécurité et l’évolution. Blocs dynamiques : chaque “bloc” du CMS correspond à un composant côté front, que l’on assemble librement. Proxy sécurisé : les requêtes sensibles passent par le serveur (clés protégées), pratique pour la recherche et le formulaire. Prévisualisation : relire les brouillons avant publication.</p>\n<h3>Et la suite</h3>\n<p>Poursuivre la publication d’articles (études de cas, conseils concrets), enrichir la page Offres et suivre les conversions pour optimiser continuellement.</p>\n<h3>Travaillons ensemble</h3>\n<p>Envie d’un site qui parle vrai et se met à jour facilement ? Écrivez‑nous : <code>contact@kesval.com</code>.</p>",
     "toc": [
       {
         "title": "En bref",
@@ -445,7 +445,7 @@
       "PostHog",
       "Motion One"
     ],
-    "projectType": "web-showcase",
+    "projectType": "web_showcase",
     "uniqueId": "ma-voiture-parfaite",
     "slug": "ma-voiture-parfaite.fr",
     "slugClean": "ma-voiture-parfaite",

@@ -42,7 +42,7 @@
 		<div class="grid gap-6 md:grid-cols-3 md:gap-8">
 			{#each Object.keys(values) as key (key)}
 				<div
-					class=" bg-primary-foreground/5 hover:bg-primary-foreground/10 border-primary-foreground/10 flex flex-col rounded-xl border p-6 pt-2 backdrop-blur-lg transition"
+					class=" bg-primary-foreground/10 hover:bg-primary-foreground/15 border-primary-foreground/20 flex flex-col rounded-xl border p-6 pt-2 backdrop-blur-lg transition"
 					use:inView={{
 						onEnter: () => updateValues(key as keyof Values)
 					}}

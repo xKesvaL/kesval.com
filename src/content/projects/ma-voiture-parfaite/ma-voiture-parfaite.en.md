@@ -32,7 +32,7 @@ technologies:
   - Strapi
   - PostHog
   - Motion One
-projectType: web-showcase
+projectType: web_showcase
 previewUrl: https://site-mvp.dev.kesval.com
 figma: https://www.figma.com/proto/O8AsUXyh08LS7muEnihStt/app.mavoitureparfaite.fr?page-id=355%3A1968&node-id=355-1969&starting-point-node-id=501%3A665&scaling=min-zoom&content-scaling=fixed&t=om6EA4pgb66WTyvY-1
 ---

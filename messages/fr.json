@@ -175,14 +175,14 @@
 				"price": "Prix"
 			},
 			"type": {
-				"web-showcase": "Site vitrine",
-				"web-ecommerce": "E-commerce",
-				"web-saas": "SaaS",
-				"design-showcase": "Design Site vitrine",
-				"design-ecommerce": "Design E-commerce",
-				"app-mobile": "App Mobile",
-				"app-desktop": "App Bureau",
-				"app-saas": "App SaaS",
+				"web_showcase": "Site vitrine",
+				"web_ecommerce": "E-commerce",
+				"web_saas": "SaaS",
+				"design_showcase": "Design Site vitrine",
+				"design_ecommerce": "Design E-commerce",
+				"app_mobile": "App Mobile",
+				"app_desktop": "App Bureau",
+				"app_saas": "App SaaS",
 				"other": "Autre"
 			}
 		}

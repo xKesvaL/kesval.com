@@ -39,7 +39,7 @@ technologies:
   - SvelteKit
   - TypeScript
   - Tailwind CSS
-projectType: web-showcase
+projectType: web_showcase
 previewUrl: https://kesval.com/en
 previewHeight: 700
 ---
@@ -61,6 +61,8 @@ Our website had to do what we promise to our clients: inspire trust, explain the
 We started by aligning on the essentials: what we do, for whom, and why it matters. Once the message was clear, we designed an interface that reassures at first glance: meaningful headings, comfortable reading, visible calls‑to‑action, and lightweight visuals that support the story.
 
 On the build, we favored simplicity and performance. A handful of essential pages that load quickly, sound SEO foundations, accessibility in mind, and straightforward cookie handling. The goal: simple, reliable and enjoyable—both for visitors and for us when we update the site.
+
+As you can see, the figma is far from what you see now on the site. Thanks to our agile working methods, we were able to quickly adapt the site to the needs of our client.
 
 ### What changes for users
 

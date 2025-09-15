@@ -17,6 +17,7 @@
 	import { navigationMenuTriggerStyle } from '../ui/navigation-menu/navigation-menu-trigger.svelte';
 	import VeliteImage from '../base/VeliteImage.svelte';
 	import { getAllContentLocale } from '$lib/utils/content';
+	import { IconChevronDown } from '@tabler/icons-svelte';
 
 	const baseFlyParams = {
 		y: (innerHeight.current || 0) * -1,
@@ -94,7 +95,14 @@
 						</NavigationMenu.Item>
 						<NavigationMenu.Item>
 							<NavigationMenu.Trigger>
-								{m['nav.services']()}
+								{#snippet child({ props })}
+									<a href={localizeHref(route('/services'))} {...props}>
+										{m['nav.services']()}
+										<IconChevronDown
+											class="relative top-[1px] ml-1 size-3 transition duration-300 group-data-[state=open]:rotate-180"
+										/>
+									</a>
+								{/snippet}
 							</NavigationMenu.Trigger>
 							<NavigationMenu.Content class="w-150!">
 								<ul class="grid grid-cols-2 gap-2 p-2">
@@ -131,7 +139,14 @@
 						</NavigationMenu.Item>
 						<NavigationMenu.Item>
 							<NavigationMenu.Trigger>
-								{m['nav.projects']()}
+								{#snippet child({ props })}
+									<a href={localizeHref(route('/projets'))} {...props}>
+										{m['nav.projects']()}
+										<IconChevronDown
+											class="relative top-[1px] ml-1 size-3 transition duration-300 group-data-[state=open]:rotate-180"
+										/>
+									</a>
+								{/snippet}
 							</NavigationMenu.Trigger>
 							<NavigationMenu.Content class="w-240!">
 								<ul class="grid grid-cols-2 gap-2 p-2">

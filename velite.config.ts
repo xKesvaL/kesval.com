@@ -92,14 +92,14 @@ export default defineConfig({
 					// array of enum values
 					projectType: 
 						s.enum([
-							"web-showcase",
-							"web-ecommerce",
-							"web-saas",
-							"design-showcase",
-							"design-ecommerce",
-							"app-mobile",
-							"app-desktop",
-							"app-saas",
+							"web_showcase",
+							"web_ecommerce",
+							"web_saas",
+							"design_showcase",
+							"design_ecommerce",
+							"app_mobile",
+							"app_desktop",
+							"app_saas",
 							"other",
 						]),
 				

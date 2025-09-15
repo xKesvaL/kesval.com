@@ -18,7 +18,7 @@
 	let filteredProjectsPromise = $derived(
 		filterProjects(projects, { sortBy, searchTerm, selectedTags })
 	); // Initial load
-	let allTags = $derived(projects.flatMap((project) => project.tags));
+	let allTags = $derived(Array.from(new Set(projects.flatMap((project) => project.tags))));
 
 	const toggleTag = (tag: string) => {
 		if (selectedTags.includes(tag)) {
@@ -50,7 +50,7 @@
 
 <section class="section-hero relative">
 	<!-- Background pattern -->
-	<div class="absolute inset-0 -z-10 opacity-100">
+	<div class="absolute inset-0 -z-10 opacity-50">
 		<div
 			class="from-background absolute h-full w-full bg-gradient-to-b via-transparent via-30% to-transparent"
 		></div>

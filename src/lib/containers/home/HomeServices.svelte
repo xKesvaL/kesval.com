@@ -41,7 +41,7 @@
 					class="hover:border-primary gap-0 shadow-xs transition duration-300 hover:duration-150"
 				>
 					<Card.Header>
-						<div class="items-center gap-4 sm:flex lg:block lg:space-y-4">
+						<div class="items-center gap-4 space-y-4">
 							<div
 								class="text-primary from-primary/10 border-primary/20 flex size-10 items-center justify-center rounded-lg border bg-gradient-to-tr to-transparent text-3xl"
 							>

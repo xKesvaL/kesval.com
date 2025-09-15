@@ -90,7 +90,7 @@
 					href={client.link}
 					target="_blank"
 					rel="noopener noreferrer"
-					class="bg-primary-foreground/5 hover:bg-primary-foreground/10 border-primary-foreground/10 flex items-center justify-center gap-3 rounded-xl border px-2 py-6 backdrop-blur-lg transition hover:-translate-y-1 hover:border-[var(--client-color)]"
+					class="bg-primary-foreground/10 hover:bg-primary-foreground/15 border-primary-foreground/20 flex items-center justify-center gap-3 rounded-xl border px-2 py-6 backdrop-blur-lg transition hover:-translate-y-1 hover:border-[var(--client-color)]"
 					style={`--client-color: ${client.color || 'var(--color-primary-foreground)'}`}
 				>
 					{#if client.type === 'icon' || client.type === undefined}
