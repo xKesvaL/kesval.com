@@ -34,48 +34,6 @@ export const urlPatterns: UrlPatterns = [
 			en: '/services'
 		})
 	},
-	{
-		pattern: '/services/agences',
-		localized: localize({
-			fr: '/services/agences',
-			en: '/services/agencies'
-		})
-	},
-	{
-		pattern: '/services/applications-web',
-		localized: localize({
-			fr: '/services/applications-web',
-			en: '/services/web-applications'
-		})
-	},
-	{
-		pattern: '/services/automatisation',
-		localized: localize({
-			fr: '/services/automatisation',
-			en: '/services/automation'
-		})
-	},
-	{
-		pattern: '/services/design',
-		localized: localize({
-			fr: '/services/design',
-			en: '/services/design'
-		})
-	},
-	{
-		pattern: '/services/maintenance',
-		localized: localize({
-			fr: '/services/maintenance',
-			en: '/services/maintenance'
-		})
-	},
-	{
-		pattern: '/services/site-vitrine',
-		localized: localize({
-			fr: '/services/site-vitrine',
-			en: '/services/website'
-		})
-	},
 	// PROJECTS
 	{
 		pattern: '/projets',
@@ -112,6 +70,14 @@ export const urlPatterns: UrlPatterns = [
 		localized: localize({
 			fr: '/contact',
 			en: '/contact'
+		})
+	},
+	// AUDIT GRATUIT
+	{
+		pattern: '/audit-gratuit',
+		localized: localize({
+			fr: '/audit-gratuit',
+			en: '/free-audit'
 		})
 	},
 	// EVERY OTHER
