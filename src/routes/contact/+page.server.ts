@@ -7,7 +7,7 @@ import { RESEND_API_KEY } from '$env/static/private';
 
 const resend = new Resend(RESEND_API_KEY);
 
-const AUDIENCE_ID = '59a6b507-36cb-4a56-978d-e672d5cee51e';
+const AUDIENCE_ID = '942f532c-1955-4938-94c7-0ee160d7a031';
 
 export const load: PageServerLoad = async () => {
 	return {
@@ -37,19 +37,19 @@ Message: ${contactForm.data.message}`
 
 		if (error) {
 			console.error('Error sending email:', error);
-			return fail(500, contactForm);
+			return fail(500, { form: contactForm });
 		}
 
 		const { error: contactError } = await resend.contacts.create({
 			email: contactForm.data.email as string,
-			firstName: contactForm.data.name,
+			firstName: contactForm.data.name as string,
 			lastName: `From « ${contactForm.data.company || 'No Company'} »`,
 			audienceId: AUDIENCE_ID
 		});
 
 		if (contactError) {
 			console.error('Error creating contact:', contactError);
-			return fail(500, contactForm);
+			return fail(500, { form: contactForm });
 		}
 
 		return message(contactForm, 'Valid');

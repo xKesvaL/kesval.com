@@ -52,7 +52,7 @@
 
 {#if relatedPosts.length > 0}
 	<div class="not-prose mt-12">
-		<h3 class="mb-6 text-2xl font-semibold tracking-tight">
+		<h3 class="text-foreground mb-6 text-2xl font-semibold tracking-tight">
 			{m['blog.related_posts']()}
 		</h3>
 		<div class="grid gap-6 md:grid-cols-2">

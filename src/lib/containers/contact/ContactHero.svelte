@@ -28,6 +28,9 @@
 	import type { Attachment } from 'svelte/attachments';
 	import { cn } from '$lib/utils/ui';
 	import { brand } from '$lib/utils/config';
+	import { getAllChecks } from '$lib/utils/zod';
+	import { translate } from '$lib/utils/i18n';
+	import { capitalizeFirstLetter } from '$lib/utils/functions';
 
 	type Props = {
 		form: SuperValidated<Infer<ContactFormSchema>>;
@@ -84,7 +87,41 @@
 		}
 	});
 
-	const { form: formData, enhance, submitting } = form;
+	const { form: formData, enhance, submitting, errors: formErrors } = form;
+
+	// hey I know there's most likely a better way to do this, but i18n is kinda hard and this works
+	let errors = $derived.by(() => {
+		const actualErrors = Object.entries($formErrors);
+		return Promise.all(
+			actualErrors.map(async ([name, error]) => {
+				const field =
+					contactFormSchema._zod.def.shape[name as keyof typeof contactFormSchema._zod.def.shape];
+
+				const checks = getAllChecks(field);
+
+				const checkError = checks?.find((check) => check?.type === error[0].split('.')[1]);
+
+				if (checkError) {
+					return {
+						name,
+						error: await translate(`errors.${checkError.type}`, {
+							check: checkError.check,
+							field: await translate(`contact.hero.${name}`)
+						})
+					};
+				}
+
+				let errorMessage = error[0].split('.')[1];
+
+				return {
+					name,
+					error: await translate(`errors.${errorMessage}`, {
+						field: await translate(`contact.hero.${name}`)
+					})
+				};
+			})
+		);
+	});
 
 	let timeline: gsap.core.Tween | gsap.core.Timeline; // Declare timeline, allow for Tween or Timeline type
 
@@ -184,7 +221,11 @@
 												/>
 											{/snippet}
 										</Form.Control>
-										<Form.FieldErrors />
+										<span class="text-destructive text-sm font-medium">
+											{#await errors then errorList}
+												{errorList.find((error) => error.name === 'name')?.error}
+											{/await}
+										</span>
 									</Form.Field>
 
 									<Form.Field {form} name="email" class="space-y-3">
@@ -202,7 +243,11 @@
 												/>
 											{/snippet}
 										</Form.Control>
-										<Form.FieldErrors />
+										<span class="text-destructive text-sm font-medium">
+											{#await errors then errorList}
+												{errorList.find((error) => error.name === 'email')?.error}
+											{/await}
+										</span>
 									</Form.Field>
 								</div>
 
@@ -221,7 +266,11 @@
 											/>
 										{/snippet}
 									</Form.Control>
-									<Form.FieldErrors />
+									<span class="text-destructive text-sm font-medium">
+										{#await errors then errorList}
+											{errorList.find((error) => error.name === 'company')?.error}
+										{/await}
+									</span>
 								</Form.Field>
 							</div>
 
@@ -232,12 +281,12 @@
 										{#snippet children({ props })}
 											<Form.Label class="flex items-center gap-2 text-sm font-medium">
 												<IconMessage class="text-muted-foreground h-4 w-4" />
-												{m['contact.hero.your_project']()} *
+												{m['contact.hero.message']()} *
 											</Form.Label>
 											<Textarea
 												{...props}
 												bind:value={$formData.message}
-												placeholder={m['contact.hero.your_project_placeholder']()}
+												placeholder={m['contact.hero.message_placeholder']()}
 												class=""
 												oninput={(e) => {
 													const target = e.target as HTMLTextAreaElement;
@@ -248,7 +297,11 @@
 											/>
 										{/snippet}
 									</Form.Control>
-									<Form.FieldErrors />
+									<span class="text-destructive text-sm font-medium">
+										{#await errors then errorList}
+											{errorList.find((error) => error.name === 'message')?.error}
+										{/await}
+									</span>
 								</Form.Field>
 							</div>
 

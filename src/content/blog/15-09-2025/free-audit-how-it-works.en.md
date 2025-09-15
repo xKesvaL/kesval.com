@@ -1,15 +1,11 @@
 ---
-title: Audit gratuit ; comment ça marche
-excerpt: En 48–72 h, vous recevez un diagnostic priorisé, des actions simples à mettre en place et un mini débrief offert.
+title: 'Free website audit: how it works'
+excerpt: In 48–72h, you get a prioritized plan, simple actions you can apply, and a short debrief offered.
 publishedAt: 2025-09-15
 updatedAt: 2025-09-15
 tags:
   - Audit
-  - Performance
   - SEO
-  - TPE
-  - PME
-  - Site vitrine
 cover: './cover-fr.png'
 coverAvif: './cover-fr.avif'
 author:
@@ -18,117 +14,85 @@ author:
   image: '../../jordan.jpg'
 ---
 
-## Pourquoi demander un audit (gratuit) ?
+## Why request a (free) audit?
 
-Si votre site est lent, génère peu d’appels ou n’apparaît pas localement, ce n’est pas forcément « un problème de marketing ». Souvent, c’est la base : clarté du message, performance, SEO et parcours.
+If your site is slow, generates few calls, or doesn’t show up locally, it’s not necessarily a “marketing problem”. Often, it’s about the basics: message clarity, performance, SEO, and the user path.
 
-Un audit gratuit vous donne une photo honnête et un plan d’action priorisé. Ton direct, pas de jargon, pas d’engagement.
+A free audit gives you an honest view and a prioritized action plan. **<u>Straightforward, no commitment</u>**.
 
-- Vous savez où agir d’abord (impact > effort).
-- Vous repartez avec des améliorations simples à mettre en place tout de suite.
-- Vous décidez ensuite : faire en interne, avec nous, ou plus tard.
+- You know where to act first (impact > effort).
+- You leave with simple improvements you can apply right away.
+- You decide what’s next: do it in‑house, with us, or later.
 
-[Demander mon audit gratuit](/contact?audit=1&utm_source=blog&utm_medium=article&utm_campaign=audit_gratuit)
+[Request my free audit](/contact?audit=1&utm_source=blog&utm_medium=article&utm_campaign=audit_gratuit)
 
-> Note : audits gratuits, en nombre limité chaque mois pour garder un haut niveau de valeur.
+**_Note: free audits are limited each month to keep a high level of value._**
 
-## Ce que l’on vérifie
+## What we check
 
-- Performance
-  - Vitesse sur mobile, poids des images, éléments qui ralentissent la page.
-  - Objectif: une page qui s’ouvre vite et reste fluide.
+- Perceived speed
+  - Pages that open fast on mobile. Fewer drop‑offs, more calls.
+  - Goal: keep visitors and improve comfort.
 
-- Référencement (bases)
-  - Pages visibles sur Google, titres et descriptions, plan du site, informations locales (adresse, horaires) si pertinent.
-  - Objectif: être trouvable par vos clients, pas « parfait » sur un outil.
+- Online visibility
+  - Be found by your customers (especially locally) on searches that matter.
+  - Goal: more useful visits, not just “a good score”.
 
-- Contenu et clarté
-  - Message principal clair en 3 secondes, sections essentielles, preuves (avis, logos), bouton d’action.
-  - Objectif: que le visiteur comprenne « pourquoi vous » et « que faire ensuite ».
+- Message clarity
+  - In 3 seconds: who you help, the outcome, and how to contact you.
+  - Goal: make people want to choose you.
 
 - Conversion
-  - Formulaires courts, boutons pour appeler ou WhatsApp, confortable sur mobile, moins de frictions.
-  - Objectif: transformer les visites en demandes.
+  - A simple path to contact: short form, call button, WhatsApp.
+  - Goal: turn visits into enquiries.
 
-- Sécurité et maintenance
-  - Mises à jour, sauvegardes, cookies, basiques d’hygiène.
-  - Objectif: éviter les urgences coûteuses.
+- Technical peace of mind
+  - An up‑to‑date, backed‑up site to avoid costly outages.
+  - Goal: fewer risks and more peace of mind.
 
-## Ce qui rend notre audit différent
+## What makes our audit different
 
-- Priorisation claire (A/B/C: A = à faire d’abord) selon l’impact attendu et l’effort nécessaire.
-- Mini vidéo de restitution (5–7 min) pour vous montrer exactement quoi changer.
-- Textes prêts à l’emploi (titre principal, bouton d’action, preuves courtes).
-- 2–3 améliorations simples expliquées pas à pas pour démarrer immédiatement.
-- Bonus : débrief 15 min offert pour cadrer la suite, si vous le souhaitez.
+- Clear prioritization (A/B/C: A = do first) based on expected impact and effort.
+- Short summary video (5 min) or a quick meeting to show exactly what to change.
+- 2–3 simple improvements explained step‑by‑step so you can start right away.
+- Bonus: free quote for the next steps.
 
-> Objectif : que vous puissiez améliorer votre site dès le même jour.
+**_Goal: help you improve your site as soon as possible._**
 
-## Mini auto‑diagnostic (2 minutes)
+## How it works
 
-Cochez mentalement :
+1. Send us your URL and goals (2 minutes).
+2. We test and review your site with our expertise.
+3. You get a clear plan: A/B/C priorities, simple actions to start with, and order of execution + short video.
+4. You choose what’s next: get a free quote from us, or apply it yourself.
 
-- Votre page d’accueil explique‑t‑elle clairement « ce que vous faites, pour qui, et le résultat » en 1–2 phrases ?
-- Avez‑vous un bouton d’action (contact/devis) visible dès le début de la page (mobile inclus) ?
-- Vos images pèsent‑elles moins de 200 Ko et sont‑elles au bon format ?
-- Avez‑vous une fiche Google Business à jour (heures, zone, avis) ?
-- Les formulaires sont‑ils courts et faciles à utiliser sur mobile ?
-- Avez‑vous au moins 3 preuves (avis, logos, chiffres) sur la page d’accueil ?
-- Les titres et descriptions sont‑ils uniques et clairs pour chaque page clé ?
+[Start my audit](/contact?audit=1&utm_source=blog&utm_medium=article&utm_campaign=audit_gratuit)
 
-Si vous cochez 3 « non » ou plus : l’audit va vous faire gagner du temps.
+## Why it’s free (and limited)
 
-## Comment ça se passe (48–72h)
+It’s our best way to show our approach: pragmatic, results‑oriented, easy for you.  
+Yes, the goal is also to build trusted relationships. But it’s your decision: apply it yourself, hire us, or come back later.
 
-1. Vous nous envoyez l’URL et vos objectifs (2 minutes).
-2. On teste et on passe votre site au crible avec notre grille interne.
-3. On vous restitue un plan clair : priorités A/B/C, actions simples à lancer, et ordre d’action + mini vidéo.
-4. Vous choisissez la suite : appliquer vous‑même, débrief 15 min avec nous, ou être accompagné (devis si besoin).
+**_Transparency: we accept a limited number of audits per month to keep service quality high._**
 
-[Je lance mon audit](/contact?audit=1&utm_source=blog&utm_medium=article&utm_campaign=audit_gratuit)
+## Quick FAQ
 
-## Ce que vous recevez
+- How long does it take?  
+  48–72h after your request (excluding weekends/public holidays).
 
-- Un tableau de bord simple par thème (vitesse, visibilité en ligne, contenu, conversion, maintenance).
-- Le Top 5 des priorités avec l’impact attendu et l’effort estimé.
-- 5 à 10 actions simples et rapides (dont 2–3 réalisables immédiatement).
-- Une mini vidéo de restitution (5–7 min) pour accélérer l’application.
-- Si utile : un mini plan 30 jours pour capitaliser rapidement.
+- Does it commit me to anything?  
+  No. You’re free to apply it in‑house. If you want us to handle it, we’ll propose a simple plan.
 
-## Ce que l’audit n’est pas
+- What if I don’t have all the access?  
+  For the initial audit, your URL is enough. We’ll tell you if access is helpful to go further.
 
-- Pas un rapport de 30 pages que personne ne lit.
-- Pas une chasse aux points sur des outils.
-- Pas une obligation d’achat derrière.
-
-## Pourquoi c’est gratuit (et limité)
-
-C’est notre meilleure façon de vous montrer notre approche : pragmatique, orientée résultats, sans jargon.  
-Oui, l’objectif est aussi de créer des relations de confiance. Mais la décision vous appartient : vous pouvez appliquer seuls, nous confier la suite, ou revenir plus tard.
-
-> Transparence : nous acceptons un nombre limité d’audits par mois pour garder du temps de suivi.
-
-## FAQ express
-
-- Combien de temps ?  
-  48–72h après votre demande (hors week‑end/jours fériés).
-
-- Que recevez‑vous exactement ?  
-  Un tableau de bord, des priorités classées, des actions simples que vous pouvez appliquer, des textes proposés et une mini vidéo.
-
-- Est‑ce que ça m’engage ?  
-  Non. Vous êtes libre d’appliquer en interne. Si vous voulez qu’on s’en charge, on vous propose un plan simple.
-
-- Et si je n’ai pas tous les accès ?  
-  Pour l’audit initial, l’URL suffit. On vous dira si des accès sont utiles pour aller plus loin.
-
-- Que se passe‑t‑il après l’audit ?  
-  On peut planifier un débrief 15 min pour valider votre plan d’action, sans obligation.
+- What happens after the audit?  
+  We can provide a free quote for the next steps, or you can apply it yourself.
 
 ---
 
-### Prêt à identifier ce qui débloque vos résultats ?
+### Ready to identify what will unlock results?
 
-[Demander mon audit gratuit](/contact?audit=1&utm_source=blog&utm_medium=article&utm_campaign=audit_gratuit)
+[Request my free audit](/contact?audit=1&utm_source=blog&utm_medium=article&utm_campaign=audit_gratuit)
 
-Vous voulez aller plus loin ensuite ? Découvrez nos [services](/services) ou parcourez nos [projets](/projets).
+Explore our [services](/services) or browse our [projets](/projets).

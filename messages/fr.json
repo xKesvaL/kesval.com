@@ -77,17 +77,17 @@
 	},
 	"contact": {
 		"hero": {
-			"get_your_free_quote": "Obtenez votre devis gratuit",
-			"description": "Parlez-nous de votre projet, et nous reviendrons vers vous dans les 24 heures avec une proposition sur-mesure.",
+			"get_your_free_quote": "Obtenez votre audit gratuit",
+			"description": "Parlez-nous de votre projet, et nous reviendrons vers vous dans les 48 à 72 heures avec un audit sur-mesure. (Dans notre limite mensuelle)",
 			"name": "Nom",
 			"name_placeholder": "Votre nom complet",
 			"email": "E-mail",
 			"email_placeholder": "votre@email.com",
 			"company": "Entreprise",
 			"company_placeholder": "Nom de votre entreprise (optionnel)",
-			"your_project": "Votre projet",
-			"your_project_placeholder": "Décrivez votre projet, vos buts, besoins et attentes...",
-			"get_my_free_quote": "Obtenir mon devis gratuit",
+			"message": "Votre projet",
+			"message_placeholder": "Décrivez votre projet, vos buts, besoins et attentes...",
+			"get_my_free_quote": "Obtenir mon audit gratuit",
 			"quick_response": "Réponse rapide garantie sous 24 heures",
 			"success_title": "Message envoyé avec succès !",
 			"success_message": "Merci de nous avoir contactés ! Nous reviendrons vers vous dès que possible.",
@@ -716,5 +716,9 @@
 	"error": {
 		"title": "Oops! Il semble que vous avez trouvé une page qui n'existe pas ou qu'une erreur est survenue.",
 		"back_to_home": "Retour à l'accueil"
+	},
+	"errors": {
+		"min_length": "{field} doit contenir au moins {check} caractères.",
+		"invalid": "{field} est obligatoire."
 	}
 }
