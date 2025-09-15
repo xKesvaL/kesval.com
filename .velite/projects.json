@@ -1,5 +1,227 @@
 [
   {
+    "title": "MaVoitureParfaite",
+    "path": "projects/ma-voiture-parfaite/ma-voiture-parfaite.en",
+    "publishedAt": "2025-08-13T00:00:00.000Z",
+    "updatedAt": "2025-09-13T00:00:00.000Z",
+    "tags": [
+      "MaVoitureParfaite",
+      "Site vitrine",
+      "SEO",
+      "Performance",
+      "CMS"
+    ],
+    "cover": {
+      "src": "/static/cover-5b8a44f2.png",
+      "height": 912,
+      "width": 1906,
+      "blurDataURL": "data:image/webp;base64,UklGRioAAABXRUJQVlA4IB4AAACQAQCdASoIAAQADMDOJZwAApz7FAAA/sPaUgAAAAA=",
+      "blurWidth": 8,
+      "blurHeight": 4
+    },
+    "coverAvif": {
+      "src": "/static/cover-4dbe972f.avif",
+      "height": 912,
+      "width": 1906,
+      "blurDataURL": "data:image/webp;base64,UklGRioAAABXRUJQVlA4IB4AAACQAQCdASoIAAQADMDOJZwAApz7FAAA/sPaUgAAAAA=",
+      "blurWidth": 8,
+      "blurHeight": 4
+    },
+    "metadata": {
+      "readingTime": 1,
+      "wordCount": 240
+    },
+    "excerpt": "A fast, modular website + blog that’s easy to keep fresh.",
+    "author": {
+      "name": "Jordan",
+      "email": "jordan@kesval.com",
+      "image": "../../jordan.jpg"
+    },
+    "content": "<h3>At a glance</h3>\n<ul>\n<li>Modular pages (blocks) editable without a developer</li>\n<li>Powerful, friendly blog and a reliable contact form</li>\n<li>Fast, SEO‑ready, and delightful on mobile and desktop</li>\n</ul>\n<h3>The need</h3>\n<p>MaVoitureParfaite needed a clear and living website: present the offer, publish useful articles, and turn visitors into leads—without relying on a developer for every update.</p>\n<h3>Our approach</h3>\n<p>We aligned on the core messages and user journeys, then built a modern, reliable foundation: pages assembled from reusable “blocks” (Hero, Benefits, Offers, Comparison, FAQ, Contact, Blog), an easy‑to‑browse blog, and a CMS‑driven contact form. The team can now publish and reorganise content autonomously while keeping a smooth, consistent experience.</p>\n<h3>What changes for users</h3>\n<p>The value proposition is understood in seconds. Reading is comfortable, navigation is obvious, and the blog is easy to explore (search, filters, sorting). On mobile, everything remains simple and efficient.</p>\n<h3>Tech in brief (for the curious)</h3>\n<p>Headless architecture: frontend and CMS are decoupled (Next.js × Strapi) for performance, security and evolution. Dynamic blocks: each CMS “block” maps to a frontend component you can assemble freely. Secure proxy: sensitive requests go through the server (keys protected), handy for blog search and the form. Preview: review drafts before publishing.</p>\n<h3>What’s next</h3>\n<p>Keep publishing (case studies, practical advice), enrich the Offers page, and track conversions to continually optimise what matters.</p>\n<h3>Let’s work together</h3>\n<p>Want a site that speaks clearly and stays fresh without effort? Let’s talk: <code>contact@kesval.com</code>.</p>",
+    "toc": [
+      {
+        "title": "At a glance",
+        "url": "#at-a-glance",
+        "items": []
+      },
+      {
+        "title": "The need",
+        "url": "#the-need",
+        "items": []
+      },
+      {
+        "title": "Our approach",
+        "url": "#our-approach",
+        "items": []
+      },
+      {
+        "title": "What changes for users",
+        "url": "#what-changes-for-users",
+        "items": []
+      },
+      {
+        "title": "Tech in brief (for the curious)",
+        "url": "#tech-in-brief-for-the-curious",
+        "items": []
+      },
+      {
+        "title": "What’s next",
+        "url": "#whats-next",
+        "items": []
+      },
+      {
+        "title": "Let’s work together",
+        "url": "#lets-work-together",
+        "items": []
+      }
+    ],
+    "icon": {
+      "src": "/static/icon-db4318cb.png",
+      "height": 512,
+      "width": 512,
+      "blurDataURL": "data:image/webp;base64,UklGRigAAABXRUJQVlA4IBwAAAAwAQCdASoIAAgADMDOJZwAA3AA/utwaRcPQAAA",
+      "blurWidth": 8,
+      "blurHeight": 8
+    },
+    "iconAvif": {
+      "src": "/static/icon-aeddfab4.avif",
+      "height": 512,
+      "width": 512,
+      "blurDataURL": "data:image/webp;base64,UklGRigAAABXRUJQVlA4IBwAAAAwAQCdASoIAAgADMDOJZwAA3AA/utwaRcPQAAA",
+      "blurWidth": 8,
+      "blurHeight": 8
+    },
+    "client": "MaVoitureParfaite",
+    "website": "https://site-mvp.dev.kesval.com",
+    "figma": "https://www.figma.com/proto/O8AsUXyh08LS7muEnihStt/app.mavoitureparfaite.fr?page-id=355%3A1968&node-id=355-1969&starting-point-node-id=501%3A665&scaling=min-zoom&content-scaling=fixed&t=om6EA4pgb66WTyvY-1",
+    "previewUrl": "https://site-mvp.dev.kesval.com",
+    "startedAt": "2025-06-18T00:00:00.000Z",
+    "technologies": [
+      "NextJS",
+      "Strapi",
+      "TypeScript",
+      "Strapi",
+      "PostHog",
+      "Motion One"
+    ],
+    "projectType": "web_showcase",
+    "uniqueId": "ma-voiture-parfaite",
+    "slug": "ma-voiture-parfaite.en",
+    "slugClean": "ma-voiture-parfaite",
+    "locale": "en"
+  },
+  {
+    "title": "MaVoitureParfaite",
+    "path": "projects/ma-voiture-parfaite/ma-voiture-parfaite.fr",
+    "publishedAt": "2025-08-13T00:00:00.000Z",
+    "updatedAt": "2025-09-13T00:00:00.000Z",
+    "tags": [
+      "MaVoitureParfaite",
+      "Site vitrine",
+      "SEO",
+      "Performance",
+      "CMS"
+    ],
+    "cover": {
+      "src": "/static/cover-5b8a44f2.png",
+      "height": 912,
+      "width": 1906,
+      "blurDataURL": "data:image/webp;base64,UklGRioAAABXRUJQVlA4IB4AAACQAQCdASoIAAQADMDOJZwAApz7FAAA/sPaUgAAAAA=",
+      "blurWidth": 8,
+      "blurHeight": 4
+    },
+    "coverAvif": {
+      "src": "/static/cover-4dbe972f.avif",
+      "height": 912,
+      "width": 1906,
+      "blurDataURL": "data:image/webp;base64,UklGRioAAABXRUJQVlA4IB4AAACQAQCdASoIAAQADMDOJZwAApz7FAAA/sPaUgAAAAA=",
+      "blurWidth": 8,
+      "blurHeight": 4
+    },
+    "metadata": {
+      "readingTime": 1,
+      "wordCount": 320
+    },
+    "excerpt": "Un site vitrine + blog, rapide, modulaire et simple à faire vivre.",
+    "author": {
+      "name": "Jordan",
+      "email": "jordan@kesval.com",
+      "image": "../../jordan.jpg"
+    },
+    "content": "<h3>En bref</h3>\n<ul>\n<li>Pages modulaires (blocs) éditables sans dev</li>\n<li>Blog simple à chercher/filtrer, formulaire fiable</li>\n<li>Rapide, SEO‑ready, agréable sur mobile et desktop</li>\n</ul>\n<h3>Le besoin</h3>\n<p>MaVoitureParfaite avait besoin d’un site clair et vivant : présenter l’offre, partager des articles utiles, et convertir les visiteurs en prises de contact. Le tout sans dépendre d’un développeur pour chaque mise à jour.</p>\n<h3>Notre approche</h3>\n<p>On a commencé par clarifier les messages et les parcours. Puis nous avons construit une base moderne, découpée et solide : des pages composées de “blocs” (Hero, Avantages, Offres, Comparatif, FAQ, Contact, Blog…), un blog facile à parcourir, et un formulaire piloté par le CMS. Résultat : l’équipe peut publier et réorganiser en autonomie, tout en gardant une expérience fluide et cohérente.</p>\n<p>Comme vous pouvez le voir, la maquette est loin de ressembler à ce que vous voyez maintenant sur le site. Grâce à nos méthodes de travail agiles, nous avons pu rapidement adapter le site aux besoins de notre client.</p>\n<h3>Ce qui change pour l’utilisateur</h3>\n<p>La proposition de valeur est comprise en quelques secondes. La lecture est confortable, la navigation est évidente, et le blog se parcourt facilement (recherche, filtres, tri). Sur mobile, tout reste simple et efficace.</p>\n<h3>Tech en bref (pour les curieux)</h3>\n<p>Architecture headless : front et CMS sont découplés (Next.js × Strapi) pour la performance, la sécurité et l’évolution. Blocs dynamiques : chaque “bloc” du CMS correspond à un composant côté front, que l’on assemble librement. Proxy sécurisé : les requêtes sensibles passent par le serveur (clés protégées), pratique pour la recherche et le formulaire. Prévisualisation : relire les brouillons avant publication.</p>\n<h3>Et la suite</h3>\n<p>Poursuivre la publication d’articles (études de cas, conseils concrets), enrichir la page Offres et suivre les conversions pour optimiser continuellement.</p>\n<h3>Travaillons ensemble</h3>\n<p>Envie d’un site qui parle vrai et se met à jour facilement ? Écrivez‑nous : <code>contact@kesval.com</code>.</p>",
+    "toc": [
+      {
+        "title": "En bref",
+        "url": "#en-bref",
+        "items": []
+      },
+      {
+        "title": "Le besoin",
+        "url": "#le-besoin",
+        "items": []
+      },
+      {
+        "title": "Notre approche",
+        "url": "#notre-approche",
+        "items": []
+      },
+      {
+        "title": "Ce qui change pour l’utilisateur",
+        "url": "#ce-qui-change-pour-lutilisateur",
+        "items": []
+      },
+      {
+        "title": "Tech en bref (pour les curieux)",
+        "url": "#tech-en-bref-pour-les-curieux",
+        "items": []
+      },
+      {
+        "title": "Et la suite",
+        "url": "#et-la-suite",
+        "items": []
+      },
+      {
+        "title": "Travaillons ensemble",
+        "url": "#travaillons-ensemble",
+        "items": []
+      }
+    ],
+    "icon": {
+      "src": "/static/icon-db4318cb.png",
+      "height": 512,
+      "width": 512,
+      "blurDataURL": "data:image/webp;base64,UklGRigAAABXRUJQVlA4IBwAAAAwAQCdASoIAAgADMDOJZwAA3AA/utwaRcPQAAA",
+      "blurWidth": 8,
+      "blurHeight": 8
+    },
+    "iconAvif": {
+      "src": "/static/icon-aeddfab4.avif",
+      "height": 512,
+      "width": 512,
+      "blurDataURL": "data:image/webp;base64,UklGRigAAABXRUJQVlA4IBwAAAAwAQCdASoIAAgADMDOJZwAA3AA/utwaRcPQAAA",
+      "blurWidth": 8,
+      "blurHeight": 8
+    },
+    "client": "MaVoitureParfaite",
+    "website": "https://site-mvp.dev.kesval.com",
+    "figma": "https://www.figma.com/proto/O8AsUXyh08LS7muEnihStt/app.mavoitureparfaite.fr?page-id=355%3A1968&node-id=355-1969&starting-point-node-id=501%3A665&scaling=min-zoom&content-scaling=fixed&t=om6EA4pgb66WTyvY-1",
+    "previewUrl": "https://site-mvp.dev.kesval.com",
+    "startedAt": "2025-06-18T00:00:00.000Z",
+    "technologies": [
+      "NextJS",
+      "Strapi",
+      "TypeScript",
+      "Strapi",
+      "PostHog",
+      "Motion One"
+    ],
+    "projectType": "web_showcase",
+    "uniqueId": "ma-voiture-parfaite",
+    "slug": "ma-voiture-parfaite.fr",
+    "slugClean": "ma-voiture-parfaite",
+    "locale": "fr"
+  },
+  {
     "title": "KesvaL Studio™",
     "path": "projects/kesval-studio/kesval-studio.en",
     "publishedAt": "2025-06-18T00:00:00.000Z",
@@ -227,228 +449,6 @@
     "uniqueId": "kesval-studio",
     "slug": "kesval-studio.fr",
     "slugClean": "kesval-studio",
-    "locale": "fr"
-  },
-  {
-    "title": "KesvaL Studio™",
-    "path": "projects/ma-voiture-parfaite/ma-voiture-parfaite.en",
-    "publishedAt": "2025-06-18T00:00:00.000Z",
-    "updatedAt": "2025-09-12T00:00:00.000Z",
-    "tags": [
-      "MaVoitureParfaite",
-      "Site vitrine",
-      "SEO",
-      "Performance",
-      "CMS"
-    ],
-    "cover": {
-      "src": "/static/cover-5b8a44f2.png",
-      "height": 912,
-      "width": 1906,
-      "blurDataURL": "data:image/webp;base64,UklGRioAAABXRUJQVlA4IB4AAACQAQCdASoIAAQADMDOJZwAApz7FAAA/sPaUgAAAAA=",
-      "blurWidth": 8,
-      "blurHeight": 4
-    },
-    "coverAvif": {
-      "src": "/static/cover-4dbe972f.avif",
-      "height": 912,
-      "width": 1906,
-      "blurDataURL": "data:image/webp;base64,UklGRioAAABXRUJQVlA4IB4AAACQAQCdASoIAAQADMDOJZwAApz7FAAA/sPaUgAAAAA=",
-      "blurWidth": 8,
-      "blurHeight": 4
-    },
-    "metadata": {
-      "readingTime": 1,
-      "wordCount": 240
-    },
-    "excerpt": "A fast, modular website + blog that’s easy to keep fresh.",
-    "author": {
-      "name": "Jordan",
-      "email": "jordan@kesval.com",
-      "image": "../../jordan.jpg"
-    },
-    "content": "<h3>At a glance</h3>\n<ul>\n<li>Modular pages (blocks) editable without a developer</li>\n<li>Powerful, friendly blog and a reliable contact form</li>\n<li>Fast, SEO‑ready, and delightful on mobile and desktop</li>\n</ul>\n<h3>The need</h3>\n<p>MaVoitureParfaite needed a clear and living website: present the offer, publish useful articles, and turn visitors into leads—without relying on a developer for every update.</p>\n<h3>Our approach</h3>\n<p>We aligned on the core messages and user journeys, then built a modern, reliable foundation: pages assembled from reusable “blocks” (Hero, Benefits, Offers, Comparison, FAQ, Contact, Blog), an easy‑to‑browse blog, and a CMS‑driven contact form. The team can now publish and reorganise content autonomously while keeping a smooth, consistent experience.</p>\n<h3>What changes for users</h3>\n<p>The value proposition is understood in seconds. Reading is comfortable, navigation is obvious, and the blog is easy to explore (search, filters, sorting). On mobile, everything remains simple and efficient.</p>\n<h3>Tech in brief (for the curious)</h3>\n<p>Headless architecture: frontend and CMS are decoupled (Next.js × Strapi) for performance, security and evolution. Dynamic blocks: each CMS “block” maps to a frontend component you can assemble freely. Secure proxy: sensitive requests go through the server (keys protected), handy for blog search and the form. Preview: review drafts before publishing.</p>\n<h3>What’s next</h3>\n<p>Keep publishing (case studies, practical advice), enrich the Offers page, and track conversions to continually optimise what matters.</p>\n<h3>Let’s work together</h3>\n<p>Want a site that speaks clearly and stays fresh without effort? Let’s talk: <code>contact@kesval.com</code>.</p>",
-    "toc": [
-      {
-        "title": "At a glance",
-        "url": "#at-a-glance",
-        "items": []
-      },
-      {
-        "title": "The need",
-        "url": "#the-need",
-        "items": []
-      },
-      {
-        "title": "Our approach",
-        "url": "#our-approach",
-        "items": []
-      },
-      {
-        "title": "What changes for users",
-        "url": "#what-changes-for-users",
-        "items": []
-      },
-      {
-        "title": "Tech in brief (for the curious)",
-        "url": "#tech-in-brief-for-the-curious",
-        "items": []
-      },
-      {
-        "title": "What’s next",
-        "url": "#whats-next",
-        "items": []
-      },
-      {
-        "title": "Let’s work together",
-        "url": "#lets-work-together",
-        "items": []
-      }
-    ],
-    "icon": {
-      "src": "/static/icon-db4318cb.png",
-      "height": 512,
-      "width": 512,
-      "blurDataURL": "data:image/webp;base64,UklGRigAAABXRUJQVlA4IBwAAAAwAQCdASoIAAgADMDOJZwAA3AA/utwaRcPQAAA",
-      "blurWidth": 8,
-      "blurHeight": 8
-    },
-    "iconAvif": {
-      "src": "/static/icon-aeddfab4.avif",
-      "height": 512,
-      "width": 512,
-      "blurDataURL": "data:image/webp;base64,UklGRigAAABXRUJQVlA4IBwAAAAwAQCdASoIAAgADMDOJZwAA3AA/utwaRcPQAAA",
-      "blurWidth": 8,
-      "blurHeight": 8
-    },
-    "client": "MaVoitureParfaite",
-    "website": "https://site-mvp.dev.kesval.com",
-    "figma": "https://www.figma.com/proto/O8AsUXyh08LS7muEnihStt/app.mavoitureparfaite.fr?page-id=355%3A1968&node-id=355-1969&starting-point-node-id=501%3A665&scaling=min-zoom&content-scaling=fixed&t=om6EA4pgb66WTyvY-1",
-    "previewUrl": "https://site-mvp.dev.kesval.com",
-    "startedAt": "2025-06-18T00:00:00.000Z",
-    "technologies": [
-      "NextJS",
-      "Strapi",
-      "TypeScript",
-      "Strapi",
-      "PostHog",
-      "Motion One"
-    ],
-    "projectType": "web_showcase",
-    "uniqueId": "ma-voiture-parfaite",
-    "slug": "ma-voiture-parfaite.en",
-    "slugClean": "ma-voiture-parfaite",
-    "locale": "en"
-  },
-  {
-    "title": "MaVoitureParfaite",
-    "path": "projects/ma-voiture-parfaite/ma-voiture-parfaite.fr",
-    "publishedAt": "2025-08-13T00:00:00.000Z",
-    "updatedAt": "2025-09-13T00:00:00.000Z",
-    "tags": [
-      "MaVoitureParfaite",
-      "Site vitrine",
-      "SEO",
-      "Performance",
-      "CMS"
-    ],
-    "cover": {
-      "src": "/static/cover-5b8a44f2.png",
-      "height": 912,
-      "width": 1906,
-      "blurDataURL": "data:image/webp;base64,UklGRioAAABXRUJQVlA4IB4AAACQAQCdASoIAAQADMDOJZwAApz7FAAA/sPaUgAAAAA=",
-      "blurWidth": 8,
-      "blurHeight": 4
-    },
-    "coverAvif": {
-      "src": "/static/cover-4dbe972f.avif",
-      "height": 912,
-      "width": 1906,
-      "blurDataURL": "data:image/webp;base64,UklGRioAAABXRUJQVlA4IB4AAACQAQCdASoIAAQADMDOJZwAApz7FAAA/sPaUgAAAAA=",
-      "blurWidth": 8,
-      "blurHeight": 4
-    },
-    "metadata": {
-      "readingTime": 1,
-      "wordCount": 320
-    },
-    "excerpt": "Un site vitrine + blog, rapide, modulaire et simple à faire vivre.",
-    "author": {
-      "name": "Jordan",
-      "email": "jordan@kesval.com",
-      "image": "../../jordan.jpg"
-    },
-    "content": "<h3>En bref</h3>\n<ul>\n<li>Pages modulaires (blocs) éditables sans dev</li>\n<li>Blog simple à chercher/filtrer, formulaire fiable</li>\n<li>Rapide, SEO‑ready, agréable sur mobile et desktop</li>\n</ul>\n<h3>Le besoin</h3>\n<p>MaVoitureParfaite avait besoin d’un site clair et vivant : présenter l’offre, partager des articles utiles, et convertir les visiteurs en prises de contact. Le tout sans dépendre d’un développeur pour chaque mise à jour.</p>\n<h3>Notre approche</h3>\n<p>On a commencé par clarifier les messages et les parcours. Puis nous avons construit une base moderne, découpée et solide : des pages composées de “blocs” (Hero, Avantages, Offres, Comparatif, FAQ, Contact, Blog…), un blog facile à parcourir, et un formulaire piloté par le CMS. Résultat : l’équipe peut publier et réorganiser en autonomie, tout en gardant une expérience fluide et cohérente.</p>\n<p>Comme vous pouvez le voir, la maquette est loin de ressembler à ce que vous voyez maintenant sur le site. Grâce à nos méthodes de travail agiles, nous avons pu rapidement adapter le site aux besoins de notre client.</p>\n<h3>Ce qui change pour l’utilisateur</h3>\n<p>La proposition de valeur est comprise en quelques secondes. La lecture est confortable, la navigation est évidente, et le blog se parcourt facilement (recherche, filtres, tri). Sur mobile, tout reste simple et efficace.</p>\n<h3>Tech en bref (pour les curieux)</h3>\n<p>Architecture headless : front et CMS sont découplés (Next.js × Strapi) pour la performance, la sécurité et l’évolution. Blocs dynamiques : chaque “bloc” du CMS correspond à un composant côté front, que l’on assemble librement. Proxy sécurisé : les requêtes sensibles passent par le serveur (clés protégées), pratique pour la recherche et le formulaire. Prévisualisation : relire les brouillons avant publication.</p>\n<h3>Et la suite</h3>\n<p>Poursuivre la publication d’articles (études de cas, conseils concrets), enrichir la page Offres et suivre les conversions pour optimiser continuellement.</p>\n<h3>Travaillons ensemble</h3>\n<p>Envie d’un site qui parle vrai et se met à jour facilement ? Écrivez‑nous : <code>contact@kesval.com</code>.</p>",
-    "toc": [
-      {
-        "title": "En bref",
-        "url": "#en-bref",
-        "items": []
-      },
-      {
-        "title": "Le besoin",
-        "url": "#le-besoin",
-        "items": []
-      },
-      {
-        "title": "Notre approche",
-        "url": "#notre-approche",
-        "items": []
-      },
-      {
-        "title": "Ce qui change pour l’utilisateur",
-        "url": "#ce-qui-change-pour-lutilisateur",
-        "items": []
-      },
-      {
-        "title": "Tech en bref (pour les curieux)",
-        "url": "#tech-en-bref-pour-les-curieux",
-        "items": []
-      },
-      {
-        "title": "Et la suite",
-        "url": "#et-la-suite",
-        "items": []
-      },
-      {
-        "title": "Travaillons ensemble",
-        "url": "#travaillons-ensemble",
-        "items": []
-      }
-    ],
-    "icon": {
-      "src": "/static/icon-db4318cb.png",
-      "height": 512,
-      "width": 512,
-      "blurDataURL": "data:image/webp;base64,UklGRigAAABXRUJQVlA4IBwAAAAwAQCdASoIAAgADMDOJZwAA3AA/utwaRcPQAAA",
-      "blurWidth": 8,
-      "blurHeight": 8
-    },
-    "iconAvif": {
-      "src": "/static/icon-aeddfab4.avif",
-      "height": 512,
-      "width": 512,
-      "blurDataURL": "data:image/webp;base64,UklGRigAAABXRUJQVlA4IBwAAAAwAQCdASoIAAgADMDOJZwAA3AA/utwaRcPQAAA",
-      "blurWidth": 8,
-      "blurHeight": 8
-    },
-    "client": "MaVoitureParfaite",
-    "website": "https://site-mvp.dev.kesval.com",
-    "figma": "https://www.figma.com/proto/O8AsUXyh08LS7muEnihStt/app.mavoitureparfaite.fr?page-id=355%3A1968&node-id=355-1969&starting-point-node-id=501%3A665&scaling=min-zoom&content-scaling=fixed&t=om6EA4pgb66WTyvY-1",
-    "previewUrl": "https://site-mvp.dev.kesval.com",
-    "startedAt": "2025-06-18T00:00:00.000Z",
-    "technologies": [
-      "NextJS",
-      "Strapi",
-      "TypeScript",
-      "Strapi",
-      "PostHog",
-      "Motion One"
-    ],
-    "projectType": "web_showcase",
-    "uniqueId": "ma-voiture-parfaite",
-    "slug": "ma-voiture-parfaite.fr",
-    "slugClean": "ma-voiture-parfaite",
     "locale": "fr"
   }
 ]

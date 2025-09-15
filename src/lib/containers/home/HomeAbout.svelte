@@ -17,8 +17,8 @@
 
 	let actualValues = {
 		experience: dayjs().diff(dayjs('2022-01-01'), 'year'),
-		projects: 11,
-		clients: 4
+		projects: 13,
+		clients: 5
 	} satisfies Values;
 
 	let values = $state<Values>({

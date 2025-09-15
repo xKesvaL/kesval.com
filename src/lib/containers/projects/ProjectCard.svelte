@@ -19,8 +19,8 @@
 
 <div
 	class={cn(
-		'group relative flex flex-col gap-6',
-		type === 'highlighted' && 'xl:flex-row xl:items-center xl:gap-12'
+		'group relative grid grid-cols-1 gap-6',
+		type === 'highlighted' && 'xl:grid-cols-10 xl:items-center xl:gap-12'
 	)}
 >
 	{#if type === 'highlighted'}
@@ -36,7 +36,7 @@
 	<div
 		class={cn(
 			'bg-muted relative mb-auto w-full overflow-hidden rounded-2xl border transition-all duration-500 group-hover:shadow-lg',
-			type === 'highlighted' && 'xl:w-3/5'
+			type === 'highlighted' && 'xl:col-span-6'
 		)}
 	>
 		<div class="aspect-video w-full overflow-hidden">
@@ -64,7 +64,7 @@
 	</div>
 
 	<!-- Project info -->
-	<div>
+	<div class={cn(type === 'highlighted' && 'xl:col-span-4')}>
 		<div class="space-y-2">
 			<div class="space-y-2">
 				<div class="flex items-center gap-4">

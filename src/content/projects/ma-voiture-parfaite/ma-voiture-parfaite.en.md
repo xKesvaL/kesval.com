@@ -1,8 +1,8 @@
 ---
-title: KesvaL Studio™
+title: MaVoitureParfaite
 excerpt: A fast, modular website + blog that’s easy to keep fresh.
-publishedAt: 2025-06-18
-updatedAt: 2025-09-12
+publishedAt: 2025-08-13
+updatedAt: 2025-09-13
 tags:
   - MaVoitureParfaite
   - Site vitrine
