@@ -25,7 +25,6 @@
 			color: '#FFB028'
 		},
 		{
-			link: 'https://mavoitureparfaite.fr',
 			icon: MVP,
 			name: 'Ma Voiture Parfaite',
 			nameShort: 'MVP',
@@ -86,7 +85,8 @@
 		<!-- Client grid with hover effects -->
 		<div class=" grid grid-cols-2 gap-6 md:grid-cols-4 lg:gap-8">
 			{#each clients as client, i (`${client.name}-${i}`)}
-				<a
+				<svelte:element
+					this={client.link ? 'a' : 'div'}
 					href={client.link}
 					target="_blank"
 					rel="noopener noreferrer"
@@ -108,7 +108,7 @@
 						<span class="hidden md:block">{client.name}</span>
 						<span class="block md:hidden">{client.nameShort || client.name}</span>
 					</span>
-				</a>
+				</svelte:element>
 			{/each}
 		</div>
 	</div>

@@ -9,18 +9,18 @@
       "SEO"
     ],
     "cover": {
-      "src": "/static/cover-fr-0551ab66.png",
+      "src": "/static/cover-fr-4d1926e0.png",
       "height": 630,
       "width": 1200,
-      "blurDataURL": "data:image/webp;base64,UklGRiwAAABXRUJQVlA4ICAAAACQAQCdASoIAAQADMDOJQAAXN9RAIAA93UaMz4MP2oAAA==",
+      "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAABwAQCdASoIAAQADMDOJZAC7AFAAAD+5quqL4A1zSaevAAA",
       "blurWidth": 8,
       "blurHeight": 4
     },
     "coverAvif": {
-      "src": "/static/cover-fr-2f930332.avif",
+      "src": "/static/cover-fr-0127dd51.avif",
       "height": 630,
       "width": 1200,
-      "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAACwAQCdASoIAAQADMDOJQAAXN9Ra3gAAPd1GjM+DD9qAAAA",
+      "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAABwAQCdASoIAAQADMDOJZAC7AFAAAD+5quqL4A1zSaevAAA",
       "blurWidth": 8,
       "blurHeight": 4
     },
@@ -88,18 +88,18 @@
       "SEO"
     ],
     "cover": {
-      "src": "/static/cover-fr-0551ab66.png",
+      "src": "/static/cover-fr-4d1926e0.png",
       "height": 630,
       "width": 1200,
-      "blurDataURL": "data:image/webp;base64,UklGRiwAAABXRUJQVlA4ICAAAACQAQCdASoIAAQADMDOJQAAXN9RAIAA93UaMz4MP2oAAA==",
+      "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAABwAQCdASoIAAQADMDOJZAC7AFAAAD+5quqL4A1zSaevAAA",
       "blurWidth": 8,
       "blurHeight": 4
     },
     "coverAvif": {
-      "src": "/static/cover-fr-2f930332.avif",
+      "src": "/static/cover-fr-0127dd51.avif",
       "height": 630,
       "width": 1200,
-      "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAACwAQCdASoIAAQADMDOJQAAXN9Ra3gAAPd1GjM+DD9qAAAA",
+      "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAABwAQCdASoIAAQADMDOJZAC7AFAAAD+5quqL4A1zSaevAAA",
       "blurWidth": 8,
       "blurHeight": 4
     },

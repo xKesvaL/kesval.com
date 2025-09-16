@@ -7,7 +7,9 @@
 	import { services } from '$lib/utils/config';
 	import { translate } from '$lib/utils/i18n';
 	import * as m from '$paraglide/messages';
-	import { IconCode, IconRocket } from '@tabler/icons-svelte';
+	import { IconCode, IconRocket, IconLifebuoy } from '@tabler/icons-svelte';
+	import Sparkles from '$lib/components/base/Sparkles.svelte';
+	import { Badge } from '$lib/components/ui/badge';
 
 	// Accent colors per service for decorative icon tinting (CSS variables)
 	const accentColors: Record<string, string> = {
@@ -104,8 +106,13 @@
 					</div>
 					<h2
 						class="from-foreground to-muted-foreground bg-gradient-to-br bg-clip-text text-4xl leading-tight font-bold tracking-tight text-transparent md:text-5xl md:leading-tight md:tracking-tight"
+						style="--sprkl-clr: {accent}"
 					>
-						{#await translate(`${base}.title`) then translation}{translation}{/await}
+						{#await translate(`${base}.title_before`) then translation}{translation}{/await}
+						<Sparkles color="var(--sprkl-clr)" style="color: {accent}">
+							{#await translate(`${base}.title_highlighted`) then translation}{translation}{/await}
+						</Sparkles>
+						{#await translate(`${base}.title_after`) then translation}{translation}{/await}
 					</h2>
 					<p class="text-muted-foreground max-w-[62ch] text-base md:text-lg">
 						{#await translate(`${base}.description`) then translation}{translation}{/await}
@@ -167,6 +174,7 @@
 							size="lg"
 							class="shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
 							href={localizeHref(route('/contact'))}
+							style="--color-primary: color-mix(in oklab, {accent}, black 10%)"
 						>
 							{#await translate(`${base}.cta_primary`) then translation}
 								{translation}
@@ -223,9 +231,14 @@
 						</div>
 					</div>
 					{#if 'hasMaintenanceAddon' in service && service.hasMaintenanceAddon}
-						<p class="text-muted-foreground/80 mt-3 text-xs">
+						<Badge
+							variant="outline"
+							class="mt-3 gap-2 rounded-full py-1.5 pr-4 pl-3 text-xs shadow-sm backdrop-blur sm:text-sm"
+							style={`background-color: color-mix(in oklab, ${accent}, white 88%); border-color: color-mix(in oklab, ${accent}, black 45%); color: color-mix(in oklab, ${accent}, black 35%);`}
+						>
+							<IconLifebuoy class="size-3.5" style={`color: ${accent}`} />
 							{m['services.sections.addon_maintenance']()}
-						</p>
+						</Badge>
 					{/if}
 				</div>
 			</div>
