@@ -93,7 +93,7 @@
 		<!-- Right: Preview + meta -->
 		<!-- Preview Tabs -->
 		<Card
-			class="shadow-primary/5 order-first gap-4 overflow-hidden overflow-y-auto shadow-[inset_0_-4px_8px_0px] drop-shadow-xs lg:sticky lg:top-[calc(var(--nav-height)+var(--nav-spacing)+2rem)] lg:order-last lg:h-fit lg:max-h-[calc(100dvh-var(--nav-height)-var(--nav-spacing)-4rem)] lg:self-start"
+			class="shadow-primary/5 gap-4 overflow-hidden overflow-y-auto shadow-[inset_0_-4px_8px_0px] drop-shadow-xs lg:sticky lg:top-[calc(var(--nav-height)+var(--nav-spacing)+2rem)] lg:h-fit lg:max-h-[calc(100dvh-var(--nav-height)-var(--nav-spacing)-4rem)] lg:self-start"
 		>
 			<CardHeader class="">
 				<CardTitle>{m['projects.case.panel_title']()}</CardTitle>
