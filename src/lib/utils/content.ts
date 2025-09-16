@@ -60,3 +60,7 @@ export const getAllContentTags = (locale: Locale, type: keyof Collections) => {
 		)
 	);
 };
+
+export const getImageSrc = (src?: string) => {
+	return src?.replace('/static', '/content');
+};

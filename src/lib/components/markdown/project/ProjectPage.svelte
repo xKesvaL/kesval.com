@@ -13,6 +13,7 @@
 	import { IsMobileCustom } from '$lib/hooks/is-mobile-custom.svelte';
 	import { IconTag } from '@tabler/icons-svelte';
 	import { Badge } from '$lib/components/ui/badge';
+	import ProjectMetadata from './ProjectMetadata.svelte';
 
 	let {
 		component,
@@ -56,6 +57,8 @@
 
 	let previewScale = $derived(isMobile.current ? 1 : ACTUAL_W / FRAME_W);
 </script>
+
+<ProjectMetadata {metadata} ogImage={metadata.cover} />
 
 <section class="section-hero lg:pt-8">
 	<div class="kcontainer mx-auto grid w-full gap-16 px-4 lg:grid-cols-[minmax(0,1fr)_420px]">

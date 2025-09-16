@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { getImageSrc } from '$lib/utils/content';
 	import { cn } from '$lib/utils/ui';
 	import type { WithChildren } from 'bits-ui';
 	import type { Image } from 'velite';
@@ -28,9 +29,9 @@
 	style="background-image: url('{imagePng.blurDataURL}');"
 >
 	<picture class={classPicture}>
-		<source srcset={imageAvif.src.replace('/static', '/content')} type="image/avif" />
+		<source srcset={getImageSrc(imageAvif.src)} type="image/avif" />
 		<img
-			src={imagePng.src.replace('/static', '/content')}
+			src={getImageSrc(imagePng.src)}
 			{alt}
 			loading="lazy"
 			decoding="async"

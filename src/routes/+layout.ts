@@ -29,6 +29,7 @@ export const load = async ({ url }) => {
 
 	let title: string | undefined = undefined;
 	let description: string | undefined = undefined;
+	let images: [{ url: string }] | undefined = undefined;
 	// if delocalizedPath has the form of any dynamic path, we need to set title as undefined
 	if (
 		dynamicPaths.some((path) =>
@@ -47,6 +48,7 @@ export const load = async ({ url }) => {
 		description = await translate(
 			`meta${delocalizedPath !== '.' ? delocalizedPath : '.home'}.description`
 		);
+		images = [{ url: '/og-image.png' }];
 	}
 
 	const baseMetaTags = Object.freeze({
@@ -61,7 +63,8 @@ export const load = async ({ url }) => {
 			locale: extractLocaleFromUrl(url.href),
 			siteName: brand.name,
 			url: new URL(url.pathname, url.origin).href,
-			type: 'website'
+			type: 'website',
+			images: images
 		},
 		twitter: {
 			creator: `${team.jordan.name} "${brand.nameShort}"`,
@@ -69,7 +72,8 @@ export const load = async ({ url }) => {
 			description: description,
 			site: brand.urlShort,
 			title: title,
-			cardType: 'summary'
+			cardType: 'summary',
+			image: images?.[0]?.url
 		},
 		languageAlternates: locales.map((locale) => {
 			return {

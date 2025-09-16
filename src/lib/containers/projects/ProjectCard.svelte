@@ -33,7 +33,8 @@
 	{/if}
 
 	<!-- Project image -->
-	<div
+	<a
+		href={localizeHref(route('/projets/[slug]', { slug: project.uniqueId }))}
 		class={cn(
 			'bg-muted relative mb-auto w-full overflow-hidden rounded-2xl border transition-all duration-500 group-hover:shadow-lg',
 			type === 'highlighted' && 'xl:col-span-6'
@@ -61,7 +62,7 @@
 				{project.client}
 			</div>
 		{/if}
-	</div>
+	</a>
 
 	<!-- Project info -->
 	<div class={cn(type === 'highlighted' && 'xl:col-span-4')}>

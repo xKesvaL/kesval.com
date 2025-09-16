@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import type { Post } from '$content/index';
+	import type { Project } from '$content/index';
 	import { brand, team } from '$lib/utils/config';
 	import { getImageSrc } from '$lib/utils/content';
 	import { extractLocaleFromUrl } from '$paraglide/runtime';
@@ -11,7 +11,7 @@
 		ogImage,
 		keywords = Array.from(brand.keywords)
 	}: {
-		metadata: Post;
+		metadata: Project;
 		ogImage?: Image;
 		keywords?: string[];
 	} = $props();
