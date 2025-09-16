@@ -9,10 +9,15 @@
 	import { Button } from '../ui/button';
 	import * as m from '$paraglide/messages';
 	import { cn } from '$lib/utils/ui';
-	import { navigationLinks, type LinkType } from '$lib/utils/config';
+	import { getServiceRoute, navigationLinks, services, type LinkType } from '$lib/utils/config';
 	import { page } from '$app/state';
-	import { deLocalizeHref, localizeHref } from '$paraglide/runtime';
+	import { deLocalizeHref, getLocale, localizeHref } from '$paraglide/runtime';
 	import NavigationLangSwitcher from './NavigationLangSwitcher.svelte';
+	import * as NavigationMenu from '$lib/components/ui/navigation-menu';
+	import { navigationMenuTriggerStyle } from '../ui/navigation-menu/navigation-menu-trigger.svelte';
+	import VeliteImage from '../base/VeliteImage.svelte';
+	import { getAllContentLocale } from '$lib/utils/content';
+	import { IconChevronDown } from '@tabler/icons-svelte';
 
 	const baseFlyParams = {
 		y: (innerHeight.current || 0) * -1,
@@ -48,26 +53,150 @@
 	);
 
 	let latestHoveredLink = $state(currentRoute);
+
+	const projects = getAllContentLocale(getLocale(), 'projects');
 </script>
 
 <nav class={cn('position-nav h-nav kcontainer fixed z-50 transition duration-300 lg:px-4')}>
 	<!-- wrapper -->
 	<div
 		class={cn(
-			'flex h-full w-full items-center justify-between transition-all duration-300 lg:rounded-2xl',
+			'flex h-full w-full items-center justify-between drop-shadow-xs transition-all duration-300 lg:rounded-2xl',
 			navigation.state === 'open' && 'px-4',
 			navigation.state === 'closed' &&
-				'bg-popover shadow-foreground/5 px-4 shadow-lg drop-shadow-sm delay-[300ms]'
+				'bg-popover shadow-primary/5 ring-border px-4 shadow-[inset_0_-4px_8px_0px] ring delay-[300ms]'
 		)}
 	>
 		<div class="flex h-full w-full items-center justify-between rounded-[15px]">
-			<a href={localizeHref(route('/'))} aria-label={m['nav.home']()}>
-				<enhanced:img
-					src="$assets/logo.avif"
-					alt={m['common.kesval_logo']()}
-					class="size-10 rounded-lg"
-				/>
-			</a>
+			<div class="flex items-center gap-4">
+				<a href={localizeHref(route('/'))} aria-label={m['nav.home']()}>
+					<enhanced:img
+						src="$assets/logo.avif"
+						alt={m['common.kesval_logo']()}
+						class="size-10 rounded-lg"
+					/>
+				</a>
+				<NavigationMenu.Root
+					class={cn(
+						'hidden transition-opacity duration-300 lg:flex',
+						navigation.state === 'open' && 'opacity-0',
+						navigation.state === 'closed' && 'delay-[300ms]'
+					)}
+				>
+					<NavigationMenu.List>
+						<NavigationMenu.Item>
+							<NavigationMenu.Link>
+								{#snippet child()}
+									<a href={localizeHref(route('/'))} class={navigationMenuTriggerStyle()}
+										>{m['nav.home']()}</a
+									>
+								{/snippet}
+							</NavigationMenu.Link>
+						</NavigationMenu.Item>
+						<NavigationMenu.Item>
+							<NavigationMenu.Trigger>
+								{#snippet child({ props })}
+									<a href={localizeHref(route('/services'))} {...props}>
+										{m['nav.services']()}
+										<IconChevronDown
+											class="relative top-[1px] ml-1 size-3 transition duration-300 group-data-[state=open]:rotate-180"
+										/>
+									</a>
+								{/snippet}
+							</NavigationMenu.Trigger>
+							<NavigationMenu.Content class="w-150!">
+								<ul class="grid grid-cols-2 gap-2 p-2">
+									{#each services as service (service.id)}
+										<li>
+											<NavigationMenu.Link
+												href={localizeHref(getServiceRoute(service))}
+												class="rounded-lg"
+											>
+												{@const ServiceIcon = service.icons[0] ?? service.icon}
+												<div class="flex items-start gap-3">
+													<ServiceIcon
+														style="height: 20px; width: 20px;"
+														class="text-muted-foreground shrink-0"
+													/>
+													<div class="flex flex-col gap-1">
+														<span class="mt-px font-semibold">
+															{#await translate(`${service.labelKey}.suptitle`) then translation}
+																{translation}
+															{/await}
+														</span>
+														<span class="text-muted-foreground text-pretty-fallback">
+															{#await translate(`${service.labelKey}.short_description`) then translation}
+																{translation}
+															{/await}
+														</span>
+													</div>
+												</div>
+											</NavigationMenu.Link>
+										</li>
+									{/each}
+								</ul>
+							</NavigationMenu.Content>
+						</NavigationMenu.Item>
+						<NavigationMenu.Item>
+							<NavigationMenu.Trigger>
+								{#snippet child({ props })}
+									<a href={localizeHref(route('/projets'))} {...props}>
+										{m['nav.projects']()}
+										<IconChevronDown
+											class="relative top-[1px] ml-1 size-3 transition duration-300 group-data-[state=open]:rotate-180"
+										/>
+									</a>
+								{/snippet}
+							</NavigationMenu.Trigger>
+							<NavigationMenu.Content class="w-240!">
+								<ul class="grid grid-cols-2 gap-2 p-2">
+									{#each projects as project (project.slug)}
+										<li>
+											<NavigationMenu.Link
+												href={localizeHref(route('/projets/[slug]', { slug: project.uniqueId }))}
+												class="rounded-lg"
+											>
+												<div class="flex items-start gap-3">
+													<VeliteImage
+														imagePng={project.cover}
+														imageAvif={project.coverAvif}
+														alt={project.title}
+														class="h-24 w-48"
+														classPicture=""
+														classWrapper="rounded border"
+													/>
+													<div class="flex flex-col gap-1.5">
+														<span class="mt-px text-lg font-semibold">
+															{project.title}
+														</span>
+														<span class="text-muted-foreground -mt-2.5 text-sm">
+															{#await translate(`projects.case.type.${project.projectType}`) then translation}
+																{translation}
+															{/await}
+														</span>
+														<span class="text-muted-foreground text-wrap">
+															{project.excerpt}
+														</span>
+													</div>
+												</div>
+											</NavigationMenu.Link>
+										</li>
+									{/each}
+								</ul>
+							</NavigationMenu.Content>
+						</NavigationMenu.Item>
+						<NavigationMenu.Item>
+							<NavigationMenu.Link>
+								{#snippet child()}
+									<a href={localizeHref(route('/blog'))} class={navigationMenuTriggerStyle()}
+										>{m['nav.blog']()}</a
+									>
+								{/snippet}
+							</NavigationMenu.Link>
+						</NavigationMenu.Item>
+					</NavigationMenu.List>
+				</NavigationMenu.Root>
+			</div>
 			<div class="flex items-center gap-2">
 				<NavigationLangSwitcher />
 				<Button

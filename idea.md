@@ -1,1 +1,0 @@
-- animations on scroll and page load

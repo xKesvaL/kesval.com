@@ -41,7 +41,7 @@
 
 <button
 	class={cn(
-		'toc-root max-lg:bg-popover w-fit max-w-[min(400px,90vw)] space-y-0 overflow-hidden text-sm transition-all duration-300 max-lg:rounded-xl max-lg:border max-lg:py-1 max-lg:pr-4 max-lg:pl-3 max-lg:shadow-lg',
+		'toc-root max-lg:shadow-primary/5 max-lg:bg-popover w-fit max-w-[min(400px,90vw)] space-y-0 overflow-hidden text-sm transition-all duration-300 max-lg:rounded-xl max-lg:border max-lg:py-1 max-lg:pr-4 max-lg:pl-3 max-lg:shadow-[inset_0_-4px_8px_0px] max-lg:drop-shadow-lg/10',
 		isOpen && 'space-y-2 max-lg:pt-2 max-lg:pb-4'
 	)}
 	onclick={toggleOpen}

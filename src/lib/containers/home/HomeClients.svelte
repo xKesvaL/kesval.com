@@ -25,7 +25,6 @@
 			color: '#FFB028'
 		},
 		{
-			link: 'https://mavoitureparfaite.fr',
 			icon: MVP,
 			name: 'Ma Voiture Parfaite',
 			nameShort: 'MVP',
@@ -86,11 +85,12 @@
 		<!-- Client grid with hover effects -->
 		<div class=" grid grid-cols-2 gap-6 md:grid-cols-4 lg:gap-8">
 			{#each clients as client, i (`${client.name}-${i}`)}
-				<a
+				<svelte:element
+					this={client.link ? 'a' : 'div'}
 					href={client.link}
 					target="_blank"
 					rel="noopener noreferrer"
-					class="bg-primary-foreground/5 hover:bg-primary-foreground/10 border-primary-foreground/10 flex items-center justify-center gap-3 rounded-xl border px-2 py-6 backdrop-blur-lg transition hover:-translate-y-1 hover:border-[var(--client-color)]"
+					class="bg-primary-foreground/10 hover:bg-primary-foreground/15 border-primary-foreground/20 flex items-center justify-center gap-3 rounded-xl border px-2 py-6 backdrop-blur-lg transition hover:-translate-y-1 hover:border-[var(--client-color)]"
 					style={`--client-color: ${client.color || 'var(--color-primary-foreground)'}`}
 				>
 					{#if client.type === 'icon' || client.type === undefined}
@@ -108,7 +108,7 @@
 						<span class="hidden md:block">{client.name}</span>
 						<span class="block md:hidden">{client.nameShort || client.name}</span>
 					</span>
-				</a>
+				</svelte:element>
 			{/each}
 		</div>
 	</div>

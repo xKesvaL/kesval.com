@@ -17,7 +17,7 @@
 </script>
 
 <Card
-	class="group not-prose grid grid-cols-1 overflow-hidden rounded-2xl border-none p-0 shadow-lg transition-all duration-500 ease-in-out md:grid-cols-6"
+	class="group not-prose shadow-primary/5 grid grid-cols-1 overflow-hidden rounded-2xl border p-0 shadow-[inset_0_-4px_8px_0px] drop-shadow-xs transition-all duration-500 ease-in-out md:grid-cols-6"
 >
 	<div
 		class="relative overflow-hidden md:col-span-2 [&>picture]:my-0 [&>picture]:h-full"

@@ -19,8 +19,8 @@
 
 <div
 	class={cn(
-		'group relative flex flex-col gap-8',
-		type === 'highlighted' && 'xl:flex-row xl:items-center xl:gap-12'
+		'group relative grid grid-cols-1 gap-6',
+		type === 'highlighted' && 'xl:grid-cols-10 xl:items-center xl:gap-12'
 	)}
 >
 	{#if type === 'highlighted'}
@@ -35,8 +35,8 @@
 	<!-- Project image -->
 	<div
 		class={cn(
-			'bg-muted relative mb-auto w-full overflow-hidden rounded-2xl border transition-all duration-500 group-hover:shadow-2xl',
-			type === 'highlighted' && 'xl:w-3/5'
+			'bg-muted relative mb-auto w-full overflow-hidden rounded-2xl border transition-all duration-500 group-hover:shadow-lg',
+			type === 'highlighted' && 'xl:col-span-6'
 		)}
 	>
 		<div class="aspect-video w-full overflow-hidden">
@@ -51,12 +51,12 @@
 		<div
 			class="absolute inset-0 bg-black/15 transition-opacity duration-500 group-hover:opacity-0"
 		></div>
-		<div class="absolute top-2 left-2 h-10 w-40 bg-black/40 blur-xl"></div>
+		<div class="absolute top-2 left-2 h-10 w-40 bg-black/20 blur-2xl"></div>
 
 		<!-- Client tag -->
 		{#if project.client}
 			<div
-				class="bg-popover absolute top-4 left-4 rounded-lg px-3 py-1 text-xs font-medium drop-shadow-lg"
+				class="bg-popover absolute top-4 left-4 rounded-lg border px-3 py-1 text-xs font-medium drop-shadow-xs"
 			>
 				{project.client}
 			</div>
@@ -64,16 +64,16 @@
 	</div>
 
 	<!-- Project info -->
-	<div>
-		<div class="space-y-4">
-			<div class="space-y-4">
+	<div class={cn(type === 'highlighted' && 'xl:col-span-4')}>
+		<div class="space-y-2">
+			<div class="space-y-2">
 				<div class="flex items-center gap-4">
 					{#if project.icon}
 						<VeliteImage
 							imagePng={project.icon}
 							imageAvif={project.iconAvif}
 							alt={project.title}
-							classWrapper="overflow-hidden rounded-lg"
+							classWrapper="overflow-hidden rounded-lg shadow-xs border"
 							class="size-10"
 						/>
 					{/if}
@@ -87,7 +87,6 @@
 			<div class="flex gap-3 pt-2">
 				<Button
 					variant="outline"
-					size={type === 'project' ? 'default' : 'sm'}
 					class="group"
 					href={localizeHref(route('/projets/[slug]', { slug: project.uniqueId }))}
 				>
@@ -99,7 +98,6 @@
 				{#if project.website}
 					<Button
 						variant="ghost"
-						size={type === 'project' ? 'default' : 'sm'}
 						class="group"
 						href={project.website}
 						target="_blank"

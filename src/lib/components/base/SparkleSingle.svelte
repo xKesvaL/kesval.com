@@ -1,23 +1,12 @@
 <script lang="ts">
 	type Props = {
 		color: string;
+		colorBis?: string;
 		size: string;
 		style: { top: string; left: string };
 	};
 
-	let { color, size, style }: Props = $props();
-
-	let sparkleColors = $derived.by(() => {
-		switch (color) {
-			case 'primary':
-				return 'var(--color-primary)';
-			case 'special':
-				return 'var(--color-special)';
-
-			default:
-				return 'var(--color-primary)';
-		}
-	});
+	let { color, colorBis = 'var(--color-special-bis)', size, style }: Props = $props();
 </script>
 
 <div
@@ -34,8 +23,8 @@
 	>
 		<path
 			d="M80 0C80 0 84.2846 41.2925 101.496 58.504C118.707 75.7154 160 80 160 80C160 80 118.707 84.2846 101.496 101.496C84.2846 118.707 80 160 80 160C80 160 75.7154 118.707 58.504 101.496C41.2925 84.2846 0 80 0 80C0 80 41.2925 75.7154 58.504 58.504C75.7154 41.2925 80 0 80 0Z"
-			fill={sparkleColors}
-			stroke="var(--color-special-bis)"
+			fill={color}
+			stroke={colorBis}
 			stroke-width="5"
 			stroke-linecap="round"
 		/>

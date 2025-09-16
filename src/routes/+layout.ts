@@ -1,14 +1,28 @@
 import type { MetaTagsProps } from 'svelte-meta-tags';
 import { translate } from '$lib/utils/i18n.js';
 import { deLocalizeHref, extractLocaleFromUrl, locales, localizeHref } from '$paraglide/runtime.js';
-import { brand, team } from '$lib/utils/config';
+import { brand, POSTHOG_PROXY_URL, team } from '$lib/utils/config';
 import { debug } from '$lib/utils/logger.js';
+import { browser } from '$app/environment';
+import posthog from 'posthog-js';
 
 export const prerender = true;
 
 const dynamicPaths = ['/blog/[slug]', '/projets/[slug]'];
 
 export const load = async ({ url }) => {
+	if (browser) {
+		posthog.init('phc_t72sdBRlmwUrtvqvNR1tjEjdryM1qjeS1ely6eeHI95', {
+			api_host: POSTHOG_PROXY_URL,
+			ui_host: 'https://eu.posthog.com',
+			defaults: '2025-05-24',
+			person_profiles: 'always',
+			// TODO: MAKE COOKIE BANNER WORK WITH THIS
+			persistence: 'localStorage',
+			cookieless_mode: 'on_reject'
+		});
+	}
+
 	const delocalizedPath = deLocalizeHref(url.pathname).replaceAll(/\//g, '.').replaceAll('-', '_');
 
 	// let isDynamicPath = false;
@@ -60,7 +74,9 @@ export const load = async ({ url }) => {
 		languageAlternates: locales.map((locale) => {
 			return {
 				hrefLang: locale,
-				href: localizeHref(url.pathname, { locale: extractLocaleFromUrl(url.href) })
+				href: localizeHref(url.pathname, {
+					locale
+				})
 			};
 		})
 	} satisfies MetaTagsProps);

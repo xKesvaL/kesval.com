@@ -1,5 +1,5 @@
 <script lang="ts">
-	import PostPage from '$lib/components/markdown/PostPage.svelte';
+	import PostPage from '$lib/components/markdown/post/PostPage.svelte';
 
 	let { data } = $props();
 </script>

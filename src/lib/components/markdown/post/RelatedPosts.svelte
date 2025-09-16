@@ -9,6 +9,9 @@
 		CardContent
 	} from '$lib/components/ui/card';
 	import * as m from '$paraglide/messages';
+	import { route } from '$lib/ROUTES';
+	import VeliteImage from '$lib/components/base/VeliteImage.svelte';
+	import BlogCard from '$lib/containers/blog/BlogCard.svelte';
 
 	type Props = {
 		metadata: Post;
@@ -43,47 +46,18 @@
 				return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
 			});
 
-		return candidates.slice(0, 3);
+		return candidates.slice(0, 2);
 	});
 </script>
 
 {#if relatedPosts.length > 0}
-	<div class="mt-12">
-		<h3 class="mb-6 text-2xl font-semibold tracking-tight">
+	<div class="not-prose mt-12">
+		<h3 class="text-foreground mb-6 text-2xl font-semibold tracking-tight">
 			{m['blog.related_posts']()}
 		</h3>
-		<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+		<div class="grid gap-6 md:grid-cols-2">
 			{#each relatedPosts as post (post.slug)}
-				<Card class="overflow-hidden transition-shadow hover:shadow-lg">
-					<a href={localizeHref(`/blog/${post.slugClean}`)} data-sveltekit-preload-data="hover">
-						{#if post.cover}
-							<img
-								src={post.cover.src}
-								alt={post.title}
-								class="aspect-video w-full object-cover"
-								width={post.cover.width}
-								height={post.cover.height}
-							/>
-						{/if}
-						<CardHeader>
-							<CardTitle class="text-lg">{post.title}</CardTitle>
-							{#if post.excerpt}
-								<CardDescription class="mt-2 line-clamp-3 text-sm">
-									{post.excerpt}
-								</CardDescription>
-							{/if}
-						</CardHeader>
-					</a>
-					<CardContent>
-						<p class="text-muted-foreground text-xs">
-							{new Date(post.publishedAt).toLocaleDateString(metadata.locale, {
-								year: 'numeric',
-								month: 'long',
-								day: 'numeric'
-							})}
-						</p>
-					</CardContent>
-				</Card>
+				<BlogCard {post} />
 			{/each}
 		</div>
 	</div>

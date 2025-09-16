@@ -78,17 +78,23 @@
 	"contact": {
 		"hero": {
 			"get_your_free_quote": "Obtenez votre devis gratuit",
-			"description": "Parlez-nous de votre projet, et nous reviendrons vers vous dans les 24 heures avec une proposition sur-mesure.",
+			"get_your_free_audit": "Obtenez votre audit gratuit",
+			"description": "Parlez-nous de votre projet, et nous reviendrons vers vous dans les 48 heures avec un devis sur-mesure.",
+			"description_audit": "Envoyez nous votre site web, et nous reviendrons vers vous dans les 48 à 72 heures avec un audit gratuit. (Dans notre limite mensuelle)",
 			"name": "Nom",
 			"name_placeholder": "Votre nom complet",
 			"email": "E-mail",
 			"email_placeholder": "votre@email.com",
 			"company": "Entreprise",
 			"company_placeholder": "Nom de votre entreprise (optionnel)",
-			"your_project": "Votre projet",
-			"your_project_placeholder": "Décrivez votre projet, vos buts, besoins et attentes...",
+			"message": "Votre projet",
+			"message_placeholder": "Décrivez votre projet, vos buts, besoins et attentes...",
+			"website": "URL de votre site",
+			"website_placeholder": "https://votresite.com",
 			"get_my_free_quote": "Obtenir mon devis gratuit",
-			"quick_response": "Réponse rapide garantie sous 24 heures",
+			"get_my_free_audit": "Obtenir mon audit gratuit",
+			"quick_response": "Réponse rapide garantie sous 48 heures",
+			"quick_response_audit": "Réponse rapide garantie sous 48 à 72 heures",
 			"success_title": "Message envoyé avec succès !",
 			"success_message": "Merci de nous avoir contactés ! Nous reviendrons vers vous dès que possible.",
 			"send_another_message": "Envoyer un autre message",
@@ -96,7 +102,7 @@
 			"contact_us_title": "Contactez-nous",
 			"contact_us_description": "Discutons de votre projet. Voici les différentes façons de nous joindre.",
 			"our_advantages": "Nos avantages",
-			"our_advantages_fast": "Réponse rapide sous 24h",
+			"our_advantages_fast": "Réponse rapide sous 48h",
 			"our_advantages_client": "Une relation de confiance",
 			"our_advantages_expert": "Une expertise à votre service"
 		}
@@ -153,6 +159,38 @@
 			"title": "Cette page est en cours de développement !",
 			"description": "Désolé pour le dérangement. Retournez à la",
 			"projects_page": "page des projets"
+		},
+		"case": {
+			"panel_title": "Aperçu",
+			"tabs": {
+				"cover": "Visuel",
+				"website": "Site",
+				"prototype": "Prototype"
+			},
+			"buttons": {
+				"open_figma": "Ouvrir dans Figma"
+			},
+			"meta_title": "Informations",
+			"meta": {
+				"client": "Client",
+				"type": "Type",
+				"technologies": "Technologies",
+				"tags": "Tags",
+				"started": "Début",
+				"finished": "Fin",
+				"price": "Prix"
+			},
+			"type": {
+				"web_showcase": "Site vitrine",
+				"web_ecommerce": "E-commerce",
+				"web_saas": "SaaS",
+				"design_showcase": "Design Site vitrine",
+				"design_ecommerce": "Design E-commerce",
+				"app_mobile": "App Mobile",
+				"app_desktop": "App Bureau",
+				"app_saas": "App SaaS",
+				"other": "Autre"
+			}
 		}
 	},
 	"common": {
@@ -227,6 +265,10 @@
 		"contact": {
 			"title": "Contact",
 			"description": "Contactez-nous pour discuter de votre projet. Nous vous répondrons dans les 24 heures."
+		},
+		"audit_gratuit": {
+			"title": "Audit gratuit",
+			"description": "Découvrez notre audit gratuit. Nous vous reviendrons dans les 48 à 72 heures."
 		},
 		"mentions_legales": {
 			"title": "Mentions légales",
@@ -540,6 +582,72 @@
 				"relation": "Relation de confiance",
 				"relation_description": "Communication transparente et engagement personnel dans chaque projet."
 			}
+		},
+		"sections": {
+			"common": {
+				"cta_secondary": "Voir nos projets"
+			},
+			"sites": {
+				"suptitle": "Sites sur-mesure",
+				"title_before": "Des sites qui",
+				"title_highlighted": "convertissent",
+				"title_after": "et inspirent confiance",
+				"description": "Votre site, pensée pour vos objectifs : rapide, clair, optimisé SEO et orienté conversion.",
+				"short_description": "Sites vitrines rapides, clairs et optimisés pour convertir.",
+				"pill_1": "SEO & Performance",
+				"pill_2": "Chargement ultra-rapide",
+				"pill_3": "Design soigné",
+				"feature_1": "Arborescence, contenus et messages qui parlent à vos clients",
+				"feature_2": "Pages clés orientées conversion (landing, contact, etc.)",
+				"feature_3": "Mise en ligne et bonnes pratiques techniques (analytics, etc.)",
+				"cta_primary": "Lancer mon site"
+			},
+			"apps": {
+				"suptitle": "Apps & Automatisations",
+				"title_before": "Des outils qui",
+				"title_highlighted": "font gagner du temps et de l'argent",
+				"title_after": "à votre entreprise",
+				"description": "Applications métier et automatisations sur-mesure. Moins de tâches répétitives, plus d'impact.",
+				"short_description": "Apps sur‑mesure et automatisations pour gagner du temps.",
+				"pill_1": "Automatisation intelligente",
+				"pill_2": "Intégrations tierces",
+				"pill_3": "Processus fluides",
+				"feature_1": "Analyse de vos processus et cadrage fonctionnel clair",
+				"feature_2": "Développement robuste, sécurisé et maintenable",
+				"feature_3": "Dashboards et suivi des indicateurs clés",
+				"cta_primary": "Démarrer mon outil"
+			},
+			"design": {
+				"suptitle": "Design UX/UI",
+				"title_before": "Des interfaces qui",
+				"title_highlighted": "séduisent",
+				"title_after": "et convertissent",
+				"description": "Conception autour de l'utilisateur, parcours clair, esthétique moderne, maquette PC & mobile.",
+				"short_description": "Design UX/UI clair, moderne et centré sur l'utilisateur.",
+				"pill_1": "Design system",
+				"pill_2": "Parcours orientés business",
+				"pill_3": "Prototype interactif",
+				"feature_1": "Audit UX et recommandations actionnables",
+				"feature_2": "Wireframes, maquettes haute-fidélité, animations",
+				"feature_3": "Maquette PC & mobile",
+				"cta_primary": "Améliorer mon UX/UI"
+			},
+			"agencies": {
+				"suptitle": "Pour les agences",
+				"title_before": "Votre partenaire",
+				"title_highlighted": "technique de confiance",
+				"title_after": "pour votre agence",
+				"description": "Renfort, marque blanche, expertise ciblée: on s'intègre à vous et on livre à temps.",
+				"short_description": "Renfort technique en marque blanche, fiable et réactif.",
+				"pill_1": "Marque blanche",
+				"pill_2": "Expertise à la demande",
+				"pill_3": "Qualité garantie",
+				"feature_1": "Communication claire et réactive",
+				"feature_2": "Respect des plannings et exigences clients",
+				"feature_3": "Stack moderne et bonnes pratiques",
+				"cta_primary": "Renforcer mon équipe"
+			},
+			"addon_maintenance": "Add-on: Maintenance & support pour une sérénité totale"
 		}
 	},
 	"legal": {
@@ -626,5 +734,9 @@
 	"error": {
 		"title": "Oops! Il semble que vous avez trouvé une page qui n'existe pas ou qu'une erreur est survenue.",
 		"back_to_home": "Retour à l'accueil"
+	},
+	"errors": {
+		"min_length": "{field} doit contenir au moins {check} caractères.",
+		"invalid": "{field} est obligatoire."
 	}
 }

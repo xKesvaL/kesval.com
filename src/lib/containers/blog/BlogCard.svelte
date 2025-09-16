@@ -20,9 +20,12 @@
 {#if slug}
 	<a href={route('/blog/[slug]', { slug })}>
 		<Card
-			class="group gap-0 overflow-hidden rounded-xl border p-0 transition-all duration-500 ease-in-out hover:shadow-md"
+			class="group relative gap-0 overflow-hidden rounded-xl border p-0 shadow-sm transition-all duration-500 ease-in-out hover:shadow-md"
 		>
-			<CardHeader class="aspect-[2] p-0!">
+			<div
+				class="absolute inset-0 z-50 rounded-xl shadow-[inset_0_0_5px_2px_var(--color-primary)]/5"
+			></div>
+			<CardHeader class="aspect-[2] h-full p-0!">
 				<VeliteImage
 					class="absolute inset-0 h-full w-full object-cover opacity-0 transition duration-500 ease-in-out group-hover:scale-102"
 					classWrapper="aspect-[2] w-full"

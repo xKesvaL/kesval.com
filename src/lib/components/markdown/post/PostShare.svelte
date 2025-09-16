@@ -6,7 +6,7 @@
 	import { browser } from '$app/environment';
 	import { IconBrandLinkedin, IconBrandX, IconLink } from '@tabler/icons-svelte';
 	import * as m from '$paraglide/messages';
-	import AnimatedCircleCheck from '../base/AnimatedCircleCheck.svelte';
+	import AnimatedCircleCheck from '../../base/AnimatedCircleCheck.svelte';
 	import { cn } from '$lib/utils/ui';
 
 	type Props = {

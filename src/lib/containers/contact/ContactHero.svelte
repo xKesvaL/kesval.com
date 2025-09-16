@@ -28,6 +28,8 @@
 	import type { Attachment } from 'svelte/attachments';
 	import { cn } from '$lib/utils/ui';
 	import { brand } from '$lib/utils/config';
+	import { getAllChecks } from '$lib/utils/zod';
+	import { translate } from '$lib/utils/i18n';
 
 	type Props = {
 		form: SuperValidated<Infer<ContactFormSchema>>;
@@ -84,7 +86,41 @@
 		}
 	});
 
-	const { form: formData, enhance, submitting } = form;
+	const { form: formData, enhance, submitting, errors: formErrors } = form;
+
+	// hey I know there's most likely a better way to do this, but i18n is kinda hard and this works
+	let errors = $derived.by(() => {
+		const actualErrors = Object.entries($formErrors);
+		return Promise.all(
+			actualErrors.map(async ([name, error]) => {
+				const field =
+					contactFormSchema._zod.def.shape[name as keyof typeof contactFormSchema._zod.def.shape];
+
+				const checks = getAllChecks(field);
+
+				const checkError = checks?.find((check) => check?.type === error[0].split('.')[1]);
+
+				if (checkError) {
+					return {
+						name,
+						error: await translate(`errors.${checkError.type}`, {
+							check: checkError.check,
+							field: await translate(`contact.hero.${name}`)
+						})
+					};
+				}
+
+				let errorMessage = error[0].split('.')[1];
+
+				return {
+					name,
+					error: await translate(`errors.${errorMessage}`, {
+						field: await translate(`contact.hero.${name}`)
+					})
+				};
+			})
+		);
+	});
 
 	let timeline: gsap.core.Tween | gsap.core.Timeline; // Declare timeline, allow for Tween or Timeline type
 
@@ -181,10 +217,16 @@
 													bind:value={$formData.name}
 													placeholder={m['contact.hero.name_placeholder']()}
 													class="h-11"
+													type="text"
+													autocomplete="name"
 												/>
 											{/snippet}
 										</Form.Control>
-										<Form.FieldErrors />
+										<span class="text-destructive text-sm font-medium">
+											{#await errors then errorList}
+												{errorList.find((error) => error.name === 'name')?.error}
+											{/await}
+										</span>
 									</Form.Field>
 
 									<Form.Field {form} name="email" class="space-y-3">
@@ -199,10 +241,16 @@
 													bind:value={$formData.email}
 													placeholder={m['contact.hero.email_placeholder']()}
 													class="h-11"
+													type="email"
+													autocomplete="email"
 												/>
 											{/snippet}
 										</Form.Control>
-										<Form.FieldErrors />
+										<span class="text-destructive text-sm font-medium">
+											{#await errors then errorList}
+												{errorList.find((error) => error.name === 'email')?.error}
+											{/await}
+										</span>
 									</Form.Field>
 								</div>
 
@@ -218,10 +266,16 @@
 												bind:value={$formData.company}
 												placeholder={m['contact.hero.company_placeholder']()}
 												class="h-11"
+												type="text"
+												autocomplete="organization"
 											/>
 										{/snippet}
 									</Form.Control>
-									<Form.FieldErrors />
+									<span class="text-destructive text-sm font-medium">
+										{#await errors then errorList}
+											{errorList.find((error) => error.name === 'company')?.error}
+										{/await}
+									</span>
 								</Form.Field>
 							</div>
 
@@ -232,12 +286,12 @@
 										{#snippet children({ props })}
 											<Form.Label class="flex items-center gap-2 text-sm font-medium">
 												<IconMessage class="text-muted-foreground h-4 w-4" />
-												{m['contact.hero.your_project']()} *
+												{m['contact.hero.message']()} *
 											</Form.Label>
 											<Textarea
 												{...props}
 												bind:value={$formData.message}
-												placeholder={m['contact.hero.your_project_placeholder']()}
+												placeholder={m['contact.hero.message_placeholder']()}
 												class=""
 												oninput={(e) => {
 													const target = e.target as HTMLTextAreaElement;
@@ -245,10 +299,15 @@
 													target.style.height =
 														String(Math.min(target.scrollHeight + 2, 200)) + 'px';
 												}}
+												autocomplete="off"
 											/>
 										{/snippet}
 									</Form.Control>
-									<Form.FieldErrors />
+									<span class="text-destructive text-sm font-medium">
+										{#await errors then errorList}
+											{errorList.find((error) => error.name === 'message')?.error}
+										{/await}
+									</span>
 								</Form.Field>
 							</div>
 
@@ -319,7 +378,9 @@
 					</p>
 				</div>
 				<div class="flex items-center gap-4">
-					<div class="bg-primary/5 text-primary rounded-lg p-3">
+					<div
+						class="from-primary/10 text-primary border-primary/40 rounded-lg border bg-gradient-to-tr to-transparent p-3"
+					>
 						<IconMail />
 					</div>
 					<div class="flex flex-col justify-between">

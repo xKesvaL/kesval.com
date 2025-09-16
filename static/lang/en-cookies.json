@@ -37,14 +37,9 @@
 					},
 					"body": [
 						{
-							"name": "_ga",
+							"name": "ph_*",
 							"domain": "kesval.com",
-							"desc": "Google Analytics"
-						},
-						{
-							"name": "_gid",
-							"domain": "kesval.com",
-							"desc": "Google Analytics"
+							"desc": "PostHog"
 						}
 					]
 				}
