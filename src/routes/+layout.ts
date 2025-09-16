@@ -75,7 +75,7 @@ export const load = async ({ url }) => {
 			return {
 				hrefLang: locale,
 				href: localizeHref(url.pathname, {
-					locale: extractLocaleFromUrl(url.href)
+					locale
 				})
 			};
 		})
