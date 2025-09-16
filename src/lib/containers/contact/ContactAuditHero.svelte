@@ -297,12 +297,6 @@
 												class="h-11"
 												type="url"
 												autocomplete="url"
-												oninput={(e) => {
-													const target = e.target as HTMLTextAreaElement;
-													target.style.height = '0px';
-													target.style.height =
-														String(Math.min(target.scrollHeight + 2, 200)) + 'px';
-												}}
 											/>
 										{/snippet}
 									</Form.Control>
