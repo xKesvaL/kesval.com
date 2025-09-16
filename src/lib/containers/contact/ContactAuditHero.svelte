@@ -219,6 +219,8 @@
 													bind:value={$formData.name}
 													placeholder={m['contact.hero.name_placeholder']()}
 													class="h-11"
+													type="text"
+													autocomplete="name"
 												/>
 											{/snippet}
 										</Form.Control>
@@ -241,6 +243,8 @@
 													bind:value={$formData.email}
 													placeholder={m['contact.hero.email_placeholder']()}
 													class="h-11"
+													type="email"
+													autocomplete="email"
 												/>
 											{/snippet}
 										</Form.Control>
@@ -264,6 +268,8 @@
 												bind:value={$formData.company}
 												placeholder={m['contact.hero.company_placeholder']()}
 												class="h-11"
+												type="text"
+												autocomplete="organization"
 											/>
 										{/snippet}
 									</Form.Control>
@@ -289,6 +295,8 @@
 												bind:value={$formData.website}
 												placeholder={m['contact.hero.website_placeholder']()}
 												class="h-11"
+												type="url"
+												autocomplete="url"
 												oninput={(e) => {
 													const target = e.target as HTMLTextAreaElement;
 													target.style.height = '0px';

@@ -20,7 +20,7 @@ export const actions = {
 		const contactForm = await superValidate(request, zod4(contactFormSchema));
 
 		if (!contactForm.valid) {
-			return fail(401, contactForm);
+			return fail(422, contactForm);
 		}
 
 		const { error } = await resend.emails.send({
