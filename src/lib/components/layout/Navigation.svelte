@@ -163,7 +163,7 @@
 														alt={project.title}
 														class="h-24 w-48"
 														classPicture=""
-														classWrapper="rounded border"
+														classWrapper="rounded border shrink-0"
 													/>
 													<div class="flex flex-col gap-1.5">
 														<span class="mt-px text-lg font-semibold">

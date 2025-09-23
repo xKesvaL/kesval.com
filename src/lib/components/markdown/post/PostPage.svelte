@@ -31,7 +31,7 @@
 		imageAvif={metadata.coverAvif}
 		alt={metadata.title}
 		class="w-full object-cover"
-		classWrapper="mx-auto max-w-[1168px] lg:rounded-b-2xl lg:border-5 shadow lg:border-t-0 w-full max-lg:mt-18 aspect-[2] lg:h-120 lg:aspect-auto"
+		classWrapper="mx-auto max-w-[1168px] lg:rounded-b-2xl lg:border-5 shadow lg:border-t-0 w-full max-lg:mt-18 aspect-[2] lg:h-[min(30rem,70dvh)] lg:aspect-auto"
 	>
 		<Button class="absolute bottom-4 left-4" href={localizeHref(route('/blog'))} variant="outline">
 			<IconArrowLeft />

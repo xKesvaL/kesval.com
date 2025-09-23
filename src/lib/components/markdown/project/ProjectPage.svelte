@@ -14,6 +14,7 @@
 	import { IconTag } from '@tabler/icons-svelte';
 	import { Badge } from '$lib/components/ui/badge';
 	import ProjectMetadata from './ProjectMetadata.svelte';
+	import { translate } from '$lib/utils/i18n';
 
 	let {
 		component,
@@ -206,7 +207,11 @@
 						</div>
 						<div class="flex flex-col gap-1">
 							<dt class="text-muted-foreground">{m['projects.case.meta.type']()}</dt>
-							<dd class="font-medium">{metadata.projectType}</dd>
+							<dd class="font-medium">
+								{#await translate(`projects.case.type.${metadata.projectType}`) then translation}
+									{translation}
+								{/await}
+							</dd>
 						</div>
 						<div class="flex flex-col gap-1">
 							<dt class="text-muted-foreground">
