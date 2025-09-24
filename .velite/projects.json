@@ -1,5 +1,123 @@
 [
   {
+    "title": "Bella Vista",
+    "path": "projects/bella-vista-restaurant/bella-vista-restaurant.fr",
+    "publishedAt": "2025-09-24T00:00:00.000Z",
+    "tags": [
+      "Bella Vista",
+      "Design",
+      "Figma",
+      "Site vitrine",
+      "Restaurant",
+      "Prototype",
+      "POC"
+    ],
+    "cover": {
+      "src": "/static/cover-f3185d7b.png",
+      "height": 776,
+      "width": 1439,
+      "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAACwAQCdASoIAAQADMDOJZQAAqscX/QAAP6MCd4rFZfA4AAA",
+      "blurWidth": 8,
+      "blurHeight": 4
+    },
+    "coverAvif": {
+      "src": "/static/cover-acbda685.avif",
+      "height": 776,
+      "width": 1439,
+      "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAACwAQCdASoIAAQADMDOJZQAAqscX/QAAP6MCd4rFZfA4AAA",
+      "blurWidth": 8,
+      "blurHeight": 4
+    },
+    "metadata": {
+      "readingTime": 2,
+      "wordCount": 508
+    },
+    "excerpt": "Concept pour un restaurant chaleureux orienté conversion.",
+    "author": {
+      "name": "Jordan",
+      "email": "jordan@kesval.com",
+      "image": "../../jordan.jpg"
+    },
+    "content": "<h3>En bref</h3>\n<ul>\n<li>Une maquette haute‑fidélité pour un restaurant fictif</li>\n<li>Un message clair et chaleureux qui met l’hospitalité au centre</li>\n<li>Un parcours simple vers les actions clés : voir le menu et réserver</li>\n</ul>\n<h3>Le contexte</h3>\n<p>Bella Vista est un concept imaginé pour démontrer notre capacité à créer une page d’accueil de restaurant qui donne envie en quelques secondes. Le but : transmettre la chaleur du lieu, valoriser les plats « signature » et guider naturellement vers la réservation.</p>\n<h3>Notre approche</h3>\n<p>Nous sommes partis d’un parti‑pris simple : « Warm hearts, real food ». Visuellement, cela se traduit par une typographie mêlant sérif élégant et sans‑sérif lisible, une palette crème/terre cuite, et des visuels immersifs qui respirent la convivialité.</p>\n<ul>\n<li>Hero impactant : promesse forte, photo d’ambiance, double CTA (« Voir notre menu », « Réserver »)</li>\n<li>Manifeste de marque : trois lignes qui racontent la cuisine simple, saisonnière et accueillante</li>\n<li>Plats signature : grille de 4 plats avec photos généreuses, intitulés, prix et courte description</li>\n<li>Événements : encarts clairs avec date, places restantes, prix et bouton « Réserver votre place »</li>\n<li>Footer utile : coordonnées, horaires, liens essentiels</li>\n</ul>\n<h3>Les pages clés réalisées</h3>\n<ul>\n<li>Page Menu : une structure simple par catégories (entrées, plats, desserts) avec lisibilité renforcée, prix visibles et photos mises en avant quand c’est pertinent.</li>\n<li>Page Réservation : parcours en 3 étapes (date/heure → nombre de couverts → coordonnées) pensé pour limiter l’abandon et fonctionner aussi bien sur mobile que sur desktop.</li>\n</ul>\n<p><img src=\"/og-image.png\" alt=\"Aperçu — Page Réservation (placeholder)\"></p>\n<h3>Ce qui change pour l’utilisateur</h3>\n<ul>\n<li>Compréhension immédiate de l’esprit de la maison et de l’offre</li>\n<li>Accès direct aux actions qui comptent (menu, réservation, événements)</li>\n<li>Lecture confortable sur mobile comme sur desktop</li>\n</ul>\n<h3>Périmètre du POC</h3>\n<ul>\n<li>1 page d’accueil complète (Hero, manifeste, plats signature, événements, footer)</li>\n<li>1 page Menu (catégories, prix, mise en forme lisible)</li>\n<li>1 page Réservation (parcours guidé, CTA visibles)</li>\n<li>Direction artistique (typo, couleurs, composants clés)</li>\n<li>Prototype statique Figma (non relié à un back‑office)</li>\n</ul>\n<h3>Et côté technique si on l’intègre</h3>\n<p>Nous l’intégrerions avec Next.js (le moteur du site) et Payload (le tableau de bord pour gérer les contenus). Concrètement :</p>\n<ul>\n<li>Next.js : pages rapides, bien référencées, qui s’affichent instantanément et restent fluides sur mobile.</li>\n<li>Payload : vous ajoutez le menu, gérez les événements et les réservations depuis une interface simple, sans technique.</li>\n<li>Images optimisées automatiquement pour la vitesse et la qualité.</li>\n<li>Accessibilité et bonnes pratiques SEO intégrées dès le départ.</li>\n</ul>\n<p>Pour aller plus loin : connexion à un système de réservation (ou module interne), envoi d’e‑mails de confirmation et export des réservations en CSV.</p>\n<h3>Et la suite</h3>\n<p>Étendre le concept en multi‑pages (Menu, Réservations, Détails d’événement), brancher un CMS et un module de réservation, puis itérer après tests utilisateurs. Objectif : une expérience chaleureuse qui convertit vraiment.</p>\n<h3>Travaillons ensemble</h3>\n<p>Envie d’un site qui donne faim et inspire confiance ? Demandez un devis gratuit : <a href=\"/contact\">Demander un devis</a>.</p>",
+    "toc": [
+      {
+        "title": "En bref",
+        "url": "#en-bref",
+        "items": []
+      },
+      {
+        "title": "Le contexte",
+        "url": "#le-contexte",
+        "items": []
+      },
+      {
+        "title": "Notre approche",
+        "url": "#notre-approche",
+        "items": []
+      },
+      {
+        "title": "Les pages clés réalisées",
+        "url": "#les-pages-clés-réalisées",
+        "items": []
+      },
+      {
+        "title": "Ce qui change pour l’utilisateur",
+        "url": "#ce-qui-change-pour-lutilisateur",
+        "items": []
+      },
+      {
+        "title": "Périmètre du POC",
+        "url": "#périmètre-du-poc",
+        "items": []
+      },
+      {
+        "title": "Et côté technique si on l’intègre",
+        "url": "#et-côté-technique-si-on-lintègre",
+        "items": []
+      },
+      {
+        "title": "Et la suite",
+        "url": "#et-la-suite",
+        "items": []
+      },
+      {
+        "title": "Travaillons ensemble",
+        "url": "#travaillons-ensemble",
+        "items": []
+      }
+    ],
+    "icon": {
+      "src": "/static/icon-a4504c9e.png",
+      "height": 256,
+      "width": 256,
+      "blurDataURL": "data:image/webp;base64,UklGRiwAAABXRUJQVlA4ICAAAAAwAQCdASoIAAgADMDOJZwAA3AA/uq/zxnYbUgmwEAAAA==",
+      "blurWidth": 8,
+      "blurHeight": 8
+    },
+    "iconAvif": {
+      "src": "/static/icon-591282cb.avif",
+      "height": 256,
+      "width": 256,
+      "blurDataURL": "data:image/webp;base64,UklGRiwAAABXRUJQVlA4ICAAAAAwAQCdASoIAAgADMDOJZwAA3AA/uq/zxnYbUgmwEAAAA==",
+      "blurWidth": 8,
+      "blurHeight": 8
+    },
+    "client": "Bella Vista (concept)",
+    "figma": "https://www.figma.com/proto/K7weyMVRJp5LmbOLnoLCzu/Restaurant?page-id=2%3A7&node-id=45-2&viewport=134%2C276%2C0.32&t=Smp49FfONqt1qHRM-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=45%3A2",
+    "startedAt": "2025-09-23T00:00:00.000Z",
+    "technologies": [
+      "Figma",
+      "Next.js",
+      "Payload CMS",
+      "TypeScript"
+    ],
+    "projectType": "design_showcase",
+    "uniqueId": "bella-vista-restaurant",
+    "slug": "bella-vista-restaurant.fr",
+    "slugClean": "bella-vista-restaurant",
+    "locale": "fr"
+  },
+  {
     "title": "KesvaL Studio™",
     "path": "projects/kesval-studio/kesval-studio.en",
     "publishedAt": "2025-06-18T00:00:00.000Z",
