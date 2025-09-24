@@ -35,6 +35,11 @@ projectType: design_showcase
 figma: https://www.figma.com/proto/K7weyMVRJp5LmbOLnoLCzu/Restaurant?page-id=2%3A7&node-id=45-2&viewport=134%2C276%2C0.32&t=Smp49FfONqt1qHRM-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=45%3A2
 ---
 
+<script lang="ts">
+  import { localizeHref } from '$paraglide/runtime';
+  import { Button } from "$lib/components/ui/button";
+</script>
+
 ### En bref
 
 - Une maquette haute‑fidélité pour un restaurant fictif
@@ -49,7 +54,7 @@ Bella Vista est un concept imaginé pour démontrer notre capacité à créer un
 
 Nous sommes partis d’un parti‑pris simple : « Warm hearts, real food ». Visuellement, cela se traduit par une typographie mêlant sérif élégant et sans‑sérif lisible, une palette crème/terre cuite, et des visuels immersifs qui respirent la convivialité.
 
-- Hero impactant : promesse forte, photo d’ambiance, double CTA (« Voir notre menu », « Réserver »)
+- Accueil impactant : promesse forte, photo d’ambiance, double action clés (« Voir notre menu », « Réserver »)
 - Manifeste de marque : trois lignes qui racontent la cuisine simple, saisonnière et accueillante
 - Plats signature : grille de 4 plats avec photos généreuses, intitulés, prix et courte description
 - Événements : encarts clairs avec date, places restantes, prix et bouton « Réserver votre place »
@@ -57,10 +62,10 @@ Nous sommes partis d’un parti‑pris simple : « Warm hearts, real food ».
 
 ### Les pages clés réalisées
 
-- Page Menu : une structure simple par catégories (entrées, plats, desserts) avec lisibilité renforcée, prix visibles et photos mises en avant quand c’est pertinent.
-- Page Réservation : parcours en 3 étapes (date/heure → nombre de couverts → coordonnées) pensé pour limiter l’abandon et fonctionner aussi bien sur mobile que sur desktop.
+- Page Menu : une structure simple par catégories (entrées, plats, desserts) avec lisibilité renforcée, prix visibles et photos mises en avant.
+- Page Réservation : parcours en 2 étapes (nombre de couverts + coordonnées → date/heure) pensé pour limiter l’abandon et fonctionner aussi bien sur mobile que sur desktop.
 
-![Aperçu — Page Réservation (placeholder)](/og-image.png)
+![Aperçu - Page Réservation](/projects/bella-vista/booking.png)
 
 ### Ce qui change pour l’utilisateur
 
@@ -68,7 +73,7 @@ Nous sommes partis d’un parti‑pris simple : « Warm hearts, real food ».
 - Accès direct aux actions qui comptent (menu, réservation, événements)
 - Lecture confortable sur mobile comme sur desktop
 
-### Périmètre du POC
+### Le concept
 
 - 1 page d’accueil complète (Hero, manifeste, plats signature, événements, footer)
 - 1 page Menu (catégories, prix, mise en forme lisible)
@@ -87,10 +92,10 @@ Nous l’intégrerions avec Next.js (le moteur du site) et Payload (le tableau d
 
 Pour aller plus loin : connexion à un système de réservation (ou module interne), envoi d’e‑mails de confirmation et export des réservations en CSV.
 
-### Et la suite
-
-Étendre le concept en multi‑pages (Menu, Réservations, Détails d’événement), brancher un CMS et un module de réservation, puis itérer après tests utilisateurs. Objectif : une expérience chaleureuse qui convertit vraiment.
-
 ### Travaillons ensemble
 
-Envie d’un site qui donne faim et inspire confiance ? Demandez un devis gratuit : [Demander un devis](/contact).
+Envie d’un site qui donne faim et inspire confiance ? Demandez un devis gratuit 
+
+<Button href={localizeHref('/audit-gratuit')}>
+Demander un devis
+</Button>
