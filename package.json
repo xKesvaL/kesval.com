@@ -75,7 +75,7 @@
 		"zod": "^4.0.15"
 	},
 	"dependencies": {
-		"@formkit/auto-animate": "^0.8.2",
+		"@formkit/auto-animate": "^0.9.0",
 		"gsap": "^3.13.0",
 		"motion": "^12.23.12",
 		"posthog-js": "^1.262.0",
