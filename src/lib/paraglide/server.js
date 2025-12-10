@@ -1,4 +1,4 @@
-// eslint-disable
+/* eslint-disable */
 
 import * as runtime from "./runtime.js";
 
@@ -71,30 +71,29 @@ export async function paraglideMiddleware(request, resolve, callbacks) {
     else if (!runtime.serverAsyncLocalStorage) {
         runtime.overwriteServerAsyncLocalStorage(createMockAsyncLocalStorage());
     }
-    const locale = await runtime.extractLocaleFromRequestAsync(request);
+    const decision = await runtime.shouldRedirect({ request });
+    const locale = decision.locale;
     const origin = new URL(request.url).origin;
     // if the client makes a request to a URL that doesn't match
     // the localizedUrl, redirect the client to the localized URL
     if (request.headers.get("Sec-Fetch-Dest") === "document" &&
-        runtime.strategy.includes("url")) {
-        const localizedUrl = runtime.localizeUrl(request.url, { locale });
-        if (normalizeURL(localizedUrl.href) !== normalizeURL(request.url)) {
-            // Create headers object with Vary header if preferredLanguage strategy is used
-            /** @type {Record<string, string>} */
-            const headers = {};
-            if (runtime.strategy.includes("preferredLanguage")) {
-                headers["Vary"] = "Accept-Language";
-            }
-            const response = new Response(null, {
-                status: 307,
-                headers: {
-                    Location: localizedUrl.href,
-                    ...headers,
-                },
-            });
-            callbacks?.onRedirect(response);
-            return response;
+        decision.shouldRedirect &&
+        decision.redirectUrl) {
+        // Create headers object with Vary header if preferredLanguage strategy is used
+        /** @type {Record<string, string>} */
+        const headers = {};
+        if (runtime.strategy.includes("preferredLanguage")) {
+            headers["Vary"] = "Accept-Language";
         }
+        const response = new Response(null, {
+            status: 307,
+            headers: {
+                Location: decision.redirectUrl.href,
+                ...headers,
+            },
+        });
+        callbacks?.onRedirect(response);
+        return response;
     }
     // If the strategy includes "url", we need to de-localize the URL
     // before passing it to the server middleware.
@@ -137,18 +136,6 @@ export async function paraglideMiddleware(request, resolve, callbacks) {
         });
     }
     return response;
-}
-/**
- * Normalize url for comparison.
- * Strips trailing slash
- * @param {string} url
- * @returns {string} normalized url string
- */
-function normalizeURL(url) {
-    const urlObj = new URL(url);
-    // // strip trailing slash from pathname
-    urlObj.pathname = urlObj.pathname.replace(/\/$/, "");
-    return urlObj.href;
 }
 /**
  * Creates a mock AsyncLocalStorage implementation for environments where

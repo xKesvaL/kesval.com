@@ -189,6 +189,7 @@
 				"app_mobile": "Mobile app",
 				"app_desktop": "Desktop app",
 				"app_saas": "SaaS app",
+				"app_open_source": "Open Source app",
 				"other": "Other"
 			}
 		}

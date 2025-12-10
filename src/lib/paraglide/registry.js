@@ -1,4 +1,4 @@
-// eslint-disable
+/* eslint-disable */
 
 /**
  * @param {import("./runtime.js").Locale} locale

@@ -100,6 +100,7 @@ export default defineConfig({
 							"app_mobile",
 							"app_desktop",
 							"app_saas",
+							"app_open_source",
 							"other",
 						]),
 				

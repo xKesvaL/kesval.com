@@ -1,5 +1,231 @@
 [
   {
+    "title": "Bella Vista",
+    "path": "projects/bella-vista-restaurant/bella-vista-restaurant.en",
+    "publishedAt": "2025-09-24T00:00:00.000Z",
+    "tags": [
+      "Bella Vista",
+      "Design",
+      "Figma",
+      "Showcase website",
+      "Restaurant",
+      "Prototype",
+      "POC"
+    ],
+    "cover": {
+      "src": "/static/cover-f3185d7b.png",
+      "height": 776,
+      "width": 1439,
+      "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAACwAQCdASoIAAQADMDOJZQAAqscX/QAAP6MCd4rFZfA4AAA",
+      "blurWidth": 8,
+      "blurHeight": 4
+    },
+    "coverAvif": {
+      "src": "/static/cover-acbda685.avif",
+      "height": 776,
+      "width": 1439,
+      "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAACwAQCdASoIAAQADMDOJZQAAqscX/QAAP6MCd4rFZfA4AAA",
+      "blurWidth": 8,
+      "blurHeight": 4
+    },
+    "metadata": {
+      "readingTime": 2,
+      "wordCount": 414
+    },
+    "excerpt": "Concept for a warm, conversion‑focused restaurant website.",
+    "author": {
+      "name": "Jordan",
+      "email": "jordan@kesval.com",
+      "image": "../../jordan.jpg"
+    },
+    "content": "<script lang=\"ts\">\n  import { localizeHref } from '$paraglide/runtime';\n  import { Button } from \"$lib/components/ui/button\";\n</script>\n<h3>At a glance</h3>\n<ul>\n<li>A high‑fidelity mockup for a fictional restaurant</li>\n<li>A clear, warm message that puts hospitality at the center</li>\n<li>A simple path to key actions: view the menu and book</li>\n</ul>\n<h3>The context</h3>\n<p>Bella Vista is a concept imagined to demonstrate our ability to create a restaurant homepage that makes you want to visit in seconds. The goal: convey the warmth of the place, highlight the “signature” dishes, and naturally guide visitors to booking.</p>\n<h3>Our approach</h3>\n<p>We started from a simple stance: “Warm hearts, real food.” Visually, this translates into typography mixing an elegant serif with a readable sans‑serif, a cream/terracotta palette, and immersive visuals that breathe conviviality.</p>\n<ul>\n<li>Impactful homepage: strong promise, ambiance photo, double key actions (“See our menu”, “Book”)</li>\n<li>Brand manifesto: three lines that tell the story of simple, seasonal, welcoming cuisine</li>\n<li>Signature dishes: grid of 4 dishes with generous photos, names, prices, and short descriptions</li>\n<li>Events: clear cards with date, seats left, price, and a “Book your seat” button</li>\n<li>Useful footer: contact details, opening hours, essential links</li>\n</ul>\n<h3>Key pages delivered</h3>\n<ul>\n<li>Menu page: a simple structure by categories (starters, mains, desserts) with reinforced readability, visible prices, and photos emphasized when relevant.</li>\n<li>Booking page: a 2‑step flow (party size + details → date/time) designed to reduce drop‑off and work just as well on mobile as on desktop.</li>\n</ul>\n<p><img src=\"/projects/bella-vista/booking.png\" alt=\"Preview - Booking page\"></p>\n<h3>What changes for users</h3>\n<ul>\n<li>Immediate understanding of the spirit of the place and the offer</li>\n<li>Direct access to actions that matter (menu, booking, events)</li>\n<li>Comfortable reading on mobile and desktop</li>\n</ul>\n<h3>The concept</h3>\n<ul>\n<li>1 complete homepage (Hero, manifesto, signature dishes, events, footer)</li>\n<li>1 Menu page (categories, prices, readable formatting)</li>\n<li>1 Booking page (guided flow, visible CTAs)</li>\n<li>Art direction (type, colors, key components)</li>\n<li>Static Figma prototype (not connected to a back office)</li>\n</ul>\n<h3>And technically if we integrate it</h3>\n<p>We would implement it with Next.js (the site engine) and Payload (the dashboard to manage content). Concretely:</p>\n<ul>\n<li>Next.js: fast, well‑indexed pages that display instantly and stay smooth on mobile.</li>\n<li>Payload: you add the menu, manage events and bookings from a simple interface, no technical skills needed.</li>\n<li>Images automatically optimized for speed and quality.</li>\n<li>Accessibility and SEO best practices integrated from the start.</li>\n</ul>\n<p>To go further: connect to a booking system (or internal module), send confirmation emails, and export bookings to CSV.</p>\n<h3>Let’s work together</h3>\n<p>Want a site that makes you hungry and inspires trust? Request a free quote:</p>\n<p>&#x3C;Button href={localizeHref('/audit-gratuit')}>\r\nRequest a quote\r\n</p>",
+    "toc": [
+      {
+        "title": "At a glance",
+        "url": "#at-a-glance",
+        "items": []
+      },
+      {
+        "title": "The context",
+        "url": "#the-context",
+        "items": []
+      },
+      {
+        "title": "Our approach",
+        "url": "#our-approach",
+        "items": []
+      },
+      {
+        "title": "Key pages delivered",
+        "url": "#key-pages-delivered",
+        "items": []
+      },
+      {
+        "title": "What changes for users",
+        "url": "#what-changes-for-users",
+        "items": []
+      },
+      {
+        "title": "The concept",
+        "url": "#the-concept",
+        "items": []
+      },
+      {
+        "title": "And technically if we integrate it",
+        "url": "#and-technically-if-we-integrate-it",
+        "items": []
+      },
+      {
+        "title": "Let’s work together",
+        "url": "#lets-work-together",
+        "items": []
+      }
+    ],
+    "icon": {
+      "src": "/static/icon-a4504c9e.png",
+      "height": 256,
+      "width": 256,
+      "blurDataURL": "data:image/webp;base64,UklGRiwAAABXRUJQVlA4ICAAAAAwAQCdASoIAAgADMDOJZwAA3AA/uq/zxnYbUgmwEAAAA==",
+      "blurWidth": 8,
+      "blurHeight": 8
+    },
+    "iconAvif": {
+      "src": "/static/icon-591282cb.avif",
+      "height": 256,
+      "width": 256,
+      "blurDataURL": "data:image/webp;base64,UklGRiwAAABXRUJQVlA4ICAAAAAwAQCdASoIAAgADMDOJZwAA3AA/uq/zxnYbUgmwEAAAA==",
+      "blurWidth": 8,
+      "blurHeight": 8
+    },
+    "client": "Bella Vista (concept)",
+    "figma": "https://www.figma.com/proto/K7weyMVRJp5LmbOLnoLCzu/Restaurant?page-id=2%3A7&node-id=45-2&viewport=134%2C276%2C0.32&t=Smp49FfONqt1qHRM-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=45%3A2",
+    "startedAt": "2025-09-23T00:00:00.000Z",
+    "technologies": [
+      "Figma",
+      "Next.js",
+      "Payload CMS",
+      "TypeScript"
+    ],
+    "projectType": "design_showcase",
+    "uniqueId": "bella-vista-restaurant",
+    "slug": "bella-vista-restaurant.en",
+    "slugClean": "bella-vista-restaurant",
+    "locale": "en"
+  },
+  {
+    "title": "Bella Vista",
+    "path": "projects/bella-vista-restaurant/bella-vista-restaurant.fr",
+    "publishedAt": "2025-09-24T00:00:00.000Z",
+    "tags": [
+      "Bella Vista",
+      "Design",
+      "Figma",
+      "Site vitrine",
+      "Restaurant",
+      "Prototype",
+      "POC"
+    ],
+    "cover": {
+      "src": "/static/cover-f3185d7b.png",
+      "height": 776,
+      "width": 1439,
+      "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAACwAQCdASoIAAQADMDOJZQAAqscX/QAAP6MCd4rFZfA4AAA",
+      "blurWidth": 8,
+      "blurHeight": 4
+    },
+    "coverAvif": {
+      "src": "/static/cover-acbda685.avif",
+      "height": 776,
+      "width": 1439,
+      "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAACwAQCdASoIAAQADMDOJZQAAqscX/QAAP6MCd4rFZfA4AAA",
+      "blurWidth": 8,
+      "blurHeight": 4
+    },
+    "metadata": {
+      "readingTime": 2,
+      "wordCount": 480
+    },
+    "excerpt": "Concept pour un restaurant chaleureux orienté conversion.",
+    "author": {
+      "name": "Jordan",
+      "email": "jordan@kesval.com",
+      "image": "../../jordan.jpg"
+    },
+    "content": "<script lang=\"ts\">\n  import { localizeHref } from '$paraglide/runtime';\n  import { Button } from \"$lib/components/ui/button\";\n</script>\n<h3>En bref</h3>\n<ul>\n<li>Une maquette haute‑fidélité pour un restaurant fictif</li>\n<li>Un message clair et chaleureux qui met l’hospitalité au centre</li>\n<li>Un parcours simple vers les actions clés : voir le menu et réserver</li>\n</ul>\n<h3>Le contexte</h3>\n<p>Bella Vista est un concept imaginé pour démontrer notre capacité à créer une page d’accueil de restaurant qui donne envie en quelques secondes. Le but : transmettre la chaleur du lieu, valoriser les plats « signature » et guider naturellement vers la réservation.</p>\n<h3>Notre approche</h3>\n<p>Nous sommes partis d’un parti‑pris simple : « Warm hearts, real food ». Visuellement, cela se traduit par une typographie mêlant sérif élégant et sans‑sérif lisible, une palette crème/terre cuite, et des visuels immersifs qui respirent la convivialité.</p>\n<ul>\n<li>Accueil impactant : promesse forte, photo d’ambiance, double action clés (« Voir notre menu », « Réserver »)</li>\n<li>Manifeste de marque : trois lignes qui racontent la cuisine simple, saisonnière et accueillante</li>\n<li>Plats signature : grille de 4 plats avec photos généreuses, intitulés, prix et courte description</li>\n<li>Événements : encarts clairs avec date, places restantes, prix et bouton « Réserver votre place »</li>\n<li>Footer utile : coordonnées, horaires, liens essentiels</li>\n</ul>\n<h3>Les pages clés réalisées</h3>\n<ul>\n<li>Page Menu : une structure simple par catégories (entrées, plats, desserts) avec lisibilité renforcée, prix visibles et photos mises en avant.</li>\n<li>Page Réservation : parcours en 2 étapes (nombre de couverts + coordonnées → date/heure) pensé pour limiter l’abandon et fonctionner aussi bien sur mobile que sur desktop.</li>\n</ul>\n<p><img src=\"/projects/bella-vista/booking.png\" alt=\"Aperçu - Page Réservation\"></p>\n<h3>Ce qui change pour l’utilisateur</h3>\n<ul>\n<li>Compréhension immédiate de l’esprit de la maison et de l’offre</li>\n<li>Accès direct aux actions qui comptent (menu, réservation, événements)</li>\n<li>Lecture confortable sur mobile comme sur desktop</li>\n</ul>\n<h3>Le concept</h3>\n<ul>\n<li>1 page d’accueil complète (Hero, manifeste, plats signature, événements, footer)</li>\n<li>1 page Menu (catégories, prix, mise en forme lisible)</li>\n<li>1 page Réservation (parcours guidé, CTA visibles)</li>\n<li>Direction artistique (typo, couleurs, composants clés)</li>\n<li>Prototype statique Figma (non relié à un back‑office)</li>\n</ul>\n<h3>Et côté technique si on l’intègre</h3>\n<p>Nous l’intégrerions avec Next.js (le moteur du site) et Payload (le tableau de bord pour gérer les contenus). Concrètement :</p>\n<ul>\n<li>Next.js : pages rapides, bien référencées, qui s’affichent instantanément et restent fluides sur mobile.</li>\n<li>Payload : vous ajoutez le menu, gérez les événements et les réservations depuis une interface simple, sans technique.</li>\n<li>Images optimisées automatiquement pour la vitesse et la qualité.</li>\n<li>Accessibilité et bonnes pratiques SEO intégrées dès le départ.</li>\n</ul>\n<p>Pour aller plus loin : connexion à un système de réservation (ou module interne), envoi d’e‑mails de confirmation et export des réservations en CSV.</p>\n<h3>Travaillons ensemble</h3>\n<p>Envie d’un site qui donne faim et inspire confiance ? Demandez un devis gratuit </p>\n<p>&#x3C;Button href={localizeHref('/audit-gratuit')}>\r\nDemander un devis\r\n</p>",
+    "toc": [
+      {
+        "title": "En bref",
+        "url": "#en-bref",
+        "items": []
+      },
+      {
+        "title": "Le contexte",
+        "url": "#le-contexte",
+        "items": []
+      },
+      {
+        "title": "Notre approche",
+        "url": "#notre-approche",
+        "items": []
+      },
+      {
+        "title": "Les pages clés réalisées",
+        "url": "#les-pages-clés-réalisées",
+        "items": []
+      },
+      {
+        "title": "Ce qui change pour l’utilisateur",
+        "url": "#ce-qui-change-pour-lutilisateur",
+        "items": []
+      },
+      {
+        "title": "Le concept",
+        "url": "#le-concept",
+        "items": []
+      },
+      {
+        "title": "Et côté technique si on l’intègre",
+        "url": "#et-côté-technique-si-on-lintègre",
+        "items": []
+      },
+      {
+        "title": "Travaillons ensemble",
+        "url": "#travaillons-ensemble",
+        "items": []
+      }
+    ],
+    "icon": {
+      "src": "/static/icon-a4504c9e.png",
+      "height": 256,
+      "width": 256,
+      "blurDataURL": "data:image/webp;base64,UklGRiwAAABXRUJQVlA4ICAAAAAwAQCdASoIAAgADMDOJZwAA3AA/uq/zxnYbUgmwEAAAA==",
+      "blurWidth": 8,
+      "blurHeight": 8
+    },
+    "iconAvif": {
+      "src": "/static/icon-591282cb.avif",
+      "height": 256,
+      "width": 256,
+      "blurDataURL": "data:image/webp;base64,UklGRiwAAABXRUJQVlA4ICAAAAAwAQCdASoIAAgADMDOJZwAA3AA/uq/zxnYbUgmwEAAAA==",
+      "blurWidth": 8,
+      "blurHeight": 8
+    },
+    "client": "Bella Vista (concept)",
+    "figma": "https://www.figma.com/proto/K7weyMVRJp5LmbOLnoLCzu/Restaurant?page-id=2%3A7&node-id=45-2&viewport=134%2C276%2C0.32&t=Smp49FfONqt1qHRM-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=45%3A2",
+    "startedAt": "2025-09-23T00:00:00.000Z",
+    "technologies": [
+      "Figma",
+      "Next.js",
+      "Payload CMS",
+      "TypeScript"
+    ],
+    "projectType": "design_showcase",
+    "uniqueId": "bella-vista-restaurant",
+    "slug": "bella-vista-restaurant.fr",
+    "slugClean": "bella-vista-restaurant",
+    "locale": "fr"
+  },
+  {
     "title": "KesvaL Studio™",
     "path": "projects/kesval-studio/kesval-studio.en",
     "publishedAt": "2025-06-18T00:00:00.000Z",
@@ -230,232 +456,6 @@
     "locale": "fr"
   },
   {
-    "title": "Bella Vista",
-    "path": "projects/bella-vista-restaurant/bella-vista-restaurant.en",
-    "publishedAt": "2025-09-24T00:00:00.000Z",
-    "tags": [
-      "Bella Vista",
-      "Design",
-      "Figma",
-      "Showcase website",
-      "Restaurant",
-      "Prototype",
-      "POC"
-    ],
-    "cover": {
-      "src": "/static/cover-f3185d7b.png",
-      "height": 776,
-      "width": 1439,
-      "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAACwAQCdASoIAAQADMDOJZQAAqscX/QAAP6MCd4rFZfA4AAA",
-      "blurWidth": 8,
-      "blurHeight": 4
-    },
-    "coverAvif": {
-      "src": "/static/cover-acbda685.avif",
-      "height": 776,
-      "width": 1439,
-      "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAACwAQCdASoIAAQADMDOJZQAAqscX/QAAP6MCd4rFZfA4AAA",
-      "blurWidth": 8,
-      "blurHeight": 4
-    },
-    "metadata": {
-      "readingTime": 2,
-      "wordCount": 414
-    },
-    "excerpt": "Concept for a warm, conversion‑focused restaurant website.",
-    "author": {
-      "name": "Jordan",
-      "email": "jordan@kesval.com",
-      "image": "../../jordan.jpg"
-    },
-    "content": "<script lang=\"ts\">\n  import { localizeHref } from '$paraglide/runtime';\n  import { Button } from \"$lib/components/ui/button\";\n</script>\n<h3>At a glance</h3>\n<ul>\n<li>A high‑fidelity mockup for a fictional restaurant</li>\n<li>A clear, warm message that puts hospitality at the center</li>\n<li>A simple path to key actions: view the menu and book</li>\n</ul>\n<h3>The context</h3>\n<p>Bella Vista is a concept imagined to demonstrate our ability to create a restaurant homepage that makes you want to visit in seconds. The goal: convey the warmth of the place, highlight the “signature” dishes, and naturally guide visitors to booking.</p>\n<h3>Our approach</h3>\n<p>We started from a simple stance: “Warm hearts, real food.” Visually, this translates into typography mixing an elegant serif with a readable sans‑serif, a cream/terracotta palette, and immersive visuals that breathe conviviality.</p>\n<ul>\n<li>Impactful homepage: strong promise, ambiance photo, double key actions (“See our menu”, “Book”)</li>\n<li>Brand manifesto: three lines that tell the story of simple, seasonal, welcoming cuisine</li>\n<li>Signature dishes: grid of 4 dishes with generous photos, names, prices, and short descriptions</li>\n<li>Events: clear cards with date, seats left, price, and a “Book your seat” button</li>\n<li>Useful footer: contact details, opening hours, essential links</li>\n</ul>\n<h3>Key pages delivered</h3>\n<ul>\n<li>Menu page: a simple structure by categories (starters, mains, desserts) with reinforced readability, visible prices, and photos emphasized when relevant.</li>\n<li>Booking page: a 2‑step flow (party size + details → date/time) designed to reduce drop‑off and work just as well on mobile as on desktop.</li>\n</ul>\n<p><img src=\"/projects/bella-vista/booking.png\" alt=\"Preview - Booking page\"></p>\n<h3>What changes for users</h3>\n<ul>\n<li>Immediate understanding of the spirit of the place and the offer</li>\n<li>Direct access to actions that matter (menu, booking, events)</li>\n<li>Comfortable reading on mobile and desktop</li>\n</ul>\n<h3>The concept</h3>\n<ul>\n<li>1 complete homepage (Hero, manifesto, signature dishes, events, footer)</li>\n<li>1 Menu page (categories, prices, readable formatting)</li>\n<li>1 Booking page (guided flow, visible CTAs)</li>\n<li>Art direction (type, colors, key components)</li>\n<li>Static Figma prototype (not connected to a back office)</li>\n</ul>\n<h3>And technically if we integrate it</h3>\n<p>We would implement it with Next.js (the site engine) and Payload (the dashboard to manage content). Concretely:</p>\n<ul>\n<li>Next.js: fast, well‑indexed pages that display instantly and stay smooth on mobile.</li>\n<li>Payload: you add the menu, manage events and bookings from a simple interface, no technical skills needed.</li>\n<li>Images automatically optimized for speed and quality.</li>\n<li>Accessibility and SEO best practices integrated from the start.</li>\n</ul>\n<p>To go further: connect to a booking system (or internal module), send confirmation emails, and export bookings to CSV.</p>\n<h3>Let’s work together</h3>\n<p>Want a site that makes you hungry and inspires trust? Request a free quote:</p>\n<p>&#x3C;Button href={localizeHref('/audit-gratuit')}>\r\nRequest a quote\r\n</p>",
-    "toc": [
-      {
-        "title": "At a glance",
-        "url": "#at-a-glance",
-        "items": []
-      },
-      {
-        "title": "The context",
-        "url": "#the-context",
-        "items": []
-      },
-      {
-        "title": "Our approach",
-        "url": "#our-approach",
-        "items": []
-      },
-      {
-        "title": "Key pages delivered",
-        "url": "#key-pages-delivered",
-        "items": []
-      },
-      {
-        "title": "What changes for users",
-        "url": "#what-changes-for-users",
-        "items": []
-      },
-      {
-        "title": "The concept",
-        "url": "#the-concept",
-        "items": []
-      },
-      {
-        "title": "And technically if we integrate it",
-        "url": "#and-technically-if-we-integrate-it",
-        "items": []
-      },
-      {
-        "title": "Let’s work together",
-        "url": "#lets-work-together",
-        "items": []
-      }
-    ],
-    "icon": {
-      "src": "/static/icon-a4504c9e.png",
-      "height": 256,
-      "width": 256,
-      "blurDataURL": "data:image/webp;base64,UklGRiwAAABXRUJQVlA4ICAAAAAwAQCdASoIAAgADMDOJZwAA3AA/uq/zxnYbUgmwEAAAA==",
-      "blurWidth": 8,
-      "blurHeight": 8
-    },
-    "iconAvif": {
-      "src": "/static/icon-591282cb.avif",
-      "height": 256,
-      "width": 256,
-      "blurDataURL": "data:image/webp;base64,UklGRiwAAABXRUJQVlA4ICAAAAAwAQCdASoIAAgADMDOJZwAA3AA/uq/zxnYbUgmwEAAAA==",
-      "blurWidth": 8,
-      "blurHeight": 8
-    },
-    "client": "Bella Vista (concept)",
-    "figma": "https://www.figma.com/proto/K7weyMVRJp5LmbOLnoLCzu/Restaurant?page-id=2%3A7&node-id=45-2&viewport=134%2C276%2C0.32&t=Smp49FfONqt1qHRM-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=45%3A2",
-    "startedAt": "2025-09-23T00:00:00.000Z",
-    "technologies": [
-      "Figma",
-      "Next.js",
-      "Payload CMS",
-      "TypeScript"
-    ],
-    "projectType": "design_showcase",
-    "uniqueId": "bella-vista-restaurant",
-    "slug": "bella-vista-restaurant.en",
-    "slugClean": "bella-vista-restaurant",
-    "locale": "en"
-  },
-  {
-    "title": "Bella Vista",
-    "path": "projects/bella-vista-restaurant/bella-vista-restaurant.fr",
-    "publishedAt": "2025-09-24T00:00:00.000Z",
-    "tags": [
-      "Bella Vista",
-      "Design",
-      "Figma",
-      "Site vitrine",
-      "Restaurant",
-      "Prototype",
-      "POC"
-    ],
-    "cover": {
-      "src": "/static/cover-f3185d7b.png",
-      "height": 776,
-      "width": 1439,
-      "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAACwAQCdASoIAAQADMDOJZQAAqscX/QAAP6MCd4rFZfA4AAA",
-      "blurWidth": 8,
-      "blurHeight": 4
-    },
-    "coverAvif": {
-      "src": "/static/cover-acbda685.avif",
-      "height": 776,
-      "width": 1439,
-      "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAACwAQCdASoIAAQADMDOJZQAAqscX/QAAP6MCd4rFZfA4AAA",
-      "blurWidth": 8,
-      "blurHeight": 4
-    },
-    "metadata": {
-      "readingTime": 2,
-      "wordCount": 480
-    },
-    "excerpt": "Concept pour un restaurant chaleureux orienté conversion.",
-    "author": {
-      "name": "Jordan",
-      "email": "jordan@kesval.com",
-      "image": "../../jordan.jpg"
-    },
-    "content": "<script lang=\"ts\">\n  import { localizeHref } from '$paraglide/runtime';\n  import { Button } from \"$lib/components/ui/button\";\n</script>\n<h3>En bref</h3>\n<ul>\n<li>Une maquette haute‑fidélité pour un restaurant fictif</li>\n<li>Un message clair et chaleureux qui met l’hospitalité au centre</li>\n<li>Un parcours simple vers les actions clés : voir le menu et réserver</li>\n</ul>\n<h3>Le contexte</h3>\n<p>Bella Vista est un concept imaginé pour démontrer notre capacité à créer une page d’accueil de restaurant qui donne envie en quelques secondes. Le but : transmettre la chaleur du lieu, valoriser les plats « signature » et guider naturellement vers la réservation.</p>\n<h3>Notre approche</h3>\n<p>Nous sommes partis d’un parti‑pris simple : « Warm hearts, real food ». Visuellement, cela se traduit par une typographie mêlant sérif élégant et sans‑sérif lisible, une palette crème/terre cuite, et des visuels immersifs qui respirent la convivialité.</p>\n<ul>\n<li>Accueil impactant : promesse forte, photo d’ambiance, double action clés (« Voir notre menu », « Réserver »)</li>\n<li>Manifeste de marque : trois lignes qui racontent la cuisine simple, saisonnière et accueillante</li>\n<li>Plats signature : grille de 4 plats avec photos généreuses, intitulés, prix et courte description</li>\n<li>Événements : encarts clairs avec date, places restantes, prix et bouton « Réserver votre place »</li>\n<li>Footer utile : coordonnées, horaires, liens essentiels</li>\n</ul>\n<h3>Les pages clés réalisées</h3>\n<ul>\n<li>Page Menu : une structure simple par catégories (entrées, plats, desserts) avec lisibilité renforcée, prix visibles et photos mises en avant.</li>\n<li>Page Réservation : parcours en 2 étapes (nombre de couverts + coordonnées → date/heure) pensé pour limiter l’abandon et fonctionner aussi bien sur mobile que sur desktop.</li>\n</ul>\n<p><img src=\"/projects/bella-vista/booking.png\" alt=\"Aperçu - Page Réservation\"></p>\n<h3>Ce qui change pour l’utilisateur</h3>\n<ul>\n<li>Compréhension immédiate de l’esprit de la maison et de l’offre</li>\n<li>Accès direct aux actions qui comptent (menu, réservation, événements)</li>\n<li>Lecture confortable sur mobile comme sur desktop</li>\n</ul>\n<h3>Le concept</h3>\n<ul>\n<li>1 page d’accueil complète (Hero, manifeste, plats signature, événements, footer)</li>\n<li>1 page Menu (catégories, prix, mise en forme lisible)</li>\n<li>1 page Réservation (parcours guidé, CTA visibles)</li>\n<li>Direction artistique (typo, couleurs, composants clés)</li>\n<li>Prototype statique Figma (non relié à un back‑office)</li>\n</ul>\n<h3>Et côté technique si on l’intègre</h3>\n<p>Nous l’intégrerions avec Next.js (le moteur du site) et Payload (le tableau de bord pour gérer les contenus). Concrètement :</p>\n<ul>\n<li>Next.js : pages rapides, bien référencées, qui s’affichent instantanément et restent fluides sur mobile.</li>\n<li>Payload : vous ajoutez le menu, gérez les événements et les réservations depuis une interface simple, sans technique.</li>\n<li>Images optimisées automatiquement pour la vitesse et la qualité.</li>\n<li>Accessibilité et bonnes pratiques SEO intégrées dès le départ.</li>\n</ul>\n<p>Pour aller plus loin : connexion à un système de réservation (ou module interne), envoi d’e‑mails de confirmation et export des réservations en CSV.</p>\n<h3>Travaillons ensemble</h3>\n<p>Envie d’un site qui donne faim et inspire confiance ? Demandez un devis gratuit </p>\n<p>&#x3C;Button href={localizeHref('/audit-gratuit')}>\r\nDemander un devis\r\n</p>",
-    "toc": [
-      {
-        "title": "En bref",
-        "url": "#en-bref",
-        "items": []
-      },
-      {
-        "title": "Le contexte",
-        "url": "#le-contexte",
-        "items": []
-      },
-      {
-        "title": "Notre approche",
-        "url": "#notre-approche",
-        "items": []
-      },
-      {
-        "title": "Les pages clés réalisées",
-        "url": "#les-pages-clés-réalisées",
-        "items": []
-      },
-      {
-        "title": "Ce qui change pour l’utilisateur",
-        "url": "#ce-qui-change-pour-lutilisateur",
-        "items": []
-      },
-      {
-        "title": "Le concept",
-        "url": "#le-concept",
-        "items": []
-      },
-      {
-        "title": "Et côté technique si on l’intègre",
-        "url": "#et-côté-technique-si-on-lintègre",
-        "items": []
-      },
-      {
-        "title": "Travaillons ensemble",
-        "url": "#travaillons-ensemble",
-        "items": []
-      }
-    ],
-    "icon": {
-      "src": "/static/icon-a4504c9e.png",
-      "height": 256,
-      "width": 256,
-      "blurDataURL": "data:image/webp;base64,UklGRiwAAABXRUJQVlA4ICAAAAAwAQCdASoIAAgADMDOJZwAA3AA/uq/zxnYbUgmwEAAAA==",
-      "blurWidth": 8,
-      "blurHeight": 8
-    },
-    "iconAvif": {
-      "src": "/static/icon-591282cb.avif",
-      "height": 256,
-      "width": 256,
-      "blurDataURL": "data:image/webp;base64,UklGRiwAAABXRUJQVlA4ICAAAAAwAQCdASoIAAgADMDOJZwAA3AA/uq/zxnYbUgmwEAAAA==",
-      "blurWidth": 8,
-      "blurHeight": 8
-    },
-    "client": "Bella Vista (concept)",
-    "figma": "https://www.figma.com/proto/K7weyMVRJp5LmbOLnoLCzu/Restaurant?page-id=2%3A7&node-id=45-2&viewport=134%2C276%2C0.32&t=Smp49FfONqt1qHRM-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=45%3A2",
-    "startedAt": "2025-09-23T00:00:00.000Z",
-    "technologies": [
-      "Figma",
-      "Next.js",
-      "Payload CMS",
-      "TypeScript"
-    ],
-    "projectType": "design_showcase",
-    "uniqueId": "bella-vista-restaurant",
-    "slug": "bella-vista-restaurant.fr",
-    "slugClean": "bella-vista-restaurant",
-    "locale": "fr"
-  },
-  {
     "title": "MaVoitureParfaite",
     "path": "projects/ma-voiture-parfaite/ma-voiture-parfaite.en",
     "publishedAt": "2025-08-13T00:00:00.000Z",
@@ -675,6 +675,244 @@
     "uniqueId": "ma-voiture-parfaite",
     "slug": "ma-voiture-parfaite.fr",
     "slugClean": "ma-voiture-parfaite",
+    "locale": "fr"
+  },
+  {
+    "title": "SnapMemories",
+    "path": "projects/snap-memories/snap-memories.en",
+    "publishedAt": "2025-12-10T00:00:00.000Z",
+    "tags": [
+      "Open Source",
+      "Privacy",
+      "Tool",
+      "React",
+      "Data Sovereignty"
+    ],
+    "cover": {
+      "src": "/static/cover-4fa0932a.png",
+      "height": 912,
+      "width": 1923,
+      "blurDataURL": "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoIAAQADMDOJZwAA3AA/uuuAAA=",
+      "blurWidth": 8,
+      "blurHeight": 4
+    },
+    "coverAvif": {
+      "src": "/static/cover-55a2cc42.avif",
+      "height": 912,
+      "width": 1923,
+      "blurDataURL": "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoIAAQADMDOJZwAA3AA/uuuAAA=",
+      "blurWidth": 8,
+      "blurHeight": 4
+    },
+    "metadata": {
+      "readingTime": 2,
+      "wordCount": 590
+    },
+    "excerpt": "Securely download all your Snapchat memories. Private, fast, and open source.",
+    "author": {
+      "name": "KesvaL",
+      "email": "contact@kesval.com",
+      "image": "../../kesval.jpg"
+    },
+    "content": "<h3>At a glance</h3>\n<ul>\n<li><strong>100% Private:</strong> Your photos never leave your device.</li>\n<li><strong>Bulk Download:</strong> Get everything in a single ZIP file.</li>\n<li><strong>Free &#x26; Open Source:</strong> Auditable code, free forever.</li>\n<li><strong>Efficient:</strong> Low RAM usage, fast download speed.</li>\n</ul>\n<p>This tool belongs to the community. Check the code on <a href=\"https://github.com/xKesvaL/snap-memories\">GitHub</a>.</p>\n<h3>The Challenge</h3>\n<p>Snapchat makes capturing memories easy, but exporting them in bulk is surprisingly difficult. Users are often stuck with two bad options: manually saving thousands of individual snaps, or handing over login credentials to third-party apps that scrape data on remote servers.</p>\n<blockquote>\n<p><strong>Why now?</strong> Snapchat has announced that storage will become a paid feature, with older memories being deleted after a certain period of time.</p>\n</blockquote>\n<p>We believe your memories belong to you. You shouldn't have to compromise privacy or security to back up your life history. While Snapchat provides a data export feature, it provides an HTML file that struggles to download large libraries—often failing after the first few hundred items.</p>\n<h3>Our Solution</h3>\n<p>We adopted a \"Trust No One\" architecture. The goal was to build a tool that <em>we</em> couldn't abuse, even if we wanted to.</p>\n<p>Instead of building a server to process your data, we pushed everything to the client. When you use SnapMemories, the application runs entirely in your browser.</p>\n<ol>\n<li><strong>Local Parsing:</strong> You provide the <code>memories_history.html</code> file from your official Snapchat data export. The app parses this file locally to identify download links.</li>\n<li><strong>Direct Streaming:</strong> Leveraging the modern <strong>Streams API</strong> and <strong>Service Workers</strong>, we fetch media directly from Snapchat's servers and pipe it straight into a generated ZIP file on your device.</li>\n<li><strong>Parallel Download:</strong> We download the media in parallel, so you get the fastest download speed possible.</li>\n<li><strong>Zero Middleware:</strong> Your photos never touch our servers. We don't see them, store them, or track them.</li>\n</ol>\n<p>This approach isn't just about privacy; it's about sustainability. By utilizing your own bandwidth and processing power, we can offer this tool for free indefinitely without incurring massive server costs.</p>\n<h3>User Benefits</h3>\n<p>For the first time, archiving a decade of memories is simple and stress-free.</p>\n<ul>\n<li><strong>No Login Required:</strong> Your credentials stay with you.</li>\n<li><strong>High Speed:</strong> Concurrent connections maximize your bandwidth to download gigabytes of data in minutes.</li>\n<li><strong>Simplicity:</strong> Drag and drop your file, click download, and walk away. You get a tidy ZIP archive ready for storage.</li>\n</ul>\n<h3>Results</h3>\n<p>SnapMemories is live and actively protecting huge archives. Users are successfully backing up libraries with thousands of videos and images, with zero personal data leaving their local network. It stands as a proof-of-concept that powerful, useful utilities don't need to harvest user data to function.</p>\n<h3>Scope</h3>\n<ul>\n<li><strong>Core:</strong> The web application, client-side HTML parser, and streaming ZIP generator.</li>\n<li><strong>Documentation:</strong> Clear guides on requesting data from Snapchat and verifying the tool's security locally.</li>\n</ul>\n<h3>What’s Next?</h3>\n<p>This project is stable and in maintenance mode. We will keep the parser updated to match any changes in Snapchat's export format.</p>\n<h3>Contribute</h3>\n<p>This is a tool for everyone, built by the community. If you want to improve the code, audit the security, or just say thanks, check out the repo.</p>\n<p><a href=\"https://github.com/xKesvaL/snap-memories\">View on GitHub</a></p>\n<hr>\n<h3>Need a Custom Solution?</h3>\n<p>SnapMemories demonstrates our ability to build high-performance, privacy-focused web applications that push the boundaries of what browsers can do.</p>\n<p>At <strong>KesvaL Studio</strong>, we specialize in developing complex web solutions that prioritize user experience and technical excellence. Whether you need a secure internal tool, a high-performance web app, or a custom automation workflow, we can help.</p>\n<p><strong>Ready to bring your project to life?</strong>\r\n<a href=\"/contact\">Contact us</a> to discuss your vision.</p>",
+    "toc": [
+      {
+        "title": "At a glance",
+        "url": "#at-a-glance",
+        "items": []
+      },
+      {
+        "title": "The Challenge",
+        "url": "#the-challenge",
+        "items": []
+      },
+      {
+        "title": "Our Solution",
+        "url": "#our-solution",
+        "items": []
+      },
+      {
+        "title": "User Benefits",
+        "url": "#user-benefits",
+        "items": []
+      },
+      {
+        "title": "Results",
+        "url": "#results",
+        "items": []
+      },
+      {
+        "title": "Scope",
+        "url": "#scope",
+        "items": []
+      },
+      {
+        "title": "What’s Next?",
+        "url": "#whats-next",
+        "items": []
+      },
+      {
+        "title": "Contribute",
+        "url": "#contribute",
+        "items": []
+      },
+      {
+        "title": "Need a Custom Solution?",
+        "url": "#need-a-custom-solution",
+        "items": []
+      }
+    ],
+    "icon": {
+      "src": "/static/icon-4ab59bf6.png",
+      "height": 512,
+      "width": 512,
+      "blurDataURL": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAABwAQCdASoIAAgADMDOJbACdAFAAAD+52iQES5E1Ts+newJbHXV5vegllORwgAA",
+      "blurWidth": 8,
+      "blurHeight": 8
+    },
+    "iconAvif": {
+      "src": "/static/icon-f13a94fc.avif",
+      "height": 512,
+      "width": 512,
+      "blurDataURL": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAABwAQCdASoIAAgADMDOJbACdAFAAAD+52iQES5E1Ts+newJbHXV5vegllORwgAA",
+      "blurWidth": 8,
+      "blurHeight": 8
+    },
+    "client": "Open Source Community",
+    "website": "https://snap-memories.vercel.app",
+    "github": "https://github.com/xKesvaL/snap-memories",
+    "previewUrl": "https://snap-memories.vercel.app",
+    "startedAt": "2025-12-10T00:00:00.000Z",
+    "technologies": [
+      "React 19",
+      "TanStack Start",
+      "TypeScript",
+      "Tailwind CSS",
+      "Streams API"
+    ],
+    "projectType": "app_open_source",
+    "uniqueId": "snap-memories",
+    "slug": "snap-memories.en",
+    "slugClean": "snap-memories",
+    "locale": "en"
+  },
+  {
+    "title": "SnapMemories",
+    "path": "projects/snap-memories/snap-memories.fr",
+    "publishedAt": "2025-12-10T00:00:00.000Z",
+    "tags": [
+      "Open Source",
+      "Confidentialité",
+      "Outil",
+      "React",
+      "Souveraineté des données"
+    ],
+    "cover": {
+      "src": "/static/cover-4fa0932a.png",
+      "height": 912,
+      "width": 1923,
+      "blurDataURL": "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoIAAQADMDOJZwAA3AA/uuuAAA=",
+      "blurWidth": 8,
+      "blurHeight": 4
+    },
+    "coverAvif": {
+      "src": "/static/cover-55a2cc42.avif",
+      "height": 912,
+      "width": 1923,
+      "blurDataURL": "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoIAAQADMDOJZwAA3AA/uuuAAA=",
+      "blurWidth": 8,
+      "blurHeight": 4
+    },
+    "metadata": {
+      "readingTime": 3,
+      "wordCount": 763
+    },
+    "excerpt": "Téléchargez vos souvenirs Snapchat en toute sécurité. Privé, rapide et open source.",
+    "author": {
+      "name": "KesvaL",
+      "email": "contact@kesval.com",
+      "image": "../../kesval.jpg"
+    },
+    "content": "<h3>En un coup d'œil</h3>\n<ul>\n<li><strong>100% Privé :</strong> Vos photos ne quittent jamais votre appareil.</li>\n<li><strong>Téléchargement en masse :</strong> Obtenez tout dans un fichier ZIP unique.</li>\n<li><strong>Gratuit &#x26; Open Source :</strong> Code auditable, gratuit pour toujours.</li>\n<li><strong>Efficace :</strong> Faible consommation de RAM, vitesse de téléchargement rapide.</li>\n</ul>\n<p>Cet outil appartient à la communauté. Consultez le code sur <a href=\"https://github.com/xKesvaL/snap-memories\">GitHub</a>.</p>\n<h3>Le Défi</h3>\n<p>Snapchat rend la capture de souvenirs facile, mais leur exportation en masse est étonnamment difficile. Les utilisateurs sont souvent coincés avec deux mauvaises options : sauvegarder manuellement des milliers de snaps individuels, ou confier leurs identifiants de connexion à des applications tierces qui aspirent les données sur des serveurs distants.</p>\n<blockquote>\n<p><strong>Pourquoi maintenant ?</strong> Snapchat a annoncé que le stockage va devenir une fonctionnalité payante, avec la suppression des anciens souvenirs après un certain délai.</p>\n</blockquote>\n<p>Nous croyons que vos souvenirs vous appartiennent. Vous ne devriez pas avoir à compromettre votre vie privée ou votre sécurité pour sauvegarder l'histoire de votre vie. Bien que Snapchat propose une fonction d'exportation de données, elle fournit un fichier HTML qui peine à télécharger de grandes bibliothèques — échouant souvent après les premières centaines d'éléments.</p>\n<h3>Notre Solution</h3>\n<p>Nous avons adopté une architecture \"Trust No One\" (Ne faire confiance à personne). L'objectif était de construire un outil que <em>nous</em> ne pourrions pas utiliser à mauvais escient, même si nous le voulions.</p>\n<p>Au lieu de construire un serveur pour traiter vos données, nous avons tout poussé vers le client. Lorsque vous utilisez SnapMemories, l'application s'exécute entièrement dans votre navigateur.</p>\n<ol>\n<li><strong>Analyse Locale :</strong> Vous fournissez le fichier <code>memories_history.html</code> issu de votre export officiel de données Snapchat. L'application analyse ce fichier localement pour identifier les liens de téléchargement.</li>\n<li><strong>Streaming Direct :</strong> En tirant parti de la <strong>Streams API</strong> moderne et des <strong>Service Workers</strong>, nous récupérons les médias directement depuis les serveurs de Snapchat et les transférons directement dans un fichier ZIP généré sur votre appareil.</li>\n<li><strong>Téléchargement Parallèle :</strong> Nous téléchargeons les médias en parallèle, afin que vous obteniez la vitesse de téléchargement la plus rapide possible.</li>\n<li><strong>Zéro Intermédiaire :</strong> Vos photos ne touchent jamais nos serveurs. Nous ne les voyons pas, ne les stockons pas et ne les traçons pas.</li>\n</ol>\n<p>Cette approche ne concerne pas seulement la confidentialité ; il s'agit de durabilité. En utilisant votre propre bande passante et votre puissance de traitement, nous pouvons offrir cet outil gratuitement indéfiniment sans encourir de coûts de serveur massifs.</p>\n<h3>Avantages Utilisateur</h3>\n<p>Pour la première fois, archiver une décennie de souvenirs est simple et sans stress.</p>\n<ul>\n<li><strong>Aucune connexion requise :</strong> Vos identifiants restent avec vous.</li>\n<li><strong>Haute Vitesse :</strong> Les connexions simultanées maximisent votre bande passante pour télécharger des gigaoctets de données en quelques minutes.</li>\n<li><strong>Simplicité :</strong> Glissez-déposez votre fichier, cliquez sur télécharger et laissez faire. Vous obtenez une archive ZIP propre prête pour le stockage.</li>\n</ul>\n<h3>Résultats</h3>\n<p>SnapMemories est en ligne et protège activement d'énormes archives. Les utilisateurs sauvegardent avec succès des bibliothèques contenant des milliers de vidéos et d'images, sans qu'aucune donnée personnelle ne quitte leur réseau local. C'est une preuve de concept que des utilitaires puissants et utiles n'ont pas besoin de récolter les données des utilisateurs pour fonctionner.</p>\n<h3>Portée</h3>\n<ul>\n<li><strong>Cœur :</strong> L'application web, l'analyseur HTML côté client et le générateur de ZIP en streaming.</li>\n<li><strong>Documentation :</strong> Des guides clairs sur la demande de données à Snapchat et la vérification locale de la sécurité de l'outil.</li>\n</ul>\n<h3>Et ensuite ?</h3>\n<p>Ce projet est stable et en mode maintenance. Nous garderons l'analyseur à jour pour correspondre à tout changement dans le format d'exportation de Snapchat.</p>\n<h3>Contribuer</h3>\n<p>C'est un outil pour tout le monde, construit par la communauté. Si vous souhaitez améliorer le code, auditer la sécurité ou simplement dire merci, jetez un coup d'œil au dépôt.</p>\n<p><a href=\"https://github.com/xKesvaL/snap-memories\">Voir sur GitHub</a></p>\n<hr>\n<h3>Besoin d'une Solution Sur Mesure ?</h3>\n<p>SnapMemories démontre notre capacité à construire des applications web performantes et axées sur la confidentialité qui repoussent les limites de ce que les navigateurs peuvent faire.</p>\n<p>Chez <strong>KesvaL Studio</strong>, nous sommes spécialisés dans le développement de solutions web complexes qui privilégient l'expérience utilisateur et l'excellence technique. Que vous ayez besoin d'un outil interne sécurisé, d'une application web haute performance ou d'un flux de travail d'automatisation personnalisé, nous pouvons vous aider.</p>\n<p><strong>Prêt à donner vie à votre projet ?</strong>\r\n<a href=\"/contact\">Contactez-nous</a> pour discuter de votre vision.</p>",
+    "toc": [
+      {
+        "title": "En un coup d'œil",
+        "url": "#en-un-coup-dœil",
+        "items": []
+      },
+      {
+        "title": "Le Défi",
+        "url": "#le-défi",
+        "items": []
+      },
+      {
+        "title": "Notre Solution",
+        "url": "#notre-solution",
+        "items": []
+      },
+      {
+        "title": "Avantages Utilisateur",
+        "url": "#avantages-utilisateur",
+        "items": []
+      },
+      {
+        "title": "Résultats",
+        "url": "#résultats",
+        "items": []
+      },
+      {
+        "title": "Portée",
+        "url": "#portée",
+        "items": []
+      },
+      {
+        "title": "Et ensuite ?",
+        "url": "#et-ensuite-",
+        "items": []
+      },
+      {
+        "title": "Contribuer",
+        "url": "#contribuer",
+        "items": []
+      },
+      {
+        "title": "Besoin d'une Solution Sur Mesure ?",
+        "url": "#besoin-dune-solution-sur-mesure-",
+        "items": []
+      }
+    ],
+    "icon": {
+      "src": "/static/icon-4ab59bf6.png",
+      "height": 512,
+      "width": 512,
+      "blurDataURL": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAABwAQCdASoIAAgADMDOJbACdAFAAAD+52iQES5E1Ts+newJbHXV5vegllORwgAA",
+      "blurWidth": 8,
+      "blurHeight": 8
+    },
+    "iconAvif": {
+      "src": "/static/icon-f13a94fc.avif",
+      "height": 512,
+      "width": 512,
+      "blurDataURL": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAABwAQCdASoIAAgADMDOJbACdAFAAAD+52iQES5E1Ts+newJbHXV5vegllORwgAA",
+      "blurWidth": 8,
+      "blurHeight": 8
+    },
+    "client": "Communauté Open Source",
+    "website": "https://snap-memories.vercel.app",
+    "github": "https://github.com/xKesvaL/snap-memories",
+    "previewUrl": "https://snap-memories.vercel.app",
+    "startedAt": "2025-12-10T00:00:00.000Z",
+    "technologies": [
+      "React 19",
+      "TanStack Start",
+      "TypeScript",
+      "Tailwind CSS",
+      "Streams API"
+    ],
+    "projectType": "app_open_source",
+    "uniqueId": "snap-memories",
+    "slug": "snap-memories.fr",
+    "slugClean": "snap-memories",
     "locale": "fr"
   }
 ]

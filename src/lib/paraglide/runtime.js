@@ -1,4 +1,4 @@
-// eslint-disable
+/* eslint-disable */
 
 import "@inlang/paraglide-js/urlpattern-polyfill";
 
@@ -301,6 +301,25 @@ export const overwriteGetLocale = (fn) => {
 };
 
 /**
+ * Navigates to the localized URL, or reloads the current page
+ *
+ * @param {string} [newLocation] The new location
+ * @return {undefined}
+ */
+const navigateOrReload = (newLocation) => {
+    if (newLocation) {
+        // reload the page by navigating to the new url
+        window.location.href = newLocation;
+    }
+    else {
+        // reload the page to reflect the new locale
+        window.location.reload();
+    }
+};
+/**
+ * @typedef {(newLocale: Locale, options?: { reload?: boolean }) => void | Promise<void>} SetLocaleFn
+ */
+/**
  * Set the locale.
  *
  * Set locale reloads the site by default on the client. Reloading
@@ -308,13 +327,16 @@ export const overwriteGetLocale = (fn) => {
  * reloading is disabled, you need to ensure that the UI is updated
  * to reflect the new locale.
  *
+ * If any custom strategy's \`setLocale\` function is async, then this
+ * function will become async as well.
+ *
  * @example
  *   setLocale('en');
  *
  * @example
  *   setLocale('en', { reload: false });
  *
- * @type {(newLocale: Locale, options?: { reload?: boolean }) => void}
+ * @type {SetLocaleFn}
  */
 export let setLocale = (newLocale, options) => {
     const optionsWithDefaults = {
@@ -323,6 +345,7 @@ export let setLocale = (newLocale, options) => {
     };
     // locale is already set
     // https://github.com/opral/inlang-paraglide-js/issues/430
+    /** @type {Locale | undefined} */
     let currentLocale;
     try {
         currentLocale = getLocale();
@@ -330,6 +353,8 @@ export let setLocale = (newLocale, options) => {
     catch {
         // do nothing, no locale has been set yet.
     }
+    /** @type {Array<Promise<any>>} */
+    const customSetLocalePromises = [];
     /** @type {string | undefined} */
     let newLocation = undefined;
     for (const strat of strategy) {
@@ -379,29 +404,33 @@ export let setLocale = (newLocale, options) => {
         else if (isCustomStrategy(strat) && customClientStrategies.has(strat)) {
             const handler = customClientStrategies.get(strat);
             if (handler) {
-                const result = handler.setLocale(newLocale);
-                // Handle async setLocale - fire and forget
+                let result = handler.setLocale(newLocale);
+                // Handle async setLocale
                 if (result instanceof Promise) {
-                    result.catch((error) => {
-                        console.warn(`Custom strategy "${strat}" setLocale failed:`, error);
+                    result = result.catch((error) => {
+                        throw new Error(`Custom strategy "${strat}" setLocale failed.`, {
+                            cause: error,
+                        });
                     });
+                    customSetLocalePromises.push(result);
                 }
             }
         }
     }
-    if (!isServer &&
-        optionsWithDefaults.reload &&
-        window.location &&
-        newLocale !== currentLocale) {
-        if (newLocation) {
-            // reload the page by navigating to the new url
-            window.location.href = newLocation;
+    const runReload = () => {
+        if (!isServer &&
+            optionsWithDefaults.reload &&
+            window.location &&
+            newLocale !== currentLocale) {
+            navigateOrReload(newLocation);
         }
-        else {
-            // reload the page to reflect the new locale
-            window.location.reload();
-        }
+    };
+    if (customSetLocalePromises.length) {
+        return Promise.all(customSetLocalePromises).then(() => {
+            runReload();
+        });
     }
+    runReload();
     return;
 };
 /**
@@ -416,10 +445,10 @@ export let setLocale = (newLocale, options) => {
  *     return Cookies.set('locale', newLocale)
  *   });
  *
- * @param {(newLocale: Locale) => void} fn
+ * @param {SetLocaleFn} fn
  */
 export const overwriteSetLocale = (fn) => {
-    setLocale = fn;
+    setLocale = /** @type {SetLocaleFn} */ (fn);
 };
 
 /**
@@ -466,7 +495,11 @@ export let overwriteGetUrlOrigin = (fn) => {
  * @returns {locale is Locale}
  */
 export function isLocale(locale) {
-    return !locale ? false : locales.includes(locale);
+    if (typeof locale !== "string")
+        return false;
+    return !locale
+        ? false
+        : locales.some((item) => item.toLowerCase() === locale.toLowerCase());
 }
 
 /**
@@ -477,10 +510,15 @@ export function isLocale(locale) {
  * @throws {Error} If the input is not a locale.
  */
 export function assertIsLocale(input) {
-    if (isLocale(input) === false) {
+    if (typeof input !== "string") {
+        throw new Error(`Invalid locale: ${input}. Expected a string.`);
+    }
+    const lowerInput = input.toLowerCase();
+    const matchedLocale = locales.find((item) => item.toLowerCase() === lowerInput);
+    if (!matchedLocale) {
         throw new Error(`Invalid locale: ${input}. Expected one of: ${locales.join(", ")}`);
     }
-    return input;
+    return matchedLocale;
 }
 
 /**
@@ -1065,6 +1103,120 @@ export function aggregateGroups(match) {
 }
 
 /**
+ * @typedef {object} ShouldRedirectServerInput
+ * @property {Request} request
+ * @property {string | URL} [url]
+ * @property {ReturnType<typeof assertIsLocale>} [locale]
+ *
+ * @typedef {object} ShouldRedirectClientInput
+ * @property {undefined} [request]
+ * @property {string | URL} [url]
+ * @property {ReturnType<typeof assertIsLocale>} [locale]
+ *
+ * @typedef {ShouldRedirectServerInput | ShouldRedirectClientInput} ShouldRedirectInput
+ *
+ * @typedef {object} ShouldRedirectResult
+ * @property {boolean} shouldRedirect - Indicates whether the consumer should perform a redirect.
+ * @property {ReturnType<typeof assertIsLocale>} locale - Locale resolved using the configured strategies.
+ * @property {URL | undefined} redirectUrl - Destination URL when a redirect is required.
+ */
+/**
+ * Determines whether a redirect is required to align the current URL with the active locale.
+ *
+ * This helper mirrors the logic that powers `paraglideMiddleware`, but works in both server
+ * and client environments. It evaluates the configured strategies in order, computes the
+ * canonical localized URL, and reports when the current URL does not match.
+ *
+ * When called in the browser without arguments, the current `window.location.href` is used.
+ *
+ * @example
+ * // Client side usage (e.g. TanStack Router beforeLoad hook)
+ * async function beforeLoad({ location }) {
+ *   const decision = await shouldRedirect({ url: location.href });
+ *
+ *   if (decision.shouldRedirect) {
+ *     throw redirect({ to: decision.redirectUrl.href });
+ *   }
+ * }
+ *
+ * @example
+ * // Server side usage with a Request
+ * export async function handle(request) {
+ *   const decision = await shouldRedirect({ request });
+ *
+ *   if (decision.shouldRedirect) {
+ *     return Response.redirect(decision.redirectUrl, 307);
+ *   }
+ *
+ *   return render(request, decision.locale);
+ * }
+ *
+ * @param {ShouldRedirectInput} [input]
+ * @returns {Promise<ShouldRedirectResult>}
+ */
+export async function shouldRedirect(input = {}) {
+    const locale = /** @type {ReturnType<typeof assertIsLocale>} */ (await resolveLocale(input));
+    if (!strategy.includes("url")) {
+        return { shouldRedirect: false, locale, redirectUrl: undefined };
+    }
+    const currentUrl = resolveUrl(input);
+    const localizedUrl = localizeUrl(currentUrl.href, { locale });
+    const shouldRedirectToLocalizedUrl = normalizeUrl(localizedUrl.href) !== normalizeUrl(currentUrl.href);
+    return {
+        shouldRedirect: shouldRedirectToLocalizedUrl,
+        locale,
+        redirectUrl: shouldRedirectToLocalizedUrl ? localizedUrl : undefined,
+    };
+}
+/**
+ * Resolves the locale either from the provided input or by using the configured strategies.
+ *
+ * @param {ShouldRedirectInput} input
+ * @returns {Promise<ReturnType<typeof assertIsLocale>>}
+ */
+async function resolveLocale(input) {
+    if (input.locale) {
+        return assertIsLocale(input.locale);
+    }
+    if (input.request) {
+        return extractLocaleFromRequestAsync(input.request);
+    }
+    return getLocale();
+}
+/**
+ * Resolves the current URL from the provided input or runtime context.
+ *
+ * @param {ShouldRedirectInput} input
+ * @returns {URL}
+ */
+function resolveUrl(input) {
+    if (input.request) {
+        return new URL(input.request.url);
+    }
+    if (input.url instanceof URL) {
+        return new URL(input.url.href);
+    }
+    if (typeof input.url === "string") {
+        return new URL(input.url, getUrlOrigin());
+    }
+    if (typeof window !== "undefined" && window?.location?.href) {
+        return new URL(window.location.href);
+    }
+    throw new Error("shouldRedirect() requires either a request, an absolute URL, or must run in a browser environment.");
+}
+/**
+ * Normalize url for comparison by stripping the trailing slash.
+ *
+ * @param {string} url
+ * @returns {string}
+ */
+function normalizeUrl(url) {
+    const urlObj = new URL(url);
+    urlObj.pathname = urlObj.pathname.replace(/\/$/, "");
+    return urlObj.href;
+}
+
+/**
  * High-level URL localization function optimized for client-side UI usage.
  *
  * This is a convenience wrapper around `localizeUrl()` that provides features
@@ -1346,5 +1498,47 @@ export function defineCustomClientStrategy(strategy, handler) {
  *   setLocale(request.locale as Locale)
  *
  * @typedef {(typeof locales)[number]} Locale
+ */
+
+/**
+ * A branded type representing a localized string.
+ *
+ * Message functions return this type instead of `string`, enabling TypeScript
+ * to distinguish translated strings from regular strings at compile time.
+ * This allows you to enforce that only properly localized content is used
+ * in your UI components.
+ *
+ * Since `LocalizedString` is a branded subtype of `string`, it remains fully
+ * backward compatible—you can pass it anywhere a `string` is expected.
+ *
+ * @example
+ *   // Enforce localized strings in your components
+ *   function PageTitle(props: { title: LocalizedString }) {
+ *     return <h1>{props.title}</h1>
+ *   }
+ *
+ *   // ✅ Correct: using a message function
+ *   <PageTitle title={m.welcome_title()} />
+ *
+ *   // ❌ Type error: raw strings are not LocalizedString
+ *   <PageTitle title="Welcome" />
+ *
+ * @example
+ *   // LocalizedString is assignable to string (backward compatible)
+ *   const localized: LocalizedString = m.greeting()
+ *   const str: string = localized  // ✅ works fine
+ *
+ *   // But string is not assignable to LocalizedString
+ *   const raw: LocalizedString = "Hello"  // ❌ Type error
+ *
+ * @example
+ *   // Catches accidental string concatenation
+ *   function showMessage(msg: LocalizedString) { ... }
+ *
+ *   showMessage(m.hello())                    // ✅
+ *   showMessage("Hello " + userName)          // ❌ Type error
+ *   showMessage(m.hello_user({ name: userName }))  // ✅ use params instead
+ *
+ * @typedef {string & { readonly __brand: 'LocalizedString' }} LocalizedString
  */
 
