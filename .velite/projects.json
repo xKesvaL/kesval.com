@@ -226,6 +226,237 @@
     "locale": "fr"
   },
   {
+    "title": "Humainement Concernés",
+    "path": "projects/humainement-concernes/humainement-concernes.en",
+    "publishedAt": "2026-03-24T00:00:00.000Z",
+    "updatedAt": "2026-03-24T00:00:00.000Z",
+    "tags": [
+      "Custom App",
+      "Automation",
+      "CRM",
+      "Accessibility"
+    ],
+    "cover": {
+      "src": "/static/cover-815e8cca.png",
+      "height": 2160,
+      "width": 3840,
+      "blurDataURL": "data:image/webp;base64,UklGRioAAABXRUJQVlA4IB4AAACQAQCdASoIAAUADMDOJZwAAxa1pYAA/LLNbw1oAAA=",
+      "blurWidth": 8,
+      "blurHeight": 5
+    },
+    "coverAvif": {
+      "src": "/static/cover-49dfb8e2.avif",
+      "height": 2160,
+      "width": 3840,
+      "blurDataURL": "data:image/webp;base64,UklGRioAAABXRUJQVlA4IB4AAACQAQCdASoIAAUADMDOJZwAAxa1pYAA/LLNbw1oAAA=",
+      "blurWidth": 8,
+      "blurHeight": 5
+    },
+    "metadata": {
+      "readingTime": 1,
+      "wordCount": 364
+    },
+    "excerpt": "A web app for the association Humainement Concernés, with CRM.",
+    "author": {
+      "name": "Jordan",
+      "email": "jordan@kesval.com",
+      "image": "../../jordan.jpg"
+    },
+    "content": "<h3>In short</h3>\n<ul>\n<li>Smooth and reassuring donation flow focused on campaigns</li>\n<li>A donor area for history and tax receipt management</li>\n<li>A complete back-office: CRM, receipts, payment synchronization, automation...</li>\n</ul>\n<h3>The need</h3>\n<p>Humainement Concernés needed to professionalize their online fundraising. The association was operating with a basic website and manual processes that were hindering its development. They needed a tool capable of reassuring donors on one side, and structuring the team's management on the other: donation tracking, history, automated receipts, and campaigns.</p>\n<h3>Our approach</h3>\n<p>We needed something simple, quick to set up, and scalable. So we opted for a dedicated web application.</p>\n<p>On the donor side, the experience was redesigned to reduce friction: the cause for each campaign is clear, selecting an amount is simple, and creating an account allows them to effortlessly access their history.</p>\n<p>On the association side, we developed a custom CRM connected to HelloAsso and PayPal. The team manages its campaigns, tracks payment statuses in real-time, and generates tax receipts from a single secure interface. A truly healthy database to support their growth.</p>\n<h4>What changes for the user</h4>\n<p>The donor is guided without any doubt or distraction, from discovering the campaign to making a payment. Logging into their account gives them total autonomy over their personal information, recurring donations, and downloading their receipts.</p>\n<h3>Technically</h3>\n<p>A modern and robust architecture to guarantee security and speed: React &#x26; TanStack Start (Yes, TanStack Start!) for instant navigation, a fast-executing backend via Bun, and a PostgreSQL database managed with Drizzle. Authentication is handled with Better Auth and payments (HelloAsso/PayPal) are automatically synchronized via background requests. (cron)</p>\n<h3>Results</h3>\n<p>The association went from tedious manual management to an automated ecosystem. The NGO's campaigns now have a premium showcase, donors give with more confidence, and the team saves precious time on accounting and issuing tax receipts.</p>\n<h3>What's next</h3>\n<p>The platform was built to last and evolve. It now allows them to confidently plan for growth in annual donation volume, the addition of major new campaigns, and the deployment of more effective follow-up strategies.</p>\n<h3>Let's work together</h3>\n<p>Want an application that simplifies your daily life and boosts your goals? Drop us a line: <code>contact@kesval.com</code>.</p>",
+    "toc": [
+      {
+        "title": "In short",
+        "url": "#in-short",
+        "items": []
+      },
+      {
+        "title": "The need",
+        "url": "#the-need",
+        "items": []
+      },
+      {
+        "title": "Our approach",
+        "url": "#our-approach",
+        "items": [
+          {
+            "title": "What changes for the user",
+            "url": "#what-changes-for-the-user",
+            "items": []
+          }
+        ]
+      },
+      {
+        "title": "Technically",
+        "url": "#technically",
+        "items": []
+      },
+      {
+        "title": "Results",
+        "url": "#results",
+        "items": []
+      },
+      {
+        "title": "What's next",
+        "url": "#whats-next",
+        "items": []
+      },
+      {
+        "title": "Let's work together",
+        "url": "#lets-work-together",
+        "items": []
+      }
+    ],
+    "icon": {
+      "src": "/static/icon-dd8cb291.png",
+      "height": 522,
+      "width": 513,
+      "blurDataURL": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4WAoAAAAQAAAABwAABwAAQUxQSEEAAAAATgAAW2pochJcAAB+DofQH2RbX10u9s8wXAAAjh9SmQBUAABrZkFtEwAAAAAFIQUAH09MTl9TSR4SGxsgIxwcEgBWUDggKgAAALABAJ0BKggACAAMwM4lsAKwANzhSAAA/Ry6Ctwm4SI2oBHk75dIPoxGAA==",
+      "blurWidth": 8,
+      "blurHeight": 8
+    },
+    "iconAvif": {
+      "src": "/static/icon-403b249c.avif",
+      "height": 522,
+      "width": 513,
+      "blurDataURL": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4WAoAAAAQAAAABwAABwAAQUxQSEEAAAAARxgAYXJlfg5VKhN5InnYOFxhZFAn8NAwUxYHiRFelgBKGQBvcDRmFQMICQYhQB8FHklCTEpCRxcSISAgIyUhDwBWUDggJgAAAHABAJ0BKggACAAPwM4lsAJ0AUAAAP64F7cTmUS5X62wlzyeJAAA",
+      "blurWidth": 8,
+      "blurHeight": 8
+    },
+    "client": "Humainement Concernés",
+    "website": "https://don.humainementconcernes.com/",
+    "previewUrl": "https://don.humainementconcernes.com/",
+    "startedAt": "2026-02-21T00:00:00.000Z",
+    "finishedAt": "2026-03-21T00:00:00.000Z",
+    "technologies": [
+      "React",
+      "TanStack Start",
+      "HelloAsso",
+      "Tailwind 4",
+      "TypeScript"
+    ],
+    "projectType": "web_showcase",
+    "uniqueId": "humainement-concernes",
+    "slug": "humainement-concernes.en",
+    "slugClean": "humainement-concernes",
+    "locale": "en"
+  },
+  {
+    "title": "Humainement Concernés",
+    "path": "projects/humainement-concernes/humainement-concernes.fr",
+    "publishedAt": "2026-03-24T00:00:00.000Z",
+    "updatedAt": "2026-03-24T00:00:00.000Z",
+    "tags": [
+      "App personnalisée",
+      "Automatisation",
+      "CRM",
+      "Accessibilité"
+    ],
+    "cover": {
+      "src": "/static/cover-815e8cca.png",
+      "height": 2160,
+      "width": 3840,
+      "blurDataURL": "data:image/webp;base64,UklGRioAAABXRUJQVlA4IB4AAACQAQCdASoIAAUADMDOJZwAAxa1pYAA/LLNbw1oAAA=",
+      "blurWidth": 8,
+      "blurHeight": 5
+    },
+    "coverAvif": {
+      "src": "/static/cover-49dfb8e2.avif",
+      "height": 2160,
+      "width": 3840,
+      "blurDataURL": "data:image/webp;base64,UklGRioAAABXRUJQVlA4IB4AAACQAQCdASoIAAUADMDOJZwAAxa1pYAA/LLNbw1oAAA=",
+      "blurWidth": 8,
+      "blurHeight": 5
+    },
+    "metadata": {
+      "readingTime": 2,
+      "wordCount": 440
+    },
+    "excerpt": "Une app web pour l'association Humainement Concernés, avec CRM.",
+    "author": {
+      "name": "Jordan",
+      "email": "jordan@kesval.com",
+      "image": "../../jordan.jpg"
+    },
+    "content": "<h3>En bref</h3>\n<ul>\n<li>Parcours de don fluide et rassurant centré sur les campagnes</li>\n<li>Un espace donateur pour l’historique et la gestion des reçus fiscaux</li>\n<li>Un back-office complet : CRM, reçus, synchronisation des paiements, automatisation...</li>\n</ul>\n<h3>Le besoin</h3>\n<p>Humainements Concernés devait professionnaliser sa collecte en ligne. L’association fonctionnait avec un site basique et des processus manuels qui freinaient son développement. Il fallait un outil capable de rassurer les donateurs d’un côté, et de structurer la gestion de l’équipe de l’autre : suivi des dons, historique, automatisation des reçus et des campagnes.</p>\n<h3>Notre approche</h3>\n<p>Il fallait quelque chose de simple, rapide à mettre en place, et évolutif. Nous avons donc opté pour une application web dédiée.</p>\n<p>Côté donateur, l'expérience a été repensée pour réduire la friction : la cause de chaque campagne est claire, la sélection du montant est simple, et la création de compte permet de retrouver son historique sans effort.</p>\n<p>Côté association, nous avons développé un CRM sur-mesure connecté à HelloAsso et PayPal. L’équipe administre ses campagnes, suit les statuts de paiement en temps réel et génère ses reçus fiscaux depuis une interface unique et sécurisée. Une véritable base de données saine pour accompagner leur croissance.</p>\n<h4>Ce qui change pour l’utilisateur</h4>\n<p>Le donateur est guidé sans aucun doute ni distraction, de la découverte de la campagne jusqu’au paiement. La connexion à son compte lui donne une totale autonomie sur ses infos personnelles, ses dons récurrents, et le téléchargement de ses reçus.</p>\n<h3>Techniquement</h3>\n<p>Architecture moderne et robuste pour garantir sécurité et vitesse : React &#x26; TanStack Start (Oui TanStack Start!) pour une navigation instantanée, backend en exécution rapide via Bun, et base de données PostgreSQL gérée avec Drizzle. L'authentification est gérée avec Better Auth et les paiements (HelloAsso/PayPal) sont synchronisés automatiquement via des requêtes en arrière-plan. (cron)</p>\n<h4>Résultats</h4>\n<p>L’association est passée d’une gestion manuelle fastidieuse à un écosystème automatisé. Les campagnes de l'ONG bénéficient d'une vitrine premium, les donateurs donnent avec plus de confiance, et l'équipe gagne un temps précieux sur la comptabilité et l'émission des reçus fiscaux.</p>\n<h3>Et la suite</h3>\n<p>La plateforme a été construite pour durer et évoluer. Elle permet désormais d'envisager sereinement la croissance du volume de dons annuels, l'ajout de nouvelles campagnes majeures, et le déploiement de stratégies de relance plus efficaces.</p>\n<h3>Travaillons ensemble</h3>\n<p>Envie d’une application qui simplifie votre quotidien et propulse vos objectifs ? Écrivez-nous : <code>contact@kesval.com</code>.</p>",
+    "toc": [
+      {
+        "title": "En bref",
+        "url": "#en-bref",
+        "items": []
+      },
+      {
+        "title": "Le besoin",
+        "url": "#le-besoin",
+        "items": []
+      },
+      {
+        "title": "Notre approche",
+        "url": "#notre-approche",
+        "items": [
+          {
+            "title": "Ce qui change pour l’utilisateur",
+            "url": "#ce-qui-change-pour-lutilisateur",
+            "items": []
+          }
+        ]
+      },
+      {
+        "title": "Techniquement",
+        "url": "#techniquement",
+        "items": [
+          {
+            "title": "Résultats",
+            "url": "#résultats",
+            "items": []
+          }
+        ]
+      },
+      {
+        "title": "Et la suite",
+        "url": "#et-la-suite",
+        "items": []
+      },
+      {
+        "title": "Travaillons ensemble",
+        "url": "#travaillons-ensemble",
+        "items": []
+      }
+    ],
+    "icon": {
+      "src": "/static/icon-dd8cb291.png",
+      "height": 522,
+      "width": 513,
+      "blurDataURL": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4WAoAAAAQAAAABwAABwAAQUxQSEEAAAAATgAAW2pochJcAAB+DofQH2RbX10u9s8wXAAAjh9SmQBUAABrZkFtEwAAAAAFIQUAH09MTl9TSR4SGxsgIxwcEgBWUDggKgAAALABAJ0BKggACAAMwM4lsAKwANzhSAAA/Ry6Ctwm4SI2oBHk75dIPoxGAA==",
+      "blurWidth": 8,
+      "blurHeight": 8
+    },
+    "iconAvif": {
+      "src": "/static/icon-403b249c.avif",
+      "height": 522,
+      "width": 513,
+      "blurDataURL": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4WAoAAAAQAAAABwAABwAAQUxQSEEAAAAARxgAYXJlfg5VKhN5InnYOFxhZFAn8NAwUxYHiRFelgBKGQBvcDRmFQMICQYhQB8FHklCTEpCRxcSISAgIyUhDwBWUDggJgAAAHABAJ0BKggACAAPwM4lsAJ0AUAAAP64F7cTmUS5X62wlzyeJAAA",
+      "blurWidth": 8,
+      "blurHeight": 8
+    },
+    "client": "Humainement Concernés",
+    "website": "https://don.humainementconcernes.com/",
+    "previewUrl": "https://don.humainementconcernes.com/",
+    "startedAt": "2026-02-21T00:00:00.000Z",
+    "finishedAt": "2026-03-21T00:00:00.000Z",
+    "technologies": [
+      "React",
+      "TanStack Start",
+      "HelloAsso",
+      "Tailwind 4",
+      "TypeScript"
+    ],
+    "projectType": "web_showcase",
+    "uniqueId": "humainement-concernes",
+    "slug": "humainement-concernes.fr",
+    "slugClean": "humainement-concernes",
+    "locale": "fr"
+  },
+  {
     "title": "KesvaL Studio™",
     "path": "projects/kesval-studio/kesval-studio.en",
     "publishedAt": "2025-06-18T00:00:00.000Z",
@@ -705,8 +936,8 @@
       "blurHeight": 4
     },
     "metadata": {
-      "readingTime": 2,
-      "wordCount": 590
+      "readingTime": 1,
+      "wordCount": 147
     },
     "excerpt": "Securely download all your Snapchat memories. Private, fast, and open source.",
     "author": {
@@ -714,46 +945,11 @@
       "email": "contact@kesval.com",
       "image": "../../kesval.jpg"
     },
-    "content": "<h3>At a glance</h3>\n<ul>\n<li><strong>100% Private:</strong> Your photos never leave your device.</li>\n<li><strong>Bulk Download:</strong> Get everything in a single ZIP file.</li>\n<li><strong>Free &#x26; Open Source:</strong> Auditable code, free forever.</li>\n<li><strong>Efficient:</strong> Low RAM usage, fast download speed.</li>\n</ul>\n<p>This tool belongs to the community. Check the code on <a href=\"https://github.com/xKesvaL/snap-memories\">GitHub</a>.</p>\n<h3>The Challenge</h3>\n<p>Snapchat makes capturing memories easy, but exporting them in bulk is surprisingly difficult. Users are often stuck with two bad options: manually saving thousands of individual snaps, or handing over login credentials to third-party apps that scrape data on remote servers.</p>\n<blockquote>\n<p><strong>Why now?</strong> Snapchat has announced that storage will become a paid feature, with older memories being deleted after a certain period of time.</p>\n</blockquote>\n<p>We believe your memories belong to you. You shouldn't have to compromise privacy or security to back up your life history. While Snapchat provides a data export feature, it provides an HTML file that struggles to download large libraries—often failing after the first few hundred items.</p>\n<h3>Our Solution</h3>\n<p>We adopted a \"Trust No One\" architecture. The goal was to build a tool that <em>we</em> couldn't abuse, even if we wanted to.</p>\n<p>Instead of building a server to process your data, we pushed everything to the client. When you use SnapMemories, the application runs entirely in your browser.</p>\n<ol>\n<li><strong>Local Parsing:</strong> You provide the <code>memories_history.html</code> file from your official Snapchat data export. The app parses this file locally to identify download links.</li>\n<li><strong>Direct Streaming:</strong> Leveraging the modern <strong>Streams API</strong> and <strong>Service Workers</strong>, we fetch media directly from Snapchat's servers and pipe it straight into a generated ZIP file on your device.</li>\n<li><strong>Parallel Download:</strong> We download the media in parallel, so you get the fastest download speed possible.</li>\n<li><strong>Zero Middleware:</strong> Your photos never touch our servers. We don't see them, store them, or track them.</li>\n</ol>\n<p>This approach isn't just about privacy; it's about sustainability. By utilizing your own bandwidth and processing power, we can offer this tool for free indefinitely without incurring massive server costs.</p>\n<h3>User Benefits</h3>\n<p>For the first time, archiving a decade of memories is simple and stress-free.</p>\n<ul>\n<li><strong>No Login Required:</strong> Your credentials stay with you.</li>\n<li><strong>High Speed:</strong> Concurrent connections maximize your bandwidth to download gigabytes of data in minutes.</li>\n<li><strong>Simplicity:</strong> Drag and drop your file, click download, and walk away. You get a tidy ZIP archive ready for storage.</li>\n</ul>\n<h3>Results</h3>\n<p>SnapMemories is live and actively protecting huge archives. Users are successfully backing up libraries with thousands of videos and images, with zero personal data leaving their local network. It stands as a proof-of-concept that powerful, useful utilities don't need to harvest user data to function.</p>\n<h3>Scope</h3>\n<ul>\n<li><strong>Core:</strong> The web application, client-side HTML parser, and streaming ZIP generator.</li>\n<li><strong>Documentation:</strong> Clear guides on requesting data from Snapchat and verifying the tool's security locally.</li>\n</ul>\n<h3>What’s Next?</h3>\n<p>This project is stable and in maintenance mode. We will keep the parser updated to match any changes in Snapchat's export format.</p>\n<h3>Contribute</h3>\n<p>This is a tool for everyone, built by the community. If you want to improve the code, audit the security, or just say thanks, check out the repo.</p>\n<p><a href=\"https://github.com/xKesvaL/snap-memories\">View on GitHub</a></p>\n<hr>\n<h3>Need a Custom Solution?</h3>\n<p>SnapMemories demonstrates our ability to build high-performance, privacy-focused web applications that push the boundaries of what browsers can do.</p>\n<p>At <strong>KesvaL Studio</strong>, we specialize in developing complex web solutions that prioritize user experience and technical excellence. Whether you need a secure internal tool, a high-performance web app, or a custom automation workflow, we can help.</p>\n<p><strong>Ready to bring your project to life?</strong>\r\n<a href=\"/contact\">Contact us</a> to discuss your vision.</p>",
+    "content": "<hr>\n<h3>This tool no longer exists...</h3>\n<p>SnapMemories was a web application that allowed users to download their Snapchat memories securely and privately. The application was designed to offer a fast and smooth experience, while respecting user data privacy.</p>\n<p>But today, Snapchat has implemented an official download for your memories (and one that actually works this time), so SnapMemories is no longer useful. The site is still online if you want to take a look at the code or implementation, but it is no longer maintained or updated. It remains open-source, if you're interested.</p>\n<hr>\n<h3>Need a Custom Solution?</h3>\n<p>At <strong>KesvaL Studio</strong>, we specialize in developing complex web solutions that prioritize user experience and technical excellence. Whether you need a secure internal tool, a high-performance web app, or a custom automation workflow, we can help.</p>\n<p><strong>Ready to bring your project to life?</strong>\r\n<a href=\"/contact\">Contact us</a> to discuss your vision.</p>",
     "toc": [
       {
-        "title": "At a glance",
-        "url": "#at-a-glance",
-        "items": []
-      },
-      {
-        "title": "The Challenge",
-        "url": "#the-challenge",
-        "items": []
-      },
-      {
-        "title": "Our Solution",
-        "url": "#our-solution",
-        "items": []
-      },
-      {
-        "title": "User Benefits",
-        "url": "#user-benefits",
-        "items": []
-      },
-      {
-        "title": "Results",
-        "url": "#results",
-        "items": []
-      },
-      {
-        "title": "Scope",
-        "url": "#scope",
-        "items": []
-      },
-      {
-        "title": "What’s Next?",
-        "url": "#whats-next",
-        "items": []
-      },
-      {
-        "title": "Contribute",
-        "url": "#contribute",
+        "title": "This tool no longer exists...",
+        "url": "#this-tool-no-longer-exists",
         "items": []
       },
       {
@@ -824,8 +1020,8 @@
       "blurHeight": 4
     },
     "metadata": {
-      "readingTime": 3,
-      "wordCount": 763
+      "readingTime": 1,
+      "wordCount": 180
     },
     "excerpt": "Téléchargez vos souvenirs Snapchat en toute sécurité. Privé, rapide et open source.",
     "author": {
@@ -833,46 +1029,11 @@
       "email": "contact@kesval.com",
       "image": "../../kesval.jpg"
     },
-    "content": "<h3>En un coup d'œil</h3>\n<ul>\n<li><strong>100% Privé :</strong> Vos photos ne quittent jamais votre appareil.</li>\n<li><strong>Téléchargement en masse :</strong> Obtenez tout dans un fichier ZIP unique.</li>\n<li><strong>Gratuit &#x26; Open Source :</strong> Code auditable, gratuit pour toujours.</li>\n<li><strong>Efficace :</strong> Faible consommation de RAM, vitesse de téléchargement rapide.</li>\n</ul>\n<p>Cet outil appartient à la communauté. Consultez le code sur <a href=\"https://github.com/xKesvaL/snap-memories\">GitHub</a>.</p>\n<h3>Le Défi</h3>\n<p>Snapchat rend la capture de souvenirs facile, mais leur exportation en masse est étonnamment difficile. Les utilisateurs sont souvent coincés avec deux mauvaises options : sauvegarder manuellement des milliers de snaps individuels, ou confier leurs identifiants de connexion à des applications tierces qui aspirent les données sur des serveurs distants.</p>\n<blockquote>\n<p><strong>Pourquoi maintenant ?</strong> Snapchat a annoncé que le stockage va devenir une fonctionnalité payante, avec la suppression des anciens souvenirs après un certain délai.</p>\n</blockquote>\n<p>Nous croyons que vos souvenirs vous appartiennent. Vous ne devriez pas avoir à compromettre votre vie privée ou votre sécurité pour sauvegarder l'histoire de votre vie. Bien que Snapchat propose une fonction d'exportation de données, elle fournit un fichier HTML qui peine à télécharger de grandes bibliothèques — échouant souvent après les premières centaines d'éléments.</p>\n<h3>Notre Solution</h3>\n<p>Nous avons adopté une architecture \"Trust No One\" (Ne faire confiance à personne). L'objectif était de construire un outil que <em>nous</em> ne pourrions pas utiliser à mauvais escient, même si nous le voulions.</p>\n<p>Au lieu de construire un serveur pour traiter vos données, nous avons tout poussé vers le client. Lorsque vous utilisez SnapMemories, l'application s'exécute entièrement dans votre navigateur.</p>\n<ol>\n<li><strong>Analyse Locale :</strong> Vous fournissez le fichier <code>memories_history.html</code> issu de votre export officiel de données Snapchat. L'application analyse ce fichier localement pour identifier les liens de téléchargement.</li>\n<li><strong>Streaming Direct :</strong> En tirant parti de la <strong>Streams API</strong> moderne et des <strong>Service Workers</strong>, nous récupérons les médias directement depuis les serveurs de Snapchat et les transférons directement dans un fichier ZIP généré sur votre appareil.</li>\n<li><strong>Téléchargement Parallèle :</strong> Nous téléchargeons les médias en parallèle, afin que vous obteniez la vitesse de téléchargement la plus rapide possible.</li>\n<li><strong>Zéro Intermédiaire :</strong> Vos photos ne touchent jamais nos serveurs. Nous ne les voyons pas, ne les stockons pas et ne les traçons pas.</li>\n</ol>\n<p>Cette approche ne concerne pas seulement la confidentialité ; il s'agit de durabilité. En utilisant votre propre bande passante et votre puissance de traitement, nous pouvons offrir cet outil gratuitement indéfiniment sans encourir de coûts de serveur massifs.</p>\n<h3>Avantages Utilisateur</h3>\n<p>Pour la première fois, archiver une décennie de souvenirs est simple et sans stress.</p>\n<ul>\n<li><strong>Aucune connexion requise :</strong> Vos identifiants restent avec vous.</li>\n<li><strong>Haute Vitesse :</strong> Les connexions simultanées maximisent votre bande passante pour télécharger des gigaoctets de données en quelques minutes.</li>\n<li><strong>Simplicité :</strong> Glissez-déposez votre fichier, cliquez sur télécharger et laissez faire. Vous obtenez une archive ZIP propre prête pour le stockage.</li>\n</ul>\n<h3>Résultats</h3>\n<p>SnapMemories est en ligne et protège activement d'énormes archives. Les utilisateurs sauvegardent avec succès des bibliothèques contenant des milliers de vidéos et d'images, sans qu'aucune donnée personnelle ne quitte leur réseau local. C'est une preuve de concept que des utilitaires puissants et utiles n'ont pas besoin de récolter les données des utilisateurs pour fonctionner.</p>\n<h3>Portée</h3>\n<ul>\n<li><strong>Cœur :</strong> L'application web, l'analyseur HTML côté client et le générateur de ZIP en streaming.</li>\n<li><strong>Documentation :</strong> Des guides clairs sur la demande de données à Snapchat et la vérification locale de la sécurité de l'outil.</li>\n</ul>\n<h3>Et ensuite ?</h3>\n<p>Ce projet est stable et en mode maintenance. Nous garderons l'analyseur à jour pour correspondre à tout changement dans le format d'exportation de Snapchat.</p>\n<h3>Contribuer</h3>\n<p>C'est un outil pour tout le monde, construit par la communauté. Si vous souhaitez améliorer le code, auditer la sécurité ou simplement dire merci, jetez un coup d'œil au dépôt.</p>\n<p><a href=\"https://github.com/xKesvaL/snap-memories\">Voir sur GitHub</a></p>\n<hr>\n<h3>Besoin d'une Solution Sur Mesure ?</h3>\n<p>SnapMemories démontre notre capacité à construire des applications web performantes et axées sur la confidentialité qui repoussent les limites de ce que les navigateurs peuvent faire.</p>\n<p>Chez <strong>KesvaL Studio</strong>, nous sommes spécialisés dans le développement de solutions web complexes qui privilégient l'expérience utilisateur et l'excellence technique. Que vous ayez besoin d'un outil interne sécurisé, d'une application web haute performance ou d'un flux de travail d'automatisation personnalisé, nous pouvons vous aider.</p>\n<p><strong>Prêt à donner vie à votre projet ?</strong>\r\n<a href=\"/contact\">Contactez-nous</a> pour discuter de votre vision.</p>",
+    "content": "<h3>Cet outil n'existe plus...</h3>\n<p>SnapMemories était une application web qui permettait aux utilisateurs de télécharger leurs souvenirs Snapchat de manière sécurisée et privée. L'application a été conçue pour offrir une expérience rapide et fluide, tout en respectant la confidentialité des données des utilisateurs.</p>\n<p>Mais aujourd'hui, snapchat a mis en place un téléchargement officiel de vos souvenirs (et qui marche cette fois), SnapMemories ne sert donc plus à rien. Le site est toujours en ligne si vous voulez jeter un œil au code ou à l'implémentation, mais il n'est plus maintenu ni mis à jour. Il reste open-source, si cela vous intéresse.</p>\n<hr>\n<h3>Besoin d'une Solution Sur Mesure ?</h3>\n<p>Chez <strong>KesvaL Studio</strong>, nous sommes spécialisés dans le développement de solutions web complexes qui privilégient l'expérience utilisateur et l'excellence technique. Que vous ayez besoin d'un outil interne sécurisé, d'une application web haute performance ou d'un flux de travail d'automatisation personnalisé, nous pouvons vous aider.</p>\n<p><strong>Prêt à donner vie à votre projet ?</strong>\r\n<a href=\"/contact\">Contactez-nous</a> pour discuter de votre vision.</p>",
     "toc": [
       {
-        "title": "En un coup d'œil",
-        "url": "#en-un-coup-dœil",
-        "items": []
-      },
-      {
-        "title": "Le Défi",
-        "url": "#le-défi",
-        "items": []
-      },
-      {
-        "title": "Notre Solution",
-        "url": "#notre-solution",
-        "items": []
-      },
-      {
-        "title": "Avantages Utilisateur",
-        "url": "#avantages-utilisateur",
-        "items": []
-      },
-      {
-        "title": "Résultats",
-        "url": "#résultats",
-        "items": []
-      },
-      {
-        "title": "Portée",
-        "url": "#portée",
-        "items": []
-      },
-      {
-        "title": "Et ensuite ?",
-        "url": "#et-ensuite-",
-        "items": []
-      },
-      {
-        "title": "Contribuer",
-        "url": "#contribuer",
+        "title": "Cet outil n'existe plus...",
+        "url": "#cet-outil-nexiste-plus",
         "items": []
       },
       {

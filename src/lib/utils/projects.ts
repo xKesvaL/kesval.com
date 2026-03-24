@@ -1,8 +1,8 @@
-import { projects, type Project } from '$content/index';
-import { localizeHref, type Locale } from '$paraglide/runtime';
 import { error, redirect } from '@sveltejs/kit';
-import { getContentLocales, type ContentResolver } from './content';
+import { type Project, projects } from '$content/index';
 import { route } from '$lib/ROUTES';
+import { type Locale, localizeHref } from '$paraglide/runtime';
+import { type ContentResolver, getContentLocales } from './content';
 
 // Define sorting options type
 export type SortOption = 'date-desc' | 'date-asc' | 'name-asc' | 'name-desc';
@@ -53,13 +53,13 @@ export const filterProjects = async (
 		switch (sortBy) {
 			case 'date-asc':
 				return (
-					(new Date(a.startedAt || '').getTime() || 0) -
-					(new Date(b.startedAt || '').getTime() || 0)
+					(new Date(a.publishedAt || '').getTime() || 0) -
+					(new Date(b.publishedAt || '').getTime() || 0)
 				);
 			case 'date-desc':
 				return (
-					(new Date(b.startedAt || '').getTime() || 0) -
-					(new Date(a.startedAt || '').getTime() || 0)
+					(new Date(b.publishedAt || '').getTime() || 0) -
+					(new Date(a.publishedAt || '').getTime() || 0)
 				);
 			case 'name-asc':
 				return a.title.localeCompare(b.title);
