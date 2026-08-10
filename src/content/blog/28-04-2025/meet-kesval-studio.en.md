@@ -1,6 +1,6 @@
 ---
 title: Meet KesvaL Studio™
-excerpt: Get to know KesvaL Studio, your partner for innovative web and mobile development
+excerpt: Meet KesvaL Studio, a hands-on partner for thoughtful web projects and reliable technical support.
 publishedAt: 2025-04-28
 tags:
   - KesvaL Studio
@@ -21,36 +21,36 @@ author:
 	import { localizeHref } from '$paraglide/runtime';
 </script>
 
-## 👋 Welcome to the KesvaL Studio blog!
+## 👋 Welcome to the KesvaL Studio blog
 
-Hello and welcome! I am **so** glad you're here and I can't wait to write about our news, insights and our journey. My goal is to connect with you, our community, and share our <Sparkles size={10}>experience</Sparkles> with you.
+Hello, and welcome. This is where I share behind-the-scenes notes from the studio, practical lessons from real projects, and a few ways to make the digital side of your business feel less opaque. The idea is simple: give you useful perspective, with our <Sparkles size={10}>experience</Sparkles> close at hand.
 
-## A Little Bit About Me
+## A little about me
 
 <div class="my-8">
   <TeamProfileCard member={team.jordan} />
 </div>
 
-My name is **Jordan**, and I am the founder of KesvaL Studio. I have been in the development world for over 10 years (started at 8!) and I've worked on a variety of projects. I have a passion for technology, but when I'm not working, I spend my time at the gym, since I am a powerlifting amateur. Helps me stay focused and energized!
+My name is **Jordan**, and I founded KesvaL Studio. I have long enjoyed getting to the bottom of a need, untangling what is getting in the way, and building something that stays pleasant to use every day. Away from the keyboard, I train in powerlifting. It has taught me consistency, method and patience: three qualities I bring to the projects I work on.
 
-## Your partner in digital innovation
+## A partner for your web projects
 
-At KesvaL Studio, our mission is twofold:
+At KesvaL Studio, we focus on two things:
 
-1. **To make web and mobile development better for you**: We believe that money is not the only driver of success, we want to build long-lasting relationships with our clients, and give them the best possible experience.
-2. **To collaborate with agencies as a reliable partner**: We understand that agencies often need to outsource development work, and we want to help deliver high-quality work that meets their standards.
+1. **Helping you move your web project forward**: whether it is a website, web application or useful improvement, we explain technical choices clearly and keep your goals in view.
+2. **Supporting agencies as a reliable technical partner**: when a team needs extra capacity, we step in thoughtfully so the work stays smooth from the brief to delivery.
 
 ## What we do
 
 <ServicesGrid />
 
-## 🤝 Why partner with KesvaL Studio?
+## 🤝 Why work with KesvaL Studio?
 
-We know you have lots of options when it comes to web and mobile development. Here's why KesvaL Studio stands out:
+You have options, and that is exactly how it should be. Here is what we aim to bring to every collaboration:
 
-- **Client-centric approach**: We listen and adapt to your needs, tailoring our services to fit your unique requirements.
-- **Transparency**: We think honesty is the best policy. We keep you informed every step of the way.
-- **Flexibility**: We understand that things need to change throughout the project, and we are here to adapt to your needs (AGILE).
-- **Adaptability**: We tailor everything to you, if you are low on budget, we can still find solutions together.
+- **Listening before solutions**: we start by understanding your context, priorities and what would genuinely make a difference.
+- **Transparency**: you know what is being done, why it matters and what comes next. No jargon for its own sake.
+- **Flexibility**: projects sometimes change along the way. We adjust the course together without losing sight of what matters.
+- **Pragmatism**: whatever the budget, we look for the most useful, coherent path instead of a one-size-fits-all answer.
 
-We're excited about the future and hope we can be a part of your journey! Stay tuned for more!
+Here, you will find practical advice, studio news and concrete ways to make your online presence work harder for your business. See you in the next post.

@@ -1,6 +1,6 @@
 ---
-title: 'Audit gratuit : comment ça marche'
-excerpt: En 48 à 72h, vous recevez un diagnostic priorisé, des actions simples à mettre en place et un mini débrief offert.
+title: 'Audit de site gratuit : comment ça se passe'
+excerpt: En 48 à 72h, recevez un regard extérieur sur votre site, ses priorités et des premières pistes concrètes.
 publishedAt: 2025-09-15
 updatedAt: 2025-09-15
 tags:
@@ -19,66 +19,66 @@ author:
   import { Button } from "$lib/components/ui/button";
 </script>
 
-## Pourquoi demander un audit (gratuit) ?
+## Pourquoi demander un audit gratuit ?
 
-Si votre site est lent, génère peu d’appels ou n’apparaît pas localement, ce n’est pas forcément un problème de marketing. Souvent, c’est la base : clarté du message, performance, SEO et parcours.
+Vous avez l’impression que votre site pourrait faire mieux, sans savoir par quoi commencer ? S’il est lent, génère peu de demandes ou reste difficile à trouver localement, le problème n’est pas forcément votre marketing. Souvent, les fondamentaux méritent simplement un regard neuf : le message, la performance, le référencement et le parcours jusqu’au contact.
 
-Un audit gratuit vous donne une vision honnête et un plan d’action priorisé. **<u>Ton direct, sans engagement</u>**.
+L’audit gratuit est un point de départ honnête, pas une promesse magique. Vous recevez des priorités claires et des actions utiles, expliquées simplement. **<u>Direct, sans jargon et sans engagement</u>**.
 
-- Vous savez où agir d’abord (impact > effort).
-- Vous repartez avec des améliorations simples à mettre en place tout de suite.
-- Vous décidez ensuite : faire en interne, avec nous, ou plus tard.
+- Vous identifiez où agir d’abord, selon l’impact attendu et l’effort à prévoir.
+- Vous repartez avec quelques améliorations que vous pouvez lancer rapidement.
+- Vous restez libre de les appliquer en interne, avec nous ou plus tard.
 
 <Button href={localizeHref('/audit-gratuit')}>
-Demander mon audit gratuit
+Demander mon audit
 </Button>
 
-**_Note : audits gratuits, en nombre limité chaque mois pour garder un haut niveau de valeur._**
+**_Pour avoir le temps d’étudier chaque site sérieusement, le nombre d’audits est limité chaque mois._**
 
-## Ce qu'on vérifie
+## Ce que l’on regarde ensemble
 
 - Vitesse perçue
-  - Des pages qui s’ouvrent vite sur mobile. Moins d’abandons, plus d’appels.
-  - Objectif : garder vos visiteurs et améliorer le confort.
+  - Vos pages s’ouvrent-elles rapidement sur mobile ? Une attente trop longue suffit parfois à faire partir un visiteur.
+  - L’objectif : garder l’attention et rendre la navigation agréable.
 
 - Visibilité en ligne
-  - Être trouvé par vos clients (notamment en local) sur les recherches qui comptent.
-  - Objectif : plus de visites utiles, pas juste « un bon score ».
+  - Vos clients vous trouvent-ils, notamment lors des recherches locales qui comptent ?
+  - L’objectif : attirer des visites utiles, pas seulement améliorer un score.
 
 - Clarté du message
-  - Comprendre en 3 secondes qui vous aidez, ce que vous apportez, et comment vous contacter.
-  - Objectif : donner envie de vous choisir.
+  - En quelques secondes, comprend-on qui vous aidez, ce que vous apportez et comment vous contacter ?
+  - L’objectif : donner envie d’aller plus loin avec vous.
 
-- Conversion
-  - Un chemin simple vers le contact : formulaire court, bouton d’appel, WhatsApp.
-  - Objectif : transformer les visites en demandes.
+- Passage au contact
+  - Le chemin vers un échange est-il simple : formulaire court, bouton d’appel ou WhatsApp ?
+  - L’objectif : transformer les visites intéressées en demandes réelles.
 
 - Sérénité technique
-  - Un site à jour et sauvegardé, pour éviter les pannes coûteuses.
-  - Objectif : moins de risques et plus de tranquillité.
+  - Votre site est-il à jour et sauvegardé pour éviter les mauvaises surprises ?
+  - L’objectif : limiter les risques et vous laisser l’esprit tranquille.
 
-## Ce qui rend notre audit différent
+## Ce que vous recevez
 
-- Priorisation claire (A/B/C: A = à faire d’abord) selon l’impact attendu et l’effort nécessaire.
-- Mini vidéo de restitution (5min) ou rencontre pour vous montrer exactement quoi changer.
-- 2–3 améliorations simples expliquées pas à pas pour démarrer immédiatement.
-- Bonus : devis offert pour la suite.
+- Une priorisation simple : A, B ou C. Le niveau A correspond à ce qui mérite votre attention en premier, selon l’impact et l’effort.
+- Une courte vidéo de restitution (5 min) ou un échange rapide pour vous montrer ce qui compte vraiment.
+- Deux ou trois améliorations concrètes, expliquées pas à pas, pour pouvoir démarrer sans attendre.
+- Un devis offert si vous souhaitez être accompagné pour la suite.
 
-**_Objectif : que vous puissiez améliorer votre site au plus vite._**
+**_L’objectif : vous aider à avancer avec plus de clarté, même si vous décidez de faire la suite par vous-même._**
 
 ## Comment ça se passe
 
-1. Vous nous envoyez l’URL et vos objectifs (2 minutes).
-2. On teste et on passe votre site au crible avec notre expertise.
-3. On vous restitue un plan clair : priorités A/B/C, actions simples à lancer, et ordre d’action + mini vidéo.
-4. Vous choisissez la suite : un devis offert de notre part, ou appliquer vous‑même.
+1. Vous nous envoyez l’URL de votre site et ce que vous aimeriez améliorer. Comptez environ deux minutes.
+2. Nous testons votre site et examinons les points les plus importants avec notre regard technique.
+3. Vous recevez un plan clair : priorités A/B/C, actions simples à lancer et leur ordre de mise en œuvre, avec une courte vidéo.
+4. Vous choisissez la suite : appliquer les recommandations vous-même, nous demander un devis ou y revenir plus tard.
 
-## Pourquoi c’est gratuit (et limité)
+## Pourquoi c’est gratuit, et pourquoi le nombre est limité
 
-C’est notre meilleure façon de vous montrer notre approche : pragmatique, orientée résultats, facile pour vous.  
-Oui, l’objectif est aussi de créer des relations de confiance. Mais la décision vous appartient : vous pouvez appliquer seuls, nous confier la suite, ou revenir plus tard.
+C’est la manière la plus utile de vous faire découvrir notre façon de travailler : pragmatique, orientée résultats et facile à suivre.  
+Oui, nous espérons aussi que cela pourra ouvrir une relation de confiance. Mais la décision reste la vôtre : vous pouvez appliquer les recommandations seuls, nous confier la suite ou revenir plus tard.
 
-**_Transparence : nous acceptons un nombre limité d’audits par mois pour garder une haute qualitée de service._**
+**_Par souci de qualité, nous limitons le nombre d’audits mensuels afin de consacrer le temps nécessaire à chacun._**
 
 ## FAQ express
 
@@ -96,10 +96,10 @@ Oui, l’objectif est aussi de créer des relations de confiance. Mais la décis
 
 ---
 
-### Prêt à identifier ce qui débloque vos résultats ?
+### Prêt à y voir plus clair ?
 
 <Button href={localizeHref('/audit-gratuit')}>
-Je lance mon audit
+Demander mon audit
 </Button>
 <br />
 <br />

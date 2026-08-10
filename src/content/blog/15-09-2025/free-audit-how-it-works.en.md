@@ -1,6 +1,6 @@
 ---
 title: 'Free website audit: how it works'
-excerpt: In 48–72h, you get a prioritized plan, simple actions you can apply, and a short debrief offered.
+excerpt: Within 48–72 hours, get a fresh look at your site, clear priorities and practical first steps.
 publishedAt: 2025-09-15
 updatedAt: 2025-09-15
 tags:
@@ -19,66 +19,66 @@ author:
   import { Button } from "$lib/components/ui/button";
 </script>
 
-## Why request a (free) audit?
+## Why request a free audit?
 
-If your site is slow, generates few calls, or doesn’t show up locally, it’s not necessarily a “marketing problem”. Often, it’s about the basics: message clarity, performance, SEO, and the user path.
+Feel like your website should be doing more, but are not sure where to start? If it is slow, brings in few enquiries or is hard to find locally, the issue is not necessarily your marketing. Often, the basics simply need a fresh pair of eyes: your message, performance, SEO and the path to getting in touch.
 
-A free audit gives you an honest view and a prioritized action plan. **<u>Straightforward, no commitment</u>**.
+A free audit is an honest starting point, not a magic promise. You get clear priorities and useful actions explained in plain English. **<u>Direct, jargon-free and with no obligation</u>**.
 
-- You know where to act first (impact > effort).
-- You leave with simple improvements you can apply right away.
-- You decide what’s next: do it in‑house, with us, or later.
+- See where to act first, based on expected impact and effort.
+- Take away a few improvements you can get moving quickly.
+- Stay free to handle them in-house, with us or later.
 
 <Button href={localizeHref('/audit-gratuit')}>
-Get my free audit
+Request my audit
 </Button>
 
-**_Note: free audits are limited each month to keep a high level of value._**
+**_To give every website the attention it deserves, the number of free audits is limited each month._**
 
-## What we check
+## What we look at together
 
 - Perceived speed
-  - Pages that open fast on mobile. Fewer drop‑offs, more calls.
-  - Goal: keep visitors and improve comfort.
+  - Do your pages load quickly on mobile? A long wait can be enough to lose a visitor.
+  - The goal: hold attention and make browsing feel smooth.
 
 - Online visibility
-  - Be found by your customers (especially locally) on searches that matter.
-  - Goal: more useful visits, not just “a good score”.
+  - Can your customers find you, especially in the local searches that matter?
+  - The goal: attract useful visits, not just improve a score.
 
 - Message clarity
-  - In 3 seconds: who you help, the outcome, and how to contact you.
-  - Goal: make people want to choose you.
+  - Within a few seconds, is it clear who you help, the value you bring and how to contact you?
+  - The goal: give people a reason to take the next step.
 
-- Conversion
-  - A simple path to contact: short form, call button, WhatsApp.
-  - Goal: turn visits into enquiries.
+- Getting in touch
+  - Is the path to a conversation simple: a short form, call button or WhatsApp?
+  - The goal: turn interested visits into real enquiries.
 
 - Technical peace of mind
-  - An up‑to‑date, backed‑up site to avoid costly outages.
-  - Goal: fewer risks and more peace of mind.
+  - Is your website up to date and backed up, so that problems do not turn into costly surprises?
+  - The goal: reduce risk and let you get on with your work.
 
-## What makes our audit different
+## What you receive
 
-- Clear prioritization (A/B/C: A = do first) based on expected impact and effort.
-- Short summary video (5 min) or a quick meeting to show exactly what to change.
-- 2–3 simple improvements explained step‑by‑step so you can start right away.
-- Bonus: free quote for the next steps.
+- Simple A, B and C priorities. A is what deserves attention first, based on impact and effort.
+- A short five-minute walkthrough video or quick conversation to show what matters most.
+- Two or three practical improvements explained step by step, so you can get started without waiting.
+- A free quote if you would like support with the next steps.
 
-**_Goal: help you improve your site as soon as possible._**
+**_The goal: help you move forward with more clarity, even if you decide to take it from there yourself._**
 
 ## How it works
 
-1. Send us your URL and goals (2 minutes).
-2. We test and review your site with our expertise.
-3. You get a clear plan: A/B/C priorities, simple actions to start with, and order of execution + short video.
-4. You choose what’s next: get a free quote from us, or apply it yourself.
+1. Send us your website URL and what you would like to improve. It takes about two minutes.
+2. We test your site and review the areas that matter most with a technical eye.
+3. You receive a clear plan: A/B/C priorities, simple actions to start with and the order to tackle them in, plus a short video.
+4. You decide what happens next: apply the recommendations yourself, ask us for a quote or come back to it later.
 
-## Why it’s free (and limited)
+## Why it is free, and why numbers are limited
 
-It’s our best way to show our approach: pragmatic, results‑oriented, easy for you.  
-Yes, the goal is also to build trusted relationships. But it’s your decision: apply it yourself, hire us, or come back later.
+It is the most useful way to show you how we work: pragmatic, results-focused and easy to follow.  
+Yes, we hope it may be the start of a trusted relationship too. But the choice stays with you: apply the recommendations yourself, ask us to help or come back later.
 
-**_Transparency: we accept a limited number of audits per month to keep service quality high._**
+**_To keep the work thoughtful, we limit the number of monthly audits so each one gets the time it needs._**
 
 ## Quick FAQ
 
@@ -96,10 +96,10 @@ Yes, the goal is also to build trusted relationships. But it’s your decision: 
 
 ---
 
-### Ready to identify what will unlock results?
+### Ready for a clearer picture?
 
 <Button href={localizeHref('/audit-gratuit')}>
-Start my audit
+Request my audit
 </Button>
 <br />
 <br />
