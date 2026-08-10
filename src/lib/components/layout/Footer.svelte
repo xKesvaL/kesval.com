@@ -1,89 +1,83 @@
 <script lang="ts">
-	import { route } from '$lib/ROUTES';
-	import {
-		brand,
-		legalLinks,
-		navigationLinks,
-		socialLinks,
-		type LinkType
-	} from '$lib/utils/config';
-	import { translate } from '$lib/utils/i18n';
-	import { getFeaturedProjects } from '$lib/utils/projects';
-	import * as m from '$paraglide/messages';
-	import { getLocale, localizeHref } from '$paraglide/runtime';
-	import Link from '../base/Link.svelte';
-	import Button from '../ui/button/button.svelte';
-	import { IconArrowRight, IconMessageCirclePlus } from '@tabler/icons-svelte';
+import {
+	IconArrowRight,
+	IconCheck,
+	IconMessageCirclePlus,
+} from "@tabler/icons-svelte";
+import { page } from "$app/state";
+import { route } from "$lib/ROUTES";
+import {
+	brand,
+	type LinkType,
+	legalLinks,
+	navigationLinks,
+	socialLinks,
+} from "$lib/utils/config";
+import { getFooterCta } from "$lib/utils/footer-cta";
+import { translate } from "$lib/utils/i18n";
+import { getFeaturedProjects } from "$lib/utils/projects";
+import * as m from "$paraglide/messages";
+import { deLocalizeHref, getLocale, localizeHref } from "$paraglide/runtime";
+import Link from "../base/Link.svelte";
+import Button from "../ui/button/button.svelte";
 
-	let showedProjects = $derived(getFeaturedProjects(getLocale()));
+const showedProjects = $derived(getFeaturedProjects(getLocale()));
+const footerCta = $derived(getFooterCta(deLocalizeHref(page.url.pathname)));
 
-	type Links = {
-		title: string;
-		links: LinkType[];
-	};
+type Links = {
+	title: string;
+	links: LinkType[];
+};
 
-	const footerLinks = $derived({
-		work: {
-			title: m['nav.projects'](),
-			links: [
-				...showedProjects.map((project) => ({
-					label: project.title,
-					labelIsI18n: false,
-					href: route('/projets/[slug]', { slug: project.slug as string })
-				})),
-				{
-					label: 'see_all',
-					href: route('/projets')
-				}
-			]
-		},
-		brand: {
-			title: m['brand.the_studio'](),
-			links: navigationLinks
-		},
-		connect: {
-			title: m['brand.connect'](),
-			links: socialLinks
-		},
-		legal: {
-			title: m['footer.others'](),
-			links: legalLinks
-		}
-	} as const satisfies Record<string, Links>);
+const footerLinks = $derived({
+	work: {
+		title: m["nav.projects"](),
+		links: [
+			...showedProjects.map((project) => ({
+				label: project.title,
+				labelIsI18n: false,
+				href: route("/projets/[slug]", { slug: project.slug as string }),
+			})),
+			{
+				label: "see_all",
+				href: route("/projets"),
+			},
+		],
+	},
+	brand: {
+		title: m["brand.the_studio"](),
+		links: navigationLinks,
+	},
+	connect: {
+		title: m["brand.connect"](),
+		links: socialLinks,
+	},
+	legal: {
+		title: m["footer.others"](),
+		links: legalLinks,
+	},
+} as const satisfies Record<string, Links>);
 </script>
 
 <footer class="via-background to-background bg-gradient-to-b from-transparent via-10%">
 	<div class="kcontainer section gapc-lg lg:gapc-xl flex flex-col px-4">
 		<!-- CTA -->
 		<div class="bg-primary text-primary-foreground section rounded-2xl px-8 max-md:py-16">
-			<div class="mx-auto flex max-w-4xl flex-col items-start gap-4">
-				<div class="flex flex-col gap-4 md:gap-8">
-					<h2 class="h3">
-						{m['footer.cta.title']()}
-					</h2>
-					<div class="flex gap-2">
-						<Button variant="secondary" size="lg" href={localizeHref(route('/contact'))}>
-							<IconMessageCirclePlus />
-							{m.lets_talk_about_it()}
-						</Button>
-					</div>
-				</div>
-				<div class="bg-primary-foreground my-4 h-[1px] w-full md:my-8"></div>
-				<div class="flex flex-col gap-4 md:gap-8">
-					<h3 class="h4">
-						{m['footer.cta.other']()}
-					</h3>
-					<div class="grid gap-16 md:grid-cols-3">
-						<div class="flex flex-col">
-							<h4 class="h5">
-								{m.our_email()}
-							</h4>
-							<Link href={`mailto:${brand.email}`}>
-								{brand.email}
-							</Link>
-						</div>
-					</div>
-				</div>
+			<div class="mx-auto flex max-w-4xl flex-col items-start">
+				<h2 class="h3 max-w-[24ch] text-primary-foreground">
+					{footerCta.title}
+				</h2>
+				<p class="mt-4 max-w-2xl text-lg text-primary-foreground/85">
+					{footerCta.description}
+				</p>
+				<Button variant="secondary" size="lg" class="mt-7" href={localizeHref(footerCta.href)}>
+					<IconMessageCirclePlus />
+					{footerCta.action}
+				</Button>
+				<p class="mt-4 flex items-center gap-2 text-sm text-primary-foreground/85">
+					<IconCheck class="size-4 shrink-0" />
+					{footerCta.reassurance}
+				</p>
 			</div>
 		</div>
 

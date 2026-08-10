@@ -130,7 +130,42 @@
 	"footer": {
 		"copyright": "© {year} {brand}. All rights reserved.",
 		"cta": {
-			"title": "Have a project in mind?",
+			"default": {
+				"title": "Your project deserves a clear starting point.",
+				"description": "Let's look at your situation and identify the next step that will be most useful for your business.",
+				"action": "Discuss my project",
+				"reassurance": "A simple first conversation, with no commitment."
+			},
+			"services": {
+				"title": "Your project deserves more than an automatic technical answer.",
+				"description": "Start with an outside perspective on your situation. You will leave with clear priorities, even if we do not end up working together.",
+				"action": "Book my free audit",
+				"reassurance": "No commitment. No sales pressure."
+			},
+			"projects": {
+				"title": "Have a project in mind? Give it a clear direction.",
+				"description": "Every project starts from a different context. Let's discuss what will make the biggest difference for yours.",
+				"action": "Discuss my project",
+				"reassurance": "A simple first conversation, with no commitment."
+			},
+			"blog": {
+				"title": "An idea you want to turn into a project?",
+				"description": "Let's look at your situation and at the actions that can genuinely move your business forward.",
+				"action": "Take stock together",
+				"reassurance": "A simple first conversation, with no commitment."
+			},
+			"contact": {
+				"title": "Would you rather start with an outside perspective?",
+				"description": "Get a free audit of your website and leave with practical next steps, without committing to a project.",
+				"action": "Request my free audit",
+				"reassurance": "A personalised response within 48 to 72 hours."
+			},
+			"audit": {
+				"title": "Need to discuss a broader project?",
+				"description": "Tell us about your context, goals and constraints. We will reply with next steps tailored to your situation.",
+				"action": "Talk about my project",
+				"reassurance": "A simple first conversation, with no commitment."
+			},
 			"secondary": {
 				"title": "A question, some advice?",
 				"description": "We are here to listen and advise you, with no obligation!"

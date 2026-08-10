@@ -130,7 +130,42 @@
 	"footer": {
 		"copyright": "© {year} {brand}. Tous droits réservés.",
 		"cta": {
-			"title": "Vous avez un projet en tête ?",
+			"default": {
+				"title": "Votre projet mérite un point de départ clair.",
+				"description": "Parlons de votre situation et identifions la prochaine étape la plus utile pour votre activité.",
+				"action": "Discuter de mon projet",
+				"reassurance": "Un premier échange simple, sans engagement."
+			},
+			"services": {
+				"title": "Votre projet mérite mieux qu'une réponse technique automatique.",
+				"description": "Commencez par un regard extérieur sur votre situation. Vous repartirez avec des priorités claires, même si nous ne travaillons pas ensemble.",
+				"action": "Réserver mon audit gratuit",
+				"reassurance": "Sans engagement. Sans pression commerciale."
+			},
+			"projects": {
+				"title": "Vous avez un projet en tête ? Donnons-lui une direction claire.",
+				"description": "Chaque projet part d'un contexte différent. Échangeons pour définir ce qui aura le plus d'impact pour le vôtre.",
+				"action": "Discuter de mon projet",
+				"reassurance": "Un premier échange simple, sans engagement."
+			},
+			"blog": {
+				"title": "Une idée à transformer en projet ?",
+				"description": "Faisons le point sur votre situation et sur les actions qui peuvent réellement faire avancer votre activité.",
+				"action": "Faire le point ensemble",
+				"reassurance": "Un premier échange simple, sans engagement."
+			},
+			"contact": {
+				"title": "Vous préférez commencer par un regard extérieur ?",
+				"description": "Recevez un audit gratuit de votre site et repartez avec des pistes concrètes, sans devoir vous engager dans un projet.",
+				"action": "Demander mon audit gratuit",
+				"reassurance": "Un retour personnalisé sous 48 à 72 heures."
+			},
+			"audit": {
+				"title": "Besoin d'échanger sur un projet plus large ?",
+				"description": "Décrivez-nous votre contexte, vos objectifs et vos contraintes. Nous vous répondrons avec des prochaines étapes adaptées.",
+				"action": "Parler de mon projet",
+				"reassurance": "Un premier échange simple, sans engagement."
+			},
 			"secondary": {
 				"title": "Une question, un conseil ?",
 				"description": "Nous sommes là pour vous écouter et vous conseiller, sans engagement !"

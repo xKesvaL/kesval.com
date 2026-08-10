@@ -1,16 +1,11 @@
 <script lang="ts">
 import {
-	IconArrowRight,
-	IconCheck,
 	IconMessageCircle,
 	IconRocket,
 	IconSearch,
 } from "@tabler/icons-svelte";
 import * as Accordion from "$lib/components/ui/accordion";
-import { Button } from "$lib/components/ui/button";
-import { route } from "$lib/ROUTES";
 import * as m from "$paraglide/messages";
-import { localizeHref } from "$paraglide/runtime";
 
 const steps = [
 	{
@@ -104,19 +99,3 @@ const faqs = [
 	</Accordion.Root>
 </section>
 
-<section class="section pt-0">
-	<div class="kcontainer px-4">
-		<div class="bg-primary text-primary-foreground relative overflow-hidden rounded-lg px-6 py-10 md:px-12 md:py-14">
-			<div class="pointer-events-none absolute top-1/2 right-[-5rem] size-64 -translate-y-1/2 rounded-full border border-primary-foreground/20"></div>
-			<div class="relative max-w-2xl">
-				<h2 class="text-primary-foreground">{m['services.page.closing.title']()}</h2>
-				<p class="text-primary-foreground/85 mt-4 text-lg">{m['services.page.closing.description']()}</p>
-				<Button href={localizeHref(route('/audit-gratuit'))} class="mt-7 bg-background text-foreground hover:bg-background/90" size="lg">
-					{m['services.page.closing.cta']()}
-					<IconArrowRight />
-				</Button>
-				<p class="mt-4 flex items-center gap-2 text-sm text-primary-foreground/85"><IconCheck class="size-4" />{m['services.page.closing.reassurance']()}</p>
-			</div>
-		</div>
-	</div>
-</section>
