@@ -570,6 +570,56 @@
 			"discover_this_service": "Découvrir ce service",
 			"learn_more": "En savoir plus"
 		},
+		"page": {
+			"hero": {
+				"eyebrow": "Un partenaire technique de confiance",
+				"title": "Un digital qui fait avancer votre entreprise.",
+				"description": "Site qui rassure, outil qui libère du temps, parcours plus simple : on part de votre problème concret pour construire la bonne réponse, sans jargon ni solution baclée.",
+				"primary_cta": "Demander mon audit gratuit",
+				"secondary_cta": "Voir les solutions",
+				"reassurance": "30 minutes, sans engagement, avec des pistes concrètes à la clé.",
+				"navigator_title": "Qu'est-ce qui vous bloque aujourd'hui ?",
+				"need_website_title": "Mon site ne m'apporte pas assez de demandes",
+				"need_website_description": "Clarifier l'offre, inspirer confiance et transformer les visites en contacts.",
+				"need_tool_title": "Perte de temps sur des tâches répétitives",
+				"need_tool_description": "Créer un outil ou une automatisation qui retire les frictions du quotidien.",
+				"need_clarity_title": "Mon parcours client manque de clarté",
+				"need_clarity_description": "Repenser les écrans et les étapes pour rendre chaque action évidente."
+			},
+			"solutions": {
+				"eyebrow": "Des réponses adaptées",
+				"title": "Choisissez votre point de départ. Le reste se construit avec vous.",
+				"description": "Pas de catalogue figé ni de formule magique : chaque projet commence avec vos besoins, vos objectifs et vos contraintes."
+			},
+			"process": {
+				"eyebrow": "Une méthode lisible",
+				"title": "Vous savez où vous allez, avant de commencer à développer.",
+				"description": "Un projet digital n'a pas besoin d'être opaque. Chaque étape est cadrée, partagée et reliée à un objectif utile pour votre activité.",
+				"step_1_title": "Faire le point",
+				"step_1_description": "On échange sur votre contexte, vos objectifs et ce qui vous ralentit réellement.",
+				"step_2_title": "Tracer la bonne route",
+				"step_2_description": "Vous recevez une recommandation claire : priorités, périmètre et prochaines étapes.",
+				"step_3_title": "Construire et faire évoluer",
+				"step_3_description": "Nous livrons par étapes, restons disponibles, puis faisons évoluer ce qui crée de la valeur."
+			},
+			"faq": {
+				"eyebrow": "Avant de se lancer",
+				"title": "Les questions qui comptent avant un projet.",
+				"description": "",
+				"question_1": "Je ne sais pas encore exactement ce qu'il me faut. Est-ce trop tôt ?",
+				"answer_1": "Non. Nous partons de votre situation, pas d'un cahier des charges parfait. L'audit permet de clarifier le besoin et d'éviter d'investir au mauvais endroit.",
+				"question_2": "Comment savoir si le projet est rentable ?",
+				"answer_2": "Avant de proposer une solution, nous relions le projet à un résultat observable : demandes entrantes, temps économisé, étapes simplifiées ou meilleure conversion. On priorise ce qui a le plus d'impact.",
+				"question_3": "Que se passe-t-il après la mise en ligne ?",
+				"answer_3": "Vous n'êtes pas laissé seul. Selon le besoin, nous pouvons assurer la maintenance, les évolutions et un suivi des améliorations à apporter."
+			},
+			"closing": {
+				"title": "Votre projet mérite mieux qu'une réponse technique automatique.",
+				"description": "Commencez par un regard extérieur sur votre situation. Vous repartirez avec des priorités claires, même si nous ne travaillons pas ensemble.",
+				"cta": "Réserver mon audit gratuit",
+				"reassurance": "Sans engagement. Sans pression commerciale."
+			}
+		},
 		"work": {
 			"why_kesval_studio": "Pourquoi choisir KesvaL Studio ?",
 			"why_kesval_studio_description": "Notre approche unique combine expertise technique et accompagnement personnalisé pour garantir la réussite de votre projet.",

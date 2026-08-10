@@ -570,6 +570,56 @@
 			"discover_this_service": "Discover this service",
 			"learn_more": "Learn more"
 		},
+		"page": {
+			"hero": {
+				"eyebrow": "A technical partner you can trust",
+				"title": "Digital tools that move your business forward.",
+				"description": "A website that builds trust, a tool that frees up time, a clearer customer journey: we start with your real problem and build the right answer, without jargon or unnecessary complexity.",
+				"primary_cta": "Request my free audit",
+				"secondary_cta": "Explore the solutions",
+				"reassurance": "30 minutes, no commitment, and practical next steps to take away.",
+				"navigator_title": "What is holding you back today?",
+				"need_website_title": "My website does not bring in enough enquiries",
+				"need_website_description": "Clarify the offer, build trust and turn visits into conversations.",
+				"need_tool_title": "My team loses time on repetitive work",
+				"need_tool_description": "Create a tool or automation that removes daily friction.",
+				"need_clarity_title": "My customer journey is unclear",
+				"need_clarity_description": "Rethink screens and steps so every action feels obvious."
+			},
+			"solutions": {
+				"eyebrow": "Tailored answers",
+				"title": "Choose your starting point. We will build the rest with you.",
+				"description": "No fixed catalogue or magic formula: every project starts by understanding your situation, then defining the right solution together."
+			},
+			"process": {
+				"eyebrow": "A clear method",
+				"title": "You know where you are heading before development begins.",
+				"description": "A digital project should not be opaque. Every step is scoped, shared and tied to a useful business goal.",
+				"step_1_title": "Take stock",
+				"step_1_description": "We discuss your context, goals and what is actually slowing you down.",
+				"step_2_title": "Map the right path",
+				"step_2_description": "You receive a clear recommendation: priorities, scope and the next steps.",
+				"step_3_title": "Build and improve",
+				"step_3_description": "We deliver in stages, stay available, then improve what creates value."
+			},
+			"faq": {
+				"eyebrow": "Before you begin",
+				"title": "The questions worth asking before a project.",
+				"description": "",
+				"question_1": "I do not know exactly what I need yet. Is it too early?",
+				"answer_1": "No. We start from your situation, not from a perfect specification. The audit helps clarify the need and avoid investing in the wrong place.",
+				"question_2": "How do I know the project will pay off?",
+				"answer_2": "Before suggesting a solution, we connect it to an observable result: enquiries, time saved, simpler steps or improved conversion. We prioritise what will have the greatest impact.",
+				"question_3": "What happens after the launch?",
+				"answer_3": "You are not left on your own. Depending on your needs, we can provide maintenance, improvements and ongoing guidance on what to refine next."
+			},
+			"closing": {
+				"title": "Your project deserves more than an automatic technical answer.",
+				"description": "Start with an outside perspective on your situation. You will leave with clear priorities, even if we do not end up working together.",
+				"cta": "Book my free audit",
+				"reassurance": "No commitment. No sales pressure."
+			}
+		},
 		"work": {
 			"why_kesval_studio": "Why choose KesvaL Studio?",
 			"why_kesval_studio_description": "Our unique approach combines technical expertise and personalized support to ensure the success of your project.",
